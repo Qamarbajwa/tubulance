@@ -1,0 +1,17 @@
+# Real DNS cutouts -- never commit these to the normal Git repository.
+# NOTE: isotropic1024coarse.h5 and isotropic1024coarse (1).h5 were already
+# committed in this repo's first commit, before this .gitignore existed.
+# This entry prevents FUTURE h5 files (and future changes to these two)
+# from being accidentally staged -- it does not retroactively untrack
+# files already in history. Run `git rm --cached` explicitly if the
+# already-tracked copies should be removed from the tree.
+*.h5
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Run outputs -- never committed; each real run gets its own --output dir
+runs/
+jhtdb_terminal_benchmark/
