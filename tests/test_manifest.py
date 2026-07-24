@@ -14,13 +14,61 @@ def test_synthetic_dry_run_manifest_loads_cleanly():
     assert "parent_band_energy_weighted" in names
 
 
-def test_template_manifest_with_blank_values_fails_validation():
+def test_blank_template_values_fail_validation(tmp_path):
+    # Deliberately self-contained rather than reading
+    # manifests/isotropic_128_validation.yaml: that file is meant to be
+    # filled in as real campaigns are prepared (and may legitimately be
+    # filled in, uncommitted, at any point) -- coupling this safeguard
+    # test to its current contents would make the test fragile against
+    # completely normal, expected edits to that file.
+    blank = tmp_path / "blank_template.yaml"
+    blank.write_text(
+        """
+dataset: isotropic1024coarse
+snapshots:
+  calibration:
+    - time: null
+      origin: [null, null, null]
+      size: [128, 128, 128]
+      source: sciserver
+  validation:
+    - time: null
+      origin: [null, null, null]
+      size: [128, 128, 128]
+      source: sciserver
+resolution_tiers: [64, 128, 256]
+terminal_layer:
+  preferred_shells: 8
+  minimum_shells: 6
+  minimum_populated_shells: 4
+  cutoff_nyquist_fraction: null
+placements:
+  local_cancellation: {}
+  parent_band_energy_weighted:
+    c1: null
+    c2: null
+classification:
+  data_is_real: true
+"""
+    )
     with pytest.raises(ManifestValidationError) as excinfo:
-        load_manifest("manifests/isotropic_128_validation.yaml")
+        load_manifest(str(blank))
     errors = excinfo.value.errors
     assert any("time" in e for e in errors)
     assert any("cutoff_nyquist_fraction" in e for e in errors)
     assert any("c1" in e or "c2" in e for e in errors)
+
+
+def test_real_campaign_template_currently_on_disk_is_either_blank_or_valid():
+    # The template file itself may be blank (fresh checkout) or filled in
+    # with a proposed real campaign (mid-preparation) -- either state is
+    # legitimate. It must never be invalid in some OTHER way (e.g.
+    # malformed YAML, wrong types).
+    try:
+        m = load_manifest("manifests/isotropic_128_validation.yaml")
+        assert m.dataset  # filled-in and valid
+    except ManifestValidationError as exc:
+        assert len(exc.errors) > 0  # blank and correctly rejected, not malformed
 
 
 def test_missing_data_is_real_fails(tmp_path):

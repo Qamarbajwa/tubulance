@@ -38,9 +38,40 @@ def completed_run(tmp_path_factory):
 
 
 # 1. Manifest validation -----------------------------------------------
-def test_1_manifest_validation_rejects_blank_template():
+def test_1_manifest_validation_rejects_blank_template(tmp_path):
+    # See tests/test_manifest.py::test_blank_template_values_fail_validation
+    # for why this uses a self-contained blank manifest rather than
+    # manifests/isotropic_128_validation.yaml, which is meant to be filled
+    # in as real campaigns are prepared.
+    blank = tmp_path / "blank.yaml"
+    blank.write_text(
+        """
+dataset: isotropic1024coarse
+snapshots:
+  calibration:
+    - time: null
+      origin: [null, null, null]
+      size: [128, 128, 128]
+      source: sciserver
+  validation:
+    - time: null
+      origin: [null, null, null]
+      size: [128, 128, 128]
+      source: sciserver
+resolution_tiers: [64, 128, 256]
+terminal_layer:
+  preferred_shells: 8
+  minimum_shells: 6
+  minimum_populated_shells: 4
+  cutoff_nyquist_fraction: null
+placements:
+  local_cancellation: {}
+classification:
+  data_is_real: true
+"""
+    )
     with pytest.raises(ManifestValidationError):
-        load_manifest("manifests/isotropic_128_validation.yaml")
+        load_manifest(str(blank))
 
 
 def test_1_manifest_validation_accepts_filled_manifest():
