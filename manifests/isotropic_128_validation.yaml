@@ -1,0 +1,45 @@
+# Real-execution template for a 128^3 isotropic1024coarse validation run.
+#
+# Every physical value below that is `null` is intentionally blank. This
+# manifest will FAIL validation (manifest.load_manifest) until a human
+# fills them in from actual JHTDB/SciServer documentation or a live
+# Giverny query -- see AGENTS.md "Never guess physical constants". Do not
+# fill these in with plausible-looking numbers.
+
+dataset: isotropic1024coarse
+
+snapshots:
+  calibration:
+    - time: null            # confirmed JHTDB time coordinate -- not inferred
+      origin: [null, null, null]
+      size: [128, 128, 128]
+      source: sciserver
+    # add at least 2 more calibration snapshots (disjoint from validation)
+
+  validation:
+    - time: null
+      origin: [null, null, null]
+      size: [128, 128, 128]
+      source: sciserver
+    # README.md requires >=5 independent validation snapshots for the
+    # 128^3 minimum physical test -- add the remaining snapshots here
+
+resolution_tiers: [64, 128, 256]
+
+terminal_layer:
+  preferred_shells: 8
+  minimum_shells: 6
+  minimum_populated_shells: 4
+  cutoff_nyquist_fraction: null   # e.g. 0.5 -- set deliberately, not copied blindly
+
+placements:
+  local_cancellation: {}
+  parent_band_energy_weighted:
+    c1: null   # must be preregistered: 0 < c1 < c2 < 1, fixed before running
+    c2: null
+  turnover_weighted: {}
+  dns_oracle_diagnostic:
+    enabled: true   # diagnostic only -- never used for selection or predictive claims
+
+classification:
+  data_is_real: true
