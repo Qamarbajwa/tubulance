@@ -1,0 +1,2922 @@
+{
+  "milestone": "5.7a",
+  "title": "Audit and Repair of the Forcing-Material-Size Stress Test",
+  "synthetic_only_warning": "SYNTHETIC-ONLY REPORT -- every number below comes from the Milestone 5.7/5.7a synthetic pseudo-spectral stress-test solver (pseudo_spectral_solver.py), not from real JHTDB DNS data. This is evidence about the MODEL'S CODE AND ASSUMPTIONS, not about real turbulence. It must never be cited alongside or in place of the real JHTDB validation campaign (jhtdb_terminal_benchmark.py / run_real_validation.py). Milestone 5.7a changed NO real-data code path: it only audits and repairs the synthetic 5.7 stress-test infrastructure.",
+  "summary": "9 implementation/reporting defects were repaired and verified; 1 item (material dependence) was confirmed as a scope limitation, not a bug -- see each audit item's `category` field.",
+  "strongest_permitted_statement": "In the audited synthetic 64^3 stress-test domain, the forcing-aware candidate is verified to reduce to the original terminal operator in a measured weak-forcing case with Phi_l~=0.047, as required by its construction. The corrected benchmark reaches nonlinear-dominated, competing, and forcing-dominated regimes, and its complete energy budget closes within the configured tolerance for 18 of 19 minimal-matrix runs. A resolved 64^3 test shows that direct forcing at or above k_s violates the original model's cascade-arrival assumption. This result identifies an applicability boundary of the model's assumptions, not validation against real turbulence. The 128^3 results remain short, clip-altered spot checks and provide no convergence evidence. Material-dependent physics remains untested beyond Newtonian viscosity variation.",
+  "boundary_finding": {
+    "statement": "The 64^3 resolved synthetic test challenges the cascade-arrival assumption.",
+    "basis": "overlap_64_A (grid_n=64, not clip-altered, energy budget closes within tolerance) is classified assumption_challenged: forcing placed at/above k_s directly and measurably breaks the original terminal operator's cascade-arrival assumption at a resolved tier.",
+    "128_cubed_caveat": "overlap_128_spotcheck is consistent with this finding (same qualitative classification) but is NOT independent confirmation: it is a 4-step spot check, its energy budget does not close within tolerance, and it was materially altered by the forcing-amplitude clip. It should be cited as consistent, never as corroborating evidence on its own."
+  },
+  "scope_constraints_honored": [
+    "No new physical claims, material models, or candidate terminal laws were added.",
+    "gamma_candidate_forcing_aware's functional form is unchanged from Milestone 5.7.",
+    "The real JHTDB manifest and real-validation pipeline were not touched.",
+    "Nothing has been committed until this report and its corrections were reviewed."
+  ],
+  "audit_items": [
+    {
+      "item": 1,
+      "category": "defect_repaired",
+      "critique": "Weak-forcing limit (Phi_l<<1) was never actually tested -- all runs measured forcing_dominated.",
+      "root_cause": "Cold-start bias: the solver always initialized velocity from a small-amplitude random field, so u_l started near zero and Phi_l = P_f/(u_l^3/l) was enormous at t=0 for ANY nonzero forcing power, regardless of preregistered intent.",
+      "fix": "Added SolverConfig.initial_kinetic_energy (warm-start knob) and forcing.initial_kinetic_energy_for_target_phi_l() which inverts Phi_l for the u_l needed to hit a target ratio at t=0. initialize_state() rescales the random field to match.",
+      "files": [
+        "forcing.py",
+        "pseudo_spectral_solver.py"
+      ],
+      "verification": "weak_64_A measured Phi_l=0.047 (nonlinear_dominated), competing_64_A measured Phi_l~1.4 (competing), strong_64_A measured Phi_l~9-50 range (forcing_dominated) -- see minimal_matrix_rows below. All three preregistered regime bins are now empirically reached."
+    },
+    {
+      "item": 2,
+      "category": "defect_repaired",
+      "critique": "Energy-budget \"conserves energy\" claim contradicted the actual metrics (128^3 run: relative_closure_error~=0.98, closes_within_tolerance=false).",
+      "root_cause": "relative_closure_error compared mean(power_input) against mean(viscous_dissipation+terminal_heat) ALONE, omitting dK/dt entirely -- invalid during any spin-up/decay transient where most power legitimately goes into changing KE, not into dissipation.",
+      "fix": "Derived relative_closure_error from full_timestep_residual (already includes dK/dt via _step_once's dk_measured/dk_predicted bookkeeping), converted to a rate (/dt), and normalized by max(mean_power_input, mean_viscous+heat) instead of mean_power_input alone (a warm-start decay run has power_input far smaller than viscous dissipation, so normalizing by power_input alone inflates a small residual into a huge relative error). summarize_energy_budget() now requires dt as a keyword argument. Old (invalid) metric kept as input_vs_dissipation_only_gap for transparency only.",
+      "files": [
+        "energy_budget.py",
+        "pseudo_spectral_solver.py"
+      ],
+      "verification": "Same weak_isotropic/grid64/initial_kinetic_energy=5.0 configuration: closure error dropped from 263.9/false (bug) to 0.079/true (fixed metric) in direct comparison during development; 18 of 19 minimal-matrix rows now report closes_within_tolerance=true -- the sole exception (overlap_128_spotcheck, a 4-step 128^3 spot check of the forcing-overlaps-terminal-layer case, relative_closure_error=0.259) is a large transient over very few steps AND was independently materially altered by the forcing-amplitude clip (see item 6 / forcing_clip_summary) -- it is not read as a resolution-convergence result either way (see item 3 / boundary_finding)."
+    },
+    {
+      "item": 3,
+      "category": "defect_repaired",
+      "critique": "128^3 execution status was self-contradictory (spot check misrepresented as tier completion).",
+      "root_cause": "stress_test_report.py's grid_tiers_executed / grid_tiers_skipped_no_data distinction is binary (executed vs no_data) with no third state for 'a single spot-check row exists, this is not a resolution-convergence claim.'",
+      "fix": "Added is_spot_check flag threaded from run_milestone_5_7a_minimal_matrix.py's CASE_SPECS through to each shard row, plus AuditedStatus.resolution_status (resolved/diagnostic_tier_only/not_executed) as an orthogonal field. This audit report's tier_status section explicitly separates spot_check_executed from complete_campaign_executed per tier -- see below.",
+      "files": [
+        "stress_test_classification.py",
+        "milestone_5_7_stress_test.py",
+        "run_milestone_5_7a_minimal_matrix.py",
+        "generate_milestone_5_7a_audit_report.py"
+      ],
+      "verification": "tier_status.128 below reports spot_check_executed=true, complete_campaign_executed=false, n_spot_check_rows=2, explicitly. See also boundary_finding: the robust cascade-arrival-assumption result comes from the RESOLVED 64^3 overlap test; the 128^3 overlap spot check is consistent with it but is not independent confirmation (it was also clip-altered -- see item 6)."
+    },
+    {
+      "item": 4,
+      "category": "defect_repaired",
+      "critique": "n_runs=189 vs n_runs_expected=84 was unexplained/suspicious.",
+      "root_cause": "n_runs_expected=84 was a hardcoded default representing ONLY the single-grid-tier, single-material count (14 cases x 6 groups). The actual 189-row campaign spanned 2 grid tiers x 6 groups x incompressible_newtonian_liquid (168 rows) + 1 grid128 spot check + a high_viscosity_newtonian_liquid grid32/group-A pass (14 rows) + 3 one-off material_not_implemented placeholder probes (3 rows) = 186 legitimate rows, PLUS 3 genuine stale-shard duplicate rows (g32_A_highvisc_actual.json reran 3 of the same 14 cases already present in g32_A_highvisc.json, and assemble_milestone_5_7_report.py had no dedup logic) = 189.",
+      "fix": "Added compute_run_identity() (SHA256 of all outcome-determining fields, excluding RNG phase) threaded into every row as run_id. assemble_milestone_5_7_report.py now dedups by run_id (falling back to (case,grid_n,group,material,forcing_type) for legacy rows without run_id) and reports what was dropped.",
+      "files": [
+        "milestone_5_7_stress_test.py",
+        "assemble_milestone_5_7_report.py"
+      ],
+      "verification": "Rerunning the dedup-enabled assembler against the ORIGINAL 35 shard files: loaded 189 rows, dropped exactly 3 duplicates (weak_isotropic/moderate_steady_isotropic/strong_isotropic, all grid_n=32/group=A/material=high_viscosity_newtonian_liquid), 186 rows remain -- output at runs/milestone_5_7a/original_campaign_dedup_corrected/."
+    },
+    {
+      "item": 5,
+      "category": "defect_repaired",
+      "critique": "Several nominally distinct forcing cases produced bit-identical diagnostics.",
+      "root_cause": "moderate_steady_isotropic and forcing_far_below_ks were literal duplicate case definitions (identical forcing_type/power/k_f_mode='far_below_ks'/tau_f) in forcing_test_matrix.py -- a genuine matrix-design bug, confirmed by direct inspection of the original report's raw values (phi=449.852..., theta=0.01412..., identical to many decimal places for both cases at grid32).",
+      "fix": "Gave general-purpose cases their own k_f_mode='moderate_below_ks' (0.6*ks), reserving 'far_below_ks' (0.3*ks) exclusively for the case that specifically tests scale separation (forcing_far_below_ks). Added forcing_fingerprint.py to hash every case's RESOLVED configuration and hard-fail (assert_no_unexpected_collisions) on any future unexpected collision.",
+      "files": [
+        "forcing_test_matrix.py",
+        "forcing_fingerprint.py"
+      ],
+      "verification": "detect_forcing_collisions() over ALL_CASES: 0 collision groups at grid_n=64 and grid_n=128 (the fix is confirmed effective at both resolutions used in the minimal-matrix rerun); exactly 1 collision group remains at grid_n=32 (moderate_steady_isotropic vs forcing_far_below_ks), which is the SEPARATE, DOCUMENTED, unavoidable ks=0 degeneracy described in item 9 below, not a residual matrix bug -- see fingerprint_collisions section."
+    },
+    {
+      "item": 6,
+      "category": "defect_repaired",
+      "critique": "The forcing-amplitude safety clip was suspected of controlling the experiment.",
+      "root_cause": "pseudo_spectral_solver.make_forcing_hat applies a lam_max safety clip to the requested forcing amplitude but the original code never recorded whether the clip fired or by how much -- there was no way to check the suspicion either way.",
+      "fix": "make_forcing_hat now returns (total, new_shapes, clip_diagnostics) with requested_amplitude/applied_amplitude/clip_active per injection scale. EnergyBudgetSample carries these per step; summarize_energy_budget computes forcing_clip_active_fraction and forcing_clip_materially_altered_case (fires only if clip_active_fraction>0.1 AND amplitude_alteration>0.1).",
+      "files": [
+        "pseudo_spectral_solver.py",
+        "energy_budget.py"
+      ],
+      "verification": "17 of 19 minimal-matrix cases were NOT materially altered by clipping. The 2 that WERE (weak_128_spotcheck, overlap_128_spotcheck) are BOTH 128^3 spot checks -- neither can be interpreted as a faithful test of its nominal requested forcing, and this is now stated explicitly wherever those two rows are cited (see forcing_clip_summary, tier_status.128, boundary_finding)."
+    },
+    {
+      "item": 7,
+      "category": "defect_repaired",
+      "critique": "\"controller_stable\" was too weak a classification (conflates bounded with effective).",
+      "root_cause": "controller.controller_diagnostics()['is_stable'] only checked boundedness (|trajectory|<1e6), which the original classification pipeline mapped directly to a single label 'controller_stable' -- a controller that is bounded but oscillating, never converging, or never reducing the actual energy-budget error would still be called 'stable.'",
+      "fix": "Added ControllerClassificationThresholds and classify_controller_run(), returning an orthogonal tuple of labels from {controller_bounded, controller_nonoscillatory, controller_converged, controller_target_achieved, controller_budget_error_reduced, controller_unstable} instead of one flat label.",
+      "files": [
+        "controller.py",
+        "milestone_5_7_stress_test.py"
+      ],
+      "verification": "See controller_label_distribution below: 19/19 rows get controller_bounded, but only 2/19 (weak_64_D, weak_64_E) also get controller_converged, and NO row gets controller_target_achieved or controller_budget_error_reduced in this minimal matrix -- i.e. the richer labels show the controller is mostly only shown to be bounded, not effective. The legacy classification_labels 'controller_stable' entry is now explicitly marked deprecated relative to controller_labels (see LEGACY_LABEL_DEPRECATION_NOTICE) rather than left to imply success."
+    },
+    {
+      "item": 8,
+      "category": "defect_repaired",
+      "critique": "The anisotropy detector was likely over-sensitive (173/186 runs flagged, including isotropic cases).",
+      "root_cause": "anisotropic_response_identified fired whenever anisotropy_magnitude exceeded a fixed threshold (0.02) with NO comparison against how much anisotropy an isotropically-forced control run shows purely from finite-sample/single-realization/short-run noise. Compounded by a separate bug: anisotropy_invariants() computed sqrt(max(-0.5*trace(b@b),0)), which is <=0 for real b, so the ORIGINAL magnitude was always exactly 0 -- meaning the 173/186 flag rate in the original report came from a different, likely also-flawed code path or was measured before this sign bug was introduced; either way the magnitude computation itself needed a structural fix, independent of the threshold question.",
+      "fix": "Fixed anisotropy_invariants() to magnitude=sqrt(max(trace(b@b),0)) (a valid non-negative quantity). Added structure_metrics.isotropic_control_baseline()/is_anisotropic_response_significant() (mean+z*std of matched isotropic-forcing control runs) and milestone_5_7_stress_test.run_isotropic_control_ensemble().",
+      "files": [
+        "structure_metrics.py",
+        "milestone_5_7_stress_test.py"
+      ],
+      "verification": "See anisotropy_reclassification below -- and its explicit 'finding' text: this is a two-family demonstration that the corrected method distinguishes signal from noise, NOT a statistical validation of anisotropy classification across the full campaign."
+    },
+    {
+      "item": 9,
+      "category": "defect_repaired",
+      "critique": "The 32^3 campaign cannot test k_f/k_s physics (ks=0 degeneracy) but was mixed into overall counts.",
+      "root_cause": "compute_terminal_layer degenerates to ks=0 at grid_n=32 in this solver's beta-derived layer construction, which collapses ALL of far_below_ks/near_ks/moderate_below_ks onto the delta_k floor -- 32^3 structurally cannot resolve distinct k_f/k_s positions, but the original applicability_map()/report aggregated 32^3 rows into the same by_k_f_vs_ks buckets as 64^3/128^3 without flagging this.",
+      "fix": "Added is_diagnostic_tier=(grid_n in GRID_TIER_DIAGNOSTIC_ONLY) or (layer.ks<=0) computed per run, and AuditedStatus.resolution_status which can only reach 'resolved' when NOT diagnostic-tier. This audit report's applicability-map section computes k_f/k_s-based aggregates ONLY over grid_n>=64 rows explicitly (see applicability_map_k_f_ks_64_and_above below), separate from the full (all-tier) aggregate kept for transparency.",
+      "files": [
+        "milestone_5_7_stress_test.py",
+        "stress_test_classification.py",
+        "generate_milestone_5_7a_audit_report.py"
+      ],
+      "verification": "fingerprint_collisions.32 confirms the ks=0 degeneracy directly: moderate_steady_isotropic and forcing_far_below_ks (and structurally near_ks too, though it differs in forcing_type so its fingerprint doesn't collide) all resolve k_f=delta_k=1.0 at grid_n=32."
+    },
+    {
+      "item": 10,
+      "category": "scope_limitation_confirmed",
+      "critique": "Material dependence was not actually tested (only Newtonian implemented).",
+      "root_cause": "material_state.py only implements incompressible_newtonian_liquid and high_viscosity_newtonian_liquid; the other 3 of 5 preregistered material types (compressible_gas, low_mach_newtonian_gas, viscoelastic-family) correctly return material_interface_only-blocked results, but the original report's language did not always make the resulting material-scope limitation explicit enough.",
+      "root_cause_note": "This is a known, already-disclosed scope limitation (see AGENTS.md 'Material interface_only is not approximately Newtonian'), NOT a code defect -- no fix was made or attempted here, per the audit's explicit instruction not to add new material models. It is confirmed and restated here as a standing limitation, not counted among the 9 repaired defects.",
+      "fix": "No code change (out of 5.7a scope by explicit user instruction). Restated as a limitation in this report's Remaining Limitations section.",
+      "files": [],
+      "verification": "Confirmed via material_state.py: only 2 of 5 MATERIAL_TYPES are implemented; MaterialNotImplementedError raised for the rest, never silently approximated."
+    }
+  ],
+  "fingerprint_collisions": {
+    "32": {
+      "ks": 0.0,
+      "kc": 8.0,
+      "n_collision_groups": 1,
+      "collisions": [
+        {
+          "case_names": [
+            "moderate_steady_isotropic",
+            "forcing_far_below_ks"
+          ],
+          "fingerprint": [
+            "isotropic_random",
+            1.0,
+            [],
+            2.0,
+            0.05,
+            1.0,
+            null,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    "64": {
+      "ks": 8.96,
+      "kc": 16.0,
+      "n_collision_groups": 0,
+      "collisions": []
+    },
+    "128": {
+      "ks": 17.92,
+      "kc": 32.0,
+      "n_collision_groups": 0,
+      "collisions": []
+    }
+  },
+  "anisotropy_reclassification": {
+    "weak_isotropic_family": {
+      "case_anisotropy_magnitude": 0.018185926358844737,
+      "isotropic_control_baseline": {
+        "mean": 0.02087936645182816,
+        "std": 0.005077098189697286,
+        "n_seeds": 2,
+        "samples": [
+          0.025956464641525446,
+          0.015802268262130874
+        ]
+      },
+      "naive_label_present": false,
+      "significant_vs_control": false
+    },
+    "strong_directional_family": {
+      "case_anisotropy_magnitude": 0.5602828631821658,
+      "isotropic_control_baseline": {
+        "mean": 0.05050401976916427,
+        "std": 0.019237893159837007,
+        "n_seeds": 2,
+        "samples": [
+          0.06974191292900128,
+          0.03126612660932727
+        ]
+      },
+      "naive_label_present": true,
+      "significant_vs_control": true
+    },
+    "finding": "The corrected anisotropy method behaves sensibly in two demonstration families: not significant for weak_isotropic (isotropic forcing), significant for strong_directional_fixed (directional forcing). It is NOT yet a statistical validation of anisotropy classification across the full campaign -- only 2 isotropic-control seeds were run per family (compute-limited, below the 5.7a spec's own recommended ensemble size), and the original 189/186-row campaign's 173 flagged runs were not individually rechecked against a matched control baseline here."
+  },
+  "h1_candidate_baseline_agreement": {
+    "description": "H1 check: terminal_operator_forcing_aware.gamma_candidate_forcing_aware is constructed to reduce EXACTLY to the baseline operator as Phi_l -> 0. weak_64_A (group A, baseline) and weak_64_C (group C, candidate) run the identical weak_isotropic case/grid/seed/steps, differing only in terminal_gamma_mode. This shows the candidate is numerically consistent with the baseline in the weak-forcing limit -- it is NOT evidence group C is physically better than group A; there is no ground truth in this synthetic milestone to judge 'better' against.",
+    "phi_l_A": 0.046614957858296474,
+    "phi_l_C": 0.04661498259555004,
+    "energy_budget_A": {
+      "mean_power_input": 0.0024833613391243865,
+      "mean_viscous_dissipation": 0.5740853610550389,
+      "mean_terminal_heat": 0.000442044092541369,
+      "relative_closure_error": 0.018135837923772016,
+      "closes_within_tolerance": true
+    },
+    "energy_budget_C": {
+      "mean_power_input": 0.0024833613391243865,
+      "mean_viscous_dissipation": 0.5740845606177295,
+      "mean_terminal_heat": 0.00044290471599737433,
+      "relative_closure_error": 0.018135703975376293,
+      "closes_within_tolerance": true
+    },
+    "controller_A": {
+      "n_steps": 50,
+      "final_c_gamma": 1.025717517805536,
+      "overshoot": 1.0,
+      "settling_time_steps": 0,
+      "oscillation_amplitude": 0.006563725578177859,
+      "is_stable": true
+    },
+    "controller_C": {
+      "n_steps": 50,
+      "final_c_gamma": 1.0257048598467868,
+      "overshoot": 1.0,
+      "settling_time_steps": 0,
+      "oscillation_amplitude": 0.006560121407100605,
+      "is_stable": true
+    },
+    "agreement": "diagnostics agree to >=5 significant figures at Phi_l=0.0466, consistent with the candidate's by-construction reduction to baseline in the weak-forcing limit"
+  },
+  "forcing_clip_summary": {
+    "per_case": {
+      "competing_64_A": {
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false
+      },
+      "directional_64_A": {
+        "forcing_clip_active_fraction": 0.04,
+        "forcing_clip_materially_altered_case": false
+      },
+      "directional_64_iso_seed1": {
+        "forcing_clip_active_fraction": 0.04,
+        "forcing_clip_materially_altered_case": false
+      },
+      "directional_64_iso_seed2": {
+        "forcing_clip_active_fraction": 0.04,
+        "forcing_clip_materially_altered_case": false
+      },
+      "near_ks_64_A": {
+        "forcing_clip_active_fraction": 0.04,
+        "forcing_clip_materially_altered_case": false
+      },
+      "overlap_128_spotcheck": {
+        "forcing_clip_active_fraction": 0.5,
+        "forcing_clip_materially_altered_case": true
+      },
+      "overlap_64_A": {
+        "forcing_clip_active_fraction": 0.04,
+        "forcing_clip_materially_altered_case": false
+      },
+      "pulsed_64_A": {
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false
+      },
+      "rapid_64_A": {
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false
+      },
+      "slow_64_A": {
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false
+      },
+      "strong_64_A": {
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false
+      },
+      "weak_128_spotcheck": {
+        "forcing_clip_active_fraction": 0.25,
+        "forcing_clip_materially_altered_case": true
+      },
+      "weak_64_A": {
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false
+      },
+      "weak_64_C": {
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false
+      },
+      "weak_64_D": {
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false
+      },
+      "weak_64_E": {
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false
+      },
+      "weak_64_F": {
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false
+      },
+      "weak_64_iso_seed1": {
+        "forcing_clip_active_fraction": 0.0,
+        "forcing_clip_materially_altered_case": false
+      },
+      "weak_64_iso_seed2": {
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false
+      }
+    },
+    "n_cases_materially_altered_by_clip": 2,
+    "n_cases_total": 19,
+    "materially_altered_case_ids": [
+      "overlap_128_spotcheck",
+      "weak_128_spotcheck"
+    ],
+    "interpretation": "17 of 19 minimal-matrix cases were NOT materially altered by clipping. Both cases that WERE (overlap_128_spotcheck, weak_128_spotcheck) are the 128^3 spot checks -- neither can be interpreted as a faithful test of its nominal requested forcing."
+  },
+  "controller_label_distribution": {
+    "label_counts": {
+      "controller_bounded": 19,
+      "controller_nonoscillatory": 9,
+      "controller_converged": 2,
+      "controller_target_achieved": 0,
+      "controller_budget_error_reduced": 0,
+      "controller_unstable": 0
+    },
+    "n_rows": 19,
+    "n_rows_with_only_controller_bounded": 10,
+    "legacy_label_deprecation_notice": "classification_labels' `controller_stable` entry predates the Milestone 5.7a richer controller_labels classification (controller.classify_controller_run) and only ever meant 'c_gamma stayed numerically bounded.' It must be read as DEPRECATED wherever controller_labels is also available -- controller_labels is authoritative for any claim about controller effectiveness (converged / target_achieved / budget_error_reduced), not merely boundedness.",
+    "interpretation": "10 of 19 rows show ONLY controller_bounded -- bounded but not shown to be nonoscillatory, converged, on-target, or better than a baseline. Controller effectiveness (as opposed to mere boundedness) remains mostly unestablished in this minimal matrix; see Milestone 5.7b (proposed next milestone) for a dedicated controller-effectiveness test."
+  },
+  "tier_status": {
+    "32": {
+      "complete_campaign_executed": true,
+      "spot_check_executed": false,
+      "status": "diagnostic_only -- ks=0 degeneracy; excluded from all k_f/k_s-based applicability conclusions in this report (see item 9)"
+    },
+    "64": {
+      "complete_campaign_executed": true,
+      "spot_check_executed": false,
+      "status": "resolved -- 17 rows in the 5.7a minimal corrected matrix (this report's primary evidence tier)"
+    },
+    "128": {
+      "complete_campaign_executed": false,
+      "spot_check_executed": true,
+      "status": "spot_check_only -- 2 row(s) executed (4 steps each, compute-limited in this environment); NOT a resolution-convergence claim, and BOTH spot checks (overlap_128_spotcheck, weak_128_spotcheck) were materially altered by the forcing-amplitude clip -- neither is a faithful test of its nominal requested forcing either."
+    }
+  },
+  "comparison_groups": {
+    "A": "original_fixed_gains -- baseline terminal operator, controller with preregistered fixed gains (GP=24, GI=8)",
+    "B": "original_retuned_calibration -- baseline operator, controller gains retuned on calibration cases only",
+    "C": "forcing_aware_candidate -- CANDIDATE gamma modification (terminal_operator_forcing_aware), not validated",
+    "D": "no_terminal_operator -- terminal operator disabled entirely",
+    "E": "hard_cutoff -- hard spectral truncation at kc, no smooth damping",
+    "F": "smooth_damping_no_backscatter -- smooth gamma(k), alpha_s=1.0 (all heat, no return)"
+  },
+  "minimal_matrix_n_rows": 19,
+  "minimal_matrix_audited_status_v1_counts_historical": {
+    "pipeline_status": {
+      "passed": 19
+    },
+    "resolution_status": {
+      "resolved": 19
+    },
+    "energy_budget_status": {
+      "closed": 18,
+      "partial": 1
+    },
+    "forcing_regime_status": {
+      "altered_by_clip": 2,
+      "measured": 17
+    },
+    "scientific_status": {
+      "candidate_behavior_observed": 17,
+      "assumption_challenged": 2
+    }
+  },
+  "minimal_matrix_audited_status_v2_counts_corrected": {
+    "pipeline_status": {
+      "passed": 19
+    },
+    "resolution_status": {
+      "resolved": 19
+    },
+    "energy_budget_status": {
+      "closed": 18,
+      "partial": 1
+    },
+    "forcing_regime_status": {
+      "measured": 17,
+      "altered_by_clip": 2
+    },
+    "scientific_status": {
+      "synthetic_run_valid": 16,
+      "assumption_challenged": 2,
+      "candidate_limit_consistency_observed": 1
+    },
+    "spectral_status": {
+      "persistent_pileup": 12,
+      "transient_pileup": 5,
+      "no_detected_pileup": 2
+    }
+  },
+  "minimal_matrix_audited_status_v2_per_case": {
+    "competing_64_A": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "persistent_pileup"
+    },
+    "directional_64_A": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "persistent_pileup"
+    },
+    "directional_64_iso_seed1": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "persistent_pileup"
+    },
+    "directional_64_iso_seed2": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "persistent_pileup"
+    },
+    "near_ks_64_A": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "transient_pileup"
+    },
+    "overlap_128_spotcheck": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "partial",
+      "forcing_regime_status": "altered_by_clip",
+      "scientific_status": "assumption_challenged",
+      "spectral_status": "transient_pileup"
+    },
+    "overlap_64_A": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "assumption_challenged",
+      "spectral_status": "transient_pileup"
+    },
+    "pulsed_64_A": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "transient_pileup"
+    },
+    "rapid_64_A": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "no_detected_pileup"
+    },
+    "slow_64_A": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "transient_pileup"
+    },
+    "strong_64_A": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "persistent_pileup"
+    },
+    "weak_128_spotcheck": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "altered_by_clip",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "persistent_pileup"
+    },
+    "weak_64_A": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "persistent_pileup"
+    },
+    "weak_64_C": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "candidate_limit_consistency_observed",
+      "spectral_status": "persistent_pileup"
+    },
+    "weak_64_D": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "persistent_pileup"
+    },
+    "weak_64_E": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "no_detected_pileup"
+    },
+    "weak_64_F": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "persistent_pileup"
+    },
+    "weak_64_iso_seed1": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "persistent_pileup"
+    },
+    "weak_64_iso_seed2": {
+      "pipeline_status": "passed",
+      "resolution_status": "resolved",
+      "energy_budget_status": "closed",
+      "forcing_regime_status": "measured",
+      "scientific_status": "synthetic_run_valid",
+      "spectral_status": "persistent_pileup"
+    }
+  },
+  "applicability_map_all_tiers": {
+    "n_runs": 19,
+    "by_material": {
+      "incompressible_newtonian_liquid": {
+        "pipeline_only": 19,
+        "energy_budget_valid": 18,
+        "controller_stable": 19,
+        "forcing_sensitive": 11,
+        "anisotropic_response_identified": 10,
+        "terminal_model_requires_extension": 17,
+        "forcing_overlap_invalidates_assumption": 2,
+        "terminal_model_not_supported": 1,
+        "terminal_model_supported_in_domain": 1
+      }
+    },
+    "by_phi_l_regime": {
+      "competing": {
+        "pipeline_only": 4,
+        "energy_budget_valid": 4,
+        "controller_stable": 4,
+        "forcing_sensitive": 4,
+        "anisotropic_response_identified": 4,
+        "terminal_model_requires_extension": 4
+      },
+      "forcing_dominated": {
+        "pipeline_only": 7,
+        "energy_budget_valid": 6,
+        "controller_stable": 7,
+        "forcing_sensitive": 7,
+        "anisotropic_response_identified": 5,
+        "terminal_model_requires_extension": 6,
+        "forcing_overlap_invalidates_assumption": 2,
+        "terminal_model_not_supported": 1
+      },
+      "nonlinear_dominated": {
+        "pipeline_only": 8,
+        "energy_budget_valid": 8,
+        "controller_stable": 8,
+        "terminal_model_requires_extension": 7,
+        "terminal_model_supported_in_domain": 1,
+        "anisotropic_response_identified": 1
+      }
+    },
+    "by_theta_f_regime": {
+      "rapid": {
+        "pipeline_only": 6,
+        "energy_budget_valid": 5,
+        "controller_stable": 6,
+        "forcing_sensitive": 6,
+        "anisotropic_response_identified": 4,
+        "terminal_model_requires_extension": 5,
+        "forcing_overlap_invalidates_assumption": 2,
+        "terminal_model_not_supported": 1
+      },
+      "resonant_or_competing": {
+        "pipeline_only": 13,
+        "energy_budget_valid": 13,
+        "controller_stable": 13,
+        "forcing_sensitive": 5,
+        "anisotropic_response_identified": 6,
+        "terminal_model_requires_extension": 12,
+        "terminal_model_supported_in_domain": 1
+      }
+    },
+    "by_k_f_vs_ks": {
+      "below": {
+        "pipeline_only": 16,
+        "energy_budget_valid": 16,
+        "controller_stable": 16,
+        "forcing_sensitive": 8,
+        "anisotropic_response_identified": 9,
+        "terminal_model_requires_extension": 15,
+        "terminal_model_supported_in_domain": 1
+      },
+      "near": {
+        "pipeline_only": 1,
+        "energy_budget_valid": 1,
+        "controller_stable": 1,
+        "forcing_sensitive": 1,
+        "anisotropic_response_identified": 1,
+        "terminal_model_requires_extension": 1
+      },
+      "overlap_or_above": {
+        "pipeline_only": 2,
+        "controller_stable": 2,
+        "forcing_sensitive": 2,
+        "forcing_overlap_invalidates_assumption": 2,
+        "terminal_model_not_supported": 1,
+        "energy_budget_valid": 1,
+        "terminal_model_requires_extension": 1
+      }
+    },
+    "by_grid_n": {
+      "64": {
+        "pipeline_only": 17,
+        "energy_budget_valid": 17,
+        "controller_stable": 17,
+        "forcing_sensitive": 10,
+        "anisotropic_response_identified": 10,
+        "terminal_model_requires_extension": 16,
+        "forcing_overlap_invalidates_assumption": 1,
+        "terminal_model_supported_in_domain": 1
+      },
+      "128": {
+        "pipeline_only": 2,
+        "controller_stable": 2,
+        "forcing_sensitive": 1,
+        "forcing_overlap_invalidates_assumption": 1,
+        "terminal_model_not_supported": 1,
+        "energy_budget_valid": 1,
+        "terminal_model_requires_extension": 1
+      }
+    }
+  },
+  "applicability_map_k_f_ks_grid64_and_above": {
+    "n_runs": 19,
+    "by_material": {
+      "incompressible_newtonian_liquid": {
+        "pipeline_only": 19,
+        "energy_budget_valid": 18,
+        "controller_stable": 19,
+        "forcing_sensitive": 11,
+        "anisotropic_response_identified": 10,
+        "terminal_model_requires_extension": 17,
+        "forcing_overlap_invalidates_assumption": 2,
+        "terminal_model_not_supported": 1,
+        "terminal_model_supported_in_domain": 1
+      }
+    },
+    "by_phi_l_regime": {
+      "competing": {
+        "pipeline_only": 4,
+        "energy_budget_valid": 4,
+        "controller_stable": 4,
+        "forcing_sensitive": 4,
+        "anisotropic_response_identified": 4,
+        "terminal_model_requires_extension": 4
+      },
+      "forcing_dominated": {
+        "pipeline_only": 7,
+        "energy_budget_valid": 6,
+        "controller_stable": 7,
+        "forcing_sensitive": 7,
+        "anisotropic_response_identified": 5,
+        "terminal_model_requires_extension": 6,
+        "forcing_overlap_invalidates_assumption": 2,
+        "terminal_model_not_supported": 1
+      },
+      "nonlinear_dominated": {
+        "pipeline_only": 8,
+        "energy_budget_valid": 8,
+        "controller_stable": 8,
+        "terminal_model_requires_extension": 7,
+        "terminal_model_supported_in_domain": 1,
+        "anisotropic_response_identified": 1
+      }
+    },
+    "by_theta_f_regime": {
+      "rapid": {
+        "pipeline_only": 6,
+        "energy_budget_valid": 5,
+        "controller_stable": 6,
+        "forcing_sensitive": 6,
+        "anisotropic_response_identified": 4,
+        "terminal_model_requires_extension": 5,
+        "forcing_overlap_invalidates_assumption": 2,
+        "terminal_model_not_supported": 1
+      },
+      "resonant_or_competing": {
+        "pipeline_only": 13,
+        "energy_budget_valid": 13,
+        "controller_stable": 13,
+        "forcing_sensitive": 5,
+        "anisotropic_response_identified": 6,
+        "terminal_model_requires_extension": 12,
+        "terminal_model_supported_in_domain": 1
+      }
+    },
+    "by_k_f_vs_ks": {
+      "below": {
+        "pipeline_only": 16,
+        "energy_budget_valid": 16,
+        "controller_stable": 16,
+        "forcing_sensitive": 8,
+        "anisotropic_response_identified": 9,
+        "terminal_model_requires_extension": 15,
+        "terminal_model_supported_in_domain": 1
+      },
+      "near": {
+        "pipeline_only": 1,
+        "energy_budget_valid": 1,
+        "controller_stable": 1,
+        "forcing_sensitive": 1,
+        "anisotropic_response_identified": 1,
+        "terminal_model_requires_extension": 1
+      },
+      "overlap_or_above": {
+        "pipeline_only": 2,
+        "controller_stable": 2,
+        "forcing_sensitive": 2,
+        "forcing_overlap_invalidates_assumption": 2,
+        "terminal_model_not_supported": 1,
+        "energy_budget_valid": 1,
+        "terminal_model_requires_extension": 1
+      }
+    },
+    "by_grid_n": {
+      "64": {
+        "pipeline_only": 17,
+        "energy_budget_valid": 17,
+        "controller_stable": 17,
+        "forcing_sensitive": 10,
+        "anisotropic_response_identified": 10,
+        "terminal_model_requires_extension": 16,
+        "forcing_overlap_invalidates_assumption": 1,
+        "terminal_model_supported_in_domain": 1
+      },
+      "128": {
+        "pipeline_only": 2,
+        "controller_stable": 2,
+        "forcing_sensitive": 1,
+        "forcing_overlap_invalidates_assumption": 1,
+        "terminal_model_not_supported": 1,
+        "energy_budget_valid": 1,
+        "terminal_model_requires_extension": 1
+      }
+    }
+  },
+  "original_campaign_dedup_correction": {
+    "original_n_runs_reported": 189,
+    "corrected_n_runs_after_dedup": 186,
+    "n_duplicates_dropped": 3,
+    "root_cause": "3 stale-shard duplicate rows (g32_A_highvisc_actual.json reran 3 of the 14 cases already present in g32_A_highvisc.json; assembler had no dedup logic) -- see audit item 4.",
+    "corrected_report_path": "runs/milestone_5_7a/original_campaign_dedup_corrected/milestone5_7_report.json"
+  },
+  "minimal_matrix_rows": [
+    {
+      "case_name": "moderate_steady_isotropic",
+      "forcing_type": "isotropic_random",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 1.3647280543031926,
+      "phi_l_regime": "competing",
+      "theta_f": 0.2993373361393608,
+      "theta_f_regime": "rapid",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 20.44429365696221,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.049125837154589444,
+        "mean_viscous_dissipation": 0.4179282222082744,
+        "mean_terminal_heat": 0.0002547910806256043,
+        "mean_return_power": 4.0117879543750714e-05,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 8.07438108013838e-05,
+        "total_unresolved_residual": 0.00403719054006919,
+        "relative_closure_error": 0.01930824740257976,
+        "input_vs_dissipation_only_gap": 7.512486249811062,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.00012515184872668243,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 42,
+        "kinetic_energy_oscillation_amplitude": 0.03156360341212906,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.00012515184872668243,
+          "final_energy_above_cutoff": 9.064950796793392e-05,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 1.6349246374897344,
+        "overshoot": 1.0,
+        "settling_time_steps": 44,
+        "oscillation_amplitude": 0.16109987398443448,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "forcing_sensitive",
+        "anisotropic_response_identified",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "competing_64_A",
+      "is_spot_check": false,
+      "target_phi_l": 1.0,
+      "initial_kinetic_energy": 0.3332552534464993,
+      "run_id": "abb6189aca3836d84cdf9fa4",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded"
+      ],
+      "component_energies": {
+        "Ex": 0.02439593533430825,
+        "Ey": 0.02547559589245071,
+        "Ez": 0.024122522523810266,
+        "b_ij": [
+          [
+            -0.0036320384624522473,
+            0.0015719479417891397,
+            -0.010624831750684485
+          ],
+          [
+            0.0015719479417891397,
+            0.010959141550227591,
+            -0.0025189248085713623
+          ],
+          [
+            -0.010624831750684485,
+            -0.0025189248085713623,
+            -0.0073271030877752885
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.00021519351553805628,
+          "III": -8.202057684066523e-07,
+          "anisotropy_magnitude": 0.02074577140229094
+        }
+      }
+    },
+    {
+      "case_name": "strong_directional_fixed",
+      "forcing_type": "fixed_direction",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 12.873442043892146,
+      "phi_l_regime": "forcing_dominated",
+      "theta_f": 0.3845516688393479,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 26.264305500354617,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.9799658087232178,
+        "mean_viscous_dissipation": 0.24618423029340245,
+        "mean_terminal_heat": 3.641547325922682e-06,
+        "mean_return_power": 6.386629244630353e-07,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.00031281192731831916,
+        "total_unresolved_residual": 0.015640596365915957,
+        "relative_closure_error": 0.03192069810332229,
+        "input_vs_dissipation_only_gap": 0.7487791210170051,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 4.190104870088764e-06,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 43,
+        "kinetic_energy_oscillation_amplitude": 0.07764563163186664,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.04,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 4.190104870088764e-06,
+          "final_energy_above_cutoff": 4.190104870088764e-06,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 13.73947092405654,
+        "overshoot": 1.0,
+        "settling_time_steps": 47,
+        "oscillation_amplitude": 3.2399575000609477,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "forcing_sensitive",
+        "anisotropic_response_identified",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "directional_64_A",
+      "is_spot_check": false,
+      "target_phi_l": null,
+      "initial_kinetic_energy": null,
+      "run_id": "d62cd637b763ada3cc6921e2",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded"
+      ],
+      "component_energies": {
+        "Ex": 0.15378670306709538,
+        "Ey": 0.021709587272179497,
+        "Ez": 0.019069658843679654,
+        "b_ij": [
+          [
+            0.4570757989577771,
+            -0.013409643894876921,
+            0.0027000587469269205
+          ],
+          [
+            -0.013409643894876921,
+            -0.22175375138004144,
+            0.006049409978143891
+          ],
+          [
+            0.0027000587469269205,
+            0.006049409978143891,
+            -0.23532204757773562
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.15695844338780274,
+          "III": 0.023878603371702955,
+          "anisotropy_magnitude": 0.5602828631821658
+        }
+      }
+    },
+    {
+      "case_name": "strong_directional_fixed",
+      "forcing_type": "isotropic_random",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 13.015409512404528,
+      "phi_l_regime": "forcing_dominated",
+      "theta_f": 0.3831483697921511,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 26.168462268169005,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.9799496974872304,
+        "mean_viscous_dissipation": 0.25410984573619533,
+        "mean_terminal_heat": 1.6505384514171082e-05,
+        "mean_return_power": 3.027142839090382e-06,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.0003122469255621018,
+        "total_unresolved_residual": 0.01561234627810509,
+        "relative_closure_error": 0.03186356670783815,
+        "input_vs_dissipation_only_gap": 0.7406740858512068,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 9.67198445099475e-06,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 43,
+        "kinetic_energy_oscillation_amplitude": 0.07621329717525703,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.04,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 9.67198445099475e-06,
+          "final_energy_above_cutoff": 9.67198445099475e-06,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 13.739059152632466,
+        "overshoot": 1.0,
+        "settling_time_steps": 47,
+        "oscillation_amplitude": 3.239856784353925,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "forcing_sensitive",
+        "anisotropic_response_identified",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "directional_64_iso_seed1",
+      "is_spot_check": false,
+      "target_phi_l": null,
+      "initial_kinetic_energy": null,
+      "run_id": "d889515edeefcbf67c2ff252",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded"
+      ],
+      "component_energies": {
+        "Ex": 0.0524431346126023,
+        "Ey": 0.06176567899688393,
+        "Ez": 0.07019591782552251,
+        "b_ij": [
+          [
+            -0.04894185267826534,
+            -0.01029604850308697,
+            -0.0020720956606982786
+          ],
+          [
+            -0.01029604850308697,
+            0.0016129476879457316,
+            0.0016428994458896368
+          ],
+          [
+            -0.0020720956606982786,
+            0.0016428994458896368,
+            0.04732890499031961
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.0024319672094981976,
+          "III": -8.55817100862774e-06,
+          "anisotropy_magnitude": 0.06974191292900128
+        }
+      }
+    },
+    {
+      "case_name": "strong_directional_fixed",
+      "forcing_type": "isotropic_random",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 13.000252318321797,
+      "phi_l_regime": "forcing_dominated",
+      "theta_f": 0.38329721815093715,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 26.17862838909674,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.97994907672168,
+        "mean_viscous_dissipation": 0.25358146603685067,
+        "mean_terminal_heat": 1.8847011920105976e-05,
+        "mean_return_power": 3.4241655119833935e-06,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.00031286233948212336,
+        "total_unresolved_residual": 0.01564311697410617,
+        "relative_closure_error": 0.0319263874944168,
+        "input_vs_dissipation_only_gap": 0.7412107230131132,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 1.0724772565824444e-05,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 43,
+        "kinetic_energy_oscillation_amplitude": 0.0762895812985997,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.04,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 1.0724772565824444e-05,
+          "final_energy_above_cutoff": 1.0724772565824444e-05,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 13.739017006389922,
+        "overshoot": 1.0,
+        "settling_time_steps": 47,
+        "oscillation_amplitude": 3.239839792294068,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "forcing_sensitive",
+        "anisotropic_response_identified",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "directional_64_iso_seed2",
+      "is_spot_check": false,
+      "target_phi_l": null,
+      "initial_kinetic_energy": null,
+      "run_id": "a6de3b9b3cc46ef69612722b",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded"
+      ],
+      "component_energies": {
+        "Ex": 0.06336624870337616,
+        "Ey": 0.0671628812994694,
+        "Ez": 0.06290961943898651,
+        "b_ij": [
+          [
+            -0.0057554882210194,
+            0.0015333052487373283,
+            0.000859686225488939
+          ],
+          [
+            0.0015333052487373283,
+            0.01387156482315316,
+            -0.018438734333588995
+          ],
+          [
+            0.000859686225488939,
+            -0.018438734333588995,
+            -0.008116076602133593
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.0004887853365752412,
+          "III": 2.5649777582728628e-06,
+          "anisotropy_magnitude": 0.03126612660932727
+        }
+      }
+    },
+    {
+      "case_name": "forcing_near_ks",
+      "forcing_type": "narrow_band",
+      "split": "validation",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 54.98999779275092,
+      "phi_l_regime": "forcing_dominated",
+      "theta_f": 0.11441313028946058,
+      "theta_f_regime": "rapid",
+      "k_f_over_ks": 0.9000000000000001,
+      "k_f_vs_ks": "near",
+      "l_over_L": 0.12400793650793648,
+      "l_over_lc": 1.9841269841269837,
+      "reynolds_number": 3.472998299834182,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.04899718730748539,
+        "mean_viscous_dissipation": 0.022333756802383174,
+        "mean_terminal_heat": 6.13888663421576e-07,
+        "mean_return_power": 9.495336393223959e-08,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 1.3315679926960638e-05,
+        "total_unresolved_residual": 0.0006657839963480318,
+        "relative_closure_error": 0.027892521011892494,
+        "input_vs_dissipation_only_gap": 0.5441703510267715,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 2.0079376291270536e-06,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 40,
+        "kinetic_energy_oscillation_amplitude": 0.002286988606331364,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.04,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 2.0079376291270536e-06,
+          "final_energy_above_cutoff": 1.6680496342728933e-07,
+          "monotonically_growing": false,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 1.6369516738326533,
+        "overshoot": 1.0,
+        "settling_time_steps": 44,
+        "oscillation_amplitude": 0.1619960102436333,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "forcing_sensitive",
+        "anisotropic_response_identified",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "near_ks_64_A",
+      "is_spot_check": false,
+      "target_phi_l": null,
+      "initial_kinetic_energy": null,
+      "run_id": "7a857ca16f3168291780ecf3",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded"
+      ],
+      "component_energies": {
+        "Ex": 0.002358108930692342,
+        "Ey": 0.0023628603914400553,
+        "Ez": 0.0023500114216098767,
+        "b_ij": [
+          [
+            0.00015773617343034507,
+            0.013325028497613342,
+            0.00869837695935808
+          ],
+          [
+            0.013325028497613342,
+            0.0008297024705976042,
+            -0.006637504406644909
+          ],
+          [
+            0.00869837695935808,
+            -0.006637504406644909,
+            -0.0009874386440278382
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.00029811877192045165,
+          "III": -1.433184019439929e-06,
+          "anisotropy_magnitude": 0.024417975834227196
+        }
+      }
+    },
+    {
+      "case_name": "forcing_overlap_terminal_layer",
+      "forcing_type": "narrow_band",
+      "split": "validation",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 128,
+      "group": "A",
+      "phi_l": 145.55038663888936,
+      "phi_l_regime": "forcing_dominated",
+      "theta_f": 0.17566909154913385,
+      "theta_f_regime": "rapid",
+      "k_f_over_ks": 1.3928571428571428,
+      "k_f_vs_ks": "overlap_or_above",
+      "l_over_L": 0.04006410256410256,
+      "l_over_lc": 1.282051282051282,
+      "reynolds_number": 0.5565906858308872,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 15,
+      "energy_budget": {
+        "n_samples": 4,
+        "mean_power_input": 0.03682185212336351,
+        "mean_viscous_dissipation": 0.1342167693181265,
+        "mean_terminal_heat": 0.00010035702478423155,
+        "mean_return_power": 3.33983336534858e-06,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.00034727708133017404,
+        "total_unresolved_residual": 0.0013891083253206962,
+        "relative_closure_error": 0.25855011254750787,
+        "input_vs_dissipation_only_gap": 2.6477558459827275,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.0012271290997500474,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 3,
+        "kinetic_energy_oscillation_amplitude": 0.00017258847546261827,
+        "closes_within_tolerance": false,
+        "forcing_clip_active_fraction": 0.5,
+        "forcing_clip_materially_altered_case": true,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.0012271290997500474,
+          "final_energy_above_cutoff": 0.00021961262884057995,
+          "monotonically_growing": false,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 4,
+        "final_c_gamma": 1.0354819970626994,
+        "overshoot": 1.0,
+        "settling_time_steps": 0,
+        "oscillation_amplitude": 0.006054000866067666,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "controller_stable",
+        "forcing_sensitive",
+        "forcing_overlap_invalidates_assumption",
+        "terminal_model_not_supported"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff",
+        "forcing injects energy at or above k_s; original cascade-arrival assumption directly challenged (H3)"
+      ],
+      "case_id": "overlap_128_spotcheck",
+      "is_spot_check": true,
+      "target_phi_l": null,
+      "initial_kinetic_energy": null,
+      "run_id": "60643ac4172984c85f2e5a56",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "partial",
+        "forcing_regime_status": "altered_by_clip",
+        "scientific_status": "assumption_challenged"
+      },
+      "controller_labels": [
+        "controller_bounded",
+        "controller_nonoscillatory"
+      ],
+      "component_energies": {
+        "Ex": 0.0004226767364523787,
+        "Ey": 0.0004272097577514696,
+        "Ez": 0.00042386352367945745,
+        "b_ij": [
+          [
+            -0.0014968422494900935,
+            -0.0013279544474502352,
+            -0.00024771687278084736
+          ],
+          [
+            -0.0013279544474502352,
+            0.002061957542814352,
+            0.0030525373114546773
+          ],
+          [
+            -0.00024771687278084736,
+            0.0030525373114546773,
+            -0.0005651152933241477
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -1.4548591162874331e-05,
+          "III": 1.8570074272107565e-08,
+          "anisotropy_magnitude": 0.0053941804127919804
+        }
+      }
+    },
+    {
+      "case_name": "forcing_overlap_terminal_layer",
+      "forcing_type": "narrow_band",
+      "split": "validation",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 73.09350634430179,
+      "phi_l_regime": "forcing_dominated",
+      "theta_f": 0.1392259577654135,
+      "theta_f_regime": "rapid",
+      "k_f_over_ks": 1.3928571428571428,
+      "k_f_vs_ks": "overlap_or_above",
+      "l_over_L": 0.08012820512820512,
+      "l_over_lc": 1.282051282051282,
+      "reynolds_number": 1.7644964321214016,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.048990550694260226,
+        "mean_viscous_dissipation": 0.039806113862721086,
+        "mean_terminal_heat": 1.6793615306255742e-05,
+        "mean_return_power": 3.174371248081212e-06,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 1.3346785561461108e-05,
+        "total_unresolved_residual": 0.0006673392780730554,
+        "relative_closure_error": 0.028050316120260193,
+        "input_vs_dissipation_only_gap": 0.1871308463839532,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.0009297204295883521,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0028568630573778,
+        "kinetic_energy_settling_time_steps": 29,
+        "kinetic_energy_oscillation_amplitude": 0.0005118558827090195,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.04,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.0009297204295883521,
+          "final_energy_above_cutoff": 7.2933623335309405e-06,
+          "monotonically_growing": false,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 1.6366045090175116,
+        "overshoot": 1.0,
+        "settling_time_steps": 44,
+        "oscillation_amplitude": 0.16194393993601375,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "forcing_sensitive",
+        "forcing_overlap_invalidates_assumption",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff",
+        "forcing injects energy at or above k_s; original cascade-arrival assumption directly challenged (H3)"
+      ],
+      "case_id": "overlap_64_A",
+      "is_spot_check": false,
+      "target_phi_l": null,
+      "initial_kinetic_energy": null,
+      "run_id": "56b00546e7c9f264074307de",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "assumption_challenged"
+      },
+      "controller_labels": [
+        "controller_bounded"
+      ],
+      "component_energies": {
+        "Ex": 0.0012988375220230408,
+        "Ey": 0.001320985428838113,
+        "Ez": 0.0013043781987352352,
+        "b_ij": [
+          [
+            -0.002351950751395937,
+            0.007768934140047193,
+            0.0017608039176450346
+          ],
+          [
+            0.007768934140047193,
+            0.003291976756588766,
+            -0.000705838905899682
+          ],
+          [
+            0.0017608039176450346,
+            -0.000705838905899682,
+            -0.0009400260051926623
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -7.258119276654212e-05,
+          "III": 3.5668813600912585e-08,
+          "anisotropy_magnitude": 0.012048335384321115
+        }
+      }
+    },
+    {
+      "case_name": "pulsed",
+      "forcing_type": "pulsed",
+      "split": "validation",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 3.3013438195895355,
+      "phi_l_regime": "competing",
+      "theta_f": 0.22298689683034428,
+      "theta_f_regime": "rapid",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 15.229672513461118,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.032154136463207625,
+        "mean_viscous_dissipation": 0.3323108645253728,
+        "mean_terminal_heat": 0.0003348593546124746,
+        "mean_return_power": 4.315717306116553e-05,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.0005301108823140202,
+        "total_unresolved_residual": 0.02650554411570101,
+        "relative_closure_error": 0.053120667049897013,
+        "input_vs_dissipation_only_gap": 9.345347767638392,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.0004031858401914601,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 44,
+        "kinetic_energy_oscillation_amplitude": 0.03626727848096018,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.0004031858401914601,
+          "final_energy_above_cutoff": 4.391043026896775e-06,
+          "monotonically_growing": false,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 2.4295823195679165,
+        "overshoot": 1.0,
+        "settling_time_steps": 47,
+        "oscillation_amplitude": 0.38020013252679985,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "forcing_sensitive",
+        "anisotropic_response_identified",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "pulsed_64_A",
+      "is_spot_check": false,
+      "target_phi_l": null,
+      "initial_kinetic_energy": 0.5,
+      "run_id": "8957eb8bf3c3215171125776",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded"
+      ],
+      "component_energies": {
+        "Ex": 0.010929133110068904,
+        "Ey": 0.011759471873203569,
+        "Ez": 0.011069512664900048,
+        "b_ij": [
+          [
+            -0.009585035991270252,
+            0.00825731381636368,
+            -0.016556852153237874
+          ],
+          [
+            0.00825731381636368,
+            0.015011677954349156,
+            -0.00025696438374412945
+          ],
+          [
+            -0.016556852153237874,
+            -0.00025696438374412945,
+            -0.005426641963078793
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.0005157145318578442,
+          "III": -2.8934150400695753e-06,
+          "anisotropy_magnitude": 0.03211586934391919
+        }
+      }
+    },
+    {
+      "case_name": "rapid_pulsed",
+      "forcing_type": "periodic",
+      "split": "validation",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 162.36000305616557,
+      "phi_l_regime": "forcing_dominated",
+      "theta_f": 0.006086251748163744,
+      "theta_f_regime": "rapid",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 4.15681917980754,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.024000573402947475,
+        "mean_viscous_dissipation": 0.006278786826689704,
+        "mean_terminal_heat": 9.411217637521261e-12,
+        "mean_return_power": 3.290043470074408e-12,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 1.2601624352828117e-05,
+        "total_unresolved_residual": 0.0006300812176414059,
+        "relative_closure_error": 0.052522298082122214,
+        "input_vs_dissipation_only_gap": 0.7383901321570161,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 2.139213927570807e-11,
+        "any_pile_up": false,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 41,
+        "kinetic_energy_oscillation_amplitude": 0.0017571537318222313,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 2.139213927570807e-11,
+          "final_energy_above_cutoff": 2.0884060764504576e-11,
+          "monotonically_growing": false,
+          "pile_up_detected": false
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 1.3120080274774044,
+        "overshoot": 1.0,
+        "settling_time_steps": 40,
+        "oscillation_amplitude": 0.0808329145064055,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "forcing_sensitive",
+        "anisotropic_response_identified",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [],
+      "case_id": "rapid_64_A",
+      "is_spot_check": false,
+      "target_phi_l": null,
+      "initial_kinetic_energy": null,
+      "run_id": "8d774b712c5c15073ae5c5ab",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded"
+      ],
+      "component_energies": {
+        "Ex": 0.0016451719416796333,
+        "Ey": 0.0015102366950805624,
+        "Ez": 0.0016144683382691477,
+        "b_ij": [
+          [
+            0.011575340473607476,
+            0.014544227650821332,
+            -0.01104593419779904
+          ],
+          [
+            0.014544227650821332,
+            -0.016713700796317732,
+            0.004849150220915332
+          ],
+          [
+            -0.01104593419779904,
+            0.004849150220915332,
+            0.0051383603227102
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.0005769310022234103,
+          "III": -1.8720216009914718e-06,
+          "anisotropy_magnitude": 0.03396854433806107
+        }
+      }
+    },
+    {
+      "case_name": "slow_periodic",
+      "forcing_type": "periodic",
+      "split": "validation",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 2.9320821607391063,
+      "phi_l_regime": "competing",
+      "theta_f": 1.159900907870423,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 15.843900449785455,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.037093675571008934,
+        "mean_viscous_dissipation": 0.3381663284871581,
+        "mean_terminal_heat": 0.0003435409507888334,
+        "mean_return_power": 4.4248765267957626e-05,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.0005253479055557592,
+        "total_unresolved_residual": 0.02626739527778796,
+        "relative_closure_error": 0.05173142183693033,
+        "input_vs_dissipation_only_gap": 8.125810915931822,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.00040318450940155225,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 46,
+        "kinetic_energy_oscillation_amplitude": 0.040820886261036714,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.00040318450940155225,
+          "final_energy_above_cutoff": 5.037449445646552e-06,
+          "monotonically_growing": false,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 2.700796201528149,
+        "overshoot": 1.0,
+        "settling_time_steps": 45,
+        "oscillation_amplitude": 0.38184895569349375,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "forcing_sensitive",
+        "anisotropic_response_identified",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "slow_64_A",
+      "is_spot_check": false,
+      "target_phi_l": null,
+      "initial_kinetic_energy": 0.5,
+      "run_id": "50714261be212ab668bcdb03",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded"
+      ],
+      "component_energies": {
+        "Ex": 0.010651380054318782,
+        "Ey": 0.011549602057518605,
+        "Ez": 0.0108607306090235,
+        "b_ij": [
+          [
+            -0.011166718909934148,
+            0.006790896199415587,
+            -0.01608966808398486
+          ],
+          [
+            0.006790896199415587,
+            0.01600132319313191,
+            0.0007648685831926137
+          ],
+          [
+            -0.01608966808398486,
+            0.0007648685831926137,
+            -0.004834604283197819
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.0005076343910534215,
+          "III": -3.2161805001925965e-06,
+          "anisotropy_magnitude": 0.03186328266369997
+        }
+      }
+    },
+    {
+      "case_name": "strong_isotropic",
+      "forcing_type": "isotropic_random",
+      "split": "validation",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 8.724135651085428,
+      "phi_l_regime": "competing",
+      "theta_f": 0.4378030584669119,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 29.9012959981934,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.9804146457494778,
+        "mean_viscous_dissipation": 0.47362610781186903,
+        "mean_terminal_heat": 0.0006061383571945715,
+        "mean_return_power": 9.443790968712408e-05,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.00034830115293023415,
+        "total_unresolved_residual": 0.017415057646511706,
+        "relative_closure_error": 0.035525902682122364,
+        "input_vs_dissipation_only_gap": 0.5162942044724996,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 8.34221029527105e-05,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 39,
+        "kinetic_energy_oscillation_amplitude": 0.05693530060892035,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 8.34221029527105e-05,
+          "final_energy_above_cutoff": 8.34221029527105e-05,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 13.736944016656965,
+        "overshoot": 1.0,
+        "settling_time_steps": 47,
+        "oscillation_amplitude": 3.23681505666928,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "forcing_sensitive",
+        "anisotropic_response_identified",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "strong_64_A",
+      "is_spot_check": false,
+      "target_phi_l": 50.0,
+      "initial_kinetic_energy": 0.18091878615559565,
+      "run_id": "fbd1e7dd30a5a7a87c2c7ef8",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded"
+      ],
+      "component_energies": {
+        "Ex": 0.07334413788446806,
+        "Ey": 0.0718499854014597,
+        "Ez": 0.0735806377932635,
+        "b_ij": [
+          [
+            0.0019162060681482962,
+            0.01335493776229127,
+            -0.014501473142469953
+          ],
+          [
+            0.01335493776229127,
+            -0.004913432212053037,
+            0.004922671493378928
+          ],
+          [
+            -0.014501473142469953,
+            0.004922671493378928,
+            0.002997226143904852
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.000431278293746054,
+          "III": -1.4826743497412557e-06,
+          "anisotropy_magnitude": 0.029369313704819662
+        }
+      }
+    },
+    {
+      "case_name": "weak_isotropic",
+      "forcing_type": "isotropic_random",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 128,
+      "group": "A",
+      "phi_l": 0.011190674183618049,
+      "phi_l_regime": "nonlinear_dominated",
+      "theta_f": 0.8680955113853268,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.09300595238095237,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 14.822407209495037,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 15,
+      "energy_budget": {
+        "n_samples": 4,
+        "mean_power_input": 0.002149468395758432,
+        "mean_viscous_dissipation": 3.2843511406420816,
+        "mean_terminal_heat": 0.0003260339623781468,
+        "mean_return_power": 9.114333030585797e-05,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.0018774933681335415,
+        "total_unresolved_residual": 0.007509973472534166,
+        "relative_closure_error": 0.057159144364305116,
+        "input_vs_dissipation_only_gap": 1527.134668593475,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 4.917576949363152e-05,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 2,
+        "kinetic_energy_oscillation_amplitude": 0.01465111982023587,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.25,
+        "forcing_clip_materially_altered_case": true,
+        "pile_up": {
+          "max_energy_above_cutoff": 4.917576949363152e-05,
+          "final_energy_above_cutoff": 4.917576949363152e-05,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 4,
+        "final_c_gamma": 1.0016749733949861,
+        "overshoot": 1.0,
+        "settling_time_steps": 0,
+        "oscillation_amplitude": 0.00025948795117658463,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "weak_128_spotcheck",
+      "is_spot_check": true,
+      "target_phi_l": 0.03,
+      "initial_kinetic_energy": 0.4684639444003183,
+      "run_id": "c2fef383dbae1b647f3a836d",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "altered_by_clip",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded",
+        "controller_nonoscillatory"
+      ],
+      "component_energies": {
+        "Ex": 0.058433104954691575,
+        "Ey": 0.05741012098403125,
+        "Ez": 0.05767370905273073,
+        "b_ij": [
+          [
+            0.003424026733968799,
+            -0.0010473711279904304,
+            -0.0004139254986938024
+          ],
+          [
+            -0.0010473711279904304,
+            -0.002471559023759784,
+            -0.002357518276321229
+          ],
+          [
+            -0.0004139254986938024,
+            -0.002357518276321229,
+            -0.0009524677102089041
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -1.6196091932331507e-05,
+          "III": -1.1545758783620309e-08,
+          "anisotropy_magnitude": 0.00569141316938623
+        }
+      }
+    },
+    {
+      "case_name": "weak_isotropic",
+      "forcing_type": "isotropic_random",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 0.046614957858296474,
+      "phi_l_regime": "nonlinear_dominated",
+      "theta_f": 0.3398791306250854,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 23.213237760415055,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.0024833613391243865,
+        "mean_viscous_dissipation": 0.5740853610550389,
+        "mean_terminal_heat": 0.000442044092541369,
+        "mean_return_power": 6.378524869740192e-05,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.00010419535902521815,
+        "total_unresolved_residual": 0.005209767951260907,
+        "relative_closure_error": 0.018135837923772016,
+        "input_vs_dissipation_only_gap": 230.35070845153533,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.00028210429170684567,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 44,
+        "kinetic_energy_oscillation_amplitude": 0.05000323366322726,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.00028210429170684567,
+          "final_energy_above_cutoff": 0.0001943571013952996,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 1.025717517805536,
+        "overshoot": 1.0,
+        "settling_time_steps": 0,
+        "oscillation_amplitude": 0.006563725578177859,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "weak_64_A",
+      "is_spot_check": false,
+      "target_phi_l": 0.03,
+      "initial_kinetic_energy": 0.4684639444003183,
+      "run_id": "831110fee917ee108a62efc0",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded",
+        "controller_nonoscillatory"
+      ],
+      "component_energies": {
+        "Ex": 0.030248326957173107,
+        "Ey": 0.03108513475374782,
+        "Ez": 0.029632146594739592,
+        "b_ij": [
+          [
+            -0.0008084646430324138,
+            -0.0018756590437134634,
+            -0.009542588647578029
+          ],
+          [
+            -0.0018756590437134634,
+            0.008390702076799705,
+            -0.002551656982860512
+          ],
+          [
+            -0.009542588647578029,
+            -0.002551656982860512,
+            -0.007582237433767125
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.00016536395876466192,
+          "III": -7.720344184944591e-07,
+          "anisotropy_magnitude": 0.018185926358844737
+        }
+      }
+    },
+    {
+      "case_name": "weak_isotropic",
+      "forcing_type": "isotropic_random",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "C",
+      "phi_l": 0.04661498259555004,
+      "phi_l_regime": "nonlinear_dominated",
+      "theta_f": 0.3398790705036591,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 23.213233654211294,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.0024833613391243865,
+        "mean_viscous_dissipation": 0.5740845606177295,
+        "mean_terminal_heat": 0.00044290471599737433,
+        "mean_return_power": 6.390465062855849e-05,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.00010419460037015733,
+        "total_unresolved_residual": 0.005209730018507866,
+        "relative_closure_error": 0.018135703975376293,
+        "input_vs_dissipation_only_gap": 230.3507326872942,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.0002820647128882087,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 44,
+        "kinetic_energy_oscillation_amplitude": 0.05000322778473648,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.0002820647128882087,
+          "final_energy_above_cutoff": 0.00019431678795081754,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 1.0257048598467868,
+        "overshoot": 1.0,
+        "settling_time_steps": 0,
+        "oscillation_amplitude": 0.006560121407100605,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "weak_64_C",
+      "is_spot_check": false,
+      "target_phi_l": 0.03,
+      "initial_kinetic_energy": 0.4684639444003183,
+      "run_id": "8df06e31e16e529b4320dbf4",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded",
+        "controller_nonoscillatory"
+      ],
+      "component_energies": {
+        "Ex": 0.030248303336750302,
+        "Ey": 0.031085113471459397,
+        "Ez": 0.02963212509498747,
+        "b_ij": [
+          [
+            -0.0008084815719965888,
+            -0.0018756615262146073,
+            -0.009542578433735103
+          ],
+          [
+            -0.0018756615262146073,
+            0.008390717566503614,
+            -0.0025516610895041174
+          ],
+          [
+            -0.009542578433735103,
+            -0.0025516610895041174,
+            -0.007582235994506914
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.00016536392684534068,
+          "III": -7.720330085789473e-07,
+          "anisotropy_magnitude": 0.018185924603678565
+        }
+      }
+    },
+    {
+      "case_name": "weak_isotropic",
+      "forcing_type": "isotropic_random",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "D",
+      "phi_l": 0.04660350593038148,
+      "phi_l_regime": "nonlinear_dominated",
+      "theta_f": 0.3399069679623004,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 23.215139009033056,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.0024833613391243865,
+        "mean_viscous_dissipation": 0.574524895520945,
+        "mean_terminal_heat": 0.0,
+        "mean_return_power": 0.0,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.00010461082397154524,
+        "total_unresolved_residual": 0.005230541198577262,
+        "relative_closure_error": 0.018208231668827922,
+        "input_vs_dissipation_only_gap": 230.34969787502527,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.00030492222299348235,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 44,
+        "kinetic_energy_oscillation_amplitude": 0.05001515481337972,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.00030492222299348235,
+          "final_energy_above_cutoff": 0.00021129282864024377,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 0.0,
+        "overshoot": 0.0,
+        "settling_time_steps": 0,
+        "oscillation_amplitude": 0.0,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "weak_64_D",
+      "is_spot_check": false,
+      "target_phi_l": 0.03,
+      "initial_kinetic_energy": 0.4684639444003183,
+      "run_id": "df9de2cfe1660ed97829f654",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded",
+        "controller_nonoscillatory",
+        "controller_converged"
+      ],
+      "component_energies": {
+        "Ex": 0.030256912450382117,
+        "Ey": 0.031091149202648695,
+        "Ez": 0.02963855814214308,
+        "b_ij": [
+          [
+            -0.0007908944725921185,
+            -0.0018677394472993382,
+            -0.009556987995070449
+          ],
+          [
+            -0.0018677394472993382,
+            0.008377890499798146,
+            -0.002549854910541669
+          ],
+          [
+            -0.009556987995070449,
+            -0.002549854910541669,
+            -0.007586996027205917
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.00016551476625084377,
+          "III": -7.74352094440222e-07,
+          "anisotropy_magnitude": 0.018194217007106613
+        }
+      }
+    },
+    {
+      "case_name": "weak_isotropic",
+      "forcing_type": "isotropic_random",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "E",
+      "phi_l": 0.046535319037937,
+      "phi_l_regime": "nonlinear_dominated",
+      "theta_f": 0.34007290564326526,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 23.22647230518032,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.0024833613391243865,
+        "mean_viscous_dissipation": 0.5740489816361638,
+        "mean_terminal_heat": 0.00026458755770458753,
+        "mean_return_power": 0.0,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.00010654574479533434,
+        "total_unresolved_residual": 0.005327287239766717,
+        "relative_closure_error": 0.018551841800444762,
+        "input_vs_dissipation_only_gap": 230.2646009848759,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.0,
+        "any_pile_up": false,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 44,
+        "kinetic_energy_oscillation_amplitude": 0.05000565799327533,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.0,
+          "final_energy_above_cutoff": 0.0,
+          "monotonically_growing": false,
+          "pile_up_detected": false
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 0.0,
+        "overshoot": 0.0,
+        "settling_time_steps": 0,
+        "oscillation_amplitude": 0.0,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "terminal_model_supported_in_domain"
+      ],
+      "classification_notes": [],
+      "case_id": "weak_64_E",
+      "is_spot_check": false,
+      "target_phi_l": 0.03,
+      "initial_kinetic_energy": 0.4684639444003183,
+      "run_id": "90dc2f4aa9eb69710aa0d2d7",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded",
+        "controller_nonoscillatory",
+        "controller_converged"
+      ],
+      "component_energies": {
+        "Ex": 0.0303233186373227,
+        "Ey": 0.031156398018521013,
+        "Ez": 0.029709385959693035,
+        "b_ij": [
+          [
+            -0.0008010705127511897,
+            -0.0018574529932395263,
+            -0.009504817117664493
+          ],
+          [
+            -0.0018574529932395263,
+            0.00833466344342848,
+            -0.0025543115011479136
+          ],
+          [
+            -0.009504817117664493,
+            -0.0025543115011479136,
+            -0.007533592930677291
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.00016374786287062565,
+          "III": -7.616402039992895e-07,
+          "anisotropy_magnitude": 0.01809684297719498
+        }
+      }
+    },
+    {
+      "case_name": "weak_isotropic",
+      "forcing_type": "isotropic_random",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "F",
+      "phi_l": 0.04661602118791617,
+      "phi_l_regime": "nonlinear_dominated",
+      "theta_f": 0.3398765463469377,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 23.213061258071495,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.0024833613391243865,
+        "mean_viscous_dissipation": 0.5740573367311793,
+        "mean_terminal_heat": 0.0005054394306920467,
+        "mean_return_power": 0.0,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.0001044945186433568,
+        "total_unresolved_residual": 0.00522472593216784,
+        "relative_closure_error": 0.01818678880337309,
+        "input_vs_dissipation_only_gap": 230.36495165236713,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.0002820666129063354,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 44,
+        "kinetic_energy_oscillation_amplitude": 0.05000130511770884,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.0002820666129063354,
+          "final_energy_above_cutoff": 0.00019441283236880326,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 1.0257226294448214,
+        "overshoot": 1.0,
+        "settling_time_steps": 0,
+        "oscillation_amplitude": 0.0065647255905264545,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "weak_64_F",
+      "is_spot_check": false,
+      "target_phi_l": 0.03,
+      "initial_kinetic_energy": 0.4684639444003183,
+      "run_id": "6046b470ccb4f2a36092ebc8",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded",
+        "controller_nonoscillatory"
+      ],
+      "component_energies": {
+        "Ex": 0.030249382904670927,
+        "Ey": 0.03108406846886451,
+        "Ez": 0.029631639232553804,
+        "b_ij": [
+          [
+            -0.0007949639091618943,
+            -0.0018677446808975757,
+            -0.009555140989580015
+          ],
+          [
+            -0.0018677446808975757,
+            0.008380924979995208,
+            -0.0025497478572908392
+          ],
+          [
+            -0.009555140989580015,
+            -0.0025497478572908392,
+            -0.007585961070833147
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.00016549974191221937,
+          "III": -7.74019609957592e-07,
+          "anisotropy_magnitude": 0.018193391212867345
+        }
+      }
+    },
+    {
+      "case_name": "weak_isotropic",
+      "forcing_type": "isotropic_random",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 0.046883078633864594,
+      "phi_l_regime": "nonlinear_dominated",
+      "theta_f": 0.33922997722683235,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 23.168901551395933,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.0025,
+        "mean_viscous_dissipation": 0.5764318850607705,
+        "mean_terminal_heat": 0.00045487730132177684,
+        "mean_return_power": 6.472284598429092e-05,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.00010635495956694875,
+        "total_unresolved_residual": 0.005317747978347437,
+        "relative_closure_error": 0.01843602011796439,
+        "input_vs_dissipation_only_gap": 229.7547049448369,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.00030013589615161866,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 44,
+        "kinetic_energy_oscillation_amplitude": 0.05018854584035151,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.0,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.00030013589615161866,
+          "final_energy_above_cutoff": 0.0002071723243729112,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 1.0257750851427458,
+        "overshoot": 1.0,
+        "settling_time_steps": 0,
+        "oscillation_amplitude": 0.006511999833556326,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "anisotropic_response_identified",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "weak_64_iso_seed1",
+      "is_spot_check": false,
+      "target_phi_l": 0.03,
+      "initial_kinetic_energy": 0.4684639444003183,
+      "run_id": "7699e9ab727aa2d0c3294ab7",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded",
+        "controller_nonoscillatory"
+      ],
+      "component_energies": {
+        "Ex": 0.02962491212461771,
+        "Ey": 0.03127878893549098,
+        "Ez": 0.03221776109114992,
+        "b_ij": [
+          [
+            -0.015201385657323763,
+            0.00693955047505918,
+            -0.007032895617055041
+          ],
+          [
+            0.00693955047505918,
+            0.002559040056212103,
+            -0.006365547084275422
+          ],
+          [
+            -0.007032895617055041,
+            -0.006365547084275422,
+            0.01264234560111166
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.0003368690283433804,
+          "III": 1.0110206587485764e-08,
+          "anisotropy_magnitude": 0.025956464641525446
+        }
+      }
+    },
+    {
+      "case_name": "weak_isotropic",
+      "forcing_type": "isotropic_random",
+      "split": "calibration",
+      "material": "incompressible_newtonian_liquid",
+      "grid_n": 64,
+      "group": "A",
+      "phi_l": 0.04653368403540341,
+      "phi_l_regime": "nonlinear_dominated",
+      "theta_f": 0.3400768885183366,
+      "theta_f_regime": "resonant_or_competing",
+      "k_f_over_ks": 0.6,
+      "k_f_vs_ks": "below",
+      "l_over_L": 0.18601190476190474,
+      "l_over_lc": 2.976190476190476,
+      "reynolds_number": 23.226744329608035,
+      "pipeline_ok": true,
+      "resolution_ok": true,
+      "populated_terminal_shells": 8,
+      "energy_budget": {
+        "n_samples": 50,
+        "mean_power_input": 0.0024568630043592565,
+        "mean_viscous_dissipation": 0.573692026388025,
+        "mean_terminal_heat": 0.0004347261527465626,
+        "mean_return_power": 6.311608992565514e-05,
+        "mean_wave": 0.0,
+        "mean_compressive": 0.0,
+        "mean_surface": 0.0,
+        "mean_internal": 0.0,
+        "mean_unresolved_residual": 0.00010468639172615583,
+        "total_unresolved_residual": 0.005234319586307792,
+        "relative_closure_error": 0.018234020843458525,
+        "input_vs_dissipation_only_gap": 232.68285147445667,
+        "linear_channel_split_exact": true,
+        "max_energy_above_cutoff": 0.00027819193167429956,
+        "any_pile_up": true,
+        "kinetic_energy_overshoot": 1.0,
+        "kinetic_energy_settling_time_steps": 44,
+        "kinetic_energy_oscillation_amplitude": 0.05003833202356983,
+        "closes_within_tolerance": true,
+        "forcing_clip_active_fraction": 0.02,
+        "forcing_clip_materially_altered_case": false,
+        "pile_up": {
+          "max_energy_above_cutoff": 0.00027819193167429956,
+          "final_energy_above_cutoff": 0.00019500809174188285,
+          "monotonically_growing": true,
+          "pile_up_detected": true
+        }
+      },
+      "controller": {
+        "n_steps": 50,
+        "final_c_gamma": 1.025451955288812,
+        "overshoot": 1.0,
+        "settling_time_steps": 0,
+        "oscillation_amplitude": 0.006568571863687533,
+        "is_stable": true
+      },
+      "classification_labels": [
+        "pipeline_only",
+        "energy_budget_valid",
+        "controller_stable",
+        "terminal_model_requires_extension"
+      ],
+      "classification_notes": [
+        "unresolved energy pile-up detected above cutoff"
+      ],
+      "case_id": "weak_64_iso_seed2",
+      "is_spot_check": false,
+      "target_phi_l": 0.03,
+      "initial_kinetic_energy": 0.4684639444003183,
+      "run_id": "c7e947eaf8e0466960f4fafb",
+      "audited_status": {
+        "pipeline_status": "passed",
+        "resolution_status": "resolved",
+        "energy_budget_status": "closed",
+        "forcing_regime_status": "measured",
+        "scientific_status": "candidate_behavior_observed"
+      },
+      "controller_labels": [
+        "controller_bounded",
+        "controller_nonoscillatory"
+      ],
+      "component_energies": {
+        "Ex": 0.03115771537077071,
+        "Ey": 0.030240534246239095,
+        "Ez": 0.03044960446032733,
+        "b_ij": [
+          [
+            0.005898493950682371,
+            0.0020530299764583773,
+            -0.002091075234308824
+          ],
+          [
+            0.0020530299764583773,
+            -0.004087380338327562,
+            0.009427554968165278
+          ],
+          [
+            -0.002091075234308824,
+            0.009427554968165278,
+            -0.0018111136123548643
+          ]
+        ],
+        "anisotropy_invariants": {
+          "II": -0.00012485584111417437,
+          "III": -5.360257412817833e-07,
+          "anisotropy_magnitude": 0.015802268262130874
+        }
+      }
+    }
+  ],
+  "remaining_limitations": [
+    "Theta_f / temporal forcing (item 3 of the original 12-item prompt): min_steps_for_forcing_case() ensures periodic/pulsed/impulsive cases run >=2 nominal periods where wall-clock budget allows, but the 'slow' case (tau_f=5.0) only reached ~0.3 nominal periods at dt=0.03/n_steps=50 in this environment's per-command time budget -- reported as measured theta_f=1.16 (resonant_or_competing), not a full-period demonstration. No autocorrelation-based EFFECTIVE tau_f measurement was implemented; only the nominal (input) tau_f is compared.",
+    "Material dependence remains untested beyond incompressible/high-viscosity Newtonian liquids (see audit item 10, category=scope_limitation_confirmed) -- out of scope for 5.7a by explicit instruction.",
+    "The isotropic-control baselines used here (2 seeds per family) are smaller than the 5.7a spec's own recommended ensemble size; they demonstrate the corrected METHOD distinguishes signal from noise for these two specific families, not a full re-classification of every anisotropy label from the original 189/186-row campaign.",
+    "128^3 is spot-check only (4 steps, 2 cases), and BOTH spot checks were materially altered by the forcing-amplitude clip -- no resolution-convergence claim, and no independent confirmation claim, is made or supportable from this data (see boundary_finding).",
+    "The 32^3 tier remains diagnostic-only by construction (ks=0) and contributes to NO k_f/k_s-based conclusion in this report.",
+    "Controller effectiveness (beyond mere boundedness) remains mostly unestablished: 19/19 rows are controller_bounded, only 2/19 are also controller_converged, and none reach controller_target_achieved or controller_budget_error_reduced in this minimal matrix (see controller_label_distribution).",
+    "candidate_difference_observed is defined in the scientific_status vocabulary but never assigned in this pass -- no run in the minimal matrix has an actual computed A-vs-C difference metric other than the single weak-limit consistency check (weak_64_A vs weak_64_C).",
+    "No new solver runs were added beyond the preregistered minimal 64^3(+128^3 spot check) matrix and the isotropic-control seeds -- this is intentionally a repair/audit pass, not an expanded campaign."
+  ]
+}
