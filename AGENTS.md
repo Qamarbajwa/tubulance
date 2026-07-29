@@ -229,6 +229,145 @@ existing run's output directory by hand. Checkpointed stages
 written before the checkpoint entry -- don't reorder "write result" and
 "mark stage done" in `run_real_validation.run()`.
 
+## Milestone 5.7's forward solver is synthetic-only, permanently
+
+`pseudo_spectral_solver.py` is the first forward-in-time integrator in
+this repo. It exists solely for the Milestone 5.7 forcing/material/size
+stress test and has no code path that accepts real DNS input -- do not add
+one. The earlier rule "do not begin controller retuning until real
+Milestone 5 a-priori placement results exist" was about real-data forward
+validation (Milestone 6, still not implemented -- see
+`forward_validation_interface.py`); it does not authorize turning this
+synthetic solver into, or substituting it for, that real solver. If a
+genuine Milestone 6 forward solver is built later, implement it as a new
+class satisfying the same `ForwardSolver` protocol -- do not repurpose
+`SyntheticForwardSolver` or relax its refusal to accept real DNS.
+
+## GP=24/GI=8 are a tested hypothesis, not tuned constants
+
+`controller.py` is the first code that actually reads `Config.gp`/`gi`
+(dormant defaults since Milestone 1). Per H7 in the Milestone 5.7
+specification, treat any controller gain pair as a hypothesis to test, not
+a fact to assume. Comparison group B's calibration-only retune (see
+`milestone_5_7_stress_test.tune_controller_gains`) is a small preregistered
+grid search (`GAIN_TUNING_GRID`) -- do not add new candidate gains to that
+grid after seeing validation-set results; a "retune" that used the
+validation cases would violate the same calibration/validation separation
+`assert_case_separation()` exists to enforce.
+
+## The forcing-aware candidate operator is explicitly unvalidated
+
+`terminal_operator_forcing_aware.gamma_candidate_forcing_aware` is marked
+`IS_CANDIDATE_MODEL = True` for a reason: it is comparison group C, not a
+replacement for the baseline operator (`gamma_baseline`, used unmodified by
+groups A/B/F). Its only structural requirement is H1 (collapses exactly to
+baseline as `Phi_l -> 0`, enforced by
+`tests/test_terminal_operator_forcing_aware.py`). Do not report its output
+as, or alongside, a validated improvement -- see `stress_test_report.
+NOT_SUPPORTED_STATEMENTS`.
+
+## Material interface_only is not "approximately Newtonian"
+
+`material_state.py` declares 5 materials; only `incompressible_newtonian_
+liquid` and `high_viscosity_newtonian_liquid` are `implemented=True` (the
+latter is the same solver at higher `viscosity`, not a new code path). The
+other three are `material_interface_only` -- `MaterialState.require_
+implemented()` raises rather than letting a caller silently run them
+through the Newtonian solver. If a real constitutive law is added for one
+of them later, flip its `implemented` flag in the registry; don't work
+around the check.
+
+## Milestone 5.7's resolution degeneracy: ks=0 zeroes gamma silently
+
+At `grid_n=32` with this solver's default `cutoff_fraction=0.5` and
+`beta=0.56`, `compute_terminal_layer` falls back to `ks=0` (too few shells
+for the beta-derived layer), and `estimate_tau_s` at `ks=0` returns `inf`
+(the entry-shell energy is exactly zero -- the `k=0` mode is removed by the
+divergence-free projection) -- which makes `gamma` identically zero
+everywhere without raising. `milestone_5_7_stress_test.run_one` treats
+`layer.ks <= 0` as an explicit resolution failure on top of `validate_
+terminal_layer`'s shell-count check specifically because of this; if you
+write a new script that calls `terminal_operator`/`estimate_tau_s`
+directly at low resolution, add the same `ks > 0` guard rather than trusting
+`validate_terminal_layer` alone to catch it.
+
+## Milestone 5.7 campaign shards, not one long run
+
+`run_milestone_5_7_chunk.py` writes one JSON shard per invocation
+deliberately -- this environment's command layer caps a single command at
+~45s wall-clock, and a 64^3 run costs roughly 0.25s/step, so a full 14-case
+comparison-group sweep does not fit in one call. `assemble_milestone_5_7_
+report.py` merges whatever shards exist; it does not require full
+coverage and reports ungenerated grid tiers as `no_data`. Don't try to
+collapse the campaign back into one long-running script -- it will simply
+be killed partway through with no output, unlike the shard approach.
+
+## Milestone 5.7a: the original 189-run campaign had 10 confirmed problems (9 defects + 1 scope limitation) -- audited and repaired, not rerun wholesale
+
+The original Milestone 5.7 report overclaimed in several places: the
+weak-forcing limit (Phi_l<<1) was never actually reached (cold-start bias),
+the energy-budget closure metric omitted dK/dt and produced nonsensical
+"doesn't close" verdicts during normal spin-up transients, two forcing
+cases were literal duplicate definitions, `n_runs=189` included 3 genuine
+stale-shard duplicate rows the assembler never deduplicated, the anisotropy
+detector had no isotropic-control baseline (and a separate sign bug made
+its magnitude always exactly 0), and `controller_stable` conflated
+"bounded" with "effective." 9 of these 10 were genuine code/reporting
+defects, now repaired; the 10th (material dependence untested beyond
+Newtonian liquids) was confirmed as a scope limitation, not a bug -- no
+material code was added or attempted. A second-pass review of the audit
+report ITSELF (not the solver) then found and fixed 7 more problems: an
+understated clip-effect summary, a strongest-permitted-statement that cited
+clip-altered non-closing 128^3 results as confirmatory, an overly
+permissive `candidate_behavior_observed` status that 17/19 rows fell into
+(including baseline runs that never touched the candidate operator), no
+visibility into controller-label distribution, no separate spectral
+pile-up status, and an anisotropy claim that needed "demonstration-level"
+framing. All root causes, fixes, and verification evidence (both passes)
+are in `runs/milestone_5_7a/milestone5_7a_audit_report.md` (and `.json`).
+Key fixes if you touch this code again:
+- `energy_budget.summarize_energy_budget()` now REQUIRES `dt` as a keyword
+  argument and normalizes by `max(mean_power_input, mean_viscous+heat)`,
+  not `mean_power_input` alone -- see that module's docstring before
+  "fixing" the closure metric again.
+- `SolverConfig.initial_kinetic_energy` (warm-start) is how you reach
+  Phi_l<<1 in this solver -- a cold start cannot, by construction, produce
+  a small Phi_l for any nonzero forcing power.
+- `forcing_test_matrix.py`'s general-purpose cases use
+  `k_f_mode="moderate_below_ks"`; only `forcing_far_below_ks` uses
+  `"far_below_ks"`. Check `forcing_fingerprint.assert_no_unexpected_
+  collisions()` before adding a new case, so a duplicate config fails loud
+  instead of producing silently-identical diagnostics again.
+- Every run now carries a deterministic `run_id`
+  (`milestone_5_7_stress_test.compute_run_identity`); shard assemblers
+  should dedup on it (`assemble_milestone_5_7_report.py --dedup`, default
+  on) rather than trusting "one row per shard file."
+- Anisotropy significance should go through
+  `structure_metrics.is_anisotropic_response_significant()` against an
+  `isotropic_control_baseline()`, not a bare `anisotropy_magnitude >
+  threshold` check -- and even then, treat it as demonstration-level with
+  a 2-seed baseline, not statistical validation.
+- 32^3 remains diagnostic-only (`ks=0`) and must be excluded from any
+  k_f/k_s-based conclusion; 128^3 in the 5.7a rerun is a 4-step SPOT CHECK
+  (2 cases) only, not a resolution-convergence claim -- and BOTH of those
+  128^3 spot checks were materially altered by the forcing-amplitude clip,
+  so they cannot serve as independent confirmation of anything, only as
+  "consistent with" a resolved-tier (64^3) finding.
+- `stress_test_classification.compute_audited_status()`'s `scientific_status`
+  can never assign a candidate-operator finding (`candidate_limit_
+  consistency_observed` / `candidate_improvement_not_testable`) to a run
+  outside comparison group C, and never asserts "candidate improvement" at
+  all -- there is no real-data ground truth anywhere in this synthetic
+  milestone to judge improvement against. It also now has an orthogonal
+  `spectral_status` (pile-up) dimension: a run can close its energy budget
+  while persistently piling up energy above the cutoff, and that is NOT
+  terminal-model support -- check both before citing a run as supportive.
+- The legacy `classification_labels` entry `controller_stable` only ever
+  meant "bounded," and predates the richer `controller_labels` tuple
+  (`controller.classify_controller_run`) -- treat `controller_stable` as
+  deprecated; `controller_labels` is authoritative for any effectiveness
+  claim (converged / target_achieved / budget_error_reduced).
+
 ## Workflow context
 
 Theories are developed in conversations outside this repo and brought here

@@ -496,6 +496,156 @@ hashing, and deterministic run-ID computation.
 this environment. This milestone makes the eventual real run a single
 command; it does not, and cannot, execute that command here.
 
+## Milestone 5.7: Forcing-Material-Size Stress Test of the Terminal-Layer Model (2026-07-29)
+
+Every milestone through 5.5 tests the terminal operator a-priori or
+finite-difference, against real (or intended-real) DNS snapshots, with
+forcing appearing only as an unconfirmed wavenumber ceiling
+(`Config.forcing_kmax`). Milestone 5.7 asks a different question: **does
+the terminal operator remain valid when forcing changes the structure
+faster or more strongly than the cascade?** It answers this with a fully
+separate synthetic/theoretical framework -- it does not touch, alter, or
+run against the real JHTDB campaign, its manifests, or `run_real_
+validation.py`.
+
+**This milestone required the first forward-in-time integrator in this
+repo** (`pseudo_spectral_solver.py`). AGENTS.md's existing rule -- "do not
+begin controller retuning until real Milestone 5 a-priori placement results
+exist" -- was written about real-data forward validation (Milestone 6) and
+is unaffected: this solver is synthetic-only by construction (there is no
+code path that can accept real DNS input), conforms to the `ForwardSolver`
+protocol from `forward_validation_interface.py` so a genuine Milestone 6
+solver can reuse its call shape, and every report it produces carries a
+non-optional synthetic-only warning. It does not begin real controller
+retuning; it tests the previously dormant `Config.gp=24`/`gi=8` defaults as
+a hypothesis (H7), for the first time actually reading them.
+
+**New modules**: `forcing.py` (explicit forcing state `F = {P_f, k_f,
+tau_f, d_f, C_f, B_f}`, 10 forcing types, `Phi_l`/`Theta_f`/`A_f`
+diagnostics), `material_state.py` (5 material types; only incompressible
+and high-viscosity Newtonian are `implemented`, everything else is
+`material_interface_only`, never silently approximated), `pseudo_spectral_
+solver.py` (ETD-Euler pseudo-spectral incompressible NS solver with
+forcing injection, terminal-operator sink/return, hard-cutoff and
+no-operator variants), `controller.py` (the first actual GP/GI PI
+controller), `terminal_operator_forcing_aware.py` (the extended `gamma(q,
+Phi_l, tau_f/tau_l, M, l/L, l/lc)` schema; the baseline wraps the original
+operator unmodified; a CANDIDATE forcing-aware correction is implemented
+and explicitly marked unvalidated), `energy_budget.py`, `structure_
+metrics.py` (anisotropy tensor, directional spectra, strain statistics,
+connected-component structure detection), `forcing_test_matrix.py` (14
+preregistered forcing cases, 3 calibration / 11 validation, disjoint),
+`stress_test_classification.py` (a non-binary, per-domain classification
+vocabulary), `phase_maps.py`, `milestone_5_7_stress_test.py` (the
+orchestrator: 6 comparison groups A-F), and `stress_test_report.py`.
+
+**Comparison groups**: A original operator with fixed gains (GP=24,
+GI=8); B original operator with gains retuned only on the 3 calibration
+cases (a small preregistered gain grid, never touching validation cases);
+C the forcing-aware CANDIDATE operator (unvalidated); D no terminal
+operator; E hard spectral cutoff; F smooth damping with no backscatter
+(`alpha_s=1.0`).
+
+**Resolution tiers actually executed**: 32^3 (diagnostic-only, as
+specified -- `compute_terminal_layer` degenerates to `ks=0` at this
+resolution and grid, which additionally makes `estimate_tau_s` return
+`inf`, silently zeroing gamma everywhere; `milestone_5_7_stress_test.py`
+treats `layer.ks<=0` as an explicit resolution failure on top of the base
+repo's shell-count check, specifically because of this), 64^3 (the
+physical minimum tier -- properly resolves a beta-sourced terminal layer),
+and one 128^3 diagnostic-pipeline spot-check (8 steps only -- confirms the
+pipeline runs at this resolution but is far too short to support any
+physical claim; the rest of the 128^3 tier is `status="no_data"`,
+compute-limited in this environment, never fabricated). 189 total runs
+executed across grid tiers, comparison groups, materials, and the full
+14-case forcing matrix; results in `runs/milestone_5_7/`.
+
+**Headline empirical finding**: every run where forcing was injected at or
+above `k_s` (`forcing_overlap_terminal_layer`, `small_scale_forcing`; 12/12
+runs across all 6 comparison groups at the 64^3 tier) was classified
+`terminal_model_not_supported` + `forcing_overlap_invalidates_assumption`
+-- H3 is directly and consistently confirmed within this synthetic test:
+the original terminal operator's cascade-arrival assumption breaks exactly
+where the specification predicted it would. Conversely, **H1 (weak-forcing
+consistency) is verified at the operator level** (`test_h1_weak_forcing_
+consistency_candidate_reduces_to_baseline`, `test_h1_weak_forcing_
+candidate_and_baseline_nearly_identical` -- the candidate operator reduces
+to the baseline to machine precision as `Phi_l -> 0`) **but was not
+empirically exercised by this campaign's full-solver runs**: with the
+preregistered power/viscosity/timescale presets used, every completed run
+measured `Phi_l` in the `forcing_dominated` regime (even the case named
+`weak_isotropic`) -- a short synthetic spin-up at low Reynolds number
+simply never reached a state where the nonlinear cascade dominates the
+chosen forcing power. This is a genuine limitation of the executed
+campaign's parameter choices, not of the model or the diagnostic, and is
+recorded as an unresolved question rather than smoothed over.
+
+See `runs/milestone_5_7/milestone5_7_report.md` for the full applicability
+map, per-run classification, and the complete supported / not-supported
+statement lists (mirroring `report_generator.py`'s discipline for
+Milestone 5). To extend the campaign: `run_milestone_5_7_chunk.py --grid-n
+N --group G --cases ...` writes one JSON shard per invocation (kept small
+deliberately so each run fits this environment's per-command time budget);
+`assemble_milestone_5_7_report.py` merges however many shards exist into
+the final report -- it does not require every cell of the matrix to be
+filled, and reports any requested-but-unexecuted grid tier as `no_data`.
+
+## Milestone 5.7a: Audit and Repair of the Forcing-Material-Size Stress Test (2026-07-29)
+
+A detailed technical critique of the Milestone 5.7 report above identified
+10 confirmed problems (the weak-forcing limit was never actually reached;
+the energy-budget "conserves energy" claim contradicted its own 128^3
+metrics; the 189-run count included 3 undetected stale-shard duplicates;
+two forcing cases were literal duplicate definitions; the forcing-amplitude
+clip's effect was unmeasured; `controller_stable` conflated bounded with
+effective; the anisotropy detector had no statistical control baseline (and
+a separate sign bug); 32^3 rows were mixed into k_f/k_s conclusions despite
+a `ks=0` degeneracy; material dependence beyond Newtonian liquids remains
+untested). Of those 10, **9 were genuine implementation/reporting defects,
+now repaired and verified**; the 10th (material dependence) was correctly
+identified as a scope limitation, not a bug -- no material code was added,
+per the audit's explicit instruction. A second review of this audit's
+first-generated report found 7 further report-level problems (a clip-effect
+summary that undersold two materially-altered 128^3 spot checks; a
+strongest-permitted-statement that cited those same clip-altered,
+non-closing 128^3 results as if confirmatory; an overly permissive
+`candidate_behavior_observed` scientific-status bucket that 17/19 rows fell
+into, including baseline runs that never touched the candidate operator; no
+visibility into the fact that most runs' richer controller classification
+reduces to "merely bounded"; no separate accounting for energy-budget
+closure vs. spectral pile-up, which are different questions; and an
+anisotropy claim that needed to be stated as demonstration-level, not
+statistical validation) -- all fixed at report-generation time, without
+rerunning the solver, in the current report.
+
+Milestone 5.7a audited and repaired the underlying infrastructure -- it
+added **no new physical claims, materials, or candidate terminal laws** --
+then reran a minimal, corrected 64^3 matrix (19 rows: warm-started
+Phi_l-targeted cases, timescale-targeted cases, the near-k_s/overlap cases,
+D-F baselines, an isotropic-control ensemble, and two 128^3 spot checks).
+
+Every root cause, fix, and piece of verification evidence (fingerprint
+collision checks, isotropic-control significance tests, the H1
+candidate-vs-baseline agreement measurement, the corrected dedup of the
+original 189-row campaign to 186, the corrected minimal-matrix rerun, the
+orthogonal `spectral_status` pile-up classification, and the controller-label
+distribution) is in `runs/milestone_5_7a/milestone5_7a_audit_report.md` (and
+`.json`), generated by `generate_milestone_5_7a_audit_report.py`. The
+robust, resolved-tier finding is: **the 64^3 test shows forcing at or above
+k_s violates the cascade-arrival assumption** -- the 128^3 overlap spot
+check is consistent with this but is explicitly NOT independent
+confirmation (it did not close its energy budget and was materially altered
+by the forcing-amplitude clip). See `AGENTS.md`'s "Milestone 5.7a" section
+for the durable coding rules this audit produced (e.g.
+`summarize_energy_budget()` now requires `dt`; use
+`SolverConfig.initial_kinetic_energy` to reach `Phi_l<<1`; dedup shards by
+`run_id`; `scientific_status` can never assign a candidate finding to a
+non-candidate/group-A run; the legacy `controller_stable` label is
+deprecated in favor of `controller_labels`). The original `runs/milestone_5_7/`
+artifacts are left in place unmodified for the audit trail; the
+dedup-corrected recount of that same campaign (186 rows) is at
+`runs/milestone_5_7a/original_campaign_dedup_corrected/`.
+
 ## Scientific safeguards
 
 - Frame-to-frame shell-energy changes (`measure_transfer.py`,
