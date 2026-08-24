@@ -20,10 +20,10 @@ resurrection_triggers:
 active_queue:
   - pathway_id: "TH9-R"
     current_status: "TERMINATED_BY_OBSTRUCTION"
-    resurrection_status: "DORMANT_MONITORED"
-    reopen_hypothesis: "Stochastic deformation D_s in TP2-G3/G4 provides a rigorous time-integrated bound on cumulative eigenframe stretching."
+    resurrection_status: "RESURRECTION_CANDIDATE"
+    reopen_hypothesis: "TP2-G4 independently rediscovered that stochastic Cauchy covariance production Q_s requires directional and eigenframe orientation information (p_i = |v_i^T J_omega|^2 / |J_omega|^2), confirming TH9-R central thesis that finite-time deformation magnitude is insufficient without frame rotation dynamics."
     prerequisite_gate: "TP2-G4"
-    review_trigger: "If TP2-G4 establishes a non-circular lower bound on Q_s relative to ||D_s||_F^2."
+    review_trigger: "TP2-G4-A1 SVD orientation decomposition and periodic shear decoupling."
 
   - pathway_id: "LA1-R"
     current_status: "TERMINATED_BY_OBSTRUCTION"

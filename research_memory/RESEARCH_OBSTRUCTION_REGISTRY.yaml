@@ -72,3 +72,12 @@ obstructions:
     mathematical_core: "omega(x, T) = E[Z_0] + int_0^T E[nabla n . sigma(X_s)] dL_s(boundary)."
     known_bypasses_or_relaxations: ["Restricting analysis strictly to periodic 3-torus T^3 or decaying R^3."]
     status: "GEOMETRIC_DOMAIN_BOUNDARY"
+
+  - obstruction_id: "NS-OBS-009"
+    name: "DEFORMATION_ONLY_Q_BOUND_SCALING_MISMATCH"
+    description: "Under Navier-Stokes parabolic scaling, Q_s scales as lambda^6 while deformation ||D_s||^2 is dimensionless (lambda^0). No universal scalar lower bound Q_s >= F(||D_s||^2) can exist without carrying additional scale-dependent dimensional coefficients."
+    first_encountered_in: "TP2-G4"
+    affected_pathways: ["TP2-G4"]
+    mathematical_core: "Q_s -> lambda^6 Q_s, ||D||^2 -> lambda^0 ||D||^2; unscaled scalar lower bounds are dimensionally inhomogeneous."
+    known_bypasses_or_relaxations: ["Reformulate comparison via scaling-compatible rate R_Q(s) = Q_s / S_s = d_s ln(chi_s) (scales as lambda^2)."]
+    status: "ACTIVE_STRUCTURAL_BARRIER"

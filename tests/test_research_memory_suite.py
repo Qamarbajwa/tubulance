@@ -14,9 +14,9 @@ def test_schema_and_referential_integrity():
     """Verify that all backfilled pathways strictly conform to schema and referential integrity."""
     result = validate_registry_and_schema()
     assert result["valid"] is True, f"Validation failed with errors: {result['errors']}"
-    assert result["pathways_count"] == 13
-    assert result["obstructions_count"] >= 8
-    assert result["negative_evidence_count"] >= 10
+    assert result["pathways_count"] == 14
+    assert result["obstructions_count"] >= 9
+    assert result["negative_evidence_count"] >= 14
     assert result["graph_edges_count"] >= 15
 
 

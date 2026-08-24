@@ -517,3 +517,48 @@ pathways:
     reopen_conditions: []
     similarity_tags: ["stochastic_cauchy", "covariance_tensor", "quadratic_variation", "ito_martingale", "chi_reparameterization", "production_rate_Q"]
     last_re_evaluated: "2026-08-24"
+
+  - pathway_id: "TP2-G4"
+    title: "Adversarial Analysis of Stochastic Cauchy Quadratic Variation and Deformation Independence"
+    parent_pathways: ["TP2-G3"]
+    descendant_pathways: []
+    starting_thesis: "Stochastic Cauchy quadratic variation Q_s = 2nu E||D_s J_omega||^2 can be quantitatively lower bounded by deformation amplification ||D_s||^2."
+    scientific_question: "Does viscosity force an a-priori quantitative lower bound Q_s >= F(||D_s||^2) to offset explosive backward stretching?"
+    intended_bridge: "Regularity bridge connecting viscous quadratic variation production to blowup prevention."
+    core_objects: ["Production rate Q_s", "backward deformation D_s", "singular values sigma_i", "vorticity gradient J_omega", "orientation factor A_nabla_omega", "scaling rate R_Q(s)"]
+    mathematical_form: "Q_s = 2nu E[||J_omega||_F^2 sum_i p_i sigma_i^2], quad R_Q(s) = Q_s / S_s = d_s ln(chi_s)"
+    scaling: "scale-critical [Q] = lambda^6, dimensionless [D] = lambda^0, rate [R_Q] = lambda^2"
+    geometry: "SVD singular frame alignment with J_omega image"
+    trajectory_dependence: "LAGRANGIAN_STOCHASTIC"
+    stochastic_component: true
+    assumptions: ["Classical smooth Navier-Stokes", "nu > 0", "T^3 or decaying R^3"]
+    domain: "T^3 or R^3"
+    regularity_class: "C^infinity"
+    expected_outcome: "A-priori lower bound Q_s >= F(deformation)."
+    actual_outcome: "Candidate analytical no-go: raw Q_s vs ||D_s||^2 comparison is dimensionally inhomogeneous ([Q] = lambda^6 vs [D] = lambda^0); kinematic SVD counterexample demonstrates ||D_K|| -> infty with ||D_K J|| -> 0; exact periodic Navier-Stokes shear family decouples D_s from J_omega (D_s J_omega == J_omega)."
+    tests_attempted: ["tests/test_tp2_g4_adversarial_suite.py"]
+    evidence_refs: ["TP2_G4_A1_ANALYTICAL_NO_GO_REPORT.md"]
+    status: "ACTIVE"
+    termination_reason: "Active candidate under adversarial analysis."
+    failure_mechanism: "Deformation magnitude alone does not force quadratic variation without orientation control (A_nabla_omega)."
+    what_was_falsified:
+      - "Universal scalar lower bound Q_s >= F(||D_s||^2) for unscaled quantities."
+      - "Algebraic coercivity of ||D J_omega|| from deformation magnitude sigma_1 alone."
+      - "Multiplicative enhancement of Q_s by shear deformation in smooth Navier-Stokes shear solutions."
+      - "Reverse implication that large Q_s requires large finite-time deformation."
+    what_was_not_falsified:
+      - "Strict positivity Q_s > 0 for non-trivial classical solutions on T^3."
+      - "Exact SVD orientation decomposition ||D J||_F^2 = ||J||_F^2 sum p_i sigma_i^2."
+      - "Scale-compatible rate identity R_Q(s) = Q_s / S_s = d_s ln(chi_s)."
+    surviving_results:
+      - "Exact SVD decomposition of stochastic quadratic variation integrand."
+      - "Identification of orientation weights p_i = |v_i^T J_omega|^2 / |J_omega|^2 as the governing geometric variable."
+      - "Exact smooth periodic shear solution family demonstrating complete algebraic decoupling."
+    negative_results:
+      - "Deformation-only bounds cannot prove regularity without dynamical vorticity-gradient orientation constraints."
+    open_questions:
+      - "Do Navier-Stokes dynamics dynamically prevent J_omega from concentrating in the contracting singular directions v_3?"
+    obstruction_ids: ["NS-OBS-004", "NS-OBS-005", "NS-OBS-009"]
+    reopen_conditions: []
+    similarity_tags: ["stochastic_cauchy", "quadratic_variation", "deformation_amplification", "production_rate_Q", "riccati", "strain_alignment", "orientation_factor"]
+    last_re_evaluated: "2026-08-25"
