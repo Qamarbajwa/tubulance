@@ -1,0 +1,40 @@
+# NS-RPM-1: RESEARCH RESURRECTION QUEUE & EVALUATION TRIGGERS
+
+resurrection_triggers:
+  - trigger_id: "TRIG-CRITICAL-SCALING-MATCH"
+    condition: "A new candidate object shares exact dimensionless critical scaling ([X] = lambda^0) with a terminated or dormant pathway."
+    action: "Flag target pathway as RESURRECTION_CANDIDATE."
+
+  - trigger_id: "TRIG-OBSTRUCTION-BYPASS"
+    condition: "A newly proven theorem eliminates an assumption that previously blocked a pathway."
+    action: "Promote target pathway to RESURRECTION_CANDIDATE and schedule formal review."
+
+  - trigger_id: "TRIG-STOCHASTIC-DUAL-EMERGENCE"
+    condition: "A stochastic Lagrangian equivalent of a previously failed deterministic Eulerian mechanism is formulated."
+    action: "Evaluate deterministic pathway for structural analogies and update similarity matrix."
+
+  - trigger_id: "TRIG-SHARED-OBSTRUCTION-CONVERGENCE"
+    condition: "Three or more independent pathways terminate at the identical structural obstruction ID."
+    action: "Issue structural obstruction alert and trigger mandatory 5-gate cross-pathway synthesis review."
+
+active_queue:
+  - pathway_id: "TH9-R"
+    current_status: "TERMINATED_BY_OBSTRUCTION"
+    resurrection_status: "DORMANT_MONITORED"
+    reopen_hypothesis: "Stochastic deformation D_s in TP2-G3/G4 provides a rigorous time-integrated bound on cumulative eigenframe stretching."
+    prerequisite_gate: "TP2-G4"
+    review_trigger: "If TP2-G4 establishes a non-circular lower bound on Q_s relative to ||D_s||_F^2."
+
+  - pathway_id: "LA1-R"
+    current_status: "TERMINATED_BY_OBSTRUCTION"
+    resurrection_status: "DORMANT_MONITORED"
+    reopen_hypothesis: "Stochastic dispersion across Brownian trajectories widens the effective directional coherence tube radius R_c."
+    prerequisite_gate: "TP2-G5 (Stochastic-Eulerian Geometry Equivalence)"
+    review_trigger: "If TP2-G5 establishes stochastic-Eulerian Lipschitz direction control."
+
+  - pathway_id: "BRIDGE1-R"
+    current_status: "TERMINATED_BY_OBSTRUCTION"
+    resurrection_status: "DORMANT_MONITORED"
+    reopen_hypothesis: "Scale-invariant coherence ratio chi = |E Z|^2 / E|Z|^2 serves as a monotone Lyapunov functional for ancient Navier-Stokes solutions on (-infty, 0]."
+    prerequisite_gate: "TP2-G6 (Ancient Stochastic Singularity Rigidity)"
+    review_trigger: "If TP2-G6 applies chi_s monotonicity to ancient limit profiles."

@@ -1,0 +1,74 @@
+# NS-RPM-1: RESEARCH OBSTRUCTION REGISTRY
+
+obstructions:
+  - obstruction_id: "NS-OBS-001"
+    name: "VISCOUS_LAPLACIAN_INDEFINITE_TRAJECTORY_SIGN"
+    description: "The viscous Laplacian term nu Delta omega in the vorticity equation has no universal negative sign along Lagrangian trajectories, permitting local viscous vortex amplification where curvature opposes diffusion."
+    first_encountered_in: "TH7"
+    affected_pathways: ["TH7", "TH8", "NS-TRAJECTORY-PERSISTENCE-1"]
+    mathematical_core: "nu * (omega / |omega|) . Delta omega is indefinite and depends on the sign of spatial curvature."
+    known_bypasses_or_relaxations: ["Lagrangian stochastic Weber formulation replacing Laplacian with Brownian expectation."]
+    status: "ACTIVE_STRUCTURAL_BARRIER"
+
+  - obstruction_id: "NS-OBS-002"
+    name: "STATIC_ALIGNMENT_UNIVERSAL_DEPLETION_FALSIFICATION"
+    description: "Universal static bound lambda_omega <= (1 - delta) lambda_3 is false; near-complete alignment (cos theta -> 1) between vorticity and maximum stretching eigenvector is physically and numerically realizable."
+    first_encountered_in: "TH8"
+    affected_pathways: ["TH8", "TH9", "LA1-R"]
+    mathematical_core: "sup (xi . S xi) / lambda_3 = 1.0 in extreme strain events."
+    known_bypasses_or_relaxations: ["Dynamic fast eigenframe rotation / twist-antitwist cancellation (TH9-R, TH10-R)."]
+    status: "FALSIFIED_STATIC_BOUND"
+
+  - obstruction_id: "NS-OBS-003"
+    name: "FINITE_WINDOW_NUMERICAL_PERSISTENCE_GAP"
+    description: "Finite-window numerical persistence and empirical refractory damping cannot mathematically exclude Zeno-type burst accumulation or asymptotic blowup."
+    first_encountered_in: "TH9-R"
+    affected_pathways: ["TH9-R", "TH10-R", "BRIDGE1-R"]
+    mathematical_core: "lim inf Delta t_burst = 0 is not excluded by finite-time discretizations."
+    known_bypasses_or_relaxations: ["Scale-invariant ancient limit classification / Liouville rigidity (BRIDGE1-R)."]
+    status: "EPISTEMIC_LIMITATION"
+
+  - obstruction_id: "NS-OBS-004"
+    name: "BKM_SERRIN_CIRCULARITY_BARRIER"
+    description: "Any attempt to bound deformation amplification by assuming a-priori L^p_t L^q_x control on velocity or L^1_t L^infinity_x on vorticity circularly presupposes the regularity theorem being sought."
+    first_encountered_in: "REP-SYNTHESIS1"
+    affected_pathways: ["REP-SYNTHESIS1", "NS-TRAJECTORY-PERSISTENCE-1", "TP2-G3"]
+    mathematical_core: "int_0^T ||omega||_{L^infinity} dt < infty cannot appear on the right-hand side of a regularizing bound."
+    known_bypasses_or_relaxations: ["Scale-critical invariant observables (chi) and exact quadratic variation balances."]
+    status: "METHODOLOGICAL_RULE"
+
+  - obstruction_id: "NS-OBS-005"
+    name: "QUALITATIVE_POSITIVITY_NOT_QUANTITATIVE_LOWER_BOUND"
+    description: "Proving that quadratic variation or variance production is strictly positive (Q_s > 0) does not provide a scale-critical quantitative lower bound Q_s >= F(deformation) capable of outgrowing explosive stretching."
+    first_encountered_in: "TP2-G3"
+    affected_pathways: ["TP2-G3", "TP2-G4"]
+    mathematical_core: "Q_s = 2*nu*E[||D J_omega||_F^2] > 0 does not imply inf_{s < T} Q_s >= c * ||omega(T)||^2."
+    known_bypasses_or_relaxations: ["Unresolved; central objective assigned to TP2-G4."]
+    status: "ACTIVE_RESEARCH_FRONTIER"
+
+  - obstruction_id: "NS-OBS-006"
+    name: "ROUGH_FLOW_DIFFERENTIABILITY_LOSS"
+    description: "Generic Leray-Hopf weak solutions do not possess C^1 flow maps; deformation matrices D_s and Jacobians J_omega cannot be evaluated pathwise without higher regularity."
+    first_encountered_in: "REP-LAGRANGIAN1"
+    affected_pathways: ["REP-LAGRANGIAN1", "TP2-G1", "TP2-G3"]
+    mathematical_core: "Flow map X_{s,t} is not a diffeomorphism if u not in L^1_t C^1_x."
+    known_bypasses_or_relaxations: ["Restricting analysis to classical solutions on [0, T*) approaching candidate singular time."]
+    status: "ANALYTICAL_DOMAIN_BOUNDARY"
+
+  - obstruction_id: "NS-OBS-007"
+    name: "NONLOCAL_PRESSURE_HESSIAN_COUPLING"
+    description: "Pointwise vorticity-strain alignment is continuously perturbed by the non-local pressure Hessian Pi = nabla^2 p, preventing static decoupled closures."
+    first_encountered_in: "TH9-R"
+    affected_pathways: ["TH9-R", "REP-PRESSURE-MULTISCALE1"]
+    mathematical_core: "D_t S = -S^2 - Omega^2 - Pi + nu Delta S; Pi is non-local and couples all scales."
+    known_bypasses_or_relaxations: ["Multiscale pressure decomposition into local parabolic and non-local harmonic fluxes."]
+    status: "PHYSICAL_COUPLING_BARRIER"
+
+  - obstruction_id: "NS-OBS-008"
+    name: "PHYSICAL_WALL_BOUNDARY_LOCAL_TIME_VORTICITY_FLUX"
+    description: "In domains with physical boundaries (no-slip walls), stochastic Cauchy representations acquire boundary local-time integrals of vorticity flux that break torus/whole-space formulas."
+    first_encountered_in: "TP2-G1"
+    affected_pathways: ["TP2-G1", "TP2-G3"]
+    mathematical_core: "omega(x, T) = E[Z_0] + int_0^T E[nabla n . sigma(X_s)] dL_s(boundary)."
+    known_bypasses_or_relaxations: ["Restricting analysis strictly to periodic 3-torus T^3 or decaying R^3."]
+    status: "GEOMETRIC_DOMAIN_BOUNDARY"

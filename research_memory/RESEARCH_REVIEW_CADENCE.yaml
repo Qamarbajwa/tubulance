@@ -1,0 +1,40 @@
+# NS-RPM-1: RESEARCH REVIEW CADENCE & AUDIT PROTOCOL
+
+cadence_rules:
+  event_triggered_reviews:
+    - trigger: "A newly derived observable exhibits high similarity (> 0.70) to an older terminated pathway."
+    - trigger: "An adversarial counterexample is constructed that falls outside a previous domain restriction."
+    - trigger: "A newly formulated candidate hits a known obstruction in RESEARCH_OBSTRUCTION_REGISTRY.yaml."
+    - trigger: "An active pathway completes technical acceptance (e.g. TP2-G3 completion)."
+
+  cycle_triggered_reviews:
+    frequency: "EVERY_5_RESEARCH_GATES"
+    last_cycle_completed: "TP2-G3 (Cycle 1 milestone)"
+    next_scheduled_cycle: "TP2-G7 (Cycle 2 milestone)"
+
+interrogation_questions:
+  - id: "Q1"
+    question: "Does any new candidate result resemble a dormant, falsified, or superseded pathway?"
+  - id: "Q2"
+    question: "Has an old blocking assumption or domain restriction changed in light of recent theorems?"
+  - id: "Q3"
+    question: "Has a previously unavailable analytical tool (e.g. stochastic flow diffeomorphism, Liouville theorem) become available?"
+  - id: "Q4"
+    question: "Are multiple independent pathways converging on the identical structural obstruction ID?"
+  - id: "Q5"
+    question: "Is the proposed 'new' quantity merely a normalized reparameterization of an already known observable?"
+  - id: "Q6"
+    question: "Did negative evidence from an earlier milestone prevent wasted search effort in the current milestone?"
+  - id: "Q7"
+    question: "Should any pathway in RESEARCH_RESURRECTION_QUEUE.yaml be promoted to ACTIVE, or should it remain DORMANT?"
+  - id: "Q8"
+    question: "Are we repeatedly rediscovering the same mathematical structure under different notation?"
+
+execution_records:
+  - review_id: "REV-2026-08-24-RPM1"
+    trigger: "NS-RPM-1 Infrastructure Initialization and TP2-G3 Canonical Acceptance"
+    status: "COMPLETED"
+    findings:
+      - "TP2-G3 proved chi is a normalized variance reparameterization of V_s; shifted primary frontier to Q_s = 2nu E||D J_omega||^2."
+      - "Identified mathematical analogy between TP2-G4 stochastic deformation analysis and TH9-R deterministic eigenframe twisting."
+      - "Recorded obstruction NS-OBS-005 (qualitative positivity != quantitative lower bound) as the governing frontier for TP2-G4."
