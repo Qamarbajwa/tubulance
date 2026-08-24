@@ -16,7 +16,7 @@ def test_schema_and_referential_integrity():
     assert result["valid"] is True, f"Validation failed with errors: {result['errors']}"
     assert result["pathways_count"] == 14
     assert result["obstructions_count"] >= 9
-    assert result["negative_evidence_count"] >= 14
+    assert result["negative_evidence_count"] >= 18
     assert result["graph_edges_count"] >= 15
 
 
