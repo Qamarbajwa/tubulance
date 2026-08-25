@@ -1,0 +1,1071 @@
+{
+  "index_version": "v2.10.0",
+  "master_file": "MASTER_AUTONOMOUS_PROJECT_GOVERNANCE_DEVELOPMENT_EVOLUTION_v2.9.10_FINAL.md",
+  "master_sha256": "34f2dc33ba2c8f7edb5280d6f63426fad431cdcdf61642f26c3c7aee4bd84f07",
+  "note": "Line ranges valid only for the exact master file with this sha256. Regenerate on any master change.",
+  "total_lines": 11801,
+  "parts": [
+    {
+      "title": "MASTER AUTONOMOUS PROJECT GOVERNANCE, DEVELOPMENT & EVOLUTION PROMPT \u2014 v2.9.10",
+      "start_line": 1,
+      "end_line": 29,
+      "lines": 29
+    },
+    {
+      "title": "MASTER ROLE",
+      "start_line": 30,
+      "end_line": 47,
+      "lines": 18
+    },
+    {
+      "title": "PART 0 \u2014 COMPACT IMMUTABLE RUNTIME KERNEL",
+      "start_line": 48,
+      "end_line": 112,
+      "lines": 65
+    },
+    {
+      "title": "PART 0-BOOT \u2014 DAY-0 BOOTSTRAP PROTOCOL",
+      "start_line": 113,
+      "end_line": 287,
+      "lines": 175
+    },
+    {
+      "title": "PART 0-BOOT-A \u2014 TRUST-ANCHORING CEREMONY",
+      "start_line": 288,
+      "end_line": 370,
+      "lines": 83
+    },
+    {
+      "title": "PART 0-RISK \u2014 MANDATORY FRONT-LOADED RISK TIER",
+      "start_line": 371,
+      "end_line": 696,
+      "lines": 326
+    },
+    {
+      "title": "PART 0-TRUST \u2014 DETERMINISTIC TRUST ANCHOR",
+      "start_line": 697,
+      "end_line": 736,
+      "lines": 40
+    },
+    {
+      "title": "PART 0-MODULES \u2014 RISK-ACTIVATED GOVERNANCE MODULES",
+      "start_line": 737,
+      "end_line": 813,
+      "lines": 77
+    },
+    {
+      "title": "PART 0-STATE \u2014 CANONICAL MACHINE-READABLE GOVERNANCE STATE",
+      "start_line": 814,
+      "end_line": 876,
+      "lines": 63
+    },
+    {
+      "title": "PART 0-STATE-MIGRATION \u2014 PHASED GOVERNANCE-STATE MIGRATION",
+      "start_line": 877,
+      "end_line": 916,
+      "lines": 40
+    },
+    {
+      "title": "PART 0-CONTEXT \u2014 BOUNDED CONTEXT & FRAMEWORK-CONVENTION RULE",
+      "start_line": 917,
+      "end_line": 959,
+      "lines": 43
+    },
+    {
+      "title": "PART 0-STABILITY \u2014 PROPORTIONAL COMPONENT CHANGE CONTROL",
+      "start_line": 960,
+      "end_line": 1028,
+      "lines": 69
+    },
+    {
+      "title": "PART 0-SEMANTICS \u2014 CONTRACT-ANCHORED SEMANTIC DRIFT",
+      "start_line": 1029,
+      "end_line": 1156,
+      "lines": 128
+    },
+    {
+      "title": "PART 0-EMERGENCY \u2014 BREAK-GLASS / ACTIVE-INCIDENT PROTOCOL",
+      "start_line": 1157,
+      "end_line": 1294,
+      "lines": 138
+    },
+    {
+      "title": "PART 0-CONCURRENCY \u2014 PROPORTIONAL CONCURRENCY CONTROL",
+      "start_line": 1295,
+      "end_line": 1360,
+      "lines": 66
+    },
+    {
+      "title": "PART 0-COMPILER \u2014 TASK-LEVEL GOVERNANCE MODULE ACTIVATION",
+      "start_line": 1361,
+      "end_line": 1487,
+      "lines": 127
+    },
+    {
+      "title": "PART 0-DOCS \u2014 GOVERNANCE DOCUMENT LOADING POLICY",
+      "start_line": 1488,
+      "end_line": 1518,
+      "lines": 31
+    },
+    {
+      "title": "PART 0-BOUND \u2014 BOUNDED CONTRACT EXECUTION & ATTRIBUTION PROTOCOL",
+      "start_line": 1519,
+      "end_line": 2132,
+      "lines": 614
+    },
+    {
+      "title": "PART 0-MODELS \u2014 PROVIDER-NEUTRAL MULTI-MODEL GOVERNANCE",
+      "start_line": 2133,
+      "end_line": 2289,
+      "lines": 157
+    },
+    {
+      "title": "PART 0-CAPDISC \u2014 AUTONOMOUS AGENT CAPABILITY DISCOVERY & REVIEWER ECONOMICS",
+      "start_line": 2290,
+      "end_line": 2562,
+      "lines": 273
+    },
+    {
+      "title": "PART 0-CODING-ENV \u2014 CODING-APPLICATION-LOCAL AGENT ORCHESTRATION",
+      "start_line": 2563,
+      "end_line": 2661,
+      "lines": 99
+    },
+    {
+      "title": "PART 0-ACCEPT \u2014 ENVIRONMENT-LOCAL ACCEPTANCE AUTHORITY",
+      "start_line": 2662,
+      "end_line": 2744,
+      "lines": 83
+    },
+    {
+      "title": "PART 0-PROJECT-BIND \u2014 UNIVERSAL PROJECT BINDING & CONTEXT ISOLATION",
+      "start_line": 2745,
+      "end_line": 3062,
+      "lines": 318
+    },
+    {
+      "title": "PART 0-GIT \u2014 AUTONOMOUS GIT CONTINUITY & ROUTINE PUSH GOVERNANCE",
+      "start_line": 3063,
+      "end_line": 3454,
+      "lines": 392
+    },
+    {
+      "title": "PART 0-A \u2014 DETAILED TRUTH, EVIDENCE & ANTI-FABRICATION PROTOCOL",
+      "start_line": 3455,
+      "end_line": 3959,
+      "lines": 505
+    },
+    {
+      "title": "PART 0-B \u2014 ANTI-SYCOPHANCY & FACT-ORIENTED DECISION RULE",
+      "start_line": 3960,
+      "end_line": 3975,
+      "lines": 16
+    },
+    {
+      "title": "PART 0-C \u2014 ANTI-REWARD-HACKING / SPECIFICATION-GAMING GOVERNANCE",
+      "start_line": 3976,
+      "end_line": 4004,
+      "lines": 29
+    },
+    {
+      "title": "PART 0-D \u2014 EXTERNAL FEEDBACK OVER INTRINSIC SELF-CORRECTION",
+      "start_line": 4005,
+      "end_line": 4022,
+      "lines": 18
+    },
+    {
+      "title": "PART 0-E \u2014 RESEARCH BASIS FOR THIS PRECAUTIONARY GOVERNANCE",
+      "start_line": 4023,
+      "end_line": 4043,
+      "lines": 21
+    },
+    {
+      "title": "PART 0-F \u2014 TRUTH CONTROL PLANE",
+      "start_line": 4044,
+      "end_line": 4107,
+      "lines": 64
+    },
+    {
+      "title": "PART 0-G \u2014 SEPARATION OF POWERS",
+      "start_line": 4108,
+      "end_line": 4152,
+      "lines": 45
+    },
+    {
+      "title": "PART 0-H \u2014 GOVERNANCE & EVALUATOR IMMUTABILITY",
+      "start_line": 4153,
+      "end_line": 4183,
+      "lines": 31
+    },
+    {
+      "title": "PART 0-I \u2014 PROOF-CARRYING WORK",
+      "start_line": 4184,
+      "end_line": 4222,
+      "lines": 39
+    },
+    {
+      "title": "PART 0-J \u2014 MANDATORY NEGATIVE DISCLOSURE",
+      "start_line": 4223,
+      "end_line": 4258,
+      "lines": 36
+    },
+    {
+      "title": "PART 0-K \u2014 BLIND-FIRST INDEPENDENT REVIEW",
+      "start_line": 4259,
+      "end_line": 4285,
+      "lines": 27
+    },
+    {
+      "title": "PART 0-L \u2014 ADVERSARIAL VERIFIER HARDENING",
+      "start_line": 4286,
+      "end_line": 4319,
+      "lines": 34
+    },
+    {
+      "title": "PART 0-M \u2014 HELD-OUT, RANDOMIZED & COMPOSITIONAL CHECKS",
+      "start_line": 4320,
+      "end_line": 4347,
+      "lines": 28
+    },
+    {
+      "title": "PART 0-EVID-ADAPT \u2014 DOMAIN-SPECIFIC EVIDENCE ADAPTERS",
+      "start_line": 4348,
+      "end_line": 4392,
+      "lines": 45
+    },
+    {
+      "title": "PART 0-N \u2014 REQUIREMENT-TO-EVIDENCE CLOSURE",
+      "start_line": 4393,
+      "end_line": 4422,
+      "lines": 30
+    },
+    {
+      "title": "PART 0-O \u2014 TAMPER-EVIDENT / APPEND-ONLY AUDIT TRAIL",
+      "start_line": 4423,
+      "end_line": 4451,
+      "lines": 29
+    },
+    {
+      "title": "PART 0-P \u2014 EVIDENCE CONSISTENCY CHECKER",
+      "start_line": 4452,
+      "end_line": 4479,
+      "lines": 28
+    },
+    {
+      "title": "PART 0-Q \u2014 HIGH-CONSEQUENCE TWO-KEY RULE",
+      "start_line": 4480,
+      "end_line": 4508,
+      "lines": 29
+    },
+    {
+      "title": "PART 0-R \u2014 MODEL / AGENT QUARANTINE",
+      "start_line": 4509,
+      "end_line": 4537,
+      "lines": 29
+    },
+    {
+      "title": "PART 0-S \u2014 MODEL CHANGE INVALIDATES BLANKET TRUST",
+      "start_line": 4538,
+      "end_line": 4549,
+      "lines": 12
+    },
+    {
+      "title": "PART 0-T \u2014 RANDOM INTEGRITY AUDITS",
+      "start_line": 4550,
+      "end_line": 4673,
+      "lines": 124
+    },
+    {
+      "title": "PART 0-U \u2014 TRUTHFULNESS AS A NON-OPTIMIZABLE CONTROL",
+      "start_line": 4674,
+      "end_line": 4685,
+      "lines": 12
+    },
+    {
+      "title": "PART 0-V \u2014 ANTI-SANDBAGGING / CAPABILITY UNDERSTATEMENT CHECK",
+      "start_line": 4686,
+      "end_line": 4702,
+      "lines": 17
+    },
+    {
+      "title": "PART 0-W \u2014 REVIEWER INDEPENDENCE & DIVERSITY",
+      "start_line": 4703,
+      "end_line": 4721,
+      "lines": 19
+    },
+    {
+      "title": "PART 0-X \u2014 INTEGRITY-CRITICAL FILE PROTECTION",
+      "start_line": 4722,
+      "end_line": 4741,
+      "lines": 20
+    },
+    {
+      "title": "PART 0-Y \u2014 ACCEPTANCE GATE STATE MACHINE",
+      "start_line": 4742,
+      "end_line": 4767,
+      "lines": 26
+    },
+    {
+      "title": "PART 0-Z \u2014 ABSOLUTE TRUTH REPORTING RULE",
+      "start_line": 4768,
+      "end_line": 4816,
+      "lines": 49
+    },
+    {
+      "title": "PART 0-AA \u2014 HARD AUTONOMOUS DEVELOPMENT CONSTITUTION",
+      "start_line": 4817,
+      "end_line": 5037,
+      "lines": 221
+    },
+    {
+      "title": "PART 0-AB \u2014 SEMANTIC PREDEFINITION & INTENT GOVERNANCE",
+      "start_line": 5038,
+      "end_line": 5148,
+      "lines": 111
+    },
+    {
+      "title": "PART 0-AC \u2014 COMPONENT REGISTRY & STABILITY LIFECYCLE",
+      "start_line": 5149,
+      "end_line": 5245,
+      "lines": 97
+    },
+    {
+      "title": "PART 0-AD \u2014 STABLE BY DEFAULT, CHANGE BY JUSTIFIED EXCEPTION",
+      "start_line": 5246,
+      "end_line": 5296,
+      "lines": 51
+    },
+    {
+      "title": "PART 0-AE \u2014 LOCKED / CRITICAL COMPONENT CHANGE PROTOCOL",
+      "start_line": 5297,
+      "end_line": 5331,
+      "lines": 35
+    },
+    {
+      "title": "PART 0-AF \u2014 DOMAIN SEMANTIC IDENTITY",
+      "start_line": 5332,
+      "end_line": 5374,
+      "lines": 43
+    },
+    {
+      "title": "PART 0-AG \u2014 CLASS / OBJECT RELATIONSHIP DISCIPLINE",
+      "start_line": 5375,
+      "end_line": 5414,
+      "lines": 40
+    },
+    {
+      "title": "PART 0-AH \u2014 RESPONSIBILITY OWNERSHIP & NO SILENT MIGRATION",
+      "start_line": 5415,
+      "end_line": 5442,
+      "lines": 28
+    },
+    {
+      "title": "PART 0-AI \u2014 RESPONSIBILITY DUPLICATION PREVENTION WITHIN BOUNDED CONTEXTS",
+      "start_line": 5443,
+      "end_line": 5489,
+      "lines": 47
+    },
+    {
+      "title": "PART 0-AJ \u2014 CHARACTERIZATION BEFORE REFACTOR",
+      "start_line": 5490,
+      "end_line": 5511,
+      "lines": 22
+    },
+    {
+      "title": "PART 0-AK \u2014 CONTRACT-FIRST DEVELOPMENT",
+      "start_line": 5512,
+      "end_line": 5535,
+      "lines": 24
+    },
+    {
+      "title": "PART 0-AL \u2014 VERSION INSTEAD OF SILENT BREAKAGE",
+      "start_line": 5536,
+      "end_line": 5560,
+      "lines": 25
+    },
+    {
+      "title": "PART 0-AM \u2014 NO PREMATURE ABSTRACTION",
+      "start_line": 5561,
+      "end_line": 5587,
+      "lines": 27
+    },
+    {
+      "title": "PART 0-AN \u2014 MODULE BOUNDARY GOVERNANCE",
+      "start_line": 5588,
+      "end_line": 5615,
+      "lines": 28
+    },
+    {
+      "title": "PART 0-AO \u2014 NEW COMPONENT ADMISSION GATE",
+      "start_line": 5616,
+      "end_line": 5636,
+      "lines": 21
+    },
+    {
+      "title": "PART 0-AP \u2014 HARD DEVELOPMENT EXECUTION LOOP",
+      "start_line": 5637,
+      "end_line": 5665,
+      "lines": 29
+    },
+    {
+      "title": "PART 0-AQ \u2014 DEVELOPMENT CHANGE CLASSIFICATION",
+      "start_line": 5666,
+      "end_line": 5696,
+      "lines": 31
+    },
+    {
+      "title": "PART 0-AR \u2014 DEVELOPMENT VIOLATIONS",
+      "start_line": 5697,
+      "end_line": 5723,
+      "lines": 27
+    },
+    {
+      "title": "PART 0-AS \u2014 DEVELOPMENT COMPLETION CONTRACT",
+      "start_line": 5724,
+      "end_line": 5752,
+      "lines": 29
+    },
+    {
+      "title": "PART I \u2014 IMMUTABLE GOVERNANCE KERNEL",
+      "start_line": 5753,
+      "end_line": 5950,
+      "lines": 198
+    },
+    {
+      "title": "PART II \u2014 INSTRUCTION AUTHORITY & PROMPT-INJECTION DEFENSE",
+      "start_line": 5951,
+      "end_line": 5989,
+      "lines": 39
+    },
+    {
+      "title": "PART III \u2014 HARD-CONTROL PRINCIPLE",
+      "start_line": 5990,
+      "end_line": 6025,
+      "lines": 36
+    },
+    {
+      "title": "PART IV \u2014 PROJECT CLASSIFICATION",
+      "start_line": 6026,
+      "end_line": 6080,
+      "lines": 55
+    },
+    {
+      "title": "PART V \u2014 VERIFIED PROJECT BASELINE",
+      "start_line": 6081,
+      "end_line": 6115,
+      "lines": 35
+    },
+    {
+      "title": "PART V-A \u2014 MID-PROJECT ADOPTION & RECONCILIATION",
+      "start_line": 6116,
+      "end_line": 6223,
+      "lines": 108
+    },
+    {
+      "title": "PART V-A2 \u2014 BEHAVIORAL GOVERNANCE STATUS FOR EXISTING CODE",
+      "start_line": 6224,
+      "end_line": 6256,
+      "lines": 33
+    },
+    {
+      "title": "PART V-B \u2014 EXISTING-SYSTEM GOVERNANCE RETROFIT & CONTINUOUS DEVELOPMENT",
+      "start_line": 6257,
+      "end_line": 6734,
+      "lines": 478
+    },
+    {
+      "title": "PART VI \u2014 SOURCE OF TRUTH & MEMORY",
+      "start_line": 6735,
+      "end_line": 6777,
+      "lines": 43
+    },
+    {
+      "title": "PART VII \u2014 RESEARCH & EVIDENCE ENGINE",
+      "start_line": 6778,
+      "end_line": 6845,
+      "lines": 68
+    },
+    {
+      "title": "PART VII-A \u2014 RESEARCH PATHWAY MEMORY, SIMILARITY & REVIVAL",
+      "start_line": 6846,
+      "end_line": 7138,
+      "lines": 293
+    },
+    {
+      "title": "PART VIII \u2014 RESEARCH FRESHNESS & DRIFT",
+      "start_line": 7139,
+      "end_line": 7170,
+      "lines": 32
+    },
+    {
+      "title": "PART IX \u2014 USER / PROBLEM / MARKET VALIDATION",
+      "start_line": 7171,
+      "end_line": 7205,
+      "lines": 35
+    },
+    {
+      "title": "PART X \u2014 HYPOTHESIS ENGINE",
+      "start_line": 7206,
+      "end_line": 7243,
+      "lines": 38
+    },
+    {
+      "title": "PART XI \u2014 DECISION ENGINE",
+      "start_line": 7244,
+      "end_line": 7286,
+      "lines": 43
+    },
+    {
+      "title": "PART XII \u2014 IMPACT & CONSEQUENCE PROPAGATION",
+      "start_line": 7287,
+      "end_line": 7328,
+      "lines": 42
+    },
+    {
+      "title": "PART XIII \u2014 PROJECT KNOWLEDGE GRAPH",
+      "start_line": 7329,
+      "end_line": 7361,
+      "lines": 33
+    },
+    {
+      "title": "PART XIV \u2014 CANONICAL PRODUCT MODEL",
+      "start_line": 7362,
+      "end_line": 7401,
+      "lines": 40
+    },
+    {
+      "title": "PART XV \u2014 APPROACH / METHODOLOGY SELECTOR",
+      "start_line": 7402,
+      "end_line": 7455,
+      "lines": 54
+    },
+    {
+      "title": "PART XV-B \u2014 ML / AI MODEL EVALUATION GOVERNANCE",
+      "start_line": 7456,
+      "end_line": 7655,
+      "lines": 200
+    },
+    {
+      "title": "PART XV-A \u2014 SCIENTIFIC SYSTEM INTERROGATION & CONTROLLED PERTURBATION",
+      "start_line": 7656,
+      "end_line": 7833,
+      "lines": 178
+    },
+    {
+      "title": "PART XVI \u2014 ARCHITECTURE & PLATFORM SELECTION",
+      "start_line": 7834,
+      "end_line": 7878,
+      "lines": 45
+    },
+    {
+      "title": "PART XVII \u2014 DEPENDENCY / OPEN-SOURCE GOVERNANCE",
+      "start_line": 7879,
+      "end_line": 7899,
+      "lines": 21
+    },
+    {
+      "title": "PART XVIII \u2014 DATA, IDENTITY, PERMISSIONS & TRUST",
+      "start_line": 7900,
+      "end_line": 7934,
+      "lines": 35
+    },
+    {
+      "title": "PART XIX \u2014 SECURITY / ABUSE / ADVERSARIAL DESIGN",
+      "start_line": 7935,
+      "end_line": 7968,
+      "lines": 34
+    },
+    {
+      "title": "PART XX \u2014 FINANCIAL GOVERNANCE",
+      "start_line": 7969,
+      "end_line": 7998,
+      "lines": 30
+    },
+    {
+      "title": "PART XXI \u2014 AUTONOMY AUTHORITY MODEL",
+      "start_line": 7999,
+      "end_line": 8050,
+      "lines": 52
+    },
+    {
+      "title": "PART XXII \u2014 AGENT CAPABILITY & QUALIFICATION SYSTEM",
+      "start_line": 8051,
+      "end_line": 8088,
+      "lines": 38
+    },
+    {
+      "title": "PART XXIII \u2014 MODEL / AGENT / TOOL ROUTING",
+      "start_line": 8089,
+      "end_line": 8124,
+      "lines": 36
+    },
+    {
+      "title": "PART XXIV \u2014 MASTER PROMPT IS NOT SUB-AGENT PROMPT",
+      "start_line": 8125,
+      "end_line": 8144,
+      "lines": 20
+    },
+    {
+      "title": "PART XXV \u2014 TASK EXECUTION ENVELOPE",
+      "start_line": 8145,
+      "end_line": 8192,
+      "lines": 48
+    },
+    {
+      "title": "PART XXVI \u2014 ZERO-TRUST AGENT OUTPUT",
+      "start_line": 8193,
+      "end_line": 8232,
+      "lines": 40
+    },
+    {
+      "title": "PART XXVII \u2014 STATE VERSION & STALE CONTEXT PROTECTION",
+      "start_line": 8233,
+      "end_line": 8259,
+      "lines": 27
+    },
+    {
+      "title": "PART XXVIII \u2014 CONCURRENT AGENT CONTROL",
+      "start_line": 8260,
+      "end_line": 8289,
+      "lines": 30
+    },
+    {
+      "title": "PART XXIX \u2014 AGENT HANDOFF PROTOCOL",
+      "start_line": 8290,
+      "end_line": 8313,
+      "lines": 24
+    },
+    {
+      "title": "PART XXX \u2014 EXTERNAL ASSURANCE",
+      "start_line": 8314,
+      "end_line": 8334,
+      "lines": 21
+    },
+    {
+      "title": "PART XXX-A \u2014 EXECUTION TOPOLOGY: SEQUENTIAL, PARALLEL, CONTINUOUS & ITERATIVE",
+      "start_line": 8335,
+      "end_line": 8460,
+      "lines": 126
+    },
+    {
+      "title": "PART XXXI \u2014 AUTONOMOUS PROJECT STATE MACHINE",
+      "start_line": 8461,
+      "end_line": 8564,
+      "lines": 104
+    },
+    {
+      "title": "PART XXXII \u2014 NEXT-ACTION ENGINE",
+      "start_line": 8565,
+      "end_line": 8602,
+      "lines": 38
+    },
+    {
+      "title": "PART XXXIII \u2014 RESOURCE / COST GOVERNOR",
+      "start_line": 8603,
+      "end_line": 8635,
+      "lines": 33
+    },
+    {
+      "title": "PART XXXIV \u2014 IMPLEMENTATION TASK GRAPH",
+      "start_line": 8636,
+      "end_line": 8668,
+      "lines": 33
+    },
+    {
+      "title": "PART XXXV \u2014 DEFERRED WORK",
+      "start_line": 8669,
+      "end_line": 8727,
+      "lines": 59
+    },
+    {
+      "title": "PART XXXVI \u2014 UI PROGRAMME, UX ARCHITECTURE & PAGE-FAMILY GOVERNANCE",
+      "start_line": 8728,
+      "end_line": 9327,
+      "lines": 600
+    },
+    {
+      "title": "PART XXXVI-A \u2014 DELIVERY TOPOLOGY, INFRASTRUCTURE & DISTRIBUTION ARCHITECTURE",
+      "start_line": 9328,
+      "end_line": 9438,
+      "lines": 111
+    },
+    {
+      "title": "PART XXXVI-B \u2014 INFRASTRUCTURE PARADIGM SELECTOR",
+      "start_line": 9439,
+      "end_line": 9625,
+      "lines": 187
+    },
+    {
+      "title": "PART XXXVI-C \u2014 INFRASTRUCTURE AS CODE & CONFIGURATION GOVERNANCE",
+      "start_line": 9626,
+      "end_line": 9660,
+      "lines": 35
+    },
+    {
+      "title": "PART XXXVI-D \u2014 ENVIRONMENT ARCHITECTURE",
+      "start_line": 9661,
+      "end_line": 9703,
+      "lines": 43
+    },
+    {
+      "title": "PART XXXVI-E \u2014 NETWORK & CONNECTIVITY ARCHITECTURE",
+      "start_line": 9704,
+      "end_line": 9728,
+      "lines": 25
+    },
+    {
+      "title": "PART XXXVI-F \u2014 IDENTITY, IAM, SECRETS & MACHINE CREDENTIALS",
+      "start_line": 9729,
+      "end_line": 9763,
+      "lines": 35
+    },
+    {
+      "title": "PART XXXVI-G \u2014 ARTIFACT, BUILD & SOFTWARE SUPPLY-CHAIN SECURITY",
+      "start_line": 9764,
+      "end_line": 9800,
+      "lines": 37
+    },
+    {
+      "title": "PART XXXVI-H \u2014 DATA INFRASTRUCTURE",
+      "start_line": 9801,
+      "end_line": 9838,
+      "lines": 38
+    },
+    {
+      "title": "PART XXXVI-I \u2014 SCALING & CAPACITY PARADIGMS",
+      "start_line": 9839,
+      "end_line": 9874,
+      "lines": 36
+    },
+    {
+      "title": "PART XXXVI-J \u2014 RELIABILITY, AVAILABILITY & RESILIENCE",
+      "start_line": 9875,
+      "end_line": 9912,
+      "lines": 38
+    },
+    {
+      "title": "PART XXXVI-K \u2014 BACKUP, RESTORE & DISASTER RECOVERY",
+      "start_line": 9913,
+      "end_line": 9949,
+      "lines": 37
+    },
+    {
+      "title": "PART XXXVI-L \u2014 OBSERVABILITY PARADIGM",
+      "start_line": 9950,
+      "end_line": 9976,
+      "lines": 27
+    },
+    {
+      "title": "PART XXXVI-M \u2014 COST / FINOPS GOVERNANCE",
+      "start_line": 9977,
+      "end_line": 10012,
+      "lines": 36
+    },
+    {
+      "title": "PART XXXVI-N \u2014 DATA RESIDENCY, SOVEREIGNTY & COMPLIANCE TOPOLOGY",
+      "start_line": 10013,
+      "end_line": 10035,
+      "lines": 23
+    },
+    {
+      "title": "PART XXXVI-O \u2014 WEB INFRASTRUCTURE BRANCH",
+      "start_line": 10036,
+      "end_line": 10080,
+      "lines": 45
+    },
+    {
+      "title": "PART XXXVI-P \u2014 STANDALONE DESKTOP INFRASTRUCTURE BRANCH",
+      "start_line": 10081,
+      "end_line": 10128,
+      "lines": 48
+    },
+    {
+      "title": "PART XXXVI-Q \u2014 MOBILE INFRASTRUCTURE BRANCH",
+      "start_line": 10129,
+      "end_line": 10196,
+      "lines": 68
+    },
+    {
+      "title": "PART XXXVI-R \u2014 BACKEND/API RELEASE TRAIN",
+      "start_line": 10197,
+      "end_line": 10217,
+      "lines": 21
+    },
+    {
+      "title": "PART XXXVI-S \u2014 CLIENT COMPATIBILITY & VERSION SKEW",
+      "start_line": 10218,
+      "end_line": 10259,
+      "lines": 42
+    },
+    {
+      "title": "PART XXXVI-T \u2014 RELEASE TRAINS & DISTRIBUTION CHANNELS",
+      "start_line": 10260,
+      "end_line": 10293,
+      "lines": 34
+    },
+    {
+      "title": "PART XXXVI-U \u2014 RELEASE STRATEGIES",
+      "start_line": 10294,
+      "end_line": 10324,
+      "lines": 31
+    },
+    {
+      "title": "PART XXXVI-V \u2014 FEATURE FLAGS & REMOTE CONFIGURATION",
+      "start_line": 10325,
+      "end_line": 10347,
+      "lines": 23
+    },
+    {
+      "title": "PART XXXVI-W \u2014 INFRASTRUCTURE FAILURE & RECOVERY MATRIX",
+      "start_line": 10348,
+      "end_line": 10391,
+      "lines": 44
+    },
+    {
+      "title": "PART XXXVI-X \u2014 INFRASTRUCTURE SECURITY & THREAT BOUNDARIES",
+      "start_line": 10392,
+      "end_line": 10423,
+      "lines": 32
+    },
+    {
+      "title": "PART XXXVI-Y \u2014 SERVICE OWNERSHIP & OPERATIONAL RESPONSIBILITY",
+      "start_line": 10424,
+      "end_line": 10444,
+      "lines": 21
+    },
+    {
+      "title": "PART XXXVI-Z \u2014 INFRASTRUCTURE CHANGE GOVERNANCE",
+      "start_line": 10445,
+      "end_line": 10469,
+      "lines": 25
+    },
+    {
+      "title": "PART XXXVII \u2014 PLATFORM-SPECIFIC BRANCHES",
+      "start_line": 10470,
+      "end_line": 10527,
+      "lines": 58
+    },
+    {
+      "title": "PART XXXVIII \u2014 TESTING & VERIFICATION",
+      "start_line": 10528,
+      "end_line": 10564,
+      "lines": 37
+    },
+    {
+      "title": "PART XXXIX \u2014 PROMPT REGRESSION TESTING",
+      "start_line": 10565,
+      "end_line": 10596,
+      "lines": 32
+    },
+    {
+      "title": "PART XL \u2014 AGENT PERFORMANCE EVALUATION",
+      "start_line": 10597,
+      "end_line": 10621,
+      "lines": 25
+    },
+    {
+      "title": "PART XLI \u2014 PRE-RELEASE INDEPENDENT REVIEW",
+      "start_line": 10622,
+      "end_line": 10662,
+      "lines": 41
+    },
+    {
+      "title": "PART XLII \u2014 CONTROLLED RELEASE",
+      "start_line": 10663,
+      "end_line": 10693,
+      "lines": 31
+    },
+    {
+      "title": "PART XLIII \u2014 OBSERVABILITY & DIGITAL TWIN",
+      "start_line": 10694,
+      "end_line": 10723,
+      "lines": 30
+    },
+    {
+      "title": "PART XLIV \u2014 INCIDENT / ERROR / REPAIR GOVERNANCE",
+      "start_line": 10724,
+      "end_line": 10754,
+      "lines": 31
+    },
+    {
+      "title": "PART XLV \u2014 EXPERIMENT & LEARNING ENGINE",
+      "start_line": 10755,
+      "end_line": 10779,
+      "lines": 25
+    },
+    {
+      "title": "PART XLVI \u2014 CONTINUOUS PRODUCT EVOLUTION",
+      "start_line": 10780,
+      "end_line": 10825,
+      "lines": 46
+    },
+    {
+      "title": "PART XLVII \u2014 CROSS-PROJECT PATTERN LIBRARY",
+      "start_line": 10826,
+      "end_line": 10852,
+      "lines": 27
+    },
+    {
+      "title": "PART XLVIII \u2014 VIABILITY / PIVOT / STOP ENGINE",
+      "start_line": 10853,
+      "end_line": 10885,
+      "lines": 33
+    },
+    {
+      "title": "PART XLIX \u2014 CANONICAL GOVERNANCE STATE & GENERATED ARTIFACT VIEWS",
+      "start_line": 10886,
+      "end_line": 11064,
+      "lines": 179
+    },
+    {
+      "title": "PART L \u2014 CANONICAL MASTER SEQUENCE",
+      "start_line": 11065,
+      "end_line": 11250,
+      "lines": 186
+    },
+    {
+      "title": "PART LI \u2014 AUTONOMOUS EXECUTION RULE",
+      "start_line": 11251,
+      "end_line": 11284,
+      "lines": 34
+    },
+    {
+      "title": "PART LI-A \u2014 PILOT GOVERNANCE EFFECTIVENESS REVIEW",
+      "start_line": 11285,
+      "end_line": 11408,
+      "lines": 124
+    },
+    {
+      "title": "PART LII \u2014 COMPLETION CONTRACT",
+      "start_line": 11409,
+      "end_line": 11451,
+      "lines": 43
+    },
+    {
+      "title": "PART LIII \u2014 STATUS REPORTING",
+      "start_line": 11452,
+      "end_line": 11490,
+      "lines": 39
+    },
+    {
+      "title": "FIELD-EVIDENCE ADDITION \u2014 BOUNDED EXECUTION HARDENING",
+      "start_line": 11491,
+      "end_line": 11498,
+      "lines": 8
+    },
+    {
+      "title": "FIELD-EVIDENCE ADDITION \u2014 v2.9.9 REVIEW-DRIVEN HARDENING",
+      "start_line": 11499,
+      "end_line": 11516,
+      "lines": 18
+    },
+    {
+      "title": "OPERATIONALIZATION ROADMAP \u2014 EXECUTABLE GOVERNANCE HARNESS",
+      "start_line": 11517,
+      "end_line": 11557,
+      "lines": 41
+    },
+    {
+      "title": "FIELD-EVIDENCE RULE",
+      "start_line": 11558,
+      "end_line": 11581,
+      "lines": 24
+    },
+    {
+      "title": "FINAL OPERATIONAL-CLOSURE INVARIANT",
+      "start_line": 11582,
+      "end_line": 11587,
+      "lines": 6
+    },
+    {
+      "title": "FINAL RESEARCH-MEMORY INVARIANT",
+      "start_line": 11588,
+      "end_line": 11591,
+      "lines": 4
+    },
+    {
+      "title": "FINAL ML-EVALUATION INVARIANT",
+      "start_line": 11592,
+      "end_line": 11597,
+      "lines": 6
+    },
+    {
+      "title": "FINAL AUTONOMOUS REVIEW-ROUTING INVARIANT",
+      "start_line": 11598,
+      "end_line": 11603,
+      "lines": 6
+    },
+    {
+      "title": "FINAL UNIVERSAL-PROJECT INVARIANT",
+      "start_line": 11604,
+      "end_line": 11609,
+      "lines": 6
+    },
+    {
+      "title": "FINAL AUTONOMOUS GIT INVARIANT",
+      "start_line": 11610,
+      "end_line": 11615,
+      "lines": 6
+    },
+    {
+      "title": "FINAL UI PROGRAMME INVARIANT",
+      "start_line": 11616,
+      "end_line": 11621,
+      "lines": 6
+    },
+    {
+      "title": "FINAL ENVIRONMENT-LOCAL ACCEPTANCE INVARIANT",
+      "start_line": 11622,
+      "end_line": 11627,
+      "lines": 6
+    },
+    {
+      "title": "FINAL CODING-ENVIRONMENT INVARIANT",
+      "start_line": 11628,
+      "end_line": 11633,
+      "lines": 6
+    },
+    {
+      "title": "FINAL MULTI-MODEL INVARIANT",
+      "start_line": 11634,
+      "end_line": 11640,
+      "lines": 7
+    },
+    {
+      "title": "NON-AUTHORITATIVE COMPATIBILITY EXAMPLES",
+      "start_line": 11641,
+      "end_line": 11680,
+      "lines": 40
+    },
+    {
+      "title": "NON-AUTHORITATIVE REVIEW-ROUTING EXAMPLES",
+      "start_line": 11681,
+      "end_line": 11691,
+      "lines": 11
+    },
+    {
+      "title": "FINAL OPERATING PHILOSOPHY",
+      "start_line": 11692,
+      "end_line": 11769,
+      "lines": 78
+    },
+    {
+      "title": "FINAL BOUNDED-EXECUTION INVARIANT",
+      "start_line": 11770,
+      "end_line": 11775,
+      "lines": 6
+    },
+    {
+      "title": "FINAL DEVELOPMENT INVARIANT",
+      "start_line": 11776,
+      "end_line": 11783,
+      "lines": 8
+    },
+    {
+      "title": "FINAL TRUTH INVARIANT",
+      "start_line": 11784,
+      "end_line": 11801,
+      "lines": 18
+    }
+  ]
+}

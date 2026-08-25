@@ -1,0 +1,37 @@
+{
+  "MASTER_AUTONOMOUS_PROJECT_GOVERNANCE_DEVELOPMENT_EVOLUTION_v2_9_10_FINAL.md": {
+    "sha256": "34f2dc33ba2c8f7edb5280d6f63426fad431cdcdf61642f26c3c7aee4bd84f07",
+    "bytes": 304919,
+    "lines": 11802
+  },
+  "AUTONOMOUS_PROJECT_RUNTIME_GOVERNANCE_KERNEL_v2.10.0.md": {
+    "sha256": "3d20c68f92cc0535ba4e3970a02a16806a5ae9325caa39a290502be9d8075621",
+    "bytes": 11541,
+    "lines": 339
+  },
+  "AUTONOMOUS_PROJECT_WORKER_MICRO_KERNEL_v2.10.0.md": {
+    "sha256": "368433ec2096de483cdb75badd8980dfb1374b18894f607502f6309872542f06",
+    "bytes": 3440,
+    "lines": 68
+  },
+  "TASK_EXECUTION_ENVELOPE_TEMPLATE_v2.10.0.md": {
+    "sha256": "3c0d412b9b3f01a5c280df52fcb94d4a8b816fd1b51e3bdaec9a671045015e13",
+    "bytes": 3041,
+    "lines": 85
+  },
+  "GOVERNANCE_STATE_TEMPLATE_v2.10.0.yaml": {
+    "sha256": "4673899e152b4f0f2aa972b77caf7799b040ff44cfc346c1c53dd4d1292b0ec4",
+    "bytes": 1789,
+    "lines": 52
+  },
+  "MASTER_MODULE_INDEX_v2.10.0.json": {
+    "sha256": "f9fd6c6fbab7b1e4de55ca47da9cb8e33d776fa816992220c5990c79aae0bd3b",
+    "bytes": 26942,
+    "lines": 1071
+  },
+  "GOVERNANCE_OPERATOR_GUIDE_v2.10.0.md": {
+    "sha256": "6fc07e1f9cffc360e2d69d2c66a7675190228200c09a8675a6e5c63b0f236301",
+    "bytes": 4792,
+    "lines": 84
+  }
+}

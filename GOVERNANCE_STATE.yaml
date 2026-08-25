@@ -1,0 +1,76 @@
+# GOVERNANCE_STATE.yaml — NS-TRAJECTORY-PERSISTENCE-2 (v2.10.0)
+# Canonical persistent project-binding anchor under Governance v2.10.0
+
+governance:
+  kernel_version: "v2.10.0"
+  master_version: "v2.9.10"
+  master_sha256: "34f2dc33ba2c8f7edb5280d6f63426fad431cdcdf61642f26c3c7aee4bd84f07"
+  bootstrap_level: "HIGH_ASSURANCE"
+  adopted: "2026-08-25"
+  adoption_mode: "MID_PROJECT"
+
+project:
+  id: "tubulance"
+  name: "3D Navier-Stokes Stochastic Persistence & Singularity Research"
+  root: "d:/Comfy UI/tubulance"
+  default_branch: "main"
+  source_of_truth: "CURRENT_SCIENTIFIC_STATE.md"
+  coding_environments:
+    - "Antigravity (Gemini Writer/Reviewer/Local Authority)"
+    - "Claude Code (Claude Writer/Reviewer)"
+    - "Cursor / Local CLI"
+
+protected:
+  paths:
+    - "GOVERNANCE_STATE.yaml"
+    - "governanace/"
+    - "research_memory/RESEARCH_PATHWAY_SCHEMA.json"
+    - "research_memory/RESEARCH_OBSTRUCTION_REGISTRY.yaml"
+    - "research_memory/RESEARCH_PATHWAY_REGISTRY.yaml"
+    - "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
+    - "tests/"
+  components:
+    - "research_memory"
+    - "navier3d_core"
+
+risk_profile:
+  t4_domains_present:
+    - "mathematical_regularity_proofs"
+    - "stochastic_lagrangian_sdes"
+    - "scale_critical_invariants"
+  known_escalators:
+    - "unsupported_global_regularity_claims"
+    - "unverified_blowup_exclusion"
+
+roles:
+  known_agents:
+    - id: "antigravity-gemini-orchestrator"
+      callable_via: "Antigravity Environment"
+      typical_role: "ORCHESTRATOR"
+      independence: "HIGH"
+      cost_class: "LOW"
+    - id: "antigravity-gemini-writer"
+      callable_via: "Antigravity Environment"
+      typical_role: "WRITER"
+      independence: "MEDIUM"
+      cost_class: "LOW"
+    - id: "antigravity-gemini-verifier"
+      callable_via: "Antigravity Environment"
+      typical_role: "REVIEWER"
+      independence: "HIGH"
+      cost_class: "LOW"
+
+state:
+  last_verified_checkpoint:
+    ref: "1d4c9db15d732749ecef45a83cafd344c2f9c519"
+    at: "2026-08-25T00:31:00Z"
+  canonical_milestone: "TP2-G4-A2 = ACCEPTED_CANONICAL_WITH_REFORMULATION"
+  active_gate: "TP2-G4-A3"
+  accepted_t3plus_count: 5
+  last_random_audit: "REV-2026-08-24-RPM1"
+  retrofit_debt: []
+  open_findings: []
+
+emergency:
+  incident_state: "NONE"
+  break_glass_record: "NONE"
