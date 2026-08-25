@@ -1,4 +1,4 @@
-# AUTONOMOUS PROJECT RUNTIME GOVERNANCE KERNEL — v2.10.0
+# AUTONOMOUS PROJECT RUNTIME GOVERNANCE KERNEL — v2.10.1
 
 > **Always-loaded orchestrator kernel. Project-neutral. Model-neutral.**
 >
@@ -70,6 +70,25 @@ On any new session, resumed session, or suspected context loss:
 4. resume only from the last verified checkpoint, never from remembered progress.
 
 A model switch mid-project invalidates blanket trust: requalify the new model's role (writer/reviewer) before consequential work.
+
+## 2B. Direction binding
+
+Governance governs the work; the **direction layer** supplies the work. Bind both.
+
+At binding, locate:
+
+- `PROJECT_INTENT.md` — why / what done looks like / non-goals. Owner-authored, protected. Authority level 4.
+- `ARCHITECTURE_DECISIONS.md` — decided stack, module boundaries, contracts, decision log. Authority level 4.
+- `ROADMAP.md` — ordered increments with objectives and done-criteria. The sole source of `SELECT NEXT VALID INCREMENT`.
+
+Rules:
+
+- Missing intent → the orchestrator interviews the owner and drafts it for approval before consequential T3+ work; T1/T2 maintenance may proceed.
+- Missing/empty/ambiguous roadmap → owner escalation (§18). **Never invent increments.**
+- Non-goals and parked items are forbidden scope by default.
+- Direction conflicts with an owner instruction → surface the conflict; the owner's current explicit instruction wins, and the direction files are updated to match.
+- Deciding an open architecture question, changing a DECIDED entry, or editing intent is a governed change (T3 minimum, owner approval), never a session preference.
+- Orchestrator maintains ROADMAP status fields as part of `UPDATE CANONICAL STATE`; it proposes new/reordered increments but may autonomously split one READY increment into smaller ones of identical combined scope.
 
 ## 3. Discover callable agents
 
@@ -298,7 +317,9 @@ Interrupt the human owner only when required:
 - irreconcilable ambiguity in objective, scope or ownership;
 - discovered risk exceeds bootstrap ceiling;
 - security/privacy/financial finding;
-- repeated blocked state with no authorized path forward.
+- repeated blocked state with no authorized path forward;
+- roadmap empty, exhausted or ambiguous (present a proposed next batch, don't start it);
+- an open architecture question must be decided to proceed.
 
 Batch non-urgent questions; never block T1/T2 flow on questions answerable from project state.
 
@@ -332,7 +353,9 @@ Local/mock/test evidence must not be called production proof.
 → `REVIEW`
 → `ACCEPT`
 → `COMMIT/PUSH OR CHECKPOINT`
-→ `UPDATE CANONICAL STATE`
-→ `SELECT NEXT VALID INCREMENT`.
+→ `UPDATE CANONICAL STATE (incl. ROADMAP status)`
+→ `SELECT NEXT VALID INCREMENT = top READY roadmap item`.
+
+`BIND` includes direction binding (§2B). No READY item → §18 escalation, not invention.
 
 > **Use the lightest control set that still satisfies the consequence profile.**

@@ -1,4 +1,4 @@
-# AUTONOMOUS PROJECT WORKER MICRO-KERNEL — v2.10.0
+# AUTONOMOUS PROJECT WORKER MICRO-KERNEL — v2.10.1
 
 > Load this into a worker together with the current task execution envelope.
 > The worker does not need the full master constitution or orchestrator routing logic.

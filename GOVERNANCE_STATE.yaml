@@ -2,7 +2,7 @@
 # Canonical persistent project-binding anchor under Governance v2.10.0
 
 governance:
-  kernel_version: "v2.10.0"
+  kernel_version: "v2.10.1"
   master_version: "v2.9.10"
   master_sha256: "34f2dc33ba2c8f7edb5280d6f63426fad431cdcdf61642f26c3c7aee4bd84f07"
   bootstrap_level: "HIGH_ASSURANCE"
@@ -62,11 +62,11 @@ roles:
 
 state:
   last_verified_checkpoint:
-    ref: "1d4c9db15d732749ecef45a83cafd344c2f9c519"
-    at: "2026-08-25T00:31:00Z"
-  canonical_milestone: "TP2-G4-A2 = ACCEPTED_CANONICAL_WITH_REFORMULATION"
+    ref: "f18dafd2149637f279073a3c865748c37d9af030"
+    at: "2026-08-25T12:07:00Z"
+  canonical_milestone: "TP2-G4-A2-R1 = ACCEPTED_CANONICAL_WITH_CORRECTIONS"
   active_gate: "TP2-G4-A3"
-  accepted_t3plus_count: 5
+  accepted_t3plus_count: 6
   last_random_audit: "REV-2026-08-24-RPM1"
   retrofit_debt: []
   open_findings: []

@@ -1,4 +1,4 @@
-# GOVERNANCE OPERATOR GUIDE — v2.10.0
+# GOVERNANCE OPERATOR GUIDE — v2.10.1
 
 > How to deploy this governance set into any project, any coding environment, any model.
 > Written for the human owner. Nothing here is worker-loaded.
@@ -9,10 +9,10 @@
 |---|---|---|---|
 | MASTER ... v2.9.10_FINAL.md | ~305 KB | Nobody, by default | Reference authority. Orchestrator extracts modules from it via the index. |
 | MASTER_MODULE_INDEX_v2.10.0.json | small | Orchestrator | To locate and extract only the parts a task needs. |
-| RUNTIME_GOVERNANCE_KERNEL_v2.10.0.md | ~11 KB | Orchestrator | Always, every session. |
-| WORKER_MICRO_KERNEL_v2.10.0.md | ~4 KB | Every worker | Always, with its envelope. |
-| TASK_EXECUTION_ENVELOPE_TEMPLATE_v2.10.0.md | small | Orchestrator (fills), worker (receives) | Per task. |
-| GOVERNANCE_STATE_TEMPLATE_v2.10.0.yaml | small | Lives in the repo | Filled once per project, updated at checkpoints. |
+| RUNTIME_GOVERNANCE_KERNEL_v2.10.1.md | ~13 KB | Orchestrator | Always, every session. |
+| WORKER_MICRO_KERNEL_v2.10.1.md | ~4 KB | Every worker | Always, with its envelope. |
+| TASK_EXECUTION_ENVELOPE_TEMPLATE_v2.10.1.md | small | Orchestrator (fills), worker (receives) | Per task. |
+| GOVERNANCE_STATE_TEMPLATE_v2.10.1.yaml | small | Lives in the repo | Filled once per project, updated at checkpoints. |
 | SHA256 manifest | small | You / orchestrator | Verify file integrity before trusting a copy. |
 
 ## Three ways to start
@@ -81,3 +81,19 @@ New artifacts:
 - This guide.
 
 Master Constitution v2.9.10 is intentionally unchanged and remains reference authority.
+
+## v2.10.1 — Direction layer
+
+Problem addressed: governance tells the AI HOW to work but nothing tells it WHAT to build; agents drift or stall between owner instructions.
+
+New per-project direction files (templates shipped):
+
+| File | Author | Authority |
+|---|---|---|
+| PROJECT_INTENT.md | Owner (protected; AI proposes diffs only) | Why / done / non-goals |
+| ARCHITECTURE_DECISIONS.md | Co-authored, decision log append-only | Decided shape; changing DECIDED = T3 |
+| ROADMAP.md | Owner sets goals; orchestrator decomposes + maintains status | Sole source of next increments |
+
+Kernel changes (v2.10.1): new §2B direction binding; §18 gains roadmap-empty and open-architecture-question escalations; §21 loop now defines SELECT NEXT VALID INCREMENT = top READY roadmap item, never invention. Envelope gains a `direction` block (roadmap_increment trace + non-goals as forbidden scope). GOVERNANCE_STATE.yaml gains a `direction` section and protects PROJECT_INTENT.md. UNIVERSAL_ACTIVATION_PROMPT_v2.10.1.md now ships as a file, including the interview flow for missing intent and approval-gated first roadmap batch.
+
+Workers are unchanged apart from version: direction stays orchestrator-side; workers only ever see it compiled into envelope scope.

@@ -1,4 +1,4 @@
-# TASK EXECUTION ENVELOPE — TEMPLATE v2.10.0
+# TASK EXECUTION ENVELOPE — TEMPLATE v2.10.1
 
 > The orchestrator fills this and sends it to a worker together with the Worker Micro-Kernel.
 > One envelope = one bounded contract = one writer scope.
@@ -9,7 +9,7 @@ envelope:
   id: <project>-<yyyymmdd>-<seq>            # e.g. talos-20260825-014
   issued_by: <orchestrator role/model id>
   governance:
-    kernel_version: v2.10.0
+    kernel_version: v2.10.1
     master_sha256: <sha of master constitution in force>
     bootstrap_level: LIGHT | STANDARD | HIGH_ASSURANCE
 
@@ -19,6 +19,10 @@ envelope:
     base: <branch @ SHA, or state-manifest hash>
     source_of_truth: <file/dir that is canonical>
     coding_environment: <e.g. Claude Code, Cursor, Codex CLI>
+
+  direction:
+    roadmap_increment: <INC-xxx or ADHOC(owner instruction)>   # every envelope traces to the roadmap or an explicit owner ask
+    non_goals_in_force: [<from PROJECT_INTENT — copied so the worker sees them as forbidden scope>]
 
   task:
     objective: >

@@ -2,10 +2,10 @@ import os
 import json
 import hashlib
 
-with open("governanace/v2.10.0_SHA256_MANIFEST.json", "r") as f:
+with open("governanace/v2.10.1_SHA256_MANIFEST.json", "r") as f:
     manifest = json.load(f)
 
-print("=== GOVERNANCE v2.10.0 INTEGRITY CHECK ===")
+print("=== GOVERNANCE v2.10.1 INTEGRITY CHECK ===")
 for filename, meta in manifest.items():
     filepath = os.path.join("governanace", filename)
     if os.path.exists(filepath):
