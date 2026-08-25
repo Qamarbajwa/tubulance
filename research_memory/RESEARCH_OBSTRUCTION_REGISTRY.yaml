@@ -75,9 +75,21 @@ obstructions:
 
   - obstruction_id: "NS-OBS-009"
     name: "DEFORMATION_ONLY_Q_BOUND_SCALING_MISMATCH"
-    description: "Under Navier-Stokes parabolic scaling, Q_s scales as lambda^6 while deformation ||D_s||^2 is dimensionless (lambda^0). No universal scalar lower bound Q_s >= F(||D_s||^2) can exist without carrying additional scale-dependent dimensional coefficients."
-    first_encountered_in: "TP2-G4"
-    affected_pathways: ["TP2-G4"]
+    description: "Stochastic Cauchy quadratic variation Q_s scales as lambda^6 under NS parabolic rescaling, while deformation norm ||D_s||_F^2 is dimensionless (lambda^0). Unscaled lower bounds Q >= F(||D||) are dimensionally impossible."
+    severity: "FATAL_TO_DIRECT_BOUND"
+    first_discovered_in: "TP2-G4"
+    status: "CONFIRMED_ACTIVE"
+    affected_pathways:
+      - "TP2-G4"
     mathematical_core: "Q_s -> lambda^6 Q_s, ||D||^2 -> lambda^0 ||D||^2; unscaled scalar lower bounds are dimensionally inhomogeneous."
     known_bypasses_or_relaxations: ["Reformulate comparison via scaling-compatible rate R_Q(s) = Q_s / S_s = d_s ln(chi_s) (scales as lambda^2)."]
-    status: "ACTIVE_STRUCTURAL_BARRIER"
+
+  - obstruction_id: "NS-OBS-010"
+    name: "LOW_ETA_PERSISTENCE_NOT_UNIVERSALLY_EXCLUDED_BY_NAVIER_STOKES"
+    description: "Exact periodic shear flows on T^3 prove that Navier-Stokes dynamics permit arbitrarily long occupation times O_eps -> L and residence durations in low-eta states (eta ~ sigma_1^-2 -> 0) without singularity formation. Rules out universal data-independent persistence bounds."
+    severity: "FATAL_TO_UNIVERSAL_PERSISTENCE_BOUND"
+    first_discovered_in: "TP2-G4-A3"
+    status: "CONFIRMED_ACTIVE"
+    affected_pathways:
+      - "TP2-G4"
+      - "TH9-R"

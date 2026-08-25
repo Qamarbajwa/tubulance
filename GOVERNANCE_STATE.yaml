@@ -62,11 +62,11 @@ roles:
 
 state:
   last_verified_checkpoint:
-    ref: "f18dafd2149637f279073a3c865748c37d9af030"
-    at: "2026-08-25T12:07:00Z"
-  canonical_milestone: "TP2-G4-A2-R1 = ACCEPTED_CANONICAL_WITH_CORRECTIONS"
-  active_gate: "TP2-G4-A3"
-  accepted_t3plus_count: 6
+    ref: "6770b556d4c4b37e4a52785609e39ef0d429a18e"
+    at: "2026-08-25T20:58:00Z"
+  canonical_milestone: "TP2-G4-A3 = ACCEPTED_CANONICAL_WITH_REFORMULATION"
+  active_gate: "TP2-G4-A4"
+  accepted_t3plus_count: 7
   last_random_audit: "REV-2026-08-24-RPM1"
   retrofit_debt: []
   open_findings: []
