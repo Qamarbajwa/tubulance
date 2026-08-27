@@ -1,0 +1,38 @@
+# PROOF_INCIDENT_REGISTER.yaml — Master Proof Incident Register
+# Permanent record of discovered mathematical errors, overclaims, and invalid proof steps.
+
+incidents:
+  - incident_id: "INC-001"
+    milestone: "TP2-G1R"
+    summary: "Gradient transpose convention discrepancy between forward and backward Cauchy operators."
+    root_cause: "Conflation of Jacobian index conventions [J_f]_{ij} = partial_j f_i versus partial_i f_j."
+    resolution: "Explicitly froze project Convention M: [J_f]_{ij} := partial_j f_i, with D = (nabla_x A)^-1."
+    regression_rule_id: "MRR-001"
+
+  - incident_id: "INC-002"
+    milestone: "TP2-G4-A1"
+    summary: "Unscaled scalar comparison between stochastic quadratic variation Q_s and deformation ||D_s||_F^2."
+    root_cause: "Dimensional scaling mismatch under NS parabolic rescaling (Q_s ~ lambda^6 vs ||D||^2 ~ lambda^0)."
+    resolution: "Proved no-go theorem (NS-OBS-009) and reformulated comparison via scale-critical rate R_Q(s) = Q_s/S_s = d_s ln(chi_s) (lambda^2)."
+    regression_rule_id: "MRR-002"
+
+  - incident_id: "INC-003"
+    milestone: "TP2-G4-A2-R1"
+    summary: "Overclaiming that resolvent projectors make p_alpha and eta 'smooth across all degeneracies'."
+    root_cause: "Treating positive spectral gap as a non-essential condition for canonical Riesz contour separation."
+    resolution: "Qualified scope per Kato/Riesz perturbation theory: canonical Riesz contour integration requires positive spectral gap for isolation."
+    regression_rule_id: "MRR-003"
+
+  - incident_id: "INC-004"
+    milestone: "TP2-G4-A3-R1"
+    summary: "Brownian exit tube [-pi/(4k), pi/(4k)] contained the zero-gradient point y = 0 where G = 0."
+    root_cause: "Evaluating orientation efficiency eta on sample paths passing through G = 0 where eta is undefined."
+    resolution: "Replaced tube with quadrant interval I = [pi/(8k), 3pi/(8k)], strictly bounding h_tau >= c_h A^2 > 0 on [0, L]."
+    regression_rule_id: "MRR-004"
+
+  - incident_id: "INC-005"
+    milestone: "TP2-G4-A3-R1"
+    summary: "Using algebraic product kappa^2 Theta when kappa = 0 and Theta is undefined (0/0)."
+    root_cause: "Factoring relative QV density before establishing non-zero domain."
+    resolution: "Defined Primary Relative QV Density Xi := ||D J_omega||^2 / |D omega|^2 on {omega != 0}, setting Xi = 0 when J_omega = 0, and factoring Xi = kappa^2 Theta only on regular states."
+    regression_rule_id: "MRR-005"

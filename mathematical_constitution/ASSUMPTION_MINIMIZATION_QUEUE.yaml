@@ -1,0 +1,23 @@
+# ASSUMPTION_MINIMIZATION_QUEUE.yaml — Post-Proof Assumption Minimization Queue
+# Systematic analysis of essential vs non-essential hypotheses for accepted theorems.
+
+queue_items:
+  - item_id: "AMQ-001"
+    claim_id: "CLM-004"
+    target_statement: "SVD orientation decomposition ||D J_omega||^2 = ||J_omega||^2 sum p_i sigma_i^2"
+    current_assumptions: ["D in SL(3, R)", "J_omega in R^{3x3}"]
+    tested_removals:
+      - assumption_id: "det(D) = 1"
+        removable: true
+        relaxed_conclusion: "Holds for any real matrix D in R^{3x3} without unit determinant constraint."
+    status: "COMPLETED"
+
+  - item_id: "AMQ-002"
+    claim_id: "CLM-011"
+    target_statement: "Exact rate decomposition d_s ln(chi_s) = 2nu E_mu[Xi]"
+    current_assumptions: ["C^1 velocity field", "Non-trivial classical solution S_s > 0"]
+    tested_removals:
+      - assumption_id: "C^1 regularity of flow"
+        removable: false
+        relaxed_conclusion: "Requires differentiable flow maps to define D_s = [J_A]^-1."
+    status: "EPISTEMIC_BOUNDARY_CONFIRMED"

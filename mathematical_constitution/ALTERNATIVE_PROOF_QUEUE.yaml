@@ -1,0 +1,17 @@
+# ALTERNATIVE_PROOF_QUEUE.yaml — Alternative Proof Search Queue
+# Discovers alternate proof techniques for canonical results.
+
+alternative_proofs:
+  - item_id: "APQ-001"
+    claim_id: "CLM-004"
+    target_statement: "SVD orientation decomposition"
+    primary_proof_method: "Matrix SVD singular value projection."
+    alternative_method: "Quadratic form spectral decomposition of Gamma = D^T D."
+    status: "PROVED_EQUIVALENT"
+
+  - item_id: "APQ-002"
+    claim_id: "CLM-009"
+    target_statement: "Low-eta occupation limit theorem"
+    primary_proof_method: "Lebesgue level set theorem on absolutely continuous beta(tau)."
+    alternative_method: "Girsanov change of measure on Brownian path tube."
+    status: "UNDER_INVESTIGATION"

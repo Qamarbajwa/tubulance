@@ -1,0 +1,12 @@
+# AI_TOOL_PROVENANCE.yaml — AI Tool & Agent Provenance Record
+# Full audit trail of AI model assistance and role separation.
+
+tool_provenance:
+  orchestrator_environment: "Google Antigravity / Gemini 2.5 Pro"
+  governance_kernel: "AUTONOMOUS_PROJECT_RUNTIME_GOVERNANCE_KERNEL_v2.10.1"
+  mathematical_constitution: "MATHEMATICAL_RESEARCH_CONSTITUTION_v1.0.0"
+  role_separation:
+    writer_agent: "Antigravity Task Worker Subagent"
+    reviewer_agent: "Antigravity Independent Verifier Subagent"
+    acceptance_authority: "Antigravity Local Technical Acceptance Authority"
+    independence_policy: "Blind-first review with isolated context and separate verification suite."

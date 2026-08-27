@@ -1,0 +1,23 @@
+# SIGNIFICANCE_REGISTER.yaml — Master Scientific Significance Register
+# Rigorous classification of mathematical impact.
+
+significance_records:
+  - record_id: "SIG-001"
+    claim_id: "CLM-003"
+    significance_tier: "S2_MAJOR_NO_GO_OR_INSIGHT"
+    rationale: "Closes blind scalar lower-bound searches Q >= F(||D||) permanently, saving the project from searching for dimensionally impossible inequalities."
+
+  - record_id: "SIG-002"
+    claim_id: "CLM-005"
+    significance_tier: "S2_MAJOR_NO_GO_OR_INSIGHT"
+    rationale: "Demonstrates that exact smooth Navier-Stokes flows can generate arbitrary finite-time deformation without generating proportional stochastic quadratic variation."
+
+  - record_id: "SIG-003"
+    claim_id: "CLM-010"
+    significance_tier: "S2_MAJOR_NO_GO_OR_INSIGHT"
+    rationale: "Rules out universal data-independent upper bounds on low-eta persistence, pivoting the program to relative stretching Xi."
+
+  - record_id: "SIG-004"
+    claim_id: "CLM-011"
+    significance_tier: "S2_MAJOR_NO_GO_OR_INSIGHT"
+    rationale: "Establishes the first dimensionally consistent bridge between stochastic Cauchy variance growth and direct vorticity amplification."

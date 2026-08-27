@@ -1,0 +1,35 @@
+# KNOWN_RESULTS_LEDGER.yaml — External Literature Theorems & Baselines
+# Exact hypotheses, conclusions, and relationship to project targets.
+
+known_results:
+  - result_id: "LIT-001"
+    citation: "Leray, J. (1934). Sur le mouvement d'un liquide visqueux emplissant l'espace. Acta Mathematica, 63, 193-248."
+    name: "LERAY_GLOBAL_WEAK_SOLUTIONS"
+    hypotheses: "u_0 in L^2(R^3), div(u_0) = 0."
+    conclusion: "Exists global turbulent weak solution satisfying the energy inequality (1/2)||u(t)||_{L^2}^2 + nu int_0^t ||nabla u||_{L^2}^2 <= (1/2)||u_0||_{L^2}^2."
+    limitations: "Uniqueness and smoothness are unproved in 3D; energy equality unproved."
+    relationship_to_target: "Foundation of weak solution theory; insufficient for Millennium regularity target."
+
+  - result_id: "LIT-002"
+    citation: "Beale, J. T., Kato, T., & Majda, A. (1984). Remarks on the breakdown of smooth solutions for the 3-D Euler equations. Commun. Math. Phys., 94(1), 61-66."
+    name: "BEALE_KATO_MAJDA_CRITERION"
+    hypotheses: "Smooth solution u on [0, T*)."
+    conclusion: "T* is a singularity time iff int_0^{T*} ||omega(t)||_{L^infty} dt = infty."
+    limitations: "Requires L^infty control of vorticity; cannot be used as an a-priori hypothesis without circularity."
+    relationship_to_target: "Governing regularity blowup criterion."
+
+  - result_id: "LIT-003"
+    citation: "Constantin, P., & Iyer, G. (2008). A stochastic Lagrangian approach to the Navier-Stokes equations. Comm. Pure Appl. Math., 61(3), 330-345."
+    name: "CONSTANTIN_IYER_STOCHASTIC_CAUCHY_FORMULA"
+    hypotheses: "Classical smooth solution on [0, T]."
+    conclusion: "u(x, t) = E[P (nabla A_{0, t})^T u_0(A_{0, t})] and omega(x, t) = E[D_{0, t} omega_0(A_{0, t})]."
+    limitations: "Requires C^1 smooth velocity field to differentiate stochastic flow maps."
+    relationship_to_target: "Primary theoretical framework of the NS-TRAJECTORY-PERSISTENCE program."
+
+  - result_id: "LIT-004"
+    citation: "Kato, T. (1966). Perturbation Theory for Linear Operators. Springer-Verlag."
+    name: "KATO_RIESZ_RESOLVENT_PERTURBATION_THEOREM"
+    hypotheses: "Isolated spectral cluster Lambda_alpha of Gamma enclosed by contour C with positive spectral gap to complement."
+    conclusion: "Riesz projector P_alpha = (1/2pi i) oint_C (zI - Gamma)^-1 dz is analytic under smooth perturbation."
+    limitations: "Canonical contour separation requires positive spectral gap."
+    relationship_to_target: "Governs differentiability of spectral subspace projectors in deformation frame."

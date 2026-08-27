@@ -1,0 +1,34 @@
+# PROBLEM_IDENTITY.yaml — Millennium Problem Scope Lock
+# Permanent mathematical identity of the governing research target.
+
+target_problem:
+  problem_id: "MILLENNIUM_NS_3D_TORUS"
+  title: "Global Smooth Regularity vs Finite-Time Singularity of 3D Incompressible Navier-Stokes on the Torus"
+  governing_equations:
+    momentum: "partial_t u + (u . nabla)u + nabla p = nu Delta u + f"
+    incompressibility: "nabla . u = 0"
+  domain:
+    spatial_domain: "T^3 = [0, 2pi)^3"
+    boundary_conditions: "Periodic boundary conditions on all faces"
+    volume_measure: "Lebesgue measure on T^3 with volume (2pi)^3"
+  initial_data_class:
+    smoothness: "u_0 in C^infty(T^3; R^3) or H^s(T^3; R^3) for all s >= 0"
+    solenoidal: "nabla . u_0 = 0"
+    mean_zero: "int_{T^3} u_0(x) dx = 0"
+    energy: "E_0 = (1/2) ||u_0||_{L^2}^2 < infinity"
+  viscosity_regime:
+    kinematic_viscosity: "nu > 0 (strictly positive constant)"
+  forcing:
+    external_forcing: "f = 0 (unforced homogeneous system by default)"
+  target_quantifiers:
+    global_regularity: "forall u_0 in C^infty(T^3), exists! u in C^infty(T^3 x [0, infty); R^3) satisfying NS"
+    singularity_alternative: "exists u_0 in C^infty(T^3) and T_* < infty such that limsup_{t -> T_*} ||nabla u(t)||_{L^infty} = infty"
+  prohibited_problem_shifts:
+    - shift_id: "PS-001"
+      description: "Claiming global regularity by assuming bounded vorticity ||omega||_{L^infty} (BKM circularity)."
+    - shift_id: "PS-002"
+      description: "Claiming singularity exclusion for general data based strictly on 2D, axisymmetric, or shear flows."
+    - shift_id: "PS-003"
+      description: "Relaxing to hyper-viscous dissipation nu (-Delta)^alpha (alpha > 1) without explicit declaration."
+    - shift_id: "PS-004"
+      description: "Substituting qualitative positivity Q_s > 0 for a quantitative lower bound."

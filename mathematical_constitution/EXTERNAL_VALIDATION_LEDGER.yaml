@@ -1,0 +1,24 @@
+# EXTERNAL_VALIDATION_LEDGER.yaml — External Scientific Validation Ledger
+# Tracks the external acceptance ladder from preprint to field canonicalization.
+
+external_validation_entries:
+  - entry_id: "EXT-001"
+    claim_id: "CLM-001"
+    validation_tier: "COMMUNITY_ACCEPTED"
+    venue: "Comm. Pure Appl. Math. 61(3), 330-345 (2008)"
+    independent_replications: "Multiple independent mathematical physics groups"
+    current_status: "FIELD_CANONICAL"
+
+  - entry_id: "EXT-002"
+    claim_id: "CLM-002"
+    validation_tier: "NOT_EXTERNALLY_REVIEWED"
+    venue: "None (Internal Project Canon)"
+    independent_replications: "Internal E4 verifier"
+    current_status: "PROJECT_CANONICAL_WITH_LIMITATIONS"
+
+  - entry_id: "EXT-003"
+    claim_id: "CLM-011"
+    validation_tier: "NOT_EXTERNALLY_REVIEWED"
+    venue: "None (Internal Project Canon)"
+    independent_replications: "Internal E4 verifier"
+    current_status: "PROJECT_CANONICAL"

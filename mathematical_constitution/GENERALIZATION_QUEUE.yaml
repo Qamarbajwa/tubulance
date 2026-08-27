@@ -1,0 +1,15 @@
+# GENERALIZATION_QUEUE.yaml — Theorem Generalization Queue
+# Evaluates broader geometric and dimension-independent validity of canonical results.
+
+generalization_items:
+  - item_id: "GEN-001"
+    claim_id: "CLM-004"
+    target_statement: "SVD orientation decomposition in R^d"
+    extension_scope: "Arbitrary spatial dimension d >= 2 for any tensor rank."
+    status: "GENERALIZATION_ESTABLISHED"
+
+  - item_id: "GEN-002"
+    claim_id: "CLM-011"
+    target_statement: "Relative QV density Xi in general Riemannian manifolds"
+    extension_scope: "Compact 3D Riemannian manifolds without boundary."
+    status: "OPEN_RESEARCH_QUESTION"

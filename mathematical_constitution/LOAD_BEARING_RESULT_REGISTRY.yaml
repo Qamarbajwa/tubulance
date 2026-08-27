@@ -1,0 +1,27 @@
+# LOAD_BEARING_RESULT_REGISTRY.yaml — Load-Bearing Result Registry
+# Identifies the precise mathematical estimate, identity, or lemma that carries the proof burden.
+
+load_bearing_results:
+  - lbr_id: "LBR-001"
+    name: "STOCHASTIC_CAUCHY_MARTINGALE_Z"
+    claim_id: "CLM-001"
+    core_mathematical_fact: "Z_s = D_s omega(A_s, s) is an exact backward martingale with E[Z_s | F_T] = omega(x, T)."
+    why_load_bearing: "Allows exact representation of non-local vortex stretching as a stochastic forward martingale dY_tau = Sigma_tau dB_tau."
+    impact_if_removed: "Destroys all stochastic Lagrangian Cauchy invariants and variance formulas."
+    closest_literature: "Constantin & Iyer (2008)"
+
+  - lbr_id: "LBR-002"
+    name: "SVD_ORIENTATION_QUADRATIC_VARIATION_DECOMPOSITION"
+    claim_id: "CLM-004"
+    core_mathematical_fact: "||D J_omega||_F^2 = ||J_omega||_F^2 sum_{i=1}^3 p_i sigma_i^2 with p_i = ||v_i^T J_omega||^2 / ||J_omega||^2."
+    why_load_bearing: "Decouples deformation magnitude sigma_1 from directional orientation efficiency eta."
+    impact_if_removed: "Reverts theory to unscaled, falsified blind bounds Q >= F(||D||)."
+    closest_literature: "Finite-time Lyapunov stretching literature (Encinas-Bartos & Haller 2024)"
+
+  - lbr_id: "LBR-003"
+    name: "PRIMARY_RELATIVE_QV_DENSITY_RATE_IDENTITY"
+    claim_id: "CLM-011"
+    core_mathematical_fact: "d_s ln(chi_s) = Q_s / S_s = 2nu E_{mu_s}[Xi], where Xi = ||D J_omega||^2 / |D omega|^2 and d mu_s = (|Z_s|^2 / S_s) dP."
+    why_load_bearing: "Establishes a scale-critical, dimensionally exact bridge between stochastic quadratic variation and vorticity stretching."
+    impact_if_removed: "Leaves quadratic variation production uncoupled from direct physical vortex stretching."
+    closest_literature: "Project original formulation (2026)"

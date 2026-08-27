@@ -1,0 +1,33 @@
+# MATHEMATICAL_REGRESSION_RULES.yaml — Mathematical Regression Rules
+# Invariants and automated regression constraints generated from proof incidents.
+
+rules:
+  - rule_id: "MRR-001"
+    name: "CONVENTION_M_INDEX_ORDER"
+    statement: "All spatial Jacobian matrices must obey [J_f]_{ij} = partial_j f_i. Velocity gradient A = J_u (A_{ij} = partial_j u_i), vorticity gradient G = J_omega (G_{ij} = partial_j omega_i). In spatial derivatives of material derivatives: d_j(D_t omega_i) = D_t G_{ij} + [G A]_{ij}."
+    incident_id: "INC-001"
+    enforcement_test: "tests/test_tp2_g4_a2_suite.py::test_g_tensor_equation_components"
+
+  - rule_id: "MRR-002"
+    name: "PARABOLIC_SCALING_HOMOGENEITY"
+    statement: "Every comparative inequality or rate involving Navier-Stokes observables must be dimensionally homogeneous under the parabolic scaling x -> lambda x, t -> lambda^2 t, u -> lambda u, omega -> lambda^2 omega, J_omega -> lambda^3 J_omega, D -> lambda^0 D, Q_s -> lambda^6 Q_s, S_s -> lambda^4 S_s, R_Q -> lambda^2 R_Q."
+    incident_id: "INC-002"
+    enforcement_test: "tests/test_tp2_g4_adversarial_suite.py::test_parabolic_scaling_exponents"
+
+  - rule_id: "MRR-003"
+    name: "RIESZ_GAP_QUALIFICATION"
+    statement: "Never claim that a Riesz contour projector is smooth across all degeneracies without explicitly qualifying that the spectral cluster must remain isolated from its complement by a positive spectral gap."
+    incident_id: "INC-003"
+    enforcement_test: "tests/test_tp2_g4_a2_r1_suite.py::test_spectral_cluster_resolvent_gap"
+
+  - rule_id: "MRR-004"
+    name: "NONZERO_GRADIENT_RESIDENCE_EXCLUSION"
+    statement: "Every persistence or exit-time proof involving orientation efficiency eta must explicitly verify that the spatial gradient norm h = ||J_omega||_F^2 >= c_h > 0 throughout the claimed consecutive residence interval."
+    incident_id: "INC-004"
+    enforcement_test: "tests/test_tp2_g4_a3_r1_suite.py::test_corrected_tube_strictly_excludes_zero_gradient"
+
+  - rule_id: "MRR-005"
+    name: "PRIMARY_RELATIVE_QV_DENSITY_DOMAINS"
+    statement: "Never treat kappa^2 Theta as an algebraically defined product when kappa = 0 and Theta is undefined. Use the primary density Xi := ||D J_omega||^2 / |D omega|^2 on {omega != 0}, which equals 0 when J_omega = 0."
+    incident_id: "INC-005"
+    enforcement_test: "tests/test_tp2_g4_a3_r1_suite.py::test_theta_domain_and_xi_regular_equivalence"

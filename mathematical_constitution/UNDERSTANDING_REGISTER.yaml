@@ -1,0 +1,199 @@
+# UNDERSTANDING_REGISTER.yaml — Master Understanding Register
+# 3-Level Understanding Packages for all Project Canonical Claims.
+
+understanding_packages:
+  - package_id: "UND-001"
+    claim_id: "CLM-001"
+    name: "STOCHASTIC_CAUCHY_MARTINGALE_REPRESENTATION"
+    level_1_mechanism: "Transforms the deterministic vorticity transport equation into a backward martingale along stochastic Lagrangian trajectories driven by Brownian motion."
+    level_2_architecture: |
+      1. SDE trajectory: dA_s = -u(A_s, s)ds + sqrt(2nu) dW_s.
+      2. Cauchy deformation: dD_s = -D_s J_u ds.
+      3. Martingale product: Z_s = D_s omega(A_s, s) satisfies d_hat Z_s = -sqrt(2nu) D_s J_omega d_hat W_s.
+      4. Invariant: E[Z_s | F_T] = omega(x, T).
+    level_3_rigorous_q_and_a:
+      why_it_works: "Viscous diffusion operates as the generator of Brownian motion, while advective stretching is captured by D_s."
+      what_can_fail: "Requires C^1 velocity field for flow differentiability."
+      essential_assumptions: ["Convention M index order", "Incompressible Navier-Stokes"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-002"
+    claim_id: "CLM-002"
+    name: "STOCHASTIC_COVARIANCE_TRACE_VARIANCE_EVOLUTION"
+    level_1_mechanism: "Integrates the Itô quadratic variation of backward Cauchy martingales into a positive semi-definite covariance tensor and scalar variance budget."
+    level_2_architecture: |
+      1. Covariance definition: C_s = 2nu int_s^T E[D_r J_omega J_omega^T D_r^T] dr.
+      2. Variance trace: V_s = tr(C_s) = 2nu int_s^T E||D_r J_omega||_F^2 dr.
+      3. Monotonicity: d_s V_s = -Q_s <= 0, so V_s grows backward in lookback horizon.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Itô isometry on vector martingales yields exact cumulative trace variance."
+      what_can_fail: "If J_omega = 0 identically (constant vorticity), Q_s = 0."
+      essential_assumptions: ["Itô integration theory", "L^2 integrable gradients"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-003"
+    claim_id: "CLM-003"
+    name: "PARABOLIC_SCALING_RATE_IDENTIFICATION"
+    level_1_mechanism: "Identifies that unscaled variance Q_s scales as lambda^6 whereas deformation scales as lambda^0, proving that comparisons must use the scale-critical rate R_Q = Q_s / S_s."
+    level_2_architecture: |
+      1. Rescaling map: u_lambda(x, t) = lambda u(lambda x, lambda^2 t).
+      2. Exponent tracking: [x]=-1, [t]=-2, [u]=1, [omega]=2, [J_omega]=3, [D]=0.
+      3. Energy budget: [S_s] = [E|D omega|^2] = lambda^4.
+      4. Variance rate: [Q_s] = [2nu E||D J_omega||^2] = lambda^6.
+      5. Dimensionless ratio: [R_Q] = [Q_s / S_s] = lambda^2 (matching d_s ln chi_s).
+    level_3_rigorous_q_and_a:
+      why_it_works: "Parabolic scaling governs the Navier-Stokes symmetry group."
+      what_can_fail: "Unscaled scalar bounds fail under dilation."
+      essential_assumptions: ["Navier-Stokes scaling invariance"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-004"
+    claim_id: "CLM-004"
+    name: "SVD_ORIENTATION_DECOMPOSITION"
+    level_1_mechanism: "Decomposes the matrix action of Cauchy deformation D on the vorticity gradient J_omega along the orthogonal singular axes of D."
+    level_2_architecture: |
+      1. SVD representation: D = U Sigma V^T in SL(3, R) with right singular vectors v_i and singular values sigma_i.
+      2. Frobenius norm expansion: ||D J_omega||_F^2 = tr(J_omega^T V Sigma^2 V^T J_omega) = sum_{i=1}^3 sigma_i^2 ||v_i^T J_omega||_2^2.
+      3. Normalization: Define p_i = ||v_i^T J_omega||_2^2 / ||J_omega||_F^2 >= 0 with sum p_i = 1.
+      4. Exact decomposition: ||D J_omega||_F^2 = ||J_omega||_F^2 sum_{i=1}^3 p_i sigma_i^2.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Orthogonality of the singular basis V preserves the total squared Frobenius norm as an exact convex combination of singular value squares."
+      what_can_fail: "If J_omega = 0, p_i is undefined (0/0), requiring unnormalized weights q_i = tr(P_i H)."
+      essential_assumptions: ["D in SL(3, R)", "Convention M index order"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-005"
+    claim_id: "CLM-005"
+    name: "PERIODIC_SHEAR_DECOUPLING"
+    level_1_mechanism: "In 1D periodic shear flows, shear deformation acts exclusively on x while gradient varies along y with z components, causing matrix product to vanish identically."
+    level_2_architecture: |
+      1. Shear velocity field: u = (U(y, t), 0, 0) on T^3 with J_u = U_y E12.
+      2. Vorticity and gradient: omega = -U_y e3, J_omega = -U_yy E32.
+      3. Matrix product: E12 E32 = (e1 (x) e2)(e3 (x) e2) = (e2 . e3) E12 = 0.
+      4. Exact cancellation: D_s J_omega = (I + alpha E12)(-U_yy E32) = -U_yy E32 = J_omega.
+      5. Independence: Shear deformation alpha drops out of Q_s completely.
+    level_3_rigorous_q_and_a:
+      why_it_works: "The nilpotency and orthogonality of the shear basis vectors E12 and E32 decouple the gradient from deformation."
+      what_can_fail: "Non-shear velocity components break E12 E32 = 0."
+      essential_assumptions: ["1D shear geometry on T^3", "Incompressible Navier-Stokes"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-006"
+    claim_id: "CLM-006"
+    name: "VORTICITY_GRADIENT_TRANSPORT"
+    level_1_mechanism: "Differentiates the vorticity transport equation spatially under Convention M to derive the exact non-autonomous transport equation for the gradient tensor G."
+    level_2_architecture: |
+      1. Spatial gradient of vorticity transport: d_j(D_t omega_i - nu Delta omega_i) = d_j(S_{ik} omega_k).
+      2. Material derivative expansion: d_j(D_t omega_i) = D_t G_{ij} + [G A]_{ij}.
+      3. Strain term expansion: d_j(S_{ik} omega_k) = S_{ik} G_{kj} + (partial_j S_{ik}) omega_k = [S G]_{ij} + T_{ij}.
+      4. Transport equation: (D_t - nu Delta) G = S G - G A + T.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Spatial derivatives commute with classical time and Laplace operators on smooth solutions."
+      what_can_fail: "Singularities in pressure Hessian would produce unbounded source T."
+      essential_assumptions: ["C^2 velocity fields", "Convention M"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-007"
+    claim_id: "CLM-007"
+    name: "DEFORMATION_METRIC_AND_PROJECTORS"
+    level_1_mechanism: "Derives the backward differential equation for the Cauchy-Green metric Gamma = D^T D and spectral projector dynamics."
+    level_2_architecture: |
+      1. Metric transport: d_s Gamma_s = -A_s^T Gamma_s - Gamma_s A_s.
+      2. Spectral resolution: Gamma = sum sigma_i^2 P_i.
+      3. Projector evolution: d_s P_i = sum_{j != i} (P_j (d_s Gamma) P_i + P_i (d_s Gamma) P_j)/(sigma_i^2 - sigma_j^2).
+    level_3_rigorous_q_and_a:
+      why_it_works: "First-order perturbation theory on isolated symmetric matrices."
+      what_can_fail: "Degeneracy sigma_i = sigma_j destroys individual eigenvector differentiability."
+      essential_assumptions: ["Positive spectral gap for simple spectrum"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-008"
+    claim_id: "CLM-008"
+    name: "BACKWARD_ITO_SDE_ORIENTATION_DYNAMICS"
+    level_1_mechanism: "Applies backward Itô calculus along Brownian paths to derive the stochastic semimartingale evolution of unnormalized weights q_i."
+    level_2_architecture: |
+      1. Matrix product: q_i = tr(P_i H) with H = G G^T.
+      2. Itô drift and diffusion: d_hat q_i = [tr(dot P_i H) + tr(P_i R_H)] ds + sqrt(2nu) sum_l tr(P_i partial_l H) d_hat W^l.
+      3. Spatial noise presence: Proves weights are stochastic semimartingales driven by spatial noise.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Non-vanishing spatial gradients partial_l H generate persistent Brownian diffusion noise."
+      what_can_fail: "At H = 0, q_i = 0 identically."
+      essential_assumptions: ["Backward Itô calculus", "C^1 flow"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-009"
+    claim_id: "CLM-009"
+    name: "LOW_ETA_OCCUPATION_LIMIT_THEOREM"
+    level_1_mechanism: "Proves that in periodic shear flows, the occupation time spent in low-eta states approaches the full lookback horizon L as shear amplitude A goes to infinity."
+    level_2_architecture: |
+      1. Amplitude factorization: alpha_A(tau) = A beta(tau) where beta is independent of A.
+      2. Regularity: beta is C^1 with {beta = 0} of measure zero.
+      3. Pointwise convergence: |A beta(tau)| -> infty almost everywhere on [0, L].
+      4. Dominated convergence: O_eps^A(L) -> L almost surely.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Lebesgue level set theorem guarantees non-degeneracy of Brownian integrals."
+      what_can_fail: "Forcing that holds beta = 0 on positive measure intervals."
+      essential_assumptions: ["Unforced Navier-Stokes shear", "Finite horizon L"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-010"
+    claim_id: "CLM-010"
+    name: "PERSISTENCE_EXIT_TIME_NO_GO"
+    level_1_mechanism: "Identifies a positive-probability Brownian tube strictly away from zero-gradient points where consecutive low-eta residence time exceeds L - delta."
+    level_2_architecture: |
+      1. Quadrant interval: I = [pi/(8k), 3pi/(8k)] strictly bounds |sin| >= c1 > 0 and cos >= c2 > 0.
+      2. Survival event: Brownian path stays in I with positive probability p_tube > 0.
+      3. Monotonic drift: beta(tau) >= c_beta tau on the tube.
+      4. Crossing time: tau_A <= a_eps / (A c_beta) <= delta for large A.
+      5. Residence duration: Delta tau_res >= L - delta on positive probability event.
+    level_3_rigorous_q_and_a:
+      why_it_works: "1D Brownian exit time theory on compact intervals."
+      what_can_fail: "Data-dependent bounds that scale with A are not ruled out."
+      essential_assumptions: ["1D Brownian continuity", "Periodic shear geometry"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-011"
+    claim_id: "CLM-011"
+    name: "PRIMARY_RELATIVE_QV_DENSITY_RATE_IDENTITY"
+    level_1_mechanism: "Normalizes the stochastic quadratic variation rate by the expected Cauchy energy budget S_s = E|Z_s|^2, converting the rate into the expectation of the relative stretching ratio Xi under the physical energy-weighted measure mu_s."
+    level_2_architecture: |
+      1. Stochastic representation: Z_s = D_s omega(A_s, s), S_s = E|Z_s|^2, Q_s = 2nu E||D_s J_omega||_F^2.
+      2. Measure definition: d mu_s = (|Z_s|^2 / S_s) dP on {|Z_s| > 0}.
+      3. Ratio expansion: Q_s / S_s = 2nu int (||D_s J_omega||^2 / |Z_s|^2) (|Z_s|^2 / S_s) dP = 2nu E_{mu_s}[Xi].
+      4. G3 log-chi bridge: Combined with d_s ln(chi_s) = Q_s / S_s, yields d_s ln(chi_s) = 2nu E_{mu_s}[Xi].
+      5. Regular factorization: On {J_omega != 0}, Xi = kappa_omega^2 Theta.
+    level_3_rigorous_q_and_a:
+      why_it_works: "The energy weight |Z_s|^2 cancels the denominator of Xi, ensuring exact measure-theoretic integration without singularities on {Z_s = 0}."
+      what_can_fail: "If Z_s = 0 almost surely (trivial zero vorticity), S_s = 0."
+      essential_assumptions: ["Invertibility of D_s", "Non-trivial classical solution S_s > 0"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-012"
+    claim_id: "CLM-012"
+    name: "KINEMATIC_STRETCHING_EFFICIENCY_DECOUPLING"
+    level_1_mechanism: "Constructs an exact kinematic deformation tensor where vorticity aligns with the stretching axis while the gradient tensor aligns with the contracting axis, proving algebraic decoupling."
+    level_2_architecture: |
+      1. Deformation matrix: D_K = diag(K, 1, 1/K).
+      2. Alignment: omega = e1 (stretching), G = e3 (x) e2 (contracting).
+      3. Amplification factors: A_omega = K^2, A_grad = K^-2.
+      4. Ratio: Theta = K^-4 -> 0 as K -> infty.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Matrix singular directions act independently on independent tensor components."
+      what_can_fail: "Navier-Stokes dynamical coupling might constrain this configuration dynamically."
+      essential_assumptions: ["Kinematic linear algebra in SL(3, R)"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-013"
+    claim_id: "CLM-013"
+    name: "BELTRAMI_3D_PRESSURE_DEPLETION_BENCHMARK"
+    level_1_mechanism: "Demonstrates that in 3D Beltrami eigenflows, the nonlinear advection term is a pure gradient absorbed by pressure, yielding exact solutions with uncoupled deformation."
+    level_2_architecture: |
+      1. Beltrami eigenfield: curl u_0 = lambda u_0 on T^3.
+      2. Advection cancellation: (u_0 . nabla)u_0 = (curl u_0) x u_0 + 1/2 nabla |u_0|^2 = 1/2 nabla |u_0|^2 = -nabla p.
+      3. Solution: u(x, t) = e^(-nu lambda^2 t) u_0(x) solves unforced Navier-Stokes exactly.
+      4. Invariant: Direct vortex stretching is depleted (A_omega = 1) while 3D chaotic trajectories stretch deformation.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Vector identity (curl u) x u = 0 for Beltrami fields."
+      what_can_fail: "Perturbations away from Beltrami state re-introduce active nonlinear stretching."
+      essential_assumptions: ["Beltrami eigenfunction on T^3", "Incompressible Navier-Stokes"]
+      status: "U3_COMPLETE_PACKAGE"

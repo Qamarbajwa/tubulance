@@ -1,0 +1,23 @@
+# CANONICALIZATION_QUEUE.yaml — Canonicalization Management Queue
+# Manages the transition from Candidate -> Project Canonical -> Field Canonical.
+
+canonicalization_records:
+  - record_id: "CAN-001"
+    claim_id: "CLM-004"
+    current_status: "PROJECT_CANONICAL"
+    prerequisites_met:
+      e3_machine_evidence: true
+      e4_independent_audit: true
+      understanding_package: true
+      regression_checked: true
+    field_canonical_gap: "Requires formal submission, external peer review, and independent specialist absorption."
+
+  - record_id: "CAN-002"
+    claim_id: "CLM-011"
+    current_status: "PROJECT_CANONICAL"
+    prerequisites_met:
+      e3_machine_evidence: true
+      e4_independent_audit: true
+      understanding_package: true
+      regression_checked: true
+    field_canonical_gap: "Requires publication and mathematical physics community scrutiny."

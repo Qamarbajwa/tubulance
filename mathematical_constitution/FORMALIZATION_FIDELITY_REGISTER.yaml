@@ -1,0 +1,19 @@
+# FORMALIZATION_FIDELITY_REGISTER.yaml — Formal Verification & Fidelity Register
+# Tracks formal theorem proofs (Lean/Coq/Isabelle) and fidelity to mathematical statements.
+
+formalization_targets:
+  - target_id: "FOR-001"
+    claim_id: "CLM-004"
+    theorem_name: "SVD_ORIENTATION_IDENTITY"
+    target_engine: "Lean 4 / Mathlib"
+    fidelity_status: "STATEMENT_ALIGNED"
+    formalization_status: "QUEUED_LOCAL_LEAN"
+    scope_notes: "Finite-dimensional matrix identity in SL(3, R)."
+
+  - target_id: "FOR-002"
+    claim_id: "CLM-005"
+    theorem_name: "SHEAR_DECOUPLING_NILPOTENCY"
+    target_engine: "Lean 4 / Mathlib"
+    fidelity_status: "STATEMENT_ALIGNED"
+    formalization_status: "QUEUED_LOCAL_LEAN"
+    scope_notes: "Matrix product (e1 (x) e2)(e3 (x) e2) = 0."
