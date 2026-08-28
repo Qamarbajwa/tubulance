@@ -1,16 +1,28 @@
 # PROBLEM_IDENTITY.yaml — Millennium Problem Scope Lock
 # Permanent mathematical identity of the governing research target.
 
-target_problem:
-  problem_id: "MILLENNIUM_NS_3D_TORUS"
-  title: "Global Smooth Regularity vs Finite-Time Singularity of 3D Incompressible Navier-Stokes on the Torus"
+problem_identity:
+  official_problem: "NAVIER_STOKES_EXISTENCE_AND_SMOOTHNESS"
+  official_target_branch: "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"
+  project_domain: "T3 / R3 modulo Z3 (Periodic Torus [0, 2pi)^3)"
+  governing_target: "Global smooth existence for arbitrary smooth divergence-free periodic initial data, zero forcing, nu > 0."
+  clay_problem_family:
+    - branch_id: "A_R3_EXISTENCE"
+      description: "Existence of smooth solutions on R^3 with initial data decaying at infinity."
+      project_scope_status: "NOT_DIRECTLY_ATTACKED_IN_THIS_BRANCH"
+    - branch_id: "B_PERIODIC_EXISTENCE"
+      description: "Existence of smooth solutions on R^3 / Z^3 (Periodic Torus T^3)."
+      project_scope_status: "PRIMARY_LOCKED_TARGET"
+    - branch_id: "C_R3_BREAKDOWN"
+      description: "Breakdown of smooth solutions on R^3."
+      project_scope_status: "COUNTEREXAMPLE_ALTERNATIVE"
+    - branch_id: "D_PERIODIC_BREAKDOWN"
+      description: "Breakdown of smooth solutions on R^3 / Z^3."
+      project_scope_status: "COUNTEREXAMPLE_ALTERNATIVE"
+
   governing_equations:
     momentum: "partial_t u + (u . nabla)u + nabla p = nu Delta u + f"
     incompressibility: "nabla . u = 0"
-  domain:
-    spatial_domain: "T^3 = [0, 2pi)^3"
-    boundary_conditions: "Periodic boundary conditions on all faces"
-    volume_measure: "Lebesgue measure on T^3 with volume (2pi)^3"
   initial_data_class:
     smoothness: "u_0 in C^infty(T^3; R^3) or H^s(T^3; R^3) for all s >= 0"
     solenoidal: "nabla . u_0 = 0"
@@ -23,6 +35,13 @@ target_problem:
   target_quantifiers:
     global_regularity: "forall u_0 in C^infty(T^3), exists! u in C^infty(T^3 x [0, infty); R^3) satisfying NS"
     singularity_alternative: "exists u_0 in C^infty(T^3) and T_* < infty such that limsup_{t -> T_*} ||nabla u(t)||_{L^infty} = infty"
+
+  branch_containment_invariants:
+    - invariant_id: "BCI-001"
+      rule: "Results proved on Branch B (Periodic) cannot be claimed as proofs of Branch A (R^3) without separate rigorous boundary and decay analysis."
+    - invariant_id: "BCI-002"
+      rule: "No subtheorem or conditional result on Branch B may claim full target closure."
+
   prohibited_problem_shifts:
     - shift_id: "PS-001"
       description: "Claiming global regularity by assuming bounded vorticity ||omega||_{L^infty} (BKM circularity)."

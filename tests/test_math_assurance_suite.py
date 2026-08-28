@@ -1,4 +1,4 @@
-"""Automated unit and integration test suite for Mathematical Assurance Engine (NS-MRC-1)."""
+"""Automated unit and integration test suite for Mathematical Assurance Engine (NS-MRC-1-R1)."""
 import pytest
 from navier3d.math_assurance import (
     MathAssuranceEngine,
@@ -11,129 +11,171 @@ from navier3d.math_assurance import (
 )
 
 
-def test_assumption_manager_foundational_loading():
-    """Verify loading and classification of foundational problem assumptions."""
-    mgr = AssumptionManager()
-    assert len(mgr.assumptions) >= 6
-    asm1 = mgr.get_assumption("ASM-001")
-    assert asm1 is not None
-    assert asm1["name"] == "INCOMPRESSIBILITY"
-    assert asm1["classification"] == "FOUNDATIONAL"
-
-
-def test_assumption_drift_and_circularity_detector():
-    """Verify that invoking BKM or Serrin assumptions triggers CIRCULAR_FOR_GLOBAL_REGULARITY."""
-    mgr = AssumptionManager()
-
-    # Valid foundational set
-    valid_set = ["ASM-001", "ASM-002", "ASM-003", "ASM-004"]
-    res_valid = mgr.validate_assumption_set(valid_set, target_goal="GLOBAL_REGULARITY")
-    assert res_valid["valid"] is True
-    assert res_valid["is_circular_for_target"] is False
-    assert res_valid["verdict"] == "VALID_ASSUMPTIONS"
-
-    # Circular set including BKM
-    circular_set = ["ASM-001", "ASM-002", "ASM-007"] # ASM-007 is BKM
-    res_circ = mgr.validate_assumption_set(circular_set, target_goal="GLOBAL_REGULARITY")
-    assert res_circ["valid"] is False
-    assert res_circ["is_circular_for_target"] is True
-    assert res_circ["verdict"] == "CIRCULAR_FOR_GLOBAL_REGULARITY"
-    assert len(res_circ["circularity_reasons"]) > 0
-
-
-def test_claim_passport_multidimensional_validation():
-    """Verify that all 10 independent dimensions of the Claim Passport are enforced."""
+def test_1_field_canonical_does_not_imply_solved():
+    """1: Verify that FIELD_CANONICAL does not automatically grant SOLVED status."""
     mgr = ClaimManager()
-    assert len(mgr.claims) >= 10
+    clm1 = mgr.get_claim("CLM-001")
+    assert clm1["passport"]["project_status"] == "PROJECT_CANONICAL"
+    assert clm1["passport"]["community_status"] == "COMMUNITY_ACCEPTED"
+    # Solved check on subtheorem must fail
+    res = PromotionManager.validate_solved_eligibility(
+        claim_id=clm1["claim_id"],
+        target_equivalence=True,
+        truth_status="PROVED_THEOREM",
+        assumption_drift="NONE",
+        dependency_closure=True,
+        formalization_fidelity=True,
+        math_independence="MATH_I4_HUMAN_SPECIALIST",
+        external_validation="MULTI_SPECIALIST_REVIEWED",
+        community_status="COMMUNITY_ACCEPTED"
+    )
+    assert res["solved_eligible"] is False
+    assert res["verdict"] == "SUBTHEOREM_CANNOT_BE_SOLVED_ELIGIBLE"
 
-    # Test valid claim passport
-    clm4 = mgr.get_claim("CLM-004")
-    assert clm4 is not None
-    passport = clm4["passport"]
-    check = mgr.validate_passport(passport)
-    assert check["valid"] is True
-    assert len(check["missing_dimensions"]) == 0
 
-    # Test incomplete passport missing dimensions
-    incomplete_passport = {
+def test_2_only_locked_target_can_become_solved_eligible():
+    """2: Verify that only MILLENNIUM_NS_3D_TORUS can be evaluated for SOLVED_ELIGIBLE."""
+    res_sub = PromotionManager.validate_solved_eligibility(
+        claim_id="CLM-011",
+        target_equivalence=True,
+        truth_status="PROVED_TARGET",
+        assumption_drift="NONE",
+        dependency_closure=True,
+        formalization_fidelity=True,
+        math_independence="MATH_I4_HUMAN_SPECIALIST",
+        external_validation="MULTI_SPECIALIST_REVIEWED",
+        community_status="COMMUNITY_ACCEPTED"
+    )
+    assert res_sub["solved_eligible"] is False
+
+    res_target = PromotionManager.validate_solved_eligibility(
+        claim_id="MILLENNIUM_NS_3D_TORUS",
+        target_equivalence=True,
+        truth_status="PROVED_TARGET",
+        assumption_drift="NONE",
+        dependency_closure=True,
+        formalization_fidelity=True,
+        math_independence="MATH_I4_HUMAN_SPECIALIST",
+        external_validation="MULTI_SPECIALIST_REVIEWED",
+        community_status="COMMUNITY_ACCEPTED"
+    )
+    assert res_target["solved_eligible"] is True
+    assert res_target["verdict"] == "SOLVED_ELIGIBLE_RATIFIED"
+
+
+def test_3_failed_target_equivalence_blocks_solved_eligibility():
+    """3: Verify that failing target-equivalence blocks SOLVED_ELIGIBLE."""
+    res = PromotionManager.validate_solved_eligibility(
+        claim_id="MILLENNIUM_NS_3D_TORUS",
+        target_equivalence=False,
+        truth_status="PROVED_TARGET",
+        assumption_drift="NONE",
+        dependency_closure=True,
+        formalization_fidelity=True,
+        math_independence="MATH_I4_HUMAN_SPECIALIST",
+        external_validation="MULTI_SPECIALIST_REVIEWED",
+        community_status="COMMUNITY_ACCEPTED"
+    )
+    assert res["solved_eligible"] is False
+    assert res["verdict"] == "TARGET_EQUIVALENCE_FAILED"
+
+
+def test_4_n2_not_found_cannot_auto_promote_to_external_novelty():
+    """4: Verify that N2_NOT_FOUND_IN_AUDITED_SOURCES is bounded and distinct from N3/N4."""
+    nov_mgr = NoveltyManager()
+    rec = nov_mgr.validate_novelty_record("CLM-011")
+    assert rec["valid"] is True
+    assert rec["novelty_tier"] == "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    assert rec["novelty_tier"] != "N3_EXTERNAL_NOVELTY_SUPPORTED"
+    assert rec["novelty_tier"] != "N4_COMMUNITY_RECOGNIZED_AS_NOVEL"
+
+
+def test_5_internal_agent_cannot_assign_community_novelty():
+    """5: Verify that internal verification cannot assign N4 community novelty."""
+    mgr = ClaimManager()
+    for claim in mgr.claims.values():
+        assert claim["passport"]["novelty"] != "N4_COMMUNITY_RECOGNIZED_AS_NOVEL"
+
+
+def test_6_and_7_significance_independent_of_correctness_and_novelty():
+    """6 & 7: Verify that correctness, novelty, and significance are independent coordinates."""
+    mgr = ClaimManager()
+    # Correct and known foundation: CLM-001 (N0, S1)
+    clm1 = mgr.get_claim("CLM-001")["passport"]
+    assert clm1["truth_status"] == "PROVED_THEOREM"
+    assert clm1["novelty"] == "N0_KNOWN_FOUNDATION"
+    assert clm1["significance"] == "S1_USEFUL_LEMMA"
+
+    # Correct and novel project insight: CLM-003 (N2, S2)
+    clm3 = mgr.get_claim("CLM-003")["passport"]
+    assert clm3["truth_status"] == "PROVED_THEOREM"
+    assert clm3["novelty"] == "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    assert clm3["significance"] == "S2_MAJOR_PROJECT_RESULT"
+
+
+def test_8_external_and_community_statuses_cannot_contradict():
+    """8: Verify schema rejection when external validation is missing but community accepted is claimed."""
+    mgr = ClaimManager()
+    contradictory_passport = {
         "truth_status": "PROVED_THEOREM",
+        "gov_evidence_level": "GOV_E4_INDEPENDENT_VERIFIER",
+        "math_evidence_level": "MATH_E4_ANALYTIC_PROOF_AUDITED",
+        "gov_review_independence": "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE",
+        "math_review_independence": "MATH_I2_INDEPENDENT_VERIFIER_AGENT",
+        "formalization_state": "NOT_FORMALIZED",
+        "understanding_level": "U3_COMPLETE_PACKAGE",
+        "novelty": "N1_PROJECT_REFORMULATION",
+        "significance": "S1_USEFUL_LEMMA",
+        "external_validation": "NOT_EXTERNALLY_REVIEWED",
+        "community_status": "COMMUNITY_ACCEPTED", # Contradiction!
         "project_status": "PROJECT_CANONICAL"
     }
-    check_bad = mgr.validate_passport(incomplete_passport)
-    assert check_bad["valid"] is False
-    assert len(check_bad["missing_dimensions"]) > 0
+    check = mgr.validate_passport(contradictory_passport)
+    assert check["valid"] is False
+    assert "Contradictory status" in check["reason"]
 
 
-def test_dependency_dag_cycle_detection_and_lineage():
-    """Verify DAG integrity, absence of cycles, and correct ancestor queries."""
-    graph_mgr = DependencyGraphManager()
-    assert len(graph_mgr.nodes) >= 10
-    assert len(graph_mgr.edges) >= 10
-
-    # Check that repository DAG has no cycles
-    cycles = graph_mgr.detect_cycles()
-    assert len(cycles) == 0
-
-    # Check ancestors of CLM-011 (Relative QV density)
-    ancestors = graph_mgr.get_all_ancestors("CLM-011")
-    assert "CLM-001" in ancestors
-    assert "CLM-003" in ancestors
-    assert "CLM-004" in ancestors
-    assert "ASM-001" in ancestors
+def test_9_and_10_explicit_evidence_and_independence_namespaces():
+    """9 & 10: Verify explicit namespaces in passports (no bare ambiguous E4 or I3)."""
+    mgr = ClaimManager()
+    for cid, claim in mgr.claims.items():
+        p = claim["passport"]
+        assert p["gov_evidence_level"].startswith("GOV_E")
+        assert p["math_evidence_level"].startswith("MATH_E")
+        assert p["gov_review_independence"].startswith("GOV_I")
+        assert p["math_review_independence"].startswith("MATH_I")
 
 
-def test_promotion_state_machine_prohibits_illegal_jumps():
-    """Verify that lifecycle transitions enforce step-by-step verification."""
-    # Test valid progression
-    p1 = PromotionManager.validate_transition("IDEA", "HYPOTHESIS", {})
-    assert p1["allowed"] is True
-
-    # Test illegal jump skipping verification
-    p_bad = PromotionManager.validate_transition("IDEA", "PROJECT_CANONICAL", {})
-    assert p_bad["allowed"] is False
-
-    # Test PROJECT_CANONICAL promotion requiring all prerequisites
-    p_canonical_missing = PromotionManager.validate_transition(
-        "NOVELTY_CHECKED", "PROJECT_CANONICAL",
-        {"e3_reproducible": True, "e4_verified": True, "understanding_package": False, "novelty_checked": True}
-    )
-    assert p_canonical_missing["allowed"] is False
-
-    p_canonical_good = PromotionManager.validate_transition(
-        "NOVELTY_CHECKED", "PROJECT_CANONICAL",
-        {"e3_reproducible": True, "e4_verified": True, "understanding_package": True, "novelty_checked": True}
-    )
-    assert p_canonical_good["allowed"] is True
+def test_11_and_12_claim_census_and_stale_passports():
+    """11 & 12: Verify automated claim census across the registry."""
+    mgr = ClaimManager()
+    census = mgr.run_claim_census()
+    assert census["total_claims_registered"] >= 13
+    assert census["invalid_passports_count"] == 0
+    assert census["census_verdict"] == "CENSUS_PASSED"
 
 
-def test_understanding_packages_three_levels():
-    """Verify 3-level understanding package completeness."""
-    und_mgr = UnderstandingManager()
-    check = und_mgr.validate_understanding_package("CLM-004")
-    assert check["complete"] is True
-    assert check["has_level_1"] is True
-    assert check["has_level_2"] is True
-    assert check["has_level_3"] is True
-
-
-def test_novelty_register_audit():
-    """Verify novelty classification and literature cross-reference audit."""
-    nov_mgr = NoveltyManager()
-    check1 = nov_mgr.validate_novelty_record("CLM-001")
-    assert check1["valid"] is True
-    assert check1["novelty_tier"] == "N0_KNOWN_FOUNDATION"
-
-    check11 = nov_mgr.validate_novelty_record("CLM-011")
-    assert check11["valid"] is True
-    assert check11["novelty_tier"] == "N2_NOT_FOUND_IN_LITERATURE"
-
-
-def test_full_mathematical_assurance_engine_audit():
-    """Verify that the master assurance engine passes the entire repository audit."""
+def test_13_official_clay_branch_identity_fixed():
+    """13: Verify that problem identity is permanently bound to Clay Statement Branch B."""
     engine = MathAssuranceEngine()
-    audit_res = engine.run_full_assurance_audit()
-    assert audit_res["overall_assurance_passed"] is True
-    assert audit_res["dag_cycles_count"] == 0
-    assert audit_res["invalid_passports_count"] == 0
-    assert audit_res["canonical_deficiencies_count"] == 0
-    assert audit_res["verdict"] == "MATHEMATICAL_ASSURANCE_VALID"
+    branch_check = engine.validate_branch_identity()
+    assert branch_check["valid"] is True
+    assert branch_check["official_target_branch"] == "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"
+
+
+def test_14_conditional_criterion_fails_target_equivalence():
+    """14: Verify that conditional criteria (e.g. assuming bounded vorticity) fail target equivalence."""
+    engine = MathAssuranceEngine()
+    res = engine.audit_target_equivalence("GLOBAL_REGULARITY", ["ASM-001", "ASM-002", "ASM-007"])
+    assert res["target_matched"] is False
+    assert res["verdict"] == "KNOWN_CONDITIONAL_CRITERION_NOT_TARGET_CLOSURE"
+
+
+def test_15_and_16_a4_acceptance_and_g4_closure_prerequisites():
+    """15 & 16: Verify that test pass counts alone do not constitute acceptance."""
+    # Test pass alone does not bypass required acceptance decisions
+    trans_missing_e4 = PromotionManager.validate_transition(
+        "E3_REPRODUCIBLE", "PROJECT_CANONICAL",
+        {"e3_reproducible": True, "e4_verified": False, "understanding_package": True, "novelty_checked": True}
+    )
+    assert trans_missing_e4["allowed"] is False

@@ -1,4 +1,4 @@
-"""Claim promotion gate and lifecycle transition validator."""
+"""Claim promotion gate, lifecycle transition validator, and SOLVED eligibility engine."""
 from typing import Dict, List, Any, Optional
 
 LIFECYCLE_STAGES = [
@@ -34,7 +34,6 @@ class PromotionManager:
         curr_rank = STAGE_RANKS[current_stage]
         next_rank = STAGE_RANKS[next_stage]
 
-        # Prohibit skipping forward more than valid logical steps without required evidence
         if next_rank > curr_rank + 2 and next_stage not in ["FORMALLY_VERIFIED", "HUMAN_UNDERSTOOD"]:
             return {
                 "allowed": False,
@@ -61,3 +60,85 @@ class PromotionManager:
                 }
 
         return {"allowed": True, "reason": "Transition valid under Mathematical Research Constitution."}
+
+    @staticmethod
+    def validate_solved_eligibility(
+        claim_id: str,
+        target_equivalence: bool,
+        truth_status: str,
+        assumption_drift: str,
+        dependency_closure: bool,
+        formalization_fidelity: bool,
+        math_independence: str,
+        external_validation: str,
+        community_status: str
+    ) -> Dict[str, Any]:
+        """Strictly evaluate whether a claim is eligible to trigger SOLVED status."""
+        # 1. Claim ID must be the primary locked problem
+        if claim_id != "MILLENNIUM_NS_3D_TORUS":
+            return {
+                "solved_eligible": False,
+                "verdict": "SUBTHEOREM_CANNOT_BE_SOLVED_ELIGIBLE",
+                "reason": f"Claim ID '{claim_id}' is a subtheorem/lemma/counterexample, not the primary locked problem 'MILLENNIUM_NS_3D_TORUS'."
+            }
+
+        # 2. Target Equivalence must pass
+        if not target_equivalence:
+            return {
+                "solved_eligible": False,
+                "verdict": "TARGET_EQUIVALENCE_FAILED",
+                "reason": "Claimed result solves a proxy or conditional sub-problem, not the primary target."
+            }
+
+        # 3. Truth status
+        if truth_status != "PROVED_TARGET":
+            return {
+                "solved_eligible": False,
+                "verdict": "TRUTH_STATUS_INSUFFICIENT",
+                "reason": f"Truth status is '{truth_status}', expected 'PROVED_TARGET'."
+            }
+
+        # 4. Assumption drift
+        if assumption_drift != "NONE":
+            return {
+                "solved_eligible": False,
+                "verdict": "ASSUMPTION_DRIFT_DETECTED",
+                "reason": f"Unearned higher-regularity assumptions present: {assumption_drift}."
+            }
+
+        # 5. Dependency closure
+        if not dependency_closure:
+            return {
+                "solved_eligible": False,
+                "verdict": "DEPENDENCY_CLOSURE_INCOMPLETE",
+                "reason": "Prerequisite dependency nodes remain unverified."
+            }
+
+        # 6. Independence level
+        if math_independence != "MATH_I4_HUMAN_SPECIALIST":
+            return {
+                "solved_eligible": False,
+                "verdict": "INDEPENDENCE_INSUFFICIENT",
+                "reason": f"Independence level is '{math_independence}', requires 'MATH_I4_HUMAN_SPECIALIST'."
+            }
+
+        # 7. External validation & Community status
+        if external_validation not in ["MULTI_SPECIALIST_REVIEWED", "PUBLIC_SCRUTINY"]:
+            return {
+                "solved_eligible": False,
+                "verdict": "EXTERNAL_VALIDATION_INSUFFICIENT",
+                "reason": f"External validation is '{external_validation}', requires 'MULTI_SPECIALIST_REVIEWED' or 'PUBLIC_SCRUTINY'."
+            }
+
+        if community_status != "COMMUNITY_ACCEPTED":
+            return {
+                "solved_eligible": False,
+                "verdict": "COMMUNITY_STATUS_INSUFFICIENT",
+                "reason": f"Community status is '{community_status}', requires 'COMMUNITY_ACCEPTED'."
+            }
+
+        return {
+            "solved_eligible": True,
+            "verdict": "SOLVED_ELIGIBLE_RATIFIED",
+            "reason": "All 8 constitutional criteria for Millennium target resolution satisfied."
+        }

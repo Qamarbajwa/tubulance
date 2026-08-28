@@ -62,11 +62,11 @@ roles:
 
 state:
   last_verified_checkpoint:
-    ref: "e515172d89707f42b45a2b6171ae294c37cadd26"
-    at: "2026-08-27T18:56:00Z"
-  canonical_milestone: "NS-MRC-1 = PROJECT_CANONICAL_AND_OPERATIONAL"
+    ref: "d6792cf77aaa56f98f04abaf5923ae7bd0e41556"
+    at: "2026-08-28T09:48:00Z"
+  canonical_milestone: "NS-MRC-1-R1 = PROJECT_CANONICAL_AND_OPERATIONAL"
   active_gate: "TP2-G4-A5"
-  accepted_t3plus_count: 9
+  accepted_t3plus_count: 10
   last_random_audit: "REV-2026-08-24-RPM1"
   retrofit_debt: []
   open_findings: []
