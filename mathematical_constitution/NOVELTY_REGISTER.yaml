@@ -157,3 +157,15 @@ novelty_records:
     primary_source_review: "Beltrami (1889), Arnold (1965)"
     independent_novelty_reviewer: "Antigravity Independent Verifier"
     known_closest_analogues: ["Arnold (1965) C. R. Acad. Sci. Paris", "Childress (1970)"]
+
+  - record_id: "NOV-014"
+    claim_id: "CLM-014"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Comprehensive stochastic Cauchy regularity barrier taxonomy and surviving rate decomposition synthesis."
+    source_scope: "Navier-Stokes regularity barrier and stochastic analysis literature."
+    query_scope: "Stochastic Cauchy barrier synthesis for 3D incompressible Navier-Stokes."
+    audit_date: "2026-08-29"
+    databases_searched: ["MathSciNet", "arXiv:math.AP", "Google Scholar"]
+    primary_source_review: "Gate TP2-G4 whole-gate synthesis report"
+    independent_novelty_reviewer: "Antigravity Independent Verifier"
+    known_closest_analogues: ["None found in audited literature"]

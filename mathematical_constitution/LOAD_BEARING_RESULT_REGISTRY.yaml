@@ -25,3 +25,11 @@ load_bearing_results:
     why_load_bearing: "Establishes a scale-critical, dimensionally exact bridge between stochastic quadratic variation and vorticity stretching."
     impact_if_removed: "Leaves quadratic variation production uncoupled from direct physical vortex stretching."
     closest_literature: "Project original formulation (2026)"
+
+  - lbr_id: "LBR-004"
+    name: "TP2_G4_CANONICAL_SYNTHESIS_STRUCTURE"
+    claim_id: "CLM-014"
+    core_mathematical_fact: "Synthesis of 5 no-go barriers with exact surviving scale-critical rate identity d_s ln(chi_s) = 2nu E_{mu_s}[Xi]."
+    why_load_bearing: "Eliminates all unscaled and heuristic persistence avenues while isolating the precise open non-circular dynamical question."
+    impact_if_removed: "Allows resurrection of mathematically flawed unscaled or blind persistence attempts."
+    closest_literature: "Project whole-gate synthesis (2026)"

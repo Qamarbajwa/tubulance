@@ -197,3 +197,18 @@ understanding_packages:
       what_can_fail: "Perturbations away from Beltrami state re-introduce active nonlinear stretching."
       essential_assumptions: ["Beltrami eigenfunction on T^3", "Incompressible Navier-Stokes"]
       status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-014"
+    claim_id: "CLM-014"
+    name: "TP2_G4_WHOLE_GATE_CANONICAL_SYNTHESIS"
+    level_1_mechanism: "Synthesizes the 5-subgate adversarial findings of Gate TP2-G4 into an audited barrier taxonomy and extracts the exact scale-critical rate identity d_s ln(chi_s) = 2nu E_{mu_s}[Xi] as the surviving foundation."
+    level_2_architecture: |
+      1. Barrier consolidation: Reconciles scaling incompatibility (NS-OBS-009), periodic shear decoupling, exit-time no-go (NS-OBS-010), kinematic decoupling, and the non-circularity barrier.
+      2. Surviving object: Establishes Primary Relative QV Density Xi = ||D J_omega||^2 / |D omega|^2 on {omega != 0}.
+      3. Exact rate bridge: Formally ratifies d_s ln(chi_s) = 2nu E_{mu_s}[Xi].
+      4. Problem preservation: Confirms Clay Statement Branch B on T^3 remains UNRESOLVED, establishing the exact non-circular challenge for the subsequent research program.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Rigorous elimination of heuristic and dimensionally incompatible hypotheses leaves the exact scale-critical rate decomposition intact."
+      what_can_fail: "Deducing unconditioned lower bounds on E_mu[Xi] remains open."
+      essential_assumptions: ["Incompressible Navier-Stokes on T^3", "Constantin-Iyer stochastic representation"]
+      status: "U3_COMPLETE_PACKAGE"

@@ -4,20 +4,25 @@
 significance_records:
   - record_id: "SIG-001"
     claim_id: "CLM-003"
-    significance_tier: "S2_MAJOR_NO_GO_OR_INSIGHT"
+    significance_tier: "S2_MAJOR_PROJECT_RESULT"
     rationale: "Closes blind scalar lower-bound searches Q >= F(||D||) permanently, saving the project from searching for dimensionally impossible inequalities."
 
   - record_id: "SIG-002"
     claim_id: "CLM-005"
-    significance_tier: "S2_MAJOR_NO_GO_OR_INSIGHT"
+    significance_tier: "S2_MAJOR_PROJECT_RESULT"
     rationale: "Demonstrates that exact smooth Navier-Stokes flows can generate arbitrary finite-time deformation without generating proportional stochastic quadratic variation."
 
   - record_id: "SIG-003"
     claim_id: "CLM-010"
-    significance_tier: "S2_MAJOR_NO_GO_OR_INSIGHT"
+    significance_tier: "S2_MAJOR_PROJECT_RESULT"
     rationale: "Rules out universal data-independent upper bounds on low-eta persistence, pivoting the program to relative stretching Xi."
 
   - record_id: "SIG-004"
     claim_id: "CLM-011"
-    significance_tier: "S2_MAJOR_NO_GO_OR_INSIGHT"
+    significance_tier: "S2_MAJOR_PROJECT_RESULT"
     rationale: "Establishes the first dimensionally consistent bridge between stochastic Cauchy variance growth and direct vorticity amplification."
+
+  - record_id: "SIG-005"
+    claim_id: "CLM-014"
+    significance_tier: "S3_POTENTIAL_FIELD_SIGNIFICANCE"
+    rationale: "Provides the first comprehensive no-go barrier taxonomy for stochastic Cauchy turbulence models, preventing circularity and isolating the exact open rate question."

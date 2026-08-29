@@ -248,3 +248,22 @@ claims:
       community_status: "NOT_COMMUNITY_ACCEPTED"
       project_status: "PROJECT_CANONICAL"
     dependencies: ["ASM-001", "ASM-002", "ASM-003", "ASM-004"]
+
+  - claim_id: "CLM-014"
+    name: "TP2_G4_WHOLE_GATE_CANONICAL_SYNTHESIS"
+    milestone: "TP2-G4-A5"
+    statement: "Whole-gate synthesis of Gate TP2-G4: establishes exact no-go barrier taxonomy, identifies surviving scale-critical rate identity d_s ln(chi_s) = 2nu E_{mu_s}[Xi], and defines exact non-circular open bridge for 3D Navier-Stokes stochastic Cauchy analysis."
+    passport:
+      truth_status: "PROVED_THEOREM"
+      gov_evidence_level: "GOV_E4_INDEPENDENT_VERIFIER"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S3_POTENTIAL_FIELD_SIGNIFICANCE"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-003", "CLM-004", "CLM-005", "CLM-008", "CLM-010", "CLM-011", "CLM-012", "CLM-013"]
