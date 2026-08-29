@@ -29,7 +29,15 @@ VALID_TRUTH_STATUSES = [
     "PROVED_LEMMA",
     "PROVED_THEOREM",
     "PROVED_COUNTEREXAMPLE",
+    "VERIFIED_SYNTHESIS",
     "PROVED_TARGET"
+]
+
+VALID_CLAIM_TYPES = [
+    "MATHEMATICAL_PROPOSITION",
+    "MATHEMATICAL_IDENTITY",
+    "MATHEMATICAL_COUNTEREXAMPLE",
+    "PROJECT_SYNTHESIS"
 ]
 
 VALID_GOV_EVIDENCE = [
@@ -120,11 +128,21 @@ class ClaimManager:
     def get_claim(self, claim_id: str) -> Optional[Dict[str, Any]]:
         return self.claims.get(claim_id)
 
-    def validate_passport(self, passport: Dict[str, Any]) -> Dict[str, Any]:
+    def validate_passport(self, passport: Dict[str, Any], claim_type: Optional[str] = None) -> Dict[str, Any]:
         """Validate that all 12 independent passport dimensions are fully and consistently specified."""
         missing = [dim for dim in REQUIRED_PASSPORT_DIMENSIONS if dim not in passport]
         if missing:
             return {"valid": False, "reason": f"Missing passport dimensions: {missing}", "missing_dimensions": missing}
+
+        if passport["truth_status"] not in VALID_TRUTH_STATUSES:
+            return {"valid": False, "reason": f"Invalid truth_status: {passport['truth_status']}"}
+
+        # Check claim_type vs truth_status typing discipline
+        if claim_type == "PROJECT_SYNTHESIS" and passport["truth_status"] in ["PROVED_THEOREM", "PROVED_LEMMA"]:
+            return {
+                "valid": False,
+                "reason": f"Category error: Claim type PROJECT_SYNTHESIS cannot have truth_status {passport['truth_status']} (must be VERIFIED_SYNTHESIS)."
+            }
 
         # Check explicit namespace formats
         if passport["gov_evidence_level"] not in VALID_GOV_EVIDENCE:
@@ -175,7 +193,7 @@ class ClaimManager:
         invalid_passports = []
 
         for cid, claim in self.claims.items():
-            check = self.validate_passport(claim.get("passport", {}))
+            check = self.validate_passport(claim.get("passport", {}), claim_type=claim.get("claim_type"))
             if not check["valid"]:
                 invalid_passports.append({"claim_id": cid, "reason": check.get("reason", "UNKNOWN")})
 

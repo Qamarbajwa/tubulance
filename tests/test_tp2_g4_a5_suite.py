@@ -1,13 +1,11 @@
-"""Worker test suite for TP2-G4-A5 Whole-Gate Synthesis."""
+"""Worker test suite for TP2-G4-A5 Whole-Gate Synthesis and R1 Corrections."""
 import numpy as np
 import pytest
 from navier3d.math_assurance import MathAssuranceEngine, ClaimManager, PromotionManager
 
 
-def test_g4_synthesis_barrier_1_parabolic_scaling():
+def test_g4_synthesis_barrier_1_parabolic_scaling_class():
     """Barrier 1: Verify parabolic scaling exponents [x]=-1, [t]=-2, [u]=1, [omega]=2, [J_omega]=3, [Q_s]=6, [S_s]=4, [R_Q]=2."""
-    lam = 2.5
-    # Scaled dimensions
     dim_x = -1
     dim_t = -2
     dim_u = 1
@@ -23,7 +21,7 @@ def test_g4_synthesis_barrier_1_parabolic_scaling():
 
 
 def test_g4_synthesis_barrier_2_periodic_shear_annihilation():
-    """Barrier 2: Verify E12 E32 = 0 decoupling deformation from vorticity gradient."""
+    """Barrier 2: Verify E12 E32 = 0 decoupling deformation from vorticity gradient on fixed T^3."""
     e1 = np.array([1.0, 0.0, 0.0])
     e2 = np.array([0.0, 1.0, 0.0])
     e3 = np.array([0.0, 0.0, 1.0])
@@ -91,10 +89,54 @@ def test_g4_synthesis_surviving_xi_rate_identity():
     assert np.isclose(direct_rate, formula_rate, atol=1e-14)
 
 
-def test_g4_synthesis_clay_statement_b_unresolved():
-    """Preservation: Verify that Clay Statement B is confirmed UNRESOLVED in Claim Registry."""
+def test_g4_synthesis_r1_project_synthesis_cannot_be_theorem():
+    """R1: Verify that claim type PROJECT_SYNTHESIS cannot have truth_status PROVED_THEOREM."""
     mgr = ClaimManager()
     clm14 = mgr.get_claim("CLM-014")
-    assert clm14 is not None
-    assert clm14["passport"]["project_status"] == "PROJECT_CANONICAL"
-    assert clm14["passport"]["community_status"] == "NOT_COMMUNITY_ACCEPTED"
+    assert clm14["claim_type"] == "PROJECT_SYNTHESIS"
+    assert clm14["passport"]["truth_status"] == "VERIFIED_SYNTHESIS"
+
+    # Testing validator rejection if someone attempts PROVED_THEOREM on PROJECT_SYNTHESIS
+    invalid_passport = dict(clm14["passport"])
+    invalid_passport["truth_status"] = "PROVED_THEOREM"
+    val = mgr.validate_passport(invalid_passport, claim_type="PROJECT_SYNTHESIS")
+    assert val["valid"] is False
+    assert "Category error" in val["reason"]
+
+
+def test_g4_synthesis_r1_undocumented_significance_rejected():
+    """R1: Verify that undocumented significance state (e.g. S3_FIELD_SIGNIFICANCE) is rejected."""
+    mgr = ClaimManager()
+    clm14 = mgr.get_claim("CLM-014")
+    assert clm14["passport"]["significance"] == "S3_POTENTIAL_FIELD_SIGNIFICANCE"
+
+    invalid_passport = dict(clm14["passport"])
+    invalid_passport["significance"] = "S3_FIELD_SIGNIFICANCE" # Undocumented status drift
+    val = mgr.validate_passport(invalid_passport, claim_type="PROJECT_SYNTHESIS")
+    assert val["valid"] is False
+    assert "Invalid significance tier" in val["reason"]
+
+
+def test_g4_synthesis_r1_xi_identity_cannot_promote_target_status():
+    """R1: Verify that Xi structural identity cannot promote target problem status to SOLVED."""
+    res = PromotionManager.validate_solved_eligibility(
+        claim_id="CLM-011",
+        target_equivalence=True,
+        truth_status="PROVED_IDENTITY",
+        assumption_drift="NONE",
+        dependency_closure=True,
+        formalization_fidelity=True,
+        math_independence="MATH_I4_HUMAN_SPECIALIST",
+        external_validation="MULTI_SPECIALIST_REVIEWED",
+        community_status="COMMUNITY_ACCEPTED"
+    )
+    assert res["solved_eligible"] is False
+    assert res["verdict"] == "SUBTHEOREM_CANNOT_BE_SOLVED_ELIGIBLE"
+
+
+def test_g4_synthesis_clay_statement_b_unresolved():
+    """Preservation: Verify that Clay Statement B is confirmed UNRESOLVED."""
+    engine = MathAssuranceEngine()
+    branch = engine.validate_branch_identity()
+    assert branch["valid"] is True
+    assert branch["official_target_branch"] == "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"

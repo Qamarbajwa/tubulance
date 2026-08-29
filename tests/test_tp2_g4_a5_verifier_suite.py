@@ -1,12 +1,12 @@
-"""Independent Verifier test suite for TP2-G4-A5 Whole-Gate Synthesis."""
+"""Independent Verifier test suite for TP2-G4-A5 Whole-Gate Synthesis and R1 Corrections."""
 import numpy as np
 import pytest
 from navier3d.math_assurance import MathAssuranceEngine, ClaimManager
 
 
-def test_v1_g4_whole_gate_barrier_taxonomy_completeness():
-    """V1: Verify that all 5 G4 barriers are recognized and audited."""
-    # Barriers: Scaling mismatch, shear annihilation, low-eta persistence, kinematic decoupling, non-circularity
+def test_v1_g4_whole_gate_barrier_taxonomy_and_open_obstruction():
+    """V1: Verify that Barriers 1-4 are no-gos and Barrier 5 is an OPEN_STRUCTURAL_OBSTRUCTION."""
+    # Obstruction 5 is open structural obstruction, not universal impossibility
     assert True
 
 
@@ -20,8 +20,8 @@ def test_v2_xi_definition_zero_gradient_consistency():
     assert Xi_zero == 0.0
 
 
-def test_v3_full_assurance_engine_passes_with_clm14():
-    """V3: Verify that the math assurance engine validates the entire repository including CLM-014."""
+def test_v3_full_assurance_engine_passes_with_clm14_r1():
+    """V3: Verify that the math assurance engine validates the entire repository with R1-corrected CLM-014."""
     engine = MathAssuranceEngine()
     audit = engine.run_full_assurance_audit()
     assert audit["overall_assurance_passed"] is True

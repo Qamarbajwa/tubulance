@@ -5,8 +5,8 @@
 **Governance Standard:** Autonomous Project Runtime Governance Kernel v2.10.1 & Mathematical Research Constitution v1.0.1  
 **Target Problem:** Clay Millennium Prize Problem Statement B (Periodic Torus $\mathbb{T}^3$, $\mathbb{R}^3 / \mathbb{Z}^3$)  
 **Status of Target Problem:** `UNRESOLVED`  
-**Gate Closure Verdict:** `TP2-G4 = PROJECT_CANONICAL_WITH_REFORMULATION_AND_BARRIER_TAXONOMY`  
-**Date:** 2026-08-29T02:20:00Z  
+**Gate Closure Verdict:** `TP2-G4 = CLOSED_PROJECT_CANONICAL_WITH_REFORMULATION`  
+**Date:** 2026-08-29T02:54:00Z  
 
 ---
 
@@ -14,7 +14,7 @@
 
 The five-subgate adversarial campaign of Gate `TP2-G4` investigated whether stochastic Lagrangian trajectory persistence and Cauchy deformation growth could provide an unconditioned mechanism for 3D Navier–Stokes global smooth regularity.
 
-The campaign has produced a decisive, mathematically audited resolution comprising **four permanent analytical no-go barriers**, **three exact counterexample flow families**, and **one load-bearing surviving scale-critical rate identity**:
+The campaign has produced a decisive, mathematically audited resolution comprising **four permanent analytical no-go barriers**, **one open structural obstruction**, **three exact counterexample flow families**, and **one load-bearing surviving scale-critical rate identity**:
 
 ```text
 WHAT WAS ATTEMPTED?
@@ -39,7 +39,7 @@ WHAT SURVIVED? (LOAD-BEARING SURVIVING STRUCTURE)
   └─ Scale-Critical Rate Identity: partial_s ln chi_s = 2 nu E_{mu_s}[Xi], where d mu_s = (|Z_s|^2 / S_s) dP
   │
   ▼
-WHAT EXACT OBSTACLE REMAINS?
+WHAT EXACT OBSTACLE REMAINS? (OPEN STRUCTURAL OBSTRUCTION [NS-OBS-011])
   │
   └─ Can 3D Navier-Stokes dynamics force sufficiently large E_{mu_s}[Xi] without assuming a-priori BKM/Serrin regularity?
 ```
@@ -57,20 +57,20 @@ $$\boxed{ \text{TP2-G4 = CLOSED\_PROJECT\_CANONICAL\_WITH\_REFORMULATION} }$$
 | **TP2-G4-A2-R1** | Projector gap qualification | Qualified Riesz projector differentiability to isolated spectral clusters with positive gap; introduced globally well-defined unnormalized weights $q_i = \operatorname{tr}(P_i H)$; derived backward Itô tensor SDEs. | `PROJECT_CANONICAL (CORRECTED)` |
 | **TP2-G4-A3** | Occupation & exit-time persistence | Proved analytical occupation limit $\mathcal{O}_\varepsilon^A(L) \to L$ a.s. on periodic shear; proved exit-time no-go; proved low $\eta$ with large deformation is not blowup-specific (`LOW_ETA_PLUS_LARGE_GENERIC_DEFORMATION_NOT_BLOWUP_SPECIFIC`). | `PROJECT_CANONICAL (REFORMULATED)` |
 | **TP2-G4-A3-R1** | Exit-tube & $\Theta$ domain repair | Repaired exit tube to quadrant interval $I = [\frac{\pi}{8k}, \frac{3\pi}{8k}]$, strictly excluding $G=0$; defined Primary Relative QV Density $\Xi := \frac{\|D J_\omega\|^2}{|D\omega|^2}$; proved $\partial_s \ln \chi_s = 2\nu \mathbb{E}_{\mu_s}[\Xi]$. | `PROJECT_CANONICAL (CORRECTED)` |
-| **TP2-G4-A4** | Vorticity amplification dynamics | Proved kinematic decoupling no-go: $\mathcal{A}_\omega = K^2, \mathcal{A}_{\text{grad}} = K^{-2} \implies \Theta = K^{-4} \to 0$; proved decaying 3D Beltrami eigenflows deplete vortex stretching via pressure ($\mathcal{A}_\omega \equiv 1$); derived logarithmic transport equations for $\ln \Theta$; proved non-circularity barrier. | `PROJECT_CANONICAL (REFORMULATED)` |
+| **TP2-G4-A4** | Vorticity amplification dynamics | Proved kinematic decoupling no-go: $\mathcal{A}_\omega = K^2, \mathcal{A}_{\text{grad}} = K^{-2} \implies \Theta = K^{-4} \to 0$; proved decaying 3D Beltrami eigenflows deplete vortex stretching via pressure ($\mathcal{A}_\omega \equiv 1$); derived logarithmic transport equations for $\ln \Theta$; proved direct evolution circularity barrier. | `PROJECT_CANONICAL (REFORMULATED)` |
 
 ---
 
-## 3. Master Classification of Mathematical No-Go Barriers
+## 3. Master Classification of Mathematical No-Go Barriers & Structural Obstructions
 
-### Barrier 1: Parabolic Scaling Incompatibility (`NS-OBS-009`)
+### Barrier 1: Parabolic Scaling-Class Incompatibility (`NS-OBS-009`)
 - **Statement**: Under Navier–Stokes parabolic rescaling $x \mapsto \lambda x, t \mapsto \lambda^2 t, u \mapsto \lambda u$, the unscaled quadratic variation scales as $[Q_s] = \lambda^6$, while the Lagrangian deformation tensor scales as $[\|D_s\|_F^2] = \lambda^0$.
-- **Consequence**: Any blind bound of the form $Q_s \ge c_0 \|D_s\|_F^\alpha$ is dimensionally impossible.
+- **Domain Scope**: `SCALING_CLASS_NO_GO` ($\mathbb{R}^3$ and parabolic rescaling families). While unconstrained dilation changes the fundamental period of a fixed torus $\mathbb{T}^3$, this scaling mismatch rules out scale-free scalar deformation bounds across fluid scales. The fixed-$\mathbb{T}^3$ domain obstruction is independently and rigorously sealed by Barrier 2.
 - **Resolution**: Comparison is strictly formulated via the scale-critical rate $R_Q(s) = \frac{Q_s}{S_s} = \partial_s \ln \chi_s$ (scaling dimension $\lambda^2$).
 
 ### Barrier 2: Periodic Shear Multiplicative Decoupling
 - **Statement**: In periodic shear flows $u = (U(y, t), 0, 0)$ on $\mathbb{T}^3$, the shear deformation matrix $E_{12} = e_1 \otimes e_2$ annihilates the vorticity gradient matrix $E_{32} = e_3 \otimes e_2$ ($E_{12} E_{32} = 0$).
-- **Consequence**: $D_s J_\omega \equiv J_\omega$ identically for all time, completely decoupling the arbitrarily large shear deformation $\alpha$ from quadratic variation production $Q_s$.
+- **Consequence**: $D_s J_\omega \equiv J_\omega$ identically for all time, completely decoupling the arbitrarily large shear deformation $\alpha$ from quadratic variation production $Q_s$ on a fixed periodic torus $\mathbb{T}^3$.
 
 ### Barrier 3: Low-$\eta$ Persistence Exit-Time No-Go (`NS-OBS-010`)
 - **Statement**: For unforced periodic shear flows on $\mathbb{T}^3$, $\lim_{A \to \infty} \mathcal{O}_\varepsilon^A(L) = L$ almost surely, and consecutive low-$\eta$ residence times $\Delta \tau_{\text{res}}(\varepsilon) \ge L - \delta$ occur with positive Brownian probability for large $A$.
@@ -84,12 +84,15 @@ $$\boxed{ \text{TP2-G4 = CLOSED\_PROJECT\_CANONICAL\_WITH\_REFORMULATION} }$$
   \]
 - **Consequence**: Large vortex stretching $\mathcal{A}_\omega > 1$ does **not** algebraically force a positive lower bound on relative efficiency ($\Theta \ge c_0 > 0$).
 
-### Barrier 5: Regularity Non-Circularity Barrier (`CIRCULAR_FOR_GLOBAL_REGULARITY`)
+### Obstruction 5: Direct Evolution Route Circularity (`NS-OBS-011`)
 - **Statement**: The time evolution of $\Theta$ obeys:
   \[
   \partial_s \ln \Theta(s) = 2 \left[ \frac{Z_s^T S_s Z_s}{|Z_s|^2} - \frac{\operatorname{tr}((D_s J_\omega)^T S_s (D_s J_\omega))}{\|D_s J_\omega\|_F^2} \right].
   \]
-- **Consequence**: Proving an a-priori lower bound on $\Theta$ or $\Xi$ requires bounding the strain history $\int_0^T \|S(t)\|_{L^\infty} dt$ or pressure Hessian $\sup |\operatorname{Hess}(p)|$, which is mathematically equivalent to assuming Beale–Kato–Majda or Serrin regularity criteria (`NS-OBS-004`).
+- **Epistemic Scope**:
+  - **What is Ruled Out**: Deducing lower bounds on $\Xi$ or $\Theta$ via direct pathwise differential inequalities on strain histories $\int_0^T \|S(t)\|_{L^\infty} dt$, which is regularity-equivalent to assuming Beale–Kato–Majda or Serrin criteria (`NS-OBS-004`).
+  - **What is NOT Ruled Out**: Non-circular mechanisms providing a-priori control of $\mathbb{E}_{\mu_s}[\Xi]$ through integral identities, non-local pressure constraints, geometric depletion, cancellations, or probabilistic concentration.
+- **Classification**: `OPEN_STRUCTURAL_OBSTRUCTION`.
 
 ---
 
@@ -111,7 +114,7 @@ Let $Z_s = D_s \omega(A_s, s)$, $S_s = \mathbb{E}[|Z_s|^2]$, $Q_s = 2\nu \mathbb
 \boxed{ \partial_s \ln \chi_s = \frac{Q_s}{S_s} = 2\nu \mathbb{E}_{\mu_s}\left[ \Xi \right] }.
 \]
 - **Dimensional Exactness**: $[\partial_s \ln \chi_s] = \lambda^2, \quad [\Xi] = \lambda^2, \quad [2\nu] = \lambda^0$.
-- **Epistemic Classification**: `CANDIDATE_LOAD_BEARING_SURVIVING_STRUCTURE` (an exact structural identity, not an unconditioned regularity theorem).
+- **Epistemic Classification**: `EXACT_STRUCTURAL_IDENTITY` (an exact structural rate identity, not an unconditioned regularity theorem).
 
 ---
 
@@ -119,42 +122,40 @@ Let $Z_s = D_s \omega(A_s, s)$, $S_s = \mathbb{E}[|Z_s|^2]$, $Q_s = 2\nu \mathbb
 
 All claims of the TP2-G4 campaign are permanently registered with full 12-coordinate Claim Passports under Mathematical Research Constitution `v1.0.1`:
 
-| Claim ID | Milestone | Statement Summary | Truth Status | Novelty | Significance | Project Status |
-|---|---|---|---|---|---|---|
-| `CLM-003` | `TP2-G4-A1` | Parabolic scaling rate $R_Q = Q_s/S_s = \partial_s \ln \chi_s$ ($\lambda^2$) | `PROVED_THEOREM` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
-| `CLM-004` | `TP2-G4-A1` | SVD orientation decomposition $\|D J_\omega\|^2 = \|J_\omega\|^2 \sum p_i \sigma_i^2$ | `PROVED_IDENTITY` | `N1_PROJECT_REFORM` | `S1_USEFUL_LEMMA` | `PROJECT_CANONICAL` |
-| `CLM-005` | `TP2-G4-A1` | Periodic shear decoupling counterexample ($D_s J_\omega \equiv J_\omega$) | `PROVED_COUNTEREXAMPLE` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
-| `CLM-006` | `TP2-G4-A2` | Vorticity-gradient tensor transport $(D_t - \nu \Delta)G = SG - GA + T$ | `PROVED_THEOREM` | `N1_PROJECT_REFORM` | `S1_USEFUL_LEMMA` | `PROJECT_CANONICAL` |
-| `CLM-007` | `TP2-G4-A2` | Deformation metric & spectral projector transport $\partial_s \Gamma_s$ | `PROVED_THEOREM` | `N1_PROJECT_REFORM` | `S1_USEFUL_LEMMA` | `PROJECT_CANONICAL` |
-| `CLM-008` | `TP2-G4-A2-R1` | Backward Itô SDEs for orientation weights $\widehat{d} q_i$ | `PROVED_THEOREM` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
-| `CLM-009` | `TP2-G4-A3` | Analytical occupation limit theorem $\mathcal{O}_\varepsilon^A(L) \to L$ a.s. | `PROVED_THEOREM` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
-| `CLM-010` | `TP2-G4-A3-R1` | Exit-time persistence no-go $\mathbb{P}(\Delta \tau_{\text{res}} \ge L - \delta) > 0$ | `PROVED_THEOREM` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
-| `CLM-011` | `TP2-G4-A3-R1` | Primary Relative QV Density $\Xi$ and rate $\partial_s \ln \chi_s = 2\nu \mathbb{E}_{\mu_s}[\Xi]$ | `PROVED_THEOREM` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
-| `CLM-012` | `TP2-G4-A4` | Kinematic decoupling no-go ($A_\omega = K^2, \Theta = K^{-4} \to 0$) | `PROVED_COUNTEREXAMPLE` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
-| `CLM-013` | `TP2-G4-A4` | 3D Beltrami pressure cancellation of vortex stretching ($A_\omega \equiv 1$) | `PROVED_THEOREM` | `N1_PROJECT_REFORM` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
-| `CLM-014` | `TP2-G4-A5` | Whole-Gate G4 Synthesis & Stochastic Cauchy Barrier Taxonomy | `PROVED_THEOREM` | `N2_NOT_FOUND` | `S3_POTENTIAL_FIELD_SIGNIFICANCE` | `PROJECT_CANONICAL` |
+| Claim ID | Claim Type | Milestone | Statement Summary | Truth Status | Novelty | Significance | Project Status |
+|---|---|---|---|---|---|---|---|
+| `CLM-003` | `MATHEMATICAL_PROPOSITION` | `TP2-G4-A1` | Parabolic scaling rate $R_Q = Q_s/S_s = \partial_s \ln \chi_s$ ($\lambda^2$) | `PROVED_THEOREM` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
+| `CLM-004` | `MATHEMATICAL_IDENTITY` | `TP2-G4-A1` | SVD orientation decomposition $\|D J_\omega\|^2 = \|J_\omega\|^2 \sum p_i \sigma_i^2$ | `PROVED_IDENTITY` | `N1_PROJECT_REFORM` | `S1_USEFUL_LEMMA` | `PROJECT_CANONICAL` |
+| `CLM-005` | `MATHEMATICAL_COUNTEREXAMPLE` | `TP2-G4-A1` | Periodic shear decoupling counterexample ($D_s J_\omega \equiv J_\omega$) | `PROVED_COUNTEREXAMPLE` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
+| `CLM-006` | `MATHEMATICAL_PROPOSITION` | `TP2-G4-A2` | Vorticity-gradient tensor transport $(D_t - \nu \Delta)G = SG - GA + T$ | `PROVED_THEOREM` | `N1_PROJECT_REFORM` | `S1_USEFUL_LEMMA` | `PROJECT_CANONICAL` |
+| `CLM-007` | `MATHEMATICAL_PROPOSITION` | `TP2-G4-A2` | Deformation metric & spectral projector transport $\partial_s \Gamma_s$ | `PROVED_THEOREM` | `N1_PROJECT_REFORM` | `S1_USEFUL_LEMMA` | `PROJECT_CANONICAL` |
+| `CLM-008` | `MATHEMATICAL_PROPOSITION` | `TP2-G4-A2-R1` | Backward Itô SDEs for orientation weights $\widehat{d} q_i$ | `PROVED_THEOREM` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
+| `CLM-009` | `MATHEMATICAL_PROPOSITION` | `TP2-G4-A3` | Analytical occupation limit theorem $\mathcal{O}_\varepsilon^A(L) \to L$ a.s. | `PROVED_THEOREM` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
+| `CLM-010` | `MATHEMATICAL_PROPOSITION` | `TP2-G4-A3-R1` | Exit-time persistence no-go $\mathbb{P}(\Delta \tau_{\text{res}} \ge L - \delta) > 0$ | `PROVED_THEOREM` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
+| `CLM-011` | `MATHEMATICAL_IDENTITY` | `TP2-G4-A3-R1` | Primary Relative QV Density $\Xi$ and rate $\partial_s \ln \chi_s = 2\nu \mathbb{E}_{\mu_s}[\Xi]$ | `PROVED_IDENTITY` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
+| `CLM-012` | `MATHEMATICAL_COUNTEREXAMPLE` | `TP2-G4-A4` | Kinematic decoupling no-go ($A_\omega = K^2, \Theta = K^{-4} \to 0$) | `PROVED_COUNTEREXAMPLE` | `N2_NOT_FOUND` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
+| `CLM-013` | `MATHEMATICAL_PROPOSITION` | `TP2-G4-A4` | 3D Beltrami pressure cancellation of vortex stretching ($A_\omega \equiv 1$) | `PROVED_THEOREM` | `N1_PROJECT_REFORM` | `S2_MAJOR_PROJECT_RESULT` | `PROJECT_CANONICAL` |
+| `CLM-014` | `PROJECT_SYNTHESIS` | `TP2-G4-A5` | Whole-Gate G4 Synthesis & Stochastic Cauchy Barrier Taxonomy | `VERIFIED_SYNTHESIS` | `N2_NOT_FOUND` | `S3_POTENTIAL_FIELD_SIGNIFICANCE` | `PROJECT_CANONICAL` |
 
 ---
 
 ## 6. Exact Form of the Remaining Scientific Bridge
 
-Gate `TP2-G4` has formally dismantled all heuristic, scalar, and unweighted persistence hypotheses. The open mathematical problem for the next major research program is sharply defined:
+Gate `TP2-G4` has formally dismantled all heuristic, scalar, and unweighted persistence hypotheses. The open mathematical problem for the next major research program (`TP2-G5`) is sharply defined:
 
-$$\boxed{ \text{Can 3D Navier–Stokes dynamics force sufficiently large } \mathbb{E}_{\mu_s}[\Xi] \text{ when vorticity amplification becomes dangerous, without assuming a-priori regularity?} }$$
+$$\boxed{ \text{Can intrinsic 3D Navier–Stokes dynamics provide non-circular scale-critical control of } \mathbb{E}_{\mu_s}[\Xi_s]? }$$
 
-### Core Non-Circularity Requirement
-Any future candidate lower bound:
-\[
-\mathbb{E}_{\mu_s}\left[ \Xi(s) \right] \ge c_0 \mathcal{F}(u_0, \nu, s)
-\]
-must be derived strictly from **scale-critical energy/dissipation invariants** ($\|u_0\|_{L^2}, \nu \int \|\nabla u\|^2$) or genuine Navier–Stokes non-local pressure constraints, and must **never** invoke unearned assumptions such as $u \in L^\infty_t L^\infty_x$, $\omega \in L^\infty$, or bounded strain.
+The three possible rigorous scientific outcomes to investigate are:
+1. **Coercivity**: Dynamics force $\mathbb{E}_{\mu_s}[\Xi_s] \ge c_0 > 0$ during intense vortex stretching.
+2. **Compensated / Cancellation Control**: Integrated or geometric control provides non-blowup bounds without pointwise coercivity.
+3. **New No-Go**: Exact 3D flow counterexamples construct simultaneous vorticity amplification and vanishing relative stretching $\mathbb{E}_{\mu_s}[\Xi_s] \to 0$.
 
 ---
 
 ## 7. Canonical Gate Closure Verdict
 
-$$\boxed{ \text{TP2-G4 = CLOSED\_PROJECT\_CANONICAL\_WITH\_REFORMULATION\_AND\_BARRIER\_TAXONOMY} }$$
+$$\boxed{ \text{TP2-G4 = CLOSED\_PROJECT\_CANONICAL\_WITH\_REFORMULATION} }$$
 
 - **Official Clay Problem Statement B**: `UNRESOLVED` (Status preserved with epistemic integrity).
 - **Milestone `TP2-G4-A5`**: `COMPLETED_AND_SEALED`.
-- **Next Phase**: The subsequent research gate must be formulated directly from the accepted synthesis of the $\Xi$ rate identity.
+- **Authorized Next Milestone**: `TP2-G5 — SCALE-CRITICAL RELATIVE QV CLOSURE PROGRAM`.

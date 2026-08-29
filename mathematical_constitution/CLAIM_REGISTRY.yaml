@@ -3,6 +3,7 @@
 
 claims:
   - claim_id: "CLM-001"
+    claim_type: "MATHEMATICAL_PROPOSITION"
     name: "STOCHASTIC_CAUCHY_MARTINGALE_REPRESENTATION"
     milestone: "TP2-G1"
     statement: "Z_s = D_s omega(A_s, s) is a backward martingale with E[Z_s | F_T] = omega(x, T) under Convention M [J_f]_{ij} = partial_j f_i."
@@ -22,6 +23,7 @@ claims:
     dependencies: ["ASM-001", "ASM-002", "ASM-003", "ASM-004", "ASM-005"]
 
   - claim_id: "CLM-002"
+    claim_type: "MATHEMATICAL_PROPOSITION"
     name: "STOCHASTIC_COVARIANCE_TRACE_VARIANCE_EVOLUTION"
     milestone: "TP2-G3"
     statement: "C_s = 2nu int_s^T E[D_r J_omega J_omega^T D_r^T] dr >= 0 and V_s = 2nu int_s^T E[||D_r J_omega||_F^2] dr with strict positivity Q_s > 0 for non-trivial flows."
@@ -41,6 +43,7 @@ claims:
     dependencies: ["CLM-001"]
 
   - claim_id: "CLM-003"
+    claim_type: "MATHEMATICAL_PROPOSITION"
     name: "PARABOLIC_SCALING_RATE_IDENTIFICATION"
     milestone: "TP2-G4-A1"
     statement: "The unscaled comparison Q_s vs ||D_s||^2 is dimensionally inhomogeneous (lambda^6 vs lambda^0). The scale-compatible stretching rate is R_Q(s) = Q_s / S_s = d_s ln(chi_s) (dimension lambda^2)."
@@ -60,6 +63,7 @@ claims:
     dependencies: ["CLM-002"]
 
   - claim_id: "CLM-004"
+    claim_type: "MATHEMATICAL_IDENTITY"
     name: "SVD_ORIENTATION_DECOMPOSITION"
     milestone: "TP2-G4-A1"
     statement: "||D_s J_omega||_F^2 = ||J_omega||_F^2 sum_{i=1}^3 p_i sigma_i^2 with p_i = ||v_i^T J_omega||^2 / ||J_omega||^2 >= 0 and sum p_i = 1."
@@ -79,6 +83,7 @@ claims:
     dependencies: ["CLM-001"]
 
   - claim_id: "CLM-005"
+    claim_type: "MATHEMATICAL_COUNTEREXAMPLE"
     name: "PERIODIC_SHEAR_DECOUPLING_COUNTEREXAMPLE"
     milestone: "TP2-G4-A1"
     statement: "Exact smooth periodic shear u = (U(y, t), 0, 0) satisfies E12 E32 = 0, causing D_s J_omega = J_omega identically and uncoupling shear deformation from Q_s."
@@ -98,6 +103,7 @@ claims:
     dependencies: ["CLM-004"]
 
   - claim_id: "CLM-006"
+    claim_type: "MATHEMATICAL_PROPOSITION"
     name: "VORTICITY_GRADIENT_TENSOR_TRANSPORT_EQUATION"
     milestone: "TP2-G4-A2"
     statement: "(D_t - nu Delta) G = S G - G A + T with T_{ij} = (partial_j S_{ik}) omega_k under Convention M."
@@ -117,6 +123,7 @@ claims:
     dependencies: ["ASM-001", "ASM-002", "ASM-003"]
 
   - claim_id: "CLM-007"
+    claim_type: "MATHEMATICAL_PROPOSITION"
     name: "DEFORMATION_METRIC_AND_PROJECTOR_TRANSPORT"
     milestone: "TP2-G4-A2"
     statement: "d_s Gamma_s = -A_s^T Gamma_s - Gamma_s A_s and simple-spectrum projector dynamics d_s P_i = sum_{j != i} (P_j (d_s Gamma) P_i + P_i (d_s Gamma) P_j)/(sigma_i^2 - sigma_j^2)."
@@ -136,6 +143,7 @@ claims:
     dependencies: ["CLM-001"]
 
   - claim_id: "CLM-008"
+    claim_type: "MATHEMATICAL_PROPOSITION"
     name: "BACKWARD_ITO_SDE_ORIENTATION_DYNAMICS"
     milestone: "TP2-G4-A2-R1"
     statement: "q_i = tr(P_i H) satisfies d_hat q_i = [tr(dot P_i H) + tr(P_i R_H)] ds + sqrt(2nu) sum_l tr(P_i partial_l H) d_hat W^l, driven by spatial diffusion noise."
@@ -155,6 +163,7 @@ claims:
     dependencies: ["CLM-006", "CLM-007"]
 
   - claim_id: "CLM-009"
+    claim_type: "MATHEMATICAL_PROPOSITION"
     name: "LOW_ETA_OCCUPATION_LIMIT_THEOREM"
     milestone: "TP2-G4-A3"
     statement: "For exact periodic shear flows, O_eps^A(L) -> L almost surely as initial amplitude A -> infty on any finite lookback horizon L."
@@ -174,6 +183,7 @@ claims:
     dependencies: ["CLM-005"]
 
   - claim_id: "CLM-010"
+    claim_type: "MATHEMATICAL_PROPOSITION"
     name: "PERSISTENCE_EXIT_TIME_NO_GO_THEOREM"
     milestone: "TP2-G4-A3-R1"
     statement: "P(Delta tau_res(eps) >= L - delta) > 0 for large initial amplitude A in periodic shear, ruling out universal data-independent upper bounds on low-eta persistence."
@@ -193,11 +203,12 @@ claims:
     dependencies: ["CLM-009"]
 
   - claim_id: "CLM-011"
+    claim_type: "MATHEMATICAL_IDENTITY"
     name: "PRIMARY_RELATIVE_QV_DENSITY_RATE_DECOMPOSITION"
     milestone: "TP2-G4-A3-R1"
     statement: "d_s ln(chi_s) = 2nu E_{mu_s}[Xi] where Xi = ||D J_omega||^2 / |D omega|^2 and d mu_s = (|Z_s|^2 / S_s) dP, with exact factorization Xi = kappa_omega^2 Theta."
     passport:
-      truth_status: "PROVED_THEOREM"
+      truth_status: "PROVED_IDENTITY"
       gov_evidence_level: "GOV_E4_INDEPENDENT_VERIFIER"
       math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
       gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
@@ -212,6 +223,7 @@ claims:
     dependencies: ["CLM-003", "CLM-004"]
 
   - claim_id: "CLM-012"
+    claim_type: "MATHEMATICAL_COUNTEREXAMPLE"
     name: "KINEMATIC_VORTICITY_STRETCHING_EFFICIENCY_DECOUPLING"
     milestone: "TP2-G4-A4"
     statement: "D_K = diag(K, 1, 1/K), omega = e1, G = e3 (x) e2 yields A_omega = K^2, A_grad = K^-2 => Theta = K^-4 -> 0, proving A_omega > 1 does not algebraically force Theta >= c0."
@@ -231,6 +243,7 @@ claims:
     dependencies: ["CLM-011"]
 
   - claim_id: "CLM-013"
+    claim_type: "MATHEMATICAL_PROPOSITION"
     name: "BELTRAMI_3D_PRESSURE_DEPLETION_BENCHMARK"
     milestone: "TP2-G4-A4"
     statement: "Decaying 3D Beltrami eigenflows u(t) = e^(-nu lambda^2 t) u_0 with curl u_0 = lambda u_0 exactly cancel nonlinear vortex stretching via pressure (A_omega = 1) while generating 3D chaotic deformation."
@@ -250,11 +263,12 @@ claims:
     dependencies: ["ASM-001", "ASM-002", "ASM-003", "ASM-004"]
 
   - claim_id: "CLM-014"
+    claim_type: "PROJECT_SYNTHESIS"
     name: "TP2_G4_WHOLE_GATE_CANONICAL_SYNTHESIS"
     milestone: "TP2-G4-A5"
     statement: "Whole-gate synthesis of Gate TP2-G4: establishes exact no-go barrier taxonomy, identifies surviving scale-critical rate identity d_s ln(chi_s) = 2nu E_{mu_s}[Xi], and defines exact non-circular open bridge for 3D Navier-Stokes stochastic Cauchy analysis."
     passport:
-      truth_status: "PROVED_THEOREM"
+      truth_status: "VERIFIED_SYNTHESIS"
       gov_evidence_level: "GOV_E4_INDEPENDENT_VERIFIER"
       math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
       gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
