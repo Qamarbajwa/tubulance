@@ -281,3 +281,23 @@ claims:
       community_status: "NOT_COMMUNITY_ACCEPTED"
       project_status: "PROJECT_CANONICAL"
     dependencies: ["CLM-003", "CLM-004", "CLM-005", "CLM-008", "CLM-010", "CLM-011", "CLM-012", "CLM-013"]
+
+  - claim_id: "CLM-015"
+    claim_type: "PROJECT_SYNTHESIS"
+    name: "TP2_G5_A0_XI_LITERATURE_BOUNDARY_AND_DOMAIN_CONTRACT"
+    milestone: "TP2-G5-A0"
+    statement: "The primary relative QV density Xi remains a viable G5 research object after an equivalent-notation literature audit, with an explicit X1-X4 zero-state contract, a preserved scale-critical identity, and no claim of absolute novelty or unconditional regularity closure."
+    passport:
+      truth_status: "VERIFIED_SYNTHESIS"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E1_INFORMAL_DERIVATION"
+      gov_review_independence: "GOV_I1_SAME_SESSION"
+      math_review_independence: "MATH_I1_WRITER_INTERNAL"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL_WITH_LIMITATIONS"
+    dependencies: ["CLM-011", "CLM-014"]

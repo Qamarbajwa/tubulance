@@ -64,12 +64,14 @@ state:
   last_verified_checkpoint:
     ref: "c8fd82a953297fa7434cad90bcfbf9bea8f2e0a1"
     at: "2026-08-29T02:20:00Z"
-  canonical_milestone: "TP2-G4-A5-R1 = PROJECT_CANONICAL_WITH_CORRECTIONS"
-  active_gate: "TP2-G5"
+  canonical_milestone: "TP2-G5-A0 = ACCEPTED_WITH_LIMITATIONS_AND_CONTRACT_SEALED"
+  active_gate: "TP2-G5-A1 (AUTHORIZED ONLY FROM ACCEPTED A0 CONTRACT; NOT EXECUTED)"
   accepted_t3plus_count: 12
   last_random_audit: "REV-2026-08-24-RPM1"
   retrofit_debt: []
-  open_findings: []
+  open_findings:
+    - "Origin remote SHA unavailable because outbound GitHub access failed during A0 preflight."
+    - "Distinct reviewer agent unavailable; A0 E4 review uses documented same-model fresh-context fallback with LOW independence."
 
 emergency:
   incident_state: "NONE"

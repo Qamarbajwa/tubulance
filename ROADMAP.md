@@ -2,7 +2,7 @@
 
 **Program:** `NS-TRAJECTORY-PERSISTENCE-2`  
 **Governance Standard:** Autonomous Project Runtime Governance Kernel v2.10.1  
-**Last Updated:** 2026-08-25  
+**Last Updated:** 2026-08-29
 
 ---
 
@@ -20,9 +20,15 @@
 | **TP2-G4-A2-R1** | Degeneracy & Stochastic Orientation Correction | `ACCEPTED_CANONICAL_WITH_CORRECTIONS` | Global $q_i = \operatorname{tr}(P_i H)$; backward Itô SDEs; persistence definitions. |
 | **TP2-G4-A3** | Stochastic Orientation Persistence No-Go & Relative QV Efficiency | `READY_FOR_EXECUTION` | Occupation limit proof; exit-time no-go; relative efficiency $\Theta$; $R_Q$ rate decomposition. |
 | **TP2-G4-A4** | Vorticity-Relevant Amplification Bounds | `PLANNED` | Investigating $\mathcal{A}_\omega = |D\omega|^2/|\omega|^2$ and $\Theta$ dynamics. |
+| **TP2-G5-A0** | Landscape, Literature Boundary, Object Identity, Zero-State Taxonomy, and Research Contract | `ACCEPTED_WITH_LIMITATIONS_AND_CONTRACT_SEALED` | Xi remains the primary scale-critical relative QV density; literature collision watch, domain contract, and joint-jet open problem sealed. |
+| **TP2-G5-A1** | Exact stochastic dynamics of $N$, $R$, and $\Xi$ | `AUTHORIZED_NOT_EXECUTED` | Must derive solely from `TP2_G5_A0_RESEARCH_CONTRACT.md`; no A1 work is included in A0. |
 
 ---
 
 ## 2. Active Increment
 
-- **Current Milestone**: `TP2-G4-A3`
+- **Current Milestone**: `TP2-G5-A1` (`AUTHORIZED_NOT_EXECUTED`)
+
+  - **Accepted prerequisite**: `TP2-G5-A0` (`ACCEPTED_WITH_LIMITATIONS_AND_CONTRACT_SEALED`).
+  - **A1 contract**: `TP2_G5_A0_RESEARCH_CONTRACT.md`.
+  - **Stop condition**: do not begin A1 within the A0 increment.

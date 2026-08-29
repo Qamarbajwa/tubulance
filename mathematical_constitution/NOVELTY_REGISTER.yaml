@@ -134,6 +134,20 @@ novelty_records:
     independent_novelty_reviewer: "Antigravity Independent Verifier"
     known_closest_analogues: ["None found in audited literature"]
 
+  - record_id: "NOV-TP2-G5-A0-XI"
+    claim_id: "CLM-015"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Equivalent-notation search did not find the exact relative Cauchy-energy-weighted density Xi or exact Q/S decomposition; closest sources establish stochastic Cauchy transport, inverse-length scales, direction criteria, or Weber covariance but are materially distinct."
+    source_scope: "Internal project memory plus primary and publisher/institutional web records available on 2026-08-29; arXiv and mathematical fluid-dynamics literature queries."
+    query_scope: "Relative deformation amplification of vorticity gradient; vorticity gradient versus vorticity amplification; deformation gradient vorticity gradient; Cauchy-Green vorticity gradient; stochastic Cauchy vorticity gradient; gradient-to-vorticity deformation ratio; relative vorticity-gradient amplification; inverse vorticity length under deformation; ||D grad omega|| / |D omega|; vorticity gradient Cauchy invariant; Cauchy-energy weighted vorticity gradient; quadratic variation vorticity gradient."
+    audit_date: "2026-08-29"
+    databases_searched: ["ArXiv", "publisher and institutional records", "local TP2 literature matrix", "research_memory", "web search index"]
+    primary_source_review: "Constantin-Iyer; Eyink-Gupta-Zaki; Gibbon; Constantin-Fefferman; Beirao da Veiga-Berselli; Grujic; Lei-Ren-Tian; Huang; Mahithitarmmatorn."
+    independent_novelty_reviewer: "Codex same-model fresh-context fallback; LOW independence; no external human review."
+    known_closest_analogues: ["Gibbon inverse-length hierarchy", "Constantin-Iyer stochastic Cauchy formula", "Eyink-Gupta-Zaki stochastic variance/cancellation", "Mahithitarmmatorn Weber covariance dynamics", "Huang D-only realization"]
+    limitations: "Search-index absence is not theorem evidence; no MathSciNet subscription audit or external specialist novelty opinion was available."
+
+
   - record_id: "NOV-012"
     claim_id: "CLM-012"
     novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"

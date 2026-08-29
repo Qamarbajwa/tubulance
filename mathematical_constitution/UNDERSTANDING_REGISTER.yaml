@@ -212,3 +212,18 @@ understanding_packages:
       what_can_fail: "Deducing unconditioned lower bounds on E_mu[Xi] remains open."
       essential_assumptions: ["Incompressible Navier-Stokes on T^3", "Constantin-Iyer stochastic representation"]
       status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-015"
+    claim_id: "CLM-015"
+    name: "TP2_G5_A0_XI_LITERATURE_BOUNDARY_AND_DOMAIN_CONTRACT"
+    level_1_mechanism: "Separates the exact relative QV density Xi from its inverse-length and orientation factors, then tests the object against stochastic Cauchy, geometric, inverse-scale, and realizability literature."
+    level_2_architecture: |
+      1. Domain: X1 permits Xi=kappa_omega^2 Theta; X2 sets Xi=0; X3 is undefined with zero mu weight; X4 leaves mu undefined.
+      2. Scaling: Xi and Q/S have parabolic rate dimension lambda^2; fixed-torus invariance is not claimed.
+      3. Literature boundary: stochastic Cauchy transport, geometric criteria, inverse-length hierarchies, and D-only realization are related foundations, not Xi closure.
+      4. Contract: A1 derives N, R, Xi dynamics with stopping-time and spectral-degeneracy safeguards.
+    level_3_rigorous_q_and_a:
+      why_it_works: "The audit preserves exact identities and imported theorems while separating truth, literature status, novelty, and project significance."
+      what_can_fail: "Search-index absence is not proof of field novelty; no non-circular E_mu[Xi] closure is established."
+      essential_assumptions: ["Mathematical Constitution v1.0.1", "Classical periodic Navier-Stokes domain", "Exact G4 identity and zero-state corrections"]
+      status: "U3_COMPLETE_PACKAGE"

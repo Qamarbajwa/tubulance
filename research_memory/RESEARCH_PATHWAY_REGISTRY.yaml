@@ -562,3 +562,36 @@ pathways:
     reopen_conditions: []
     similarity_tags: ["stochastic_cauchy", "quadratic_variation", "deformation_amplification", "production_rate_Q", "riccati", "strain_alignment", "orientation_factor"]
     last_re_evaluated: "2026-08-25"
+
+  - pathway_id: "TP2-G5"
+    title: "Scale-Critical Relative QV Closure Program"
+    parent_pathways: ["TP2-G4", "TP2-G3"]
+    descendant_pathways: []
+    starting_thesis: "The scale-critical rate Q_s/S_s may carry intrinsic non-circular information through the relative density Xi = ||D J_omega||_F^2 / |D omega|^2."
+    scientific_question: "Can intrinsic 3D Navier-Stokes dynamics provide non-circular a-priori information on E_mu[Xi] without prespecifying a pointwise lower bound?"
+    intended_bridge: "Convert exact stochastic Cauchy relative rate information into a critical continuation-relevant control, if one exists."
+    core_objects: ["Xi", "N_s", "R_s", "mu_s", "kappa_omega^2", "Theta", "joint jet (D, omega, J_omega)"]
+    mathematical_form: "Xi=N/R, Q/S=2nu E_mu[Xi], Xi=kappa_omega^2 Theta on X1."
+    scaling: "Xi and Q/S scale as lambda^2; Theta is dimensionless."
+    geometry: "Relative deformation action on vorticity and vorticity gradient, with pressure/eigenframe and stochastic-history couplings."
+    trajectory_dependence: "LAGRANGIAN_STOCHASTIC"
+    stochastic_component: true
+    assumptions: ["Classical smooth periodic Navier-Stokes history", "nu > 0", "S_s > 0 for mu_s", "domain-safe quotient restrictions"]
+    domain: "T^3; extensions require separate audit."
+    regularity_class: "Classical smooth solutions before any candidate singular time."
+    expected_outcome: "One of four neutral outcomes: coercive, compensated/integrated, new structural object, or no-go/insufficient evidence."
+    actual_outcome: "A0 accepted Xi as primary object with explicit domain/stopping contract; exact A1 dynamics remain unexecuted."
+    tests_attempted: ["tests/test_tp2_g5_a0_suite.py", "tests/test_tp2_g5_a0_verifier_suite.py"]
+    evidence_refs: ["TP2_G5_A0_LANDSCAPE_REPORT.md", "TP2_G5_A0_RESEARCH_CONTRACT.md", "TP2_G5_A0_ACCEPTANCE_DECISION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "A0 landscape and contract sealed; A1 authorized but intentionally not executed."
+    failure_mechanism: "No exact literature collision found, but no non-circular closure theorem was found either."
+    what_was_falsified: ["Xi cannot be silently identified with an Eulerian inverse length.", "Direction criteria cannot be transferred to Xi without a deformation proof.", "D-only realizability cannot be upgraded to arbitrary joint-jet realizability."]
+    what_was_not_falsified: ["A compensated or integrated E_mu[Xi] control.", "Pressure, geometric, or stochastic-cancellation bridges.", "The exact Q/S weighted identity."]
+    surviving_results: ["Xi primary identity and X1-X4 state taxonomy.", "Dynamically exact D-only realization in the audited Huang class.", "Joint-jet realization remains a well-posed open question."]
+    negative_results: ["No audited source supplies exact Xi or exact Q/S decomposition.", "A0 supplies no regularity closure."]
+    open_questions: ["What are the exact stochastic dynamics of N, R, and Xi?", "Which triples (D, omega, J_omega) are jointly realizable?", "Can pressure, geometry, or covariance yield non-circular weighted control?"]
+    obstruction_ids: ["NS-OBS-004", "NS-OBS-005", "NS-OBS-006", "NS-OBS-007", "NS-OBS-011"]
+    reopen_conditions: ["Completion and acceptance of TP2-G5-A1 under the A0 contract."]
+    similarity_tags: ["stochastic_cauchy", "relative_qv_density", "inverse_length", "vorticity_gradient", "deformation_history", "joint_jet"]
+    last_re_evaluated: "2026-08-29"
