@@ -272,3 +272,18 @@ understanding_packages:
       what_can_fail: "R=0, N=0 for logarithmic transformations, or unjustified expectation closure."
       essential_assumptions: ["R>0 stopping region", "square-integrable coefficients", "no silent independence assumption"]
       status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-019"
+    claim_id: "CLM-019"
+    name: "TP2_G5_A2_XI_DRIFT_COMPENSATION_IDENTITY"
+    level_1_mechanism: "Correlated quotient noise completes into a nonnegative square while denominator drift contributes an exact negative Xi-squared term."
+    level_2_architecture: |
+      1. Expand b_Xi using b_N, b_R, sigma_N, and sigma_R.
+      2. Set c_l=Z dot (Y e_l).
+      3. Complete the three H_l terms into I_Xi.
+      4. Separate D_Xi, R_Xi=-2nu Xi^2, and I_Xi>=0.
+    level_3_rigorous_q_and_a:
+      why_it_works: "The mixed quotient Hessian supplies exactly the cross term needed for the Frobenius square."
+      what_can_fail: "The deterministic geometry term has no universal sign and the square-zero condition is not known invariant."
+      essential_assumptions: ["A1 stopped equations", "R>0", "correlated Brownian coefficients", "square-integrable terms"]
+      status: "U3_COMPLETE_PACKAGE"

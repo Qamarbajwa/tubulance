@@ -33,3 +33,13 @@ load_bearing_results:
     why_load_bearing: "Eliminates all unscaled and heuristic persistence avenues while isolating the precise open non-circular dynamical question."
     impact_if_removed: "Allows resurrection of mathematically flawed unscaled or blind persistence attempts."
     closest_literature: "Project whole-gate synthesis (2026)"
+
+  - lbr_id: "LBR-005"
+    name: "XI_DRIFT_COMPENSATION_IDENTITY"
+    claim_id: "CLM-019"
+    core_mathematical_fact: "On R>0, b_Xi=D_Xi-2nu Xi^2+I_Xi with I_Xi=(2nu/R) sum_l ||H_l-(2c_l/R)Y||_F^2 >= 0."
+    why_load_bearing: "Separates exact denominator-Riccati structure, deterministic geometry, and nonnegative correlated-noise compensation before any sign or regularity interpretation."
+    impact_if_removed: "Leaves the Xi drift as an unstructured quotient and obscures the precise covariance cancellation."
+    closest_literature: "Ito quotient calculus and project TP2-G5-A1 derivation"
+    regularity_status: "OPEN"
+    novelty_status: "N2_INTERNAL_ONLY"

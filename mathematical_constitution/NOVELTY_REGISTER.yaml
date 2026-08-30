@@ -222,3 +222,16 @@ novelty_records:
     independent_novelty_reviewer: "Codex same-model fresh-context fallback; LOW independence"
     known_closest_analogues: ["Ito quotient formula for correlated semimartingales"]
     limitations: "Exact project derivation, not a global regularity or field-novelty claim."
+
+  - record_id: "NOV-TP2-G5-A2-COMPENSATION"
+    claim_id: "CLM-019"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Exact square completion of the relative QV quotient drift with correlated numerator-denominator noise."
+    source_scope: "Project TP2-G5-A1 equations and standard Ito quotient calculus."
+    query_scope: "Square completion for relative stochastic quadratic variation density drift."
+    audit_date: "2026-08-30"
+    databases_searched: ["local TP2 literature matrix", "research_memory", "project primary-source reports"]
+    primary_source_review: "TP2-G5-A1 accepted quotient dynamics"
+    independent_novelty_reviewer: "Codex same-model fresh-context fallback; LOW independence"
+    known_closest_analogues: ["Ito formula for correlated semimartingale quotients"]
+    limitations: "Internal N2 only; exact algebra does not imply a regularity theorem."

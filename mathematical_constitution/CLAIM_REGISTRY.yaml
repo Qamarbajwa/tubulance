@@ -361,3 +361,23 @@ claims:
       community_status: "NOT_COMMUNITY_ACCEPTED"
       project_status: "PROJECT_CANONICAL_WITH_LIMITATIONS"
     dependencies: ["CLM-016", "CLM-017"]
+
+  - claim_id: "CLM-019"
+    claim_type: "MATHEMATICAL_IDENTITY"
+    name: "TP2_G5_A2_XI_DRIFT_COMPENSATION_IDENTITY"
+    milestone: "TP2-G5-A2"
+    statement: "On R>0, b_Xi = D_Xi - 2nu Xi^2 + I_Xi, where D_Xi=2<Y,F>_F/R, the negative quadratic term comes from denominator drift, and I_Xi=(2nu/R) sum_l ||H_l-(2c_l/R)Y||_F^2 >= 0."
+    passport:
+      truth_status: "PROVED_IDENTITY"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E1_INFORMAL_DERIVATION"
+      gov_review_independence: "GOV_I1_SAME_SESSION"
+      math_review_independence: "MATH_I1_WRITER_INTERNAL"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL_WITH_LIMITATIONS"
+    dependencies: ["CLM-018"]

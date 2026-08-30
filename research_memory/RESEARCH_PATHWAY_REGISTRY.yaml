@@ -628,3 +628,36 @@ pathways:
     reopen_conditions: ["A separately authorized TP2-G5-A2 classification gate."]
     similarity_tags: ["stochastic_cauchy", "ito_quotient", "quadratic_covariation", "vorticity_gradient", "stopping_time", "nonclosure"]
     last_re_evaluated: "2026-08-30"
+
+  - pathway_id: "TP2-G5-A2"
+    title: "Exact Xi Drift Factorization, Compensation, and Non-Circularity"
+    parent_pathways: ["TP2-G5-A1", "TP2-G5"]
+    descendant_pathways: []
+    starting_thesis: "The exact A1 quotient drift may separate into deterministic geometry, a denominator Riccati term, and a nonnegative correlated-noise compensation."
+    scientific_question: "Does the exact Xi drift admit a valid square completion, and what sign, pressure, weighted-measure, and non-circularity conclusions survive?"
+    intended_bridge: "Identify an exact structural compensation without promoting it to coercivity or regularity."
+    core_objects: ["Xi", "D_Xi", "R_Xi", "I_Xi", "c_l", "sigma_Xi", "mu_tau"]
+    mathematical_form: "b_Xi=D_Xi-2nu Xi^2+I_Xi; I_Xi=(2nu/R)sum_l ||H_l-(2c_l/R)Y||_F^2."
+    scaling: "D_Xi, R_Xi, and I_Xi scale as lambda^4; sigma_Xi scales as lambda^3."
+    geometry: "Non-orthogonal deformation metric, antisymmetric Omega, strain-gradient source, correlated Brownian quotient geometry."
+    trajectory_dependence: "LAGRANGIAN_STOCHASTIC"
+    stochastic_component: true
+    assumptions: ["Accepted A1 stopped equations", "R > 0", "classical smooth history", "stopped integrability", "time-dependent mu support"]
+    domain: "T^3 or decaying R^3; no wall local-time extension."
+    regularity_class: "Classical smooth solutions before any candidate singular time."
+    expected_outcome: "Exact factorization, compensation, or insufficient evidence."
+    actual_outcome: "Exact square completion and negative denominator term accepted; geometry sign-indefinite; weighted expectation not closed."
+    tests_attempted: ["tests/test_tp2_g5_a2_suite.py", "tests/test_tp2_g5_a2_verifier_suite.py"]
+    evidence_refs: ["TP2_G5_A2_FULL_DRIFT_EXPANSION.md", "TP2_G5_A2_SQUARE_COMPLETION.md", "TP2_G5_A2_WEIGHTED_EXPECTATION_AUDIT.md", "TP2_G5_A2_ACCEPTANCE_DECISION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "A2 accepted with limitations; A3 explicitly not executed."
+    failure_mechanism: "No algebraic failure; no non-circular sign or closure theorem follows."
+    what_was_falsified: ["Nonnegative Ito compensation is not Xi damping.", "Pressure cannot be inserted directly into the instantaneous drift.", "Weighted Xi derivative is not E_mu[b_Xi] alone."]
+    what_was_not_falsified: ["Exact drift factorization.", "Potential non-circular integrated or pressure-mediated mechanisms.", "Joint-jet compatibility remains open."]
+    surviving_results: ["b_Xi=D_Xi-2nu Xi^2+I_Xi.", "I_Xi is nonnegative with an exact zero condition.", "D_Xi is sign-indefinite and pressure enters only indirectly at this level.", "Weighted dynamics are not closed a priori."]
+    negative_results: ["No coercive Xi estimate.", "No BKM closure or global regularity result.", "No autonomous Markov reduction to (N,R,Xi) was established."]
+    open_questions: ["Can the full coefficient fields yield non-circular integrated control?", "Can I_Xi=0 be dynamically realized?", "Can a weighted integrated balance close with additional observables?"]
+    obstruction_ids: ["NS-OBS-004", "NS-OBS-005", "NS-OBS-006", "NS-OBS-007", "NS-OBS-011"]
+    reopen_conditions: ["Separate authorization for TP2-G5-A3 from accepted A2."]
+    similarity_tags: ["xi_drift", "square_completion", "ito_compensation", "riccati", "pressure_indirect", "weighted_nonclosure"]
+    last_re_evaluated: "2026-08-30"
