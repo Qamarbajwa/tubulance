@@ -62,7 +62,7 @@ roles:
 
 state:
   last_verified_checkpoint:
-    ref: "8155043b906c8071cd22060f62110db733f20657"
+    ref: "08719e7078feaa7939f893c33dcfdc9c2a485c49"
     at: "2026-08-30T00:00:00Z"
   canonical_milestone: "TP2-G5-A2 = ACCEPTED_WITH_LIMITATIONS"
   active_gate: "TP2-G5-A3 (NOT AUTHORIZED; A2 COMPLETE)"
