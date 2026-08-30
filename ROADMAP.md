@@ -27,6 +27,13 @@
 
 ## 2. Active Increment
 
+### TP2-G5-A1 Amendment (2026-08-30)
+
+The authorized A1 increment is now complete with status ACCEPTED_WITH_LIMITATIONS.
+Its exact stopped Z, R, D J_omega, N, [N,R], and Xi equations are recorded in
+the TP2-G5-A1 artifacts. The active stop is TP2-G5-A2: do not execute it from
+this increment.
+
 - **Current Milestone**: `TP2-G5-A1` (`AUTHORIZED_NOT_EXECUTED`)
 
   - **Accepted prerequisite**: `TP2-G5-A0` (`ACCEPTED_WITH_LIMITATIONS_AND_CONTRACT_SEALED`).

@@ -227,3 +227,48 @@ understanding_packages:
       what_can_fail: "Search-index absence is not proof of field novelty; no non-circular E_mu[Xi] closure is established."
       essential_assumptions: ["Mathematical Constitution v1.0.1", "Classical periodic Navier-Stokes domain", "Exact G4 identity and zero-state corrections"]
       status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-016"
+    claim_id: "CLM-016"
+    name: "TP2_G5_A1_EXACT_Z_AND_R_DYNAMICS"
+    level_1_mechanism: "The Cauchy martingale has diffusion D J_omega, so Ito converts its squared magnitude into a positive N drift and a correlated linear noise term."
+    level_2_architecture: |
+      1. Forwardize tau=T-s and set Z=D omega and Y=D J_omega.
+      2. Use dZ=sqrt(2nu)Y dB.
+      3. Apply vector Ito: dR=2nu||Y||_F^2 d tau + 2sqrt(2nu) Z^T Y dB.
+      4. Reverse tau to recover the accepted G3 second-moment sign.
+    level_3_rigorous_q_and_a:
+      why_it_works: "The Cauchy transport drift cancels and only the spatial Brownian quadratic variation remains."
+      what_can_fail: "Classical flow differentiability, integrability, or wall boundary terms outside the declared domain."
+      essential_assumptions: ["Convention M", "additive Brownian flow", "classical solution", "stopped integrability"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-017"
+    claim_id: "CLM-017"
+    name: "TP2_G5_A1_DJOMEGA_AND_N_DYNAMICS"
+    level_1_mechanism: "Endpoint deformation multiplies the transported vorticity gradient on the right, while strain transport and its source determine the exact matrix drift."
+    level_2_architecture: |
+      1. Define A=J_u, G=J_omega, S=sym(A), Omega=skew(A).
+      2. Differentiate vorticity transport: dG=(-SG+GA-T^S)d tau + sqrt(2nu) partial G dB.
+      3. Combine with dD=DA d tau to obtain B_Y=D(Omega G+GA-T^S).
+      4. Apply Frobenius Ito to obtain b_N and sigma_N.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Convention M fixes the derivative-of-advection term as GA and endpoint composition fixes DA."
+      what_can_fail: "Loss of classical derivatives or an incorrectly inserted transpose/order."
+      essential_assumptions: ["Convention M", "smooth vorticity gradient", "additive spatially constant noise"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-018"
+    claim_id: "CLM-018"
+    name: "TP2_G5_A1_XI_QUOTIENT_AND_COVARIATION"
+    level_1_mechanism: "Xi moves by the quotient of two correlated semimartingales, so its drift contains both cross-covariation and denominator Ito corrections."
+    level_2_architecture: |
+      1. Z produces R and Y produces N.
+      2. Compute sigma_N and sigma_R from the same Brownian coordinates.
+      3. Record d[N,R]=(sigma_N dot sigma_R)d tau.
+      4. Apply Ito to N/R only while R>0.
+    level_3_rigorous_q_and_a:
+      why_it_works: "The Hessian of (N,R) -> N/R has a mixed derivative and a nonzero RR derivative."
+      what_can_fail: "R=0, N=0 for logarithmic transformations, or unjustified expectation closure."
+      essential_assumptions: ["R>0 stopping region", "square-integrable coefficients", "no silent independence assumption"]
+      status: "U3_COMPLETE_PACKAGE"

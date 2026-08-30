@@ -29,6 +29,8 @@ nodes:
     label: "Stochastic Cauchy Covariance Evolution"
   - id: "TP2-G4"
     label: "Adversarial Quadratic Variation Analysis"
+  - id: "TP2-G5-A1"
+    label: "Exact Stochastic Dynamics of N, R, and Xi"
 
 edges:
   - source: "TH8"
@@ -120,3 +122,18 @@ edges:
     target: "TP2-G3"
     relation: "SHARES_OBSTRUCTION_WITH"
     description: "Both confront the qualitative-positivity vs quantitative lower-bound gap (NS-OBS-005)."
+
+  - source: "TP2-G5-A1"
+    target: "TP2-G5"
+    relation: "DERIVED_FROM"
+    description: "A1 derives the exact stopped dynamics contract from the accepted A0 Xi landscape and domain taxonomy."
+
+  - source: "TP2-G5-A1"
+    target: "TP2-G3"
+    relation: "EXTENDS"
+    description: "A1 refines the accepted G3 Cauchy martingale and second-moment identity to Z, R, N, covariance, and Xi processes."
+
+  - source: "TP2-G5-A1"
+    target: "TP2-G4"
+    relation: "USES_DOMAIN_CONTRACT_FROM"
+    description: "A1 preserves the G4 Xi zero-state, scaling, and non-circularity safeguards."

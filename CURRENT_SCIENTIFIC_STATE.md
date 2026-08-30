@@ -138,6 +138,15 @@
 
 ### O. TP2-G5-A0 Accepted State (2026-08-29)
 
+### P. TP2-G5-A1 Accepted State (2026-08-30)
+
+- TP2-G5-A1 is ACCEPTED_WITH_LIMITATIONS. It is a derivation gate only; TP2-G5-A2 was not executed.
+- With A=J_u, G=J_omega, S=sym(A), Omega=skew(A), and T^S=(nabla S)omega, the exact matrix process is dY = D(Omega G + G A - T^S)d tau + sqrt(2nu) sum_l D(partial_l G)dB_l.
+- The exact denominator is dR = 2nu N d tau + sigma_R dot dB, with (sigma_R)_l = 2 sqrt(2nu) Z^T Y e_l; the exact numerator follows from Frobenius Ito calculus.
+- The quotient Xi=N/R is valid only before tau_R; its drift includes both -sigma_N dot sigma_R/R^2 and N|sigma_R|^2/R^3. State B permits Xi=0 but not log Xi; State C leaves Xi undefined.
+- Both convention routes agree, and every A1 term passes the parabolic scaling audit: b_Xi has weight lambda^4 and sigma_Xi has weight lambda^3 relative to standard rescaled Brownian motion.
+- E[Xi] is not closed a priori in (N,R,Xi). No coercivity, blow-up prevention, BKM closure, or global regularity claim is made. Clay Statement B remains UNRESOLVED. A2 is not executed.
+
 - `TP2-G5-A0 = ACCEPTED_WITH_LIMITATIONS_AND_CONTRACT_SEALED` under Governance Kernel v2.10.1 and Mathematical Research Constitution v1.0.1.
 - The primary object remains `Xi = ||D J_omega||_F^2 / |D omega|^2`, only on the declared valid state space. `X1` permits the factorization `Xi = kappa_omega^2 Theta`; `X2` has `Xi=0`; `X3` is algebraically undefined and has zero `mu_s` weight; `X4` makes `mu_s` undefined.
 - The exact identity `partial_s log chi_s = Q_s/S_s = 2 nu E_{mu_s}[Xi]` is preserved as an exact structural identity, not an unconditional regularity result.

@@ -595,3 +595,36 @@ pathways:
     reopen_conditions: ["Completion and acceptance of TP2-G5-A1 under the A0 contract."]
     similarity_tags: ["stochastic_cauchy", "relative_qv_density", "inverse_length", "vorticity_gradient", "deformation_history", "joint_jet"]
     last_re_evaluated: "2026-08-29"
+
+  - pathway_id: "TP2-G5-A1"
+    title: "Exact Stochastic Dynamics of N, R, and Xi"
+    parent_pathways: ["TP2-G5", "TP2-G3", "TP2-G4"]
+    descendant_pathways: []
+    starting_thesis: "The accepted G3 Cauchy martingale and G4 Xi domain contract determine exact coupled semimartingale dynamics for Z, R, D J_omega, N, and Xi."
+    scientific_question: "What are the exact convention-consistent stochastic equations for N, R, their covariance, and Xi before any closure or regularity classification?"
+    intended_bridge: "Expose the complete local stochastic structure while preserving stopping, scaling, and non-circularity safeguards."
+    core_objects: ["Z_tau", "R_tau", "Y_tau=D J_omega", "N_tau", "Xi_tau", "sigma_N", "sigma_R", "d[N,R]"]
+    mathematical_form: "dZ=sqrt(2nu)Y dB; dR=2nu N d tau+sigma_R dB; dY=B_Y d tau+sqrt(2nu) sum C_l dB_l; dXi=quotient-Ito."
+    scaling: "Y lambda^3, N lambda^6, R lambda^4, Xi lambda^2, b_Xi lambda^4, sigma_Xi lambda^3."
+    geometry: "Endpoint deformation, vorticity-gradient transport, source T^S, spatial stochastic derivatives, and relative quotient geometry."
+    trajectory_dependence: "LAGRANGIAN_STOCHASTIC"
+    stochastic_component: true
+    assumptions: ["Classical smooth Navier-Stokes history", "nu > 0", "Convention M", "additive Brownian flow", "tau < tau_R", "stopped integrability"]
+    domain: "T^3 or decaying R^3; no wall local-time extension."
+    regularity_class: "Classical smooth solutions before any candidate singular time."
+    expected_outcome: "Exact dynamics or a convention inconsistency."
+    actual_outcome: "Exact stopped Z, R, Y, N, covariance, and Xi equations derived; coefficients are not closed in Xi alone."
+    tests_attempted: ["tests/test_tp2_g5_a1_suite.py", "tests/test_tp2_g5_a1_verifier_suite.py"]
+    evidence_refs: ["TP2_G5_A1_FORWARDIZATION_AND_CONVENTION.md", "TP2_G5_A1_DJOMEGA_MATRIX_SDE.md", "TP2_G5_A1_XI_QUOTIENT_SDE.md", "TP2_G5_A1_ACCEPTANCE_DECISION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Exact A1 derivation accepted; A2 explicitly not executed."
+    failure_mechanism: "No derivation failure; a priori closure remains outside A1 and is not inferred."
+    what_was_falsified: ["The D(K-AG) matrix pattern is not compatible with the Convention M product derivation.", "Dropping d[N,R] gives an incorrect Xi quotient drift.", "Unstopped Xi or log Xi statements are invalid on zero states."]
+    what_was_not_falsified: ["Exact stopped Xi dynamics.", "A compensated or integrated control.", "A future non-circular closure based on the full coefficient fields."]
+    surviving_results: ["B_Y=D(Omega G+GA-T^S)=D(GA-K^A).", "dR=2nu N d tau+sigma_R dot dB.", "Exact quotient drift with covariance and denominator corrections.", "Xi expectation representation is not closed a priori."]
+    negative_results: ["No coercive Xi estimate.", "No BKM closure or global regularity result.", "No autonomous Markov reduction to (N,R,Xi) was established."]
+    open_questions: ["Can the full coefficient fields yield non-circular integrated control?", "Can the stopped system be closed by additional observables?", "What joint jets are dynamically realizable?"]
+    obstruction_ids: ["NS-OBS-004", "NS-OBS-005", "NS-OBS-006", "NS-OBS-011"]
+    reopen_conditions: ["A separately authorized TP2-G5-A2 classification gate."]
+    similarity_tags: ["stochastic_cauchy", "ito_quotient", "quadratic_covariation", "vorticity_gradient", "stopping_time", "nonclosure"]
+    last_re_evaluated: "2026-08-30"

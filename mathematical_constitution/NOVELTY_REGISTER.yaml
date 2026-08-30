@@ -183,3 +183,42 @@ novelty_records:
     primary_source_review: "Gate TP2-G4 whole-gate synthesis report"
     independent_novelty_reviewer: "Antigravity Independent Verifier"
     known_closest_analogues: ["None found in audited literature"]
+
+  - record_id: "NOV-TP2-G5-A1-ZR"
+    claim_id: "CLM-016"
+    novelty_tier: "N1_PROJECT_REFORMULATION"
+    justification: "The accepted stochastic Cauchy martingale is refined into an exact forwardized Z and squared-denominator R semimartingale with explicit noise."
+    source_scope: "Constantin-Iyer stochastic Cauchy representation and project G3/G5 derivation."
+    query_scope: "Forwardized squared Cauchy martingale denominator Ito dynamics."
+    audit_date: "2026-08-30"
+    databases_searched: ["local TP2 literature matrix", "research_memory", "project primary-source reports"]
+    primary_source_review: "TP2-G3 forwardized martingale and variance contracts"
+    independent_novelty_reviewer: "Codex same-model fresh-context fallback; LOW independence"
+    known_closest_analogues: ["Ito formula for squared vector martingales"]
+    limitations: "Project reformulation of known stochastic calculus; not claimed as field novelty."
+
+  - record_id: "NOV-TP2-G5-A1-YN"
+    claim_id: "CLM-017"
+    novelty_tier: "N1_PROJECT_REFORMULATION"
+    justification: "Convention-M-compatible matrix SDE for D J_omega and its Frobenius norm is derived by coupling endpoint deformation with vorticity-gradient transport."
+    source_scope: "Project G4 vorticity-gradient transport and stochastic Cauchy framework."
+    query_scope: "Stochastic deformation-weighted vorticity-gradient matrix evolution."
+    audit_date: "2026-08-30"
+    databases_searched: ["local TP2 literature matrix", "research_memory", "project primary-source reports"]
+    primary_source_review: "TP2-G4 tensor transport and TP2-G5-A1 derivation"
+    independent_novelty_reviewer: "Codex same-model fresh-context fallback; LOW independence"
+    known_closest_analogues: ["Vorticity-gradient transport equation", "matrix Ito norm calculus"]
+    limitations: "Project-level synthesis; no absolute novelty claim."
+
+  - record_id: "NOV-TP2-G5-A1-XI"
+    claim_id: "CLM-018"
+    novelty_tier: "N1_PROJECT_REFORMULATION"
+    justification: "The exact quotient-Ito dynamics of the primary relative QV density are assembled with the mandatory N-R cross variation and denominator correction."
+    source_scope: "Project G3/G4 identities and standard semimartingale quotient calculus."
+    query_scope: "Relative stochastic quadratic variation density quotient with correlated numerator and denominator noise."
+    audit_date: "2026-08-30"
+    databases_searched: ["local TP2 literature matrix", "research_memory", "project primary-source reports"]
+    primary_source_review: "TP2-G5-A1 quotient and covariance artifacts"
+    independent_novelty_reviewer: "Codex same-model fresh-context fallback; LOW independence"
+    known_closest_analogues: ["Ito quotient formula for correlated semimartingales"]
+    limitations: "Exact project derivation, not a global regularity or field-novelty claim."

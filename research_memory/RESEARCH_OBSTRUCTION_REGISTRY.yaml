@@ -32,7 +32,7 @@ obstructions:
     name: "BKM_SERRIN_CIRCULARITY_BARRIER"
     description: "Any attempt to bound deformation amplification by assuming a-priori L^p_t L^q_x control on velocity or L^1_t L^infinity_x on vorticity circularly presupposes the regularity theorem being sought."
     first_encountered_in: "REP-SYNTHESIS1"
-    affected_pathways: ["REP-SYNTHESIS1", "NS-TRAJECTORY-PERSISTENCE-1", "TP2-G3"]
+    affected_pathways: ["REP-SYNTHESIS1", "NS-TRAJECTORY-PERSISTENCE-1", "TP2-G3", "TP2-G5-A1"]
     mathematical_core: "int_0^T ||omega||_{L^infinity} dt < infty cannot appear on the right-hand side of a regularizing bound."
     known_bypasses_or_relaxations: ["Scale-critical invariant observables (chi) and exact quadratic variation balances."]
     status: "METHODOLOGICAL_RULE"
@@ -41,7 +41,7 @@ obstructions:
     name: "QUALITATIVE_POSITIVITY_NOT_QUANTITATIVE_LOWER_BOUND"
     description: "Proving that quadratic variation or variance production is strictly positive (Q_s > 0) does not provide a scale-critical quantitative lower bound Q_s >= F(deformation) capable of outgrowing explosive stretching."
     first_encountered_in: "TP2-G3"
-    affected_pathways: ["TP2-G3", "TP2-G4"]
+    affected_pathways: ["TP2-G3", "TP2-G4", "TP2-G5-A1"]
     mathematical_core: "Q_s = 2*nu*E[||D J_omega||_F^2] > 0 does not imply inf_{s < T} Q_s >= c * ||omega(T)||^2."
     known_bypasses_or_relaxations: ["Unresolved; central objective assigned to TP2-G4."]
     status: "ACTIVE_RESEARCH_FRONTIER"
@@ -50,7 +50,7 @@ obstructions:
     name: "ROUGH_FLOW_DIFFERENTIABILITY_LOSS"
     description: "Generic Leray-Hopf weak solutions do not possess C^1 flow maps; deformation matrices D_s and Jacobians J_omega cannot be evaluated pathwise without higher regularity."
     first_encountered_in: "REP-LAGRANGIAN1"
-    affected_pathways: ["REP-LAGRANGIAN1", "TP2-G1", "TP2-G3"]
+    affected_pathways: ["REP-LAGRANGIAN1", "TP2-G1", "TP2-G3", "TP2-G5-A1"]
     mathematical_core: "Flow map X_{s,t} is not a diffeomorphism if u not in L^1_t C^1_x."
     known_bypasses_or_relaxations: ["Restricting analysis to classical solutions on [0, T*) approaching candidate singular time."]
     status: "ANALYTICAL_DOMAIN_BOUNDARY"
@@ -100,6 +100,6 @@ obstructions:
     severity: "OPEN_STRUCTURAL_OBSTRUCTION"
     first_discovered_in: "TP2-G4-A5-R1"
     status: "OPEN_STRUCTURAL_OBSTRUCTION"
-    affected_pathways: ["TP2-G4", "TP2-G5", "REP-SYNTHESIS1"]
+    affected_pathways: ["TP2-G4", "TP2-G5", "TP2-G5-A1", "REP-SYNTHESIS1"]
     mathematical_core: "A pathwise lower or upper control of Xi obtained from integral ||S||_infinity or equivalent continuation norms is circular for the Clay target."
     known_bypasses_or_relaxations: ["Nonlocal pressure-Hessian constraints", "Biot-Savart and commutator cancellation", "Geometric sparseness/analyticity", "Weighted or integrated stochastic cancellation"]
