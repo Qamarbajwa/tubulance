@@ -8,6 +8,7 @@
 - Risk/action: `T4` / `B`
 - Timestamp: `2026-08-30T00:00:00Z`
 - Migration candidate: bounded local candidate based on `GIT_SHA:f49f9ad63a90e716b7e22090a1f25663461f0a7c`
+- Post-migration candidate: `GIT_SHA:e7f6cc6a6dcf80d730ca4cd4afe828c263f03818`
 
 ## Pre-migration binding
 
