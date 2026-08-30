@@ -1,0 +1,37 @@
+{
+  "schema_version": "3.0.0",
+  "evidence_id": "NS-GOV-MIG-V300-001-PACKET",
+  "task_id": "NS-GOV-MIG-V300-001",
+  "capability_ids": ["GOV-V3-MIGRATION"],
+  "candidate_id": "GIT_SHA:f49f9ad63a90e716b7e22090a1f25663461f0a7c",
+  "candidate_identity_type": "GIT_SHA",
+  "strength": "E3",
+  "environment": "INTEGRATED_LOCAL",
+  "environment_detail": "Local Windows Git workspace and copied sealed packet",
+  "independence": "IND1",
+  "producer": {
+    "id": "governance-v3-deterministic-conformance-verifier",
+    "role": "VERIFIER",
+    "tool_or_environment": "local pytest and PowerShell manifest verifier"
+  },
+  "action": "Verify v3 packet presence and manifest integrity before migration mutation",
+  "command_or_invocation": "PowerShell Get-FileHash comparison against governance/packet/v3.0.0/22_SHA256_MANIFEST_v3.0.0.json",
+  "exit_code": 0,
+  "result": "PASS",
+  "claim_supported": [
+    "All manifest-listed v3 packet artifacts were present with expected byte counts and SHA-256 hashes",
+    "The migration packet dependency is satisfied for candidate f49f9ad63a90e716b7e22090a1f25663461f0a7c"
+  ],
+  "claim_not_supported": [
+    "Remote replication or remote SHA verification",
+    "Mathematical truth or Navier-Stokes solution status",
+    "Product release eligibility or deployment authorization"
+  ],
+  "hard_gate_ids": ["GATE-GOV-001"],
+  "kpi_ids": [],
+  "artifact_refs": ["governance/packet/v3.0.0/22_SHA256_MANIFEST_v3.0.0.json"],
+  "negative_evidence_refs": ["research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"],
+  "timestamp": "2026-08-30T00:00:00Z",
+  "receipt_hash": null,
+  "notes": "IND1 is the truthful ceiling: deterministic verification is distinct from the writer process but not an external or third-party review."
+}

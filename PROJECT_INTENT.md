@@ -6,7 +6,7 @@
 
 **Project ID:** `tubulance`  
 **Name:** `3D Navier-Stokes Stochastic Persistence & Regularity Program`  
-**Governance Standard:** Autonomous Project Runtime Governance Kernel v2.10.1 & Mathematical Research Constitution v1.0.0 (NS-MRC-1)  
+**Governance Standard:** Universal Autonomous Project Governance v3.0.0 (active for new project-level work); Autonomous Project Runtime Governance Kernel v2.10.1 (preserved historical governance); Mathematical Research Constitution v1.0.1 (active domain-specific assurance)
 **Bootstrap Level:** `HIGH_ASSURANCE` (Risk Tier T4)  
 **Date:** 2026-08-27  
 
@@ -26,3 +26,10 @@ To systematically investigate whether stochastic Lagrangian Cauchy representatio
 4. **Independent Role Separation**: Writer $\neq$ Reviewer $\neq$ Acceptance Authority.
 5. **Multidimensional Claim Passports**: Internal verification $\neq$ Novelty $\neq$ Significance $\neq$ Understanding $\neq$ External acceptance.
 6. **Two Meanings of Canonical**: `PROJECT_CANONICAL` (internal verified truth) vs `FIELD_CANONICAL` (literature/community consensus). The term `SOLVED` is reserved exclusively for field-canonical resolution.
+
+## 3. v3 Governance Boundaries
+
+- Project governance truth, mathematical claim truth, publication/distribution readiness, community acceptance, and Clay Statement B status remain separate.
+- The standing mandate permits routine eligible technical research, tooling, testing, and evidence work without owner technical certification.
+- Owner intent, business policy, legal/compliance decisions, financial exposure, and reserved deployment actions remain typed authorities and are not inferred from technical acceptance.
+- The active mathematical descendant is the Xi / relative quadratic-variation closure program. TP2-G5-A2 is accepted with limitations; Clay Statement B remains `UNRESOLVED`.

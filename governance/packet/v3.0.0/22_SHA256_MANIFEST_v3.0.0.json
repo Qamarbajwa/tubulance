@@ -1,0 +1,138 @@
+{
+  "schema_version": "3.0.0",
+  "governance_version": "3.0.0",
+  "hash_algorithm": "SHA-256",
+  "manifest_self_hash_included": false,
+  "files": [
+    {
+      "file": "00_README_v3.0.0.md",
+      "bytes": 9159,
+      "sha256": "45efe31de973f5ed4584ab5f48b07cc50c9eee1dd16bbf2f216c49ac9c95c290"
+    },
+    {
+      "file": "01_UNIVERSAL_ACTIVATION_PROMPT_v3.0.0.md",
+      "bytes": 8899,
+      "sha256": "39b99442e0534d63377a5dd77eaa5a8d7569dbf485488aa7998805cd7bc9b477"
+    },
+    {
+      "file": "02_RUNTIME_GOVERNANCE_KERNEL_v3.0.0.md",
+      "bytes": 17518,
+      "sha256": "6c231d96ce77e029ed5c57a70332475216843c808aec451f86233aac9570d25d"
+    },
+    {
+      "file": "03_WORKER_MICRO_KERNEL_v3.0.0.md",
+      "bytes": 4393,
+      "sha256": "8075a22c2067a82c369ce3b14354233790b70cda1366b3ce6709565c290e32be"
+    },
+    {
+      "file": "04_GOVERNANCE_MODULE_LIBRARY_v3.0.0.md",
+      "bytes": 15953,
+      "sha256": "803d1c5f0d889c19ca65c42597c97d6ccd643761d7df0aadfdf23255a7078980"
+    },
+    {
+      "file": "05A_TASK_EXECUTION_ENVELOPE_SCHEMA_v3.0.0.json",
+      "bytes": 2271,
+      "sha256": "5828664e57d2260350a788dd5e14d996f01709ef2f0a45078ea702f6250691b3"
+    },
+    {
+      "file": "05_TASK_EXECUTION_ENVELOPE_TEMPLATE_v3.0.0.md",
+      "bytes": 4989,
+      "sha256": "96b246b7ec0196c81a20bbb69d9afd73c152877447e5484852efbae35473595f"
+    },
+    {
+      "file": "06A_GOVERNANCE_STATE_SCHEMA_v3.0.0.json",
+      "bytes": 3920,
+      "sha256": "f2ff1e3b9e458d8892bdb514286617d82582a9aac638b9f146034cf380818ca0"
+    },
+    {
+      "file": "06_GOVERNANCE_STATE_TEMPLATE_v3.0.0.yaml",
+      "bytes": 3531,
+      "sha256": "5c0b30cc70d73af809f11343f647192defe6ed5895889483f29c61f91389ad70"
+    },
+    {
+      "file": "07_PROJECT_INTENT_TEMPLATE_v3.0.0.md",
+      "bytes": 2773,
+      "sha256": "4144566cf5314d264cc80b6423f83013abd306994861582ff2847bca91aacf74"
+    },
+    {
+      "file": "08_ARCHITECTURE_DECISIONS_TEMPLATE_v3.0.0.md",
+      "bytes": 2051,
+      "sha256": "8f03dfde94c2fed5043936f52d886b5f8ac7ded93152af4fe983f4d7a426567e"
+    },
+    {
+      "file": "09_ROADMAP_TEMPLATE_v3.0.0.md",
+      "bytes": 2014,
+      "sha256": "1ccb5f9fe4cdd64a0ae3b54cd351f0a33e9d7e05515406b8337067fe11e81b06"
+    },
+    {
+      "file": "10_AUTHORITY_AND_ACTION_CLASSIFICATION_v3.0.0.md",
+      "bytes": 4888,
+      "sha256": "515bc9885a097205136ea7024e451961a55790d9a504523b6c543cb0c9312ee2"
+    },
+    {
+      "file": "11_PRODUCT_ASSURANCE_STANDARD_v3.0.0.md",
+      "bytes": 8384,
+      "sha256": "f1fe53fb40532b007c0dfc53ad848bea47a0b44169ad9c97423630f19badba28"
+    },
+    {
+      "file": "12_CAPABILITY_ASSURANCE_MATRIX_TEMPLATE_v3.0.0.md",
+      "bytes": 1576,
+      "sha256": "e7b3f64e8d96d2cf0553cddf8153ede23ed29334d9994a1bb2943be67d01f5ed"
+    },
+    {
+      "file": "13_EVIDENCE_RECEIPT_SCHEMA_v3.0.0.json",
+      "bytes": 2988,
+      "sha256": "f3502042b9df952392957a2af7fcd08c760d52d9d312a55b4ffe304dee7e1fc1"
+    },
+    {
+      "file": "14_RELEASE_ELIGIBILITY_STANDARD_v3.0.0.md",
+      "bytes": 5377,
+      "sha256": "393e4711a165751c1f4c4a98a9110d35943294fba3923591d23acbf46afce6bb"
+    },
+    {
+      "file": "15_RELEASE_READINESS_TEMPLATE_v3.0.0.md",
+      "bytes": 1992,
+      "sha256": "7fd5e9d91c69730a96d3472eb5882c8aae2e1024e90d5a48358a04c64706cd4d"
+    },
+    {
+      "file": "16_MIGRATION_AND_BOOTSTRAP_PROTOCOL_v3.0.0.md",
+      "bytes": 9535,
+      "sha256": "24e33f55f89a03cd79c286f3126498c6e142b6e979f403224c87b0d22059e5fa"
+    },
+    {
+      "file": "17_GOVERNANCE_MIGRATION_RECEIPT_TEMPLATE_v3.0.0.md",
+      "bytes": 2353,
+      "sha256": "1eb3963779bb9ca1b935ea52380c5eccde2bad613aa881b88bd04929fe5db06b"
+    },
+    {
+      "file": "18_OWNER_ACTION_RECLASSIFICATION_TEMPLATE_v3.0.0.md",
+      "bytes": 3127,
+      "sha256": "0573d0331caa2078ac65bce6782121b14adc55b5651a62088d19f2b9bb09f357"
+    },
+    {
+      "file": "19_GOVERNANCE_CONFORMANCE_STANDARD_v3.0.0.md",
+      "bytes": 7293,
+      "sha256": "aa4a8e17a3883a9bad0793397d319048864350fcd0528786a1b30a3ebef46ef3"
+    },
+    {
+      "file": "20_OPERATOR_GUIDE_v3.0.0.md",
+      "bytes": 6476,
+      "sha256": "6153fac14717ebcecdbab5adcb5430bb4f5f8bbd421c5f4fdd9d58cc086c8926"
+    },
+    {
+      "file": "21_MASTER_MODULE_INDEX_v3.0.0.json",
+      "bytes": 5051,
+      "sha256": "53b3007b0f6d90630233b9680fbc033ff9b70da9e97300bcec7e372835b48286"
+    },
+    {
+      "file": "23_CHANGELOG_v3.0.0.md",
+      "bytes": 1982,
+      "sha256": "1c8f4c706a5d5417cb936a4489389e588426b58a16bac0196f76ee22df148224"
+    },
+    {
+      "file": "UNIVERSAL_GOVERNANCE_COMPLETE_PACKET_v3.0.0.md",
+      "bytes": 140185,
+      "sha256": "9a943c14fefa427251ec6604d8db56467597006feabe7e69671a54f78cd77689"
+    }
+  ]
+}

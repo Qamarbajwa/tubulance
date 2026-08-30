@@ -1,0 +1,296 @@
+task_execution_envelope:
+  schema_version: "3.0.0"
+
+  identity:
+    task_id: "NS-GOV-MIG-V300-001"
+    project_id: "tubulance"
+    project_name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
+    governance_version: "3.0.0"
+    adoption_mode: "MIGRATION_GOVERNED"
+
+  direction:
+    intent_refs:
+      - "PROJECT_INTENT.md: rigorous AI-assisted Navier-Stokes investigation"
+      - "PROJECT_INTENT.md: strict non-overclaiming and negative-evidence preservation"
+    roadmap_objective: "Governance migration from v2.10.1 to v3.0.0"
+    owner_non_goals:
+      - "Do not claim Navier-Stokes solved"
+      - "Do not alter accepted mathematics to fit v3 wording"
+      - "Do not execute TP2-G5-A3 within this migration"
+    owner_reserved_boundaries:
+      - "OWNER_INTENT_AUTHORITY for research scope and non-goals"
+      - "BUSINESS_POLICY_AUTHORITY for any material spend or exposure"
+      - "LEGAL_COMPLIANCE_AUTHORITY where applicable"
+      - "DEPLOYMENT_AUTHORITY for any external/public deployment"
+
+  objective:
+    exact_objective: "Migrate the existing governed NS-TRAJECTORY-PERSISTENCE-2 project to Universal Autonomous Project Governance v3.0.0 while preserving all v2.10.1 governance, Mathematical Research Constitution v1.0.1 semantics, accepted scientific checkpoints, negative evidence, dirty unrelated work, and truthful remote-push state."
+    rationale: "The project is already materially governed by v2.10.1 and requires a non-destructive mid-project semantic migration."
+    done_boundary: "A schema-valid v3 state, exact packet copy with verified manifest, candidate-bound migration records, conformance evidence, independent review with declared independence, and bounded local checkpoint exist; no scientific milestone or release status is promoted."
+
+  base_state:
+    repository_or_workspace: "D:/Comfy UI/tubulance"
+    branch_or_state_channel: "main"
+    base_candidate_id: "GIT_SHA:f49f9ad63a90e716b7e22090a1f25663461f0a7c"
+    dirty_state: "DIRTY_KNOWN"
+    preserved_unrelated_work:
+      - "All pre-existing tracked modifications and deletions"
+      - "All pre-existing untracked research artifacts"
+      - "The historical governanace/ directory and v2.10.1 packet"
+
+  eligibility:
+    dependencies:
+      - id: "V3-PACKET-MANIFEST"
+        state: "SATISFIED"
+        evidence_ref: "governance/evidence/NS-GOV-MIG-V300-001-packet.json"
+      - id: "V2-HISTORICAL-STATE"
+        state: "SATISFIED"
+        evidence_ref: "governance/migrations/GOVERNANCE_STATE_v2.10.1_HISTORICAL.yaml"
+      - id: "TP2-G5-A2"
+        state: "ACCEPTED"
+        evidence_ref: "TP2_G5_A2_GIT_CHECKPOINT_RECEIPT.md"
+    technical_inputs_available: true
+    traceable_to_intent: true
+    architecture_permits: true
+    inside_standing_mandate: true
+    candidate_state_known: true
+    risk_inside_ceiling: true
+    blocking_invariant_present: false
+    reserved_authority_required_for_technical_mutation: false
+    eligible: true
+    blocker_class: null
+    blocker_detail: null
+
+  classification:
+    risk_tier: "T4"
+    action_class: "B"
+    risk_reasons:
+      - "Project-wide governance, authority, evidence, and acceptance semantics"
+      - "Must preserve high-consequence mathematical and historical state"
+      - "Migration can affect future technical eligibility and release interpretation"
+    active_modules:
+      - "CORE-PROJECT-BINDING"
+      - "CORE-AUTHORITY"
+      - "CORE-RISK"
+      - "CORE-DEPENDENCY"
+      - "CORE-EVIDENCE"
+      - "CORE-ASSURANCE"
+      - "CORE-TEST-INTEGRITY"
+      - "CORE-GIT-STATE"
+      - "AI-AUTONOMY"
+      - "RESEARCH-SCIENTIFIC"
+      - "ARTIFACT-DATA"
+      - "LEGACY-RETROFIT"
+      - "GOVERNANCE-MIGRATION"
+    not_activated_material_modules:
+      - module: "SECURITY"
+        reason: "No security behavior or credentials are changed by this migration."
+      - module: "FINANCIAL"
+        reason: "No billing, spend, or financial state is changed."
+      - module: "DEPLOYMENT_AUTHORITY"
+        reason: "No deployment or public exposure is attempted."
+
+  roles_and_authority:
+    orchestrator: "codex-primary-runtime"
+    writer:
+      id: "codex-primary-runtime"
+      qualified: true
+      risk_ceiling: "T4"
+    reviewer_or_verifier:
+      id: "governance-v3-deterministic-conformance-verifier"
+      qualified: true
+      expected_independence: "IND1"
+    implementation_authority: "AUTONOMOUS_WITHIN_ENVELOPE"
+    verification_authority: "CANDIDATE_BOUND_CONFORMANCE_REVIEW"
+    release_eligibility_authority: "EVIDENCE_DERIVED_GATE"
+    reserved_external_authority:
+      required: false
+      type: "NONE"
+      trigger: null
+
+  mutation_scope:
+    allowed:
+      - "Create governance/packet/v3.0.0 from the supplied sealed packet"
+      - "Create v3 state, migration, envelope, evidence, and conformance records"
+      - "Append v3 semantic amendments to direction documents without rewriting historical records"
+      - "Add migration-specific tests"
+      - "Create bounded local Git commits"
+      - "Attempt the normal safe push only after local acceptance and only if permitted"
+    forbidden:
+      - "Execute TP2-G5-A3"
+      - "Change accepted A2 mathematics or claim truth"
+      - "Edit or delete sealed v2.10.1 files in place"
+      - "Delete, stage, or rewrite unrelated dirty work"
+      - "Force-push, rewrite shared history, or bypass external review"
+      - "Promote release eligibility, publication readiness, or Clay status"
+    protected:
+      - "governanace/"
+      - "mathematical_constitution/"
+      - "research_memory/"
+      - "TP2_G5_A2_*"
+      - "unrelated pre-existing dirty paths"
+    allowed_tools_actions:
+      - "Read-only Git/state inspection"
+      - "Local file creation/editing within allowed scope"
+      - "Schema, hash, and conformance tests"
+      - "Normal safe Git commit"
+    forbidden_tools_actions:
+      - "Force push or history rewrite"
+      - "Destructive cleanup of unrelated work"
+      - "External distribution bypass"
+
+  assurance_contract:
+    capability_or_requirement_ids:
+      - "GOV-V3-MIGRATION"
+    intent: "Operational governance may change, but project intent, mathematical epistemology, historical evidence, and release truth must remain faithful and conservative."
+    valid_inputs:
+      - "Exact project repository and known dirty state"
+      - "Manifest-verified v3 packet"
+      - "Preserved v2.10.1 and MRC v1.0.1 records"
+    invalid_input_behavior:
+      - input_class: "wrong project or unknown candidate"
+        expected_behavior: "STOP and report PROJECT_BINDING_BLOCKED."
+      - input_class: "missing or mismatched packet artifact"
+        expected_behavior: "STOP with GOVERNANCE_INTEGRITY_UNKNOWN."
+      - input_class: "unverified external push permission"
+        expected_behavior: "Preserve local acceptance and report EXTERNAL BLOCKED."
+    preconditions:
+      - "Candidate is machine-observed as f49f9ad63a90e716b7e22090a1f25663461f0a7c."
+      - "A2 scientific acceptance and receipt commits are present."
+      - "Historical v2 governance and dirty state are recorded."
+    transformation_rules:
+      - "Map legacy authority semantics explicitly without rewriting historical labels."
+      - "Add v3 evidence dimensions without relabeling old evidence."
+      - "Keep technical acceptance separate from mathematical truth and release eligibility."
+    invariants:
+      - id: "INV-GOV-001"
+        statement: "MRC v1.0.1 and Clay Statement B UNRESOLVED survive unchanged in meaning."
+        zero_tolerance: true
+      - id: "INV-GOV-002"
+        statement: "Remote SHA remains unverified unless new remote evidence exists."
+        zero_tolerance: true
+      - id: "INV-GOV-003"
+        statement: "Unrelated dirty work is not staged or mutated."
+        zero_tolerance: true
+      - id: "INV-GOV-004"
+        statement: "No generic approved flag substitutes for typed authority or evidence."
+        zero_tolerance: true
+    outputs:
+      - "Schema-valid root GOVERNANCE_STATE.yaml"
+      - "Schema-valid v3 task envelope and evidence receipt"
+      - "Manifest-verified local v3 packet copy"
+      - "Migration receipt and conformance verification"
+    postconditions:
+      - "v3 is active for new project-level work with declared limitations."
+      - "v2.10.1 is preserved as historical governance."
+      - "Routine technical work does not require owner technical certification."
+      - "TP2-G5-A3 is not executed by this task."
+    failure_contracts:
+      - condition: "Any required schema, hash, or preservation gate fails"
+        expected_behavior: "Migration remains BLOCKED or NOT_VERIFIED and no acceptance claim is made."
+      - condition: "Independent review capability is unavailable"
+        expected_behavior: "Record IND1 or lower truthfully and retain declared limitation."
+    retry_idempotency_concurrency:
+      - "Do not create duplicate active state trees; reuse the canonical root state and migration directory."
+      - "Do not run concurrent governance mutations against the same candidate."
+    persistence_restart_recovery:
+      - "Resume from the exact Git candidate and migration receipt, not conversational memory."
+      - "If partial mutation occurs, use the bounded commit or remove only migration-created files after review."
+    security_authority:
+      - "No secrets are copied or exposed."
+      - "External push remains subject to platform safety review."
+    performance_capacity:
+      - "Not applicable to research-governance file migration."
+    required_real_environment:
+      - "Local Git repository and local filesystem only; no release environment claim."
+    intent_fidelity_review_required: true
+
+  acceptance:
+    hard_gates:
+      - id: "GATE-GOV-001"
+        condition: "All v3 manifest-listed packet files match expected bytes and SHA-256."
+        required_state: "PASS"
+      - id: "GATE-GOV-002"
+        condition: "Root v3 governance state validates against 06A schema."
+        required_state: "PASS"
+      - id: "GATE-GOV-003"
+        condition: "This envelope validates against 05A schema."
+        required_state: "PASS"
+      - id: "GATE-GOV-004"
+        condition: "Migration evidence receipt validates against 13 schema."
+        required_state: "PASS"
+      - id: "GATE-GOV-005"
+        condition: "Historical v2 governance, MRC, accepted science, negative evidence, and dirty work are preserved."
+        required_state: "PASS"
+      - id: "GATE-GOV-006"
+        condition: "All applicable GC-01 through GC-30 checks pass or are declared not applicable/limited."
+        required_state: "PASS"
+      - id: "GATE-GOV-007"
+        condition: "Distinct verification path is recorded without overstating independence."
+        required_state: "PASS"
+    kpis:
+      - id: "KPI-GOV-001"
+        metric: "Number of v3 packet artifacts copied"
+        threshold: "27"
+        release_blocking: false
+    required_evidence:
+      minimum_strength: "E3"
+      required_environments:
+        - "STATIC"
+        - "INTEGRATED_LOCAL"
+    minimum_independence: "IND1"
+    candidate_bound: true
+
+  verification_plan:
+    static:
+      - "Inspect v2 history, direction, state, evidence, and owner-action references."
+      - "Compare copied v3 packet against manifest."
+    unit:
+      - "Validate v3 state, envelope, and receipt schemas."
+    integration:
+      - "Verify project binding, checkpoint presence, state cross-references, and historical paths."
+    end_to_end:
+      - "Run the migration conformance suite against the exact local candidate."
+    negative_boundary:
+      - "Reject stale candidate evidence."
+      - "Reject generic approval substitution and force-push configuration."
+    failure_recovery:
+      - "Record blocked remote distribution without changing local acceptance."
+    security:
+      - "Check no secrets or external credentials are introduced."
+    performance:
+      - "Not applicable."
+    real_environment:
+      - "Verify local filesystem/Git only; do not claim deployment or production evidence."
+    adversarial:
+      - "Mutate candidate ID, packet hash, independence, release, blocker, and dirty-state fields in-memory and assert fail-closed behavior."
+    independent_review:
+      - "Run governance-v3-deterministic-conformance-verifier as a fresh verification path; classify independence IND1."
+
+  recovery:
+    rollback_or_forward_recovery: "Use the bounded migration commit as the recovery point; preserve the historical v2 copy and do not delete unrelated work. If a gate fails, leave v3 inactive/not verified and record the failing gate."
+    checkpoint_required_before_mutation: true
+    state_integrity_check: "Recompute packet hashes, validate schemas, inspect staged paths, and compare unrelated dirty-path manifest before commit."
+
+  stop_conditions:
+    - "wrong project binding"
+    - "missing or mismatched sealed packet artifact"
+    - "scope ambiguity"
+    - "risk exceeds T4 ceiling"
+    - "unexpected destructive/external effect"
+    - "candidate identity becomes unknown"
+    - "required reserved authority is reached"
+    - "historical evidence or unrelated dirty work would be changed"
+    - "evidence contradicts a preservation invariant"
+
+  completion_record:
+    final_candidate_id: null
+    status: "NOT_STARTED"
+    evidence_receipts:
+      - "governance/evidence/NS-GOV-MIG-V300-001-packet.json"
+    technical_acceptance: "NOT_EVALUATED"
+    release_eligibility_effect: "NONE"
+    negative_evidence_refs:
+      - "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
+      - "TP2_G5_A2_NEGATIVE_EVIDENCE.md"
+    checkpoint_id: null

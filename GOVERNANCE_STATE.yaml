@@ -1,79 +1,173 @@
-# GOVERNANCE_STATE.yaml — NS-TRAJECTORY-PERSISTENCE-2 (v2.10.0)
-# Canonical persistent project-binding anchor under Governance v2.10.0
+governance_state:
+  schema_version: "3.0.0"
+  governance_version: "3.0.0"
+  governance_integrity: "PASS"
 
-governance:
-  kernel_version: "v2.10.1"
-  master_version: "v2.9.10"
-  master_sha256: "34f2dc33ba2c8f7edb5280d6f63426fad431cdcdf61642f26c3c7aee4bd84f07"
-  bootstrap_level: "HIGH_ASSURANCE"
-  adopted: "2026-08-25"
-  adoption_mode: "MID_PROJECT"
+  project_binding:
+    project_id: "tubulance"
+    project_name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
+    adoption_mode: "MIGRATION_GOVERNED"
+    repository_or_workspace: "D:/Comfy UI/tubulance"
+    branch_or_state_channel: "main"
+    current_candidate_id: "GIT_SHA:f49f9ad63a90e716b7e22090a1f25663461f0a7c"
+    verified_checkpoint_id: "GIT_SHA:f49f9ad63a90e716b7e22090a1f25663461f0a7c"
+    dirty_state: "DIRTY_KNOWN"
+    active_environment: "LOCAL_WINDOWS_WORKSPACE"
 
-project:
-  id: "tubulance"
-  name: "3D Navier-Stokes Stochastic Persistence & Singularity Research"
-  root: "d:/Comfy UI/tubulance"
-  default_branch: "main"
-  source_of_truth: "CURRENT_SCIENTIFIC_STATE.md"
-  coding_environments:
-    - "Antigravity (Gemini Writer/Reviewer/Local Authority)"
-    - "Claude Code (Claude Writer/Reviewer)"
-    - "Cursor / Local CLI"
+  direction:
+    project_intent:
+      path: "PROJECT_INTENT.md"
+      state: "PRESERVED_AND_V3_CROSS_REFERENCED"
+      owner_intent_confirmed: true
+    architecture_decisions:
+      path: "ARCHITECTURE_DECISIONS.md"
+      state: "PRESERVED_AND_V3_CROSS_REFERENCED"
+    roadmap:
+      path: "ROADMAP.md"
+      state: "PRESERVED_AND_V3_CROSS_REFERENCED"
+    active_objective_id: "TP2-G5-A3"
+    clay_statement_b_status: "UNRESOLVED"
+    scientific_program_status: "TP2-G5-A2_ACCEPTED_WITH_LIMITATIONS"
 
-protected:
-  paths:
-    - "GOVERNANCE_STATE.yaml"
-    - "governanace/"
-    - "research_memory/RESEARCH_PATHWAY_SCHEMA.json"
-    - "research_memory/RESEARCH_OBSTRUCTION_REGISTRY.yaml"
-    - "research_memory/RESEARCH_PATHWAY_REGISTRY.yaml"
-    - "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
-    - "tests/"
-  components:
-    - "research_memory"
-    - "navier3d_core"
+  standing_mandate:
+    active: true
+    autonomous_technical_work_allowed: true
+    bounded_by:
+      - "accepted project intent"
+      - "Mathematical Research Constitution v1.0.1"
+      - "security model"
+      - "legal/compliance constraints"
+      - "approved financial envelope"
+      - "risk ceiling T4"
+      - "tool/action permissions"
+      - "external-destination safety review"
+    owner_technical_certification_required: false
 
-risk_profile:
-  t4_domains_present:
-    - "mathematical_regularity_proofs"
-    - "stochastic_lagrangian_sdes"
-    - "scale_critical_invariants"
-  known_escalators:
-    - "unsupported_global_regularity_claims"
-    - "unverified_blowup_exclusion"
+  bootstrap:
+    level: "HIGH_ASSURANCE"
+    risk_ceiling: "T4"
+    upgrade_required: false
 
-roles:
-  known_agents:
-    - id: "antigravity-gemini-orchestrator"
-      callable_via: "Antigravity Environment"
-      typical_role: "ORCHESTRATOR"
-      independence: "HIGH"
-      cost_class: "LOW"
-    - id: "antigravity-gemini-writer"
-      callable_via: "Antigravity Environment"
-      typical_role: "WRITER"
-      independence: "MEDIUM"
-      cost_class: "LOW"
-    - id: "antigravity-gemini-verifier"
-      callable_via: "Antigravity Environment"
-      typical_role: "REVIEWER"
-      independence: "HIGH"
-      cost_class: "LOW"
+  authority_policy:
+    owner_intent_authority: "OWNER_OR_EXPLICIT_DELEGATE"
+    business_policy_authority: "OWNER_OR_EXPLICIT_DELEGATE"
+    legal_compliance_authority: "RESERVED_EXTERNAL_WHEN_APPLICABLE"
+    implementation_authority: "AUTONOMOUS_WITHIN_STANDING_MANDATE"
+    verification_authority: "CANDIDATE_BOUND_EVIDENCE_AND_CONFORMANCE_REVIEW"
+    release_eligibility_authority: "EVIDENCE_DERIVED_GATE"
+    deployment_authority: "RESERVED_WHEN_PROJECT_POLICY_REQUIRES"
+    generic_approved_flag_prohibited: true
 
-state:
-  last_verified_checkpoint:
-    ref: "08719e7078feaa7939f893c33dcfdc9c2a485c49"
-    at: "2026-08-30T00:00:00Z"
-  canonical_milestone: "TP2-G5-A2 = ACCEPTED_WITH_LIMITATIONS"
-  active_gate: "TP2-G5-A3 (NOT AUTHORIZED; A2 COMPLETE)"
-  accepted_t3plus_count: 12
-  last_random_audit: "REV-2026-08-24-RPM1"
-  retrofit_debt: []
-  open_findings:
-    - "Origin remote SHA unavailable because outbound GitHub access failed during A0 preflight."
-    - "Distinct reviewer agent unavailable; A0 E4 review uses documented same-model fresh-context fallback with LOW independence."
-    - "A2 remote distribution remains unverified; external-destination safety review blocked the push before execution."
+  risk_and_action:
+    active_risk_tier: "T4"
+    active_action_class: "B"
+    high_risk_domains_present:
+      - "mathematical_regularity_research"
+      - "stochastic_lagrangian_sdes"
+      - "scale_critical_invariants"
+      - "governance_migration"
 
-emergency:
-  incident_state: "NONE"
-  break_glass_record: "NONE"
+  agents_and_tools:
+    orchestrator: "codex-primary-runtime"
+    writers:
+      - "codex-primary-runtime"
+    reviewers_verifiers:
+      - "governance-v3-deterministic-conformance-verifier"
+      - "codex-fresh-context-review-fallback"
+    available_independence_ceiling: "IND1"
+    tool_permissions_known: true
+
+  evidence_policy:
+    strength_scale: ["E1", "E2", "E3", "E4", "E5"]
+    environment_classes:
+      - "STATIC"
+      - "ISOLATED"
+      - "FIXTURE"
+      - "MOCK"
+      - "SIMULATED"
+      - "INTEGRATED_LOCAL"
+      - "LIVE_LOCAL"
+      - "REPRESENTATIVE"
+      - "STAGING"
+      - "PRODUCTION_OBSERVED"
+      - "EXTERNAL_SYSTEM"
+      - "OTHER"
+    independence_scale: ["IND0", "IND1", "IND2", "IND3"]
+    candidate_binding_required: true
+    stale_evidence_fails_closed: true
+    historical_labels_preserved: true
+    v3_receipts_require_strength_environment_independence: true
+
+  assurance:
+    capability_registry_path: "governance/CAPABILITY_ASSURANCE_MATRIX.md"
+    capability_count: 1
+    fully_assured_declared_scope_count: 0
+    unverified_or_partial_capabilities:
+      - "NS-TRAJECTORY-PERSISTENCE-2 mathematical research program is not a product release candidate"
+      - "TP2-G5-A3 exact objective/envelope is not yet established under v3"
+    known_critical_defects: []
+    negative_evidence_register: "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
+    mathematical_assurance_register: "mathematical_constitution/CLAIM_REGISTRY.yaml"
+
+  release:
+    current_state: "NOT_RELEASE_ELIGIBLE"
+    exact_candidate_id: "GIT_SHA:f49f9ad63a90e716b7e22090a1f25663461f0a7c"
+    hard_gates_state: "NOT_EVALUATED_FOR_PRODUCT_RELEASE"
+    release_eligible: false
+    deployment_authorized: false
+    deployed: false
+    observed: false
+    known_limitations:
+      - "Scientific acceptance is not product release eligibility."
+      - "Remote distribution is blocked by external-destination safety review."
+      - "Remote SHA is unverified."
+      - "Clay Statement B remains UNRESOLVED."
+
+  blockers:
+    - class: "EXTERNAL"
+      state: "BLOCKED"
+      detail: "Authorized Git push is blocked by external-destination safety review; remote SHA remains unverified."
+    - class: "EVIDENCE"
+      state: "NOT_VERIFIED"
+      detail: "TP2-G5-A3 exact v3 objective/envelope has not been established; migration does not execute A3."
+
+  legacy_migration:
+    prior_governance_present: true
+    prior_governance_version: "2.10.1"
+    prior_governance_root: "governanace/"
+    prior_state_copy: "governance/migrations/GOVERNANCE_STATE_v2.10.1_HISTORICAL.yaml"
+    prior_manifest: "governanace/v2.10.1_SHA256_MANIFEST.json"
+    prior_manifest_sha256: "651034cc964adccf23ee80557ed453279c7843f8279b246e8de4130042e87b0e"
+    migration_receipt: "GOVERNANCE_MIGRATION_V2_10_1_TO_V3_0_0.md"
+    legacy_unverified_areas:
+      - "Historical project artifacts not re-certified by this governance migration"
+    contradictions_open:
+      - "Legacy v2 wording remains in historical direction/state records; v3 cross-references it without rewriting it."
+      - "A3 is the expected next scientific objective, but its exact v3 envelope is not yet verified."
+    historical_evidence_preserved: true
+
+  git_or_checkpoint:
+    version_control_present: true
+    remote_push_policy: "NORMAL_SAFE_PUSH_ONLY"
+    force_push_prohibited: true
+    accepted_checkpoint_policy: "BOUND_TO_EXACT_VERIFIED_CANDIDATE"
+    pre_migration_head: "f49f9ad63a90e716b7e22090a1f25663461f0a7c"
+    accepted_scientific_checkpoint: "08719e7078feaa7939f893c33dcfdc9c2a485c49"
+    accepted_scientific_receipt: "f49f9ad63a90e716b7e22090a1f25663461f0a7c"
+    remote_distribution_state: "REMOTE_PUSH_BLOCKED_EXTERNAL_DESTINATION_REVIEW"
+    remote_sha_state: "REMOTE_SHA_UNVERIFIED"
+    unrelated_dirty_work_preserved: true
+
+  last_checkpoint:
+    timestamp: "2026-08-30T00:00:00Z"
+    candidate_id: "GIT_SHA:f49f9ad63a90e716b7e22090a1f25663461f0a7c"
+    evidence_refs:
+      - "TP2_G5_A2_GIT_CHECKPOINT_RECEIPT.md"
+      - "GOVERNANCE_MIGRATION_V2_10_1_TO_V3_0_0.md"
+    state: "ACCEPTED_WITH_DECLARED_LIMITATIONS"
+
+  next_action:
+    objective_id: "TP2-G5-A3"
+    eligibility: "NOT_VERIFIED"
+    blocker_class: "EVIDENCE"
+    description: "Establish and verify a new v3 Task Execution Envelope for TP2-G5-A3 before any scientific execution; do not reuse the v2 prompt."

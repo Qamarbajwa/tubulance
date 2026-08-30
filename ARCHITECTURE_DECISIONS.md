@@ -1,8 +1,8 @@
 # ARCHITECTURE_DECISIONS.md — NS-TRAJECTORY-PERSISTENCE-2
 
 **Program:** `NS-TRAJECTORY-PERSISTENCE-2`  
-**Governance Standard:** Autonomous Project Runtime Governance Kernel v2.10.1  
-**Last Updated:** 2026-08-25  
+**Governance Standard:** Universal Autonomous Project Governance v3.0.0, with v2.10.1 preserved as historical governance and Mathematical Research Constitution v1.0.1 active as the domain epistemic layer
+**Last Updated:** 2026-08-30
 
 ---
 
@@ -23,3 +23,11 @@
 ### ADR-004: Parabolic Scaling Normalization
 - **Decision**: All comparative rates must be normalized to match velocity gradient dimension $\lambda^2$, via $R_Q(s) = \frac{Q_s}{S_s} = \partial_s \ln \chi_s$.
 - **Rationale**: $Q_s$ ($\lambda^6$) and $\|D\|^2$ ($\lambda^0$) are scaling-incompatible (`NS-OBS-009`).
+
+### ADR-005: Governed Migration Layout
+- **Decision**: Keep the historical `governanace/` directory and v2.10.1 artifacts unchanged. Use `governance/packet/v3.0.0/` for an exact v3 packet copy, `governance/task_envelopes/` for v3 envelopes, and `governance/migrations/` for migration-preservation records. Keep the active v3 state at root `GOVERNANCE_STATE.yaml` for continuity with existing tooling.
+- **Rationale**: This is the least disruptive layout that preserves historical provenance, avoids duplicate active state, and supports candidate-bound v3 verification.
+
+### ADR-006: Mathematical/Operational Governance Separation
+- **Decision**: v3 governs project binding, authority, task execution, evidence, release/distribution state, and conformance. Mathematical Research Constitution v1.0.1 continues to govern mathematical truth, claim typing, assumption drift, novelty, significance, understanding, dependency closure, and `SOLVED_ELIGIBLE` restrictions.
+- **Rationale**: Technical acceptance, mathematical truth, project canonical status, publication readiness, community acceptance, and Clay solution status are non-substitutable.

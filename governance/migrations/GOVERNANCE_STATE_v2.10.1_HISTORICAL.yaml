@@ -1,0 +1,79 @@
+# GOVERNANCE_STATE.yaml — NS-TRAJECTORY-PERSISTENCE-2 (v2.10.0)
+# Canonical persistent project-binding anchor under Governance v2.10.0
+
+governance:
+  kernel_version: "v2.10.1"
+  master_version: "v2.9.10"
+  master_sha256: "34f2dc33ba2c8f7edb5280d6f63426fad431cdcdf61642f26c3c7aee4bd84f07"
+  bootstrap_level: "HIGH_ASSURANCE"
+  adopted: "2026-08-25"
+  adoption_mode: "MID_PROJECT"
+
+project:
+  id: "tubulance"
+  name: "3D Navier-Stokes Stochastic Persistence & Singularity Research"
+  root: "d:/Comfy UI/tubulance"
+  default_branch: "main"
+  source_of_truth: "CURRENT_SCIENTIFIC_STATE.md"
+  coding_environments:
+    - "Antigravity (Gemini Writer/Reviewer/Local Authority)"
+    - "Claude Code (Claude Writer/Reviewer)"
+    - "Cursor / Local CLI"
+
+protected:
+  paths:
+    - "GOVERNANCE_STATE.yaml"
+    - "governanace/"
+    - "research_memory/RESEARCH_PATHWAY_SCHEMA.json"
+    - "research_memory/RESEARCH_OBSTRUCTION_REGISTRY.yaml"
+    - "research_memory/RESEARCH_PATHWAY_REGISTRY.yaml"
+    - "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
+    - "tests/"
+  components:
+    - "research_memory"
+    - "navier3d_core"
+
+risk_profile:
+  t4_domains_present:
+    - "mathematical_regularity_proofs"
+    - "stochastic_lagrangian_sdes"
+    - "scale_critical_invariants"
+  known_escalators:
+    - "unsupported_global_regularity_claims"
+    - "unverified_blowup_exclusion"
+
+roles:
+  known_agents:
+    - id: "antigravity-gemini-orchestrator"
+      callable_via: "Antigravity Environment"
+      typical_role: "ORCHESTRATOR"
+      independence: "HIGH"
+      cost_class: "LOW"
+    - id: "antigravity-gemini-writer"
+      callable_via: "Antigravity Environment"
+      typical_role: "WRITER"
+      independence: "MEDIUM"
+      cost_class: "LOW"
+    - id: "antigravity-gemini-verifier"
+      callable_via: "Antigravity Environment"
+      typical_role: "REVIEWER"
+      independence: "HIGH"
+      cost_class: "LOW"
+
+state:
+  last_verified_checkpoint:
+    ref: "08719e7078feaa7939f893c33dcfdc9c2a485c49"
+    at: "2026-08-30T00:00:00Z"
+  canonical_milestone: "TP2-G5-A2 = ACCEPTED_WITH_LIMITATIONS"
+  active_gate: "TP2-G5-A3 (NOT AUTHORIZED; A2 COMPLETE)"
+  accepted_t3plus_count: 12
+  last_random_audit: "REV-2026-08-24-RPM1"
+  retrofit_debt: []
+  open_findings:
+    - "Origin remote SHA unavailable because outbound GitHub access failed during A0 preflight."
+    - "Distinct reviewer agent unavailable; A0 E4 review uses documented same-model fresh-context fallback with LOW independence."
+    - "A2 remote distribution remains unverified; external-destination safety review blocked the push before execution."
+
+emergency:
+  incident_state: "NONE"
+  break_glass_record: "NONE"

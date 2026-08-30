@@ -1,8 +1,8 @@
 # ROADMAP.md — NS-TRAJECTORY-PERSISTENCE-2
 
 **Program:** `NS-TRAJECTORY-PERSISTENCE-2`  
-**Governance Standard:** Autonomous Project Runtime Governance Kernel v2.10.1  
-**Last Updated:** 2026-08-29
+**Governance Standard:** Universal Autonomous Project Governance v3.0.0 (active) with v2.10.1 preserved historically; Mathematical Research Constitution v1.0.1 remains active
+**Last Updated:** 2026-08-30
 
 ---
 
@@ -46,3 +46,9 @@ in the A2 artifacts. TP2-G5-A3 is not executed or authorized by this increment.
   - **Accepted prerequisite**: `TP2-G5-A0` (`ACCEPTED_WITH_LIMITATIONS_AND_CONTRACT_SEALED`).
   - **A1 contract**: `TP2_G5_A0_RESEARCH_CONTRACT.md`.
   - **Stop condition**: do not begin A1 within the A0 increment.
+
+### v3 Migration Direction Amendment (2026-08-30)
+
+The preceding A1 line and A2 stop wording are preserved as historical increment records. The current scientific state is `TP2-G5-A2 = ACCEPTED_WITH_LIMITATIONS`; the expected descendant remains `TP2-G5-A3`. A3 is not executed by the governance migration. Under v3, A3 requires a new candidate-bound Task Execution Envelope and eligibility evidence; its exact objective is `NOT_VERIFIED` in the current repository state, so no A3 envelope is authorized by this migration commit.
+
+Governance migration status is operationally separate from scientific progress, mathematical truth, release eligibility, publication readiness, deployment authorization, community acceptance, and Clay Statement B, which remains `UNRESOLVED`.

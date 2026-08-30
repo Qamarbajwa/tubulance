@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:universal-governance:state:3.0.0",
+  "title": "Universal Governance State v3.0.0",
+  "type": "object",
+  "required": ["governance_state"],
+  "properties": {
+    "governance_state": {
+      "type": "object",
+      "required": ["schema_version", "governance_version", "project_binding", "direction", "standing_mandate", "bootstrap", "authority_policy", "evidence_policy", "release"],
+      "properties": {
+        "schema_version": {"const": "3.0.0"},
+        "governance_version": {"const": "3.0.0"},
+        "governance_integrity": {"type": "string"},
+        "project_binding": {
+          "type": "object",
+          "required": ["project_id", "project_name", "adoption_mode", "current_candidate_id", "dirty_state"],
+          "properties": {
+            "project_id": {"type": "string"},
+            "project_name": {"type": "string"},
+            "adoption_mode": {"enum": ["DAY0", "MID_PROJECT_UNGOVERNED", "MIGRATION_GOVERNED", "AD_HOC"]},
+            "repository_or_workspace": {"type": "string"},
+            "branch_or_state_channel": {"type": "string"},
+            "current_candidate_id": {"type": ["string", "null"]},
+            "verified_checkpoint_id": {"type": ["string", "null"]},
+            "dirty_state": {"enum": ["CLEAN", "DIRTY_KNOWN", "DIRTY_UNKNOWN", "UNKNOWN", "N/A"]},
+            "active_environment": {"type": "string"}
+          },
+          "additionalProperties": true
+        },
+        "direction": {"type": "object"},
+        "standing_mandate": {
+          "type": "object",
+          "required": ["active", "autonomous_technical_work_allowed", "owner_technical_certification_required"],
+          "properties": {
+            "active": {"type": "boolean"},
+            "autonomous_technical_work_allowed": {"type": "boolean"},
+            "owner_technical_certification_required": {"const": false}
+          },
+          "additionalProperties": true
+        },
+        "bootstrap": {
+          "type": "object",
+          "required": ["level", "risk_ceiling"],
+          "properties": {
+            "level": {"enum": ["LIGHT", "STANDARD", "HIGH_ASSURANCE"]},
+            "risk_ceiling": {"enum": ["T1", "T2", "T3", "T4", "T5"]}
+          },
+          "additionalProperties": true
+        },
+        "authority_policy": {
+          "type": "object",
+          "required": ["implementation_authority", "verification_authority", "release_eligibility_authority", "generic_approved_flag_prohibited"],
+          "properties": {
+            "generic_approved_flag_prohibited": {"const": true}
+          },
+          "additionalProperties": true
+        },
+        "risk_and_action": {
+          "type": "object",
+          "properties": {
+            "active_risk_tier": {"enum": ["T1", "T2", "T3", "T4", "T5"]},
+            "active_action_class": {"enum": ["A", "B", "C", "D", "E", "F"]}
+          },
+          "additionalProperties": true
+        },
+        "evidence_policy": {
+          "type": "object",
+          "required": ["candidate_binding_required", "stale_evidence_fails_closed"],
+          "properties": {
+            "candidate_binding_required": {"const": true},
+            "stale_evidence_fails_closed": {"const": true}
+          },
+          "additionalProperties": true
+        },
+        "release": {
+          "type": "object",
+          "required": ["current_state", "release_eligible", "deployment_authorized"],
+          "properties": {
+            "current_state": {"enum": ["UNKNOWN", "NOT_RELEASE_ELIGIBLE", "RELEASE_ELIGIBLE_WITH_DECLARED_LIMITATIONS", "RELEASE_ELIGIBLE", "DEPLOYMENT_AUTHORIZED", "DEPLOYED", "OBSERVED"]},
+            "release_eligible": {"type": "boolean"},
+            "deployment_authorized": {"type": "boolean"}
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

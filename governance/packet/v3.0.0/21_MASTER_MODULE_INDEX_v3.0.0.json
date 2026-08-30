@@ -1,0 +1,212 @@
+{
+  "schema_version": "3.0.0",
+  "governance_version": "3.0.0",
+  "source_file": "04_GOVERNANCE_MODULE_LIBRARY_v3.0.0.md",
+  "module_count": 34,
+  "modules": [
+    {
+      "id": "CORE-PROJECT-BINDING",
+      "title": "Project Identity & Context Isolation",
+      "start_line": 5,
+      "end_line": 14
+    },
+    {
+      "id": "CORE-AUTHORITY",
+      "title": "Typed Authority & Reserved Decisions",
+      "start_line": 15,
+      "end_line": 23
+    },
+    {
+      "id": "CORE-RISK",
+      "title": "Risk & Action Classification",
+      "start_line": 24,
+      "end_line": 31
+    },
+    {
+      "id": "CORE-DEPENDENCY",
+      "title": "Eligibility Graph & Concurrency",
+      "start_line": 32,
+      "end_line": 40
+    },
+    {
+      "id": "CORE-EVIDENCE",
+      "title": "Evidence, Candidate Identity & Provenance",
+      "start_line": 41,
+      "end_line": 50
+    },
+    {
+      "id": "CORE-ASSURANCE",
+      "title": "Capability Contracts & Definition of Working",
+      "start_line": 51,
+      "end_line": 58
+    },
+    {
+      "id": "CORE-TEST-INTEGRITY",
+      "title": "Test/Evaluator Protection",
+      "start_line": 59,
+      "end_line": 67
+    },
+    {
+      "id": "CORE-GIT-STATE",
+      "title": "Source Control & Checkpoints",
+      "start_line": 68,
+      "end_line": 77
+    },
+    {
+      "id": "SECURITY",
+      "title": "Security & Threat Model",
+      "start_line": 78,
+      "end_line": 100
+    },
+    {
+      "id": "PRIVACY-DATA",
+      "title": "Privacy, Sensitive Data & Data Governance",
+      "start_line": 101,
+      "end_line": 120
+    },
+    {
+      "id": "AUTHZ-IDENTITY",
+      "title": "Identity, Tenant, Principal & Permission Systems",
+      "start_line": 121,
+      "end_line": 137
+    },
+    {
+      "id": "FINANCIAL",
+      "title": "Billing, Money & Financial State",
+      "start_line": 138,
+      "end_line": 162
+    },
+    {
+      "id": "MIGRATION",
+      "title": "Schema/Data/State Migration",
+      "start_line": 163,
+      "end_line": 180
+    },
+    {
+      "id": "INTEGRATION",
+      "title": "External APIs, Providers, Webhooks & Protocols",
+      "start_line": 181,
+      "end_line": 198
+    },
+    {
+      "id": "DISTRIBUTED",
+      "title": "Queues, Events, Concurrency & Distributed State",
+      "start_line": 199,
+      "end_line": 217
+    },
+    {
+      "id": "INFRASTRUCTURE",
+      "title": "Infrastructure, Configuration & Deployment Topology",
+      "start_line": 218,
+      "end_line": 237
+    },
+    {
+      "id": "RELEASE",
+      "title": "Build, Packaging, Signing & Distribution",
+      "start_line": 238,
+      "end_line": 256
+    },
+    {
+      "id": "PERFORMANCE",
+      "title": "Performance, Capacity, Stress & Soak",
+      "start_line": 257,
+      "end_line": 277
+    },
+    {
+      "id": "RESILIENCE",
+      "title": "Failure Injection, Recovery & Disaster Recovery",
+      "start_line": 278,
+      "end_line": 298
+    },
+    {
+      "id": "OBSERVABILITY",
+      "title": "Logs, Metrics, Traces & Audit",
+      "start_line": 299,
+      "end_line": 316
+    },
+    {
+      "id": "INCIDENT",
+      "title": "Incident & Break-Glass Governance",
+      "start_line": 317,
+      "end_line": 334
+    },
+    {
+      "id": "UI-UX",
+      "title": "UI, Accessibility & User Workflow",
+      "start_line": 335,
+      "end_line": 352
+    },
+    {
+      "id": "DESKTOP-LOCAL",
+      "title": "Desktop, Plugin & Local Application Behavior",
+      "start_line": 353,
+      "end_line": 369
+    },
+    {
+      "id": "MOBILE",
+      "title": "Mobile Lifecycle & Store Distribution",
+      "start_line": 370,
+      "end_line": 386
+    },
+    {
+      "id": "AI-AUTONOMY",
+      "title": "AI Agents, Models & Autonomous Workflows",
+      "start_line": 387,
+      "end_line": 409
+    },
+    {
+      "id": "ML-EVALUATION",
+      "title": "ML/Data Model Evaluation",
+      "start_line": 410,
+      "end_line": 426
+    },
+    {
+      "id": "RESEARCH-SCIENTIFIC",
+      "title": "Research, Mathematics & Scientific Computation",
+      "start_line": 427,
+      "end_line": 448
+    },
+    {
+      "id": "ARTIFACT-DATA",
+      "title": "Data Pipelines, Generated Artifacts & Documents",
+      "start_line": 449,
+      "end_line": 465
+    },
+    {
+      "id": "SUPPLY-CHAIN",
+      "title": "Dependencies & Third-Party Supply Chain",
+      "start_line": 466,
+      "end_line": 480
+    },
+    {
+      "id": "COMPATIBILITY",
+      "title": "Version & Environment Compatibility",
+      "start_line": 481,
+      "end_line": 498
+    },
+    {
+      "id": "COST-RESOURCE",
+      "title": "Resource, Spend & Budget Governance",
+      "start_line": 499,
+      "end_line": 517
+    },
+    {
+      "id": "LEGACY-RETROFIT",
+      "title": "Existing Project Retrofit",
+      "start_line": 518,
+      "end_line": 528
+    },
+    {
+      "id": "GOVERNANCE-MIGRATION",
+      "title": "Governance Evolution & Supersession",
+      "start_line": 529,
+      "end_line": 540
+    },
+    {
+      "id": "RELEASE-OBSERVATION",
+      "title": "Post-Deployment Observation & Learning",
+      "start_line": 541,
+      "end_line": 550
+    }
+  ]
+}

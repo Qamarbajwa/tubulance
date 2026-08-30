@@ -1,0 +1,131 @@
+governance_state:
+  schema_version: "3.0.0"
+  governance_version: "3.0.0"
+  governance_integrity: "UNVERIFIED"
+
+  project_binding:
+    project_id: "UNSET"
+    project_name: "UNSET"
+    adoption_mode: "DAY0"
+    repository_or_workspace: "UNSET"
+    branch_or_state_channel: "UNSET"
+    current_candidate_id: "UNSET"
+    verified_checkpoint_id: null
+    dirty_state: "UNKNOWN"
+    active_environment: "UNSET"
+
+  direction:
+    project_intent:
+      path: "PROJECT_INTENT.md"
+      state: "MISSING"
+      owner_intent_confirmed: false
+    architecture_decisions:
+      path: "ARCHITECTURE_DECISIONS.md"
+      state: "MISSING"
+    roadmap:
+      path: "ROADMAP.md"
+      state: "MISSING"
+    active_objective_id: null
+
+  standing_mandate:
+    active: false
+    autonomous_technical_work_allowed: false
+    bounded_by:
+      - "accepted project intent"
+      - "security model"
+      - "legal/compliance constraints"
+      - "approved financial envelope"
+      - "risk ceiling"
+      - "tool/action permissions"
+    owner_technical_certification_required: false
+
+  bootstrap:
+    level: "LIGHT"
+    risk_ceiling: "T2"
+    upgrade_required: false
+
+  authority_policy:
+    owner_intent_authority: "OWNER_OR_EXPLICIT_DELEGATE"
+    business_policy_authority: "OWNER_OR_EXPLICIT_DELEGATE"
+    legal_compliance_authority: "RESERVED_EXTERNAL_WHEN_APPLICABLE"
+    implementation_authority: "AUTONOMOUS_WITHIN_STANDING_MANDATE"
+    verification_authority: "EVIDENCE_BASED"
+    release_eligibility_authority: "EVIDENCE_DERIVED_GATE"
+    deployment_authority: "PROJECT_POLICY_DEFINED"
+    generic_approved_flag_prohibited: true
+
+  risk_and_action:
+    active_risk_tier: "T1"
+    active_action_class: "A"
+    high_risk_domains_present: []
+
+  agents_and_tools:
+    orchestrator: "UNSET"
+    writers: []
+    reviewers_verifiers: []
+    available_independence_ceiling: "IND0"
+    tool_permissions_known: false
+
+  evidence_policy:
+    strength_scale: ["E1", "E2", "E3", "E4", "E5"]
+    environment_classes:
+      - "STATIC"
+      - "ISOLATED"
+      - "FIXTURE"
+      - "MOCK"
+      - "SIMULATED"
+      - "INTEGRATED_LOCAL"
+      - "LIVE_LOCAL"
+      - "REPRESENTATIVE"
+      - "STAGING"
+      - "PRODUCTION_OBSERVED"
+      - "EXTERNAL_SYSTEM"
+    independence_scale: ["IND0", "IND1", "IND2", "IND3"]
+    candidate_binding_required: true
+    stale_evidence_fails_closed: true
+
+  assurance:
+    capability_registry_path: "CAPABILITY_ASSURANCE_MATRIX.md"
+    capability_count: 0
+    fully_assured_declared_scope_count: 0
+    unverified_or_partial_capabilities: []
+    known_critical_defects: []
+    negative_evidence_register: null
+
+  release:
+    current_state: "NOT_RELEASE_ELIGIBLE"
+    exact_candidate_id: null
+    hard_gates_state: "UNKNOWN"
+    release_eligible: false
+    deployment_authorized: false
+    deployed: false
+    observed: false
+    known_limitations: []
+
+  blockers: []
+
+  legacy_migration:
+    prior_governance_present: false
+    prior_governance_version: null
+    migration_receipt: null
+    legacy_unverified_areas: []
+    contradictions_open: []
+    historical_evidence_preserved: true
+
+  git_or_checkpoint:
+    version_control_present: false
+    remote_push_policy: "PROJECT_DEFINED"
+    force_push_prohibited: true
+    accepted_checkpoint_policy: "BOUND_TO_EXACT_VERIFIED_CANDIDATE"
+
+  last_checkpoint:
+    timestamp: null
+    candidate_id: null
+    evidence_refs: []
+    state: "UNVERIFIED"
+
+  next_action:
+    objective_id: null
+    eligibility: "UNKNOWN"
+    blocker_class: null
+    description: "Bind project and direction."

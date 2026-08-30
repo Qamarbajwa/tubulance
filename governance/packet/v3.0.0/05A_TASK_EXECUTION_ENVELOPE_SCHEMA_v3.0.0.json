@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:universal-governance:task-envelope:3.0.0",
+  "title": "Task Execution Envelope v3.0.0",
+  "type": "object",
+  "required": ["task_execution_envelope"],
+  "properties": {
+    "task_execution_envelope": {
+      "type": "object",
+      "required": ["schema_version", "identity", "objective", "base_state", "eligibility", "classification", "roles_and_authority", "mutation_scope", "assurance_contract", "acceptance", "verification_plan", "recovery", "stop_conditions"],
+      "properties": {
+        "schema_version": {"const": "3.0.0"},
+        "identity": {"type": "object", "required": ["task_id", "project_id", "governance_version"]},
+        "direction": {"type": "object"},
+        "objective": {"type": "object", "required": ["exact_objective", "done_boundary"]},
+        "base_state": {"type": "object", "required": ["base_candidate_id", "dirty_state"]},
+        "eligibility": {
+          "type": "object",
+          "required": ["eligible"],
+          "properties": {"eligible": {"type": "boolean"}},
+          "additionalProperties": true
+        },
+        "classification": {
+          "type": "object",
+          "required": ["risk_tier", "action_class"],
+          "properties": {
+            "risk_tier": {"enum": ["T1", "T2", "T3", "T4", "T5"]},
+            "action_class": {"enum": ["A", "B", "C", "D", "E", "F"]}
+          },
+          "additionalProperties": true
+        },
+        "roles_and_authority": {"type": "object", "required": ["implementation_authority", "verification_authority", "release_eligibility_authority", "reserved_external_authority"]},
+        "mutation_scope": {"type": "object", "required": ["allowed", "forbidden"]},
+        "assurance_contract": {"type": "object", "required": ["intent", "invariants", "outputs"]},
+        "acceptance": {"type": "object", "required": ["hard_gates", "required_evidence"]},
+        "verification_plan": {"type": "object"},
+        "recovery": {"type": "object", "required": ["rollback_or_forward_recovery"]},
+        "stop_conditions": {"type": "array", "items": {"type": "string"}},
+        "completion_record": {"type": "object"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
