@@ -1,0 +1,48 @@
+{
+  "schema_version": "3.0.0",
+  "evidence_id": "TP2-G5-A3-ACCEPTANCE",
+  "task_id": "TP2-G5-A3",
+  "capability_ids": ["TP2-G5-A3-GEOMETRIC-XI"],
+  "candidate_id": "GIT_SHA:04ccd736ac74c79baeef103d5707088378015ff4",
+  "candidate_identity_type": "GIT_SHA",
+  "strength": "E3",
+  "environment": "INTEGRATED_LOCAL",
+  "environment_detail": "Committed A3 candidate with v3 envelope, governance state, MRC registries, research memory, and verification suite",
+  "independence": "IND1",
+  "producer": {
+    "id": "codex-primary-runtime",
+    "role": "VERIFIER",
+    "tool_or_environment": "Local Git, PyYAML, jsonschema, pytest"
+  },
+  "action": "Validate the completed A3 package and record bounded technical acceptance",
+  "command_or_invocation": "python -m pytest -q tests/test_tp2_g5_a3_suite.py tests/test_tp2_g5_a3_verifier_suite.py tests/test_governance_v3_migration.py",
+  "exit_code": 0,
+  "result": "PASS",
+  "claim_supported": [
+    "TP2-G5-A3 is complete within the v3 envelope",
+    "The exact A3 identities and bounded bridge classifications are recorded",
+    "Clay Statement B remains UNRESOLVED",
+    "TP2-G5-A4 was not executed",
+    "No owner technical certification was recorded as a prerequisite"
+  ],
+  "claim_not_supported": [
+    "Product release eligibility",
+    "Deployment authorization",
+    "Global regularity, BKM closure, unconditional coercivity, field novelty, or community acceptance"
+  ],
+  "hard_gate_ids": ["GATE-A3-01", "GATE-A3-02", "GATE-A3-07", "GATE-A3-08"],
+  "kpi_ids": ["KPI-A3-001"],
+  "artifact_refs": [
+    "governance/task_envelopes/TP2-G5-A3.yaml",
+    "GOVERNANCE_STATE.yaml",
+    "TP2_G5_A3_ACCEPTANCE_DECISION.md",
+    "TP2_G5_A3_INDEPENDENT_VERIFICATION.md"
+  ],
+  "negative_evidence_refs": [
+    "TP2_G5_A3_GEOMETRIC_NO_GO_RESULTS.md",
+    "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
+  ],
+  "timestamp": "2026-08-30T00:00:00Z",
+  "receipt_hash": null,
+  "notes": "Bounded technical acceptance only. The final candidate is local; remote SHA remains unverified and remote push is not an A3 dependency."
+}

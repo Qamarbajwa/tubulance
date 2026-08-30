@@ -9,8 +9,8 @@ governance_state:
     adoption_mode: "MIGRATION_GOVERNED"
     repository_or_workspace: "D:/Comfy UI/tubulance"
     branch_or_state_channel: "main"
-    current_candidate_id: "GIT_SHA:cad737cd1bfda3098e0db331dcb329c6e21f39c1"
-    verified_checkpoint_id: "GIT_SHA:cad737cd1bfda3098e0db331dcb329c6e21f39c1"
+    current_candidate_id: "GIT_SHA:04ccd736ac74c79baeef103d5707088378015ff4"
+    verified_checkpoint_id: "GIT_SHA:04ccd736ac74c79baeef103d5707088378015ff4"
     dirty_state: "DIRTY_KNOWN"
     active_environment: "LOCAL_WINDOWS_WORKSPACE"
 
@@ -27,7 +27,7 @@ governance_state:
       state: "PRESERVED_AND_V3_CROSS_REFERENCED"
     active_objective_id: "TP2-G5-A3"
     clay_statement_b_status: "UNRESOLVED"
-    scientific_program_status: "TP2-G5-A3_EXECUTION_ELIGIBLE"
+    scientific_program_status: "TP2-G5-A3_ACCEPTED_WITH_LIMITATIONS"
 
   standing_mandate:
     active: true
@@ -111,7 +111,7 @@ governance_state:
 
   release:
     current_state: "NOT_RELEASE_ELIGIBLE"
-    exact_candidate_id: "GIT_SHA:cad737cd1bfda3098e0db331dcb329c6e21f39c1"
+    exact_candidate_id: "GIT_SHA:04ccd736ac74c79baeef103d5707088378015ff4"
     hard_gates_state: "NOT_EVALUATED_FOR_PRODUCT_RELEASE"
     release_eligible: false
     deployment_authorized: false
@@ -158,14 +158,15 @@ governance_state:
 
   last_checkpoint:
     timestamp: "2026-08-30T00:00:00Z"
-    candidate_id: "GIT_SHA:f49f9ad63a90e716b7e22090a1f25663461f0a7c"
+    candidate_id: "GIT_SHA:04ccd736ac74c79baeef103d5707088378015ff4"
     evidence_refs:
-      - "TP2_G5_A2_GIT_CHECKPOINT_RECEIPT.md"
+      - "governance/evidence/TP2-G5-A3-ACCEPTANCE.json"
+      - "TP2_G5_A3_ACCEPTANCE_DECISION.md"
       - "GOVERNANCE_MIGRATION_V2_10_1_TO_V3_0_0.md"
-    state: "ACCEPTED_WITH_DECLARED_LIMITATIONS"
+    state: "TP2-G5-A3_ACCEPTED_WITH_DECLARED_LIMITATIONS"
 
   next_action:
     objective_id: "TP2-G5-A3"
     eligibility: "PASS"
     blocker_class: null
-    description: "Execute TP2-G5-A3 within the validated v3 envelope; stop after A3 and do not execute A4."
+    description: "TP2-G5-A3 complete within the validated v3 envelope; stop here. TP2-G5-A4 was not executed and requires a separate envelope."

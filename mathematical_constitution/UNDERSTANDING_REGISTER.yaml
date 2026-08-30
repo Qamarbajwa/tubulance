@@ -293,7 +293,10 @@ understanding_packages:
     name: "TP2_G5_A3_AMPLITUDE_DIRECTION_IDENTITY"
     level_1_mechanism: "Differentiating omega=q xi separates amplitude and direction because xi is unit length."
     level_2_architecture: "J_omega=xi(grad q)^T+qJ_xi and the cross term vanishes columnwise."
-    level_3_rigorous_q_and_a: "Valid on q>0 under Convention M; zero-vorticity states require a separate domain treatment."
+    level_3_rigorous_q_and_a:
+      why_it_works: "Valid on q>0 under Convention M; the cross term vanishes by the unit-vector constraint."
+      what_can_fail: "Zero-vorticity states require a separate domain treatment."
+      essential_assumptions: ["Convention M", "q>0", "classical differentiability"]
     status: "U3_COMPLETE_PACKAGE"
 
   - package_id: "UND-021"
@@ -301,7 +304,10 @@ understanding_packages:
     name: "TP2_G5_A3_DEFORMATION_METRIC_SPLIT"
     level_1_mechanism: "D maps the direction and its derivatives through a non-orthogonal metric."
     level_2_architecture: "Projection along n_D produces M_D and the orthogonal remainder produces C_D."
-    level_3_rigorous_q_and_a: "Beta is a deformation coupling, not an ordinary derivative; exact split requires |Dxi|>0."
+    level_3_rigorous_q_and_a:
+      why_it_works: "Projection along n_D gives M_D and the orthogonal remainder gives C_D."
+      what_can_fail: "Beta is not an ordinary derivative; exact split requires |Dxi|>0."
+      essential_assumptions: ["q>0", "|Dxi|>0", "D invertible where used"]
     status: "U3_COMPLETE_PACKAGE"
 
   - package_id: "UND-022"
@@ -309,7 +315,10 @@ understanding_packages:
     name: "TP2_G5_A3_CONDITION_NUMBER_ENVELOPE"
     level_1_mechanism: "Singular values compare the deformed numerator and denominator."
     level_2_architecture: "The ratio is bounded by Cond(D)^2 and its reciprocal."
-    level_3_rigorous_q_and_a: "The estimate is conditional and cannot supply uniform control when Cond(D) is uncontrolled."
+    level_3_rigorous_q_and_a:
+      why_it_works: "Singular-value bounds apply to each numerator column and the denominator vector."
+      what_can_fail: "The estimate cannot supply uniform control when Cond(D) is uncontrolled."
+      essential_assumptions: ["D invertible", "omega != 0"]
     status: "U3_COMPLETE_PACKAGE"
 
   - package_id: "UND-023"
@@ -317,5 +326,8 @@ understanding_packages:
     name: "TP2_G5_A3_GEOMETRIC_BRIDGE_LIMITS"
     level_1_mechanism: "Eulerian geometric criteria and Lagrangian deformation-weighted observables are different objects."
     level_2_architecture: "Any bridge must specify measure, metric, domain, and derivative-order hypotheses."
-    level_3_rigorous_q_and_a: "No audited source yields a direct Xi or E_mu[Xi] bound; Clay Statement B remains unresolved."
+    level_3_rigorous_q_and_a:
+      why_it_works: "Audited source hypotheses control different geometric objects and measures."
+      what_can_fail: "No direct Xi or E_mu[Xi] bound follows; Clay Statement B remains unresolved."
+      essential_assumptions: ["Matched domain", "matched deformation metric", "matched measure", "non-circular derivative control"]
     status: "U3_COMPLETE_PACKAGE"

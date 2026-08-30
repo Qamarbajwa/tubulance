@@ -1,0 +1,45 @@
+{
+  "schema_version": "3.0.0",
+  "evidence_id": "TP2-G5-A3-IDENTITIES",
+  "task_id": "TP2-G5-A3",
+  "capability_ids": ["TP2-G5-A3-GEOMETRIC-XI"],
+  "candidate_id": "GIT_SHA:04ccd736ac74c79baeef103d5707088378015ff4",
+  "candidate_identity_type": "GIT_SHA",
+  "strength": "E3",
+  "environment": "ISOLATED",
+  "environment_detail": "Fresh local pytest process against the committed A3 geometry helper and tests",
+  "independence": "IND1",
+  "producer": {
+    "id": "tp2-g5-a3-fresh-context-verifier",
+    "role": "VERIFIER",
+    "tool_or_environment": "Python, NumPy, pytest"
+  },
+  "action": "Verify exact amplitude-direction, kappa, deformation-metric, beta, Gamma, and condition-number identities",
+  "command_or_invocation": "python -m pytest -q tests/test_tp2_g5_a3_suite.py",
+  "exit_code": 0,
+  "result": "PASS",
+  "claim_supported": [
+    "Convention-M amplitude-direction identity passes",
+    "kappa_omega decomposition passes",
+    "Xi=M_D+C_D and beta calibration pass",
+    "Gamma representation and condition-number envelope pass",
+    "zero-gradient and zero-vorticity domains remain distinct"
+  ],
+  "claim_not_supported": [
+    "A uniform condition-number bound",
+    "A global regularity theorem or BKM closure",
+    "An Eulerian identification of E_mu[Xi]"
+  ],
+  "hard_gate_ids": ["GATE-A3-03", "GATE-A3-04", "GATE-A3-05"],
+  "kpi_ids": [],
+  "artifact_refs": [
+    "TP2_G5_A3_AMPLITUDE_DIRECTION_DECOMPOSITION.md",
+    "TP2_G5_A3_DEFORMATION_METRIC_XI_GEOMETRY.md",
+    "TP2_G5_A3_CONDITION_NUMBER_AUDIT.md",
+    "tests/test_tp2_g5_a3_suite.py"
+  ],
+  "negative_evidence_refs": ["TP2_G5_A3_GEOMETRIC_NO_GO_RESULTS.md"],
+  "timestamp": "2026-08-30T00:00:00Z",
+  "receipt_hash": null,
+  "notes": "IND1 fresh-context verification; no external peer-review claim."
+}

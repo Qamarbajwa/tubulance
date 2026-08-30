@@ -18,6 +18,8 @@
 
 The A3 task is `TECHNICALLY_ACCEPTED_WITH_LIMITATIONS`.
 
+Final local candidate: `GIT_SHA:04ccd736ac74c79baeef103d5707088378015ff4`.
+
 Accepted as exact, bounded project results:
 
 - amplitude–direction factorization of `J_omega`;

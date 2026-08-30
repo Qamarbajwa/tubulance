@@ -322,12 +322,16 @@ task_execution_envelope:
     - "evidence contradicts a hard invariant"
 
   completion_record:
-    final_candidate_id: null
-    status: "NOT_STARTED"
-    evidence_receipts: []
-    technical_acceptance: "NOT_EVALUATED"
+    final_candidate_id: "GIT_SHA:04ccd736ac74c79baeef103d5707088378015ff4"
+    status: "COMPLETED_WITH_LIMITATIONS"
+    evidence_receipts:
+      - "governance/evidence/TP2-G5-A3-ELIGIBILITY.json"
+      - "governance/evidence/TP2-G5-A3-IDENTITIES.json"
+      - "governance/evidence/TP2-G5-A3-BRIDGE-AUDIT.json"
+      - "governance/evidence/TP2-G5-A3-ACCEPTANCE.json"
+    technical_acceptance: "TECHNICALLY_ACCEPTED_WITH_LIMITATIONS"
     release_eligibility_effect: "NONE"
     negative_evidence_refs:
       - "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
       - "TP2_G5_A2_NEGATIVE_EVIDENCE.md"
-    checkpoint_id: null
+    checkpoint_id: "TP2-G5-A3-LOCAL-04ccd736ac74c79baeef103d5707088378015ff4"

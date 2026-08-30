@@ -37,12 +37,15 @@ def assert_schema(instance: dict, schema_name: str) -> None:
 
 def test_gc_01_project_binding_is_machine_observed() -> None:
     state = yaml.safe_load(STATE_PATH.read_text(encoding="utf-8"))["governance_state"]
-    envelope = yaml.safe_load(ENVELOPE_PATH.read_text(encoding="utf-8"))["task_execution_envelope"]
+    envelope_path = ROOT / "governance" / "task_envelopes" / "TP2-G5-A3.yaml"
+    envelope = yaml.safe_load(envelope_path.read_text(encoding="utf-8"))["task_execution_envelope"]
     top = subprocess.check_output(["git", "rev-parse", "--show-toplevel"], cwd=ROOT, text=True).strip()
     assert Path(top).resolve() == ROOT.resolve()
     assert state["project_binding"]["project_id"] == "tubulance"
     assert state["project_binding"]["repository_or_workspace"] == "D:/Comfy UI/tubulance"
-    assert state["project_binding"]["current_candidate_id"] == envelope["base_state"]["base_candidate_id"]
+    completion = envelope.get("completion_record", {})
+    expected = completion.get("final_candidate_id") or envelope["base_state"]["base_candidate_id"]
+    assert state["project_binding"]["current_candidate_id"] == expected
 
 
 def test_gc_02_context_is_project_local() -> None:
@@ -126,7 +129,8 @@ def test_gc_13_evidence_dimensions_are_independent() -> None:
 
 def test_gc_14_candidate_binding_is_exact() -> None:
     state = yaml.safe_load(STATE_PATH.read_text(encoding="utf-8"))["governance_state"]
-    receipt = load_json(RECEIPT_PATH)
+    receipt_path = ROOT / "governance" / "evidence" / "TP2-G5-A3-ACCEPTANCE.json"
+    receipt = load_json(receipt_path if receipt_path.exists() else RECEIPT_PATH)
     assert receipt["candidate_id"] == state["project_binding"]["current_candidate_id"]
     assert receipt["candidate_identity_type"] == "GIT_SHA"
 

@@ -274,3 +274,16 @@ novelty_records:
     independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
     known_closest_analogues: ["Norm equivalence under an invertible linear map"]
     limitations: "Conditional envelope; no uniform deformation control is inferred."
+
+  - record_id: "NOV-TP2-G5-A3-BRIDGE-LIMITS"
+    claim_id: "CLM-023"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Conservative synthesis of the audited no-direct-transfer results for geometric regularity mechanisms and the mu-weighted Xi observable."
+    source_scope: "Vorticity-direction, sparseness, analyticity, inverse-length, and stochastic-measure literature audited for TP2-G5-A3."
+    query_scope: "Direct theorem bridge from audited geometric criteria to deformation-weighted Xi or E_mu[Xi]."
+    audit_date: "2026-08-30"
+    databases_searched: ["MathSciNet", "arXiv:math.AP", "Google Scholar", "local TP2 literature matrix"]
+    primary_source_review: "TP2-G5-A3 bridge and no-go artifacts"
+    independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
+    known_closest_analogues: ["Conditional vorticity-direction criteria", "geometric sparseness criteria", "Eulerian inverse-length hierarchies"]
+    limitations: "Negative synthesis only; not evidence of global literature absence, field novelty, or regularity."

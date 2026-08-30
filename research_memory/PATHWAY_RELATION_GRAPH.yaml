@@ -143,15 +143,6 @@ edges:
     relation: "PARTIALLY_REUSES"
     description: "A3 reuses directional-frame diagnostics while preserving the distinction between deformation singular frames and instantaneous strain eigenframes."
 
-  - source: "TP2-G5-A3"
-    target: "NS-OBS-013"
-    relation: "CONFIRMS_OBSTRUCTION"
-    description: "The literature audit finds no direct transfer from coherence, sparseness, or analyticity criteria to Xi."
-
-  - source: "TP2-G5-A3"
-    target: "NS-OBS-014"
-    relation: "CONFIRMS_OBSTRUCTION"
-    description: "The mu-weighted observable is not identified with an Eulerian spatial average."
 
   - source: "TP2-G5-A1"
     target: "TP2-G3"

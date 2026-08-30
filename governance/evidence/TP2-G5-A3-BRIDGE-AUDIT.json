@@ -1,0 +1,49 @@
+{
+  "schema_version": "3.0.0",
+  "evidence_id": "TP2-G5-A3-BRIDGE-AUDIT",
+  "task_id": "TP2-G5-A3",
+  "capability_ids": ["TP2-G5-A3-GEOMETRIC-XI"],
+  "candidate_id": "GIT_SHA:04ccd736ac74c79baeef103d5707088378015ff4",
+  "candidate_identity_type": "GIT_SHA",
+  "strength": "E3",
+  "environment": "EXTERNAL_SYSTEM",
+  "environment_detail": "Source-grounded audit of primary literature and publisher/arXiv records with local classification artifacts",
+  "independence": "IND1",
+  "producer": {
+    "id": "tp2-g5-a3-fresh-context-verifier",
+    "role": "VERIFIER",
+    "tool_or_environment": "Primary-source literature retrieval and local audit"
+  },
+  "action": "Audit coherence, sparseness, analyticity, inverse-length, TH9-R, and Eulerian-enstrophy bridge proposals",
+  "command_or_invocation": "Source review recorded in TP2_G5_A3_*_BRIDGE*.md and TP2_G5_A3_TH9R_RESURRECTION_AUDIT.md",
+  "exit_code": 0,
+  "result": "PASS",
+  "claim_supported": [
+    "Audited direction criteria are conditional and have no direct transfer to Xi",
+    "Sparseness and analyticity criteria are not automatic Xi controls",
+    "E_mu[Xi] remains distinct from Eulerian spatial averages",
+    "TH9-R is partially reused for diagnostics and not reactivated as a proof pathway"
+  ],
+  "claim_not_supported": [
+    "Global absence of all possible literature bridges",
+    "A regularity conclusion for Navier-Stokes",
+    "External novelty or community acceptance"
+  ],
+  "hard_gate_ids": ["GATE-A3-06"],
+  "kpi_ids": [],
+  "artifact_refs": [
+    "TP2_G5_A3_VORTICITY_DIRECTION_LITERATURE_BRIDGE.md",
+    "TP2_G5_A3_SPARSENESS_ANALYTICITY_BRIDGE.md",
+    "TP2_G5_A3_INVERSE_LENGTH_SCALE_COMPARISON.md",
+    "TP2_G5_A3_ENSTROPHY_DISSIPATION_BRIDGE.md",
+    "TP2_G5_A3_TH9R_RESURRECTION_AUDIT.md"
+  ],
+  "negative_evidence_refs": [
+    "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml",
+    "NS-OBS-013",
+    "NS-OBS-014"
+  ],
+  "timestamp": "2026-08-30T00:00:00Z",
+  "receipt_hash": null,
+  "notes": "External sources support classification of their own hypotheses; they do not directly prove or disprove the project Xi bridge."
+}

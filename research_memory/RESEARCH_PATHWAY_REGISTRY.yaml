@@ -673,7 +673,7 @@ pathways:
     mathematical_form: "J_omega=xi(grad q)^T+qJ_xi; kappa^2=|grad log q|^2+||J_xi||^2; Xi=M_D+C_D; Gamma=D^T D; Cond(D)^(-2)kappa^2<=Xi<=Cond(D)^2kappa^2."
     scaling: "kappa_omega and Xi scale as lambda^2 under the NS parabolic convention; the condition number is dimensionless."
     geometry: "Amplitude-direction decomposition, deformation metric, longitudinal beta coupling, transverse directional remainder, and singular-value envelope."
-    trajectory_dependence: "LAGRANGIAN_DEFORMATION_WEIGHTED"
+    trajectory_dependence: "LAGRANGIAN_STOCHASTIC"
     stochastic_component: true
     assumptions: ["Classical smooth solution", "Convention M", "q>0", "D invertible where condition bounds are used", "|Dxi|>0 for the Xi split"]
     domain: "T^3 or decaying R^3 on the declared smooth nonzero domain; no wall local-time extension."
