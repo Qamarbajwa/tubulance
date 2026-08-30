@@ -126,7 +126,7 @@ governance_state:
   blockers:
     - class: "EXTERNAL"
       state: "BLOCKED"
-      detail: "Authorized Git push is blocked by external-destination safety review; remote SHA remains unverified."
+      detail: "Authorized Git push remains blocked by external-destination safety review; the post-acceptance normal push also could not connect to github.com:443. Remote SHA remains unverified."
     - class: "EVIDENCE"
       state: "NOT_VERIFIED"
       detail: "TP2-G5-A3 exact v3 objective/envelope has not been established; migration does not execute A3."
@@ -156,6 +156,7 @@ governance_state:
     accepted_scientific_receipt: "f49f9ad63a90e716b7e22090a1f25663461f0a7c"
     remote_distribution_state: "REMOTE_PUSH_BLOCKED_EXTERNAL_DESTINATION_REVIEW"
     remote_sha_state: "REMOTE_SHA_UNVERIFIED"
+    last_push_attempt: "BLOCKED_BEFORE_REMOTE_UPDATE: github.com:443 unreachable"
     unrelated_dirty_work_preserved: true
 
   last_checkpoint:

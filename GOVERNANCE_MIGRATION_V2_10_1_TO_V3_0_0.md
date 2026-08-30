@@ -86,7 +86,8 @@ See `governance/authority_compatibility_v3.0.0.md` for the full mapping table.
 - Any promotion: `NO`.
 - Remote blocker class: `EXTERNAL`.
 - Remote state: `REMOTE_PUSH_BLOCKED_EXTERNAL_DESTINATION_REVIEW` / `REMOTE_SHA_UNVERIFIED`.
-- No push bypass or force-push was used.
+- Post-acceptance normal push attempt: `BLOCKED_BEFORE_REMOTE_UPDATE`; Git reported `unable to access 'https://github.com/Qamarbajwa/tubulance.git/': Failed to connect to github.com:443`.
+- No push bypass or force-push was used; no remote SHA evidence was obtained.
 
 ## Conformance results
 
