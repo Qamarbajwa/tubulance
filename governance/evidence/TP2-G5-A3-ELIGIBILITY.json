@@ -1,0 +1,46 @@
+{
+  "schema_version": "3.0.0",
+  "evidence_id": "TP2-G5-A3-ELIGIBILITY",
+  "task_id": "TP2-G5-A3",
+  "capability_ids": ["TP2-G5-A3-GEOMETRIC-XI"],
+  "candidate_id": "GIT_SHA:cad737cd1bfda3098e0db331dcb329c6e21f39c1",
+  "candidate_identity_type": "GIT_SHA",
+  "strength": "E3",
+  "environment": "INTEGRATED_LOCAL",
+  "environment_detail": "Machine-observed local repository HEAD, v3 state, A2 records, and validated A3 envelope",
+  "independence": "IND1",
+  "producer": {
+    "id": "tp2-g5-a3-fresh-context-verifier",
+    "role": "VERIFIER",
+    "tool_or_environment": "local Git, PyYAML, jsonschema, and pytest"
+  },
+  "action": "Verify A3 eligibility gates and validate the exact v3 envelope before scientific execution",
+  "command_or_invocation": "python schema validation for GOVERNANCE_STATE.yaml and TP2-G5-A3.yaml; python -m pytest -q tests/test_governance_v3_migration.py",
+  "exit_code": 0,
+  "result": "PASS",
+  "claim_supported": [
+    "The repository is D:/Comfy UI/tubulance on main at base HEAD cad737cd1bfda3098e0db331dcb329c6e21f39c1",
+    "A3 dependencies, technical inputs, intent trace, architecture, standing mandate, candidate state, risk ceiling, and reserved-authority gates pass",
+    "The TP2-G5-A3 v3 envelope validates against the v3 task-envelope schema",
+    "Remote distribution is not required for local A3 mathematical analysis"
+  ],
+  "claim_not_supported": [
+    "Any A3 mathematical identity or regularity conclusion",
+    "Remote replication or remote SHA verification",
+    "Global regularity, BKM closure, unconditional coercivity, novelty, or community acceptance"
+  ],
+  "hard_gate_ids": ["GATE-A3-01", "GATE-A3-02"],
+  "kpi_ids": [],
+  "artifact_refs": [
+    "governance/task_envelopes/TP2-G5-A3.yaml",
+    "GOVERNANCE_STATE.yaml",
+    "TP2_G5_A2_ACCEPTANCE_DECISION.md"
+  ],
+  "negative_evidence_refs": [
+    "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml",
+    "TP2_G5_A2_NEGATIVE_EVIDENCE.md"
+  ],
+  "timestamp": "2026-08-30T00:00:00Z",
+  "receipt_hash": null,
+  "notes": "Eligibility evidence is bound to the pre-A3 Git HEAD. Subsequent A3 worktree changes require final-candidate re-verification before acceptance. Independence is IND1; no IND2/IND3 claim is made."
+}

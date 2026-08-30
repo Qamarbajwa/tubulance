@@ -136,6 +136,16 @@
   - **TP2-G4-A5-R1**: `PROJECT_CANONICAL_WITH_CORRECTIONS`. Reclassified CLM-014 as `PROJECT_SYNTHESIS` / `VERIFIED_SYNTHESIS`, corrected significance to `S3_POTENTIAL_FIELD_SIGNIFICANCE`, refined Barrier 5 (`NS-OBS-011`) to `OPEN_STRUCTURAL_OBSTRUCTION` (`DIRECT_EVOLUTION_ROUTE_CIRCULAR`), qualified Barrier 1 domain as `SCALING_CLASS_NO_GO`, and ratified the surviving $\Xi$ rate identity as `EXACT_STRUCTURAL_IDENTITY`. Clay Statement B on $\mathbb{T}^3$ remains `UNRESOLVED`. 158/158 tests passing across 21 test files.
 - **NEXT_ACTION**: `TP2-G5 — SCALE-CRITICAL RELATIVE QV CLOSURE PROGRAM`.
 
+### O. TP2-G5-A3 Accepted State (2026-08-30)
+
+- The v3.0.0 Task Execution Envelope for `TP2-G5-A3` was validated against machine-observed candidate `GIT_SHA:cad737cd1bfda3098e0db331dcb329c6e21f39c1`, with known dirty state preserved and no remote dependency.
+- On `q=|omega|>0`, Convention M gives `J_omega=xi(grad q)^T+qJ_xi` and `kappa_omega^2=|grad log q|^2+||J_xi||_F^2`.
+- On the stated nonzero domain, `Xi=M_D+C_D`, with `beta_j=(Dxi dot Dpartial_jxi)/|Dxi|^2`; beta is a deformation-metric coupling and is not an ordinary spatial derivative.
+- With `Gamma=D^T D`, `Xi=tr(Gamma G G^T)/(q^2 xi^T Gamma xi)`, and the conditional singular-value envelope is `Cond(D)^(-2)kappa_omega^2 <= Xi <= Cond(D)^2kappa_omega^2`.
+- Audited coherence, sparseness, analyticity, inverse-length, and Eulerian enstrophy mechanisms are classified `CONDITIONAL / NO_DIRECT_TRANSFER` to `Xi` or `E_mu[Xi]` without additional non-circular hypotheses.
+- `TH9-R` is `PARTIALLY_REUSED` for frame/orientation diagnostics only. `E_mu[Xi]` remains distinct from Eulerian spatial averages. `Clay Statement B = UNRESOLVED`.
+- `TP2-G5-A4` was not executed.
+
 ### O. TP2-G5-A0 Accepted State (2026-08-29)
 
 ### P. TP2-G5-A1 Accepted State (2026-08-30)

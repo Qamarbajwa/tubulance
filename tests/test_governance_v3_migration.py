@@ -221,8 +221,8 @@ def test_gc_28_governance_review_is_declared() -> None:
 def test_gc_29_next_step_is_not_ceremonial_owner_approval() -> None:
     state = yaml.safe_load(STATE_PATH.read_text(encoding="utf-8"))["governance_state"]
     assert state["next_action"]["objective_id"] == "TP2-G5-A3"
-    assert state["next_action"]["blocker_class"] == "EVIDENCE"
-    assert "new v3 Task Execution Envelope" in state["next_action"]["description"]
+    assert state["next_action"]["blocker_class"] is None
+    assert "validated v3 envelope" in state["next_action"]["description"]
 
 
 def test_gc_30_truthful_release_reporting() -> None:

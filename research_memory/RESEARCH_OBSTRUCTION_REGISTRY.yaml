@@ -103,3 +103,30 @@ obstructions:
     affected_pathways: ["TP2-G4", "TP2-G5", "TP2-G5-A1", "TP2-G5-A2", "REP-SYNTHESIS1"]
     mathematical_core: "A pathwise lower or upper control of Xi obtained from integral ||S||_infinity or equivalent continuation norms is circular for the Clay target."
     known_bypasses_or_relaxations: ["Nonlocal pressure-Hessian constraints", "Biot-Savart and commutator cancellation", "Geometric sparseness/analyticity", "Weighted or integrated stochastic cancellation"]
+
+  - obstruction_id: "NS-OBS-012"
+    name: "DEFORMATION_METRIC_DERIVATIVE_ORDER_ESCALATION"
+    description: "The exact Xi split is pointwise, but evolution of its terms differentiates D, xi, and higher spatial derivatives; A2 drift data do not provide a scalar Xi closure."
+    first_encountered_in: "TP2-G5-A3"
+    affected_pathways: ["TP2-G5", "TP2-G5-A2", "TP2-G5-A3"]
+    mathematical_core: "D_Xi contains higher-order deformation and vorticity-gradient information not determined by Xi, M_D, or C_D alone."
+    known_bypasses_or_relaxations: ["Full-coefficient integrated identities; pressure or geometric flux with separately proved bounds"]
+    status: "OPEN_STRUCTURAL_OBSTRUCTION"
+
+  - obstruction_id: "NS-OBS-013"
+    name: "GEOMETRIC_CRITERIA_NO_DIRECT_XI_TRANSFER"
+    description: "Direction coherence, sparseness, and analyticity criteria have hypotheses and geometric objects that do not automatically control deformation-weighted Xi."
+    first_encountered_in: "TP2-G5-A3"
+    affected_pathways: ["TH9-R", "TP2-G5-A3", "REP-SYNTHESIS1"]
+    mathematical_core: "A matched bridge must control the deformation metric, derivative order, domain, and measure; analogy is not implication."
+    known_bypasses_or_relaxations: ["A new theorem with explicit deformation and measure hypotheses"]
+    status: "ACTIVE_BRIDGE_OBSTRUCTION"
+
+  - obstruction_id: "NS-OBS-014"
+    name: "MU_WEIGHTING_EULERIAN_NONIDENTIFICATION"
+    description: "The Lagrangian Cauchy-energy weighted measure mu is not the Eulerian spatial measure by definition, so E_mu[Xi] cannot be replaced by an Eulerian average without a measure-identification result."
+    first_encountered_in: "TP2-G5-A3"
+    affected_pathways: ["TP2-G5-A1", "TP2-G5-A2", "TP2-G5-A3"]
+    mathematical_core: "The density rho and its evolution remain part of E_mu; changing measure introduces a separate Jacobian/support/integrability obligation."
+    known_bypasses_or_relaxations: ["A proved change-of-measure theorem for the stopped stochastic flow"]
+    status: "OPEN_MEASURE_OBSTRUCTION"

@@ -661,3 +661,36 @@ pathways:
     reopen_conditions: ["Separate authorization for TP2-G5-A3 from accepted A2."]
     similarity_tags: ["xi_drift", "square_completion", "ito_compensation", "riccati", "pressure_indirect", "weighted_nonclosure"]
     last_re_evaluated: "2026-08-30"
+
+  - pathway_id: "TP2-G5-A3"
+    title: "Amplitude-Direction and Deformation-Metric Geometry of Xi"
+    parent_pathways: ["TP2-G5", "TP2-G5-A2"]
+    descendant_pathways: []
+    starting_thesis: "The accepted Xi observable may admit exact amplitude, direction, and deformation-metric decompositions that clarify which geometric regularity mechanisms are relevant and which do not transfer."
+    scientific_question: "Which pointwise identities, condition-number envelopes, and literature bridges survive for Xi, beta, M_D, C_D, and E_mu[Xi]?"
+    intended_bridge: "Separate exact geometry from conditional comparison and falsify unproved transfers from coherence, sparseness, analyticity, and inverse-length theory."
+    core_objects: ["omega", "q", "xi", "J_omega", "kappa_omega", "D", "Gamma", "Xi", "M_D", "C_D", "beta", "mu"]
+    mathematical_form: "J_omega=xi(grad q)^T+qJ_xi; kappa^2=|grad log q|^2+||J_xi||^2; Xi=M_D+C_D; Gamma=D^T D; Cond(D)^(-2)kappa^2<=Xi<=Cond(D)^2kappa^2."
+    scaling: "kappa_omega and Xi scale as lambda^2 under the NS parabolic convention; the condition number is dimensionless."
+    geometry: "Amplitude-direction decomposition, deformation metric, longitudinal beta coupling, transverse directional remainder, and singular-value envelope."
+    trajectory_dependence: "LAGRANGIAN_DEFORMATION_WEIGHTED"
+    stochastic_component: true
+    assumptions: ["Classical smooth solution", "Convention M", "q>0", "D invertible where condition bounds are used", "|Dxi|>0 for the Xi split"]
+    domain: "T^3 or decaying R^3 on the declared smooth nonzero domain; no wall local-time extension."
+    regularity_class: "Classical smooth solutions before any candidate singular time."
+    expected_outcome: "Exact decompositions plus conservative bridge/no-go classification."
+    actual_outcome: "Exact identities accepted; condition envelope conditional; audited geometric literature has no direct Xi bridge; Clay Statement B remains unresolved."
+    tests_attempted: ["tests/test_tp2_g5_a3_suite.py", "tests/test_tp2_g5_a3_verifier_suite.py"]
+    evidence_refs: ["TP2_G5_A3_AMPLITUDE_DIRECTION_DECOMPOSITION.md", "TP2_G5_A3_DEFORMATION_METRIC_XI_GEOMETRY.md", "TP2_G5_A3_CONDITION_NUMBER_AUDIT.md", "TP2_G5_A3_ACCEPTANCE_DECISION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "A3 bounded geometry and bridge audit completed; A4 explicitly not executed."
+    failure_mechanism: "No algebraic failure; no non-circular regularity bridge or expectation closure was found."
+    what_was_falsified: ["beta is an ordinary spatial derivative", "E_mu[Xi] is an Eulerian spatial average", "known direction/coherence criteria automatically bound Xi", "condition-number envelope supplies uniform control without metric bounds"]
+    what_was_not_falsified: ["Exact Xi=M_D+C_D split", "Potential integrated or pressure-mediated bridges", "Joint-jet realizability question"]
+    surviving_results: ["Amplitude-direction identity", "Metric split", "Gamma representation", "Conditional condition-number envelope", "Conservative no-direct-transfer classifications"]
+    negative_results: ["No exact mu-to-Eulerian enstrophy identity", "No direct literature theorem for Xi", "No A3 evolution closure from A2 drift alone"]
+    open_questions: ["Can the full stochastic coefficient fields yield non-circular control of E_mu[Xi]?", "Which joint jets (D, omega, J_omega) are dynamically realizable?", "Can pressure or geometric flux produce a measure-identification theorem?"]
+    obstruction_ids: ["NS-OBS-004", "NS-OBS-005", "NS-OBS-006", "NS-OBS-007", "NS-OBS-011", "NS-OBS-012", "NS-OBS-013", "NS-OBS-014"]
+    reopen_conditions: ["Separate authorization and a fresh v3 envelope for any successor objective, including A4."]
+    similarity_tags: ["amplitude_direction", "deformation_metric", "xi_split", "condition_number", "vorticity_direction", "sparseness", "analyticity", "mu_weighting", "negative_bridge"]
+    last_re_evaluated: "2026-08-30"

@@ -235,3 +235,42 @@ novelty_records:
     independent_novelty_reviewer: "Codex same-model fresh-context fallback; LOW independence"
     known_closest_analogues: ["Ito formula for correlated semimartingale quotients"]
     limitations: "Internal N2 only; exact algebra does not imply a regularity theorem."
+
+  - record_id: "NOV-TP2-G5-A3-AMPLITUDE"
+    claim_id: "CLM-020"
+    novelty_tier: "N1_PROJECT_REFORMULATION"
+    justification: "Direct amplitude-direction product decomposition and unit-vector cross-term cancellation."
+    source_scope: "Elementary differential geometry and project Convention M."
+    query_scope: "Vorticity amplitude-direction gradient identity."
+    audit_date: "2026-08-30"
+    databases_searched: ["local TP2 literature matrix", "project primary-source reports"]
+    primary_source_review: "TP2-G5-A3 amplitude-direction artifact"
+    independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
+    known_closest_analogues: ["Product rule for omega=q xi", "unit-vector derivative identity"]
+    limitations: "Project reformulation; no field-novelty claim."
+
+  - record_id: "NOV-TP2-G5-A3-XI-SPLIT"
+    claim_id: "CLM-021"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Exact deformation-metric longitudinal/transverse split of Xi with beta coupling."
+    source_scope: "Project TP2-G5-A3 derivation and audited geometric regularity literature."
+    query_scope: "Deformation-weighted vorticity-gradient density metric decomposition."
+    audit_date: "2026-08-30"
+    databases_searched: ["MathSciNet", "arXiv:math.AP", "Google Scholar", "local TP2 literature matrix"]
+    primary_source_review: "TP2-G5-A3 geometry artifact"
+    independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
+    known_closest_analogues: ["Metric pullback estimates", "directional vorticity geometry"]
+    limitations: "N2 internal only; exact identity does not imply regularity."
+
+  - record_id: "NOV-TP2-G5-A3-ENVELOPE"
+    claim_id: "CLM-022"
+    novelty_tier: "N1_PROJECT_REFORMULATION"
+    justification: "Singular-value condition-number comparison between Xi and kappa_omega^2."
+    source_scope: "Finite-dimensional singular-value inequalities."
+    query_scope: "Deformation condition-number envelope for relative gradient density."
+    audit_date: "2026-08-30"
+    databases_searched: ["local TP2 literature matrix"]
+    primary_source_review: "TP2-G5-A3 condition-number audit"
+    independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
+    known_closest_analogues: ["Norm equivalence under an invertible linear map"]
+    limitations: "Conditional envelope; no uniform deformation control is inferred."

@@ -11,6 +11,12 @@
 | Milestone | Title | Status | Primary Output / Result |
 |---|---|---|---|
 | **TP2-G1** | Forward/Backward Gradient Conventions | `ACCEPTED_CANONICAL` | Frozen Convention M $[J_f]_{ij} = \partial_j f_i$. |
+
+## TP2-G5-A3 Bounded Checkpoint (2026-08-30)
+
+`TP2-G5-A3` is `ACCEPTED_CANONICAL_WITH_LIMITATIONS` within the validated v3.0.0 envelope. The exact amplitude/direction identities, deformation-metric split, Gamma form, and conditional condition-number envelope are recorded and tested. Literature bridges are conservative no-direct-transfer results; `TH9-R` is partially reused for diagnostics only. `E_mu[Xi]` remains distinct from Eulerian spatial averages, and `Clay Statement B` remains `UNRESOLVED`.
+
+`TP2-G5-A4` is explicitly not executed. Any successor work requires a new candidate-bound envelope and eligibility check.
 | **TP2-G2** | Stochastic Lagrangian Cauchy Invariants | `ACCEPTED_CANONICAL` | Martingale representation $Z_s = D_s \omega(A_s)$. |
 | **TP2-G1R** | Gradient Convention Reconciliation | `ACCEPTED_CANONICAL` | Resolved transpose discrepancy $D = (\nabla_x A)^{-1}$. |
 | **TP2-G3** | Stochastic Cauchy Covariance Evolution | `ACCEPTED_CANONICAL_WITH_LIMITATIONS` | Covariance tensor $C_s$, trace variance $V_s$, strict $Q_s > 0$. |

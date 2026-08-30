@@ -1,0 +1,333 @@
+task_execution_envelope:
+  schema_version: "3.0.0"
+
+  identity:
+    task_id: "TP2-G5-A3"
+    project_id: "tubulance"
+    project_name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
+    governance_version: "3.0.0"
+    adoption_mode: "MIGRATION_GOVERNED"
+
+  direction:
+    intent_refs:
+      - "PROJECT_INTENT.md: rigorous AI-assisted investigation of periodic 3D Navier-Stokes"
+      - "PROJECT_INTENT.md: strict non-overclaiming, reproducibility, and negative-evidence preservation"
+      - "TP2_G5_A2_ACCEPTANCE_DECISION.md: Xi drift factorization accepted with limitations"
+    roadmap_objective: "TP2-G5-A3"
+    owner_non_goals:
+      - "Global regularity proof"
+      - "BKM closure"
+      - "Unconditional coercivity"
+      - "Novelty certification or community acceptance"
+      - "Execution of TP2-G5-A4"
+    owner_reserved_boundaries:
+      - "OWNER_INTENT_AUTHORITY controls research scope and non-goals"
+      - "BUSINESS_POLICY_AUTHORITY controls material spend or exposure"
+      - "LEGAL_COMPLIANCE_AUTHORITY remains reserved where applicable"
+      - "DEPLOYMENT_AUTHORITY remains reserved for external/public deployment"
+
+  objective:
+    exact_objective: "Determine whether Xi = ||D J_omega||_F^2 / |D omega|^2 admits exact amplitude/direction/deformation-metric geometric decompositions and whether geometric Navier-Stokes regularity mechanisms provide a rigorous bridge to Xi or E_mu[Xi], with adversarial calibration and conservative no-go classification."
+    rationale: "TP2-G5-A2 established the exact Xi drift balance but not a coercive closure. A3 tests whether geometric structure adds a non-circular bridge."
+    done_boundary: "All specified exact identities and counterexamples are independently checked; literature bridges are classified; MRC and research-memory updates are evidence-supported; v3 receipts, review, and acceptance are recorded; no A4 execution or global regularity claim occurs."
+
+  base_state:
+    repository_or_workspace: "D:/Comfy UI/tubulance"
+    branch_or_state_channel: "main"
+    base_candidate_id: "GIT_SHA:cad737cd1bfda3098e0db331dcb329c6e21f39c1"
+    dirty_state: "DIRTY_KNOWN"
+    preserved_unrelated_work:
+      - "Exact porcelain-v1 baseline paths are enumerated in governance/migrations/TP2_G5_A3_BASELINE_DIRTY_PATHS.txt"
+      - "The baseline contains 873 pre-existing tracked/untracked entries; none may be staged, modified, cleaned, reset, stashed, or absorbed by A3"
+      - "Historical governanace/ directory, v2.10.1 files, MRC records, and A2 artifacts remain protected"
+    latest_local_accepted_governance_state: "cad737cd1bfda3098e0db331dcb329c6e21f39c1"
+    latest_local_accepted_scientific_state: "08719e7078feaa7939f893c33dcfdc9c2a485c49"
+    remote_tracking_state: "REMOTE_PUSH_BLOCKED_EXTERNAL_DESTINATION_REVIEW / REMOTE_SHA_UNVERIFIED"
+
+  eligibility:
+    dependencies:
+      - id: "TP2-G5-A2"
+        state: "ACCEPTED"
+        evidence_ref: "TP2_G5_A2_ACCEPTANCE_DECISION.md"
+      - id: "A3-TECHNICAL-INPUTS"
+        state: "SATISFIED"
+        evidence_ref: "TP2_G5_A0_RESEARCH_CONTRACT.md; TP2_G5_A1_XI_QUOTIENT_SDE.md; TP2_G5_A2_UNDERSTANDING_GATE.md"
+      - id: "V3-MIGRATION"
+        state: "ACCEPTED"
+        evidence_ref: "GOVERNANCE_MIGRATION_V2_10_1_TO_V3_0_0.md"
+    technical_inputs_available: true
+    traceable_to_intent: true
+    architecture_permits: true
+    inside_standing_mandate: true
+    candidate_state_known: true
+    risk_inside_ceiling: true
+    blocking_invariant_present: false
+    reserved_authority_required_for_technical_mutation: false
+    governance_evidence_current_enough: true
+    mrc_active_and_consistent: true
+    remote_push_required_for_local_analysis: false
+    eligible: true
+    blocker_class: null
+    blocker_detail: null
+
+  classification:
+    risk_tier: "T3"
+    action_class: "B"
+    risk_reasons:
+      - "May alter canonical internal scientific claims and research direction"
+      - "Reversible internal mathematical research and assurance mutation"
+      - "No production, deployment, financial, legal, or public-exposure action"
+    active_modules:
+      - "CORE-PROJECT-BINDING"
+      - "CORE-AUTHORITY"
+      - "CORE-RISK"
+      - "CORE-DEPENDENCY"
+      - "CORE-EVIDENCE"
+      - "CORE-ASSURANCE"
+      - "CORE-TEST-INTEGRITY"
+      - "CORE-GIT-STATE"
+      - "AI-AUTONOMY"
+      - "RESEARCH-SCIENTIFIC"
+      - "ARTIFACT-DATA"
+    not_activated_material_modules:
+      - module: "FINANCIAL"
+        reason: "No money, billing, or spend decision is touched."
+      - module: "PRIVACY-DATA"
+        reason: "No personal or sensitive data processing is introduced."
+      - module: "AUTHZ-IDENTITY"
+        reason: "No identity or permission behavior is changed."
+      - module: "MOBILE"
+        reason: "No mobile system is in scope."
+      - module: "UI-UX"
+        reason: "No user interface is in scope."
+      - module: "RELEASE"
+        reason: "No release or publication action is attempted."
+
+  roles_and_authority:
+    orchestrator: "codex-primary-runtime"
+    writer:
+      id: "codex-primary-runtime"
+      qualified: true
+      risk_ceiling: "T3"
+    reviewer_or_verifier:
+      id: "tp2-g5-a3-fresh-context-verifier"
+      qualified: true
+      expected_independence: "IND1"
+    implementation_authority: "AUTONOMOUS_WITHIN_VALID_V3_ENVELOPE"
+    verification_authority: "CANDIDATE_BOUND_EVIDENCE_AND_DISTINCT_REVIEW_PATH"
+    release_eligibility_authority: "EVIDENCE_DERIVED_GATE"
+    reserved_external_authority:
+      required: false
+      type: "NONE"
+      trigger: null
+
+  mutation_scope:
+    allowed:
+      - "Create A3 mathematical analysis, bridge, no-go, understanding, review, acceptance, and evidence artifacts"
+      - "Create and update A3-scoped tests"
+      - "Update only relevant claim and research-memory registries supported by A3 evidence"
+      - "Update GOVERNANCE_STATE.yaml, ROADMAP.md, and this envelope completion record"
+      - "Create bounded local commits containing only A3-scoped paths"
+      - "Attempt one normal safe push after local acceptance"
+    forbidden:
+      - "Execute TP2-G5-A4"
+      - "Alter accepted A2 mathematics without an actual contradiction"
+      - "Claim global regularity, BKM closure, unconditional coercivity, or SOLVED"
+      - "Promote N2 absence to external novelty or community acceptance"
+      - "Equate finite-time deformation singular frames with instantaneous strain eigenframes"
+      - "Convert Hölder/increment assumptions into pointwise derivative control without proof"
+      - "Replace E_mu weighting with Eulerian spatial averaging without proof"
+      - "Stage, modify, clean, reset, stash, or absorb unrelated dirty paths"
+      - "Force-push, bypass external review, or use an unsafe alternate remote"
+    protected:
+      - "governanace/"
+      - "governance/packet/v3.0.0/"
+      - "mathematical_constitution/"
+      - "research_memory/"
+      - "TP2_G5_A0_*"
+      - "TP2_G5_A1_*"
+      - "TP2_G5_A2_*"
+      - "governance/migrations/TP2_G5_A3_BASELINE_DIRTY_PATHS.txt"
+      - "All paths listed in the baseline dirty-path manifest"
+    allowed_tools_actions:
+      - "Local read-only repository inspection"
+      - "Local Python/pytest and schema validation"
+      - "Authoritative literature retrieval for source-grounded bridge audit"
+      - "Apply scoped local file edits"
+      - "Normal local Git commit"
+    forbidden_tools_actions:
+      - "Force push or history rewrite"
+      - "Destructive cleanup"
+      - "Unverified external distribution"
+
+  assurance_contract:
+    capability_or_requirement_ids:
+      - "TP2-G5-A3-GEOMETRIC-XI"
+    intent: "Test exact geometric structure around Xi while preserving mathematical uncertainty and separating operational conformance from mathematical truth."
+    valid_inputs:
+      - "Exact A2 definitions Z=D omega, Y=D G, R=|Z|^2, N=||Y||_F^2, Xi=N/R"
+      - "Smooth region q=|omega|>0 and D invertible where required"
+      - "Candidate-bound v3 governance state and A2 dependency"
+    invalid_input_behavior:
+      - input_class: "q=0 or D xi=0 in a formula requiring division"
+        expected_behavior: "Exclude from domain, record zero-state taxonomy, and do not divide or use log Xi."
+      - input_class: "literature theorem with unmatched hypotheses"
+        expected_behavior: "Classify NO_DIRECT_TRANSFER or CONDITIONAL; do not transfer its conclusion."
+      - input_class: "candidate identity changes"
+        expected_behavior: "Mark affected evidence stale and reverify before acceptance."
+    preconditions:
+      - "A2 is accepted with limitations and no contradiction is presumed."
+      - "MRC v1.0.1 remains active."
+      - "Clay Statement B remains UNRESOLVED."
+    transformation_rules:
+      - "Use Convention M: [J_f]ij = partial_j f_i."
+      - "Derive amplitude/direction identities componentwise and independently twice for the deformation-weighted form."
+      - "Treat kinematic examples as kinematic unless exact Navier-Stokes realizability is proved."
+      - "Record exact, conditional, heuristic, complementary, or no-direct-transfer bridge classes."
+    invariants:
+      - id: "INV-A3-01"
+        statement: "Clay Statement B remains UNRESOLVED."
+        zero_tolerance: true
+      - id: "INV-A3-02"
+        statement: "Known geometric regularity theorems are not silently promoted into Xi theorems."
+        zero_tolerance: true
+      - id: "INV-A3-03"
+        statement: "No Holder/increment hypothesis is converted into pointwise derivative control without proof."
+        zero_tolerance: true
+      - id: "INV-A3-04"
+        statement: "Finite-time deformation singular frame is distinct from instantaneous strain eigenframe."
+        zero_tolerance: true
+      - id: "INV-A3-05"
+        statement: "Kinematic examples remain labeled KINEMATIC without exact Navier-Stokes realizability."
+        zero_tolerance: true
+      - id: "INV-A3-06"
+        statement: "N2 literature absence is not externally validated novelty."
+        zero_tolerance: true
+      - id: "INV-A3-07"
+        statement: "E_mu[Xi] is not replaced by an Eulerian spatial average without a proved relation."
+        zero_tolerance: true
+      - id: "INV-A3-08"
+        statement: "No circular BKM, Serrin, critical-strain, bounded-Cond(D), or analyticity assumption is represented as an a-priori Clay closure."
+        zero_tolerance: true
+    outputs:
+      - "Exact amplitude/direction and metric decompositions where verified"
+      - "Condition-number and inverse-length audits"
+      - "Literature bridge classifications and negative evidence"
+      - "Candidate-bound v3 evidence and independent verification"
+    postconditions:
+      - "Every promoted identity is classified as exact and domain-restricted."
+      - "Every non-transfer is recorded as limitation or negative evidence."
+      - "MRC truth, novelty, significance, and project status remain separate."
+      - "A4 is not executed."
+    failure_contracts:
+      - condition: "Any identity fails symbolic/numerical/adversarial verification"
+        expected_behavior: "Falsify or qualify the identity; do not accept the corresponding claim."
+      - condition: "Literature source unavailable or hypotheses cannot be matched"
+        expected_behavior: "Record NOT_VERIFIED or NO_DIRECT_TRANSFER, not a stronger bridge."
+    retry_idempotency_concurrency:
+      - "Use deterministic tests and stable artifact names; do not duplicate active state trees."
+      - "Run A3 mutations serially against the exact candidate."
+    persistence_restart_recovery:
+      - "Resume from the envelope, candidate-bound evidence, and last bounded checkpoint."
+      - "If a partial artifact is invalid, leave it explicitly NOT_VERIFIED or remove only the A3-created artifact after review."
+    security_authority:
+      - "No credentials, secrets, or external account changes are required."
+    performance_capacity:
+      - "Not applicable to analytical research artifacts."
+    required_real_environment:
+      - "Local Python/Git environment for reproducibility; literature sources remain external evidence, not deployment evidence."
+    intent_fidelity_review_required: true
+
+  acceptance:
+    hard_gates:
+      - id: "GATE-A3-01"
+        condition: "Envelope and v3 state are schema-valid and bound to the exact candidate."
+        required_state: "PASS"
+      - id: "GATE-A3-02"
+        condition: "A2 dependency and migration evidence are current or reverified."
+        required_state: "PASS"
+      - id: "GATE-A3-03"
+        condition: "Amplitude/direction and kappa identities pass independent tests on their stated domain."
+        required_state: "PASS"
+      - id: "GATE-A3-04"
+        condition: "Xi=M_D+C_D, beta, Gamma form, and condition-number bounds are verified or explicitly falsified/qualified."
+        required_state: "PASS"
+      - id: "GATE-A3-05"
+        condition: "Adversarial calibrations and zero-state taxonomy are recorded."
+        required_state: "PASS"
+      - id: "GATE-A3-06"
+        condition: "Literature bridges are source-grounded and conservatively classified."
+        required_state: "PASS"
+      - id: "GATE-A3-07"
+        condition: "Independent reviewer challenges identities, transfer, novelty, circularity, and candidate binding."
+        required_state: "PASS"
+      - id: "GATE-A3-08"
+        condition: "Clay Statement B remains UNRESOLVED and no global regularity claim is emitted."
+        required_state: "PASS"
+    kpis:
+      - id: "KPI-A3-001"
+        metric: "Required A3 artifact coverage"
+        threshold: "15 named artifacts plus scoped registry updates"
+        release_blocking: false
+    required_evidence:
+      minimum_strength: "E3"
+      required_environments:
+        - "STATIC"
+        - "ISOLATED"
+        - "INTEGRATED_LOCAL"
+        - "EXTERNAL_SYSTEM"
+      minimum_independence: "IND1"
+      candidate_bound: true
+
+  verification_plan:
+    static:
+      - "Check Convention M ordering, domain restrictions, and exact formula text."
+      - "Check source citations and bridge assumption tables."
+    unit:
+      - "Test amplitude/direction, kappa, metric split, beta, Gamma, and condition-number identities."
+    integration:
+      - "Validate exact-flow calibrations and A2 interface terms."
+    end_to_end:
+      - "Run A3 suite, verifier suite, governance migration suite, MRC suite, and research-memory suite."
+    negative_boundary:
+      - "Test zero-vorticity, zero-gradient, constant-direction, constant-magnitude, shear, Beltrami, and anisotropic kinematic cases."
+    failure_recovery:
+      - "Preserve failed implications and stale-evidence mutations as negative evidence."
+    security:
+      - "Confirm no secrets or external credentials are written."
+    performance:
+      - "Not applicable."
+    real_environment:
+      - "Use only local reproducibility and source-grounded literature evidence; no production claim."
+    adversarial:
+      - "Mutate tensor ordering, cross-term signs, beta interpretation, frame identity, candidate ID, independence, novelty, and mu-weighting claims."
+    independent_review:
+      - "Fresh-context verifier reviews the final A3 candidate and records IND1."
+
+  recovery:
+    rollback_or_forward_recovery: "Use the pre-A3 candidate cad737cd1bfda3098e0db331dcb329c6e21f39c1 as rollback reference. Revert only A3-scoped files if necessary; preserve all baseline dirty paths and historical governance."
+    checkpoint_required_before_mutation: true
+    state_integrity_check: "Recompute candidate identity, validate schemas, compare the exact baseline dirty-path manifest, inspect staged paths, and verify all acceptance receipts."
+
+  stop_conditions:
+    - "PROJECT_BINDING_BLOCKED"
+    - "GOVERNANCE_INTEGRITY_UNKNOWN"
+    - "TP2-G5-A2 dependency not accepted"
+    - "MRC or Clay status contradiction"
+    - "scope expands to TP2-G5-A4"
+    - "risk exceeds T3 ceiling"
+    - "candidate identity becomes unknown or stale"
+    - "reserved owner/business/legal/deployment authority is reached"
+    - "unrelated dirty work would be touched"
+    - "evidence contradicts a hard invariant"
+
+  completion_record:
+    final_candidate_id: null
+    status: "NOT_STARTED"
+    evidence_receipts: []
+    technical_acceptance: "NOT_EVALUATED"
+    release_eligibility_effect: "NONE"
+    negative_evidence_refs:
+      - "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
+      - "TP2_G5_A2_NEGATIVE_EVIDENCE.md"
+    checkpoint_id: null

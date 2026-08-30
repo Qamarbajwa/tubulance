@@ -128,6 +128,31 @@ edges:
     relation: "DERIVED_FROM"
     description: "A1 derives the exact stopped dynamics contract from the accepted A0 Xi landscape and domain taxonomy."
 
+  - source: "TP2-G5-A3"
+    target: "TP2-G5-A2"
+    relation: "DERIVED_FROM"
+    description: "A3 takes the accepted Xi drift observable and audits its amplitude, direction, deformation-metric, and bridge geometry."
+
+  - source: "TP2-G5-A3"
+    target: "TP2-G5"
+    relation: "EXTENDS"
+    description: "A3 refines the scale-critical Xi program with exact pointwise geometry and typed negative bridge results."
+
+  - source: "TP2-G5-A3"
+    target: "TH9-R"
+    relation: "PARTIALLY_REUSES"
+    description: "A3 reuses directional-frame diagnostics while preserving the distinction between deformation singular frames and instantaneous strain eigenframes."
+
+  - source: "TP2-G5-A3"
+    target: "NS-OBS-013"
+    relation: "CONFIRMS_OBSTRUCTION"
+    description: "The literature audit finds no direct transfer from coherence, sparseness, or analyticity criteria to Xi."
+
+  - source: "TP2-G5-A3"
+    target: "NS-OBS-014"
+    relation: "CONFIRMS_OBSTRUCTION"
+    description: "The mu-weighted observable is not identified with an Eulerian spatial average."
+
   - source: "TP2-G5-A1"
     target: "TP2-G3"
     relation: "EXTENDS"
