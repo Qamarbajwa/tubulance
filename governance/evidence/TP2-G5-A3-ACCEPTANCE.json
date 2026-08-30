@@ -44,5 +44,5 @@
   ],
   "timestamp": "2026-08-30T00:00:00Z",
   "receipt_hash": null,
-  "notes": "Bounded technical acceptance only. The final candidate is local; remote SHA remains unverified and remote push is not an A3 dependency."
+  "notes": "Bounded technical acceptance only. The scientific candidate is 04ccd736; a subsequent normal safe push replicated the receipt checkpoint to origin/main at 99afd19. Remote replication remains distribution evidence, not mathematical evidence."
 }

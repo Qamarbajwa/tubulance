@@ -119,14 +119,12 @@ governance_state:
     observed: false
     known_limitations:
       - "Scientific acceptance is not product release eligibility."
-      - "Remote distribution is blocked by external-destination safety review."
-      - "Remote SHA is unverified."
       - "Clay Statement B remains UNRESOLVED."
 
   blockers:
     - class: "EXTERNAL"
-      state: "BLOCKED"
-      detail: "Authorized Git push remains blocked by external-destination safety review; the post-acceptance normal push also could not connect to github.com:443. Remote SHA remains unverified."
+      state: "CLEARED_FOR_CHECKPOINT"
+      detail: "One normal safe push after local acceptance succeeded; remote main advanced to 99afd19. No force push, bypass, or alternate remote was used."
 
   legacy_migration:
     prior_governance_present: true
@@ -151,9 +149,9 @@ governance_state:
     pre_migration_head: "f49f9ad63a90e716b7e22090a1f25663461f0a7c"
     accepted_scientific_checkpoint: "08719e7078feaa7939f893c33dcfdc9c2a485c49"
     accepted_scientific_receipt: "f49f9ad63a90e716b7e22090a1f25663461f0a7c"
-    remote_distribution_state: "REMOTE_PUSH_BLOCKED_EXTERNAL_DESTINATION_REVIEW"
-    remote_sha_state: "REMOTE_SHA_UNVERIFIED"
-    last_push_attempt: "BLOCKED_BEFORE_REMOTE_UPDATE: github.com:443 unreachable"
+    remote_distribution_state: "REMOTE_PUSH_SUCCEEDED_NORMAL_SAFE_PUSH"
+    remote_sha_state: "VERIFIED_AT_99afd19"
+    last_push_attempt: "SUCCEEDED: origin/main advanced to 99afd19"
     unrelated_dirty_work_preserved: true
 
   last_checkpoint:
