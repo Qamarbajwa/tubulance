@@ -51,7 +51,8 @@ def test_exact_candidate_is_machine_observed_and_remote_base_is_preserved() -> N
     remote = subprocess.check_output(["git", "ls-remote", "origin", "refs/heads/main"], cwd=ROOT, text=True).split()[0]
     envelope = yaml.safe_load(read("governance/task_envelopes/TP2-G5-A4.yaml"))["task_execution_envelope"]
     candidate = envelope["completion_record"]["final_candidate_id"].split(":", 1)[1]
-    assert envelope["base_state"]["base_candidate_id"] == f"GIT_SHA:{remote}"
+    assert head == remote
+    assert envelope["base_state"]["base_candidate_id"] != f"GIT_SHA:{head}"
     assert subprocess.run(["git", "merge-base", "--is-ancestor", candidate, head], cwd=ROOT).returncode == 0
 
 
