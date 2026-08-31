@@ -286,12 +286,16 @@ task_execution_envelope:
     - "evidence contradicts a hard invariant"
     - "TP2-G5-A5 must not be executed by this envelope"
   completion_record:
-    final_candidate_id: "PENDING_FINAL_A4_CANDIDATE"
-    status: "IN_PROGRESS"
-    evidence_receipts: []
-    technical_acceptance: "NOT_VERIFIED"
+    final_candidate_id: "GIT_SHA:b455136999187f87d0ab1c7ff2c4d017c334427d"
+    status: "COMPLETED_WITH_LIMITATIONS"
+    evidence_receipts:
+      - "governance/evidence/TP2-G5-A4-ELIGIBILITY.json"
+      - "governance/evidence/TP2-G5-A4-IDENTITIES.json"
+      - "governance/evidence/TP2-G5-A4-BRIDGE-AUDIT.json"
+      - "governance/evidence/TP2-G5-A4-ACCEPTANCE.json"
+    technical_acceptance: "TECHNICALLY_ACCEPTED_WITH_LIMITATIONS"
     release_eligibility_effect: "NONE"
     negative_evidence_refs:
       - "TP2_G5_A4_NEGATIVE_EVIDENCE.md"
       - "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
-    checkpoint_id: "TP2-G5-A4-BASE-d55b495e91617a58262e2959529c9eb202fffbc8"
+    checkpoint_id: "TP2-G5-A4-LOCAL-b455136999187f87d0ab1c7ff2c4d017c334427d"

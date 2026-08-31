@@ -46,12 +46,13 @@ def test_envelope_is_a4_and_eligible() -> None:
     assert "TP2-G5-A5" in " ".join(envelope["stop_conditions"])
 
 
-def test_exact_candidate_is_machine_observed_and_remote_matches_at_preflight() -> None:
+def test_exact_candidate_is_machine_observed_and_remote_base_is_preserved() -> None:
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     remote = subprocess.check_output(["git", "ls-remote", "origin", "refs/heads/main"], cwd=ROOT, text=True).split()[0]
-    assert head == remote
     envelope = yaml.safe_load(read("governance/task_envelopes/TP2-G5-A4.yaml"))["task_execution_envelope"]
-    assert envelope["base_state"]["base_candidate_id"] == f"GIT_SHA:{head}"
+    candidate = envelope["completion_record"]["final_candidate_id"].split(":", 1)[1]
+    assert envelope["base_state"]["base_candidate_id"] == f"GIT_SHA:{remote}"
+    assert subprocess.run(["git", "merge-base", "--is-ancestor", candidate, head], cwd=ROOT).returncode == 0
 
 
 def test_dichotomy_is_subsequence_qualified() -> None:
@@ -105,7 +106,11 @@ def test_acceptance_taxonomy_and_stop_are_truthful() -> None:
 
 def test_receipts_are_candidate_bound_and_ind1() -> None:
     receipt = json.loads((ROOT / "governance/evidence/TP2-G5-A4-ACCEPTANCE.json").read_text(encoding="utf-8"))
+    envelope = yaml.safe_load(read("governance/task_envelopes/TP2-G5-A4.yaml"))["task_execution_envelope"]
+    state = yaml.safe_load(read("GOVERNANCE_STATE.yaml"))["governance_state"]
     assert receipt["candidate_identity_type"] == "GIT_SHA"
     assert receipt["independence"] == "IND1"
     assert receipt["strength"] == "E3"
     assert receipt["candidate_id"].startswith("GIT_SHA:")
+    assert receipt["candidate_id"] == envelope["completion_record"]["final_candidate_id"]
+    assert receipt["candidate_id"] == state["project_binding"]["current_candidate_id"]

@@ -3,11 +3,11 @@
   "evidence_id": "TP2-G5-A4-ACCEPTANCE",
   "task_id": "TP2-G5-A4",
   "capability_ids": ["TP2-G5-A4-SCALE-CRITICAL-DICHOTOMY"],
-  "candidate_id": "GIT_SHA:d55b495e91617a58262e2959529c9eb202fffbc8",
+  "candidate_id": "GIT_SHA:b455136999187f87d0ab1c7ff2c4d017c334427d",
   "candidate_identity_type": "GIT_SHA",
   "strength": "E3",
   "environment": "INTEGRATED_LOCAL",
-  "environment_detail": "Final A4 package after bounded local implementation; candidate must be replaced with the final commit SHA before release of this checkpoint.",
+  "environment_detail": "Final A4 package after bounded local implementation, bound to the exact scientific implementation candidate.",
   "independence": "IND1",
   "producer": {"id": "tp2-g5-a4-fresh-context-verifier", "role": "VERIFIER", "tool_or_environment": "Local Git, PyYAML, jsonschema, pytest"},
   "action": "Record bounded A4 technical acceptance",
@@ -22,5 +22,5 @@
   "negative_evidence_refs": ["TP2_G5_A4_NEGATIVE_EVIDENCE.md", "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"],
   "timestamp": "2026-08-31T00:00:00Z",
   "receipt_hash": null,
-  "notes": "Acceptance is candidate-bound only after final SHA rebinding. IND1 is the truthful independence ceiling."
+  "notes": "Bounded technical acceptance. The scientific candidate is the exact implementation commit; remote replication is distribution evidence only. IND1 is the truthful independence ceiling."
 }
