@@ -287,3 +287,42 @@ novelty_records:
     independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
     known_closest_analogues: ["Conditional vorticity-direction criteria", "geometric sparseness criteria", "Eulerian inverse-length hierarchies"]
     limitations: "Negative synthesis only; not evidence of global literature absence, field novelty, or regularity."
+
+  - record_id: "NOV-TP2-G5-A4-DICHOTOMY"
+    claim_id: "CLM-024"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "The exact terminal-point J=-log chi and relative-variance identity were not found combined with the project-specific subsequence scenario classification in the audited scope."
+    source_scope: "TP2-G5-A2/A3 accepted identities, Constantin–Iyer stochastic Cauchy literature, and A4 primary-source bridge audit."
+    query_scope: "Terminal-point stochastic history dichotomy relative quadratic variation coherence ratio variance."
+    audit_date: "2026-08-31"
+    databases_searched: ["local TP2 literature matrix", "research_memory", "arXiv", "DOI records"]
+    primary_source_review: "TP2-G5-A4 bridge audit"
+    independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
+    known_closest_analogues: ["Constantin–Iyer stochastic Cauchy representation", "Eyink–Gupta–Zaki variance/cancellation analyses"]
+    limitations: "N2 internal only; no external novelty, priority, or community acceptance claim."
+
+  - record_id: "NOV-TP2-G5-A4-BRANCH-LIMITS"
+    claim_id: "CLM-025"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Subsequence-qualified Branch D/Branch R framing is a project synthesis of the exact identities and does not claim a new field theorem."
+    source_scope: "A4 derivation and audited stochastic/geometric sources."
+    query_scope: "Subsequence dichotomy accumulated quadratic variation relative L2 history rigidity."
+    audit_date: "2026-08-31"
+    databases_searched: ["local TP2 literature matrix", "research_memory", "arXiv"]
+    primary_source_review: "TP2-G5-A4 stochastic-history artifact"
+    independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
+    known_closest_analogues: ["Compactness/subsequence arguments", "stochastic variance identities"]
+    limitations: "N2 internal only; not a singularity theorem."
+
+  - record_id: "NOV-TP2-G5-A4-LIMITS"
+    claim_id: "CLM-026"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "The combined branch-limit and covariance/geometric non-transfer taxonomy is a bounded project synthesis."
+    source_scope: "A3 geometry, A4 branch artifacts, and primary literature bridge audit."
+    query_scope: "Deformation metric M_D C_D stochastic histories covariance trace geometric regularity transfer."
+    audit_date: "2026-08-31"
+    databases_searched: ["local TP2 literature matrix", "research_memory", "arXiv", "DOI records"]
+    primary_source_review: "TP2-G5-A4 rigid/decoherent and bridge artifacts"
+    independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
+    known_closest_analogues: ["Vorticity direction criteria", "Covariance trace identities", "Inverse-length hierarchies"]
+    limitations: "N2 internal only; no claim of literature completeness or regularity."

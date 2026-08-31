@@ -134,7 +134,7 @@
   - **NS-MRC-1-R1**: `PROJECT_CANONICAL_AND_OPERATIONAL`. Hardened the Mathematical Research Constitution to v1.0.1. Locked problem identity to Clay Statement Branch B ($\mathbb{T}^3$), enacted strict `SOLVED_ELIGIBLE` gate prohibiting subtheorem elevation, normalized external validation and community status, mandated explicit governance (`GOV_E*`, `GOV_I*`) and mathematical (`MATH_E*`, `MATH_I*`) namespaces, expanded known results ledger to 14 audited literature baselines, and completed periodic pathway memory review. Verified A4 readiness and authorized TP2-G4-A5 with 147/147 tests passing.
   - **TP2-G4-A5 / GATE TP2-G4 CLOSURE**: `PROJECT_CANONICAL_WITH_REFORMULATION_AND_BARRIER_TAXONOMY`. Formally closed Gate `TP2-G4`. Reconciled 5 mathematical no-go barriers (`NS-OBS-009` scaling mismatch, periodic shear decoupling, `NS-OBS-010` low-$\eta$ exit time, `EXACT_KINEMATIC_NO_GO`, and regularity non-circularity). Ratified the Primary Relative QV Density $\Xi = \frac{\|DJ_\omega\|^2}{|D\omega|^2}$ and the scale-critical rate decomposition $\partial_s \ln \chi_s = 2\nu \mathbb{E}_{\mu_s}[\Xi]$ as the candidate load-bearing surviving structure. Clay Statement B on $\mathbb{T}^3$ remains `UNRESOLVED`. 155/155 tests passing across 21 test files.
   - **TP2-G4-A5-R1**: `PROJECT_CANONICAL_WITH_CORRECTIONS`. Reclassified CLM-014 as `PROJECT_SYNTHESIS` / `VERIFIED_SYNTHESIS`, corrected significance to `S3_POTENTIAL_FIELD_SIGNIFICANCE`, refined Barrier 5 (`NS-OBS-011`) to `OPEN_STRUCTURAL_OBSTRUCTION` (`DIRECT_EVOLUTION_ROUTE_CIRCULAR`), qualified Barrier 1 domain as `SCALING_CLASS_NO_GO`, and ratified the surviving $\Xi$ rate identity as `EXACT_STRUCTURAL_IDENTITY`. Clay Statement B on $\mathbb{T}^3$ remains `UNRESOLVED`. 158/158 tests passing across 21 test files.
-- **NEXT_ACTION**: `TP2-G5 — SCALE-CRITICAL RELATIVE QV CLOSURE PROGRAM`.
+- **NEXT_ACTION**: `TP2-G5-A4 — SCALE-CRITICAL HYPOTHETICAL-SINGULARITY SCENARIOS AND STOCHASTIC-HISTORY DICHOTOMY`.
 
 ### O. TP2-G5-A3 Accepted State (2026-08-30)
 
@@ -145,6 +145,16 @@
 - Audited coherence, sparseness, analyticity, inverse-length, and Eulerian enstrophy mechanisms are classified `CONDITIONAL / NO_DIRECT_TRANSFER` to `Xi` or `E_mu[Xi]` without additional non-circular hypotheses.
 - `TH9-R` is `PARTIALLY_REUSED` for frame/orientation diagnostics only. `E_mu[Xi]` remains distinct from Eulerian spatial averages. `Clay Statement B = UNRESOLVED`.
 - `TP2-G5-A4` was not executed.
+
+### R. TP2-G5-A4 Accepted State (2026-08-31)
+
+- Under the conditional smooth scenario contract, choose terminal pairs `(x_n,t_n)`, `M_n=|omega(x_n,t_n)|`, and the intrinsic window `L_n=a/M_n` with `s_n=t_n-L_n` when admissible. The scale audit is `M_n: +2`, `L_n: -2`, `Xi: +2`, `dt: -2`, so `J_n` is dimensionless.
+- For each terminal-point history, `J_n(a)=2 nu integral_{s_n}^{t_n} E_mu[Xi] dr=-log chi_n`, `chi_n=exp(-J_n)`, and relative variance is `exp(J_n)-1`.
+- Every subsequence has a further compactified subsequence with either positive/infinite accumulated production (Branch D) or `J_n -> 0` (Branch R). The raw sequence may be oscillatory; this is not a false global two-limit claim.
+- Branch R gives only integrated, `mu`-weighted nonnegative conclusions for both A3 pieces: `integral E_mu[M_D] -> 0` and `integral E_mu[C_D] -> 0`. The explicit normalized history-measure bounds retain `1/L_n`; no pointwise or spatial cone conclusion follows.
+- Branch D gives only nontrivial relative stochastic variance and a covariance-trace lower bound. Trace does not imply isotropy, spectral structure, direction distribution, or a terminal-mean bound.
+- Lei–Ren–Tian and Constantin–Fefferman are `NO_DIRECT_TRANSFER` to Xi; Grujic (arXiv:2607.08866) remains `PREPRINT` and `NO_DIRECT_TRANSFER`. Kinematic calibrations remain `KINEMATIC`.
+- Outcome: `SCENARIO_DICHOTOMY_ESTABLISHED`, `RIGID_BRANCH_PARTIALLY_CONSTRAINED`, `DECOHERENT_BRANCH_PARTIALLY_CONSTRAINED`, `BOTH_BRANCHES_REMAIN_OPEN`. `Clay Statement B = UNRESOLVED`; TP2-G5-A5 is not executed.
 
 ### O. TP2-G5-A0 Accepted State (2026-08-29)
 

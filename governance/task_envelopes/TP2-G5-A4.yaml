@@ -1,0 +1,297 @@
+task_execution_envelope:
+  schema_version: "3.0.0"
+  identity:
+    task_id: "TP2-G5-A4"
+    project_id: "tubulance"
+    project_name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
+    governance_version: "3.0.0"
+    adoption_mode: "MIGRATION_GOVERNED"
+  direction:
+    intent_refs:
+      - "PROJECT_INTENT.md: rigorous AI-assisted investigation of periodic 3D Navier–Stokes"
+      - "PROJECT_INTENT.md: strict non-overclaiming, reproducibility, and negative-evidence preservation"
+      - "TP2_G5_A3_ACCEPTANCE_DECISION.md: exact Xi geometry accepted with bridge limitations"
+    roadmap_objective: "TP2-G5-A4"
+    owner_non_goals:
+      - "Proof of blow-up or regularity"
+      - "Proof that Xi must be large or that cancellation prevents singularity"
+      - "Global regularity, BKM closure, unconditional coercivity, or Clay resolution"
+      - "Execution of TP2-G5-A5"
+    owner_reserved_boundaries:
+      - "OWNER_INTENT_AUTHORITY controls research scope and non-goals"
+      - "BUSINESS_POLICY_AUTHORITY controls material spend or exposure"
+      - "LEGAL_COMPLIANCE_AUTHORITY remains reserved where applicable"
+      - "DEPLOYMENT_AUTHORITY remains reserved for external/public deployment"
+  objective:
+    exact_objective: "Conditionally analyze scale-critical terminal sequences approaching a hypothetical finite-time singularity using the accepted stochastic-Cauchy identity, establish the exact J=-log chi and relative-variance dichotomy, derive only integrated nonnegative geometric consequences from Xi=M_D+C_D, audit transfers to direction/sparseness/analyticity results, test adversarial smooth calibrations, and preserve every no-go boundary."
+    rationale: "A3 established Xi geometry but no non-circular Xi closure. A4 turns the remaining question into a subsequence-qualified stochastic-history scenario restriction."
+    done_boundary: "All A4 identities, subsequence qualifications, geometric transfer audits, adversarial calibrations, non-circularity classifications, independent verification, v3 receipts, and acceptance records exist; both branches remain open unless a stated exclusion is actually proved; no A5 execution occurs."
+  base_state:
+    repository_or_workspace: "D:/Comfy UI/tubulance"
+    branch_or_state_channel: "main"
+    base_candidate_id: "GIT_SHA:d55b495e91617a58262e2959529c9eb202fffbc8"
+    dirty_state: "DIRTY_KNOWN"
+    preserved_unrelated_work:
+      - "All pre-existing tracked modifications, deletions, and untracked research artifacts"
+      - "The exact baseline dirty work is preserved; only A4-scoped paths may be staged"
+      - "Historical governanace/ v2.10.1 records, v3 packet, MRC, A0–A3 artifacts, and evidence remain protected"
+    latest_local_accepted_governance_state: "GIT_SHA:d55b495e91617a58262e2959529c9eb202fffbc8"
+    latest_local_accepted_scientific_state: "GIT_SHA:d55b495e91617a58262e2959529c9eb202fffbc8"
+    remote_tracking_state: "origin/main=GIT_SHA:d55b495e91617a58262e2959529c9eb202fffbc8 VERIFIED"
+  eligibility:
+    dependencies:
+      - id: "TP2-G5-A3"
+        state: "ACCEPTED"
+        evidence_ref: "TP2_G5_A3_ACCEPTANCE_DECISION.md; governance/evidence/TP2-G5-A3-ACCEPTANCE.json"
+      - id: "A3-TECHNICAL-INPUTS"
+        state: "SATISFIED"
+        evidence_ref: "TP2_G5_A3_DEFORMATION_METRIC_XI_GEOMETRY.md; TP2_G5_A3_INDEPENDENT_VERIFICATION.md"
+      - id: "V3-MIGRATION"
+        state: "ACCEPTED"
+        evidence_ref: "GOVERNANCE_MIGRATION_V2_10_1_TO_V3_0_0.md"
+    technical_inputs_available: true
+    traceable_to_intent: true
+    architecture_permits: true
+    inside_standing_mandate: true
+    candidate_state_known: true
+    risk_inside_ceiling: true
+    blocking_invariant_present: false
+    reserved_authority_required_for_technical_mutation: false
+    governance_evidence_current_enough: true
+    mrc_active_and_consistent: true
+    remote_push_required_for_local_analysis: false
+    eligible: true
+    blocker_class: null
+    blocker_detail: null
+  classification:
+    risk_tier: "T3"
+    action_class: "B"
+    risk_reasons:
+      - "May alter canonical internal mathematical claims and research direction"
+      - "Reversible internal mathematical research and assurance mutation"
+      - "No production, deployment, financial, legal, or public-exposure action"
+    active_modules:
+      - "CORE-PROJECT-BINDING"
+      - "CORE-AUTHORITY"
+      - "CORE-RISK"
+      - "CORE-DEPENDENCY"
+      - "CORE-EVIDENCE"
+      - "CORE-ASSURANCE"
+      - "CORE-TEST-INTEGRITY"
+      - "CORE-GIT-STATE"
+      - "AI-AUTONOMY"
+      - "RESEARCH-SCIENTIFIC"
+      - "ARTIFACT-DATA"
+    not_activated_material_modules:
+      - module: "FINANCIAL"
+        reason: "No money, billing, or spend decision is touched."
+      - module: "LEGAL_COMPLIANCE"
+        reason: "No legal or compliance decision is requested."
+      - module: "DEPLOYMENT"
+        reason: "No product or public deployment is in scope."
+  roles_and_authority:
+    orchestrator: "codex-primary-runtime"
+    writer:
+      id: "codex-primary-runtime"
+      qualified: true
+      risk_ceiling: "T3"
+    reviewer_or_verifier:
+      id: "tp2-g5-a4-fresh-context-verifier"
+      qualified: true
+      expected_independence: "IND1"
+    implementation_authority: "AUTONOMOUS_WITHIN_VALID_V3_ENVELOPE"
+    verification_authority: "CANDIDATE_BOUND_EVIDENCE_AND_DISTINCT_REVIEW_PATH"
+    release_eligibility_authority: "EVIDENCE_DERIVED_GATE"
+    reserved_external_authority:
+      required: false
+      type: "NONE"
+      trigger: null
+  mutation_scope:
+    allowed:
+      - "Create the named A4 mathematical, bridge, calibration, negative-evidence, review, and acceptance artifacts"
+      - "Create A4 tests, deterministic diagnostics, and v3 evidence receipts"
+      - "Update only relevant MRC registries, research-memory registries, current state, roadmap, and governance state"
+      - "Create bounded local commits containing only A4-scoped paths"
+      - "Attempt one normal safe push after local acceptance and verify the full remote SHA"
+    forbidden:
+      - "Execute TP2-G5-A5"
+      - "Claim blow-up, regularity, Xi coercivity, cancellation sufficiency, BKM closure, or Clay resolution"
+      - "Turn integrated mu×time smallness into pointwise, uniform, pathwise, or spatial cone control"
+      - "Transfer Lei–Ren–Tian, Constantin–Fefferman, sparseness, analyticity, or preprint conclusions to Xi without matched hypotheses"
+      - "Promote Grujic preprint status or N2 literature absence"
+      - "Treat kinematic examples as exact Navier–Stokes solutions"
+      - "Stage, modify, clean, reset, stash, or absorb unrelated dirty paths"
+      - "Force-push, bypass external review, or use an unsafe alternate remote"
+    protected:
+      - "governanace/"
+      - "governance/packet/v3.0.0/"
+      - "mathematical_constitution/ except relevant A4 append/update records"
+      - "research_memory/ except relevant A4 append/update records"
+      - "TP2_G5_A0_*"
+      - "TP2_G5_A1_*"
+      - "TP2_G5_A2_*"
+      - "TP2_G5_A3_*"
+      - "All baseline dirty paths not explicitly A4-scoped"
+  assurance_contract:
+    capability_or_requirement_ids:
+      - "TP2-G5-A4-SCALE-CRITICAL-DICHOTOMY"
+    intent: "Test the accepted stochastic-Cauchy/Xi identities along hypothetical singularity scenarios while separating exact algebra, conditional scenario restrictions, literature transfer, novelty, and Clay status."
+    valid_inputs:
+      - "A3-accepted Xi=M_D+C_D on its stated nonzero deformation domain"
+      - "A2/A3 accepted orientation partial_s log chi_s=2nu E_mu[Xi] with chi_T=1"
+      - "Smooth periodic solution on [0,T*) used conditionally, not as an existence assertion"
+      - "Terminal-point-specific histories and positive intrinsic windows L_n=a/M_n"
+    invalid_input_behavior:
+      - input_class: "M_n<=0, a<=0, s_n<0, or an unstated terminal-point history"
+        expected_behavior: "Reject the scenario instance or record it outside the A4 domain."
+      - input_class: "q=0 or D xi=0 in an A3 formula requiring division"
+        expected_behavior: "Use the A3 domain taxonomy; never divide through the singular denominator."
+      - input_class: "literature theorem with unmatched hypotheses"
+        expected_behavior: "Classify NO_DIRECT_TRANSFER or YES_WITH_EXTRA_ASSUMPTIONS."
+    transformation_rules:
+      - "Integrate the accepted orientation from s_n to t_n with chi_{t_n}=1 to get J_n=-log chi_n."
+      - "Use S_n-|m_n|^2 and chi_n=|m_n|^2/S_n to derive relative variance=e^{J_n}-1."
+      - "Classify sequences only after extracting a convergent subsequence in the compactification [0,infinity]."
+      - "Use nonnegativity of M_D and C_D only for separate integrated bounds."
+      - "Use Markov bounds with the explicit normalized mu×time factor 1/L_n."
+      - "Treat all smooth examples as calibration; label kinematic examples KINEMATIC."
+    invariants:
+      - id: "INV-A4-01"
+        statement: "Clay Statement B remains UNRESOLVED."
+        zero_tolerance: true
+      - id: "INV-A4-02"
+        statement: "The sign is J_n=-log chi_n under the accepted orientation."
+        zero_tolerance: true
+      - id: "INV-A4-03"
+        statement: "Relative L2 rigidity is not pathwise equality or uniform trajectory convergence."
+        zero_tolerance: true
+      - id: "INV-A4-04"
+        statement: "A3 Xi=M_D+C_D is used only on its proved domain and only integrated consequences are promoted."
+        zero_tolerance: true
+      - id: "INV-A4-05"
+        statement: "Trace lower bounds on covariance do not imply isotropy or an eigenvalue distribution."
+        zero_tolerance: true
+      - id: "INV-A4-06"
+        statement: "Lei–Ren–Tian and Constantin–Fefferman geometry do not directly transfer to Xi."
+        zero_tolerance: true
+      - id: "INV-A4-07"
+        statement: "The Grujic 2026 result remains labeled PREPRINT and is not upgraded."
+        zero_tolerance: true
+      - id: "INV-A4-08"
+        statement: "Kinematic adversarial examples are not exact Navier–Stokes realizations."
+        zero_tolerance: true
+      - id: "INV-A4-09"
+        statement: "N2_NOT_FOUND_IN_AUDITED_SOURCES is not N3 novelty or community acceptance."
+        zero_tolerance: true
+    outputs:
+      - "Scale-critical window and dimensional audit"
+      - "Exact chi/variance identity and subsequence-qualified dichotomy"
+      - "Rigid/decoherent branch geometry and covariance limitations"
+      - "Source-grounded bridge, non-circularity, adversarial, novelty, and negative-evidence audits"
+      - "Candidate-bound v3 evidence and IND1 independent verification"
+    postconditions:
+      - "Scenario dichotomy is accepted as an exact structural result, not a singularity theorem."
+      - "Both branches remain open unless a stated additional hypothesis excludes one."
+      - "A5 is not executed."
+    failure_contracts:
+      - condition: "Any sign, variance, scaling, or subsequence claim fails verification"
+        expected_behavior: "Qualify or reject the claim and preserve the failed implication as negative evidence."
+      - condition: "Candidate binding or independent verification is stale"
+        expected_behavior: "Mark receipts NOT_VERIFIED and do not accept the increment."
+    retry_idempotency_concurrency:
+      - "Use stable A4 artifact names and deterministic tests; execute mutations serially."
+    persistence_restart_recovery:
+      - "Resume from this envelope, candidate-bound receipts, and the last bounded A4 checkpoint."
+    security_authority:
+      - "No credentials, secrets, or external account changes are required."
+    required_real_environment:
+      - "Local Git, Python, PyYAML, pytest, and source-grounded literature records."
+    intent_fidelity_review_required: true
+  acceptance:
+    hard_gates:
+      - id: "GATE-A4-01"
+        condition: "Envelope and v3 state are schema-valid and bound to the exact base/final candidate."
+        required_state: "PASS"
+      - id: "GATE-A4-02"
+        condition: "A3 dependency, candidate, remote truth, and Clay status are current."
+        required_state: "PASS"
+      - id: "GATE-A4-03"
+        condition: "J_n=-log chi_n, relative variance=e^{J_n}-1, and the scale audit pass independent tests."
+        required_state: "PASS"
+      - id: "GATE-A4-04"
+        condition: "Subsequence dichotomy and rigid/decoherent interpretations preserve all stated limitations."
+        required_state: "PASS"
+      - id: "GATE-A4-05"
+        condition: "Xi=M_D+C_D yields only separate integrated nonnegative consequences and valid measure bounds."
+        required_state: "PASS"
+      - id: "GATE-A4-06"
+        condition: "Lei–Ren–Tian, Constantin–Fefferman, and Grujic bridges are source-grounded and conservatively classified."
+        required_state: "PASS"
+      - id: "GATE-A4-07"
+        condition: "Adversarial calibrations, covariance spectral limits, and non-circularity are recorded."
+        required_state: "PASS"
+      - id: "GATE-A4-08"
+        condition: "Distinct verifier records IND1, candidate binding, writer non-self-certification, and A5 stop."
+        required_state: "PASS"
+      - id: "GATE-A4-09"
+        condition: "Clay Statement B remains UNRESOLVED and no global regularity claim is emitted."
+        required_state: "PASS"
+    kpis:
+      - id: "KPI-A4-001"
+        metric: "Required A4 artifact coverage"
+        threshold: "15 named artifacts, 2 test suites, v3 receipts, and relevant registry updates"
+        release_blocking: false
+    required_evidence:
+      minimum_strength: "E3"
+      required_environments:
+        - "STATIC"
+        - "ISOLATED"
+        - "INTEGRATED_LOCAL"
+        - "EXTERNAL_SYSTEM"
+      minimum_independence: "IND1"
+      candidate_bound: true
+  verification_plan:
+    static:
+      - "Check orientation/sign, dimensions, terminal-point binding, domain restrictions, and source status."
+    unit:
+      - "Test exact chi/variance algebra, subsequence classifications, Markov normalization, covariance trace, and scaling."
+    integration:
+      - "Validate envelope/state/receipt schemas and candidate binding against Git."
+    end_to_end:
+      - "Run both A4 suites and the relevant governance/MRC/research-memory checks."
+    negative_boundary:
+      - "Test J=0, positive J, oscillatory sequences, periodic shear, anisotropic kinematics, zero denominators, and trace-only covariance information."
+    failure_recovery:
+      - "Retain all failed transfers and circularity detections as A4 negative evidence."
+    security:
+      - "Confirm no secrets or credentials are written."
+    real_environment:
+      - "Use local reproducibility and primary-source literature; no product or deployment claim."
+    adversarial:
+      - "Mutate the sign, normalization, pathwise interpretation, cone transfer, isotropy inference, preprint status, novelty, candidate, and independence fields."
+    independent_review:
+      - "Fresh-context verifier reviews the completed A4 candidate and records IND1."
+  recovery:
+    rollback_or_forward_recovery: "Use GIT_SHA:d55b495e91617a58262e2959529c9eb202fffbc8 as the exact pre-A4 reference. Revert only A4-scoped paths if necessary; preserve all baseline dirty paths."
+    checkpoint_required_before_mutation: true
+    state_integrity_check: "Recompute full local HEAD and origin/main SHA, validate v3 schemas, inspect staged paths, and verify all candidate-bound receipts."
+  stop_conditions:
+    - "PROJECT_BINDING_BLOCKED"
+    - "GOVERNANCE_INTEGRITY_UNKNOWN"
+    - "TP2-G5-A3 dependency not accepted"
+    - "MRC or Clay status contradiction"
+    - "risk exceeds T3 ceiling"
+    - "candidate identity becomes unknown or stale"
+    - "unrelated dirty work would be touched"
+    - "evidence contradicts a hard invariant"
+    - "TP2-G5-A5 must not be executed by this envelope"
+  completion_record:
+    final_candidate_id: "PENDING_FINAL_A4_CANDIDATE"
+    status: "IN_PROGRESS"
+    evidence_receipts: []
+    technical_acceptance: "NOT_VERIFIED"
+    release_eligibility_effect: "NONE"
+    negative_evidence_refs:
+      - "TP2_G5_A4_NEGATIVE_EVIDENCE.md"
+      - "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
+    checkpoint_id: "TP2-G5-A4-BASE-d55b495e91617a58262e2959529c9eb202fffbc8"

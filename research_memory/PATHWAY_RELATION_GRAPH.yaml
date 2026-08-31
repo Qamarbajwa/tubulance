@@ -31,6 +31,8 @@ nodes:
     label: "Adversarial Quadratic Variation Analysis"
   - id: "TP2-G5-A1"
     label: "Exact Stochastic Dynamics of N, R, and Xi"
+  - id: "TP2-G5-A4"
+    label: "Scale-Critical Stochastic-History Dichotomy"
 
 edges:
   - source: "TH8"
@@ -153,3 +155,18 @@ edges:
     target: "TP2-G4"
     relation: "USES_DOMAIN_CONTRACT_FROM"
     description: "A1 preserves the G4 Xi zero-state, scaling, and non-circularity safeguards."
+
+  - source: "TP2-G5-A4"
+    target: "TP2-G5-A3"
+    relation: "DERIVED_FROM"
+    description: "A4 uses the accepted Xi=M_D+C_D geometry and A3 bridge limitations."
+
+  - source: "TP2-G5-A4"
+    target: "TP2-G5-A2"
+    relation: "DERIVED_FROM"
+    description: "A4 integrates the accepted chi orientation and relative QV rate from the A2/A3 chain."
+
+  - source: "TP2-G5-A4"
+    target: "TH9-R"
+    relation: "SCENARIO_AUDIT_ONLY"
+    description: "A4 compares rigid stochastic-history geometry with directional regularity mechanisms without claiming a transfer."

@@ -130,3 +130,21 @@ obstructions:
     mathematical_core: "The density rho and its evolution remain part of E_mu; changing measure introduces a separate Jacobian/support/integrability obligation."
     known_bypasses_or_relaxations: ["A proved change-of-measure theorem for the stopped stochastic flow"]
     status: "OPEN_MEASURE_OBSTRUCTION"
+
+  - obstruction_id: "NS-OBS-015"
+    name: "STOCHASTIC_HISTORY_TO_SPATIAL_GEOMETRY_GAP"
+    description: "Integrated mu-weighted control of M_D or C_D along terminal-point histories does not by itself give pointwise or high-vorticity-region spatial direction control."
+    first_encountered_in: "TP2-G5-A4"
+    affected_pathways: ["TP2-G5-A4", "TP2-G5-A3", "TH9-R"]
+    mathematical_core: "The normalized history measure contains 1/L_n and no proved identification with Eulerian spatial measure or high-vorticity-region coverage."
+    known_bypasses_or_relaxations: ["A separate uniform history-to-space estimate with non-circular covering and measure hypotheses."]
+    status: "OPEN_STRUCTURAL_OBSTRUCTION"
+
+  - obstruction_id: "NS-OBS-016"
+    name: "COVARIANCE_TRACE_SPECTRAL_UNDERDETERMINATION"
+    description: "A lower bound on relative covariance trace in the decoherent branch does not determine isotropy, rank, eigenvalue gaps, or directional dispersion."
+    first_encountered_in: "TP2-G5-A4"
+    affected_pathways: ["TP2-G5-A4", "TP2-G5-A2", "TP2-G3"]
+    mathematical_core: "tr(C_s)/|m_n|^2=e^{J_n}-1 constrains only a scalar trace, not the covariance spectrum."
+    known_bypasses_or_relaxations: ["Independent covariance-eigenstructure estimates or directional moment identities."]
+    status: "OPEN_INFORMATIONAL_OBSTRUCTION"

@@ -331,3 +331,36 @@ understanding_packages:
       what_can_fail: "No direct Xi or E_mu[Xi] bound follows; Clay Statement B remains unresolved."
       essential_assumptions: ["Matched domain", "matched deformation metric", "matched measure", "non-circular derivative control"]
     status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-024"
+    claim_id: "CLM-024"
+    name: "TP2_G5_A4_CHI_VARIANCE_IDENTITY"
+    level_1_mechanism: "The accepted chi orientation integrates exactly from the terminal condition to accumulated relative quadratic variation."
+    level_2_architecture: "J_n=-log chi_n, chi_n=exp(-J_n), and S_n-|m_n|^2 divided by |m_n|^2 equals exp(J_n)-1."
+    level_3_rigorous_q_and_a:
+      why_it_works: "Terminal-point histories have chi_T=1 and the stochastic Cauchy energy measure is nonnegative."
+      what_can_fail: "Mixing terminal histories, violating the nonzero normalization, or reversing the accepted orientation."
+      essential_assumptions: ["accepted A2/A3 orientation", "chi_T=1", "S_n>0", "terminal-point-specific history"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-025"
+    claim_id: "CLM-025"
+    name: "TP2_G5_A4_SUBSEQUENCE_DICHOTOMY"
+    level_1_mechanism: "Nonnegative J_n admits convergent cluster subsequences in the compactification [0,infinity]."
+    level_2_architecture: "Positive/infinite clusters are Branch D; zero clusters are Branch R; oscillatory raw sequences require extraction."
+    level_3_rigorous_q_and_a:
+      why_it_works: "The compactified half-line is sequentially compact."
+      what_can_fail: "Calling the result a global two-limit theorem or suppressing an oscillatory cluster."
+      essential_assumptions: ["J_n>=0", "subsequence extraction", "no false global limit claim"]
+      status: "U4_COMPLETE_PACKAGE"
+
+  - package_id: "UND-026"
+    claim_id: "CLM-026"
+    name: "TP2_G5_A4_BRANCH_GEOMETRY_AND_COVARIANCE_LIMITS"
+    level_1_mechanism: "A3 nonnegativity splits rigid-branch integrated geometry, while decoherence fixes only a relative covariance trace."
+    level_2_architecture: "Keep mu×time normalization, deformation metric, and covariance spectrum distinct from spatial direction criteria."
+    level_3_rigorous_q_and_a:
+      why_it_works: "Nonnegative sums separate under integral smallness; a trace is only the sum of eigenvalues."
+      what_can_fail: "Promoting integrated control to pointwise/cone/pathwise control or trace to isotropy."
+      essential_assumptions: ["A3 Xi=M_D+C_D domain", "M_D,C_D>=0", "covariance PSD", "no measure identification assumed"]
+      status: "U4_COMPLETE_PACKAGE"

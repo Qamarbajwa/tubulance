@@ -16,7 +16,7 @@
 
 `TP2-G5-A3` is `ACCEPTED_CANONICAL_WITH_LIMITATIONS` within the validated v3.0.0 envelope. The exact amplitude/direction identities, deformation-metric split, Gamma form, and conditional condition-number envelope are recorded and tested. Literature bridges are conservative no-direct-transfer results; `TH9-R` is partially reused for diagnostics only. `E_mu[Xi]` remains distinct from Eulerian spatial averages, and `Clay Statement B` remains `UNRESOLVED`.
 
-`TP2-G5-A4` is explicitly not executed. Any successor work requires a new candidate-bound envelope and eligibility check.
+`TP2-G5-A4` is the active successor under a new candidate-bound envelope. It is authorized only for conditional hypothetical-singularity scenario analysis; `TP2-G5-A5` remains forbidden by the A4 envelope.
 | **TP2-G2** | Stochastic Lagrangian Cauchy Invariants | `ACCEPTED_CANONICAL` | Martingale representation $Z_s = D_s \omega(A_s)$. |
 | **TP2-G1R** | Gradient Convention Reconciliation | `ACCEPTED_CANONICAL` | Resolved transpose discrepancy $D = (\nabla_x A)^{-1}$. |
 | **TP2-G3** | Stochastic Cauchy Covariance Evolution | `ACCEPTED_CANONICAL_WITH_LIMITATIONS` | Covariance tensor $C_s$, trace variance $V_s$, strict $Q_s > 0$. |
@@ -58,3 +58,7 @@ in the A2 artifacts. TP2-G5-A3 is not executed or authorized by this increment.
 The preceding A1 line and A2 stop wording are preserved as historical increment records. The current scientific state is `TP2-G5-A2 = ACCEPTED_WITH_LIMITATIONS`; the expected descendant remains `TP2-G5-A3`. A3 is not executed by the governance migration. Under v3, A3 requires a new candidate-bound Task Execution Envelope and eligibility evidence; its exact objective is `NOT_VERIFIED` in the current repository state, so no A3 envelope is authorized by this migration commit.
 
 Governance migration status is operationally separate from scientific progress, mathematical truth, release eligibility, publication readiness, deployment authorization, community acceptance, and Clay Statement B, which remains `UNRESOLVED`.
+
+### TP2-G5-A4 Amendment (2026-08-31)
+
+`TP2-G5-A4` is the current bounded increment under `governance/task_envelopes/TP2-G5-A4.yaml`, with `RISK=T3`, `ACTION=B`, and base candidate `d55b495e91617a58262e2959529c9eb202fffbc8` verified against `origin/main`. The accepted candidate is the exact `J_n=-log chi_n` / relative-variance identity and the compactified-subsequence stochastic-history dichotomy. Rigid and decoherent branches are only partially constrained; both remain open. No bridge to spatial direction coherence, sparseness, analyticity, isotropy, or regularity is promoted. Stop after A4; do not execute A5.

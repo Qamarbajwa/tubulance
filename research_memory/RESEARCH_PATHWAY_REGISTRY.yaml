@@ -694,3 +694,36 @@ pathways:
     reopen_conditions: ["Separate authorization and a fresh v3 envelope for any successor objective, including A4."]
     similarity_tags: ["amplitude_direction", "deformation_metric", "xi_split", "condition_number", "vorticity_direction", "sparseness", "analyticity", "mu_weighting", "negative_bridge"]
     last_re_evaluated: "2026-08-30"
+
+  - pathway_id: "TP2-G5-A4"
+    title: "Scale-Critical Hypothetical-Singularity Scenarios and Stochastic-History Dichotomy"
+    parent_pathways: ["TP2-G5-A3", "TP2-G5-A2", "TP2-G5"]
+    descendant_pathways: []
+    starting_thesis: "Along any conditional terminal sequence, the accepted relative-QV identity may classify accumulated stochastic decoherence versus relative L2 history rigidity on an intrinsic scale-critical window."
+    scientific_question: "Can a hypothetical finite-time singularity support either the decoherent branch or the rigid branch, and does either branch transfer to a known geometric regularity hypothesis?"
+    intended_bridge: "Establish an exact subsequence dichotomy and identify, without overreach, the separate integrated geometric and covariance consequences of each branch."
+    core_objects: ["M_n", "L_n", "J_n(a)", "chi_n", "Z_{n,s_n}", "M_D", "C_D", "mu", "C_s"]
+    mathematical_form: "J_n=2nu integral E_mu[Xi] dr=-log chi_n; relative variance=exp(J_n)-1; Xi=M_D+C_D on the A3 domain."
+    scaling: "M_n -> lambda^2 M_n, L_n -> lambda^-2 L_n, Xi -> lambda^2 Xi, dt -> lambda^-2 dt, J_n -> J_n."
+    geometry: "Rigid branch gives integrated deformation-metric amplitude and transverse-direction smallness; no direct spatial cone transfer. Decoherent branch gives only a covariance trace lower bound."
+    trajectory_dependence: "LAGRANGIAN_STOCHASTIC"
+    stochastic_component: true
+    assumptions: ["Smooth periodic solution on [0,T*) used conditionally", "A3 Xi split domain", "accepted chi orientation", "terminal-point-specific histories", "a>0 and s_n>=0"]
+    domain: "T^3 on the declared smooth pre-singular interval; no assertion that T* exists."
+    regularity_class: "Classical smooth solutions before any candidate singular time."
+    expected_outcome: "Scenario dichotomy, partial branch constraints, bridge audit, or evidence insufficiency."
+    actual_outcome: "SCENARIO_DICHOTOMY_ESTABLISHED; RIGID_BRANCH_PARTIALLY_CONSTRAINED; DECOHERENT_BRANCH_PARTIALLY_CONSTRAINED; BOTH_BRANCHES_REMAIN_OPEN."
+    tests_attempted: ["tests/test_tp2_g5_a4_suite.py", "tests/test_tp2_g5_a4_verifier_suite.py"]
+    evidence_refs: ["TP2_G5_A4_CHI_VARIANCE_IDENTITY.md", "TP2_G5_A4_STOCHASTIC_HISTORY_DICHOTOMY.md", "TP2_G5_A4_INDEPENDENT_VERIFICATION.md", "TP2_G5_A4_ACCEPTANCE_DECISION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "A4 bounded scenario analysis completed; TP2-G5-A5 explicitly not executed."
+    failure_mechanism: "No algebraic failure; neither branch yields a non-circular regularity closure or direct spatial-geometry transfer."
+    what_was_falsified: ["A global two-limit claim without subsequence qualification", "Integrated rigid history control as automatic spatial cone control", "Decoherent trace as isotropy or terminal-amplitude closure"]
+    what_was_not_falsified: ["Exact J=-log chi identity", "Relative variance identity", "Subsequence-qualified dichotomy", "Potential future history-to-space or covariance-spectrum bridges"]
+    surviving_results: ["Scale-critical window", "Exact stochastic-history dichotomy", "Separate integrated M_D and C_D consequences", "Relative covariance-trace bound", "Conservative literature no-direct-transfer classifications"]
+    negative_results: ["No blow-up or regularity proof", "No Xi closure", "No BKM/Serrin closure", "No pathwise or spatial cone rigidity", "No isotropy inference"]
+    open_questions: ["Can normalized history bounds be controlled relative to L_n non-circularly?", "Can a history-to-Eulerian measure theorem be proved?", "Can covariance eigenstructure be constrained?", "Can either branch be excluded under genuinely a-priori assumptions?"]
+    obstruction_ids: ["NS-OBS-004", "NS-OBS-005", "NS-OBS-011", "NS-OBS-013", "NS-OBS-014", "NS-OBS-015", "NS-OBS-016"]
+    reopen_conditions: ["Separate authorization for TP2-G5-A5 after A4 acceptance."]
+    similarity_tags: ["scale_critical_window", "chi_variance", "stochastic_history", "rigid_branch", "decoherent_branch", "covariance_trace", "geometry_bridge", "subsequence"]
+    last_re_evaluated: "2026-08-31"
