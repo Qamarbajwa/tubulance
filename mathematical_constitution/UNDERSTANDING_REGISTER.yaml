@@ -363,4 +363,20 @@ understanding_packages:
       why_it_works: "Nonnegative sums separate under integral smallness; a trace is only the sum of eigenvalues."
       what_can_fail: "Promoting integrated control to pointwise/cone/pathwise control or trace to isotropy."
       essential_assumptions: ["A3 Xi=M_D+C_D domain", "M_D,C_D>=0", "covariance PSD", "no measure identification assumed"]
+    status: "U4_COMPLETE_PACKAGE"
+
+  - package_id: "UND-027"
+    claim_id: "CLM-027"
+    name: "TP2_G5_A5_WHOLE_CAMPAIGN_SYNTHESIS"
+    level_1_mechanism: "The campaign composes accepted local identities and branch consequences while retaining every domain, measure, covariance, and target-equivalence limitation."
+    level_2_architecture: |
+      1. Start from the accepted A0 object and domain contract.
+      2. Carry A1 exact stopped dynamics and A2 compensation without scalar closure.
+      3. Carry A3 deformation-metric geometry and no-direct-transfer bridge audit.
+      4. Carry A4 scale-critical history dichotomy and separate branch consequences.
+      5. Record the remaining obstructions and stop without a regularity conclusion.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Each synthesis edge is a recorded dependency or limitation from an accepted prior gate; no new estimate is needed for the bookkeeping claim."
+      what_can_fail: "Overstating integrated control, trace information, literature analogy, novelty, or campaign coherence as Clay resolution."
+      essential_assumptions: ["A0-A4 accepted evidence", "exact domains preserved", "both branches retained", "Clay Statement B unresolved"]
       status: "U4_COMPLETE_PACKAGE"

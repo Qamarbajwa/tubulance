@@ -33,6 +33,8 @@ nodes:
     label: "Exact Stochastic Dynamics of N, R, and Xi"
   - id: "TP2-G5-A4"
     label: "Scale-Critical Stochastic-History Dichotomy"
+  - id: "TP2-G5-A5"
+    label: "Whole-G5 Campaign Synthesis and Open-Bridge Map"
 
 edges:
   - source: "TH8"
@@ -170,3 +172,18 @@ edges:
     target: "TH9-R"
     relation: "SCENARIO_AUDIT_ONLY"
     description: "A4 compares rigid stochastic-history geometry with directional regularity mechanisms without claiming a transfer."
+
+  - source: "TP2-G5-A5"
+    target: "TP2-G5-A4"
+    relation: "SYNTHESIZES"
+    description: "A5 records the accepted A4 identity, variance, subsequence, and branch-limit results as campaign evidence."
+
+  - source: "TP2-G5-A5"
+    target: "TP2-G5-A3"
+    relation: "SYNTHESIZES"
+    description: "A5 carries forward the accepted deformation-metric split and no-direct-transfer bridge limits."
+
+  - source: "TP2-G5-A5"
+    target: "TP2-G5-A2"
+    relation: "SYNTHESIZES"
+    description: "A5 carries forward the exact Xi drift factorization and non-circularity boundary."

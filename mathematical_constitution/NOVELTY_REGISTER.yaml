@@ -326,3 +326,16 @@ novelty_records:
     independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
     known_closest_analogues: ["Vorticity direction criteria", "Covariance trace identities", "Inverse-length hierarchies"]
     limitations: "N2 internal only; no claim of literature completeness or regularity."
+
+  - record_id: "NOV-TP2-G5-A5-SYNTHESIS"
+    claim_id: "CLM-027"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Bounded synthesis of the accepted A0-A4 exact identities, scenario taxonomy, obstruction ledger, and open-bridge classifications."
+    source_scope: "Accepted TP2-G5-A0 through A4 project artifacts and their audited primary-source literature bridges."
+    query_scope: "Whole-campaign synthesis of scale-critical stochastic-history, deformation-metric, covariance, and non-transfer results."
+    audit_date: "2026-09-01"
+    databases_searched: ["local TP2 literature matrix", "research_memory", "arXiv", "DOI records"]
+    primary_source_review: "A0-A4 accepted evidence packet"
+    independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
+    known_closest_analogues: ["Project TP2-G4 synthesis", "Constantin-Iyer stochastic Cauchy representation", "geometric vorticity-direction criteria"]
+    limitations: "Internal synthesis only; no external novelty, priority, publication, community acceptance, or regularity claim."

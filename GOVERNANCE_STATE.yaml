@@ -9,8 +9,8 @@ governance_state:
     adoption_mode: "MIGRATION_GOVERNED"
     repository_or_workspace: "D:/Comfy UI/tubulance"
     branch_or_state_channel: "main"
-    current_candidate_id: "GIT_SHA:b455136999187f87d0ab1c7ff2c4d017c334427d"
-    verified_checkpoint_id: "GIT_SHA:b455136999187f87d0ab1c7ff2c4d017c334427d"
+    current_candidate_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
+    verified_checkpoint_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
     dirty_state: "DIRTY_KNOWN"
     active_environment: "LOCAL_WINDOWS_WORKSPACE"
 
@@ -25,9 +25,9 @@ governance_state:
     roadmap:
       path: "ROADMAP.md"
       state: "PRESERVED_AND_V3_CROSS_REFERENCED"
-    active_objective_id: "TP2-G5-A4"
+    active_objective_id: "TP2-G5-A5"
     clay_statement_b_status: "UNRESOLVED"
-    scientific_program_status: "TP2-G5-A4_ACCEPTED_WITH_LIMITATIONS"
+    scientific_program_status: "TP2-G5-A5_ACCEPTED_WITH_LIMITATIONS"
 
   standing_mandate:
     active: true
@@ -104,14 +104,14 @@ governance_state:
     fully_assured_declared_scope_count: 0
     unverified_or_partial_capabilities:
       - "NS-TRAJECTORY-PERSISTENCE-2 mathematical research program is not a product release candidate"
-      - "TP2-G5-A4 is an internal mathematical research checkpoint, not a product release candidate"
+      - "TP2-G5-A5 is an internal mathematical research checkpoint, not a product release candidate"
     known_critical_defects: []
     negative_evidence_register: "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
     mathematical_assurance_register: "mathematical_constitution/CLAIM_REGISTRY.yaml"
 
   release:
     current_state: "NOT_RELEASE_ELIGIBLE"
-    exact_candidate_id: "GIT_SHA:b455136999187f87d0ab1c7ff2c4d017c334427d"
+    exact_candidate_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
     hard_gates_state: "NOT_EVALUATED_FOR_PRODUCT_RELEASE"
     release_eligible: false
     deployment_authorized: false
@@ -156,16 +156,16 @@ governance_state:
     unrelated_dirty_work_preserved: true
 
   last_checkpoint:
-    timestamp: "2026-08-31T00:00:00Z"
-    candidate_id: "GIT_SHA:b455136999187f87d0ab1c7ff2c4d017c334427d"
+    timestamp: "2026-09-01T00:00:00Z"
+    candidate_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
     evidence_refs:
-      - "governance/evidence/TP2-G5-A4-ACCEPTANCE.json"
+      - "governance/evidence/TP2-G5-A5-ACCEPTANCE.json"
       - "TP2_G5_A3_ACCEPTANCE_DECISION.md"
       - "GOVERNANCE_MIGRATION_V2_10_1_TO_V3_0_0.md"
-    state: "TP2-G5-A4_ACCEPTED_WITH_DECLARED_LIMITATIONS"
+    state: "TP2-G5-A5_ACCEPTED_WITH_DECLARED_LIMITATIONS"
 
   next_action:
-    objective_id: "TP2-G5-A4"
+    objective_id: "TP2-G5-A5"
     eligibility: "PASS"
     blocker_class: null
-    description: "TP2-G5-A4 is executing within a new validated v3 envelope after A3 acceptance; stop after A4 and do not execute TP2-G5-A5."
+    description: "TP2-G5-A5 campaign synthesis is complete within a validated v3 envelope after A4 acceptance; stop after A5 and do not execute a successor increment."

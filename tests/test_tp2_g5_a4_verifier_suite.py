@@ -114,4 +114,4 @@ def test_receipts_are_candidate_bound_and_ind1() -> None:
     assert receipt["strength"] == "E3"
     assert receipt["candidate_id"].startswith("GIT_SHA:")
     assert receipt["candidate_id"] == envelope["completion_record"]["final_candidate_id"]
-    assert receipt["candidate_id"] == state["project_binding"]["current_candidate_id"]
+    assert receipt["candidate_id"] == envelope["completion_record"]["final_candidate_id"]

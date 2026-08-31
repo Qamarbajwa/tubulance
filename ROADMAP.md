@@ -2,7 +2,7 @@
 
 **Program:** `NS-TRAJECTORY-PERSISTENCE-2`  
 **Governance Standard:** Universal Autonomous Project Governance v3.0.0 (active) with v2.10.1 preserved historically; Mathematical Research Constitution v1.0.1 remains active
-**Last Updated:** 2026-08-30
+**Last Updated:** 2026-09-01
 
 ---
 
@@ -28,6 +28,7 @@
 | **TP2-G4-A4** | Vorticity-Relevant Amplification Bounds | `PLANNED` | Investigating $\mathcal{A}_\omega = |D\omega|^2/|\omega|^2$ and $\Theta$ dynamics. |
 | **TP2-G5-A0** | Landscape, Literature Boundary, Object Identity, Zero-State Taxonomy, and Research Contract | `ACCEPTED_WITH_LIMITATIONS_AND_CONTRACT_SEALED` | Xi remains the primary scale-critical relative QV density; literature collision watch, domain contract, and joint-jet open problem sealed. |
 | **TP2-G5-A1** | Exact stochastic dynamics of $N$, $R$, and $\Xi$ | `AUTHORIZED_NOT_EXECUTED` | Must derive solely from `TP2_G5_A0_RESEARCH_CONTRACT.md`; no A1 work is included in A0. |
+| **TP2-G5-A5** | Whole-G5 Campaign Synthesis and Open-Bridge Map | `ACCEPTED_WITH_LIMITATIONS` | Canonical synthesis of accepted A0-A4 evidence; no new theorem or Clay resolution. |
 
 ---
 
@@ -62,3 +63,7 @@ Governance migration status is operationally separate from scientific progress, 
 ### TP2-G5-A4 Amendment (2026-08-31)
 
 `TP2-G5-A4` is the current bounded increment under `governance/task_envelopes/TP2-G5-A4.yaml`, with `RISK=T3`, `ACTION=B`, and base candidate `d55b495e91617a58262e2959529c9eb202fffbc8` verified against `origin/main`. The accepted candidate is the exact `J_n=-log chi_n` / relative-variance identity and the compactified-subsequence stochastic-history dichotomy. Rigid and decoherent branches are only partially constrained; both remain open. No bridge to spatial direction coherence, sparseness, analyticity, isotropy, or regularity is promoted. Stop after A4; do not execute A5.
+
+### TP2-G5-A5 Amendment (2026-09-01)
+
+`TP2-G5-A5` is complete under `governance/task_envelopes/TP2-G5-A5.yaml`. It synthesizes accepted A0-A4 evidence into a candidate-bound claim/evidence matrix, load-bearing result map, obstruction ledger, and open-bridge statement. The result is `ACCEPTED_WITH_LIMITATIONS`: both A4 branches remain open, `Clay Statement B` remains `UNRESOLVED`, and no release, publication, or deployment status changes. Stop after A5; no A6 or successor mathematical increment is executed.

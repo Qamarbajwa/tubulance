@@ -306,3 +306,12 @@ negative_evidence:
     governing_obstruction: "NS-OBS-015"
     mathematical_verdict: "SUBSEQUENCE_QUALIFICATION_REQUIRED"
     canonical_artifact: "TP2_G5_A4_STOCHASTIC_HISTORY_DICHOTOMY.md"
+
+  - record_id: "NEG-EV-035"
+    pathway_id: "TP2-G5-A5"
+    title: "CAMPAIGN_SYNTHESIS_DOES_NOT_CLOSE_CLAY_TARGET"
+    falsified_hypothesis: "A coherent chain of accepted exact identities and scenario restrictions is sufficient to prove global regularity or exclude blow-up."
+    counterexample_or_proof: "The A0-A4 chain retains unresolved Xi closure, history-to-Eulerian transfer, covariance-spectrum, and target-equivalence obligations; A5 adds no theorem that discharges them."
+    governing_obstruction: "NS-OBS-011"
+    mathematical_verdict: "EVIDENCE_INSUFFICIENT_FOR_GLOBAL_EXCLUSION"
+    canonical_artifact: "TP2_G5_A5_SYNTHESIS_REPORT.md"

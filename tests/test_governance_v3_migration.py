@@ -20,7 +20,7 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 PACKET = ROOT / "governance" / "packet" / "v3.0.0"
 STATE_PATH = ROOT / "GOVERNANCE_STATE.yaml"
-ENVELOPE_PATH = ROOT / "governance" / "task_envelopes" / "TP2-G5-A4.yaml"
+ENVELOPE_PATH = ROOT / "governance" / "task_envelopes" / "TP2-G5-A5.yaml"
 RECEIPT_PATH = ROOT / "governance" / "evidence" / "NS-GOV-MIG-V300-001-packet.json"
 V2_STATE = ROOT / "governance" / "migrations" / "GOVERNANCE_STATE_v2.10.1_HISTORICAL.yaml"
 
@@ -37,7 +37,7 @@ def assert_schema(instance: dict, schema_name: str) -> None:
 
 def test_gc_01_project_binding_is_machine_observed() -> None:
     state = yaml.safe_load(STATE_PATH.read_text(encoding="utf-8"))["governance_state"]
-    envelope_path = ROOT / "governance" / "task_envelopes" / "TP2-G5-A4.yaml"
+    envelope_path = ROOT / "governance" / "task_envelopes" / "TP2-G5-A5.yaml"
     envelope = yaml.safe_load(envelope_path.read_text(encoding="utf-8"))["task_execution_envelope"]
     top = subprocess.check_output(["git", "rev-parse", "--show-toplevel"], cwd=ROOT, text=True).strip()
     assert Path(top).resolve() == ROOT.resolve()
@@ -129,7 +129,7 @@ def test_gc_13_evidence_dimensions_are_independent() -> None:
 
 def test_gc_14_candidate_binding_is_exact() -> None:
     state = yaml.safe_load(STATE_PATH.read_text(encoding="utf-8"))["governance_state"]
-    receipt_path = ROOT / "governance" / "evidence" / "TP2-G5-A4-ACCEPTANCE.json"
+    receipt_path = ROOT / "governance" / "evidence" / "TP2-G5-A5-ACCEPTANCE.json"
     receipt = load_json(receipt_path if receipt_path.exists() else RECEIPT_PATH)
     assert receipt["candidate_id"] == state["project_binding"]["current_candidate_id"]
     assert receipt["candidate_identity_type"] == "GIT_SHA"
@@ -224,9 +224,9 @@ def test_gc_28_governance_review_is_declared() -> None:
 
 def test_gc_29_next_step_is_not_ceremonial_owner_approval() -> None:
     state = yaml.safe_load(STATE_PATH.read_text(encoding="utf-8"))["governance_state"]
-    assert state["next_action"]["objective_id"] == "TP2-G5-A4"
+    assert state["next_action"]["objective_id"] == "TP2-G5-A5"
     assert state["next_action"]["blocker_class"] is None
-    assert "new validated v3 envelope" in state["next_action"]["description"]
+    assert "validated v3 envelope" in state["next_action"]["description"]
 
 
 def test_gc_30_truthful_release_reporting() -> None:

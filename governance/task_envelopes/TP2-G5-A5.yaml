@@ -1,0 +1,139 @@
+task_execution_envelope:
+  schema_version: "3.0.0"
+  identity:
+    task_id: "TP2-G5-A5"
+    project_id: "tubulance"
+    governance_version: "3.0.0"
+  direction:
+    roadmap_objective: "TP2-G5-A5"
+    authorized_by: "Owner explicit continuation authorization in current task"
+    scope_note: "Synthesize accepted A0-A4 evidence only; do not add a new mathematical theorem."
+  objective:
+    exact_objective: "Produce the canonical whole-G5 campaign synthesis from accepted A0-A4 records, including evidence boundaries, obstruction map, open bridges, and acceptance decision."
+    done_boundary: "A5 synthesis artifacts, registries, v3 receipts, tests, candidate binding, and normal-safe remote verification are complete."
+  base_state:
+    base_candidate_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
+    dirty_state: "DIRTY_KNOWN_UNRELATED_PRESERVED"
+    remote_base_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
+  eligibility:
+    eligible: true
+    dependencies:
+      - id: "TP2-G5-A0"
+        state: "ACCEPTED"
+      - id: "TP2-G5-A1"
+        state: "ACCEPTED"
+      - id: "TP2-G5-A2"
+        state: "ACCEPTED"
+      - id: "TP2-G5-A3"
+        state: "ACCEPTED"
+      - id: "TP2-G5-A4"
+        state: "ACCEPTED"
+      - id: "OWNER_CONTINUATION_AUTHORIZATION"
+        state: "SATISFIED"
+  classification:
+    risk_tier: "T3"
+    action_class: "B"
+    active_modules: ["CORE-TEST-INTEGRITY", "MATH-ASSURANCE", "RESEARCH-MEMORY", "CAMPAIGN-SYNTHESIS"]
+  roles_and_authority:
+    writer:
+      id: "codex-primary-runtime"
+      role: "WRITER"
+    reviewer_or_verifier:
+      id: "tp2-g5-a5-fresh-context-verifier"
+      role: "VERIFIER"
+      expected_independence: "IND1"
+    implementation_authority: "Autonomous within standing mandate and explicit continuation authorization"
+    verification_authority: "Candidate-bound evidence and conformance review"
+    release_eligibility_authority: "Evidence-derived gate; not granted by A5"
+    reserved_external_authority:
+      required: false
+      note: "No external submission, deployment, or community certification is authorized."
+  mutation_scope:
+    allowed:
+      - "TP2_G5_A5_*.md"
+      - "governance/task_envelopes/TP2-G5-A5.yaml"
+      - "governance/evidence/TP2-G5-A5-*.json"
+      - "GOVERNANCE_STATE.yaml"
+      - "CURRENT_SCIENTIFIC_STATE.md"
+      - "ROADMAP.md"
+      - "mathematical_constitution/* registries required for A5"
+      - "research_memory/* registries required for A5"
+      - "tests/test_tp2_g5_a5_*.py"
+      - "tests/test_governance_v3_migration.py"
+      - "tests/test_tp2_g5_a4_verifier_suite.py"
+    forbidden:
+      - "Any unrelated dirty work or unrelated tracked/untracked path"
+      - "Any claim of global regularity, blow-up, branch exclusion, isotropy, or external novelty"
+      - "Force-push, reset, checkout, or destructive cleanup"
+      - "A6 or any successor mathematical execution"
+  assurance_contract:
+    intent: "Consolidate accepted A0-A4 results into one auditable campaign state."
+    invariants:
+      - "Clay Statement B remains UNRESOLVED"
+      - "Both A4 branches remain open"
+      - "Exact identities retain their domains and stopping assumptions"
+      - "Integrated history control is not upgraded to pointwise or spatial control"
+      - "Covariance trace is not upgraded to isotropy"
+      - "N2 remains internal novelty status"
+    failure_contracts:
+      - "Stop if an input acceptance or hard invariant is contradicted"
+      - "Stop if candidate binding becomes stale or unknown"
+      - "Stop if unrelated dirty work would be touched"
+    outputs:
+      - "Campaign synthesis report and evidence matrix"
+      - "Updated claim, dependency, load-bearing, novelty, understanding, and research-memory registries"
+      - "Candidate-bound v3 receipts"
+      - "Deterministic and fresh-context verification tests"
+    intent_fidelity_review_required: true
+  acceptance:
+    hard_gates:
+      - id: "A5-INPUTS-ACCEPTED"
+        release_blocking: false
+      - id: "A5-NO-OVERCLAIM"
+        release_blocking: false
+      - id: "A5-RECEIPTS-BOUND"
+        release_blocking: false
+      - id: "A5-VERIFIER-PASS"
+        release_blocking: false
+    kpis:
+      - id: "A5-CLAIM-MATRIX-COMPLETE"
+        release_blocking: false
+      - id: "A5-OPEN-BRIDGES-EXPLICIT"
+        release_blocking: false
+    required_evidence:
+      - "governance/evidence/TP2-G5-A5-ELIGIBILITY.json"
+      - "governance/evidence/TP2-G5-A5-SYNTHESIS.json"
+      - "governance/evidence/TP2-G5-A5-INDEPENDENT-VERIFICATION.json"
+      - "governance/evidence/TP2-G5-A5-ACCEPTANCE.json"
+  verification_plan:
+    static: ["Validate A5 document references and forbidden-claim guards"]
+    isolated: ["Run A5 deterministic and verifier suites"]
+    integrated_local: ["Run governance, mathematical assurance, and research-memory suites"]
+    candidate_binding: "Bind final candidate SHA after implementation commit and re-run all receipt checks."
+  recovery:
+    rollback_or_forward_recovery: "Use GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d as the exact pre-A5 reference; revert only A5-scoped paths if necessary and preserve baseline dirty work."
+    checkpoint_required_before_mutation: true
+  stop_conditions:
+    - "PROJECT_BINDING_BLOCKED"
+    - "GOVERNANCE_INTEGRITY_UNKNOWN"
+    - "Any A0-A4 dependency is not accepted"
+    - "MRC or Clay status contradiction"
+    - "Risk exceeds T3 ceiling"
+    - "Candidate identity becomes unknown or stale"
+    - "Unrelated dirty work would be touched"
+    - "Evidence contradicts a hard invariant"
+    - "A6 or successor mathematical execution requested within this envelope"
+  completion_record:
+    final_candidate_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
+    status: "COMPLETED_WITH_LIMITATIONS"
+    evidence_receipts:
+      - "governance/evidence/TP2-G5-A5-ELIGIBILITY.json"
+      - "governance/evidence/TP2-G5-A5-SYNTHESIS.json"
+      - "governance/evidence/TP2-G5-A5-INDEPENDENT-VERIFICATION.json"
+      - "governance/evidence/TP2-G5-A5-ACCEPTANCE.json"
+    technical_acceptance: "TECHNICALLY_ACCEPTED_WITH_LIMITATIONS"
+    release_eligibility_effect: "NONE"
+    negative_evidence_refs:
+      - "TP2_G5_A5_OBSTRUCTION_AND_NEGATIVE_EVIDENCE_MAP.md"
+      - "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
+    checkpoint_id: "TP2-G5-A5-LOCAL-946bff278d3295fd91c3da1450b35d07c77cce0d"

@@ -56,6 +56,8 @@ nodes:
     type: "CLAIM"
   - id: "CLM-026"
     type: "CLAIM"
+  - id: "CLM-027"
+    type: "CLAIM"
 
 edges:
   - source: "ASM-001"
@@ -168,3 +170,11 @@ edges:
     target: "CLM-026"
   - source: "CLM-025"
     target: "CLM-026"
+  - source: "CLM-023"
+    target: "CLM-027"
+  - source: "CLM-024"
+    target: "CLM-027"
+  - source: "CLM-025"
+    target: "CLM-027"
+  - source: "CLM-026"
+    target: "CLM-027"

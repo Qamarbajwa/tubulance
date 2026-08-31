@@ -727,3 +727,36 @@ pathways:
     reopen_conditions: ["Separate authorization for TP2-G5-A5 after A4 acceptance."]
     similarity_tags: ["scale_critical_window", "chi_variance", "stochastic_history", "rigid_branch", "decoherent_branch", "covariance_trace", "geometry_bridge", "subsequence"]
     last_re_evaluated: "2026-08-31"
+
+  - pathway_id: "TP2-G5-A5"
+    title: "Whole-G5 Campaign Synthesis and Open-Bridge Map"
+    parent_pathways: ["TP2-G5-A4", "TP2-G5-A3", "TP2-G5-A2", "TP2-G5"]
+    descendant_pathways: []
+    starting_thesis: "The accepted A0-A4 chain can be synthesized into one auditable scale-critical diagnostic program without adding a new theorem or suppressing any obstruction."
+    scientific_question: "What exact results, limitations, negative evidence, and open bridges survive when the whole TP2-G5 campaign is read as one dependency chain?"
+    intended_bridge: "Provide a canonical campaign-level evidence map that separates surviving identities from unresolved continuation and regularity obligations."
+    core_objects: ["Xi", "M_D", "C_D", "J_n", "chi_n", "relative variance", "mu", "covariance trace", "Clay Statement B"]
+    mathematical_form: "A0 object/domain contract -> A1 stopped dynamics -> A2 drift factorization -> A3 metric split -> A4 J=-log chi scenarios -> A5 bounded synthesis."
+    scaling: "Preserves A4 dimensionless J and the declared A0-A4 parabolic scaling; no new scaling law is asserted."
+    geometry: "Separates deformation metric, stochastic history measure, covariance trace, and Eulerian geometric criteria."
+    trajectory_dependence: "HYBRID"
+    stochastic_component: true
+    assumptions: ["A0-A4 accepted evidence", "declared smooth/stopped domains preserved", "terminal-point history interpretation preserved", "no target-equivalence upgrade"]
+    domain: "The union of the declared A0-A4 domains; no extension beyond their smooth pre-singular or stopped settings."
+    regularity_class: "Synthesis of classical smooth pre-singular evidence; not a global regularity result."
+    expected_outcome: "Canonical synthesis, obstruction map, and explicit open bridges."
+    actual_outcome: "Campaign synthesis accepted with limitations; both A4 branches remain open and Clay Statement B remains unresolved."
+    tests_attempted: ["tests/test_tp2_g5_a5_suite.py", "tests/test_tp2_g5_a5_verifier_suite.py", "tests/test_math_assurance_suite.py", "tests/test_research_memory_suite.py"]
+    evidence_refs: ["TP2_G5_A5_SYNTHESIS_REPORT.md", "TP2_G5_A5_CLAIM_EVIDENCE_MATRIX.md", "TP2_G5_A5_OBSTRUCTION_AND_NEGATIVE_EVIDENCE_MAP.md", "TP2_G5_A5_ACCEPTANCE_DECISION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "A5 campaign synthesis completed; no A6 or successor mathematical increment executed."
+    failure_mechanism: "The synthesis cannot convert accepted local identities into a non-circular global continuation or regularity theorem."
+    what_was_falsified: ["The idea that a coherent chain of exact identities is itself a Clay closure", "The idea that campaign-level synthesis can erase domain, measure, covariance, or literature-transfer boundaries"]
+    what_was_not_falsified: ["All accepted A0-A4 exact identities", "A4 rigid/decoherent scenario taxonomy", "Potential future history-to-space, covariance-spectrum, and continuation bridges"]
+    surviving_results: ["Canonical A0-A4 dependency chain", "Explicit load-bearing synthesis", "Explicit obstruction and negative-evidence map", "Target-equivalence and release boundaries preserved"]
+    negative_results: ["No global regularity proof", "No blow-up proof", "No Xi closure", "No branch exclusion", "No direct geometric transfer", "No external novelty or community certification"]
+    open_questions: ["Can full-coefficient Xi control be made non-circular?", "Can history bounds be bridged to Eulerian geometry?", "Can covariance spectrum be controlled?", "Can either A4 branch be excluded under target-equivalent assumptions?"]
+    obstruction_ids: ["NS-OBS-004", "NS-OBS-005", "NS-OBS-006", "NS-OBS-011", "NS-OBS-012", "NS-OBS-013", "NS-OBS-014", "NS-OBS-015", "NS-OBS-016"]
+    reopen_conditions: ["Separate authorization and a fresh v3 envelope for any successor mathematical objective."]
+    similarity_tags: ["campaign_synthesis", "scale_critical_window", "stochastic_history", "xi_nonclosure", "geometry_bridge", "covariance_trace", "negative_evidence", "target_equivalence"]
+    last_re_evaluated: "2026-09-01"

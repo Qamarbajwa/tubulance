@@ -134,7 +134,7 @@
   - **NS-MRC-1-R1**: `PROJECT_CANONICAL_AND_OPERATIONAL`. Hardened the Mathematical Research Constitution to v1.0.1. Locked problem identity to Clay Statement Branch B ($\mathbb{T}^3$), enacted strict `SOLVED_ELIGIBLE` gate prohibiting subtheorem elevation, normalized external validation and community status, mandated explicit governance (`GOV_E*`, `GOV_I*`) and mathematical (`MATH_E*`, `MATH_I*`) namespaces, expanded known results ledger to 14 audited literature baselines, and completed periodic pathway memory review. Verified A4 readiness and authorized TP2-G4-A5 with 147/147 tests passing.
   - **TP2-G4-A5 / GATE TP2-G4 CLOSURE**: `PROJECT_CANONICAL_WITH_REFORMULATION_AND_BARRIER_TAXONOMY`. Formally closed Gate `TP2-G4`. Reconciled 5 mathematical no-go barriers (`NS-OBS-009` scaling mismatch, periodic shear decoupling, `NS-OBS-010` low-$\eta$ exit time, `EXACT_KINEMATIC_NO_GO`, and regularity non-circularity). Ratified the Primary Relative QV Density $\Xi = \frac{\|DJ_\omega\|^2}{|D\omega|^2}$ and the scale-critical rate decomposition $\partial_s \ln \chi_s = 2\nu \mathbb{E}_{\mu_s}[\Xi]$ as the candidate load-bearing surviving structure. Clay Statement B on $\mathbb{T}^3$ remains `UNRESOLVED`. 155/155 tests passing across 21 test files.
   - **TP2-G4-A5-R1**: `PROJECT_CANONICAL_WITH_CORRECTIONS`. Reclassified CLM-014 as `PROJECT_SYNTHESIS` / `VERIFIED_SYNTHESIS`, corrected significance to `S3_POTENTIAL_FIELD_SIGNIFICANCE`, refined Barrier 5 (`NS-OBS-011`) to `OPEN_STRUCTURAL_OBSTRUCTION` (`DIRECT_EVOLUTION_ROUTE_CIRCULAR`), qualified Barrier 1 domain as `SCALING_CLASS_NO_GO`, and ratified the surviving $\Xi$ rate identity as `EXACT_STRUCTURAL_IDENTITY`. Clay Statement B on $\mathbb{T}^3$ remains `UNRESOLVED`. 158/158 tests passing across 21 test files.
-- **NEXT_ACTION**: `TP2-G5-A4 — SCALE-CRITICAL HYPOTHETICAL-SINGULARITY SCENARIOS AND STOCHASTIC-HISTORY DICHOTOMY`.
+- **NEXT_ACTION**: `TP2-G5-A5 — WHOLE-G5 CAMPAIGN SYNTHESIS AND OPEN-BRIDGE MAP`.
 
 ### O. TP2-G5-A3 Accepted State (2026-08-30)
 
@@ -155,6 +155,14 @@
 - Branch D gives only nontrivial relative stochastic variance and a covariance-trace lower bound. Trace does not imply isotropy, spectral structure, direction distribution, or a terminal-mean bound.
 - Lei–Ren–Tian and Constantin–Fefferman are `NO_DIRECT_TRANSFER` to Xi; Grujic (arXiv:2607.08866) remains `PREPRINT` and `NO_DIRECT_TRANSFER`. Kinematic calibrations remain `KINEMATIC`.
 - Outcome: `SCENARIO_DICHOTOMY_ESTABLISHED`, `RIGID_BRANCH_PARTIALLY_CONSTRAINED`, `DECOHERENT_BRANCH_PARTIALLY_CONSTRAINED`, `BOTH_BRANCHES_REMAIN_OPEN`. `Clay Statement B = UNRESOLVED`; TP2-G5-A5 is not executed.
+
+### S. TP2-G5-A5 Accepted State (2026-09-01)
+
+- The A5 v3 envelope is eligible after accepted A0-A4 dependencies and explicit continuation authorization. A5 is bounded to campaign synthesis and does not add a new mathematical theorem.
+- The canonical chain is `A0 object/domain contract -> A1 stopped dynamics -> A2 drift factorization -> A3 metric geometry and bridge audit -> A4 scale-critical stochastic-history scenarios -> A5 synthesis`.
+- The surviving result is a coherent scale-critical diagnostic program with explicit load-bearing results, negative evidence, and open bridges. `J_n=-log chi_n`, relative variance, `Xi=M_D+C_D`, and the A4 subsequence taxonomy retain their original domains and limitations.
+- Neither A4 branch is excluded. No Xi closure, history-to-Eulerian transfer, covariance-spectrum/isotropy result, BKM/Serrin closure, direct geometric transfer, or target-equivalent regularity theorem is accepted. `EVIDENCE_INSUFFICIENT_FOR_GLOBAL_EXCLUSION`.
+- `Clay Statement B = UNRESOLVED`. Scientific status: `TP2-G5-A5_ACCEPTED_WITH_LIMITATIONS`. No A6 or successor mathematical execution is included.
 
 ### O. TP2-G5-A0 Accepted State (2026-08-29)
 

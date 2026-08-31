@@ -521,3 +521,23 @@ claims:
       community_status: "NOT_COMMUNITY_ACCEPTED"
       project_status: "PROJECT_CANONICAL_WITH_LIMITATIONS"
     dependencies: ["CLM-021", "CLM-024", "CLM-025"]
+
+  - claim_id: "CLM-027"
+    claim_type: "PROJECT_SYNTHESIS"
+    name: "TP2_G5_A5_WHOLE_CAMPAIGN_SYNTHESIS"
+    milestone: "TP2-G5-A5"
+    statement: "The accepted A0-A4 results form a coherent scale-critical diagnostic chain with explicit domains, obstructions, and open bridges; neither stochastic-history branch is excluded and Clay Statement B remains unresolved."
+    passport:
+      truth_status: "VERIFIED_SYNTHESIS"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E1_INFORMAL_DERIVATION"
+      gov_review_independence: "GOV_I1_SAME_SESSION"
+      math_review_independence: "MATH_I1_WRITER_INTERNAL"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U4_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL_WITH_LIMITATIONS"
+    dependencies: ["CLM-023", "CLM-024", "CLM-025", "CLM-026"]
