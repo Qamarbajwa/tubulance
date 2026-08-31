@@ -124,7 +124,7 @@ governance_state:
   blockers:
     - class: "EXTERNAL"
       state: "CLEARED_FOR_CHECKPOINT"
-      detail: "A4 scientific candidate b455136999187f87d0ab1c7ff2c4d017c334427d was pushed by one normal safe push; origin/main is verified at a852c6f3e29c4560140bde580299ae4d0090b745."
+      detail: "A4 scientific candidate b455136999187f87d0ab1c7ff2c4d017c334427d was pushed by one normal safe push; origin/main was subsequently verified at a852c6f3e29c4560140bde580299ae4d0090b745 and the metadata checkpoint at 2e38ec60de4905ef633f6918a5cc2e0048fb7c14."
 
   legacy_migration:
     prior_governance_present: true
@@ -151,8 +151,8 @@ governance_state:
     accepted_scientific_receipt: "d55b495e91617a58262e2959529c9eb202fffbc8"
     remote_distribution_state: "REMOTE_PUSH_SUCCEEDED_NORMAL_SAFE_PUSH"
     remote_distribution_state: "REMOTE_PUSH_SUCCEEDED_NORMAL_SAFE_PUSH"
-    remote_sha_state: "VERIFIED_AT_a852c6f3e29c4560140bde580299ae4d0090b745"
-    last_push_attempt: "SUCCEEDED: origin/main advanced from d55b495e91617a58262e2959529c9eb202fffbc8 to a852c6f3e29c4560140bde580299ae4d0090b745"
+    remote_sha_state: "VERIFIED_AT_2e38ec60de4905ef633f6918a5cc2e0048fb7c14_BEFORE_FINAL_COMPATIBILITY_UPDATE"
+    last_push_attempt: "SUCCEEDED: origin/main advanced from a852c6f3e29c4560140bde580299ae4d0090b745 to 2e38ec60de4905ef633f6918a5cc2e0048fb7c14"
     unrelated_dirty_work_preserved: true
 
   last_checkpoint:
