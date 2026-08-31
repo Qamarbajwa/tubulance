@@ -124,7 +124,7 @@ task_execution_envelope:
     - "Evidence contradicts a hard invariant"
     - "A6 or successor mathematical execution requested within this envelope"
   completion_record:
-    final_candidate_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
+    final_candidate_id: "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
     status: "COMPLETED_WITH_LIMITATIONS"
     evidence_receipts:
       - "governance/evidence/TP2-G5-A5-ELIGIBILITY.json"
@@ -136,4 +136,4 @@ task_execution_envelope:
     negative_evidence_refs:
       - "TP2_G5_A5_OBSTRUCTION_AND_NEGATIVE_EVIDENCE_MAP.md"
       - "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"
-    checkpoint_id: "TP2-G5-A5-LOCAL-946bff278d3295fd91c3da1450b35d07c77cce0d"
+    checkpoint_id: "TP2-G5-A5-LOCAL-a492a7854e5ecb7fd14f183463f6182acb6b3f5b"

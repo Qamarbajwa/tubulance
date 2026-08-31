@@ -8,7 +8,7 @@
 `CLAY_STATEMENT_B = UNRESOLVED`
 `TP2-G5-A0..A4 = ACCEPTED_WITH_LIMITATIONS`
 
-Scientific candidate: `GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d` (initial A5 base; final candidate is bound in the v3 completion record and receipts).
+Scientific candidate: `GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b` (final A5 implementation candidate).
 
 ## Scientific decision
 

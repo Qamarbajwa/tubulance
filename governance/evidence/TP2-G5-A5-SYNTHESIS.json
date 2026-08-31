@@ -3,7 +3,7 @@
   "evidence_id": "TP2-G5-A5-SYNTHESIS",
   "task_id": "TP2-G5-A5",
   "capability_ids": ["TP2-G5-A5-CAMPAIGN-SYNTHESIS"],
-  "candidate_id": "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d",
+  "candidate_id": "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b",
   "candidate_identity_type": "GIT_SHA",
   "strength": "E3",
   "environment": "INTEGRATED_LOCAL",

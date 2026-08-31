@@ -9,8 +9,8 @@ governance_state:
     adoption_mode: "MIGRATION_GOVERNED"
     repository_or_workspace: "D:/Comfy UI/tubulance"
     branch_or_state_channel: "main"
-    current_candidate_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
-    verified_checkpoint_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
+    current_candidate_id: "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
+    verified_checkpoint_id: "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
     dirty_state: "DIRTY_KNOWN"
     active_environment: "LOCAL_WINDOWS_WORKSPACE"
 
@@ -111,7 +111,7 @@ governance_state:
 
   release:
     current_state: "NOT_RELEASE_ELIGIBLE"
-    exact_candidate_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
+    exact_candidate_id: "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
     hard_gates_state: "NOT_EVALUATED_FOR_PRODUCT_RELEASE"
     release_eligible: false
     deployment_authorized: false
@@ -157,7 +157,7 @@ governance_state:
 
   last_checkpoint:
     timestamp: "2026-09-01T00:00:00Z"
-    candidate_id: "GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d"
+    candidate_id: "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
     evidence_refs:
       - "governance/evidence/TP2-G5-A5-ACCEPTANCE.json"
       - "TP2_G5_A3_ACCEPTANCE_DECISION.md"
