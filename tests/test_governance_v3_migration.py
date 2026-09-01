@@ -306,7 +306,7 @@ def test_r1_reconciles_current_governance_fields_without_rewriting_history() -> 
     assert state["project_binding"]["current_candidate_id"] == f"GIT_SHA:{SCIENTIFIC_CANDIDATE}"
     assert state["project_binding"]["verified_checkpoint_id"] == f"GIT_SHA:{ACCEPTANCE_EVIDENCE_COMMIT}"
     assert git_state["accepted_scientific_checkpoint"] == SCIENTIFIC_CANDIDATE
-    assert git_state["accepted_scientific_receipt"] == SCIENTIFIC_CANDIDATE
+    assert git_state["accepted_scientific_receipt"] == "governance/evidence/TP2-G5-A5-ACCEPTANCE.json"
     assert git_state["historical_migration_checkpoint"] == "d55b495e91617a58262e2959529c9eb202fffbc8"
     assert state_text.count("remote_distribution_state:") == 1
     assert "A3 execution evidence must be finalized" not in state_text
@@ -328,6 +328,23 @@ def test_r1_diff_receipt_proves_governance_only_post_candidate_changes() -> None
     receipt = load_json(R1_RECEIPT_PATH)
     assert receipt["dirty_state"]["unrelated_path_count"] == 873
     assert receipt["dirty_state"]["scope_intersection"] == "NONE"
+
+
+def test_r1_receipt_closes_scientific_scope_through_observed_current_head() -> None:
+    diff_text = R1_DIFF_PATH.read_text(encoding="utf-8")
+    assert "OBSERVED_CURRENT_HEAD_FOR_END_TO_END_CHECK: 599c9aa4607bc66c6b1cf9a026309a802f2a4025" in diff_text
+    assert "SCIENTIFIC_SCOPE_DIFF_ACCEPTANCE_TO_CURRENT_HEAD: NONE" in diff_text
+    assert "SCIENTIFIC_SCOPE_DIFF_SCIENTIFIC_CANDIDATE_TO_CURRENT_HEAD: NONE" in diff_text
+    assert "git diff --name-status ad00e0c6421a62ced5537d495aaeb5fe94c8462e..599c9aa4607bc66c6b1cf9a026309a802f2a4025 -- <scientific-paths>" in diff_text
+    assert "git diff --name-status a492a7854e5ecb7fd14f183463f6182acb6b3f5b..599c9aa4607bc66c6b1cf9a026309a802f2a4025 -- <scientific-paths>" in diff_text
+
+
+def test_r1_state_names_acceptance_checkpoint_and_receipt_distinctly() -> None:
+    state = yaml.safe_load(STATE_PATH.read_text(encoding="utf-8"))["governance_state"]
+    git_state = state["git_or_checkpoint"]
+    assert git_state["accepted_scientific_checkpoint"] == SCIENTIFIC_CANDIDATE
+    assert git_state["acceptance_evidence_checkpoint"] == ACCEPTANCE_EVIDENCE_COMMIT
+    assert git_state["accepted_scientific_receipt"] == "governance/evidence/TP2-G5-A5-ACCEPTANCE.json"
 
 
 def test_r1_acceptance_receipt_binds_test_census_to_observed_tree() -> None:
