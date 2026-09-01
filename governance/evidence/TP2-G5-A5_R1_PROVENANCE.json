@@ -46,6 +46,28 @@
     "command": "git diff --name-status a492a7854e5ecb7fd14f183463f6182acb6b3f5b..599c9aa4607bc66c6b1cf9a026309a802f2a4025 -- <scientific-paths>",
     "scientific_scope_diff": "NONE"
   },
+  "final_observation": {
+    "observed_head": "34e454164f9097ddf10233a98b79c1be5061bd27",
+    "origin_main": "34e454164f9097ddf10233a98b79c1be5061bd27",
+    "local_remote_match": true,
+    "observation_role": "Latest synchronized post-R1 head before this append-only serialization",
+    "ancestry": {
+      "scientific_candidate_to_final_head": "PASS",
+      "acceptance_checkpoint_to_final_head": "PASS"
+    },
+    "scientific_scope": {
+      "a492_to_final_head": "NONE",
+      "ad00_to_final_head": "NONE"
+    },
+    "regression": {
+      "result": "182 passed",
+      "role": "post-R1 provenance regression"
+    },
+    "authoritative_scientific_census": {
+      "result": "176 passed in 4.02s",
+      "candidate": "ad00e0c6421a62ced5537d495aaeb5fe94c8462e"
+    }
+  },
   "test_execution": {
     "candidate_commit": "ad00e0c6421a62ced5537d495aaeb5fe94c8462e",
     "command": "python -m pytest -q tests/test_tp2_g5_a0_suite.py tests/test_tp2_g5_a0_verifier_suite.py tests/test_tp2_g5_a1_suite.py tests/test_tp2_g5_a1_verifier_suite.py tests/test_tp2_g5_a2_suite.py tests/test_tp2_g5_a2_verifier_suite.py tests/test_tp2_g5_a3_suite.py tests/test_tp2_g5_a3_verifier_suite.py tests/test_tp2_g5_a4_suite.py tests/test_tp2_g5_a4_verifier_suite.py tests/test_tp2_g5_a5_suite.py tests/test_tp2_g5_a5_verifier_suite.py tests/test_governance_v3_migration.py",

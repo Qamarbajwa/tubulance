@@ -37,6 +37,9 @@ governance_state:
     acceptance_evidence_role: "Existing post-candidate governance/evidence checkpoint"
     current_repository_head_derivation: "git rev-parse HEAD"
     current_repository_head_not_embedded: true
+    latest_observed_synchronized_head: "34e454164f9097ddf10233a98b79c1be5061bd27"
+    latest_observed_synchronized_origin_main: "34e454164f9097ddf10233a98b79c1be5061bd27"
+    latest_observation_role: "Post-R1 synchronized observation before this append-only evidence serialization"
     local_remote_match_derivation: "git rev-parse HEAD equals git rev-parse origin/main"
     candidate_to_acceptance_diff: "governance/evidence and acceptance bookkeeping only; scientific scope diff NONE"
     dirty_scope_intersection: "NONE"

@@ -339,6 +339,27 @@ def test_r1_receipt_closes_scientific_scope_through_observed_current_head() -> N
     assert "git diff --name-status a492a7854e5ecb7fd14f183463f6182acb6b3f5b..599c9aa4607bc66c6b1cf9a026309a802f2a4025 -- <scientific-paths>" in diff_text
 
 
+def test_r1_receipt_appends_final_34e_observation_without_erasing_history() -> None:
+    receipt = load_json(R1_RECEIPT_PATH)
+    diff_text = R1_DIFF_PATH.read_text(encoding="utf-8")
+
+    assert receipt["acceptance_to_observed_current_head"]["observed_head"] == "599c9aa4607bc66c6b1cf9a026309a802f2a4025"
+    assert receipt["post_repair_regression"]["observed_commit"] == "8cef41082a5cbe149d13738feed51e3f054d6de7"
+    final = receipt["final_observation"]
+    assert final["observed_head"] == "34e454164f9097ddf10233a98b79c1be5061bd27"
+    assert final["origin_main"] == final["observed_head"]
+    assert final["local_remote_match"] is True
+    assert final["scientific_scope"]["a492_to_final_head"] == "NONE"
+    assert final["scientific_scope"]["ad00_to_final_head"] == "NONE"
+    assert final["regression"]["result"] == "182 passed"
+    assert final["regression"]["role"] == "post-R1 provenance regression"
+    assert final["authoritative_scientific_census"]["result"] == "176 passed in 4.02s"
+    assert final["authoritative_scientific_census"]["candidate"] == ACCEPTANCE_EVIDENCE_COMMIT
+    assert "OBSERVED_FINAL_SYNCHRONIZED_HEAD: 34e454164f9097ddf10233a98b79c1be5061bd27" in diff_text
+    assert "SCIENTIFIC_SCOPE_DIFF_ACCEPTANCE_TO_FINAL_OBSERVED_HEAD: NONE" in diff_text
+    assert "SCIENTIFIC_SCOPE_DIFF_SCIENTIFIC_CANDIDATE_TO_FINAL_OBSERVED_HEAD: NONE" in diff_text
+
+
 def test_r1_state_names_acceptance_checkpoint_and_receipt_distinctly() -> None:
     state = yaml.safe_load(STATE_PATH.read_text(encoding="utf-8"))["governance_state"]
     git_state = state["git_or_checkpoint"]
