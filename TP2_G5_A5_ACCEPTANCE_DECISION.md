@@ -10,6 +10,25 @@
 
 Scientific candidate: `GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b` (final A5 implementation candidate).
 
+## R1 provenance repair
+
+`TP2-G5-A5-R1` preserves the scientific candidate above and identifies
+`GIT_SHA:ad00e0c6421a62ced5537d495aaeb5fe94c8462e` as the existing
+post-candidate acceptance/evidence checkpoint. The candidate-to-checkpoint
+diff is restricted to A5 governance/evidence bookkeeping; the accepted A0-A5
+scientific scope has `SCIENTIFIC_SCOPE_DIFF = NONE`. The current repository
+HEAD is intentionally derived with `git rev-parse HEAD` rather than embedded
+in a commit containing that value.
+
+The authoritative complete pre-R1 test census is `176 passed`, executed with
+the full relevant `python -m pytest` command against the committed
+`ad00e0c6421a62ced5537d495aaeb5fe94c8462e` tree. The local workflow's
+independence ceiling remains `IND1`; this is not external peer review and does
+not establish `E4_PASS`.
+
+The T3 risk tier belongs to the TP2-G5-A5 execution envelope; T4 is the
+broader program risk ceiling recorded by governance.
+
 ## Scientific decision
 
 `V3_IMPLEMENTATION_CONFORMANCE = ACCEPTED`

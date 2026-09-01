@@ -1,0 +1,52 @@
+TP2-G5-A5-R1 — Candidate-to-Acceptance Provenance Receipt
+
+SCIENTIFIC_CANDIDATE_COMMIT: a492a7854e5ecb7fd14f183463f6182acb6b3f5b
+ACCEPTANCE_EVIDENCE_COMMIT: ad00e0c6421a62ced5537d495aaeb5fe94c8462e
+
+COMMAND: git merge-base --is-ancestor a492a7854e5ecb7fd14f183463f6182acb6b3f5b ad00e0c6421a62ced5537d495aaeb5fe94c8462e
+ANCESTRY_SCIENTIFIC_TO_ACCEPTANCE: PASS
+
+COMMAND: git merge-base --is-ancestor ad00e0c6421a62ced5537d495aaeb5fe94c8462e HEAD
+ANCESTRY_ACCEPTANCE_TO_CURRENT_HEAD: PASS (reverified after R1 commit)
+
+COMMAND: git diff --name-status a492a7854e5ecb7fd14f183463f6182acb6b3f5b..ad00e0c6421a62ced5537d495aaeb5fe94c8462e
+OUTPUT:
+M	GOVERNANCE_STATE.yaml
+M	TP2_G5_A5_ACCEPTANCE_DECISION.md
+M	governance/evidence/TP2-G5-A5-ACCEPTANCE.json
+M	governance/evidence/TP2-G5-A5-ELIGIBILITY.json
+M	governance/evidence/TP2-G5-A5-INDEPENDENT-VERIFICATION.json
+M	governance/evidence/TP2-G5-A5-SYNTHESIS.json
+M	governance/task_envelopes/TP2-G5-A5.yaml
+
+COMMAND: git diff --stat a492a7854e5ecb7fd14f183463f6182acb6b3f5b..ad00e0c6421a62ced5537d495aaeb5fe94c8462e
+OUTPUT:
+ GOVERNANCE_STATE.yaml                                      | 14 +++++++-------
+ TP2_G5_A5_ACCEPTANCE_DECISION.md                           |  2 +-
+ governance/evidence/TP2-G5-A5-ACCEPTANCE.json              |  2 +-
+ governance/evidence/TP2-G5-A5-ELIGIBILITY.json             |  2 +-
+ governance/evidence/TP2-G5-A5-INDEPENDENT-VERIFICATION.json |  2 +-
+ governance/evidence/TP2-G5-A5-SYNTHESIS.json               |  2 +-
+ governance/task_envelopes/TP2-G5-A5.yaml                   |  4 ++--
+ 7 files changed, 14 insertions(+), 14 deletions(-)
+
+COMMAND: git diff a492a7854e5ecb7fd14f183463f6182acb6b3f5b..ad00e0c6421a62ced5537d495aaeb5fe94c8462e -- <scientific-paths>
+OUTPUT: (empty)
+SCIENTIFIC_SCOPE_DIFF: NONE
+
+COMMAND: git rev-parse HEAD
+COMMAND: git rev-parse origin/main
+LOCAL_REMOTE_MATCH: PASS (exact values are post-R1 command observations; current HEAD is intentionally not embedded in its own commit)
+
+COMMAND: git status --porcelain=v1
+DIRTY_SCOPE_INTERSECTION: NONE
+KNOWN_DIRTY_WORK_PRESERVED: TRUE
+UNRELATED_DIRTY_PATH_COUNT: 873
+UNRELATED_STATUS_SHA256: b2197fefdc40b45567f2181bf2bc4a4afc2360b3f0fee9d084c0964473aed60c
+
+TEST_CENSUS:
+The authoritative complete pre-R1 scientific regression census was 176 passed
+in 4.02s against committed tree ad00e0c6421a62ced5537d495aaeb5fe94c8462e,
+using the complete relevant python -m pytest command recorded in the JSON
+receipt. R1 adds provenance regression checks; it does not alter A0-A5
+scientific content.

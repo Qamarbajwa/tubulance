@@ -21,5 +21,5 @@
   "negative_evidence_refs": ["research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"],
   "timestamp": "2026-09-01T00:00:00Z",
   "receipt_hash": null,
-  "notes": "Acceptance is scientific/governance acceptance only and has no product-release effect."
+  "notes": "Acceptance is scientific/governance acceptance only and has no product-release effect. R1 provenance and test-tree binding are recorded in TP2-G5-A5_R1_PROVENANCE.json."
 }

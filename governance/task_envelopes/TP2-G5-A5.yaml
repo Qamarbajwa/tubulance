@@ -53,6 +53,8 @@ task_execution_envelope:
       - "TP2_G5_A5_*.md"
       - "governance/task_envelopes/TP2-G5-A5.yaml"
       - "governance/evidence/TP2-G5-A5-*.json"
+      - "governance/evidence/TP2-G5-A5_R1_*.json"
+      - "TP2_G5_A5_R1_*.txt"
       - "GOVERNANCE_STATE.yaml"
       - "CURRENT_SCIENTIFIC_STATE.md"
       - "ROADMAP.md"
@@ -110,6 +112,7 @@ task_execution_envelope:
     isolated: ["Run A5 deterministic and verifier suites"]
     integrated_local: ["Run governance, mathematical assurance, and research-memory suites"]
     candidate_binding: "Bind final candidate SHA after implementation commit and re-run all receipt checks."
+    provenance_repair: "TP2-G5-A5-R1 separates the immutable scientific candidate from the post-candidate acceptance checkpoint and derives current HEAD mechanically to avoid self-reference."
   recovery:
     rollback_or_forward_recovery: "Use GIT_SHA:946bff278d3295fd91c3da1450b35d07c77cce0d as the exact pre-A5 reference; revert only A5-scoped paths if necessary and preserve baseline dirty work."
     checkpoint_required_before_mutation: true
@@ -125,6 +128,9 @@ task_execution_envelope:
     - "A6 or successor mathematical execution requested within this envelope"
   completion_record:
     final_candidate_id: "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
+    acceptance_evidence_commit: "GIT_SHA:ad00e0c6421a62ced5537d495aaeb5fe94c8462e"
+    scientific_candidate_scope_diff: "NONE"
+    provenance_repair: "TP2-G5-A5-R1"
     status: "COMPLETED_WITH_LIMITATIONS"
     evidence_receipts:
       - "governance/evidence/TP2-G5-A5-ELIGIBILITY.json"

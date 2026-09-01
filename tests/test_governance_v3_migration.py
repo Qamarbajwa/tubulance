@@ -23,6 +23,11 @@ STATE_PATH = ROOT / "GOVERNANCE_STATE.yaml"
 ENVELOPE_PATH = ROOT / "governance" / "task_envelopes" / "TP2-G5-A5.yaml"
 RECEIPT_PATH = ROOT / "governance" / "evidence" / "NS-GOV-MIG-V300-001-packet.json"
 V2_STATE = ROOT / "governance" / "migrations" / "GOVERNANCE_STATE_v2.10.1_HISTORICAL.yaml"
+R1_RECEIPT_PATH = ROOT / "governance" / "evidence" / "TP2-G5-A5_R1_PROVENANCE.json"
+R1_DIFF_PATH = ROOT / "TP2_G5_A5_R1_CANDIDATE_TO_ACCEPTANCE_DIFF.txt"
+
+SCIENTIFIC_CANDIDATE = "a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
+ACCEPTANCE_EVIDENCE_COMMIT = "ad00e0c6421a62ced5537d495aaeb5fe94c8462e"
 
 
 def load_json(path: Path) -> dict:
@@ -277,3 +282,56 @@ def test_adversarial_receipt_candidate_mutation_is_stale() -> None:
     receipt["candidate_id"] = "GIT_SHA:other-candidate"
     state = yaml.safe_load(STATE_PATH.read_text(encoding="utf-8"))["governance_state"]
     assert receipt["candidate_id"] != state["project_binding"]["current_candidate_id"]
+
+
+def test_r1_provenance_receipt_separates_scientific_acceptance_and_current_head() -> None:
+    receipt = load_json(R1_RECEIPT_PATH)
+    state = yaml.safe_load(STATE_PATH.read_text(encoding="utf-8"))["governance_state"]
+    provenance = state["provenance"]
+
+    assert receipt["scientific_candidate_commit"] == SCIENTIFIC_CANDIDATE
+    assert receipt["acceptance_evidence_commit"] == ACCEPTANCE_EVIDENCE_COMMIT
+    assert provenance["scientific_candidate_commit"] == SCIENTIFIC_CANDIDATE
+    assert provenance["acceptance_evidence_commit"] == ACCEPTANCE_EVIDENCE_COMMIT
+    assert receipt["current_repository_head"]["sha"] is None
+    assert receipt["current_repository_head"]["derivation_command"] == "git rev-parse HEAD"
+    assert receipt["current_repository_head"]["self_reference_avoided"] is True
+
+
+def test_r1_reconciles_current_governance_fields_without_rewriting_history() -> None:
+    state_text = STATE_PATH.read_text(encoding="utf-8")
+    state = yaml.safe_load(state_text)["governance_state"]
+    git_state = state["git_or_checkpoint"]
+
+    assert state["project_binding"]["current_candidate_id"] == f"GIT_SHA:{SCIENTIFIC_CANDIDATE}"
+    assert state["project_binding"]["verified_checkpoint_id"] == f"GIT_SHA:{ACCEPTANCE_EVIDENCE_COMMIT}"
+    assert git_state["accepted_scientific_checkpoint"] == SCIENTIFIC_CANDIDATE
+    assert git_state["accepted_scientific_receipt"] == SCIENTIFIC_CANDIDATE
+    assert git_state["historical_migration_checkpoint"] == "d55b495e91617a58262e2959529c9eb202fffbc8"
+    assert state_text.count("remote_distribution_state:") == 1
+    assert "A3 execution evidence must be finalized" not in state_text
+    assert "T4 is the broader program risk ceiling" in state_text
+
+
+def test_r1_diff_receipt_proves_governance_only_post_candidate_changes() -> None:
+    diff_text = R1_DIFF_PATH.read_text(encoding="utf-8")
+    assert f"SCIENTIFIC_CANDIDATE_COMMIT: {SCIENTIFIC_CANDIDATE}" in diff_text
+    assert f"ACCEPTANCE_EVIDENCE_COMMIT: {ACCEPTANCE_EVIDENCE_COMMIT}" in diff_text
+    assert "git diff --name-status" in diff_text
+    assert "git diff --stat" in diff_text
+    assert f"git diff {SCIENTIFIC_CANDIDATE}..{ACCEPTANCE_EVIDENCE_COMMIT} -- <scientific-paths>" in diff_text
+    assert "SCIENTIFIC_SCOPE_DIFF: NONE" in diff_text
+    assert "ANCESTRY_SCIENTIFIC_TO_ACCEPTANCE: PASS" in diff_text
+    assert "ANCESTRY_ACCEPTANCE_TO_CURRENT_HEAD: PASS" in diff_text
+    assert "LOCAL_REMOTE_MATCH: PASS" in diff_text
+    assert "DIRTY_SCOPE_INTERSECTION: NONE" in diff_text
+    receipt = load_json(R1_RECEIPT_PATH)
+    assert receipt["dirty_state"]["unrelated_path_count"] == 873
+    assert receipt["dirty_state"]["scope_intersection"] == "NONE"
+
+
+def test_r1_acceptance_receipt_binds_test_census_to_observed_tree() -> None:
+    receipt = load_json(R1_RECEIPT_PATH)
+    assert receipt["test_census"]["candidate_commit"] == ACCEPTANCE_EVIDENCE_COMMIT
+    assert receipt["test_census"]["authoritative_pre_r1_result"] == "176 passed in 4.02s"
+    assert receipt["test_census"]["independence"] == "IND1"

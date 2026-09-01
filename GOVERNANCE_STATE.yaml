@@ -10,7 +10,7 @@ governance_state:
     repository_or_workspace: "D:/Comfy UI/tubulance"
     branch_or_state_channel: "main"
     current_candidate_id: "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
-    verified_checkpoint_id: "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
+    verified_checkpoint_id: "GIT_SHA:ad00e0c6421a62ced5537d495aaeb5fe94c8462e"
     dirty_state: "DIRTY_KNOWN"
     active_environment: "LOCAL_WINDOWS_WORKSPACE"
 
@@ -28,6 +28,18 @@ governance_state:
     active_objective_id: "TP2-G5-A5"
     clay_statement_b_status: "UNRESOLVED"
     scientific_program_status: "TP2-G5-A5_ACCEPTED_WITH_LIMITATIONS"
+
+  provenance:
+    repair_id: "TP2-G5-A5-R1"
+    scientific_candidate_commit: "a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
+    scientific_candidate_scope: "TP2-G5-A0..A5 scientific artifacts"
+    acceptance_evidence_commit: "ad00e0c6421a62ced5537d495aaeb5fe94c8462e"
+    acceptance_evidence_role: "Existing post-candidate governance/evidence checkpoint"
+    current_repository_head_derivation: "git rev-parse HEAD"
+    current_repository_head_not_embedded: true
+    local_remote_match_derivation: "git rev-parse HEAD equals git rev-parse origin/main"
+    candidate_to_acceptance_diff: "governance/evidence and acceptance bookkeeping only; scientific scope diff NONE"
+    dirty_scope_intersection: "NONE"
 
   standing_mandate:
     active: true
@@ -61,6 +73,7 @@ governance_state:
   risk_and_action:
     active_risk_tier: "T4"
     active_action_class: "B"
+    risk_tier_scope: "T4 is the broader program risk ceiling; TP2-G5-A5 and TP2-G5-A5-R1 execute at T3."
     high_risk_domains_present:
       - "mathematical_regularity_research"
       - "stochastic_lagrangian_sdes"
@@ -122,9 +135,9 @@ governance_state:
       - "Clay Statement B remains UNRESOLVED."
 
   blockers:
-    - class: "EXTERNAL"
-      state: "CLEARED_FOR_CHECKPOINT"
-      detail: "A5 scientific candidate a492a7854e5ecb7fd14f183463f6182acb6b3f5b was pushed by normal safe pushes; origin/main was subsequently verified at fdc1a7c1f95f18f6d4e816f7e036f15f36c36d76 before this final state bookkeeping update."
+    - class: "EVIDENCE"
+      state: "CLEARED_FOR_A5_ACCEPTANCE"
+      detail: "TP2-G5-A5-R1 separates the scientific candidate a492a7854e5ecb7fd14f183463f6182acb6b3f5b from the acceptance checkpoint ad00e0c6421a62ced5537d495aaeb5fe94c8462e; E4_PASS remains withheld pending independent external review."
 
   legacy_migration:
     prior_governance_present: true
@@ -138,7 +151,6 @@ governance_state:
       - "Historical project artifacts not re-certified by this governance migration"
     contradictions_open:
       - "Legacy v2 wording remains in historical direction/state records; v3 cross-references it without rewriting it."
-      - "A3 execution evidence must be finalized against the post-mutation candidate before acceptance."
     historical_evidence_preserved: true
 
   git_or_checkpoint:
@@ -147,17 +159,20 @@ governance_state:
     force_push_prohibited: true
     accepted_checkpoint_policy: "BOUND_TO_EXACT_VERIFIED_CANDIDATE"
     pre_migration_head: "f49f9ad63a90e716b7e22090a1f25663461f0a7c"
-    accepted_scientific_checkpoint: "d55b495e91617a58262e2959529c9eb202fffbc8"
-    accepted_scientific_receipt: "d55b495e91617a58262e2959529c9eb202fffbc8"
+    accepted_scientific_checkpoint: "a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
+    accepted_scientific_receipt: "a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
+    historical_migration_checkpoint: "d55b495e91617a58262e2959529c9eb202fffbc8"
+    historical_migration_receipt: "d55b495e91617a58262e2959529c9eb202fffbc8"
     remote_distribution_state: "REMOTE_PUSH_SUCCEEDED_NORMAL_SAFE_PUSH"
-    remote_distribution_state: "REMOTE_PUSH_SUCCEEDED_NORMAL_SAFE_PUSH"
-    remote_sha_state: "VERIFIED_AT_fdc1a7c1f95f18f6d4e816f7e036f15f36c36d76_BEFORE_FINAL_STATE_BOOKKEEPING_UPDATE"
-    last_push_attempt: "SUCCEEDED: origin/main advanced from 946bff278d3295fd91c3da1450b35d07c77cce0d to fdc1a7c1f95f18f6d4e816f7e036f15f36c36d76"
+    remote_sha_state: "VERIFIED_AT_ad00e0c6421a62ced5537d495aaeb5fe94c8462e_BEFORE_TP2-G5-A5-R1"
+    last_push_attempt: "SUCCEEDED: origin/main was synchronized at ad00e0c6421a62ced5537d495aaeb5fe94c8462e before TP2-G5-A5-R1; the R1 normal-safe push is verified mechanically after commit."
     unrelated_dirty_work_preserved: true
 
   last_checkpoint:
     timestamp: "2026-09-01T00:00:00Z"
     candidate_id: "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
+    acceptance_checkpoint_id: "GIT_SHA:ad00e0c6421a62ced5537d495aaeb5fe94c8462e"
+    current_head_derivation: "git rev-parse HEAD"
     evidence_refs:
       - "governance/evidence/TP2-G5-A5-ACCEPTANCE.json"
       - "TP2_G5_A3_ACCEPTANCE_DECISION.md"
