@@ -335,3 +335,5 @@ def test_r1_acceptance_receipt_binds_test_census_to_observed_tree() -> None:
     assert receipt["test_census"]["candidate_commit"] == ACCEPTANCE_EVIDENCE_COMMIT
     assert receipt["test_census"]["authoritative_pre_r1_result"] == "176 passed in 4.02s"
     assert receipt["test_census"]["independence"] == "IND1"
+    assert receipt["post_repair_regression"]["observed_commit"] == "8cef41082a5cbe149d13738feed51e3f054d6de7"
+    assert receipt["post_repair_regression"]["result"] == "180 passed in 3.69s"

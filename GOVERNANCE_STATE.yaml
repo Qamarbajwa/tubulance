@@ -165,7 +165,7 @@ governance_state:
     historical_migration_receipt: "d55b495e91617a58262e2959529c9eb202fffbc8"
     remote_distribution_state: "REMOTE_PUSH_SUCCEEDED_NORMAL_SAFE_PUSH"
     remote_sha_state: "VERIFIED_AT_ad00e0c6421a62ced5537d495aaeb5fe94c8462e_BEFORE_TP2-G5-A5-R1"
-    last_push_attempt: "SUCCEEDED: origin/main was synchronized at ad00e0c6421a62ced5537d495aaeb5fe94c8462e before TP2-G5-A5-R1; the R1 normal-safe push is verified mechanically after commit."
+    last_push_attempt: "SUCCEEDED: normal-safe R1 push advanced origin/main from ad00e0c6421a62ced5537d495aaeb5fe94c8462e to the current repository HEAD; exact HEAD is verified post-commit by git rev-parse and git ls-remote."
     unrelated_dirty_work_preserved: true
 
   last_checkpoint:

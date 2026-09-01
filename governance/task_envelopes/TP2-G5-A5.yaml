@@ -107,6 +107,8 @@ task_execution_envelope:
       - "governance/evidence/TP2-G5-A5-SYNTHESIS.json"
       - "governance/evidence/TP2-G5-A5-INDEPENDENT-VERIFICATION.json"
       - "governance/evidence/TP2-G5-A5-ACCEPTANCE.json"
+      - "governance/evidence/TP2-G5-A5_R1_PROVENANCE.json"
+      - "TP2_G5_A5_R1_CANDIDATE_TO_ACCEPTANCE_DIFF.txt"
   verification_plan:
     static: ["Validate A5 document references and forbidden-claim guards"]
     isolated: ["Run A5 deterministic and verifier suites"]
