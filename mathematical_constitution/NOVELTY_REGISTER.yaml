@@ -339,3 +339,43 @@ novelty_records:
     independent_novelty_reviewer: "Codex fresh-context verifier; IND1"
     known_closest_analogues: ["Project TP2-G4 synthesis", "Constantin-Iyer stochastic Cauchy representation", "geometric vorticity-direction criteria"]
     limitations: "Internal synthesis only; no external novelty, priority, publication, community acceptance, or regularity claim."
+
+  - record_id: "NOV-TP2-G6-CLM-029"
+    claim_id: "CLM-029"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Exact proof of rank-1 covariance tensor in periodic shear Navier-Stokes flows, establishing that positive trace does not enforce multidirectional dispersion."
+    source_scope: "Navier-Stokes exact solutions and stochastic Lagrangian covariance literature."
+    query_scope: "Rank deficiency of stochastic Cauchy covariance tensor in periodic shear."
+    audit_date: "2026-09-05"
+    databases_searched: ["MathSciNet", "arXiv:math.AP", "Google Scholar"]
+    primary_source_review: "TP2-G6-B-R1 spectral audit artifact"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["Periodic shear exact solutions", "Eyink-Gupta-Zaki covariance formulations"]
+    limitations: "N2 internal only; counterexample applies to planar/unidirectional vorticity."
+
+  - record_id: "NOV-TP2-G6-CLM-031"
+    claim_id: "CLM-031"
+    novelty_tier: "N1_PROJECT_REFORMULATION"
+    justification: "Parabolic scaling invariance of the intrinsic stochastic production J_n(a) qualified with lattice compatibility on the fixed unit torus T^3."
+    source_scope: "Navier-Stokes scaling group and periodic boundary conditions literature."
+    query_scope: "Parabolic scaling of stochastic Cauchy persistence on periodic tori."
+    audit_date: "2026-09-06"
+    databases_searched: ["MathSciNet", "arXiv", "Google Scholar"]
+    primary_source_review: "TP2-G6-B-R2 fixed-torus scaling audit"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["Standard Navier-Stokes parabolic scaling"]
+    limitations: "N1 project reformulation; exact application to J_n(a)."
+
+  - record_id: "NOV-TP2-G6-CLM-032"
+    claim_id: "CLM-032"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Synthesized audit distinguishing initial-data amplitude families (R-A) from singular continuation (R-C) and identifying strain-critical counterexamples to gradient injection."
+    source_scope: "TP2-G6-B-R1/R2 artifacts and audited Navier-Stokes literature."
+    query_scope: "Branch R semantics, Beltrami vortex stretching cancellation, gradient injection counterexamples."
+    audit_date: "2026-09-06"
+    databases_searched: ["local TP2 literature matrix", "research_memory", "arXiv"]
+    primary_source_review: "TP2-G6-B-R2 synthesis report"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["Beltrami flow literature", "Turbulence scaling phenomenologies"]
+    limitations: "Internal synthesis only; Clay Statement B remains unresolved."
+

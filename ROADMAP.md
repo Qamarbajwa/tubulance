@@ -30,6 +30,7 @@
 | **TP2-G5-A1** | Exact stochastic dynamics of $N$, $R$, and $\Xi$ | `AUTHORIZED_NOT_EXECUTED` | Must derive solely from `TP2_G5_A0_RESEARCH_CONTRACT.md`; no A1 work is included in A0. |
 | **TP2-G5-A5** | Whole-G5 Campaign Synthesis and Open-Bridge Map | `ACCEPTED_WITH_LIMITATIONS` | Canonical synthesis of accepted A0-A4 evidence; no new theorem or Clay resolution. |
 | **TP2-G6-B-R1** | Rigid-Branch Adversarial Attack | `ACCEPTED_AS_CANONICAL_BOUNDED_INCREMENT` | Definition hardened; parabolic invariance $J_\lambda \equiv J_0$; maximal covariance rank deficiency; verdict: `RIGID_SIGNATURE_PARTIALLY_REALIZED`. |
+| **TP2-G6-B-R2** | Scientific Claim Audit and Repair | `ACCEPTED_AS_CANONICAL_CORRECTIVE_INCREMENT` | Lattice-compatible scaling theorem (CLM-031); Beltrami stretching qualified; Branch-R semantics disambiguated (R-A); gradient injection downgraded. |
 
 ---
 
@@ -72,4 +73,9 @@ Governance migration status is operationally separate from scientific progress, 
 ### TP2-G6-B-R1 Amendment (2026-09-05)
 
 `TP2-G6-B-R1` is complete under `governance/task_envelopes/TP2-G6-B-R1.yaml`. It executes an adversarial attack on the Rigid Branch (Branch R). The mathematical definition of Branch R is hardened, parabolic rescaling invariance $J_\lambda(a) \equiv J_0(a)$ is proved (`CLM-028`), and maximal covariance rank deficiency is established for periodic shear (`CLM-029`). The verdict is `RIGID_SIGNATURE_PARTIALLY_REALIZED`: Branch R is smoothly realized without vortex stretching, but active stretching injects vorticity gradients via $T = (\nabla S)\omega$, obstructing $J_n(a) \to 0$ on viscous scales. Clay Statement B remains `UNRESOLVED`. Stop after R1.
+
+### TP2-G6-B-R2 Amendment (2026-09-06)
+
+`TP2-G6-B-R2` is complete under `governance/task_envelopes/TP2-G6-B-R2.yaml`. It conducts a fail-closed scientific re-audit of R1 across 7 questions. `CLM-028` is domain-qualified and superseded by `CLM-031` (lattice-compatible $\lambda \in \mathbb{N}$ on fixed $\mathbb{T}^3$). Beltrami stretching is qualified for constant-speed modes ($\omega \cdot S \omega \equiv 0$). Branch-R semantics are disambiguated: R1 proved only Regime R-A (initial data families), while singular continuation R-C remains `OPEN`. `NS-NEG-014` is downgraded from proved obstruction to `OPEN_CONDITIONAL_SCALING_HYPOTHESIS`. `CLM-029` (rank-1 covariance) is retained. `CLM-030` is superseded by `CLM-032`. Clay Statement B remains strictly `UNRESOLVED`. Stop after R2.
+
 

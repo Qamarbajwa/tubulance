@@ -64,6 +64,10 @@ nodes:
     type: "CLAIM"
   - id: "CLM-030"
     type: "CLAIM"
+  - id: "CLM-031"
+    type: "CLAIM"
+  - id: "CLM-032"
+    type: "CLAIM"
 
 edges:
   - source: "ASM-001"
@@ -198,4 +202,15 @@ edges:
     target: "CLM-030"
   - source: "CLM-029"
     target: "CLM-030"
+  - source: "CLM-003"
+    target: "CLM-031"
+  - source: "CLM-024"
+    target: "CLM-031"
+  - source: "CLM-024"
+    target: "CLM-032"
+  - source: "CLM-029"
+    target: "CLM-032"
+  - source: "CLM-031"
+    target: "CLM-032"
+
 

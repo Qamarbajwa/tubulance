@@ -380,3 +380,50 @@ understanding_packages:
       what_can_fail: "Overstating integrated control, trace information, literature analogy, novelty, or campaign coherence as Clay resolution."
       essential_assumptions: ["A0-A4 accepted evidence", "exact domains preserved", "both branches retained", "Clay Statement B unresolved"]
       status: "U4_COMPLETE_PACKAGE"
+
+  - package_id: "UND-029"
+    claim_id: "CLM-029"
+    name: "MAXIMAL_COVARIANCE_RANK_DEFICIENCY_UNDER_POSITIVE_TRACE"
+    level_1_mechanism: "In 1D periodic shear, the vorticity gradient matrix is dyadic and uncouples from shear deformation, producing a rank-1 outer product."
+    level_2_architecture: |
+      1. Periodic shear: u = (U(y, t), 0, 0), omega = -U_y e_3, J_omega = -U_yy (e_3 (x) e_2).
+      2. Deformation: D_r = I + alpha (e_1 (x) e_2). Since (e_1 (x) e_2)(e_3 (x) e_2) = 0, D_r J_omega = -U_yy (e_3 (x) e_2).
+      3. Matrix product: (D_r J_omega)(D_r J_omega)^T = U_yy^2 (e_3 (x) e_3).
+      4. Covariance: C_s = diag(0, 0, 2nu int E[U_yy^2] dr). Trace > 0 but lambda_2 = lambda_3 = 0.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Orthogonality of shear and vorticity vectors collapses all outer products onto a 1D subspace."
+      what_can_fail: "Only applies to planar/unidirectional vorticity fields; 3D twisting generates higher rank."
+      essential_assumptions: ["Periodic shear geometry", "positive viscosity", "non-trivial profile U_yy != 0"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-031"
+    claim_id: "CLM-031"
+    name: "PARABOLIC_SCALING_INVARIANCE_OF_J_WITH_DOMAIN_COMPATIBILITY"
+    level_1_mechanism: "Parabolic dilation rescales time, window, and density by reciprocal weights, leaving the dimensionless integral J invariant on compatible domains."
+    level_2_architecture: |
+      1. Rescaling map: u_lambda(x, t) = lambda u(lambda x, lambda^2 t).
+      2. Dilation weights: [M_n] = lambda^2, [L_n] = lambda^-2, [Xi] = lambda^2, [dr] = lambda^-2.
+      3. Measure invariance: d mu_r^(lambda) = d mu_{lambda^2 r}.
+      4. Integral substitution: 2nu int Xi^(lambda) dr = 2nu int Xi d(lambda^2 r) = J_0(a).
+      5. Periodic lattice compatibility: Periodic on T^3 = R^3/Z^3 iff lambda in N.
+    level_3_rigorous_q_and_a:
+      why_it_works: "The parabolic scaling group is an exact symmetry of unforced Navier-Stokes."
+      what_can_fail: "Non-integer lambda violates 1-periodicity on the fixed unit torus."
+      essential_assumptions: ["Navier-Stokes parabolic symmetry", "lattice compatibility for fixed torus"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-032"
+    claim_id: "CLM-032"
+    name: "RIGID_BRANCH_AUDITED_SYNTHESIS_AND_CORRECTION"
+    level_1_mechanism: "Disambiguates Branch R into initial data families (R-A) vs singular continuation (R-C), qualifying Beltrami and gradient injection claims."
+    level_2_architecture: |
+      1. R-A data families (shear, Beltrami) realize J_n -> 0 smoothly without stretching.
+      2. Beltrami flows have omega . S omega == 0 pointwise for constant-speed modes, with zero spatial mean enstrophy production globally.
+      3. Gradient injection T = (nabla S)omega is an open scaling hypothesis (strain critical points have nabla S = 0).
+      4. Singular continuation regime R-C remains strictly open.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Distinguishes proved exact kinematic and PDE facts from phenomenological turbulence scaling."
+      what_can_fail: "Overstating R-A surrogate realization as an exclusion of blowup or resolution of Clay B."
+      essential_assumptions: ["Exact Navier-Stokes transport equations", "correct semantic taxonomy"]
+      status: "U3_COMPLETE_PACKAGE"
+

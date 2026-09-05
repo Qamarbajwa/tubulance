@@ -559,7 +559,7 @@ claims:
       significance: "S2_MAJOR_PROJECT_RESULT"
       external_validation: "NOT_EXTERNALLY_REVIEWED"
       community_status: "NOT_COMMUNITY_ACCEPTED"
-      project_status: "PROJECT_CANONICAL"
+      project_status: "SUPERSEDED"
     dependencies: ["CLM-003", "CLM-024"]
 
   - claim_id: "CLM-029"
@@ -599,6 +599,47 @@ claims:
       significance: "S2_MAJOR_PROJECT_RESULT"
       external_validation: "NOT_EXTERNALLY_REVIEWED"
       community_status: "NOT_COMMUNITY_ACCEPTED"
-      project_status: "PROJECT_CANONICAL"
+      project_status: "SUPERSEDED"
     dependencies: ["CLM-024", "CLM-028", "CLM-029"]
+
+  - claim_id: "CLM-031"
+    claim_type: "MATHEMATICAL_IDENTITY"
+    name: "PARABOLIC_SCALING_INVARIANCE_OF_J_WITH_DOMAIN_COMPATIBILITY"
+    milestone: "TP2-G6-B-R2"
+    statement: "Under parabolic rescaling u_lambda(x, t) = lambda u(lambda x, lambda^2 t), J_lambda(a) == J_0(a) for all lambda > 0 on R^3 and across rescaled tori T_lambda^3. On the fixed unit torus T^3 = R^3 / Z^3, u_lambda is lattice-compatible if and only if lambda in N, for which J_n(a) == J_1(a) strictly."
+    passport:
+      truth_status: "PROVED_IDENTITY"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "PARTIALLY_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N1_PROJECT_REFORMULATION"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-003", "CLM-024"]
+
+  - claim_id: "CLM-032"
+    claim_type: "PROJECT_SYNTHESIS"
+    name: "RIGID_BRANCH_AUDITED_SYNTHESIS_AND_CORRECTION"
+    milestone: "TP2-G6-B-R2"
+    statement: "Fail-closed re-audit of the rigid-branch adversarial attack: Inter-solution data families (R-A) smoothly realize vanishing relative production J_n(a) -> 0 without stretching (shear, Beltrami). Under active stretching, gradient injection T = (nabla S)omega is a conditional scaling hypothesis rather than a proved universal obstruction (counter-configurations exist where nabla S = 0). True singular Branch-R continuation (R-C) remains strictly OPEN."
+    passport:
+      truth_status: "VERIFIED_SYNTHESIS"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-024", "CLM-029", "CLM-031"]
+
 

@@ -1,0 +1,42 @@
+task_envelope:
+  envelope_id: "TP2-G6-B-R2"
+  program: "NS-TRAJECTORY-PERSISTENCE-2"
+  subprogramme: "TP2-G6: BRIDGE RESOLUTION PROGRAMME"
+  milestone: "TP2-G6-B-R2"
+  title: "Scientific Claim Audit and Repair: Fixed-Torus Scaling, Beltrami Stretching, Branch-R Semantics, and Gradient Injection Re-evaluation"
+  governance_standard: "Universal Autonomous Project Governance v3.0.0"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+
+  risk_and_action:
+    risk_ceiling: "T4"
+    execution_risk_tier: "T3"
+    action_class: "B"
+
+  target_problem:
+    problem_id: "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"
+    domain: "T^3 = R^3 / Z^3 (Periodic 3-Torus)"
+    viscosity: "nu > 0 (constant)"
+    forcing: "f = 0"
+    target_status: "UNRESOLVED"
+
+  bridge_allocation:
+    primary_bridge: "B1 — Non-Circular Xi Control"
+    secondary_bridge: "B3 — Covariance Spectrum / Multidirectional Dispersion"
+    prohibited_allocation: "B0 — Work without demonstrated connection to B1/B3 must fail closed"
+
+  provenance_and_baseline:
+    historical_base_checkpoint_sha: "9783774430cd3939d473cd0e833aa2cf5b5c0645"
+    candidate_type: "SCIENTIFIC_CLAIM_AUDIT_AND_REPAIR"
+    historical_dependency: "TP2-G6-B-R1"
+
+  agent_roles:
+    orchestrator: "antigravity-primary-agent"
+    writer: "antigravity-primary-agent"
+    reviewer: "antigravity-fresh-context-verifier"
+    reviewer_independence: "IND1"
+    math_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+
+  circularity_firewall:
+    enforce_no_bkm_assumptions: true
+    enforce_no_serrin_assumptions: true
+    enforce_no_unearned_regularity: true

@@ -202,6 +202,21 @@
 - Proved Theorem 2 (`CLM-029` / `LBR-010` / `NS-NEG-012`): Exact periodic shear flows on $\mathbb{T}^3$ have $\operatorname{tr}(C_s) > 0$ while $C_s$ is strictly rank 1 ($\lambda_2 = \lambda_3 = 0, \det C_s = 0$). Trace bounds fail to enforce multidirectional stochastic dispersion (`NS-OBS-016` confirmed).
 - High-intensity scaling audit: Exact periodic shear and 3D Beltrami flows smoothly realize $M_n \to \infty$ with $J_n(a) \to 0$, but completely lack nonlinear vortex stretching ($\omega \cdot S \omega \equiv 0$). When active nonlinear vortex stretching $\omega \cdot S \omega \sim M_n^2$ is enforced on scale $\ell_n$, the non-local source $T = (\nabla S)\omega$ in the vorticity-gradient equation injects gradient perturbations at rate $\|T\| \gtrsim M_n^2 / \ell_n$, forcing $J_n(a) \ge c_0 > 0$ on viscous scales $\ell_n \sim M_n^{-1/2}$ (`NS-NEG-014`).
 - Added 4 permanent negative evidence records (`NS-NEG-011` through `NS-NEG-014`) and quarantined 7 continuation-equivalent circularity anchors (`CIRC-001` to `CIRC-007`).
-- All 30 registered claims validated in `CLAIM_REGISTRY.yaml`; 0 cycles in `CLAIM_DEPENDENCY_GRAPH.yaml`; 300/300 scoped regression tests passing.
 - Clay Millennium Prize Problem Statement B on $\mathbb{T}^3$ remains strictly `UNRESOLVED`.
+
+### S. TP2-G6-B-R2 Accepted State (2026-09-06)
+
+- `TP2-G6-B-R2 = ACCEPTED_AS_CANONICAL_CORRECTIVE_INCREMENT` under Governance Kernel v3.0.0 and Mathematical Research Constitution v1.0.1.
+- Final Audit Verdict: `SCIENTIFIC_AUDIT_AND_CORRECTION_SEALED`.
+- R1 base checkpoint `9783774430cd3939d473cd0e833aa2cf5b5c0645` preserved unchanged in history.
+- Audit Question 1 (Fixed-Torus Scaling): `CLM-028` domain qualified and superseded by `CLM-031` (`PARABOLIC_SCALING_INVARIANCE_OF_J_WITH_DOMAIN_COMPATIBILITY`, `LBR-011`); valid for all $\lambda > 0$ on $\mathbb{R}^3$ and rescaled tori, lattice-compatible on fixed $\mathbb{T}^3 = \mathbb{R}^3 / \mathbb{Z}^3$ iff $\lambda \in \mathbb{N}$.
+- Audit Question 2 (Beltrami Stretching): Qualified Family 2 as constant-speed / single-helical benchmark ($\omega \cdot S \omega \equiv 0$ pointwise); multi-mode ABC flows cancel dynamically with advection in $\partial_t \omega$ and have zero spatial mean enstrophy production, but non-zero pointwise stretching.
+- Audit Question 3 (Branch-R Semantics): Disambiguated into R-A (initial data family), R-B (smooth transient), R-C (hypothetical singular blowup). R1 established only R-A (`SURROGATE_RIGID_SIGNATURE_REALIZED_ACROSS_DATA_FAMILY`); singular continuation branch R-C remains strictly OPEN.
+- Audit Question 4 (Gradient Injection): Counterexample established where $S \omega \ne 0$ while $(\nabla S)\omega = 0$ (strain critical points). `NS-NEG-014` downgraded from proved obstruction to `OPEN_CONDITIONAL_SCALING_HYPOTHESIS`.
+- Audit Question 5 (Dimensional Consistency): Disambiguated stretching rate $\sigma_{\text{stretch}} \sim M_n$ ($T^{-1}$), stretching vector $\mathcal{V}_{\text{stretch}} \sim M_n^2$ ($T^{-2}$), and enstrophy production density $\mathcal{P}_{\text{enstrophy}} \sim M_n^3$ ($T^{-3}$).
+- Audit Questions 6 & 7 (Covariance & Ontology): `CLM-029` / `LBR-010` retained with qualification on sufficiency vs necessity for Bridge $B_3$. Adversarial-family ontology repaired to 6 canonical tiers, eliminating `"YES (Candidate)"`.
+- `CLM-030` superseded by `CLM-032` (`RIGID_BRANCH_AUDITED_SYNTHESIS_AND_CORRECTION`).
+- 32 registered claims validated in `CLAIM_REGISTRY.yaml`, 0 DAG cycles, 305 scoped regression tests passing.
+- Clay Millennium Prize Problem Statement B on $\mathbb{T}^3$ remains strictly `UNRESOLVED`.
+
 

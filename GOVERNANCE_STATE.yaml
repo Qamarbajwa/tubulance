@@ -25,15 +25,15 @@ governance_state:
     roadmap:
       path: "ROADMAP.md"
       state: "PRESERVED_AND_V3_CROSS_REFERENCED"
-    active_objective_id: "TP2-G6-B-R1"
+    active_objective_id: "TP2-G6-B-R2"
     clay_statement_b_status: "UNRESOLVED"
-    scientific_program_status: "TP2-G6-B-R1_ACCEPTED_AS_CANONICAL_BOUNDED_INCREMENT"
+    scientific_program_status: "TP2-G6-B-R2_ACCEPTED_AS_CANONICAL_CORRECTIVE_INCREMENT"
 
   provenance:
-    milestone_id: "TP2-G6-B-R1"
-    scientific_verdict: "RIGID_SIGNATURE_PARTIALLY_REALIZED"
-    base_checkpoint_sha: "e14b50c20816a2ce3c52ac7712b6826db15018f7"
-    scientific_candidate_scope: "TP2-G6-B-R1 scientific artifacts"
+    milestone_id: "TP2-G6-B-R2"
+    scientific_verdict: "SCIENTIFIC_AUDIT_AND_CORRECTION_SEALED"
+    historical_base_checkpoint_sha: "9783774430cd3939d473cd0e833aa2cf5b5c0645"
+    scientific_candidate_scope: "TP2-G6-B-R2 scientific audit and repair artifacts"
     acceptance_evidence_commit: "ad00e0c6421a62ced5537d495aaeb5fe94c8462e"
     acceptance_evidence_role: "Existing post-candidate governance/evidence checkpoint"
     current_repository_head_derivation: "git rev-parse HEAD"
