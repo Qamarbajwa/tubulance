@@ -29,6 +29,7 @@
 | **TP2-G5-A0** | Landscape, Literature Boundary, Object Identity, Zero-State Taxonomy, and Research Contract | `ACCEPTED_WITH_LIMITATIONS_AND_CONTRACT_SEALED` | Xi remains the primary scale-critical relative QV density; literature collision watch, domain contract, and joint-jet open problem sealed. |
 | **TP2-G5-A1** | Exact stochastic dynamics of $N$, $R$, and $\Xi$ | `AUTHORIZED_NOT_EXECUTED` | Must derive solely from `TP2_G5_A0_RESEARCH_CONTRACT.md`; no A1 work is included in A0. |
 | **TP2-G5-A5** | Whole-G5 Campaign Synthesis and Open-Bridge Map | `ACCEPTED_WITH_LIMITATIONS` | Canonical synthesis of accepted A0-A4 evidence; no new theorem or Clay resolution. |
+| **TP2-G6-B-R1** | Rigid-Branch Adversarial Attack | `ACCEPTED_AS_CANONICAL_BOUNDED_INCREMENT` | Definition hardened; parabolic invariance $J_\lambda \equiv J_0$; maximal covariance rank deficiency; verdict: `RIGID_SIGNATURE_PARTIALLY_REALIZED`. |
 
 ---
 
@@ -67,3 +68,8 @@ Governance migration status is operationally separate from scientific progress, 
 ### TP2-G5-A5 Amendment (2026-09-01)
 
 `TP2-G5-A5` is complete under `governance/task_envelopes/TP2-G5-A5.yaml`. It synthesizes accepted A0-A4 evidence into a candidate-bound claim/evidence matrix, load-bearing result map, obstruction ledger, and open-bridge statement. The result is `ACCEPTED_WITH_LIMITATIONS`: both A4 branches remain open, `Clay Statement B` remains `UNRESOLVED`, and no release, publication, or deployment status changes. Stop after A5; no A6 or successor mathematical increment is executed.
+
+### TP2-G6-B-R1 Amendment (2026-09-05)
+
+`TP2-G6-B-R1` is complete under `governance/task_envelopes/TP2-G6-B-R1.yaml`. It executes an adversarial attack on the Rigid Branch (Branch R). The mathematical definition of Branch R is hardened, parabolic rescaling invariance $J_\lambda(a) \equiv J_0(a)$ is proved (`CLM-028`), and maximal covariance rank deficiency is established for periodic shear (`CLM-029`). The verdict is `RIGID_SIGNATURE_PARTIALLY_REALIZED`: Branch R is smoothly realized without vortex stretching, but active stretching injects vorticity gradients via $T = (\nabla S)\omega$, obstructing $J_n(a) \to 0$ on viscous scales. Clay Statement B remains `UNRESOLVED`. Stop after R1.
+
