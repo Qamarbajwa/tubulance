@@ -315,3 +315,12 @@ negative_evidence:
     governing_obstruction: "NS-OBS-011"
     mathematical_verdict: "EVIDENCE_INSUFFICIENT_FOR_GLOBAL_EXCLUSION"
     canonical_artifact: "TP2_G5_A5_SYNTHESIS_REPORT.md"
+
+  - record_id: "NEG-EV-036"
+    pathway_id: "TP2-G6-A1"
+    title: "PRESSURE_DEPLETION_AND_EULERIAN_CALDERON_ZYGMUND_DO_NOT_CLOSE_B1"
+    falsified_hypothesis: "Deviatoric pressure Hessian eigenframe depletion or Eulerian L^p Calderon-Zygmund bounds unconditionally control pathwise deformation Xi_s without measure transfer or BKM circularity."
+    counterexample_or_proof: "Calderon-Zygmund operators fail on L^infinity and allow local phase cancellation (NS-OBS-017). Furthermore, Eulerian L^p(dx) bounds decouple from the Lagrangian push-forward measure dmu_s unless BKM integrability is assumed."
+    governing_obstruction: "NS-OBS-017"
+    mathematical_verdict: "EULERIAN_LAGRANGIAN_MEASURE_GAP_CIRCULAR_WITHOUT_B2"
+    canonical_artifact: "TP2_G6_A1_SYNTHESIS_REPORT.md"

@@ -1,0 +1,42 @@
+task_envelope:
+  envelope_id: "TP2-G6-A1"
+  program: "NS-TRAJECTORY-PERSISTENCE-2"
+  subprogramme: "TP2-G6: BRIDGE RESOLUTION PROGRAMME"
+  milestone: "TP2-G6-A1"
+  title: "Pressure–Strain Phase Coupling: Poisson Balance, Eigenframe Depletion, and Scale-Critical Calderón–Zygmund Bounds"
+  governance_standard: "Universal Autonomous Project Governance v3.0.0"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+
+  risk_and_action:
+    risk_ceiling: "T4"
+    execution_risk_tier: "T3"
+    action_class: "B"
+
+  target_problem:
+    problem_id: "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"
+    domain: "T^3 = R^3 / Z^3 (Periodic 3-Torus)"
+    viscosity: "nu > 0 (constant)"
+    forcing: "f = 0"
+    target_status: "UNRESOLVED"
+
+  bridge_allocation:
+    primary_bridge: "B1 — Non-Circular Xi Control"
+    secondary_bridge: "B0 — Classify any decoupled / kinematic bounds as B0"
+    prohibited_allocation: "B0 cannot consume primary regularity programme"
+
+  provenance_and_baseline:
+    expected_base_sha: "8996a64f9ee0e20f2d6abf4f54627222a7d5dbf9"
+    candidate_type: "ANALYTICAL_DERIVATION_AND_ESTIMATE"
+    historical_dependency: "TP2-G6-B-R2 (ACCEPTED_AS_CANONICAL_CORRECTIVE_INCREMENT)"
+
+  agent_roles:
+    orchestrator: "antigravity-primary-agent"
+    writer: "antigravity-primary-agent"
+    reviewer: "antigravity-fresh-context-verifier"
+    reviewer_independence: "IND1"
+    math_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+
+  circularity_firewall:
+    enforce_no_bkm_assumptions: true
+    enforce_no_serrin_assumptions: true
+    enforce_no_unearned_regularity: true

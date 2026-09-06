@@ -379,3 +379,16 @@ novelty_records:
     known_closest_analogues: ["Beltrami flow literature", "Turbulence scaling phenomenologies"]
     limitations: "Internal synthesis only; Clay Statement B remains unresolved."
 
+  - record_id: "NOV-TP2-G6-CLM-033"
+    claim_id: "CLM-033"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Novel synthesis linking pressure Poisson equipartition and non-local strain depletion to Calderon-Zygmund endpoint limits and the Eulerian-Lagrangian measure gap (B1 <-> B2)."
+    source_scope: "TP2-G6-A1 work packages and audited harmonic analysis / Navier-Stokes literature."
+    query_scope: "Pressure Poisson balance, strain eigenframe depletion, Calderon-Zygmund BMO endpoint, stochastic measure transfer."
+    audit_date: "2026-09-06"
+    databases_searched: ["local TP2 literature matrix", "research_memory", "arXiv", "MathSciNet"]
+    primary_source_review: "TP2-G6-A1 synthesis report"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["Vieillefosse restricted Euler model", "Calderon-Zygmund singular integral theory", "Constantin-Fefferman geometric depletion"]
+    limitations: "Identifies structural obstruction NS-OBS-017; Clay Statement B remains unresolved."
+

@@ -427,3 +427,18 @@ understanding_packages:
       essential_assumptions: ["Exact Navier-Stokes transport equations", "correct semantic taxonomy"]
       status: "U3_COMPLETE_PACKAGE"
 
+  - package_id: "UND-033"
+    claim_id: "CLM-033"
+    name: "PRESSURE_STRAIN_COUPLING_AND_CALDERON_ZYGMUND_LIMITS"
+    level_1_mechanism: "Analyzes pressure Poisson balance, strain eigenframe depletion, Calderon-Zygmund endpoint breakdown, and the Eulerian-Lagrangian measure gap."
+    level_2_architecture: |
+      1. Exact Poisson equation -Delta p = tr(S^2) - 1/2|omega|^2 implies global equipartition on T^3: int tr(S^2) dx = 1/2 int |omega|^2 dx.
+      2. Non-local deviatoric pressure Hessian Pi^dev dynamically depletes positive strain eigenvalues under active stretching, averting local Vieillefosse blowup.
+      3. Calderon-Zygmund singular integrals fail at L^infinity, and non-local phase cancellation prevents uniform pointwise coercivity (NS-OBS-017).
+      4. Eulerian L^p(dx) bounds cannot control Lagrangian E_mu_s[Xi_s] without assuming BKM regularity (measure gap between dx and dmu_s).
+    level_3_rigorous_q_and_a:
+      why_it_works: "Delineates the exact mathematical power and harmonic analysis boundaries of pressure-strain coupling."
+      what_can_fail: "Asserting that pressure depletion prevents blowup without proving pointwise phase alignment, or equating dx with dmu_s."
+      essential_assumptions: ["Incompressible Navier-Stokes on periodic T^3", "Calderon-Zygmund singular integral theory"]
+      status: "U3_COMPLETE_PACKAGE"
+

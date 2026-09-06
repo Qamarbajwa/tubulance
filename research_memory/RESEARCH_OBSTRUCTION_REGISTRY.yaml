@@ -148,3 +148,12 @@ obstructions:
     mathematical_core: "tr(C_s)/|m_n|^2=e^{J_n}-1 constrains only a scalar trace, not the covariance spectrum."
     known_bypasses_or_relaxations: ["Independent covariance-eigenstructure estimates or directional moment identities."]
     status: "OPEN_INFORMATIONAL_OBSTRUCTION"
+
+  - obstruction_id: "NS-OBS-017"
+    name: "PRESSURE_HESSIAN_PHASE_CANCELLATION_AND_MEASURE_GAP"
+    description: "Non-local Calderon-Zygmund singular integrals allow local phase cancellation between strain and the pressure Hessian without uniform pointwise coercivity, and Eulerian L^p(dx) bounds decouple from Lagrangian E_mu_s[Xi_s]."
+    first_encountered_in: "TP2-G6-A1"
+    affected_pathways: ["TP2-G6-A1", "TP2-G6-B1", "TP2-G6-B2"]
+    mathematical_core: "e_1 . Pi^dev e_1 does not satisfy pointwise lower bounds against alpha_1^2 due to non-local phase cancellation in singular integrals, and bounding dmu_s/dx <= C requires BKM circularity."
+    known_bypasses_or_relaxations: ["Geometric vortex alignment criteria or non-circular covering measure estimates resolving Bridge B2."]
+    status: "OPEN_STRUCTURAL_OBSTRUCTION"

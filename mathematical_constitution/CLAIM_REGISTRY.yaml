@@ -642,4 +642,24 @@ claims:
       project_status: "PROJECT_CANONICAL"
     dependencies: ["CLM-024", "CLM-029", "CLM-031"]
 
+  - claim_id: "CLM-033"
+    claim_type: "MATHEMATICAL_IDENTITY"
+    name: "PRESSURE_STRAIN_COUPLING_AND_CALDERON_ZYGMUND_LIMITS"
+    milestone: "TP2-G6-A1"
+    statement: "On the periodic torus T^3, exact pressure Poisson balance -Delta p = tr(S^2) - 1/2|omega|^2 enforces global equipartition int_T3 tr(S^2) dx = 1/2 int_T3 |omega|^2 dx and deviatoric strain evolution (D_t - nu Delta)S = -(S^2+Omega^2)_dev - Pi^dev. While non-local pressure Hessian Pi^dev dynamically depletes strain eigenvalues under active stretching, Calderon-Zygmund singular integral bounds fail at L^infinity and admit non-local phase cancellation (NS-OBS-017). Furthermore, Eulerian L^p(dx) bounds cannot control the Lagrangian stochastic expectation E_mu_s[Xi_s] without assuming Beale-Kato-Majda regularity (the B1 <-> B2 measure gap). Consequently, pressure-strain coupling and Calderon-Zygmund bounds alone cannot unconditionally close Bridge B1."
+    passport:
+      truth_status: "PROVED_IDENTITY"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-024", "CLM-032"]
+
 

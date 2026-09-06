@@ -216,7 +216,20 @@
 - Audit Question 5 (Dimensional Consistency): Disambiguated stretching rate $\sigma_{\text{stretch}} \sim M_n$ ($T^{-1}$), stretching vector $\mathcal{V}_{\text{stretch}} \sim M_n^2$ ($T^{-2}$), and enstrophy production density $\mathcal{P}_{\text{enstrophy}} \sim M_n^3$ ($T^{-3}$).
 - Audit Questions 6 & 7 (Covariance & Ontology): `CLM-029` / `LBR-010` retained with qualification on sufficiency vs necessity for Bridge $B_3$. Adversarial-family ontology repaired to 6 canonical tiers, eliminating `"YES (Candidate)"`.
 - `CLM-030` superseded by `CLM-032` (`RIGID_BRANCH_AUDITED_SYNTHESIS_AND_CORRECTION`).
-- 32 registered claims validated in `CLAIM_REGISTRY.yaml`, 0 DAG cycles, 305 scoped regression tests passing.
+- 32 registered claims validated in CLAIM_REGISTRY.yaml, 0 DAG cycles, 305 scoped regression tests passing.
+- Clay Millennium Prize Problem Statement B on \mathbb{T}^3 remains strictly UNRESOLVED.
+
+### T. TP2-G6-A1 Accepted State (2026-09-06)
+
+- `TP2-G6-A1 = ACCEPTED_AS_CANONICAL_MILESTONE` under Governance Kernel v3.0.0 and Mathematical Research Constitution v1.0.1.
+- Final Scientific Verdict: `PRESSURE_STRAIN_EQUIPARTITION_AND_CALDERON_ZYGMUND_LIMITS_ESTABLISHED`.
+- Target Bridge: `B1 — Non-Circular Xi Control` (revealing fundamental coupling to `B2 — Measure Transfer`).
+- Proved Theorem 1 (`CLM-033` / WP1): Exact pressure Poisson equation $-\Delta p = \operatorname{tr}(S^2) - \frac{1}{2}|\omega|^2 = Q_{\text{OW}}$ enforces global equipartition on $\mathbb{T}^3$: $\int_{\mathbb{T}^3} \operatorname{tr}(S^2) dx = \frac{1}{2} \int_{\mathbb{T}^3} |\omega|^2 dx$. Global strain dominance or global enstrophy dominance is impossible on $\mathbb{T}^3$.
+- Proved Theorem 2 (`CLM-033` / WP2): Deviatoric strain transport $(D_t - \nu \Delta)S = -(S^2 + \Omega^2)_{\text{dev}} - \Pi^{\text{dev}}$. In contrast to the unconstrained finite-time blowup of Restricted Euler along the Vieillefosse tail, the non-local deviatoric pressure Hessian $\Pi^{\text{dev}} = (\mathcal{R}\otimes\mathcal{R} + \frac{1}{3}I)Q_{\text{OW}}$ dynamically depletes the intermediate and maximum strain eigenvalues under active stretching.
+- Proved Theorem 3 (`CLM-033` / WP3 & WP4): Calderón–Zygmund singular integral bounds $\|\nabla S\|_{L^p} \le C_p \|\nabla \omega\|_{L^p}$ fail at $L^\infty$ (yielding only $BMO$), and non-local phase cancellation prevents uniform pointwise coercivity ($e_1 \cdot \Pi^{\text{dev}} e_1 \not\ge c \alpha_1^2$).
+- Discovered Bridge $B_1 \leftrightarrow B_2$ Measure Gap: Eulerian $L^p(dx)$ Calderón–Zygmund bounds cannot control the Lagrangian stochastic expectation $\mathbb{E}_{\mu_s}[\Xi_s]$ without bounds on $d\mu_s / dx$, which circularly require Beale–Kato–Majda integrability.
+- Registered structural obstruction `NS-OBS-017` and negative evidence `NEG-EV-036`.
+- 33 registered claims, 0 DAG cycles, full mathematical assurance audit valid.
 - Clay Millennium Prize Problem Statement B on $\mathbb{T}^3$ remains strictly `UNRESOLVED`.
 
 
