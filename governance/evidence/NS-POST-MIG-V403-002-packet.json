@@ -1,0 +1,50 @@
+{
+  "schema_version": "4.0.3",
+  "evidence_id": "NS-POST-MIG-V403-002-PACKET",
+  "task_id": "NS-POST-MIG-V403-002",
+  "capability_ids": ["GOV-V4-RECONCILIATION"],
+  "candidate_id": "GIT_SHA:d8577f9b58e57540a2e5436d8fca10c9ebc74f83",
+  "candidate_identity_type": "GIT_SHA",
+  "dimension": "E3",
+  "environment": "INTEGRATED_LOCAL",
+  "environment_detail": "Local Windows workspace (D:/Comfy UI/tubulance)",
+  "independence": "IND1",
+  "producer": {
+    "id": "antigravity-governance-conformance-engine",
+    "role": "VERIFIER",
+    "tool_or_environment": "Python MathAssuranceEngine, Node.js verifier, pytest"
+  },
+  "action": "Reconcile claims 30 to 33 provenance, audit migration boundary for unreviewed mathematical promotions, correct external evidence attribution (ABCMZ vs GDA), correct Navier-Stokes positive-viscosity dissipation transfer rationale, and clarify package inventory file count semantics",
+  "exit_code": 0,
+  "result": "PASS",
+  "claims_supported": [
+    "Claims 31, 32, 33 verified as VALID_PRE_MIGRATION_SCIENTIFIC_INCREMENT with complete provenance in commits 8996a64 and aa24fbd",
+    "Zero unreviewed mathematical promotions occurred during governance migration commits 48ebabb and d8577f9",
+    "External evidence EXT-004 properly attributed to Alpoge-Buckmaster and fluid_lean formalization",
+    "External evidence EXT-005 separated for Ganeshram-Duruisseaux-Anandkumar as candidate numerical route",
+    "Navier-Stokes positive-viscosity transfer rationale corrected to NO_DIRECT_TRANSFER_ESTABLISHED",
+    "Package inventory file accounting clarified (8 payload files indexed in MANIFEST.sha256.json, 9 total physical files)",
+    "Epistemic invariant preserved: Clay Statement B remains strictly UNRESOLVED",
+    "Release boundary preserved: release.state remains NO-GO"
+  ],
+  "claims_not_supported": [
+    "Mathematical truth or Navier-Stokes existence and smoothness resolution",
+    "Commercial release eligibility or external deployment authorization"
+  ],
+  "hard_gate_ids": [
+    "GATE-EPISTEMIC-CLAY-B-UNRESOLVED",
+    "GATE-CLAIM-PROVENANCE-VERIFIED",
+    "GATE-MIGRATION-NON-PROMOTION",
+    "GATE-EXTERNAL-EVIDENCE-ATTRIBUTION"
+  ],
+  "artifact_refs": [
+    "mathematical_constitution/EXTERNAL_VALIDATION_LEDGER.yaml",
+    "research_memory/EXTERNAL_EVIDENCE_INTAKE_20260908_ABCMZ.md",
+    "governance/migrations/V403_SOURCE_PACKAGE_INVENTORY.md",
+    "governance/task_envelopes/NS-POST-MIG-V403-002.yaml",
+    "governance/evidence/NS-POST-MIG-V403-002-review.md",
+    "governance/evidence/NS-POST-MIG-V403-002-acceptance.md"
+  ],
+  "timestamp": "2026-09-08T18:53:00Z",
+  "verdict": "CONTINUITY_RECONCILED_WITH_CORRECTION"
+}

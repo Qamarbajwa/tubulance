@@ -1,0 +1,51 @@
+task_envelope:
+  envelope_id: "NS-POST-MIG-V403-002"
+  program: "NS-TRAJECTORY-PERSISTENCE-2"
+  title: "Final Scientific Continuity and External-Evidence Reconciliation"
+  governance_standard: "Universal Governance Minimal v4.0.3"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+
+  risk_and_action:
+    risk_ceiling: "R3 (High Assurance)"
+    execution_risk_class: "R2"
+    action_class: "RECONCILIATION_GOVERNED"
+
+  target_problem:
+    problem_id: "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"
+    domain: "T^3 = R^3 / Z^3 (Periodic 3-Torus)"
+    viscosity: "nu > 0 (constant)"
+    forcing: "f = 0 (unforced)"
+    target_status: "UNRESOLVED"
+    invariance_rule: "Reconciliation does not alter mathematical truth or target status"
+
+  reconciliation_scope:
+    claims_30_to_33_reconciliation:
+      CLM-031: "VALID_PRE_MIGRATION_SCIENTIFIC_INCREMENT (originating commit 8996a64, milestone TP2-G6-B-R2)"
+      CLM-032: "VALID_PRE_MIGRATION_SCIENTIFIC_INCREMENT (originating commit 8996a64, milestone TP2-G6-B-R2)"
+      CLM-033: "VALID_PRE_MIGRATION_SCIENTIFIC_INCREMENT (originating commit aa24fbd, milestone TP2-G6-A1)"
+    governance_migration_audit: "NO_SCIENTIFIC_PROMOTION_BY_MIGRATION"
+    external_evidence_corrections:
+      EXT-004: "Corrected attribution to Alpoge-Buckmaster / Cordoba-Martinez-Zoroa; fluid_lean formalization"
+      EXT-005: "Separated Ganeshram-Duruisseaux-Anandkumar as candidate/numerical/PINN-supported route"
+      transfer_language: "NO_DIRECT_TRANSFER_ESTABLISHED with exact positive-viscosity dissipation rationale"
+    package_inventory_clarification: "8 payload/tool files in MANIFEST.sha256.json; 9 physical files including manifest"
+
+  provenance_and_baseline:
+    base_checkpoint: "d8577f9b58e57540a2e5436d8fca10c9ebc74f83"
+    historical_checkpoint_preserved: "TP2-G6-B-R1 (9783774430cd3939d473cd0e833aa2cf5b5c0645)"
+
+  agent_roles:
+    writer: "antigravity-primary-agent"
+    reviewer: "antigravity-fresh-context-verifier"
+    reviewer_independence: "IND1"
+    math_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+    acceptor: "autonomous-project-governance-coordinator"
+
+  conformance_gates:
+    claim_provenance_verified: true
+    no_unreviewed_promotion_verified: true
+    external_evidence_attribution_separated: true
+    transfer_language_corrected: true
+    package_file_accounting_clarified: true
+    regression_tests_passed: true
+    anti_self_acceptance_enforced: true

@@ -9,39 +9,64 @@
 
 ---
 
-## 1. External Research Overview
+## 1. Programme A: Alpöge–Buckmaster / Córdoba–Martínez-Zoroa Route
 
-On 2026-09-08, external mathematical research preprints and announcements were recorded concerning finite-time blow-up constructions in 3D incompressible fluid dynamics:
-
-1. **Alpöge–Buckmaster Programme:**
-   - **Authors:** Levent Alpöge and Tristan Buckmaster.
-   - **Core Result:** Finite-time singularity formation for the 3D incompressible Euler equations with smooth external forcing ($f \ne 0$).
-   - **Methodology:** Córdoba–Martínez-Zoroa-type iterative blow-up construction; parabolic/hyperbolic coordinate collapse with computer-assisted and formal verification techniques.
-   - **Formalization:** Associated formalization in the Lean interactive theorem prover.
-   - **Related Systems:** Boussinesq equations and incompressible porous-media equations (IPM).
-
-2. **Related Independent Euler Singularity Research:**
-   - Work by Ganeshram, Duruisseaux, and Anandkumar on machine-assisted singularity detection and rigorous computer-assisted bounds in Euler dynamics.
+- **Authors:** Levent Alpöge and Tristan Buckmaster.
+- **Construction Strategy:** Córdoba–Martínez-Zoroa-type iterative blow-up construction; parabolic/hyperbolic coordinate collapse with computer-assisted and formal verification techniques.
+- **Target Equation:** Forced 3D incompressible Euler equations with smooth external forcing ($f \ne 0$) on $\mathbb{R}^3$.
+- **Formalization:** Public `fluid_lean` repository formalized in Lean 4 (authored by the paper's authors / formalization team as supported by the public repository).
+- **Ledger ID:** `EXT-004` (`INTAKE_RECORDED_NOT_ASSIMILATED`).
+- **Transfer Status:** `NO_DIRECT_TRANSFER_ESTABLISHED`.
 
 ---
 
-## 2. Strict Boundary & Non-Transferability to Navier–Stokes Statement B
+## 2. Programme B: Ganeshram–Duruisseaux–Anandkumar Candidate Route
+
+- **Authors:** Vignesh Ganeshram, Valentin Duruisseaux, and Anima Anandkumar.
+- **Scope & Methodology:** Independent research programme exploring machine-assisted singularity detection, physics-informed neural networks (PINNs), and computer-assisted numerical bounding in Euler dynamics.
+- **Epistemic Classification:** Candidate / numerical / PINN-supported route. Because a complete, self-contained, and rigorous analytical stability proof is not yet established in available peer-reviewed literature, this route is classified strictly as a numerical candidate rather than an established blowup theorem.
+- **Independence:** Distinct and unmerged from the Alpöge–Buckmaster programme.
+- **Ledger ID:** `EXT-005` (`INTAKE_RECORDED_NOT_ASSIMILATED`).
+- **Transfer Status:** `NO_DIRECT_TRANSFER_ESTABLISHED`.
+
+---
+
+## 3. Strict Navier–Stokes Statement B Transfer Analysis
 
 > [!WARNING]
 > **This external evidence does NOT resolve or alter the Clay Millennium Prize Problem Statement B for 3D Navier–Stokes.**
 
-### Mathematical Obstacles to Transfer:
-1. **Viscosity ($\nu = 0$ vs. $\nu > 0$):**
-   - The Alpöge–Buckmaster construction is fundamentally inviscid ($\nu = 0$). For 3D Navier–Stokes, viscous diffusion $\nu \Delta u$ introduces an instantaneous parabolic smoothing effect at high wavenumbers $|k| \gtrsim k_d$.
-2. **Forcing ($f \ne 0$ vs. $f = 0$):**
-   - The Euler singularity construction relies on carefully engineered smooth external forcing $f(x, t)$ to inject energy and maintain unstable alignment. Clay Statement B specifies $f \equiv 0$ (unforced decaying flow).
-3. **Domain ($\mathbb{R}^3$ / Boundary vs. Periodic 3-Torus $\mathbb{T}^3$):**
-   - Incompressible Euler singularities often exploit boundary effects or non-periodic symmetries. Statement B is strictly on $\mathbb{T}^3 = \mathbb{R}^3 / \mathbb{Z}^3$.
+### Exact Physical and Mathematical Mismatch:
+
+$$
+\boxed{
+\text{forced Euler on }\mathbb{R}^3
+\quad\neq\quad
+\text{unforced Navier–Stokes on }\mathbb{T}^3
+}
+$$
+
+1. **Viscous Dissipation:**  
+   Standard incompressible Navier–Stokes introduces the additional positive-viscosity term
+
+   $$
+   \nu\Delta u,
+   $$
+
+   producing high-frequency dissipation absent from Euler. The currently assimilated public evidence does not establish whether the Alpöge–Buckmaster / Córdoba–Martínez-Zoroa amplification construction extends to the standard unforced Navier–Stokes Statement-B target.
+
+2. **External Forcing:**  
+   The Alpöge–Buckmaster construction explicitly relies on smooth external forcing $f \ne 0$ to sustain unstable self-similar profiles. Clay Statement B strictly specifies autonomous unforced flow ($f \equiv 0$).
+
+3. **Spatial Domain:**  
+   The external blowup construction is on $\mathbb{R}^3$, whereas Statement B is strictly posed on the flat periodic torus $\mathbb{T}^3 = \mathbb{R}^3 / \mathbb{Z}^3$.
 
 ---
 
-## 3. Program Disposition & Next Actions
+## 4. Program Disposition & Next Actions
 
-- **Disposition:** Neutral external evidence recorded for research memory and literature awareness.
-- **Scientific Programme Status:** The proposed exploratory investigation programme `NS-EXT-ABCMZ-001` is **NOT** launched.
-- **Priority:** Scientific repair milestone `TP2-G6-B-R2` and active Bridge increments take precedence.
+- **Disposition:** Neutral external evidence recorded for research memory and literature awareness under `NO_DIRECT_TRANSFER_ESTABLISHED`.
+- **Intake Status:** Retained strictly as `EXT-004 = INTAKE_RECORDED_NOT_ASSIMILATED` and `EXT-005 = INTAKE_RECORDED_NOT_ASSIMILATED`.
+- **Exploratory Programme Status:** The exploratory investigation programme `NS-EXT-ABCMZ-001` is **NOT** launched.
+- **Clay Statement B Status:** Strictly **`UNRESOLVED`**.
+

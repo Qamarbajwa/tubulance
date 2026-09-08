@@ -10,7 +10,12 @@
 
 ## 1. Archived Distribution Files and SHA-256 Hashes
 
-All 8 files in the source distribution were verified using Node.js crypto against `MANIFEST.sha256.json`:
+The distribution staging directory `governance/packet/v4.0.3/` contains 9 physical files in total:
+- 1 manifest metadata file: `MANIFEST.sha256.json` (the cryptographic root of trust)
+- 8 payload and tooling files explicitly indexed and hashed within `MANIFEST.sha256.json`.
+
+All 8 indexed files were verified using Node.js crypto against `MANIFEST.sha256.json`:
+
 
 | File Path | Byte Size | SHA-256 Checksum | Operational Role in v4.0.3 |
 |---|---|---|---|
