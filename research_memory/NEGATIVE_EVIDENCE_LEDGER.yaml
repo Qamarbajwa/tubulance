@@ -361,6 +361,16 @@ negative_evidence:
     mathematical_verdict: "SENSITIVITY_IDENTIFIED_PHASE_LOCKING_REQUIRED_FOR_STOCHASTIC_TRANSFER"
     canonical_artifact: "NS_OPENAI_B1_SYNTHESIS_REPORT.md"
 
+  - record_id: "NEG-EV-041"
+    pathway_id: "NS-OPENAI-B1-R1"
+    title: "INCOMPRESSIBLE_SINGLE_PLANE_WAVE_CONVECTIVE_CANCELLATION"
+    falsified_hypothesis: "A single divergence-free plane wave w = a cos(k.x + phi) generates a second-harmonic daughter mode 2k via convective self-advection (w . grad)w."
+    counterexample_or_proof: "For any solenoidal plane wave with a . k = 0, the directional derivative (w . grad)w is proportional to a (a . k) = 0 identically. Incompressible monochromatic waves have exactly zero nonlinear self-advection and cannot generate second harmonics or cascade inheritance without non-parallel multi-mode interactions."
+    governing_obstruction: "NS-OBS-020B"
+    mathematical_verdict: "FALSIFIED_SINGLE_PLANE_WAVE_SELF_ADVECTION_IDENTICALLY_ZERO"
+    canonical_artifact: "NS_OPENAI_B1_R1_CASCADE_INHERITANCE_FALSIFICATION.md"
+
+
 
 
 

@@ -1,0 +1,58 @@
+task_envelope:
+  envelope_id: "NS-OPENAI-B1-R1"
+  program: "OPENAI_NAVIER_STOKES_UNFORCED_TRANSFER"
+  parent: "NS-OPENAI-B1"
+  route: "AUTONOMOUS_CASCADE_REALIZABILITY_REAUDIT"
+  title: "Autonomous Precursor Cascade Realizability Re-Audit: Rigorous Deconstruction of CLM-036, Operator Invertibility, and Two-Wave Stress Cone Realizability"
+  governance_standard: "Universal Governance Minimal v4.0.3"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+
+  risk_and_action:
+    risk_ceiling: "R3 (High Assurance)"
+    execution_risk_class: "R3"
+    action_class: "SCIENTIFIC_REAUDIT_AND_CORRECTIVE_DOWNGRADE"
+
+  target_problem:
+    problem_id: "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"
+    domain: "T^3 = R^3 / Z^3 (Periodic 3-Torus)"
+    viscosity: "nu > 0 (constant)"
+    forcing: "f = 0 (strictly unforced)"
+    target_status: "UNRESOLVED"
+    invariance_rule: "Re-audit must preserve all historical B1 commits intact and prospective corrections must prevent premature claim promotion"
+
+  strategic_directive:
+    primary_target: "RE-AUDIT OF CLM-036 AND RE-EVALUATION OF NS-OBS-020B"
+    mandate: "Audit whether CLM-036 is actually established; deconstruct into 15 constituent assertions; test backward parabolic operator solvability against Hadamard ill-posedness; audit OpenAI Section 7 two-wave stress cone H=[C(b+) C(b-)]; falsify plane-wave daughter generation (w.grad)w=0; enforce non-authorization of NS-OPENAI-B2."
+    historical_anchors_preserved:
+      - "71df4aa89a0c3dff511461512f46c52c1954769d (NS-OPENAI-B1 state sync)"
+      - "dacf2170651c4ea5593b92ea5a2c568afe93bb9a (NS-OPENAI-B1 scientific seal)"
+      - "80a095f495f4a8b4a0b77ea783fe121621eac215 (NS-EXT-OPENAI-001-R1 state sync)"
+      - "31b7d4c24960103767f1b85a8e27ca9458626087 (NS-EXT-OPENAI-001-R1 seal)"
+      - "7a949f425a5f05cc21f699bce04f3392a0026b92 (NS-EXT-OPENAI-001 milestone commit)"
+      - "50e7b3cc74873abd8d909a84f32e43b6eca3bfb3 (TP2-G6-C1 seal)"
+      - "9783774430cd3939d473cd0e833aa2cf5b5c0645 (TP2-G6-B-R1 seal)"
+
+  agent_roles:
+    writer: "antigravity-primary-agent"
+    reviewer: "antigravity-fresh-context-verifier"
+    reviewer_independence: "IND1"
+    math_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+    acceptor: "autonomous-project-governance-coordinator"
+
+  conformance_gates:
+    clm036_disposition_matrix_audited: true
+    source_faithful_pulse_model_checked: true
+    backward_propagator_operator_audited: true
+    backward_heat_firewall_enforced: true
+    actual_phase_characteristic_audited: true
+    polarization_system_reaudited: true
+    two_wave_stress_cone_reconstructed: true
+    single_pulse_nonlinear_gate_evaluated: true
+    two_pulse_interaction_reaudited: true
+    finite_n_uniformity_audited: true
+    infinite_hierarchy_sobolev_vs_analytic_audited: true
+    autonomous_clock_sensitivity_audited: true
+    daughter_harmonic_plane_wave_falsified: true
+    energy_budget_arbitrary_values_removed: true
+    test_limitations_explicitly_stated: true
+    deterministic_tests_passed: true

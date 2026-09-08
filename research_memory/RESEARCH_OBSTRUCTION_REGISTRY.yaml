@@ -186,13 +186,13 @@ obstructions:
     status: "PROVED_STRUCTURAL_OBSTRUCTION"
 
   - obstruction_id: "NS-OBS-020B"
-    name: "AUTONOMOUS_PRECURSOR_GENERATION_AND_PHASE_ALIGNMENT"
-    description: "Phase alignment and entrance-state realizability for autonomous multiscale precursors proved under Programme NS-OPENAI-B1 via backward characteristic ray-tracing, exact initial phase matching phi_j(0), and dynamical polarization steering to the principal stretching eigenvector v_1."
+    name: "AUTONOMOUS_PRECURSOR_GENERATION_AND_PHASE_ALIGNMENT_OPEN"
+    description: "Re-audited under NS-OPENAI-B1-R1: While local wavepacket amplification is established, pulling pulses back to a single smooth initial condition u_0 in C^infty(T^3) remains obstructed by off-characteristic Hadamard backward heat explosion, 2-wave stress-cone matrix rank requirements H=[C(b+) C(b-)], and hyper-singular clock sensitivity dt/dr_0 ~ 2^(j/2)."
     first_encountered_in: "NS-EXT-OPENAI-001-R1"
-    affected_pathways: ["NS-EXT-OPENAI-001-R1", "NS-OPENAI-B1"]
-    mathematical_core: "Single-pulse and uniform finite-N entrance conditions satisfied with error <= epsilon_j* and Q_j in int(K) without external forcing; initial data u_0 in C^omega(T^3) real-analytic."
-    known_bypasses_or_relaxations: ["Constructive phase-matching and backward de-shearing established under Programme NS-OPENAI-B1."]
-    status: "RESOLVED_FOR_AUTONOMOUS_PULSES"
+    affected_pathways: ["NS-EXT-OPENAI-001-R1", "NS-OPENAI-B1", "NS-OPENAI-B1-R1"]
+    mathematical_core: "Full operator invertibility U_B(t_j, 0)^-1 on Sobolev spaces is unproved off the central ray; single plane wave convective self-advection (w.grad)w vanishes identically, refuting cascade inheritance."
+    known_bypasses_or_relaxations: ["Local homogeneous pulse amplification in self-similar coordinates (CLM-037); resonant triad coupling."]
+    status: "OPEN_STRUCTURAL_OBSTRUCTION"
 
   - obstruction_id: "NS-OBS-020C"
     name: "EXACT_RESIDUAL_CLOSURE_OPEN"

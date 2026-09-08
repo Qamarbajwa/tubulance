@@ -930,7 +930,7 @@ pathways:
   - pathway_id: "NS-OPENAI-B1"
     title: "Autonomous Multiscale Precursor Cascade Programme"
     parent_pathways: ["NS-EXT-OPENAI-001-R1"]
-    descendant_pathways: ["NS-OPENAI-B2"]
+    descendant_pathways: ["NS-OPENAI-B1-R1"]
     starting_thesis: "The pulse states used in the forced OpenAI mechanism arise autonomously from a single smooth, finite-energy initial velocity field via backward de-shearing, phase matching, and strain attraction."
     scientific_question: "Can an unforced periodic Navier-Stokes solution autonomously generate the infinite pulse sequence W_j* with required phase, polarization, and stress-cone inclusion Q_j in K?"
     intended_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
@@ -959,6 +959,40 @@ pathways:
     reopen_conditions: ["Activation of successor route NS-OPENAI-B2."]
     similarity_tags: ["autonomous_precursor_cascade", "backward_de_shearing", "phase_matching", "stress_cone", "uniform_finite_N", "analytic_convergence", "subcritical_energy", "autonomous_clock"]
     last_re_evaluated: "2026-09-08"
+
+  - pathway_id: "NS-OPENAI-B1-R1"
+    title: "Autonomous Precursor Cascade Realizability Re-Audit"
+    parent_pathways: ["NS-OPENAI-B1"]
+    descendant_pathways: []
+    starting_thesis: "Re-audit whether CLM-036 is established or whether autonomous precursor pulse generation remains restricted to a local homogeneous mechanism."
+    scientific_question: "Does ray-tracing wavevector de-shearing prove full backward parabolic PDE operator invertibility U_B^-1 on T^3, and does a single plane wave generate cascade inheritance?"
+    intended_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
+    core_objects: ["U_B(t_j, 0)^-1", "H = [C(b+) C(b-)]", "(w.grad)w == 0", "Hadamard heat barrier", "Gevrey s = 1/(2h) = 10", "Clock sensitivity 2^(j/2)"]
+    mathematical_form: "(w.grad)w = 0 for any solenoidal plane wave; H 2x2 matrix required for 2D core stress; U_B^-1 ill-posed off characteristic ray."
+    scaling: "Burst dissipation O(1); local amplification 2^(jh) -> infty; clock sensitivity 2^(j/2) -> infty; Sobolev growth (m!)^10 (non-analytic)."
+    geometry: "Periodic 3-torus T^3; rotating helical pulse frame."
+    trajectory_dependence: "HYBRID"
+    stochastic_component: false
+    assumptions: ["Incompressible Navier-Stokes on T^3", "nu > 0", "unforced f = 0"]
+    domain: "Periodic flat 3-torus T^3."
+    regularity_class: "Gevrey class s = 10 (C^infty, non-analytic)."
+    expected_outcome: "Rigorous disposition of 15 assertions of CLM-036; falsification of plane-wave daughter generation; retraction of CLM-036; promotion of CLM-037."
+    actual_outcome: "B1_LOCAL_PRECURSOR_MECHANISM_ONLY: Proved that single plane-wave self-advection vanishes identically (NEG-EV-041); proved stress cone requires 2-wave matrix H; proved backward operator invertibility is open due to off-axis Hadamard blowup; retracted CLM-036; promoted CLM-037; re-opened NS-OBS-020B; forbade NS-OPENAI-B2."
+    tests_attempted: ["tests/test_ns_openai_b1_r1_suite.py"]
+    evidence_refs: ["NS_OPENAI_B1_R1_SYNTHESIS_REPORT.md", "NS_OPENAI_B1_R1_ACCEPTANCE_DECISION.md", "NS_OPENAI_B1_R1_CASCADE_INHERITANCE_FALSIFICATION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Re-audit completed; global autonomous cascade unproved; local pulse amplification established; transfer route reassessment required."
+    failure_mechanism: "Global backward PDE operator invertibility unproved; 2-wave stress cone rank deficit; single plane-wave self-advection identically zero."
+    what_was_falsified: ["CLM-036 as a proved global theorem", "Single plane-wave daughter harmonic generation (w.grad)w == 0", "Single-wave dyad stress-cone landing", "Real-analyticity C^omega (Gevrey s = 10)", "Autonomous clock spatial robustness"]
+    what_was_not_falsified: ["Local homogeneous pulse amplification in self-similar coordinates (CLM-037)", "Subcritical pulse kinetic energy E_j ~ 2^(-0.35 j) -> 0", "Two-wave helical matrix invertibility H = [C(b+) C(b-)]"]
+    surviving_results: ["CLM-037 (Local Homogeneous Pulse Amplification)", "Two-Wave Helical Coupling Matrix H", "Subcritical Energy Decay", "Ray-tracing de-shearing along central characteristic"]
+    negative_results: ["NEG-EV-040", "NEG-EV-041", "NS-OBS-020B"]
+    open_questions: ["Can a multi-mode resonant triad or self-similar boundary layer solve the global backward Cauchy problem without external seeding forces?"]
+    obstruction_ids: ["NS-OBS-020B", "NS-OBS-020C"]
+    reopen_conditions: ["Reassessment of the OpenAI unforced transfer route."]
+    similarity_tags: ["reaudit", "plane_wave_cancellation", "two_wave_cone", "hadamard_barrier", "gevrey_class", "local_pulse_mechanism"]
+    last_re_evaluated: "2026-09-09"
+
 
 
 
