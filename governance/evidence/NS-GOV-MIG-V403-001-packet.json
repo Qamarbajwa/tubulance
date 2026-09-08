@@ -3,7 +3,7 @@
   "evidence_id": "NS-GOV-MIG-V403-001-PACKET",
   "task_id": "NS-GOV-MIG-V403-001",
   "capability_ids": ["GOV-V4-MIGRATION"],
-  "candidate_id": "GIT_SHA:aa24fbdf251645b70338503a1f361715d942d38f",
+  "candidate_id": "GIT_SHA:48ebabbd73d763ea31b3bbf15277d60e16d86cea",
   "candidate_identity_type": "GIT_SHA",
   "dimension": "E3",
   "environment": "INTEGRATED_LOCAL",
@@ -14,7 +14,7 @@
     "role": "VERIFIER",
     "tool_or_environment": "Node.js v4 package verifier and pytest v4 conformance suite"
   },
-  "action": "Verify Universal Governance Minimal v4.0.3 package integrity, state serialization, anti-self-acceptance, and 12 state-transition tests",
+  "action": "Verify Universal Governance Minimal v4.0.3 package integrity, state serialization, anti-self-acceptance, 12 state-transition tests, and 12 negative failure-injection scenarios",
   "command_or_invocation": "node governance/packet/v4.0.3/tools/verify-package.mjs && pytest tests/test_governance_v4_migration.py -v",
   "exit_code": 0,
   "result": "PASS",
@@ -22,6 +22,7 @@
     "Package distribution integrity verified: 8/8 files match MANIFEST.sha256.json exactly",
     "Three operational authorities populated: GOVERNANCE.md, PROJECT_DIRECTION.md, PROJECT_STATE.yaml",
     "All 12 minimal state-transition tests in EVIDENCE_AND_MIGRATION.md pass cleanly",
+    "All 12 negative failure-injection scenarios pass with machine-enforced fail-closed rejection",
     "Revision compare-and-swap state serialization enforced",
     "Anti-self-acceptance enforced: Writer cannot review or accept own candidate",
     "Epistemic invariant preserved: Clay Statement B remains UNRESOLVED",
@@ -42,12 +43,21 @@
     "governance/GOVERNANCE.md",
     "governance/PROJECT_DIRECTION.md",
     "governance/PROJECT_STATE.yaml",
+    "governance/migrations/V403_SOURCE_PACKAGE_INVENTORY.md",
+    "governance/migrations/V403_PROJECT_BINDING_REPORT.md",
+    "governance/migrations/V403_APPLICABILITY_MATRIX.md",
+    "governance/migrations/V403_STATE_OWNER_ANALYSIS.md",
+    "governance/migrations/V403_NEGATIVE_TEST_REPORT.md",
+    "governance/migrations/V403_CUTOVER_REPORT.md",
+    "governance/migrations/V403_ROLLBACK_PLAN.md",
+    "governance/migrations/V403_FINAL_GOVERNANCE_STATE_REPORT.md",
+    "governance/migrations/V403_CANDIDATE_MANIFEST.json",
     "tests/test_governance_v4_migration.py"
   ],
   "negative_evidence_refs": [
     "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml",
     "research_memory/RESEARCH_OBSTRUCTION_REGISTRY.yaml"
   ],
-  "timestamp": "2026-09-08T13:40:00Z",
+  "timestamp": "2026-09-08T13:48:30Z",
   "notes": "IND1 fresh-context separation: verification executed by independent deterministic script and separate reviewer persona."
 }

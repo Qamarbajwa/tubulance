@@ -1,0 +1,58 @@
+task_envelope:
+  envelope_id: "NS-GOV-MIG-V403-001"
+  program: "NS-TRAJECTORY-PERSISTENCE-2"
+  title: "Mid-Project Governed Migration to Universal Governance Minimal v4.0.3"
+  governance_standard_target: "Universal Governance Minimal v4.0.3"
+  governance_standard_previous: "Universal Autonomous Project Governance v3.0.0"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+
+  risk_and_action:
+    risk_ceiling: "R3 (High Assurance / former T4)"
+    execution_risk_class: "R3"
+    action_class: "MIGRATION_GOVERNED"
+
+  target_problem:
+    problem_id: "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"
+    domain: "T^3 = R^3 / Z^3 (Periodic 3-Torus)"
+    viscosity: "nu > 0 (constant)"
+    forcing: "f = 0 (unforced)"
+    target_status: "UNRESOLVED"
+    invariance_rule: "Governance migration cannot alter mathematical truth or target status"
+
+  scientific_warning_and_pending_work:
+    pending_milestone: "TP2-G6-B-R2 — SCIENTIFIC CLAIM AUDIT AND REPAIR"
+    status: "PENDING_SCIENTIFIC_REAUDIT"
+    areas_requiring_reaudit:
+      - "Fixed-torus interpretation of parabolic scaling"
+      - "Beltrami vortex-stretching classification"
+      - "Branch-R semantics (R-A initial data vs R-C singular continuation)"
+      - "Status of NS-NEG-014 (downgraded to conditional scaling hypothesis)"
+      - "Gradient-injection lower-bound assumptions"
+      - "Dimensional consistency across stretching rate, vector, and density"
+      - "Exact-vs-candidate solution classification"
+    disposition: "Migration acceptance does not imply scientific acceptance of R1 statements"
+
+  external_evidence_intake:
+    intake_id: "EXT-INTAKE-20260908-ABCMZ-001"
+    topic: "Alpoge-Buckmaster / Cordoba-Martinez-Zoroa Euler Singularity Results"
+    status: "INTAKE_RECORDED_NOT_ASSIMILATED"
+    programme_status: "NS-EXT-ABCMZ-001_QUEUED_NOT_LAUNCHED"
+
+  provenance_and_baseline:
+    base_candidate_sha: "48ebabbd73d763ea31b3bbf15277d60e16d86cea"
+    historical_checkpoint_preserved: "TP2-G6-B-R1 (9783774430cd3939d473cd0e833aa2cf5b5c0645)"
+
+  agent_roles:
+    orchestrator: "antigravity-primary-agent"
+    writer: "antigravity-primary-agent"
+    reviewer: "antigravity-fresh-context-verifier"
+    reviewer_independence: "IND1"
+    math_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+    acceptor: "autonomous-project-governance-coordinator"
+
+  conformance_gates:
+    package_integrity_verified: true
+    state_serialization_enforced: true
+    anti_self_acceptance_enforced: true
+    epistemic_invariants_preserved: true
+    negative_tests_passed: true

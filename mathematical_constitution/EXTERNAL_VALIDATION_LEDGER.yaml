@@ -22,3 +22,11 @@ external_validation_entries:
     venue: "None (Internal Project Canon)"
     independent_replications: "Internal E4 verifier"
     current_status: "PROJECT_CANONICAL"
+
+  - entry_id: "EXT-004"
+    claim_id: "EXTERNAL_EVIDENCE_ABCMZ"
+    validation_tier: "PREPRINT_EXTERNAL"
+    venue: "Alpoge-Buckmaster preprint (2026-09-08) & Lean formalization"
+    independent_replications: "Ganeshram, Duruisseaux, Anandkumar"
+    current_status: "INTAKE_RECORDED_NOT_ASSIMILATED"
+    notes: "Applies to 3D Euler with smooth forcing (f != 0). Non-transferable to unforced Navier-Stokes (nu > 0, f = 0 on T^3). Clay Statement B remains UNRESOLVED."

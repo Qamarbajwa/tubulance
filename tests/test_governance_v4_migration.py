@@ -237,3 +237,229 @@ def test_test13_clay_statement_b_invariant():
     assert "UNRESOLVED" in gov_text
     dir_text = DIRECTION_PATH.read_text(encoding="utf-8")
     assert "UNRESOLVED" in dir_text
+
+
+# ==============================================================================
+# 12 EXPLICIT NEGATIVE MIGRATION SCENARIOS (SECTION 18 REQUIREMENT)
+# ==============================================================================
+
+# --- Negative Test 1: Missing Mandatory Authority File ---
+def test_negative_01_missing_mandatory_authority_file(tmp_path: Path):
+    gov_dir = tmp_path / "governance"
+    gov_dir.mkdir()
+    (gov_dir / "GOVERNANCE.md").write_text("# Gov", encoding="utf-8")
+    (gov_dir / "PROJECT_DIRECTION.md").write_text("# Direction", encoding="utf-8")
+    # Missing PROJECT_STATE.yaml
+    with pytest.raises(GovernanceStateError, match="Missing mandatory authority file"):
+        GovernanceStateManager.validate_mandatory_authorities(gov_dir)
+
+
+# --- Negative Test 2: Conflicting Governance Version ---
+def test_negative_02_conflicting_governance_version():
+    with pytest.raises(GovernanceStateError, match="Conflicting governance version: '3.0.0'"):
+        GovernanceStateManager.validate_governance_version("3.0.0")
+
+    with pytest.raises(GovernanceStateError, match="Conflicting governance version: '4.0.2'"):
+        GovernanceStateManager.validate_governance_version("4.0.2")
+
+    # Exact expected version passes
+    assert GovernanceStateManager.validate_governance_version("4.0.3") is True
+
+
+# --- Negative Test 3: Duplicate State Owner ---
+def test_negative_03_duplicate_state_owner():
+    declarations = [
+        {"file": "governance/PROJECT_STATE.yaml", "role": "PRIMARY_LIVE_STATE", "status": "ACTIVE"},
+        {"file": "GOVERNANCE_STATE.yaml", "role": "PRIMARY_LIVE_STATE", "status": "ACTIVE"},
+    ]
+    with pytest.raises(GovernanceStateError, match="Duplicate state owner detected"):
+        GovernanceStateManager.validate_single_state_owner(declarations)
+
+    # Valid single owner passes
+    valid_decs = [
+        {"file": "governance/PROJECT_STATE.yaml", "role": "PRIMARY_LIVE_STATE", "status": "ACTIVE"},
+        {"file": "GOVERNANCE_STATE.yaml", "role": "HISTORICAL_POINTER", "status": "ARCHIVED"},
+    ]
+    assert GovernanceStateManager.validate_single_state_owner(valid_decs) is True
+
+
+# --- Negative Test 4: Stale Evidence ---
+def test_negative_04_stale_evidence():
+    active_sha = "48ebabbd73d763ea31b3bbf15277d60e16d86cea"
+    stale_sha = "aa24fbdf251645b70338503a1f361715d942d38f"
+    with pytest.raises(GovernanceStateError, match="Stale evidence detected"):
+        GovernanceStateManager.validate_evidence_freshness(
+            evidence_candidate_id=stale_sha,
+            current_candidate_id=active_sha
+        )
+
+    # Fresh evidence passes
+    assert GovernanceStateManager.validate_evidence_freshness(
+        evidence_candidate_id=active_sha,
+        current_candidate_id=active_sha
+    ) is True
+
+
+# --- Negative Test 5: Candidate Changed After Review ---
+def test_negative_05_candidate_changed_after_review():
+    review_sha = "48ebabbd73d763ea31b3bbf15277d60e16d86cea"
+    tampered_sha = "9999999999999999999999999999999999999999"
+    with pytest.raises(CandidateMismatchError, match="Candidate Mismatch"):
+        GovernanceStateManager.validate_candidate_match(
+            candidate_id=tampered_sha,
+            review_candidate_id=review_sha
+        )
+
+
+# --- Negative Test 6: Self-Review / Self-Acceptance ---
+def test_negative_06_self_review_or_self_acceptance():
+    with pytest.raises(SelfAcceptanceError, match="cannot act as independent reviewer"):
+        GovernanceStateManager.validate_review_and_acceptance(
+            writer="primary-author",
+            reviewer="primary-author",
+            acceptor="lead-architect"
+        )
+
+    with pytest.raises(SelfAcceptanceError, match="cannot act as acceptance authority"):
+        GovernanceStateManager.validate_review_and_acceptance(
+            writer="primary-author",
+            reviewer="independent-reviewer",
+            acceptor="primary-author"
+        )
+
+
+# --- Negative Test 7: Unsupported Evidence-Strength Promotion ---
+def test_negative_07_unsupported_evidence_promotion():
+    # Attempting to claim E4 under IND0 or without independent verifier must fail
+    with pytest.raises(GovernanceStateError, match="Unsupported evidence promotion"):
+        GovernanceStateManager.validate_evidence_promotion(
+            claimed_dimension="E4",
+            independence="IND0",
+            has_independent_verifier=False
+        )
+
+    with pytest.raises(GovernanceStateError, match="Unsupported evidence promotion"):
+        GovernanceStateManager.validate_evidence_promotion(
+            claimed_dimension="E5",
+            independence="IND2",
+            has_independent_verifier=False
+        )
+
+    # Qualified promotion passes
+    assert GovernanceStateManager.validate_evidence_promotion(
+        claimed_dimension="E4",
+        independence="IND3",
+        has_independent_verifier=True
+    ) is True
+
+
+# --- Negative Test 8: Historical Record Rewriting ---
+def test_negative_08_historical_record_rewriting():
+    # Verify that historical sealed checkpoint commits exist in git log
+    result = subprocess.run(
+        ["git", "cat-file", "-e", "9783774430cd3939d473cd0e833aa2cf5b5c0645"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True
+    )
+    assert result.returncode == 0, "Sealed historical commit 9783774 must remain reachable in Git history"
+
+    # Check G5 historical candidate reference in GOVERNANCE_STATE.yaml
+    root_gov = ROOT / "GOVERNANCE_STATE.yaml"
+    content = root_gov.read_text(encoding="utf-8")
+    assert "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b" in content, (
+        "Historical G5 candidate reference must not be rewritten in legacy GOVERNANCE_STATE.yaml"
+    )
+
+
+# --- Negative Test 9: Mathematical Truth Promotion from Technical PASS ---
+def test_negative_09_mathematical_truth_promotion_from_technical_pass():
+    # Technical pass cannot promote claim without analytic proof passport
+    with pytest.raises(GovernanceStateError, match="Epistemic category error"):
+        GovernanceStateManager.validate_mathematical_promotion(
+            is_technical_pass=True,
+            has_analytic_passport=False
+        )
+
+    # With analytic passport it is permitted
+    assert GovernanceStateManager.validate_mathematical_promotion(
+        is_technical_pass=True,
+        has_analytic_passport=True
+    ) is True
+
+
+# --- Negative Test 10: Invalid Independence Namespace ---
+def test_negative_10_invalid_independence_namespace():
+    # Governance domain cannot use MATH_I codes
+    with pytest.raises(GovernanceStateError, match="Invalid namespace in governance domain"):
+        GovernanceStateManager.validate_independence_namespace("GOVERNANCE", "MATH_I2")
+
+    # Mathematics domain cannot use operational IND codes
+    with pytest.raises(GovernanceStateError, match="Invalid namespace in mathematical domain"):
+        GovernanceStateManager.validate_independence_namespace("MATHEMATICS", "IND2")
+
+    # Correct namespaces pass
+    assert GovernanceStateManager.validate_independence_namespace("GOVERNANCE", "IND2") is True
+    assert GovernanceStateManager.validate_independence_namespace("MATHEMATICS", "MATH_I2") is True
+
+
+# --- Negative Test 11: Unresolved Target Accidentally Marked Solved ---
+def test_negative_11_unresolved_target_accidentally_marked_solved(tmp_path: Path):
+    with pytest.raises(GovernanceStateError, match="Epistemic invariant violation"):
+        GovernanceStateManager.validate_target_problem_status("SOLVED")
+
+    with pytest.raises(GovernanceStateError, match="Epistemic invariant violation"):
+        GovernanceStateManager.validate_target_problem_status("RESOLVED")
+
+    # In state file validation
+    temp_state = tmp_path / "PROJECT_STATE.yaml"
+    bad_state = {
+        "schema_version": "4.0.3",
+        "revision": 1,
+        "activation": "ACTIVE",
+        "project": {"id": "tubulance"},
+        "epistemic_status": {"clay_statement_b_status": "SOLVED"},
+        "release": {"state": "NO-GO", "eligible": False, "deployment_authorized": False},
+        "hard_gates": {
+            "clay_statement_b_unresolved": "PASS",
+            "dag_cycle_count": "PASS",
+            "claim_passport_census": "PASS",
+            "negative_evidence_retention": "PASS",
+            "writer_anti_self_acceptance": "PASS"
+        }
+    }
+    temp_state.write_text(yaml.safe_dump(bad_state), encoding="utf-8")
+    mgr = GovernanceStateManager(temp_state)
+    with pytest.raises(GovernanceStateError, match="clay_statement_b_status must be 'UNRESOLVED'"):
+        mgr.validate_state()
+
+
+# --- Negative Test 12: Rollback Attempt Deleting Pre-Migration Scientific State ---
+def test_negative_12_rollback_deleting_pre_migration_state():
+    migration_owned = {
+        "governance/GOVERNANCE.md",
+        "governance/PROJECT_DIRECTION.md",
+        "governance/PROJECT_STATE.yaml",
+        "src/navier3d/governance/state_manager.py",
+        "tests/test_governance_v4_migration.py"
+    }
+    # Attempting to delete pre-existing claim registry during rollback must be blocked
+    with pytest.raises(GovernanceStateError, match="Rollback safety violation"):
+        GovernanceStateManager.validate_rollback_scope(
+            target_files_to_revert=["mathematical_constitution/CLAIM_REGISTRY.yaml"],
+            migration_owned_files=migration_owned
+        )
+
+    # Attempting to delete pre-existing negative evidence ledger must be blocked
+    with pytest.raises(GovernanceStateError, match="Rollback safety violation"):
+        GovernanceStateManager.validate_rollback_scope(
+            target_files_to_revert=["research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml"],
+            migration_owned_files=migration_owned
+        )
+
+    # Rolling back migration-owned file succeeds
+    assert GovernanceStateManager.validate_rollback_scope(
+        target_files_to_revert=["governance/PROJECT_STATE.yaml"],
+        migration_owned_files=migration_owned
+    ) is True
+

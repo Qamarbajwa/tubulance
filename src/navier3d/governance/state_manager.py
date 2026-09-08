@@ -172,3 +172,122 @@ class GovernanceStateManager:
             )
 
         return True
+
+    @staticmethod
+    def validate_evidence_promotion(
+        claimed_dimension: str,
+        independence: str,
+        has_independent_verifier: bool
+    ) -> bool:
+        """Ensure evidence strength cannot be promoted without qualified independent verification."""
+        if claimed_dimension in ("E4", "E5"):
+            if independence in ("IND0", "MATH_I1") or not has_independent_verifier:
+                raise GovernanceStateError(
+                    f"Unsupported evidence promotion: Cannot claim {claimed_dimension} "
+                    f"under {independence} without independent verifier."
+                )
+        return True
+
+    @staticmethod
+    def validate_independence_namespace(domain: str, independence_code: str) -> bool:
+        """Ensure strict separation of operational (IND0-IND3) vs mathematical (MATH_I1-MATH_I4) namespaces."""
+        if domain.upper() == "GOVERNANCE":
+            if independence_code.startswith("MATH_I"):
+                raise GovernanceStateError(
+                    f"Invalid namespace in governance domain: '{independence_code}'. "
+                    f"Operational evidence must use IND0-IND3."
+                )
+        elif domain.upper() == "MATHEMATICS":
+            if independence_code.startswith("IND"):
+                raise GovernanceStateError(
+                    f"Invalid namespace in mathematical domain: '{independence_code}'. "
+                    f"Mathematical claim passports must use MATH_I1-MATH_I4."
+                )
+        return True
+
+    @staticmethod
+    def validate_rollback_scope(
+        target_files_to_revert: list[str | Path],
+        migration_owned_files: set[str | Path]
+    ) -> bool:
+        """Prevent rollback from deleting pre-existing scientific state or historical records."""
+        migration_owned_normalized = {Path(p).as_posix().lower() for p in migration_owned_files}
+        for f in target_files_to_revert:
+            norm_f = Path(f).as_posix().lower()
+            if norm_f not in migration_owned_normalized:
+                raise GovernanceStateError(
+                    f"Rollback safety violation: Attempted to delete or revert pre-existing "
+                    f"scientific file '{f}' not owned by this migration."
+                )
+        return True
+
+    @staticmethod
+    def validate_mandatory_authorities(gov_dir: Path | str) -> bool:
+        """Verify that all 3 mandatory v4.0.3 authority files exist."""
+        p = Path(gov_dir)
+        required = ["GOVERNANCE.md", "PROJECT_DIRECTION.md", "PROJECT_STATE.yaml"]
+        missing = [f for f in required if not (p / f).exists()]
+        if missing:
+            raise GovernanceStateError(
+                f"Missing mandatory authority file(s): {missing}. All 3 operational authorities must exist."
+            )
+        return True
+
+    @staticmethod
+    def validate_governance_version(version_str: str) -> bool:
+        """Reject conflicting governance version declarations."""
+        expected = "4.0.3"
+        if version_str.strip() != expected:
+            raise GovernanceStateError(
+                f"Conflicting governance version: '{version_str}'. Expected '{expected}'."
+            )
+        return True
+
+    @staticmethod
+    def validate_single_state_owner(declarations: list[dict[str, Any]]) -> bool:
+        """Reject duplicate or conflicting live state owner declarations."""
+        active_owners = [
+            d for d in declarations
+            if d.get("role") == "PRIMARY_LIVE_STATE" and d.get("status") == "ACTIVE"
+        ]
+        if len(active_owners) > 1:
+            owner_files = [d.get("file") for d in active_owners]
+            raise GovernanceStateError(
+                f"Duplicate state owner detected: Multiple files claim PRIMARY_LIVE_STATE: {owner_files}."
+            )
+        if len(active_owners) == 0:
+            raise GovernanceStateError("No active PRIMARY_LIVE_STATE owner declared.")
+        return True
+
+    @staticmethod
+    def validate_evidence_freshness(evidence_candidate_id: str, current_candidate_id: str) -> bool:
+        """Reject stale evidence tied to an older or different candidate SHA."""
+        if not evidence_candidate_id or not current_candidate_id:
+            raise GovernanceStateError("Evidence and current candidate IDs cannot be empty.")
+        if evidence_candidate_id.strip() != current_candidate_id.strip():
+            raise GovernanceStateError(
+                f"Stale evidence detected: Evidence was produced for candidate '{evidence_candidate_id}', "
+                f"but active candidate is '{current_candidate_id}'."
+            )
+        return True
+
+    @staticmethod
+    def validate_mathematical_promotion(is_technical_pass: bool, has_analytic_passport: bool) -> bool:
+        """Enforce that technical test/code PASS cannot promote a mathematical claim without analytic proof passport."""
+        if is_technical_pass and not has_analytic_passport:
+            raise GovernanceStateError(
+                "Epistemic category error: Technical/test PASS cannot promote mathematical claim status "
+                "without audited analytic proof passport (MRC v1.0.1)."
+            )
+        return True
+
+    @staticmethod
+    def validate_target_problem_status(status: str) -> bool:
+        """Enforce project invariant: Clay Statement B must remain UNRESOLVED."""
+        if status.strip().upper() != "UNRESOLVED":
+            raise GovernanceStateError(
+                f"Epistemic invariant violation: Clay Statement B status cannot be set to '{status}'. "
+                f"Must strictly remain 'UNRESOLVED'."
+            )
+        return True
+

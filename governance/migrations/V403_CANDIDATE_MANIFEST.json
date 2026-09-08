@@ -1,0 +1,101 @@
+{
+  "manifest_version": "1.0.0",
+  "increment_id": "NS-GOV-MIG-V403-001",
+  "governance_version": "4.0.3",
+  "target_problem": "Clay Millennium Prize Problem Statement B on T^3",
+  "epistemic_status": "UNRESOLVED",
+  "files": {
+    "governance/GOVERNANCE.md": {
+      "sha256": "6397ac189cf00536a1988fc50e83643078d692ad5c3fc7a0bbeac11a627a9cb6",
+      "size_bytes": 23747
+    },
+    "governance/PROJECT_DIRECTION.md": {
+      "sha256": "c6b515f1a01f51b5f19bc53e539e0c4e19b47d68d19c2c9696daa794b30e9ead",
+      "size_bytes": 7608
+    },
+    "governance/PROJECT_STATE.yaml": {
+      "sha256": "bec0b7148e38070b7205c01368717f0afa51c5f01f902d57b2e071f817586a75",
+      "size_bytes": 4563
+    },
+    "governance/authority_compatibility_v4.0.3.md": {
+      "sha256": "e33dca7a998e2939266f1fa8fc4322b805d2a0c417f7626f20d2ab46c3317b72",
+      "size_bytes": 3532
+    },
+    "governance/evidence/NS-GOV-MIG-V403-001-acceptance.md": {
+      "sha256": "d1579facd322e533648770957d12a240754f640c3ea133cf112cb802785d0271",
+      "size_bytes": 3983
+    },
+    "governance/evidence/NS-GOV-MIG-V403-001-packet.json": {
+      "sha256": "9cf7bb7bee738aad5a1a2edb8a4ec2a86e7d9e4dc4101a00f15556e10b3d519f",
+      "size_bytes": 3112
+    },
+    "governance/evidence/NS-GOV-MIG-V403-001-review.md": {
+      "sha256": "688d888793e2c1f098174640d2ba41854a0e4a9c694f54c2ecc2ae5648728a28",
+      "size_bytes": 6079
+    },
+    "governance/evidence_compatibility_v4.0.3.md": {
+      "sha256": "80b1c19c30dc5ce6099808746990a89d914865bd91cd14865a4d1d742783ed1b",
+      "size_bytes": 3061
+    },
+    "governance/migrations/GOVERNANCE_MIGRATION_v4.0.3.md": {
+      "sha256": "981438d88ea3878a6c331e56fb6f19499c005b37ee9d2d2e16858061d7913dfd",
+      "size_bytes": 4286
+    },
+    "governance/migrations/V403_APPLICABILITY_MATRIX.md": {
+      "sha256": "fa2cceec823ab4432bce22314c1728050379f8c8e6580ea641ab33d09a6e6036",
+      "size_bytes": 3311
+    },
+    "governance/migrations/V403_CUTOVER_REPORT.md": {
+      "sha256": "c9ca98f636fddf57943cb8708c4bb16a5117167672285aa676746a9fd2ae179e",
+      "size_bytes": 4674
+    },
+    "governance/migrations/V403_FINAL_GOVERNANCE_STATE_REPORT.md": {
+      "sha256": "9085d191b9a8dcd8440b0f792cf8f30d6bbf5761cd515f686da34c3f3f58b190",
+      "size_bytes": 4141
+    },
+    "governance/migrations/V403_NEGATIVE_TEST_REPORT.md": {
+      "sha256": "2811ee96a9d3f9788597f58106d993d0b20fcbad17c5250c1aff38139c7d630b",
+      "size_bytes": 4953
+    },
+    "governance/migrations/V403_PROJECT_BINDING_REPORT.md": {
+      "sha256": "7780883088ff1c6da9d6b02c0b646d74adbde1b33aec69ffebea989feb388572",
+      "size_bytes": 2709
+    },
+    "governance/migrations/V403_ROLLBACK_PLAN.md": {
+      "sha256": "8b00ed7ba2b6b92062ca140f696da93fdf56617a620aa22d4df8408ab23f7ef4",
+      "size_bytes": 3677
+    },
+    "governance/migrations/V403_SOURCE_PACKAGE_INVENTORY.md": {
+      "sha256": "b6ebcd45ff91131905135f7c1f942336bfdfcaab6d36ab1f62c660fd888d6c78",
+      "size_bytes": 3104
+    },
+    "governance/migrations/V403_STATE_OWNER_ANALYSIS.md": {
+      "sha256": "3643e8041c3c6e47d392a808a2f0968c3c6de67877ba9d717f3910b8944d9d1a",
+      "size_bytes": 2456
+    },
+    "governance/task_envelopes/NS-GOV-MIG-V403-001.yaml": {
+      "sha256": "0d8125e1c603368362bc0e4236dd1fb07c8efa6145e4d5611fa72f3f3da551b1",
+      "size_bytes": 2548
+    },
+    "mathematical_constitution/EXTERNAL_VALIDATION_LEDGER.yaml": {
+      "sha256": "5a842ee856a9171d107545d2e7a038427c33da2cb4dd2c2daa4878c2420a5ef6",
+      "size_bytes": 1403
+    },
+    "research_memory/EXTERNAL_EVIDENCE_INTAKE_20260908_ABCMZ.md": {
+      "sha256": "5c52de8db3839c951cefbc035cad5c4e9f45c7bce1d08c85d6bf49c338bb3a35",
+      "size_bytes": 2945
+    },
+    "src/navier3d/governance/__init__.py": {
+      "sha256": "49ebcbb2a48fc34a2bc5308bb21ca0560bea64dfa6c7e555aab9de076b8e496b",
+      "size_bytes": 439
+    },
+    "src/navier3d/governance/state_manager.py": {
+      "sha256": "336837a534b570ca32ac8dbb89104e5628902ca6ab9d1523df0d42ed5d7e93f4",
+      "size_bytes": 12548
+    },
+    "tests/test_governance_v4_migration.py": {
+      "sha256": "7baae4454b2162379e7c6237c6968d08b20db9ee69901eaed743c43fe654ab12",
+      "size_bytes": 20256
+    }
+  }
+}
