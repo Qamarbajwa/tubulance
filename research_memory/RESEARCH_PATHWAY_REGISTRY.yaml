@@ -963,7 +963,7 @@ pathways:
   - pathway_id: "NS-OPENAI-B1-R1"
     title: "Autonomous Precursor Cascade Realizability Re-Audit"
     parent_pathways: ["NS-OPENAI-B1"]
-    descendant_pathways: []
+    descendant_pathways: ["NS-OPENAI-B1-REASSESSMENT"]
     starting_thesis: "Re-audit whether CLM-036 is established or whether autonomous precursor pulse generation remains restricted to a local homogeneous mechanism."
     scientific_question: "Does ray-tracing wavevector de-shearing prove full backward parabolic PDE operator invertibility U_B^-1 on T^3, and does a single plane wave generate cascade inheritance?"
     intended_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
@@ -992,6 +992,40 @@ pathways:
     reopen_conditions: ["Reassessment of the OpenAI unforced transfer route."]
     similarity_tags: ["reaudit", "plane_wave_cancellation", "two_wave_cone", "hadamard_barrier", "gevrey_class", "local_pulse_mechanism"]
     last_re_evaluated: "2026-09-09"
+
+  - pathway_id: "NS-OPENAI-B1-REASSESSMENT"
+    title: "Single-Pulse Autonomous Entrance-State Problem"
+    parent_pathways: ["NS-OPENAI-B1-R1"]
+    descendant_pathways: []
+    starting_thesis: "Determine whether even one physically localized, two-family stress pulse can be generated autonomously from smooth unforced initial data."
+    scientific_question: "Does physical spatial localization in an annular filament force transverse Fourier bandwidth that causes super-exponential backward viscous dissipation?"
+    intended_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
+    core_objects: ["W_j* localized wavepacket", "Heisenberg uncertainty inequality", "Paley-Wiener non-vanishing", "C(W_j*, t_j)", "Localization-backward-diffusion barrier"]
+    mathematical_form: "delta r_j ~ 2^(-j/2) ==> Delta k_perp >= 2^(j/2); D_back >= (nu/4) 2^(-jh) exp(2 * 2^(jh)) -> infty; C(W_j*, t_j) >= exp(+c exp(2^(jh))) -> infty."
+    scaling: "Transverse bandwidth 2^(j/2); burst strain 2^(jh); backward dissipation exp(2 * 2^(jh)); minimum norm exp(+exp(2^(jh)))."
+    geometry: "Annular filament of radius r_j ~ 2^(-j/2), width delta r_j ~ 2^(-j/2); transverse spectral cone."
+    trajectory_dependence: "HYBRID"
+    stochastic_component: false
+    assumptions: ["Incompressible Navier-Stokes on R^3 or T^3", "nu > 0", "unforced f = 0", "OpenAI singular core filament"]
+    domain: "R^3 or T^3."
+    regularity_class: "C^infty(T^3)."
+    expected_outcome: "Rigorous proof of Localization-Backward-Diffusion Uncertainty Barrier; hardening of CLM-037 into CLM-037-A and B; canonical verdict SINGLE_PULSE_LOCALIZATION_NO_GO."
+    actual_outcome: "SINGLE_PULSE_LOCALIZATION_NO_GO: Proved that physical localization forces transverse bandwidth whose backward dissipation explodes super-exponentially (CLM-038, NEG-EV-042); proved two-family compressive rank deficit; proved nonlinear contraction failure (q ~ 2^(jh) >> 1); hardened NS-OBS-020B; blocked NS-OPENAI-B2."
+    tests_attempted: ["tests/test_ns_openai_b1_reassessment_suite.py"]
+    evidence_refs: ["NS_OPENAI_B1_REASSESSMENT_SYNTHESIS_REPORT.md", "NS_OPENAI_B1_REASSESSMENT_UNCERTAINTY_BARRIER.md", "NS_OPENAI_B1_REASSESSMENT_ACCEPTANCE_DECISION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Decisive structural obstruction proved: single-pulse autonomous entrance state blocked by uncertainty barrier; multi-pulse route closed."
+    failure_mechanism: "Physical localization forces transverse Fourier modes that expand backward under incompressibility, driving backward heat dissipation to super-exponential infinity."
+    what_was_falsified: ["Autonomous unforced backward reachability of physically localized pulses (NEG-EV-042)", "Single-pulse autonomous entrance-state solvability", "Simultaneous two-family de-shearing under axisymmetric strain"]
+    what_was_not_falsified: ["CLM-037-A (Local Homogeneous Pulse Amplification for pure plane waves)", "CLM-037-B (Two-Family Local Stress-Cone Realization under local dyadic averaging)"]
+    surviving_results: ["CLM-037-A", "CLM-037-B", "CLM-038 (Localization-Backward-Diffusion Uncertainty Barrier)", "NEG-EV-042"]
+    negative_results: ["NEG-EV-042", "NS-OBS-020B"]
+    open_questions: ["Does the failure of the unforced autonomous pulse entrance state definitively prove that Navier-Stokes finite-time blowup cannot occur without external forces?"]
+    obstruction_ids: ["NS-OBS-020B", "NS-OBS-020C"]
+    reopen_conditions: ["New non-pulse autonomous blowup mechanisms bypassing annular filament localization."]
+    similarity_tags: ["uncertainty_barrier", "transverse_bandwidth", "backward_diffusion_explosion", "heisenberg_weyl", "paley_wiener", "compressive_deficit"]
+    last_re_evaluated: "2026-09-09"
+
 
 
 

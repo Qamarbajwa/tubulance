@@ -1,0 +1,49 @@
+# Task Envelope: NS-OPENAI-B1-REASSESSMENT
+schema_version: "4.0.3"
+task_id: "NS-OPENAI-B1-REASSESSMENT"
+title: "Single-Pulse Autonomous Entrance-State Problem"
+milestone: "NS-OPENAI-B1-REASSESSMENT"
+parent_milestone: "NS-OPENAI-B1-R1"
+
+governance:
+  governance_standard: "Universal Governance Minimal v4.0.3"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+  risk_ceiling: "R3"
+  active_governance_version: "4.0.3"
+  adoption_mode: "MIGRATION_GOVERNED"
+
+mathematical_target:
+  problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
+  status: "UNRESOLVED"
+  release_state: "NO-GO"
+  b2_status: "BLOCKED"
+
+controlling_question: >
+  Can one smooth unforced initial perturbation produce one required
+  OpenAI-type pulse entrance state at a prescribed later time?
+  Can even one physically localized, two-family stress pulse be generated autonomously
+  from smooth unforced initial data?
+
+scope_boundaries:
+  infinite_cascade: "FORBIDDEN"
+  multi_pulse_analysis: "FORBIDDEN_UNTIL_SINGLE_PULSE_GATE_PASSES"
+  exact_residual_closure: "OUT_OF_SCOPE"
+  clay_statement_b_claim: "FORBIDDEN"
+  primary_focus: "Single-pulse localized wavepacket, Kelvin-wave benchmark, uncertainty principle barrier, and two-family stress realizability"
+
+expected_deliverables:
+  - "NS_OPENAI_B1_REASSESSMENT_CLM037_SCOPE.md"
+  - "NS_OPENAI_B1_REASSESSMENT_KELVIN_AND_HADAMARD.md"
+  - "NS_OPENAI_B1_REASSESSMENT_UNCERTAINTY_BARRIER.md"
+  - "NS_OPENAI_B1_REASSESSMENT_TWO_FAMILY_STRESS_AND_CONTRACTION.md"
+  - "NS_OPENAI_B1_REASSESSMENT_BENCHMARK_MATRIX.md"
+  - "NS_OPENAI_B1_REASSESSMENT_SYNTHESIS_REPORT.md"
+  - "NS_OPENAI_B1_REASSESSMENT_INDEPENDENT_VERIFICATION.md"
+  - "NS_OPENAI_B1_REASSESSMENT_ACCEPTANCE_DECISION.md"
+  - "tests/test_ns_openai_b1_reassessment_suite.py"
+
+verification_protocol:
+  independent_reviewer: "antigravity-fresh-context-verifier"
+  review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+  acceptance_coordinator: "autonomous-project-governance-coordinator"
+  deterministic_tests: "tests/test_ns_openai_b1_reassessment_suite.py"

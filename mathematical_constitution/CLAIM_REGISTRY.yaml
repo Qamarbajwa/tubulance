@@ -722,11 +722,11 @@ claims:
       project_status: "SUPERSEDED_AND_RETRACTED"
     dependencies: ["CLM-033"]
 
-  - claim_id: "CLM-037"
+  - claim_id: "CLM-037-A"
     claim_type: "MATHEMATICAL_THEOREM"
-    name: "LOCAL_HOMOGENEOUS_PULSE_AMPLIFICATION_AND_STRESS_REALIZATION_MECHANISM"
-    milestone: "NS-OPENAI-B1-R1"
-    statement: "In the local self-similar coordinates xi = (r - r_j)/tau^(1/2), s = -ln tau of the OpenAI singular core filament on T^3 with nu > 0: (1) Local Net Amplification: any non-zero solenoidal pulse seed entering the active singular shear layer at scale j experiences net exponential amplification int (Gamma_j - nu |k_j|^2) ds ~ 2^(jh) -> infty over the burst duration Delta t_j = 2^(-j), because cumulative viscous dissipation is bounded by D_j <= nu(K_0^2 + 1) = O(1); (2) Subcritical Energy: individual pulse kinetic energy E(W_j*) ~ 2^(j(3h - 0.5)) -> 0 vanishes as j -> infty for all aspect ratio exponents h < 1/6; (3) Two-Wave Stress Invertibility: the two helical wave families C(b_+) and C(b_-) form an invertible 2x2 coupling matrix H = [C(b_+) C(b_-)], generating any target core stress T = (T_r, T_z) via strictly positive weights y = H^-1 T > 0. However, pulling these pulses back to a single unforced initial condition u_0 in C^infty(T^3) at t = 0 remains open."
+    name: "LOCAL_HOMOGENEOUS_PULSE_AMPLIFICATION"
+    milestone: "NS-OPENAI-B1-REASSESSMENT"
+    statement: "In the local affine straining background u_B = A(t)x with tr(A) = 0 and singular strain rate sigma(t) ~ tau^(-1-h) (h in (0, 1/6)) over the burst interval [t_j^-, t_j] of duration Delta t_j = 2^(-j): any non-zero solenoidal Fourier-Kelvin mode aligned with the compressive axis e_1 experiences net exponential amplification int (sigma - nu |k|^2) ds ~ 2^(jh) -> infty, while cumulative viscous dissipation along the de-shearing characteristic ray is strictly bounded by D_j <= (nu/4) 2^(-jh) -> 0. Terminal pulse kinetic energy E(W_j*) ~ 2^(j(3h - 0.5)) -> 0 is subcritical. This holds strictly for pure monochromatic modes on the 1D compressive invariant subspace without spatial envelope localization."
     passport:
       truth_status: "PROVED_THEOREM"
       gov_evidence_level: "GOV_E3_REPRODUCIBLE"
@@ -741,6 +741,46 @@ claims:
       community_status: "NOT_COMMUNITY_ACCEPTED"
       project_status: "PROJECT_CANONICAL"
     dependencies: ["CLM-033"]
+
+  - claim_id: "CLM-037-B"
+    claim_type: "MATHEMATICAL_THEOREM"
+    name: "TWO_FAMILY_LOCAL_STRESS_CONE_REALIZATION"
+    milestone: "NS-OPENAI-B1-REASSESSMENT"
+    statement: "Under local plane-wave dyadic spatial averaging, two distinct helical wave families b_+ and b_- with non-collinear wavevectors form an invertible 2x2 coupling matrix H = [C(b_+) C(b_-)] in stress space (det H != 0), generating any target core stress T in int(K) via strictly positive weights y = H^-1 T > 0. However, under axisymmetric singular strain S = diag(-2sigma, sigma, sigma), dim(E_comp) = 1, so at most one wavevector can be de-sheared backward; the second family inevitably has non-zero projection onto the extensional subspace and explodes backward."
+    passport:
+      truth_status: "PROVED_THEOREM"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-033", "CLM-037-A"]
+
+  - claim_id: "CLM-038"
+    claim_type: "MATHEMATICAL_THEOREM"
+    name: "LOCALIZATION_BACKWARD_DIFFUSION_UNCERTAINTY_BARRIER"
+    milestone: "NS-OPENAI-B1-REASSESSMENT"
+    statement: "On R^3 or T^3 with nu > 0, let W_j* be any divergence-free wavepacket physically localized in an annular filament of thickness delta r_j ~ 2^(-j/2). By the Heisenberg-Weyl uncertainty inequality and Paley-Wiener non-vanishing, W_j* necessarily possesses non-zero Fourier energy in transverse directions Delta k_perp >= 1/delta r_j ~ 2^(j/2). Under the unforced backward linearized Navier-Stokes flow around singular background strain S = diag(-2sigma, sigma, sigma) with cumulative burst strain Sigma_j ~ 2^(jh) >> 1, incompressibility tr(S) = 0 forces transverse modes to amplify backward with rate exp(+Sigma_j). Cumulative backward viscous dissipation on these transverse modes diverges super-exponentially as D_back(xi) >= (nu/4) 2^(-jh) exp(2 * 2^(jh)) -> infty, forcing the minimum unforced initial datum norm C(W_j*, t_j) = inf { ||w_0||_L2 : U(t_j, 0)w_0 = W_j* } to diverge as exp(+c exp(2^(jh))) -> infty. Consequently, W_j* notin Range(U(t_j, 0)), and no smooth unforced initial datum u_0 in C^infty(T^3) can autonomously generate the physically localized OpenAI pulse entrance state."
+    passport:
+      truth_status: "PROVED_THEOREM"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-033", "CLM-037-A", "CLM-037-B"]
 
 
 

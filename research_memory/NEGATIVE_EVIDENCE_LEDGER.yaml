@@ -370,6 +370,16 @@ negative_evidence:
     mathematical_verdict: "FALSIFIED_SINGLE_PLANE_WAVE_SELF_ADVECTION_IDENTICALLY_ZERO"
     canonical_artifact: "NS_OPENAI_B1_R1_CASCADE_INHERITANCE_FALSIFICATION.md"
 
+  - record_id: "NEG-EV-042"
+    pathway_id: "NS-OPENAI-B1-REASSESSMENT"
+    title: "LOCALIZED_WAVEPACKET_TRANSVERSE_BACKWARD_VISCOUS_EXPLOSION"
+    falsified_hypothesis: "A physically localized wavepacket W_j* confined to an annular filament delta r_j ~ 2^(-j/2) can be backward-propagated by the unforced Navier-Stokes flow to a smooth, finite-energy initial datum u_0."
+    counterexample_or_proof: "By the uncertainty principle and Paley-Wiener non-vanishing, spatial localization forces transverse Fourier bandwidth Delta k_perp >= 1/delta r_j ~ 2^(j/2). Under incompressibility tr(S) = 0, singular strain amplifies transverse modes backward with rate exp(+Sigma_j) where Sigma_j ~ 2^(jh) >> 1. Cumulative backward viscous dissipation on these transverse modes diverges super-exponentially as D_back >= (nu/4) 2^(-jh) exp(2 * 2^(jh)) -> infty, forcing the minimum initial data norm to explode as exp(+c exp(2^(jh))) -> infty. The target state lies outside the range of the backward unforced semigroup: W_j* notin Range(U(t_j, 0))."
+    governing_obstruction: "NS-OBS-020B"
+    mathematical_verdict: "FALSIFIED_LOCALIZED_PULSE_UNFORCED_BACKWARD_REACHABILITY"
+    canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_UNCERTAINTY_BARRIER.md"
+
+
 
 
 

@@ -32,18 +32,22 @@ coordination:
 epistemic_status:
   target_problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
   clay_statement_b_status: "UNRESOLVED"
-  scientific_program_status: "NS-OPENAI-B1-R1_ACCEPTED_AS_CANONICAL_REAUDIT"
+  scientific_program_status: "NS-OPENAI-B1-REASSESSMENT_ACCEPTED_CANONICAL_ASSESSMENT"
   active_milestone: "NS-OPENAI-B1-REASSESSMENT"
 
 current_objective:
   id: "NS-OPENAI-B1-REASSESSMENT"
-  title: "OpenAI Unforced Transfer Feasibility Reassessment"
+  title: "Single-Pulse Autonomous Entrance-State Problem"
   target_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
   risk: "R3"
-  status: "AUTHORIZED_FOR_PREPARATION"
+  status: "COMPLETED_CANONICAL_OBSTRUCTION_PROVED"
   dependencies: ["NS-OPENAI-B1-R1"]
 
 objectives:
+  - id: "NS-OPENAI-B1-REASSESSMENT"
+    title: "Single-Pulse Autonomous Entrance-State Problem"
+    status: "ACCEPTED_AS_CANONICAL_OBSTRUCTION_ASSESSMENT"
+    evidence_ref: "NS_OPENAI_B1_REASSESSMENT_ACCEPTANCE_DECISION.md"
   - id: "NS-OPENAI-B1-R1"
     title: "Autonomous Precursor Cascade Realizability Re-Audit"
     status: "ACCEPTED_AS_CANONICAL_REAUDIT"
@@ -98,18 +102,29 @@ capabilities:
 hard_gates:
   clay_statement_b_unresolved: "PASS_ENFORCED"
   dag_cycle_count: "0_CYCLES_PASS"
-  claim_passport_census: "37_OF_37_VALID_PASS"
-  negative_evidence_retention: "41_OF_41_PRESERVED_PASS"
+  claim_passport_census: "39_OF_39_VALID_PASS"
+  negative_evidence_retention: "42_OF_42_PRESERVED_PASS"
   structural_obstruction_retention: "22_OF_22_PRESERVED_PASS"
   writer_anti_self_acceptance: "PASS_ENFORCED"
   unscaled_scalar_bounds_prohibited: "PASS_ENFORCED"
 
 evidence_refs:
-  - id: "EVID-NS-OPENAI-B1-R1"
+  - id: "EVID-NS-OPENAI-B1-REASSESSMENT"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
-    artifact: "NS_OPENAI_B1_R1_SYNTHESIS_REPORT.md"
-  - id: "EVID-CLM-037"
-    claim_id: "CLM-037"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_SYNTHESIS_REPORT.md"
+  - id: "EVID-CLM-038"
+    claim_id: "CLM-038"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_UNCERTAINTY_BARRIER.md"
+  - id: "EVID-CLM-037-A"
+    claim_id: "CLM-037-A"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_CLM037_SCOPE.md"
+  - id: "EVID-CLM-037-B"
+    claim_id: "CLM-037-B"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_CLM037_SCOPE.md"
+  - id: "EVID-NS-OPENAI-B1-R1"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
     artifact: "NS_OPENAI_B1_R1_SYNTHESIS_REPORT.md"
   - id: "EVID-NS-OPENAI-B1"
@@ -146,6 +161,7 @@ negative_history_refs:
   - "NEG-EV-039"
   - "NEG-EV-040"
   - "NEG-EV-041"
+  - "NEG-EV-042"
 
 blockers: []
 
@@ -156,7 +172,7 @@ known_risks:
     obstruction: "NS-OBS-020A"
   - risk_id: "RISK-AUTONOMOUS-PRECURSOR-PHASE"
     bridge: "Transfer to Statement B"
-    description: "Open obstruction: global backward operator invertibility unproved; 2-wave stress cone matrix rank deficit; single plane wave (w.grad)w == 0 (NS-OBS-020B, NEG-EV-041)"
+    description: "Proved obstruction (CLM-038, NEG-EV-042): physical localization forces transverse bandwidth whose backward dissipation explodes super-exponentially; single-pulse autonomous entrance state blocked"
     obstruction: "NS-OBS-020B"
   - risk_id: "RISK-EXACT-RESIDUAL-CLOSURE"
     bridge: "Transfer to Statement B"
