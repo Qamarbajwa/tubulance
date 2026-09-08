@@ -1,13 +1,13 @@
 # Live Operational State — tubulance
 schema_version: "4.0.3"
-revision: 2
+revision: 3
 activation: "ACTIVE"
 
 project:
   id: "tubulance"
   name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
   root: "D:/Comfy UI/tubulance"
-  head: "6e29238623e8d0c3a423f3ae55a89086e695dbf0"
+  head: "832a784dc5fcfbfceb8b4f8ddecf355985bfac58"
   dirty: "DIRTY_KNOWN"
   branch: "main"
 
@@ -23,27 +23,31 @@ governance_binding:
 coordination:
   state_writer: "antigravity-primary-agent"
   serialization_method: "REVISION_COMPARE_AND_SWAP"
-  last_expected_revision: 2
-  last_updated_at: "2026-09-08T19:39:00Z"
+  last_expected_revision: 3
+  last_updated_at: "2026-09-08T19:55:00Z"
   active_contract: "NS-GOV-MIG-V403-001"
-  frozen_candidate: "6e29238623e8d0c3a423f3ae55a89086e695dbf0"
+  frozen_candidate: "832a784dc5fcfbfceb8b4f8ddecf355985bfac58"
 
 
 epistemic_status:
   target_problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
   clay_statement_b_status: "UNRESOLVED"
-  scientific_program_status: "TP2-G6-A2_ACCEPTED_AS_CANONICAL_MILESTONE"
-  active_milestone: "TP2-G6-C"
+  scientific_program_status: "TP2-G6-C1_ACCEPTED_AS_CANONICAL_MILESTONE"
+  active_milestone: "TP2-G6-C2"
 
 current_objective:
-  id: "TP2-G6-C"
-  title: "Two-Particle Dispersion, Relative Drift Cancellation, and Stochastic Jet Regularity Route"
-  target_bridge: "B2 / B3 — Relative Dispersion and Scale-Invariant History Covariance"
+  id: "TP2-G6-C2"
+  title: "Quantitative Pair Dispersion and Scale-Dependent Coupling Programme"
+  target_bridge: "B2 / B3 — Resolution of Coupling Duality via Scale-Dependent Noise"
   risk: "R3"
   status: "AUTHORIZED_FOR_PREPARATION"
-  dependencies: ["TP2-G6-A2"]
+  dependencies: ["TP2-G6-C1"]
 
 objectives:
+  - id: "TP2-G6-C1"
+    title: "Two-Particle Relative Dispersion, Common-Mode Cancellation, and Stochastic Jet Foundation"
+    status: "ACCEPTED_AS_CANONICAL_MILESTONE"
+    evidence_ref: "TP2_G6_C1_ACCEPTANCE_DECISION.md"
   - id: "TP2-G6-A2"
     title: "Scale-Critical Transport, Parabolic Regularity Envelopes, and Stochastic Push-Forward Measure Bounds"
     status: "ACCEPTED_AS_CANONICAL_MILESTONE"
@@ -78,30 +82,39 @@ capabilities:
 hard_gates:
   clay_statement_b_unresolved: "PASS_ENFORCED"
   dag_cycle_count: "0_CYCLES_PASS"
-  claim_passport_census: "33_OF_33_VALID_PASS"
-  negative_evidence_retention: "36_OF_36_PRESERVED_PASS"
-  structural_obstruction_retention: "17_OF_17_PRESERVED_PASS"
+  claim_passport_census: "35_OF_35_VALID_PASS"
+  negative_evidence_retention: "38_OF_38_PRESERVED_PASS"
+  structural_obstruction_retention: "19_OF_19_PRESERVED_PASS"
   writer_anti_self_acceptance: "PASS_ENFORCED"
   unscaled_scalar_bounds_prohibited: "PASS_ENFORCED"
 
 evidence_refs:
+  - id: "EVID-CLM-035"
+    claim_id: "CLM-035"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "TP2_G6_C1_SYNTHESIS_REPORT.md"
   - id: "EVID-CLM-033"
     claim_id: "CLM-033"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
     artifact: "TP2_G6_A1_SYNTHESIS_REPORT.md"
-  - id: "EVID-TESTS-310"
+  - id: "EVID-TESTS-319"
     type: "GOV_E3_REPRODUCIBLE"
-    result: "310_PASSED"
+    result: "319_PASSED"
     suite: "pytest -k 'tp2 or math_assurance'"
 
 negative_history_refs:
   - "NEG-EV-001"
   - "NEG-EV-035"
   - "NEG-EV-036"
+  - "NEG-EV-038"
 
 blockers: []
 
 known_risks:
+  - risk_id: "RISK-COUPLING-DUALITY"
+    bridge: "B2 / B3"
+    description: "C-SYNC preserves flow jet limit but has zero relative diffusion (rank 1); C-IND has rank 3 Brownian diffusion but diverges as h^-1 destroying flow derivative"
+    obstruction: "NS-OBS-019"
   - risk_id: "RISK-MEASURE-GAP"
     bridge: "B2"
     description: "Eulerian Lp bounds decouple from Lagrangian push-forward measure mu_s unless BKM integrability assumed"

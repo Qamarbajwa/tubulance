@@ -72,6 +72,9 @@ nodes:
     type: "CLAIM"
   - id: "CLM-034"
     type: "CLAIM"
+  - id: "CLM-035"
+    type: "CLAIM"
+
 
 
 edges:
@@ -225,6 +228,9 @@ edges:
     target: "CLM-034"
   - source: "CLM-033"
     target: "CLM-034"
+  - source: "CLM-034"
+    target: "CLM-035"
+
 
 
 

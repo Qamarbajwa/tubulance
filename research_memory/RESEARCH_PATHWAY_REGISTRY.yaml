@@ -798,7 +798,7 @@ pathways:
   - pathway_id: "TP2-G6-A2"
     title: "Scale-Critical Transport, Parabolic Regularity Envelopes, and Stochastic Push-Forward Measure Bounds"
     parent_pathways: ["TP2-G6-A1"]
-    descendant_pathways: []
+    descendant_pathways: ["TP2-G6-C1"]
     starting_thesis: "Single-particle stochastic Lagrangian history measure mu_s^x can be non-circularly related to Eulerian high-vorticity sets E_s(alpha) to close Bridge B2."
     scientific_question: "Can single-particle stochastic flows provide Eulerian high-vorticity coverage under subcritical energy bounds?"
     intended_bridge: "B2 — History-to-Eulerian Coverage (dmu_s <-> dx)"
@@ -827,4 +827,38 @@ pathways:
     reopen_conditions: ["Activation of Programme TP2-G6-C (Two-Particle Dispersion Route)."]
     similarity_tags: ["stochastic_push_forward", "bridge_b2", "aronson_deficit", "convective_sweeping", "deformation_decoupling", "two_particle_escalation"]
     last_re_evaluated: "2026-09-08"
+
+  - pathway_id: "TP2-G6-C1"
+    title: "Two-Particle Relative Dispersion, Common-Mode Cancellation, and Stochastic Jet Foundation"
+    parent_pathways: ["TP2-G6-A2"]
+    descendant_pathways: []
+    starting_thesis: "Two-particle relative stochastic transport cancels uniform background sweeping and preserves scale-invariant spatial increments."
+    scientific_question: "Does relative stochastic transport retain spatial information that single-particle history necessarily loses, without introducing fatal circularity?"
+    intended_bridge: "B2 — History-to-Eulerian Coverage / B3 — Covariance Spectrum"
+    core_objects: ["delta A_s", "S_s", "D_s", "H_s", "Xi^pair", "R_s", "C_s^pair", "W_s^nabla"]
+    mathematical_form: "d(delta A_s) = -S_s delta A_s ds (+ sqrt(4nu) dB_s); dR_s = -2(e^T S e) R_s ds + 12nu ds; Xi^pair = ||D J_omega D + H : omega||^2 / |D omega|^2."
+    scaling: "Preserves parabolic scaling [delta A] = lambda, [tau] = lambda^2, [dr] = lambda^-2."
+    geometry: "Periodic 3-torus universal cover R^3, straight segments, unit orientation sphere S^2."
+    trajectory_dependence: "LAGRANGIAN_STOCHASTIC"
+    stochastic_component: true
+    assumptions: ["Incompressible Navier-Stokes on periodic T^3", "nu > 0", "f = 0", "subcritical initial energy E_0 < inf"]
+    domain: "Periodic torus T^3 and universal cover R^3."
+    regularity_class: "Leray-Hopf weak solutions and candidate blowup profiles."
+    expected_outcome: "Exact relative SDEs, common-mode cancellation, and jet limit."
+    actual_outcome: "C1_PAIR_ROUTE_FOUNDATION_ESTABLISHED: Common-mode translation cancelled; bilateral pullback jet derived; coupling duality dilemma identified (NS-OBS-019)."
+    tests_attempted: ["tests/test_tp2_g6_c1_suite.py"]
+    evidence_refs: ["TP2_G6_C1_SYNTHESIS_REPORT.md", "TP2_G6_C1_ACCEPTANCE_DECISION.md", "TP2_G6_C1_COMMON_MODE_CANCELLATION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Foundation established; quantitative dispersion deferred to C2."
+    failure_mechanism: "Synchronous noise lacks relative diffusion (nu_rel = 0); independent noise destroys spatial differentiability; strain decoupling persists."
+    what_was_falsified: ["Synchronous two-particle transport providing autonomous relative diffusion or full-rank covariance in shear"]
+    what_was_not_falsified: ["Common-mode velocity cancellation (Theorem 2.1)", "Exact path-averaged linear SDE representation", "Bilateral deformation pullback jet formula", "Two-particle dispersion route under scale-dependent coupling (TP2-G6-C2)"]
+    surviving_results: ["Common-Mode Cancellation Theorem", "Exact relative SDE representation", "Canonical jet reconciliation D_s = J_s", "Bilateral pullback formula", "Separation energy 12nu Ito correction", "Non-collision property in 3D"]
+    negative_results: ["NS-OBS-019", "NEG-EV-038"]
+    open_questions: ["Can scale-dependent Brownian coupling rho(h) bridge the duality between flow differentiability and relative diffusion under C2?", "Can quantitative pair dispersion prove B2-L3 coverage?"]
+    obstruction_ids: ["NS-OBS-019"]
+    reopen_conditions: ["Activation of successor increment TP2-G6-C2."]
+    similarity_tags: ["two_particle_sde", "common_mode_cancellation", "stochastic_jet", "bilateral_pullback", "coupling_duality", "bridge_b2", "bridge_b3"]
+    last_re_evaluated: "2026-09-08"
+
 

@@ -682,5 +682,26 @@ claims:
       project_status: "PROJECT_CANONICAL"
     dependencies: ["CLM-024", "CLM-033"]
 
+  - claim_id: "CLM-035"
+    claim_type: "MATHEMATICAL_THEOREM"
+    name: "TWO_PARTICLE_RELATIVE_SDES_COMMON_MODE_CANCELLATION_AND_JET_PULLBACK"
+    milestone: "TP2-G6-C1"
+    statement: "On the periodic 3-torus T^3 = R^3 / Z^3 with nu > 0, the two-particle relative backward displacement delta A_s(x, h) = A_s(x+h) - A_s(x) satisfies: (1) Common-Mode Cancellation: for any u(x, t) = U(t) + v(x, t), the uniform velocity U(t) cancels identically under both synchronous (C-SYNC) and independent (C-IND) Brownian noise, eliminating the uniform convective sweeping obstruction of NS-OBS-018; (2) Path-Averaged Gradient: u(A_s^{(2)}) - u(A_s^{(1)}) = S_s delta A_s where S_s = int_0^1 nabla u(A_s^{(1)} + theta delta A_s) dtheta with tr(S_s) == 0; (3) Canonical Jet Pullback: under C-SYNC, the infinitesimal directional difference quotient converges to the bilateral deformation pullback with second-order jet curvature source: lim_{|h| -> 0} 3/|h|^2 int_{S^2} |delta Z_s|^2 / |Z_s|^2 dsigma = ||D_s J_omega D_s + H_s : omega||_F^2 / |D_s omega|^2; (4) Coupling Duality Dilemma: C-SYNC generates the spatial derivative flow D_s but has zero relative diffusion (nu_rel = 0), while C-IND provides relative diffusion with trace 12*nu but destroys flow differentiability (delta A / |h| ~ |h|^-1 -> infty) and decouples from the deterministic jet."
+    passport:
+      truth_status: "PROVED_THEOREM"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-034"]
+
+
 
 

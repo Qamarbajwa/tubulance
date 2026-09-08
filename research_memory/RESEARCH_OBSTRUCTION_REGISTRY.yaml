@@ -167,3 +167,13 @@ obstructions:
     known_bypasses_or_relaxations: ["Relative two-particle dispersion delta A_s = A_s(x+h) - A_s(x) or stochastic jet transport (nabla A_s, nabla^2 A_s) under Programme TP2-G6-C to eliminate background drift translation."]
     status: "PROVED_STRUCTURAL_OBSTRUCTION"
 
+  - obstruction_id: "NS-OBS-019"
+    name: "TWO_PARTICLE_BROWNIAN_COUPLING_DUALITY_AND_STRAIN_DECOUPLING"
+    description: "The two-particle stochastic framework is partitioned by a mutual exclusivity dilemma: synchronous noise (C-SYNC) preserves flow differentiability and generates the exact stochastic jet limit but provides zero relative diffusion (nu_rel = 0); independent noise (C-IND) provides relative diffusion (12nu) but destroys spatial differentiability (delta A / |h| -> infty), while local hyperbolic strain continues to decouple deformation weights from vorticity in both couplings."
+    first_encountered_in: "TP2-G6-C1"
+    affected_pathways: ["TP2-G6-C1", "TP2-G6-B2", "TP2-G6-B3"]
+    mathematical_core: "Under C-SYNC, noise cancels pathwise, preventing autonomous spatial spreading and leaving pair covariance strictly rank 1 in planar shear; under C-IND, noise non-differentiability diverges the jet quotient as |h|^-1; under both couplings, internal strain rate ~ M_n expels particles from candidate cores and deformation alignment extinguishes difference weights."
+    known_bypasses_or_relaxations: ["Scale-dependent Brownian correlation tensors rho(h) with transition from synchronous to independent noise at the viscous dissipation scale r_n (TP2-G6-C2)."]
+    status: "PROVED_STRUCTURAL_OBSTRUCTION"
+
+

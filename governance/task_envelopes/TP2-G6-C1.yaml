@@ -1,0 +1,47 @@
+task_envelope:
+  envelope_id: "TP2-G6-C1"
+  program: "NS-TRAJECTORY-PERSISTENCE-2"
+  subprogramme: "TP2-G6: BRIDGE RESOLUTION PROGRAMME"
+  route: "TP2-G6-C — TWO-PARTICLE DISPERSION AND STOCHASTIC JET ROUTE"
+  title: "Two-Particle Relative Dispersion, Common-Mode Cancellation, and Stochastic Jet Foundation"
+  governance_standard: "Universal Governance Minimal v4.0.3"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+
+  risk_and_action:
+    risk_ceiling: "R3 (High Assurance)"
+    execution_risk_class: "R3"
+    action_class: "SCIENTIFIC_INCREMENT"
+
+  target_problem:
+    problem_id: "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"
+    domain: "T^3 = R^3 / Z^3 (Periodic 3-Torus)"
+    viscosity: "nu > 0 (constant)"
+    forcing: "f = 0 (unforced)"
+    target_status: "UNRESOLVED"
+    invariance_rule: "Increment execution cannot alter mathematical truth or target status"
+
+  bridge_targets:
+    primary: "B2 — HISTORY-TO-EULERIAN COVERAGE"
+    secondary: "B3 — COVARIANCE SPECTRUM / MULTIDIRECTIONAL DISPERSION"
+
+  provenance_and_baseline:
+    base_checkpoint: "832a784dc5fcfbfceb8b4f8ddecf355985bfac58"
+    parent_increment: "TP2-G6-A2 (accepted at 6e29238623e8d0c3a423f3ae55a89086e695dbf0)"
+    prior_corrective_audit: "TP2-G6-B-R2 (accepted at 8996a64f9ee0e20f2d6abf4f54627222a7d5dbf9)"
+    sealed_historical_checkpoint: "TP2-G6-B-R1 (9783774430cd3939d473cd0e833aa2cf5b5c0645)"
+
+  agent_roles:
+    writer: "antigravity-primary-agent"
+    reviewer: "antigravity-fresh-context-verifier"
+    reviewer_independence: "IND1"
+    math_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+    acceptor: "autonomous-project-governance-coordinator"
+
+  conformance_gates:
+    coupling_definitions_separated: true
+    common_mode_cancellation_proved: true
+    stochastic_jet_limit_reconciled: true
+    relative_energy_and_orientation_derived: true
+    structure_function_bounds_evaluated: true
+    circularity_firewall_enforced: true
+    deterministic_tests_passed: true

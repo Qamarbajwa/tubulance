@@ -458,4 +458,22 @@ understanding_packages:
       essential_assumptions: ["Incompressible Navier-Stokes on periodic T^3", "subcritical energy bounds E_0 < inf"]
       status: "U3_COMPLETE_PACKAGE"
 
+  - package_id: "UND-035"
+    claim_id: "CLM-035"
+    name: "TWO_PARTICLE_RELATIVE_SDES_COMMON_MODE_CANCELLATION_AND_JET_PULLBACK"
+    level_1_mechanism: "Two-particle backward separation delta A_s identically cancels spatially uniform translation U(t), expresses relative drift via path-averaged gradient S_s, and converges under C-SYNC to bilateral deformation pullback Xi^pair, while revealing the Brownian coupling duality dilemma (NS-OBS-019)."
+    level_2_architecture: |
+      1. Common-mode cancellation: u(x, t) = U(t) + v(x, t) implies delta u = delta v identically, eliminating uniform sweeping (BM-A2-04).
+      2. Exact representation: u(A^{(2)}) - u(A^{(1)}) = S_s delta A_s where S_s = int_0^1 nabla u(A^{(1)} + theta delta A_s) dtheta with tr(S_s) == 0.
+      3. Stochastic jet limit: Under C-SYNC, lim_{|h| -> 0} delta A_s / h = D_s = nabla_x A_s with d/ds D_s = -(nabla u) D_s.
+      4. Bilateral pullback: Infinitesimal pair history quotient yields Xi^pair = ||D_s J_omega D_s + H_s : omega||_F^2 / |D_s omega|^2.
+      5. Energy dynamics: d|delta A_s|^2 = -2 delta A . delta u ds + 12nu ds + martingale under C-IND, with collision polar set non-intersection in 3D.
+      6. Coupling duality: C-SYNC generates flow derivatives but has zero relative diffusion; C-IND generates 3D diffusion (12nu) but destroys flow differentiability.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Linearizes velocity increments along exact material segments and eliminates translation degrees of freedom."
+      what_can_fail: "Conflating C-SYNC and C-IND, or asserting that common-mode cancellation solves strain-induced core expulsion."
+      essential_assumptions: ["Incompressible Navier-Stokes on periodic T^3", "Brownian coupling specification (C-SYNC vs C-IND)"]
+      status: "U3_COMPLETE_PACKAGE"
+
+
 

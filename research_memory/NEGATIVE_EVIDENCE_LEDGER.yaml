@@ -334,3 +334,13 @@ negative_evidence:
     mathematical_verdict: "CEILING_ESTABLISHED_AT_B2_L1_TWO_PARTICLE_ESCALATION_MANDATORY"
     canonical_artifact: "TP2_G6_A2_SYNTHESIS_REPORT.md"
 
+  - record_id: "NEG-EV-038"
+    pathway_id: "TP2-G6-C1"
+    title: "SYNCHRONOUS_PAIR_TRANSPORT_DIFFUSION_AND_RANK_DEFICIT"
+    falsified_hypothesis: "Synchronous Brownian coupling (C-SYNC) provides autonomous relative stochastic diffusion and full-rank covariance dispersion in planar shear flows."
+    counterexample_or_proof: "Under C-SYNC, Brownian noise cancels identically pathwise (nu_rel = 0), preventing autonomous spatial exploration. In 1D periodic shear, transverse relative separations remain strictly constant (delta A_s^y = h_y, delta A_s^z = h_z), leaving the centered pair covariance strictly rank 1 (lambda_2 = lambda_3 = 0) and confirming that C-SYNC cannot overcome the CLM-029 shear barrier."
+    governing_obstruction: "NS-OBS-019"
+    mathematical_verdict: "FALSIFIED_FOR_SYNCHRONOUS_COUPLING"
+    canonical_artifact: "TP2_G6_C1_SYNTHESIS_REPORT.md"
+
+
