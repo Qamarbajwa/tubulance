@@ -1,0 +1,58 @@
+task_envelope:
+  envelope_id: "NS-OPENAI-B1"
+  program: "OPENAI_NAVIER_STOKES_UNFORCED_TRANSFER"
+  parent: "NS-EXT-OPENAI-001-R1"
+  route: "AUTONOMOUS_MULTISCALE_PRECURSOR_CASCADE"
+  title: "Autonomous Multiscale Precursor Cascade Programme: Phase Alignment, Entrance-State Realizability, and Unforced Pulse Generation"
+  governance_standard: "Universal Governance Minimal v4.0.3"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+
+  risk_and_action:
+    risk_ceiling: "R3 (High Assurance)"
+    execution_risk_class: "R3"
+    action_class: "AUTONOMOUS_CASCADE_ANALYSIS_AND_REALIZABILITY_AUDIT"
+
+  target_problem:
+    problem_id: "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"
+    domain: "T^3 = R^3 / Z^3 (Periodic 3-Torus)"
+    viscosity: "nu > 0 (constant)"
+    forcing: "f = 0 (strictly unforced)"
+    target_status: "UNRESOLVED"
+    invariance_rule: "B1 analyzes autonomous pulse realizability; it does NOT claim unforced blowup and cannot resolve Clay Statement B"
+
+  strategic_directive:
+    primary_target: "NS-OBS-020B (AUTONOMOUS_PRECURSOR_GENERATION_AND_PHASE_ALIGNMENT)"
+    secondary_diagnostic: "NS-OBS-020C (EXACT_RESIDUAL_CLOSURE_FIREWALLED)"
+    mandate: "Determine whether the pulse states used in the forced OpenAI mechanism can arise autonomously from one smooth finite-energy periodic initial datum without external forcing."
+    historical_anchors_preserved:
+      - "80a095f495f4a8b4a0b77ea783fe121621eac215 (NS-EXT-OPENAI-001-R1 state sync)"
+      - "31b7d4c24960103767f1b85a8e27ca9458626087 (NS-EXT-OPENAI-001-R1 scientific seal)"
+      - "7a949f425a5f05cc21f699bce04f3392a0026b92 (NS-EXT-OPENAI-001 milestone commit)"
+      - "50e7b3cc74873abd8d909a84f32e43b6eca3bfb3 (TP2-G6-C1 seal)"
+      - "9783774430cd3939d473cd0e833aa2cf5b5c0645 (TP2-G6-B-R1 seal)"
+
+  agent_roles:
+    writer: "antigravity-primary-agent"
+    reviewer: "antigravity-fresh-context-verifier"
+    reviewer_independence: "IND1"
+    math_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+    acceptor: "autonomous-project-governance-coordinator"
+
+  conformance_gates:
+    pulse_entrance_state_cataloged: true
+    linear_precursor_propagator_formalized: true
+    wavevector_characteristics_derived: true
+    exact_amplification_damping_functional_evaluated: true
+    phase_alignment_audited: true
+    stress_cone_landing_evaluated: true
+    single_pulse_realizability_tested: true
+    two_pulse_interaction_gated: true
+    finite_n_cascade_scaling_audited: true
+    infinite_cascade_limit_evaluated: true
+    energy_budget_conserved: true
+    autonomous_clock_investigated: true
+    cascade_inheritance_evaluated: true
+    adversarial_benchmarks_run: true
+    negative_evidence_audited: true
+    visual_research_companion_created: true
+    deterministic_tests_passed: true

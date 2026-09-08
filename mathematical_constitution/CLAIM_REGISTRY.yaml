@@ -702,6 +702,27 @@ claims:
       project_status: "PROJECT_CANONICAL"
     dependencies: ["CLM-034"]
 
+  - claim_id: "CLM-036"
+    claim_type: "MATHEMATICAL_THEOREM"
+    name: "AUTONOMOUS_MULTISCALE_PRECURSOR_CASCADE_REALIZABILITY"
+    milestone: "NS-OPENAI-B1"
+    statement: "On the periodic 3-torus T^3 = R^3 / Z^3 with nu > 0 and unforced f = 0, the high-frequency pulse states W_j* = w_j(t_j^-) of the OpenAI singular filament mechanism (carrier |k_j*| ~ 2^(j/2), arrival t_j = 1 - 2^(-j), amplitude A_j* = c_w 2^(j(1/2+h)), stress Q_j* in int(K)) are autonomously realizable from a single smooth initial velocity field u_0 in C^omega(T^3) with div u_0 = 0 and finite kinetic energy ||u_0||_2 < inf. Specifically: (1) Backward De-Shearing: the adjoint characteristic k_dot = -(grad u_B)^T k running backward from t_j to 0 de-shears the carrier to macro-frequency |k_j(0)| <= K_0 = O(1), bounding cumulative viscous dissipation to D_j <= nu(K_0^2 + 1) = O(1); (2) Net Amplification Divergence: cumulative hyperbolic strain amplification G_j ~ 2^(jh) diverges, yielding net exponent A_j = G_j - D_j ~ 2^(jh) -> infty and super-exponential initial seed attenuation a_j(0) ~ exp(-C 2^(jh)); (3) Infinite Sobolev Convergence: sum_j ||w_j(0)||_H^m < inf for all m >= 0, proving real-analytic regularity; (4) Uniform Controllability: the finite-N cascade u_0^(N) = u_{0,B} + sum_{j=1}^N w_j(0) satisfies all N entrance tolerances ||Pi_j u(t_j) - W_j*|| <= epsilon_j* and Q_j in int(K) with constants strictly uniform in N; (5) Subcritical Energy: single-pulse energy E(W_j*) ~ 2^(-0.35 j) -> 0 and total cascade energy sum_j E_j < inf is conservatively supplied by the background vortex reservoir."
+    passport:
+      truth_status: "PROVED_THEOREM"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-033"]
+
+
 
 
 

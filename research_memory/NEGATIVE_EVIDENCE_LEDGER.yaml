@@ -352,6 +352,16 @@ negative_evidence:
     mathematical_verdict: "FALSIFIED_FOR_DIRECT_HIGH_FREQUENCY_PRELOAD_P0"
     canonical_artifact: "NS_EXT_OPENAI_001_R1_SYNTHESIS_REPORT.md"
 
+  - record_id: "NEG-EV-040"
+    pathway_id: "NS-OPENAI-B1"
+    title: "AUTONOMOUS_PRECURSOR_PHASE_JITTER_AND_STOCHASTIC_DETUNING_SENSITIVITY"
+    falsified_hypothesis: "Autonomous unforced precursor phase alignment is robust against finite random phase fluctuations without active phase-locking mechanisms."
+    counterexample_or_proof: "While deterministic classical Cauchy initial data u_0 in C^omega(T^3) allow exact phase selection phi_j(0) = phi_j* - int k.u_B ds, the accumulated phase Phi_j ~ 2^(jh) diverges as j -> infty. Any physical or numerical perturbation delta phi > delta_K scrambles the wavevector orientation and ejects the Reynolds stress Q_j from the stress cone K unless phase-locking or cascade-inheritance constraints are satisfied."
+    governing_obstruction: "NS-OBS-020B"
+    mathematical_verdict: "SENSITIVITY_IDENTIFIED_PHASE_LOCKING_REQUIRED_FOR_STOCHASTIC_TRANSFER"
+    canonical_artifact: "NS_OPENAI_B1_SYNTHESIS_REPORT.md"
+
+
 
 
 

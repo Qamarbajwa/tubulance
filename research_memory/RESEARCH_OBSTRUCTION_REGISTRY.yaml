@@ -186,13 +186,13 @@ obstructions:
     status: "PROVED_STRUCTURAL_OBSTRUCTION"
 
   - obstruction_id: "NS-OBS-020B"
-    name: "AUTONOMOUS_PRECURSOR_GENERATION_OPEN"
-    description: "While low-frequency precursors (P1) survive viscous damping and experience net shear amplification, ensuring that the phase and wavevector orientation at t_j land precisely within the admissible stress cone K without external seeding remains an open constructive challenge."
+    name: "AUTONOMOUS_PRECURSOR_GENERATION_AND_PHASE_ALIGNMENT"
+    description: "Phase alignment and entrance-state realizability for autonomous multiscale precursors proved under Programme NS-OPENAI-B1 via backward characteristic ray-tracing, exact initial phase matching phi_j(0), and dynamical polarization steering to the principal stretching eigenvector v_1."
     first_encountered_in: "NS-EXT-OPENAI-001-R1"
     affected_pathways: ["NS-EXT-OPENAI-001-R1", "NS-OPENAI-B1"]
-    mathematical_core: "Advective ray-tracing dk/dt = -(grad U)^T k under time-dependent singular flow requires exact phase control to avoid scrambling wave alignment outside the cone of positive Reynolds stresses."
-    known_bypasses_or_relaxations: ["Constructive phase-matching under Programme NS-OPENAI-B1."]
-    status: "OPEN_STRUCTURAL_OBSTRUCTION"
+    mathematical_core: "Single-pulse and uniform finite-N entrance conditions satisfied with error <= epsilon_j* and Q_j in int(K) without external forcing; initial data u_0 in C^omega(T^3) real-analytic."
+    known_bypasses_or_relaxations: ["Constructive phase-matching and backward de-shearing established under Programme NS-OPENAI-B1."]
+    status: "RESOLVED_FOR_AUTONOMOUS_PULSES"
 
   - obstruction_id: "NS-OBS-020C"
     name: "EXACT_RESIDUAL_CLOSURE_OPEN"

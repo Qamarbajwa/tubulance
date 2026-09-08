@@ -1,13 +1,13 @@
 # Live Operational State — tubulance
 schema_version: "4.0.3"
-revision: 8
+revision: 9
 activation: "ACTIVE"
 
 project:
   id: "tubulance"
   name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
   root: "D:/Comfy UI/tubulance"
-  head: "31b7d4c24960103767f1b85a8e27ca9458626087"
+  head: "80a095f495f4a8b4a0b77ea783fe121621eac215"
   dirty: "DIRTY_KNOWN"
   branch: "main"
 
@@ -23,27 +23,31 @@ governance_binding:
 coordination:
   state_writer: "antigravity-primary-agent"
   serialization_method: "REVISION_COMPARE_AND_SWAP"
-  last_expected_revision: 8
-  last_updated_at: "2026-09-08T20:51:30Z"
+  last_expected_revision: 9
+  last_updated_at: "2026-09-08T23:59:50Z"
   active_contract: "NS-GOV-MIG-V403-001"
-  frozen_candidate: "31b7d4c24960103767f1b85a8e27ca9458626087"
+  frozen_candidate: "80a095f495f4a8b4a0b77ea783fe121621eac215"
 
 
 epistemic_status:
   target_problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
   clay_statement_b_status: "UNRESOLVED"
-  scientific_program_status: "NS-EXT-OPENAI-001-R1_ACCEPTED_AS_CANONICAL_SCIENTIFIC_REPAIR"
-  active_milestone: "NS-OPENAI-B1"
+  scientific_program_status: "NS-OPENAI-B1_ACCEPTED_AS_CANONICAL_MILESTONE"
+  active_milestone: "NS-OPENAI-B2"
 
 current_objective:
-  id: "NS-OPENAI-B1"
-  title: "Autonomous Multiscale Precursor Cascade Programme"
+  id: "NS-OPENAI-B2"
+  title: "Exact Residual Closure and Non-Perturbative Momentum Balance"
   target_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
   risk: "R3"
   status: "AUTHORIZED_FOR_PREPARATION"
-  dependencies: ["NS-EXT-OPENAI-001-R1"]
+  dependencies: ["NS-OPENAI-B1"]
 
 objectives:
+  - id: "NS-OPENAI-B1"
+    title: "Autonomous Multiscale Precursor Cascade Programme"
+    status: "ACCEPTED_AS_CANONICAL_MILESTONE"
+    evidence_ref: "NS_OPENAI_B1_ACCEPTANCE_DECISION.md"
   - id: "NS-EXT-OPENAI-001-R1"
     title: "OpenAI Navier–Stokes Transfer Barrier Scientific Repair"
     status: "ACCEPTED_AS_CANONICAL_SCIENTIFIC_REPAIR"
@@ -90,13 +94,20 @@ capabilities:
 hard_gates:
   clay_statement_b_unresolved: "PASS_ENFORCED"
   dag_cycle_count: "0_CYCLES_PASS"
-  claim_passport_census: "35_OF_35_VALID_PASS"
-  negative_evidence_retention: "39_OF_39_PRESERVED_PASS"
+  claim_passport_census: "36_OF_36_VALID_PASS"
+  negative_evidence_retention: "40_OF_40_PRESERVED_PASS"
   structural_obstruction_retention: "22_OF_22_PRESERVED_PASS"
   writer_anti_self_acceptance: "PASS_ENFORCED"
   unscaled_scalar_bounds_prohibited: "PASS_ENFORCED"
 
 evidence_refs:
+  - id: "EVID-NS-OPENAI-B1"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_SYNTHESIS_REPORT.md"
+  - id: "EVID-CLM-036"
+    claim_id: "CLM-036"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_SYNTHESIS_REPORT.md"
   - id: "EVID-NS-EXT-OPENAI-001-R1"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
     artifact: "NS_EXT_OPENAI_001_R1_SYNTHESIS_REPORT.md"
@@ -111,9 +122,9 @@ evidence_refs:
     claim_id: "CLM-033"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
     artifact: "TP2_G6_A1_SYNTHESIS_REPORT.md"
-  - id: "EVID-TESTS-335"
+  - id: "EVID-TESTS-342"
     type: "GOV_E3_REPRODUCIBLE"
-    result: "335_PASSED"
+    result: "342_PASSED"
     suite: "pytest -k 'tp2 or math_assurance or openai'"
 
 negative_history_refs:
@@ -122,6 +133,7 @@ negative_history_refs:
   - "NEG-EV-036"
   - "NEG-EV-038"
   - "NEG-EV-039"
+  - "NEG-EV-040"
 
 blockers: []
 
@@ -132,7 +144,7 @@ known_risks:
     obstruction: "NS-OBS-020A"
   - risk_id: "RISK-AUTONOMOUS-PRECURSOR-PHASE"
     bridge: "Transfer to Statement B"
-    description: "Precursor wavevectors sheared under singular flow require constructive phase alignment into stress cone K"
+    description: "Resolved for autonomous precursors under NS-OPENAI-B1; stochastic detuning phase jitter monitored under NEG-EV-040"
     obstruction: "NS-OBS-020B"
   - risk_id: "RISK-EXACT-RESIDUAL-CLOSURE"
     bridge: "Transfer to Statement B"

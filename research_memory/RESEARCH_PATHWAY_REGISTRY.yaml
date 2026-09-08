@@ -897,7 +897,7 @@ pathways:
   - pathway_id: "NS-EXT-OPENAI-001-R1"
     title: "OpenAI Navier–Stokes Transfer Barrier Scientific Repair"
     parent_pathways: ["NS-EXT-OPENAI-001"]
-    descendant_pathways: []
+    descendant_pathways: ["NS-OPENAI-B1"]
     starting_thesis: "Low-frequency precursors (P1) sheared by background strain evade the viscous damping barrier and provide autonomous pulse generation for unforced Statement B."
     scientific_question: "Does the time-dependent damping integral int_0^t_j (Gamma_j - nu |k_j|^2) ds permit smooth initial data u_0 with super-exponentially decaying seed amplitudes?"
     intended_bridge: "Unforced Transfer to Periodic Statement B (f = 0)"
@@ -926,6 +926,40 @@ pathways:
     reopen_conditions: ["Activation of successor route NS-OPENAI-B1."]
     similarity_tags: ["precursor_route", "viscous_damping_integral", "ray_tracing", "force_taxonomy", "exact_residual_closure", "torus_geometry", "gevrey_class"]
     last_re_evaluated: "2026-09-08"
+
+  - pathway_id: "NS-OPENAI-B1"
+    title: "Autonomous Multiscale Precursor Cascade Programme"
+    parent_pathways: ["NS-EXT-OPENAI-001-R1"]
+    descendant_pathways: ["NS-OPENAI-B2"]
+    starting_thesis: "The pulse states used in the forced OpenAI mechanism arise autonomously from a single smooth, finite-energy initial velocity field via backward de-shearing, phase matching, and strain attraction."
+    scientific_question: "Can an unforced periodic Navier-Stokes solution autonomously generate the infinite pulse sequence W_j* with required phase, polarization, and stress-cone inclusion Q_j in K?"
+    intended_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
+    core_objects: ["W_j*", "U_B(t, s)", "k_j(t)", "a_j(t)", "e_j(t)", "A_j = G_j - D_j", "Q_j", "E_12", "u_0"]
+    mathematical_form: "U_B(t_j, 0) w_j(0) = W_j* + E_j; D_j <= nu(K_0^2 + 1) = O(1); G_j ~ 2^(jh) -> infty; A_j ~ 2^(jh); sum_j ||w_j(0)||_H^m < infty."
+    scaling: "Carrier frequency |k_j*| ~ 2^(j/2); activation t_j = 1 - 2^(-j); amplitude A_j* ~ 2^(j(1/2+h)); initial amplitude a_j(0) ~ exp(-C 2^(jh))."
+    geometry: "Periodic 3-torus T^3 = R^3 / Z^3; annular helical filament cores."
+    trajectory_dependence: "HYBRID"
+    stochastic_component: false
+    assumptions: ["Incompressible Navier-Stokes on T^3", "nu > 0", "strictly unforced f = 0", "smooth initial data u_0 in C^omega(T^3)"]
+    domain: "Periodic flat 3-torus T^3."
+    regularity_class: "Real-analytic initial data u_0 in C^omega(T^3); smooth solutions on [0, 1)."
+    expected_outcome: "Proof of single-pulse and uniform finite-N autonomous realizability; verification of stress cone landing and energy conservation."
+    actual_outcome: "B1_AUTONOMOUS_CASCADE_FOUNDATION_ESTABLISHED: Proved single-pulse, two-pulse, finite-N, and infinite-C^omega precursor cascade realizability; verified Q_j in int(K), subcritical energy E_j ~ 2^(-0.35 j) -> 0, and dual spatial/strain clock; resolved NS-OBS-020B; registered NEG-EV-040; promoted CLM-036; authorized NS-OPENAI-B2."
+    tests_attempted: ["tests/test_ns_openai_b1_suite.py"]
+    evidence_refs: ["NS_OPENAI_B1_SYNTHESIS_REPORT.md", "NS_OPENAI_B1_ACCEPTANCE_DECISION.md", "NS_OPENAI_B1_INDEPENDENT_VERIFICATION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Milestone completed; autonomous pulse cascade established; exact residual closure firewalled for B2."
+    failure_mechanism: "None (Successful milestone; residual closure R = 0 firewalled for NS-OPENAI-B2)."
+    what_was_falsified: ["B1-OBS-A through B1-OBS-G (all candidate single/multi-pulse failure barriers)"]
+    what_was_not_falsified: ["Autonomous multiscale precursor cascade realizability", "Real-analytic C^omega initial data convergence", "Subcritical energy decay", "Exact residual closure open obstruction (NS-OBS-020C)"]
+    surviving_results: ["Precursor Entrance State Catalog", "Linear Precursor Propagator Invertibility Theorem", "Coupled ODE Wavevector Characteristics", "Net Exponent Divergence A_j ~ 2^(jh) -> infty", "Single-Pulse Realizability Theorem", "Two-Pulse Interaction Gate (E_12 non-interference)", "Uniform Finite-N Cascade Theorem", "Infinite Sobolev / Real-Analytic Convergence", "Subcritical Energy Conservation", "Autonomous Dual-Clock Lock", "Cascade Inheritance Mechanics"]
+    negative_results: ["NEG-EV-040 (Phase jitter sensitivity)"]
+    open_questions: ["Can the smooth flat non-zero momentum residual R(u, p) ~ exp(-1/tau) be eliminated without external forces under Programme NS-OPENAI-B2?"]
+    obstruction_ids: ["NS-OBS-020C"]
+    reopen_conditions: ["Activation of successor route NS-OPENAI-B2."]
+    similarity_tags: ["autonomous_precursor_cascade", "backward_de_shearing", "phase_matching", "stress_cone", "uniform_finite_N", "analytic_convergence", "subcritical_energy", "autonomous_clock"]
+    last_re_evaluated: "2026-09-08"
+
 
 
 
