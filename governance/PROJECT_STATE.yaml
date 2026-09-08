@@ -1,13 +1,13 @@
 # Live Operational State — tubulance
 schema_version: "4.0.3"
-revision: 5
+revision: 6
 activation: "ACTIVE"
 
 project:
   id: "tubulance"
   name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
   root: "D:/Comfy UI/tubulance"
-  head: "a4084ff749b56f8749a0d8e411b5168baef419ba"
+  head: "7a949f425a5f05cc21f699bce04f3392a0026b92"
   dirty: "DIRTY_KNOWN"
   branch: "main"
 
@@ -23,10 +23,10 @@ governance_binding:
 coordination:
   state_writer: "antigravity-primary-agent"
   serialization_method: "REVISION_COMPARE_AND_SWAP"
-  last_expected_revision: 5
-  last_updated_at: "2026-09-08T20:42:00Z"
+  last_expected_revision: 6
+  last_updated_at: "2026-09-08T20:43:00Z"
   active_contract: "NS-GOV-MIG-V403-001"
-  frozen_candidate: "a4084ff749b56f8749a0d8e411b5168baef419ba"
+  frozen_candidate: "7a949f425a5f05cc21f699bce04f3392a0026b92"
 
 
 epistemic_status:
@@ -146,7 +146,7 @@ release:
   candidate: null
   reason: "PURE_MATHEMATICAL_RESEARCH_PROGRAM_CLAY_B_UNRESOLVED"
 
-last_verified_checkpoint: "50e7b3cc74873abd8d909a84f32e43b6eca3bfb3"
+last_verified_checkpoint: "7a949f425a5f05cc21f699bce04f3392a0026b92"
 
 overhead:
   routine_target_fraction: 0.10
