@@ -1,13 +1,13 @@
 # Live Operational State — tubulance
 schema_version: "4.0.3"
-revision: 4
+revision: 5
 activation: "ACTIVE"
 
 project:
   id: "tubulance"
   name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
   root: "D:/Comfy UI/tubulance"
-  head: "50e7b3cc74873abd8d909a84f32e43b6eca3bfb3"
+  head: "a4084ff749b56f8749a0d8e411b5168baef419ba"
   dirty: "DIRTY_KNOWN"
   branch: "main"
 
@@ -23,27 +23,31 @@ governance_binding:
 coordination:
   state_writer: "antigravity-primary-agent"
   serialization_method: "REVISION_COMPARE_AND_SWAP"
-  last_expected_revision: 4
-  last_updated_at: "2026-09-08T19:56:00Z"
+  last_expected_revision: 5
+  last_updated_at: "2026-09-08T20:42:00Z"
   active_contract: "NS-GOV-MIG-V403-001"
-  frozen_candidate: "50e7b3cc74873abd8d909a84f32e43b6eca3bfb3"
+  frozen_candidate: "a4084ff749b56f8749a0d8e411b5168baef419ba"
 
 
 epistemic_status:
   target_problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
   clay_statement_b_status: "UNRESOLVED"
-  scientific_program_status: "TP2-G6-C1_ACCEPTED_AS_CANONICAL_MILESTONE"
-  active_milestone: "TP2-G6-C2"
+  scientific_program_status: "NS-EXT-OPENAI-001_ACCEPTED_AS_CANONICAL_ASSIMILATION_MILESTONE"
+  active_milestone: "NS-EXT-OPENAI-001"
 
 current_objective:
-  id: "TP2-G6-C2"
-  title: "Quantitative Pair Dispersion and Scale-Dependent Coupling Programme"
-  target_bridge: "B2 / B3 — Resolution of Coupling Duality via Scale-Dependent Noise"
+  id: "NS-EXT-OPENAI-001"
+  title: "OpenAI Navier–Stokes Blowup Mechanism Assimilation and Unforced Periodic Transfer Audit"
+  target_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
   risk: "R3"
-  status: "AUTHORIZED_FOR_PREPARATION"
+  status: "ACCEPTED_AS_CANONICAL_ASSIMILATION_MILESTONE"
   dependencies: ["TP2-G6-C1"]
 
 objectives:
+  - id: "NS-EXT-OPENAI-001"
+    title: "OpenAI Navier–Stokes Blowup Mechanism Assimilation and Unforced Periodic Transfer Audit"
+    status: "ACCEPTED_AS_CANONICAL_ASSIMILATION_MILESTONE"
+    evidence_ref: "NS_EXT_OPENAI_001_ACCEPTANCE_DECISION.md"
   - id: "TP2-G6-C1"
     title: "Two-Particle Relative Dispersion, Common-Mode Cancellation, and Stochastic Jet Foundation"
     status: "ACCEPTED_AS_CANONICAL_MILESTONE"
@@ -83,12 +87,15 @@ hard_gates:
   clay_statement_b_unresolved: "PASS_ENFORCED"
   dag_cycle_count: "0_CYCLES_PASS"
   claim_passport_census: "35_OF_35_VALID_PASS"
-  negative_evidence_retention: "38_OF_38_PRESERVED_PASS"
-  structural_obstruction_retention: "19_OF_19_PRESERVED_PASS"
+  negative_evidence_retention: "39_OF_39_PRESERVED_PASS"
+  structural_obstruction_retention: "20_OF_20_PRESERVED_PASS"
   writer_anti_self_acceptance: "PASS_ENFORCED"
   unscaled_scalar_bounds_prohibited: "PASS_ENFORCED"
 
 evidence_refs:
+  - id: "EVID-NS-EXT-OPENAI-001"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_EXT_OPENAI_001_SYNTHESIS_REPORT.md"
   - id: "EVID-CLM-035"
     claim_id: "CLM-035"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
@@ -97,20 +104,25 @@ evidence_refs:
     claim_id: "CLM-033"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
     artifact: "TP2_G6_A1_SYNTHESIS_REPORT.md"
-  - id: "EVID-TESTS-319"
+  - id: "EVID-TESTS-328"
     type: "GOV_E3_REPRODUCIBLE"
-    result: "319_PASSED"
-    suite: "pytest -k 'tp2 or math_assurance'"
+    result: "328_PASSED"
+    suite: "pytest -k 'tp2 or math_assurance or openai'"
 
 negative_history_refs:
   - "NEG-EV-001"
   - "NEG-EV-035"
   - "NEG-EV-036"
   - "NEG-EV-038"
+  - "NEG-EV-039"
 
 blockers: []
 
 known_risks:
+  - risk_id: "RISK-VISCOUS-PULSE-EXTINCTION"
+    bridge: "Transfer to Statement B"
+    description: "Viscous heat diffusion exp(-nu 2^j) prematurely annihilates preloaded pulse seeds, while flat residual requires non-perturbative solve"
+    obstruction: "NS-OBS-020"
   - risk_id: "RISK-COUPLING-DUALITY"
     bridge: "B2 / B3"
     description: "C-SYNC preserves flow jet limit but has zero relative diffusion (rank 1); C-IND has rank 3 Brownian diffusion but diverges as h^-1 destroying flow derivative"

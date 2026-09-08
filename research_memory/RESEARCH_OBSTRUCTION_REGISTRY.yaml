@@ -176,4 +176,14 @@ obstructions:
     known_bypasses_or_relaxations: ["Scale-dependent Brownian correlation tensors rho(h) with transition from synchronous to independent noise at the viscous dissipation scale r_n (TP2-G6-C2)."]
     status: "PROVED_STRUCTURAL_OBSTRUCTION"
 
+  - obstruction_id: "NS-OBS-020"
+    name: "VISCOUS_PULSE_EXTINCTION_AND_FLAT_RESIDUAL_REMAINDER_BARRIER"
+    description: "Transfer of the OpenAI forced Navier-Stokes blowup mechanism to the unforced Clay Statement B (f = 0) is obstructed by two independent mathematical barriers: high-frequency pulse seeds preloaded into initial data u_0 undergo premature exponential viscous damping exp(-nu 2^j) that erases them before activation, and the flat asymptotic momentum residual R(u, p) ~ exp(-1/tau) requires a non-perturbative solve with singular derivative loss."
+    first_encountered_in: "NS-EXT-OPENAI-001"
+    affected_pathways: ["NS-EXT-OPENAI-001", "NS-OPENAI-B1", "NS-OPENAI-B2"]
+    mathematical_core: "Viscous heat kernel exp(nu t Delta) annihilates modes at k_j ~ 2^(j/2) by exp(-nu 2^j) over time t_j ~ 1, forcing initial Sobolev norms ||u_0||_H^s to diverge if pre-compensated; while linearized operator around singular core u ~ tau^(-1/2-h) violates tame Nash-Moser bounds and Borel summation diverges factorially as n! C^n."
+    known_bypasses_or_relaxations: ["Autonomous hydrodynamic instability cascades generating pulses dynamically without initial seeding, or exact non-perturbative self-similar profiles with zero residual."]
+    status: "PROVED_STRUCTURAL_OBSTRUCTION"
+
+
 

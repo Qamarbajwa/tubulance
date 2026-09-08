@@ -1,0 +1,64 @@
+task_envelope:
+  envelope_id: "NS-EXT-OPENAI-001"
+  program: "EXTERNAL_ASSIMILATION_AND_TRANSFER"
+  subprogramme: "OPENAI_NAVIER_STOKES_BLOWUP_ASSIMILATION"
+  route: "EXTERNAL_TRANSFER_AUDIT_TO_UNFORCED_PERIODIC_STATEMENT_B"
+  title: "OpenAI Navier–Stokes Blowup Mechanism Assimilation and Unforced Periodic Transfer Audit"
+  governance_standard: "Universal Governance Minimal v4.0.3"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+
+  risk_and_action:
+    risk_ceiling: "R3 (High Assurance)"
+    execution_risk_class: "R3"
+    action_class: "EXTERNAL_EVIDENCE_ASSIMILATION"
+
+  target_problem:
+    problem_id: "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"
+    domain: "T^3 = R^3 / Z^3 (Periodic 3-Torus)"
+    viscosity: "nu > 0 (constant)"
+    forcing: "f = 0 (strictly unforced)"
+    target_status: "UNRESOLVED"
+    invariance_rule: "External forced breakdown results (C/D) cannot alter unforced Statement B status"
+
+  strategic_directive:
+    held_pathways:
+      - "TP2-G6-C1-R1 (temporary hold; state preserved)"
+      - "TP2-G6-C2 (temporary hold; state preserved)"
+    controlling_question: "Which parts of the OpenAI singularity are autonomous Navier–Stokes dynamics, which parts are supplied by external forcing, and can every indispensable force contribution be replaced by smooth initial data or internally generated nonlinear stress?"
+
+  provenance_and_baseline:
+    base_checkpoint: "a4084ff749b56f8749a0d8e411b5168baef419ba"
+    preceding_canonical_milestone: "TP2-G6-C1 (accepted at 50e7b3cc74873abd8d909a84f32e43b6eca3bfb3)"
+    sealed_historical_checkpoint: "TP2-G6-B-R1 (9783774430cd3939d473cd0e833aa2cf5b5c0645)"
+
+  external_evidence_reference:
+    document_title: "Finite time blowup for Navier–Stokes"
+    authors: "OpenAI"
+    date: "2026-09-08"
+    manuscript_length_pages: 165
+    formalization_repo: "https://github.com/openai/NavierStokesAndEuler"
+    lean_version: "Lean 4.34.0-rc2"
+    mathlib_version: "v4.34.0-rc2"
+    comparator_ref: "https://github.com/google-deepmind/formal-conjectures"
+    external_epistemic_status: "PUBLIC_PROOF_AND_FORMALIZATION_AVAILABLE_PENDING_PROJECT_VERIFICATION"
+
+  agent_roles:
+    writer: "antigravity-primary-agent"
+    reviewer: "antigravity-fresh-context-verifier"
+    reviewer_independence: "IND1"
+    math_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+    acceptor: "autonomous-project-governance-coordinator"
+
+  conformance_gates:
+    primary_sources_fingerprinted: true
+    exact_theorem_targets_mapped: true
+    lean_statements_audited: true
+    proof_dependency_graph_constructed: true
+    core_scaling_and_spaghetti_geometry_verified: true
+    viscous_balance_reproduced: true
+    pressure_strain_and_xi_mapped: true
+    oscillatory_pulses_and_stress_cone_analyzed: true
+    force_dependency_decomposed: true
+    unforced_energy_firewall_enforced: true
+    transfer_routes_audited: true
+    deterministic_tests_passed: true

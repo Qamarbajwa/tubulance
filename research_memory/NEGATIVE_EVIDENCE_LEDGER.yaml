@@ -343,4 +343,14 @@ negative_evidence:
     mathematical_verdict: "FALSIFIED_FOR_SYNCHRONOUS_COUPLING"
     canonical_artifact: "TP2_G6_C1_SYNTHESIS_REPORT.md"
 
+  - record_id: "NEG-EV-039"
+    pathway_id: "NS-EXT-OPENAI-001"
+    title: "INITIAL_DATA_PULSE_PRELOADING_AND_FLAT_RESIDUAL_TRANSFER_FALSIFICATION"
+    falsified_hypothesis: "The OpenAI forced Navier-Stokes blowup mechanism can be directly transferred to unforced Clay Statement B (f = 0) by preloading future high-frequency pulses into smooth initial data u_0 or iteratively eliminating the flat residual."
+    counterexample_or_proof: "Preloaded wavepackets at wavenumber k_j ~ 2^(j/2) experience linear viscous damping exp(-nu 2^j) that extinguishes them before activation time t_j ~ 1 - 2^(-j), while pre-compensating requires ||u_0||_H^s to diverge. Furthermore, the all-order residual R(u, p) ~ exp(-1/tau) is non-zero and flat, requiring a non-perturbative solve that is blocked by derivative loss, thereby falsifying unforced transfer under current mathematical technology."
+    governing_obstruction: "NS-OBS-020"
+    mathematical_verdict: "FALSIFIED_FOR_UNFORCED_STATEMENT_B"
+    canonical_artifact: "NS_EXT_OPENAI_001_SYNTHESIS_REPORT.md"
+
+
 

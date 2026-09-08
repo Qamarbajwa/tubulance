@@ -857,8 +857,42 @@ pathways:
     negative_results: ["NS-OBS-019", "NEG-EV-038"]
     open_questions: ["Can scale-dependent Brownian coupling rho(h) bridge the duality between flow differentiability and relative diffusion under C2?", "Can quantitative pair dispersion prove B2-L3 coverage?"]
     obstruction_ids: ["NS-OBS-019"]
-    reopen_conditions: ["Activation of successor increment TP2-G6-C2."]
+    reopen_conditions: ["Activation of successor increment TP2-G6-C2 (currently on temporary hold)."]
     similarity_tags: ["two_particle_sde", "common_mode_cancellation", "stochastic_jet", "bilateral_pullback", "coupling_duality", "bridge_b2", "bridge_b3"]
     last_re_evaluated: "2026-09-08"
+
+  - pathway_id: "NS-EXT-OPENAI-001"
+    title: "OpenAI Navier–Stokes Blowup Mechanism Assimilation and Unforced Periodic Transfer Audit"
+    parent_pathways: ["TP2-G6-C1"]
+    descendant_pathways: []
+    starting_thesis: "The OpenAI forced Navier-Stokes blowup mechanism (alternatives C/D) can be transferred to the unforced Clay Statement B (f = 0) on periodic T^3."
+    scientific_question: "Which parts of the OpenAI singularity are autonomous Navier-Stokes dynamics, which parts are supplied by external forcing, and can every indispensable force contribution be replaced by smooth initial data or internally generated nonlinear stress?"
+    intended_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
+    core_objects: ["u_theta", "u_z", "u_r", "ell_r", "ell_z", "tau", "S_ij", "omega", "Xi", "T", "v_1, v_2", "K", "w_j", "f_1..f_4", "R(u, p)"]
+    mathematical_form: "ell_r ~ tau^(1/2), ell_z ~ tau^(1/2-h), u_theta, u_z ~ tau^(-1/2-h), partial_r p = u_theta^2 / r, R(u, p) = f in C^infty, f != 0."
+    scaling: "Anisotropic self-similar aspect ratio ell_z / ell_r ~ tau^(-h) -> infty; enstrophy ||omega||_Linf ~ tau^(-1-h); finite kinetic energy."
+    geometry: "Axisymmetric vortex filament with swirl ('fluid spaghetti'), periodic 3-torus T^3 and R^3."
+    trajectory_dependence: "HYBRID"
+    stochastic_component: false
+    assumptions: ["Incompressible Navier-Stokes on R^3 and T^3", "nu > 0", "smooth forcing f != 0 in C^infty", "u_0 = 0"]
+    domain: "Periodic torus T^3 and R^3."
+    regularity_class: "Smooth classical solutions with maximal lifespan T_* < infty."
+    expected_outcome: "Exact theorem target map, Lean statement audit, proof dependency graph, forcing decomposition, and transfer audit to f = 0."
+    actual_outcome: "OPENAI_METHOD_ASSIMILATED_NO_UNFORCED_TRANSFER_YET: Established that F3 (spatial cutoff) is eliminated on T^3 and F4 (u0=0) by u0!=0, but F1 (pulse seeding) is blocked by Viscous Extinction Barrier exp(-nu 2^j) and F2 (flat residual) by non-perturbative derivative loss."
+    tests_attempted: ["tests/test_ns_ext_openai_001_suite.py"]
+    evidence_refs: ["NS_EXT_OPENAI_001_SYNTHESIS_REPORT.md", "NS_EXT_OPENAI_001_ACCEPTANCE_DECISION.md", "NS_EXT_OPENAI_001_INDEPENDENT_VERIFICATION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Assimilation complete; unforced transfer blocked by F1/F2; prospective routes TP2-G6-C1-R1 and TP2-G6-C2 on temporary hold."
+    failure_mechanism: "Viscous premature damping of preloaded initial pulses; non-zero flat momentum residual cannot be eliminated without exact NS solve."
+    what_was_falsified: ["Direct transfer of OpenAI blowup construction to unforced Clay Statement B (f = 0)"]
+    what_was_not_falsified: ["OpenAI forced blowup theorem for alternatives (C) and (D)", "Self-similar core kinematics and viscous balance", "Fluid spaghetti anisotropic filament geometry", "Project Xi invariant tracking of Branch D singularity"]
+    surviving_results: ["Exact core scaling verification", "Centripetal pressure balance identity", "Viscous unit radial Reynolds number balance", "Stress cone decomposition analysis", "Elimination of F3 on periodic torus"]
+    negative_results: ["NS-OBS-020", "NEG-EV-039"]
+    open_questions: ["Can an unforced autonomous hydrodynamic instability cascade generate high-frequency pulses without external seeding?", "Can an exact non-perturbative self-similar Navier-Stokes profile have identically zero momentum residual?"]
+    obstruction_ids: ["NS-OBS-020"]
+    reopen_conditions: ["Identification of an autonomous, unforced pulse-generation mechanism or exact residual-free profile."]
+    similarity_tags: ["openai_blowup", "fluid_spaghetti", "branch_d", "viscous_balance", "stress_cone", "flat_residual", "unforced_statement_b", "clay_alternatives_c_d"]
+    last_re_evaluated: "2026-09-08"
+
 
 
