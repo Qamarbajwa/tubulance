@@ -1,0 +1,39 @@
+{
+  "version": "4.0.3",
+  "algorithm": "SHA-256",
+  "previous_v402_zip_sha256": "36D54688BD6BA4AFBE7F8C962617AB2C8935FBA4197584AEDAEE5F8DA32DC0FD",
+  "files": [
+    {
+      "path": "ADOPTION_PROMPT.md",
+      "sha256": "cc09b468df1d89c34494987aa36dc4bdf68a709ec1a4c03b4b887500b9069054"
+    },
+    {
+      "path": "EVIDENCE_AND_MIGRATION.md",
+      "sha256": "115bfa348492f35472933c6524c8febe32f6091f2bc741aaf8ca692257bba7d5"
+    },
+    {
+      "path": "governance/GOVERNANCE.md",
+      "sha256": "0ac1aad063100e88770bc418b9b9f2956f525a9eafa0d058a2c66a52a2b51e10"
+    },
+    {
+      "path": "governance/PROJECT_DIRECTION.md",
+      "sha256": "92c3ed015e8333144831f1dd9590cac9d71a2261b075503cde0be605c69bcfb0"
+    },
+    {
+      "path": "governance/PROJECT_STATE.yaml",
+      "sha256": "1550a7a04eea9c84bf6872311836c184f1f04a6d364d25b22818355b3d97cb61"
+    },
+    {
+      "path": "README.md",
+      "sha256": "846d8b0c31865b409d99136cc620161341734f684cba4cbe74055f0897194607"
+    },
+    {
+      "path": "tools/verify-package.mjs",
+      "sha256": "ca2aa76c90d0b79961545cf41cc32904e0974338d65c9ec1faea5887d7b2b759"
+    },
+    {
+      "path": "tools/verify-package.test.mjs",
+      "sha256": "4ef0c1928ab05c3b8301c6cdf11727f63c4e55e45778feb056367116d594653f"
+    }
+  ]
+}

@@ -232,4 +232,19 @@
 - 33 registered claims, 0 DAG cycles, full mathematical assurance audit valid.
 - Clay Millennium Prize Problem Statement B on $\mathbb{T}^3$ remains strictly `UNRESOLVED`.
 
+### U. NS-GOV-MIG-V403-001 Accepted State (2026-09-08)
+
+- `NS-GOV-MIG-V403-001 = ACCEPTED_AND_ACTIVE`.
+- Governance upgrade: Migrated from Universal Autonomous Project Governance v3.0.0 to **`Universal Governance Minimal v4.0.3`**.
+- Domain Assurance: `Mathematical Research Constitution v1.0.1` remains supreme domain assurance standard.
+- Three Operational Authorities activated:
+  - `governance/GOVERNANCE.md`: Universal operating rules + Section 13 project binding for `tubulance`.
+  - `governance/PROJECT_DIRECTION.md`: Project intent, architecture, delegated source map, contracts.
+  - `governance/PROJECT_STATE.yaml`: Live state, revision compare-and-swap serialization, release state `NO-GO`.
+- All 12 minimal state-transition requirements in `EVIDENCE_AND_MIGRATION.md` verified via test suite `tests/test_governance_v4_migration.py` (13/13 passing).
+- Anti-self-acceptance strictly enforced: Writer $\ne$ Reviewer and Writer $\ne$ Acceptor.
+- Release boundary: `NO-GO` (research repository only).
+- Clay Millennium Prize Problem Statement B on $\mathbb{T}^3$ remains strictly `UNRESOLVED`.
+- Next authorized scientific milestone: `TP2-G6-A2` (Scale-Critical Transport, Parabolic Regularity Envelopes, and Stochastic Push-Forward Measure Bounds).
+
 

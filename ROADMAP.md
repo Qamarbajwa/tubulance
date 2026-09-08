@@ -82,4 +82,8 @@ Governance migration status is operationally separate from scientific progress, 
 
 `TP2-G6-A1` is complete under `governance/task_envelopes/TP2-G6-A1.yaml`. It investigates pressure–strain coupling, Poisson balance $-\Delta p = \operatorname{tr}(S^2) - \frac{1}{2}|\omega|^2$, and Calderón–Zygmund singular integral bounds on $\mathbb{T}^3$. Global equipartition $\int_{\mathbb{T}^3}\operatorname{tr}(S^2)dx = \frac{1}{2}\int_{\mathbb{T}^3}|\omega|^2 dx$ is proved (`CLM-033`). Deviatoric strain transport $(D_t - \nu \Delta)S = -(S^2+\Omega^2)_{\text{dev}} - \Pi^{\text{dev}}$ demonstrates dynamic depletion of strain eigenvalues by the non-local pressure Hessian, preventing unconstrained Vieillefosse blowup. However, Calderón–Zygmund bounds fail at $L^\infty$ and admit non-local phase cancellation (`NS-OBS-017`), while Eulerian $L^p(dx)$ bounds decouple from Lagrangian $\mathbb{E}_{\mu_s}[\Xi_s]$ without BKM circularity. Clay Statement B remains strictly `UNRESOLVED`. Next authorized increment: `TP2-G6-A2`.
 
+### Governance Adoption Amendment: Universal Governance Minimal v4.0.3 (2026-09-08)
+
+`NS-GOV-MIG-V403-001` is accepted and active. The project transitions to **Universal Governance Minimal v4.0.3** under three operational entry authorities: `governance/GOVERNANCE.md` (HOW), `governance/PROJECT_DIRECTION.md` (WHAT/WHY), and `governance/PROJECT_STATE.yaml` (LIVE STATE). Mathematical Research Constitution v1.0.1 remains the supreme mathematical assurance authority. State revision compare-and-swap and anti-self-acceptance are strictly enforced. Clay Statement B remains `UNRESOLVED`. The active research program resumes at `TP2-G6-A2`.
+
 

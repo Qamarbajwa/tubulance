@@ -1,0 +1,133 @@
+# Live Operational State — tubulance
+schema_version: "4.0.3"
+revision: 1
+activation: "ACTIVE"
+
+project:
+  id: "tubulance"
+  name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
+  root: "D:/Comfy UI/tubulance"
+  head: "aa24fbdf251645b70338503a1f361715d942d38f"
+  dirty: "DIRTY_KNOWN"
+  branch: "main"
+
+governance_binding:
+  active_version: "4.0.3"
+  governance_standard: "Universal Governance Minimal v4.0.3"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+  adoption_mode: "MIGRATION_GOVERNED"
+  source_manifest_ref: "governance/packet/v4.0.3/MANIFEST.sha256.json"
+  project_binding_ref: "governance/GOVERNANCE.md#section-13"
+  migration_receipt_ref: "governance/evidence/NS-GOV-MIG-V403-001-packet.json"
+
+coordination:
+  state_writer: "antigravity-primary-agent"
+  serialization_method: "REVISION_COMPARE_AND_SWAP"
+  last_expected_revision: 0
+  last_updated_at: "2026-09-07T03:58:00Z"
+  active_contract: "NS-GOV-MIG-V403-001"
+  frozen_candidate: "aa24fbdf251645b70338503a1f361715d942d38f"
+
+epistemic_status:
+  target_problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
+  clay_statement_b_status: "UNRESOLVED"
+  scientific_program_status: "TP2-G6-A1_ACCEPTED_AS_CANONICAL_MILESTONE"
+  active_milestone: "TP2-G6-A2"
+
+current_objective:
+  id: "TP2-G6-A2"
+  title: "Scale-Critical Transport, Parabolic Regularity Envelopes, and Stochastic Push-Forward Measure Bounds"
+  target_bridge: "B2 — Stochastic History mu_s to Eulerian Spatial Volume Measure dx"
+  risk: "R2"
+  status: "AUTHORIZED_FOR_PREPARATION"
+  dependencies: ["TP2-G6-A1"]
+
+objectives:
+  - id: "TP2-G6-A1"
+    title: "Pressure-Strain Phase Coupling, Poisson Balance, and Calderon-Zygmund Limits"
+    status: "ACCEPTED_AS_CANONICAL_MILESTONE"
+    evidence_ref: "TP2_G6_A1_ACCEPTANCE_DECISION.md"
+  - id: "TP2-G6-B-R2"
+    title: "Scientific Claim Audit and Repair"
+    status: "ACCEPTED_AS_CANONICAL_CORRECTIVE_INCREMENT"
+    evidence_ref: "TP2_G6_B_R2_ACCEPTANCE_DECISION.md"
+  - id: "TP2-G6-B-R1"
+    title: "Rigid-Branch Adversarial Attack"
+    status: "ACCEPTED_AS_CANONICAL_BOUNDED_INCREMENT"
+    evidence_ref: "TP2_G6_B_R1_ACCEPTANCE_DECISION.md"
+
+capabilities:
+  CAP-NS-ANALYTICS:
+    status: "VERIFIED_ANALYTICAL"
+    scope: "Exact PDEs, Okubo-Weiss pressure Poisson balance, Riesz Hessian"
+    evidence_refs: ["TP2_G6_A1_SYNTHESIS_REPORT.md"]
+  CAP-NS-STOCHASTIC:
+    status: "VERIFIED_MARTINGALE"
+    scope: "Lagrangian Cauchy representation, forwardized Ito enstrophy identity"
+    evidence_refs: ["TP2_G3_FORWARDIZED_MARTINGALE_CONTRACT.md"]
+  CAP-NS-ASSURANCE:
+    status: "VERIFIED_AUTOMATED"
+    scope: "MathAssuranceEngine claim census, passport validation, DAG cycle detection"
+    evidence_refs: ["tests/test_tp2_g6_a1_suite.py"]
+
+hard_gates:
+  clay_statement_b_unresolved: "PASS_ENFORCED"
+  dag_cycle_count: "0_CYCLES_PASS"
+  claim_passport_census: "33_OF_33_VALID_PASS"
+  negative_evidence_retention: "36_OF_36_PRESERVED_PASS"
+  structural_obstruction_retention: "17_OF_17_PRESERVED_PASS"
+  writer_anti_self_acceptance: "PASS_ENFORCED"
+  unscaled_scalar_bounds_prohibited: "PASS_ENFORCED"
+
+evidence_refs:
+  - id: "EVID-CLM-033"
+    claim_id: "CLM-033"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "TP2_G6_A1_SYNTHESIS_REPORT.md"
+  - id: "EVID-TESTS-310"
+    type: "GOV_E3_REPRODUCIBLE"
+    result: "310_PASSED"
+    suite: "pytest -k 'tp2 or math_assurance'"
+
+negative_history_refs:
+  - "NEG-EV-001"
+  - "NEG-EV-035"
+  - "NEG-EV-036"
+
+blockers: []
+
+known_risks:
+  - risk_id: "RISK-MEASURE-GAP"
+    bridge: "B2"
+    description: "Eulerian Lp bounds decouple from Lagrangian push-forward measure mu_s unless BKM integrability assumed"
+    obstruction: "NS-OBS-017"
+
+reserved_actions:
+  - "VCS force-push"
+  - "Rewriting historical Git commits"
+  - "Deleting sealed manifests or negative evidence"
+  - "Declaring Clay Statement B resolved"
+  - "Commercial release or external deployment"
+
+release:
+  state: "NO-GO"
+  eligible: false
+  deployment_authorized: false
+  candidate: null
+  reason: "PURE_MATHEMATICAL_RESEARCH_PROGRAM_CLAY_B_UNRESOLVED"
+
+last_verified_checkpoint: "aa24fbdf251645b70338503a1f361715d942d38f"
+
+overhead:
+  routine_target_fraction: 0.10
+  measurement: "TIME_OR_WORD_PROXY"
+  governance_active_minutes: null
+  total_active_minutes: null
+  proxy_word_fraction: null
+  exceptions:
+    - id: "EXC-MIG-V403"
+      reason: "One-time high-assurance governance kernel migration (R3)"
+
+views:
+  last_validated_revision: 1
+  evidence_refs: ["governance/evidence/NS-GOV-MIG-V403-001-packet.json"]

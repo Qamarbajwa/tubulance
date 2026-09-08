@@ -1,0 +1,58 @@
+# NON-ACTIVE TEMPLATE: never overwrite existing project state with these defaults.
+schema_version: "4.0.3"
+revision: 0
+activation: UNBOUND
+project:
+  id: null
+  root: null
+  head: null
+  dirty: null
+  candidate_manifest_ref: null
+governance_binding:
+  active_version: null
+  proposed_version: "4.0.3"
+  source_manifest_ref: null
+  project_binding_ref: null
+  migration_receipt_ref: null
+coordination:
+  state_writer: null
+  serialization_method: null
+  last_expected_revision: null
+  last_updated_at: null
+  active_contract: null
+  frozen_candidate: null
+current_objective: null
+# On selection include scope in/out, dependencies, risk, identities, candidate,
+# acceptance requirements, tests/environment, recovery and reserved triggers.
+objectives: []
+capabilities: {}
+# Populate real capability records, not sample VERIFIED claims. For UI work,
+# track required surfaces/roles, responsive/accessibility and applicable states
+# with status and candidate/environment-bound evidence refs per dimension.
+# Required unresolved dimensions prohibit capability completion. Intended
+# requirements remain in Direction/delegated contracts; these records track proof.
+external_systems: {}
+hard_gates: {}
+evidence_refs: []
+negative_history_refs: []
+blockers: []
+known_risks: []
+reserved_actions: []
+release:
+  state: NO-GO
+  eligible: false
+  deployment_authorized: false
+  candidate: null
+  evidence_refs: []
+  reason: PROJECT_NOT_BOUND_OR_VERIFIED
+last_verified_checkpoint: null
+overhead:
+  routine_target_fraction: 0.10
+  measurement: UNKNOWN
+  governance_active_minutes: null
+  total_active_minutes: null
+  proxy_word_fraction: null
+  exceptions: []
+views:
+  last_validated_revision: null
+  evidence_refs: []

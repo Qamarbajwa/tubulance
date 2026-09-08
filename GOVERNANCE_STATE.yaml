@@ -1,7 +1,10 @@
 governance_state:
-  schema_version: "3.0.0"
-  governance_version: "3.0.0"
+  schema_version: "4.0.3"
+  governance_version: "4.0.3"
   governance_integrity: "PASS"
+  canonical_state_path: "governance/PROJECT_STATE.yaml"
+  canonical_direction_path: "governance/PROJECT_DIRECTION.md"
+  canonical_governance_path: "governance/GOVERNANCE.md"
 
   project_binding:
     project_id: "tubulance"
@@ -11,6 +14,7 @@ governance_state:
     branch_or_state_channel: "main"
     current_candidate_id: "GIT_SHA:a492a7854e5ecb7fd14f183463f6182acb6b3f5b"
     verified_checkpoint_id: "GIT_SHA:ad00e0c6421a62ced5537d495aaeb5fe94c8462e"
+    active_candidate_v4_ref: "governance/PROJECT_STATE.yaml"
     dirty_state: "DIRTY_KNOWN"
     active_environment: "LOCAL_WINDOWS_WORKSPACE"
 

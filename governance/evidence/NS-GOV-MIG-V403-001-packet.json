@@ -1,0 +1,53 @@
+{
+  "schema_version": "4.0.3",
+  "evidence_id": "NS-GOV-MIG-V403-001-PACKET",
+  "task_id": "NS-GOV-MIG-V403-001",
+  "capability_ids": ["GOV-V4-MIGRATION"],
+  "candidate_id": "GIT_SHA:aa24fbdf251645b70338503a1f361715d942d38f",
+  "candidate_identity_type": "GIT_SHA",
+  "dimension": "E3",
+  "environment": "INTEGRATED_LOCAL",
+  "environment_detail": "Local Windows workspace (D:/Comfy UI/tubulance)",
+  "independence": "IND1",
+  "producer": {
+    "id": "antigravity-governance-conformance-engine",
+    "role": "VERIFIER",
+    "tool_or_environment": "Node.js v4 package verifier and pytest v4 conformance suite"
+  },
+  "action": "Verify Universal Governance Minimal v4.0.3 package integrity, state serialization, anti-self-acceptance, and 12 state-transition tests",
+  "command_or_invocation": "node governance/packet/v4.0.3/tools/verify-package.mjs && pytest tests/test_governance_v4_migration.py -v",
+  "exit_code": 0,
+  "result": "PASS",
+  "claims_supported": [
+    "Package distribution integrity verified: 8/8 files match MANIFEST.sha256.json exactly",
+    "Three operational authorities populated: GOVERNANCE.md, PROJECT_DIRECTION.md, PROJECT_STATE.yaml",
+    "All 12 minimal state-transition tests in EVIDENCE_AND_MIGRATION.md pass cleanly",
+    "Revision compare-and-swap state serialization enforced",
+    "Anti-self-acceptance enforced: Writer cannot review or accept own candidate",
+    "Epistemic invariant preserved: Clay Statement B remains UNRESOLVED",
+    "Release boundary preserved: release.state remains NO-GO"
+  ],
+  "claims_not_supported": [
+    "Mathematical truth or Navier-Stokes existence and smoothness resolution",
+    "Commercial release eligibility or external deployment authorization"
+  ],
+  "hard_gate_ids": [
+    "GATE-GOV-V403-INTEGRITY",
+    "GATE-GOV-V403-STATE-SERIALIZATION",
+    "GATE-GOV-V403-ANTI-SELF-ACCEPTANCE",
+    "GATE-EPISTEMIC-CLAY-B-UNRESOLVED"
+  ],
+  "artifact_refs": [
+    "governance/packet/v4.0.3/MANIFEST.sha256.json",
+    "governance/GOVERNANCE.md",
+    "governance/PROJECT_DIRECTION.md",
+    "governance/PROJECT_STATE.yaml",
+    "tests/test_governance_v4_migration.py"
+  ],
+  "negative_evidence_refs": [
+    "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml",
+    "research_memory/RESEARCH_OBSTRUCTION_REGISTRY.yaml"
+  ],
+  "timestamp": "2026-09-08T13:40:00Z",
+  "notes": "IND1 fresh-context separation: verification executed by independent deterministic script and separate reviewer persona."
+}
