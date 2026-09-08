@@ -442,3 +442,20 @@ understanding_packages:
       essential_assumptions: ["Incompressible Navier-Stokes on periodic T^3", "Calderon-Zygmund singular integral theory"]
       status: "U3_COMPLETE_PACKAGE"
 
+  - package_id: "UND-034"
+    claim_id: "CLM-034"
+    name: "SINGLE_PARTICLE_STOCHASTIC_HISTORY_MEASURE_OBSTRUCTION_AND_B2_L1_CEILING"
+    level_1_mechanism: "Pathwise incompressibility guarantees spatial Lebesgue measure push-forward invariance (B2-L1), but subcritical energy drift admits convective sweeping (BM-A2-04) and deformation-vorticity decoupling (BM-A2-05), strictly obstructing Eulerian high-vorticity coverage."
+    level_2_architecture: |
+      1. Incompressibility: div(u) = 0 implies det(nabla A_s) = 1 pathwise via Liouville, proving (A_s)_# dx = dx (Level B2-L1).
+      2. Radon-Nikodym breakdown: rho_s(y) = 1/bar{S}_s E[|D_s^{-1} omega|^2] requires bounding E[||D_s^{-1}||^2] ~ exp(int ||nabla u||_inf), unbounded under energy bounds.
+      3. Parabolic scaling gap: Energy drift u in L^2_t L^6_x has Serrin index 1.5 > 1, defeating Aronson Gaussian lower bounds and causing single-particle escape.
+      4. Decoupling: Weight |Z_s|^2 = |D_s omega|^2 extinguishes along compression axes in cores and amplifies in hyperbolic saddles, driving inf mu_s(A_s^{-1}(E_s)) = 0.
+      5. Escalation: Relative two-particle dispersion delta A_s cancels uniform drift U_n, mandating escalation to Programme TP2-G6-C.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Delineates the exact mathematical boundary of single-particle stochastic flows under subcritical energy drift."
+      what_can_fail: "Claiming that single-particle transport can prove regularity without circular Serrin or BKM assumptions."
+      essential_assumptions: ["Incompressible Navier-Stokes on periodic T^3", "subcritical energy bounds E_0 < inf"]
+      status: "U3_COMPLETE_PACKAGE"
+
+

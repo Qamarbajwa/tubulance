@@ -324,3 +324,13 @@ negative_evidence:
     governing_obstruction: "NS-OBS-017"
     mathematical_verdict: "EULERIAN_LAGRANGIAN_MEASURE_GAP_CIRCULAR_WITHOUT_B2"
     canonical_artifact: "TP2_G6_A1_SYNTHESIS_REPORT.md"
+
+  - record_id: "NEG-EV-037"
+    pathway_id: "TP2-G6-A2"
+    title: "SINGLE_PARTICLE_STOCHASTIC_HISTORY_MEASURE_COVERAGE_FAILURE"
+    falsified_hypothesis: "Single-particle stochastic Lagrangian history measures mu_s^x provide non-circular lower bounds on Eulerian high-vorticity sets E_s(alpha) under subcritical initial energy bounds E_0 < inf."
+    counterexample_or_proof: "Under energy bounds (Serrin index 1.5 > 1), parabolic transition densities fail Aronson Gaussian lower bounds and suffer convective sweeping (BM-A2-04), while deformation tensor alignment with compression axes suppresses weights |Z_s|^2 in core spikes and hyperbolic saddles amplify weights in low-vorticity regions (BM-A2-05), yielding inf_{u in U_{E_0}} mu_s^x(A_s^{-1}(E_s(alpha))) = 0 and capping single-particle transport at level B2-L1."
+    governing_obstruction: "NS-OBS-018"
+    mathematical_verdict: "CEILING_ESTABLISHED_AT_B2_L1_TWO_PARTICLE_ESCALATION_MANDATORY"
+    canonical_artifact: "TP2_G6_A2_SYNTHESIS_REPORT.md"
+

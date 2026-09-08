@@ -157,3 +157,13 @@ obstructions:
     mathematical_core: "e_1 . Pi^dev e_1 does not satisfy pointwise lower bounds against alpha_1^2 due to non-local phase cancellation in singular integrals, and bounding dmu_s/dx <= C requires BKM circularity."
     known_bypasses_or_relaxations: ["Geometric vortex alignment criteria or non-circular covering measure estimates resolving Bridge B2."]
     status: "OPEN_STRUCTURAL_OBSTRUCTION"
+
+  - obstruction_id: "NS-OBS-018"
+    name: "SINGLE_PARTICLE_STOCHASTIC_HISTORY_MEASURE_DECOUPLING_AND_DEFICIT"
+    description: "Single-particle stochastic Lagrangian trajectories fail to provide Eulerian high-vorticity spatial coverage under subcritical energy bounds due to convective sweeping of particles away from localized cores and dynamic decoupling between deformation weights |Z_s|^2 and Eulerian vorticity |omega|^2."
+    first_encountered_in: "TP2-G6-A2"
+    affected_pathways: ["TP2-G6-A2", "TP2-G6-B2", "TP2-G6-B1"]
+    mathematical_core: "Energy drift u in L^2_t L^6_x has Serrin index 1.5 > 1 (supercritical deficit 0.5), invalidating Aronson Gaussian lower bounds (BM-A2-04), while deformation tensor D_s aligns with compression axes to extinguish |Z_s|^2 in high-vorticity cores and amplifies in hyperbolic saddles (BM-A2-05), yielding inf_{u in U_{E_0}} mu_s(A_s^{-1}(E_s)) = 0 and unbounded Eulerian density rho_s in L^p (p > 1)."
+    known_bypasses_or_relaxations: ["Relative two-particle dispersion delta A_s = A_s(x+h) - A_s(x) or stochastic jet transport (nabla A_s, nabla^2 A_s) under Programme TP2-G6-C to eliminate background drift translation."]
+    status: "PROVED_STRUCTURAL_OBSTRUCTION"
+

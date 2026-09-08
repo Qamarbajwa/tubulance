@@ -392,3 +392,17 @@ novelty_records:
     known_closest_analogues: ["Vieillefosse restricted Euler model", "Calderon-Zygmund singular integral theory", "Constantin-Fefferman geometric depletion"]
     limitations: "Identifies structural obstruction NS-OBS-017; Clay Statement B remains unresolved."
 
+  - record_id: "NOV-TP2-G6-CLM-034"
+    claim_id: "CLM-034"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Exact proof of the single-particle stochastic history-to-Eulerian measure ceiling at B2-L1, establishing that B2-L2 through B2-L5 are obstructed under subcritical energy drift by convective sweeping and deformation-vorticity decoupling, and deducing the two-particle escalation condition."
+    source_scope: "TP2-G6-A2 work packages and audited parabolic regularity / SDE literature."
+    query_scope: "Stochastic Lagrangian push-forward measure, Aronson lower bounds under energy drift, deformation tensor decoupling in hyperbolic saddles, two-particle drift cancellation."
+    audit_date: "2026-09-08"
+    databases_searched: ["local TP2 literature matrix", "research_memory", "arXiv", "MathSciNet"]
+    primary_source_review: "TP2-G6-A2 synthesis report and circularity audit"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["Constantin-Iyer stochastic Navier-Stokes representation", "Aronson parabolic heat kernel lower bounds", "Fabes-Stroock singular drift estimates"]
+    limitations: "Proves negative ceiling B2-L1 and obstruction NS-OBS-018; Clay Statement B remains unresolved."
+
+

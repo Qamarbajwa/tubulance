@@ -1,13 +1,13 @@
 # Live Operational State — tubulance
 schema_version: "4.0.3"
-revision: 1
+revision: 2
 activation: "ACTIVE"
 
 project:
   id: "tubulance"
   name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
   root: "D:/Comfy UI/tubulance"
-  head: "aa24fbdf251645b70338503a1f361715d942d38f"
+  head: "6731856096ea0c1a5352083a295cfc8b99cf846d"
   dirty: "DIRTY_KNOWN"
   branch: "main"
 
@@ -23,26 +23,30 @@ governance_binding:
 coordination:
   state_writer: "antigravity-primary-agent"
   serialization_method: "REVISION_COMPARE_AND_SWAP"
-  last_expected_revision: 0
-  last_updated_at: "2026-09-07T03:58:00Z"
+  last_expected_revision: 1
+  last_updated_at: "2026-09-08T19:35:00Z"
   active_contract: "NS-GOV-MIG-V403-001"
-  frozen_candidate: "aa24fbdf251645b70338503a1f361715d942d38f"
+  frozen_candidate: "6731856096ea0c1a5352083a295cfc8b99cf846d"
 
 epistemic_status:
   target_problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
   clay_statement_b_status: "UNRESOLVED"
-  scientific_program_status: "TP2-G6-A1_ACCEPTED_AS_CANONICAL_MILESTONE"
-  active_milestone: "TP2-G6-A2"
+  scientific_program_status: "TP2-G6-A2_ACCEPTED_AS_CANONICAL_MILESTONE"
+  active_milestone: "TP2-G6-C"
 
 current_objective:
-  id: "TP2-G6-A2"
-  title: "Scale-Critical Transport, Parabolic Regularity Envelopes, and Stochastic Push-Forward Measure Bounds"
-  target_bridge: "B2 — Stochastic History mu_s to Eulerian Spatial Volume Measure dx"
-  risk: "R2"
+  id: "TP2-G6-C"
+  title: "Two-Particle Dispersion, Relative Drift Cancellation, and Stochastic Jet Regularity Route"
+  target_bridge: "B2 / B3 — Relative Dispersion and Scale-Invariant History Covariance"
+  risk: "R3"
   status: "AUTHORIZED_FOR_PREPARATION"
-  dependencies: ["TP2-G6-A1"]
+  dependencies: ["TP2-G6-A2"]
 
 objectives:
+  - id: "TP2-G6-A2"
+    title: "Scale-Critical Transport, Parabolic Regularity Envelopes, and Stochastic Push-Forward Measure Bounds"
+    status: "ACCEPTED_AS_CANONICAL_MILESTONE"
+    evidence_ref: "TP2_G6_A2_ACCEPTANCE_DECISION.md"
   - id: "TP2-G6-A1"
     title: "Pressure-Strain Phase Coupling, Poisson Balance, and Calderon-Zygmund Limits"
     status: "ACCEPTED_AS_CANONICAL_MILESTONE"

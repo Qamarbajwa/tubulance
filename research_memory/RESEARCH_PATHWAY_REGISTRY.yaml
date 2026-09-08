@@ -760,3 +760,71 @@ pathways:
     reopen_conditions: ["Separate authorization and a fresh v3 envelope for any successor mathematical objective."]
     similarity_tags: ["campaign_synthesis", "scale_critical_window", "stochastic_history", "xi_nonclosure", "geometry_bridge", "covariance_trace", "negative_evidence", "target_equivalence"]
     last_re_evaluated: "2026-09-01"
+
+  - pathway_id: "TP2-G6-A1"
+    title: "Pressure-Strain Phase Coupling, Poisson Balance, and Calderon-Zygmund Limits"
+    parent_pathways: ["TP2-G5-A5"]
+    descendant_pathways: ["TP2-G6-A2"]
+
+    starting_thesis: "Deviatoric pressure Hessian eigenframe depletion or Eulerian Calderon-Zygmund singular integrals can dynamically deplete vortex stretching and close Bridge B1."
+    scientific_question: "Can pressure Poisson balance -Delta p = tr(S^2) - 1/2|omega|^2 unconditionally constrain strain eigenvalues without local phase cancellation or BKM circularity?"
+    intended_bridge: "B1 — Non-Circular Xi Control via Pressure-Strain Coupling"
+    core_objects: ["S", "omega", "p", "Pi^dev", "Xi", "mu_s"]
+    mathematical_form: "-Delta p = tr(S^2) - 1/2|omega|^2; (D_t - nu Delta)S = -(S^2+Omega^2)_dev - Pi^dev."
+    scaling: "Preserves standard Navier-Stokes parabolic scaling."
+    geometry: "Periodic 3-torus T^3 = R^3 / Z^3."
+    trajectory_dependence: "HYBRID"
+    stochastic_component: true
+    assumptions: ["Periodic boundary conditions on T^3", "subcritical energy bounds E_0 < inf"]
+    domain: "Periodic torus T^3."
+    regularity_class: "Classical solutions before candidate blowup."
+    expected_outcome: "Pointwise strain depletion or proof of harmonic analysis limits."
+    actual_outcome: "Harmonic analysis limits proved: Calderon-Zygmund fails at L^infinity; non-local phase cancellation obstructs pointwise coercivity (NS-OBS-017)."
+    tests_attempted: ["tests/test_research_memory_suite.py"]
+    evidence_refs: ["TP2_G6_A1_SYNTHESIS_REPORT.md", "TP2_G6_A1_ACCEPTANCE_DECISION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Milestone completed with proven structural obstruction NS-OBS-017."
+    failure_mechanism: "Eulerian Calderon-Zygmund bounds allow phase cancellation and decouple from Lagrangian push-forward measure without BKM circularity."
+    what_was_falsified: ["Pointwise coercivity of deviatoric pressure Hessian against positive strain eigenvalues", "Equating Eulerian dx with stochastic history dmu_s without B2"]
+    what_was_not_falsified: ["Global equipartition int tr(S^2) dx = 1/2 int |omega|^2 dx", "Dynamical strain depletion on spatial average"]
+    surviving_results: ["Exact pressure-strain evolution equations", "Calderon-Zygmund BMO limit theorem", "Bridge B1 <-> B2 dependency linkage"]
+    negative_results: ["NS-OBS-017", "NEG-EV-036"]
+    open_questions: ["Can Bridge B2 relate history measure dmu_s to dx non-circularly?"]
+    obstruction_ids: ["NS-OBS-017"]
+    reopen_conditions: ["Authorization of Bridge B2 investigation under TP2-G6-A2."]
+    similarity_tags: ["pressure_poisson", "strain_depletion", "calderon_zygmund", "phase_cancellation", "bridge_b1"]
+    last_re_evaluated: "2026-09-06"
+
+  - pathway_id: "TP2-G6-A2"
+    title: "Scale-Critical Transport, Parabolic Regularity Envelopes, and Stochastic Push-Forward Measure Bounds"
+    parent_pathways: ["TP2-G6-A1"]
+    descendant_pathways: []
+    starting_thesis: "Single-particle stochastic Lagrangian history measure mu_s^x can be non-circularly related to Eulerian high-vorticity sets E_s(alpha) to close Bridge B2."
+    scientific_question: "Can single-particle stochastic flows provide Eulerian high-vorticity coverage under subcritical energy bounds?"
+    intended_bridge: "B2 — History-to-Eulerian Coverage (dmu_s <-> dx)"
+    core_objects: ["A_s(x)", "D_s(x)", "mu_s^x", "E_s(alpha)", "rho_s", "tau_n", "r_n"]
+    mathematical_form: "dA_s = -u ds + sqrt(2nu) dW_s; dmu_s = |D_s omega|^2 / S_s dP; (A_s)_# dx = dx."
+    scaling: "tau_n = M_n^-1, r_n = nu^1/2 M_n^-1/2, Serrin index 2/2 + 3/6 = 1.5 > 1."
+    geometry: "Periodic 3-torus T^3 = R^3 / Z^3."
+    trajectory_dependence: "LAGRANGIAN_STOCHASTIC"
+    stochastic_component: true
+    assumptions: ["Periodic torus T^3", "nu > 0", "f = 0", "subcritical initial energy E_0 < inf"]
+    domain: "Periodic torus T^3."
+    regularity_class: "Leray-Hopf weak solutions and candidate blowup profiles."
+    expected_outcome: "Eulerian coverage theorem or proof of single-particle ceiling."
+    actual_outcome: "Strict mathematical ceiling established at B2-L1; higher levels obstructed by convective sweeping and deformation decoupling (NS-OBS-018)."
+    tests_attempted: ["tests/test_tp2_g6_a2_suite.py"]
+    evidence_refs: ["TP2_G6_A2_SYNTHESIS_REPORT.md", "TP2_G6_A2_ACCEPTANCE_DECISION.md", "TP2_G6_A2_CIRCULARITY_AUDIT.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Milestone completed with proved ceiling B2-L1 and escalation condition to G6-C."
+    failure_mechanism: "Serrin deficit 1.5 > 1 invalidates Aronson lower bounds; deformation tensor SVD extinguishes weights in core spikes and amplifies in hyperbolic saddles."
+    what_was_falsified: ["Single-particle Eulerian high-vorticity coverage beyond B2-L1 under energy bounds"]
+    what_was_not_falsified: ["Pathwise incompressibility and push-forward Lebesgue measure invariance (A_s)_# dx = dx (Level B2-L1)", "Two-particle relative dispersion route (TP2-G6-C)"]
+    surviving_results: ["Level B2-L1 push-forward absolute continuity", "Energy-Level Coverage Insufficiency Theorem", "History Measure Decoupling Theorem", "Two-Particle Escalation Condition"]
+    negative_results: ["NS-OBS-018", "NEG-EV-037"]
+    open_questions: ["Can two-particle relative dispersion delta A_s cancel drift translation and establish scale-invariant history covariance under G6-C?"]
+    obstruction_ids: ["NS-OBS-018"]
+    reopen_conditions: ["Activation of Programme TP2-G6-C (Two-Particle Dispersion Route)."]
+    similarity_tags: ["stochastic_push_forward", "bridge_b2", "aronson_deficit", "convective_sweeping", "deformation_decoupling", "two_particle_escalation"]
+    last_re_evaluated: "2026-09-08"
+
