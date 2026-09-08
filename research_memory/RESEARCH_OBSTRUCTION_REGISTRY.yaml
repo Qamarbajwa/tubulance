@@ -176,14 +176,33 @@ obstructions:
     known_bypasses_or_relaxations: ["Scale-dependent Brownian correlation tensors rho(h) with transition from synchronous to independent noise at the viscous dissipation scale r_n (TP2-G6-C2)."]
     status: "PROVED_STRUCTURAL_OBSTRUCTION"
 
-  - obstruction_id: "NS-OBS-020"
-    name: "VISCOUS_PULSE_EXTINCTION_AND_FLAT_RESIDUAL_REMAINDER_BARRIER"
-    description: "Transfer of the OpenAI forced Navier-Stokes blowup mechanism to the unforced Clay Statement B (f = 0) is obstructed by two independent mathematical barriers: high-frequency pulse seeds preloaded into initial data u_0 undergo premature exponential viscous damping exp(-nu 2^j) that erases them before activation, and the flat asymptotic momentum residual R(u, p) ~ exp(-1/tau) requires a non-perturbative solve with singular derivative loss."
+  - obstruction_id: "NS-OBS-020A"
+    name: "DIRECT_HIGH_FREQUENCY_PRELOAD_DAMPING"
+    description: "Preloading future oscillatory pulses at their final active frequency |k_j| ~ 2^(j/2) directly into smooth initial data u_0 (P0) is obstructed by exponential viscous heat dissipation exp(-nu 2^j) over the waiting interval [0, t_j]."
     first_encountered_in: "NS-EXT-OPENAI-001"
-    affected_pathways: ["NS-EXT-OPENAI-001", "NS-OPENAI-B1", "NS-OPENAI-B2"]
-    mathematical_core: "Viscous heat kernel exp(nu t Delta) annihilates modes at k_j ~ 2^(j/2) by exp(-nu 2^j) over time t_j ~ 1, forcing initial Sobolev norms ||u_0||_H^s to diverge if pre-compensated; while linearized operator around singular core u ~ tau^(-1/2-h) violates tame Nash-Moser bounds and Borel summation diverges factorially as n! C^n."
-    known_bypasses_or_relaxations: ["Autonomous hydrodynamic instability cascades generating pulses dynamically without initial seeding, or exact non-perturbative self-similar profiles with zero residual."]
+    affected_pathways: ["NS-EXT-OPENAI-001", "NS-EXT-OPENAI-001-R1"]
+    mathematical_core: "Viscous heat propagator exp(nu t Delta) acts with rate nu |k_j|^2 ~ nu 2^j across t_j ~ 1, forcing initial Sobolev norms ||u_0||_H^s to diverge if pre-compensated."
+    known_bypasses_or_relaxations: ["Low-frequency precursors (P1) with |k(0)| ~ O(1) sheared only during active burst Delta t_j ~ 2^(-j), or nonlinear triad generation (P2)."]
     status: "PROVED_STRUCTURAL_OBSTRUCTION"
+
+  - obstruction_id: "NS-OBS-020B"
+    name: "AUTONOMOUS_PRECURSOR_GENERATION_OPEN"
+    description: "While low-frequency precursors (P1) survive viscous damping and experience net shear amplification, ensuring that the phase and wavevector orientation at t_j land precisely within the admissible stress cone K without external seeding remains an open constructive challenge."
+    first_encountered_in: "NS-EXT-OPENAI-001-R1"
+    affected_pathways: ["NS-EXT-OPENAI-001-R1", "NS-OPENAI-B1"]
+    mathematical_core: "Advective ray-tracing dk/dt = -(grad U)^T k under time-dependent singular flow requires exact phase control to avoid scrambling wave alignment outside the cone of positive Reynolds stresses."
+    known_bypasses_or_relaxations: ["Constructive phase-matching under Programme NS-OPENAI-B1."]
+    status: "OPEN_STRUCTURAL_OBSTRUCTION"
+
+  - obstruction_id: "NS-OBS-020C"
+    name: "EXACT_RESIDUAL_CLOSURE_OPEN"
+    description: "The asymptotic matching scheme leaves a smooth non-zero flat momentum deficit R(u, p) ~ exp(-1/tau), which cannot be eliminated perturbatively due to loss of derivatives in the linearized Navier-Stokes operator L_u around the singular core."
+    first_encountered_in: "NS-EXT-OPENAI-001-R1"
+    affected_pathways: ["NS-EXT-OPENAI-001-R1", "NS-OPENAI-B2"]
+    mathematical_core: "Linearized stretching term (v . grad)u introduces singular coefficient tau^(-1-h), while spatial derivative loss in (u . grad)v prevents standard contraction mapping without Gevrey analytic regularizations."
+    known_bypasses_or_relaxations: ["Internal nonlinear stress representation R = -div Q using non-axisymmetric helical modes, or exact self-similar profiles."]
+    status: "OPEN_STRUCTURAL_OBSTRUCTION"
+
 
 
 

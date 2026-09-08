@@ -1,0 +1,48 @@
+task_envelope:
+  envelope_id: "NS-EXT-OPENAI-001-R1"
+  program: "EXTERNAL_ASSIMILATION_AND_TRANSFER"
+  subprogramme: "OPENAI_NAVIER_STOKES_BLOWUP_ASSIMILATION"
+  route: "SCIENTIFIC_REPAIR_AND_PRECURSOR_TRANSFER_AUDIT"
+  title: "OpenAI Navier–Stokes Transfer Barrier Scientific Repair"
+  governance_standard: "Universal Governance Minimal v4.0.3"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+
+  risk_and_action:
+    risk_ceiling: "R3 (High Assurance)"
+    execution_risk_class: "R3"
+    action_class: "SCIENTIFIC_REPAIR_AND_TRANSFER_AUDIT"
+
+  target_problem:
+    problem_id: "CLAY_STATEMENT_B_PERIODIC_R3_MOD_Z3"
+    domain: "T^3 = R^3 / Z^3 (Periodic 3-Torus)"
+    viscosity: "nu > 0 (constant)"
+    forcing: "f = 0 (strictly unforced)"
+    target_status: "UNRESOLVED"
+    invariance_rule: "Prospective repair cannot alter locked Clay target status or rewrite historical commits"
+
+  strategic_directive:
+    mandate: "Repair scientific interpretation of NS-EXT-OPENAI-001 without new blowup construction; distinguish P0 from P1-P4; compute exact precursor damping integral; re-audit torus and residual problems."
+    historical_anchors_preserved:
+      - "7a949f425a5f05cc21f699bce04f3392a0026b92 (NS-EXT-OPENAI-001 milestone commit)"
+      - "2693d866a15eaeb9cf549fe74db49893d50aa89c (NS-EXT-OPENAI-001 state sync commit)"
+      - "50e7b3cc74873abd8d909a84f32e43b6eca3bfb3 (TP2-G6-C1 seal)"
+      - "9783774430cd3939d473cd0e833aa2cf5b5c0645 (TP2-G6-B-R1 seal)"
+
+  agent_roles:
+    writer: "antigravity-primary-agent"
+    reviewer: "antigravity-fresh-context-verifier"
+    reviewer_independence: "IND1"
+    math_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+    acceptor: "autonomous-project-governance-coordinator"
+
+  conformance_gates:
+    external_status_separated: true
+    force_taxonomy_repaired: true
+    preloading_split_into_p0_to_p4: true
+    actual_time_dependent_damping_integral_evaluated: true
+    precursor_amplification_proved: true
+    direct_torus_components_classified: true
+    linearized_residual_closure_derived: true
+    xi_and_clm033_repaired: true
+    obstruction_split_into_20a_20b_20c: true
+    deterministic_tests_passed: true

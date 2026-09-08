@@ -889,10 +889,44 @@ pathways:
     surviving_results: ["Exact core scaling verification", "Centripetal pressure balance identity", "Viscous unit radial Reynolds number balance", "Stress cone decomposition analysis", "Elimination of F3 on periodic torus"]
     negative_results: ["NS-OBS-020", "NEG-EV-039"]
     open_questions: ["Can an unforced autonomous hydrodynamic instability cascade generate high-frequency pulses without external seeding?", "Can an exact non-perturbative self-similar Navier-Stokes profile have identically zero momentum residual?"]
-    obstruction_ids: ["NS-OBS-020"]
-    reopen_conditions: ["Identification of an autonomous, unforced pulse-generation mechanism or exact residual-free profile."]
+    obstruction_ids: ["NS-OBS-020A"]
+    reopen_conditions: ["Prospective repair completed under NS-EXT-OPENAI-001-R1."]
     similarity_tags: ["openai_blowup", "fluid_spaghetti", "branch_d", "viscous_balance", "stress_cone", "flat_residual", "unforced_statement_b", "clay_alternatives_c_d"]
     last_re_evaluated: "2026-09-08"
+
+  - pathway_id: "NS-EXT-OPENAI-001-R1"
+    title: "OpenAI Navier–Stokes Transfer Barrier Scientific Repair"
+    parent_pathways: ["NS-EXT-OPENAI-001"]
+    descendant_pathways: []
+    starting_thesis: "Low-frequency precursors (P1) sheared by background strain evade the viscous damping barrier and provide autonomous pulse generation for unforced Statement B."
+    scientific_question: "Does the time-dependent damping integral int_0^t_j (Gamma_j - nu |k_j|^2) ds permit smooth initial data u_0 with super-exponentially decaying seed amplitudes?"
+    intended_bridge: "Unforced Transfer to Periodic Statement B (f = 0)"
+    core_objects: ["P0..P4", "k_j(t)", "Gamma_j(t)", "int_0^t_j |k|^2", "a_j(0)", "u_0", "L_u", "R(u, p)", "Q_internal", "G1..G6"]
+    mathematical_form: "a_j(t_j) = a_j(0) exp(int_0^t_j (Gamma_j - nu |k_j|^2) ds); int_0^t_j |k|^2 <= K_0^2 + 1 = O(1); int Gamma_j ds ~ 2^(jh) -> infty."
+    scaling: "Seed amplitude a_j(0) ~ exp(-C 2^(jh)) -> 0; Sobolev series sum a_j(0) K_0^m < infty (real-analytic C^omega)."
+    geometry: "Periodic 3-torus T^3; low-frequency helical precursor modes and cubic boundary transitions."
+    trajectory_dependence: "HYBRID"
+    stochastic_component: false
+    assumptions: ["Incompressible Navier-Stokes on T^3", "nu > 0", "unforced f = 0", "smooth initial data u_0 != 0"]
+    domain: "Periodic flat 3-torus T^3 = R^3 / Z^3."
+    regularity_class: "Smooth classical solutions on [0, T_*)."
+    expected_outcome: "Proof of precursor survival (P1), force taxonomy repair (F1-F3), and exact residual closure derivation."
+    actual_outcome: "PRECURSOR_ROUTE_SURVIVES: Proved that low-frequency precursors P1 have O(1) damping and net exponential amplification; u_0 in C^infty confirmed; F1 internalizable; next route NS-OPENAI-B1 authorized."
+    tests_attempted: ["tests/test_ns_ext_openai_001_r1_suite.py"]
+    evidence_refs: ["NS_EXT_OPENAI_001_R1_SYNTHESIS_REPORT.md", "NS_EXT_OPENAI_001_R1_ACCEPTANCE_DECISION.md", "NS_EXT_OPENAI_001_R1_PRELOAD_SPLIT_AND_PRECURSOR_AUDIT.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Precursor survival proved; next route selected as NS-OPENAI-B1."
+    failure_mechanism: "Direct high-frequency preload P0 falsified; exact residual closure R = 0 remains open."
+    what_was_falsified: ["Direct final-frequency preloading P0"]
+    what_was_not_falsified: ["Low-frequency precursor route P1", "Nonlinear triad precursors P2", "Cascade generation P3", "Dormant instability seeds P4", "Exact residual closure via internal stress R = -div Q"]
+    surviving_results: ["Precursor Damping Theorem: int_0^t_j |k|^2 ds <= O(1)", "Precursor Amplification Theorem: int (Gamma - nu |k|^2) ds ~ 2^(jh) -> infty", "Initial data C^infty analytic convergence", "Six-component torus breakdown", "Gevrey class s=2 residual classification"]
+    negative_results: ["NS-OBS-020A", "NEG-EV-039"]
+    open_questions: ["Can explicit phase alignment be constructed to ensure sheared wavepackets land in the relaxed stress cone K without external forces under NS-OPENAI-B1?"]
+    obstruction_ids: ["NS-OBS-020A", "NS-OBS-020B", "NS-OBS-020C"]
+    reopen_conditions: ["Activation of successor route NS-OPENAI-B1."]
+    similarity_tags: ["precursor_route", "viscous_damping_integral", "ray_tracing", "force_taxonomy", "exact_residual_closure", "torus_geometry", "gevrey_class"]
+    last_re_evaluated: "2026-09-08"
+
 
 
 

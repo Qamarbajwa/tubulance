@@ -1,13 +1,13 @@
 # Live Operational State — tubulance
 schema_version: "4.0.3"
-revision: 6
+revision: 7
 activation: "ACTIVE"
 
 project:
   id: "tubulance"
   name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
   root: "D:/Comfy UI/tubulance"
-  head: "7a949f425a5f05cc21f699bce04f3392a0026b92"
+  head: "2693d866a15eaeb9cf549fe74db49893d50aa89c"
   dirty: "DIRTY_KNOWN"
   branch: "main"
 
@@ -23,27 +23,31 @@ governance_binding:
 coordination:
   state_writer: "antigravity-primary-agent"
   serialization_method: "REVISION_COMPARE_AND_SWAP"
-  last_expected_revision: 6
-  last_updated_at: "2026-09-08T20:43:00Z"
+  last_expected_revision: 7
+  last_updated_at: "2026-09-08T20:51:00Z"
   active_contract: "NS-GOV-MIG-V403-001"
-  frozen_candidate: "7a949f425a5f05cc21f699bce04f3392a0026b92"
+  frozen_candidate: "2693d866a15eaeb9cf549fe74db49893d50aa89c"
 
 
 epistemic_status:
   target_problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
   clay_statement_b_status: "UNRESOLVED"
-  scientific_program_status: "NS-EXT-OPENAI-001_ACCEPTED_AS_CANONICAL_ASSIMILATION_MILESTONE"
-  active_milestone: "NS-EXT-OPENAI-001"
+  scientific_program_status: "NS-EXT-OPENAI-001-R1_ACCEPTED_AS_CANONICAL_SCIENTIFIC_REPAIR"
+  active_milestone: "NS-OPENAI-B1"
 
 current_objective:
-  id: "NS-EXT-OPENAI-001"
-  title: "OpenAI Navier–Stokes Blowup Mechanism Assimilation and Unforced Periodic Transfer Audit"
+  id: "NS-OPENAI-B1"
+  title: "Autonomous Multiscale Precursor Cascade Programme"
   target_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
   risk: "R3"
-  status: "ACCEPTED_AS_CANONICAL_ASSIMILATION_MILESTONE"
-  dependencies: ["TP2-G6-C1"]
+  status: "AUTHORIZED_FOR_PREPARATION"
+  dependencies: ["NS-EXT-OPENAI-001-R1"]
 
 objectives:
+  - id: "NS-EXT-OPENAI-001-R1"
+    title: "OpenAI Navier–Stokes Transfer Barrier Scientific Repair"
+    status: "ACCEPTED_AS_CANONICAL_SCIENTIFIC_REPAIR"
+    evidence_ref: "NS_EXT_OPENAI_001_R1_ACCEPTANCE_DECISION.md"
   - id: "NS-EXT-OPENAI-001"
     title: "OpenAI Navier–Stokes Blowup Mechanism Assimilation and Unforced Periodic Transfer Audit"
     status: "ACCEPTED_AS_CANONICAL_ASSIMILATION_MILESTONE"
@@ -88,11 +92,14 @@ hard_gates:
   dag_cycle_count: "0_CYCLES_PASS"
   claim_passport_census: "35_OF_35_VALID_PASS"
   negative_evidence_retention: "39_OF_39_PRESERVED_PASS"
-  structural_obstruction_retention: "20_OF_20_PRESERVED_PASS"
+  structural_obstruction_retention: "22_OF_22_PRESERVED_PASS"
   writer_anti_self_acceptance: "PASS_ENFORCED"
   unscaled_scalar_bounds_prohibited: "PASS_ENFORCED"
 
 evidence_refs:
+  - id: "EVID-NS-EXT-OPENAI-001-R1"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_EXT_OPENAI_001_R1_SYNTHESIS_REPORT.md"
   - id: "EVID-NS-EXT-OPENAI-001"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
     artifact: "NS_EXT_OPENAI_001_SYNTHESIS_REPORT.md"
@@ -104,9 +111,9 @@ evidence_refs:
     claim_id: "CLM-033"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
     artifact: "TP2_G6_A1_SYNTHESIS_REPORT.md"
-  - id: "EVID-TESTS-328"
+  - id: "EVID-TESTS-335"
     type: "GOV_E3_REPRODUCIBLE"
-    result: "328_PASSED"
+    result: "335_PASSED"
     suite: "pytest -k 'tp2 or math_assurance or openai'"
 
 negative_history_refs:
@@ -119,10 +126,18 @@ negative_history_refs:
 blockers: []
 
 known_risks:
-  - risk_id: "RISK-VISCOUS-PULSE-EXTINCTION"
+  - risk_id: "RISK-DIRECT-PRELOAD-DAMPING"
     bridge: "Transfer to Statement B"
-    description: "Viscous heat diffusion exp(-nu 2^j) prematurely annihilates preloaded pulse seeds, while flat residual requires non-perturbative solve"
-    obstruction: "NS-OBS-020"
+    description: "Preloading future pulses at final frequency is destroyed by exp(-nu 2^j); low-frequency precursor route P1 survives"
+    obstruction: "NS-OBS-020A"
+  - risk_id: "RISK-AUTONOMOUS-PRECURSOR-PHASE"
+    bridge: "Transfer to Statement B"
+    description: "Precursor wavevectors sheared under singular flow require constructive phase alignment into stress cone K"
+    obstruction: "NS-OBS-020B"
+  - risk_id: "RISK-EXACT-RESIDUAL-CLOSURE"
+    bridge: "Transfer to Statement B"
+    description: "All-order flat residual requires non-perturbative solve or internal non-axisymmetric stress closure"
+    obstruction: "NS-OBS-020C"
   - risk_id: "RISK-COUPLING-DUALITY"
     bridge: "B2 / B3"
     description: "C-SYNC preserves flow jet limit but has zero relative diffusion (rank 1); C-IND has rank 3 Brownian diffusion but diverges as h^-1 destroying flow derivative"
