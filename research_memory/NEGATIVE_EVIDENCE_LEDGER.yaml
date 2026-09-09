@@ -379,6 +379,16 @@ negative_evidence:
     mathematical_verdict: "FALSIFIED_LOCALIZED_PULSE_UNFORCED_BACKWARD_REACHABILITY"
     canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_UNCERTAINTY_BARRIER.md"
 
+  - record_id: "NEG-EV-043"
+    pathway_id: "NS-OPENAI-B1-REASSESSMENT-R1"
+    title: "ANALYTIC_WAVEPACKET_SPATIAL_TAIL_DELOCALIZATION_BARRIER"
+    falsified_hypothesis: "Replacing compactly supported wavepackets with smooth analytic or Gaussian wavepackets bypasses the uncertainty barrier and achieves autonomous unforced stress reachability (Q3)."
+    counterexample_or_proof: "For any Gaussian wavepacket, Plancherel integrability of the backward norm requires radial spatial width sigma_r >= sqrt(lambda_perp) ~ 2^(-j/2) exp(2^(jh)) >> delta r_j. The backward-surviving pulse is super-exponentially wider than the annular filament, causing the pulse to flood the entire exterior core with parasitic Reynolds stress of amplitude (A_j*)^2 ~ 2^(j(1+2h)) -> infty, destroying the self-similar blowup profile and confirming failure of stress reachability Q3."
+    governing_obstruction: "NS-OBS-020B"
+    mathematical_verdict: "FALSIFIED_ANALYTIC_TAIL_RELAXATION_STRESS_REACHABILITY"
+    canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_R1_ANALYTIC_PACKET_AND_STRESS_TAIL.md"
+
+
 
 
 

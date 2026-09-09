@@ -32,18 +32,22 @@ coordination:
 epistemic_status:
   target_problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
   clay_statement_b_status: "UNRESOLVED"
-  scientific_program_status: "NS-OPENAI-B1-REASSESSMENT_ACCEPTED_CANONICAL_ASSESSMENT"
-  active_milestone: "NS-OPENAI-B1-REASSESSMENT"
+  scientific_program_status: "NS-OPENAI-B1-REASSESSMENT-R1_ACCEPTED_CANONICAL_VERIFICATION"
+  active_milestone: "NS-OPENAI-B1-REASSESSMENT-R1"
 
 current_objective:
-  id: "NS-OPENAI-B1-REASSESSMENT"
-  title: "Single-Pulse Autonomous Entrance-State Problem"
+  id: "NS-OPENAI-B1-REASSESSMENT-R1"
+  title: "Quantitative Localization–Backward-Diffusion Barrier Verification"
   target_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
   risk: "R3"
-  status: "COMPLETED_CANONICAL_OBSTRUCTION_PROVED"
-  dependencies: ["NS-OPENAI-B1-R1"]
+  status: "COMPLETED_CANONICAL_BARRIER_VERIFIED"
+  dependencies: ["NS-OPENAI-B1-REASSESSMENT"]
 
 objectives:
+  - id: "NS-OPENAI-B1-REASSESSMENT-R1"
+    title: "Quantitative Localization–Backward-Diffusion Barrier Verification"
+    status: "ACCEPTED_AS_CANONICAL_VERIFICATION"
+    evidence_ref: "NS_OPENAI_B1_REASSESSMENT_R1_ACCEPTANCE_DECISION.md"
   - id: "NS-OPENAI-B1-REASSESSMENT"
     title: "Single-Pulse Autonomous Entrance-State Problem"
     status: "ACCEPTED_AS_CANONICAL_OBSTRUCTION_ASSESSMENT"
@@ -103,12 +107,15 @@ hard_gates:
   clay_statement_b_unresolved: "PASS_ENFORCED"
   dag_cycle_count: "0_CYCLES_PASS"
   claim_passport_census: "39_OF_39_VALID_PASS"
-  negative_evidence_retention: "42_OF_42_PRESERVED_PASS"
+  negative_evidence_retention: "43_OF_43_PRESERVED_PASS"
   structural_obstruction_retention: "22_OF_22_PRESERVED_PASS"
   writer_anti_self_acceptance: "PASS_ENFORCED"
   unscaled_scalar_bounds_prohibited: "PASS_ENFORCED"
 
 evidence_refs:
+  - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R1"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R1_SYNTHESIS_REPORT.md"
   - id: "EVID-NS-OPENAI-B1-REASSESSMENT"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
     artifact: "NS_OPENAI_B1_REASSESSMENT_SYNTHESIS_REPORT.md"
@@ -162,6 +169,7 @@ negative_history_refs:
   - "NEG-EV-040"
   - "NEG-EV-041"
   - "NEG-EV-042"
+  - "NEG-EV-043"
 
 blockers: []
 

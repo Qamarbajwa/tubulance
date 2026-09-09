@@ -1,0 +1,48 @@
+# Task Envelope: NS-OPENAI-B1-REASSESSMENT-R1
+schema_version: "4.0.3"
+task_id: "NS-OPENAI-B1-REASSESSMENT-R1"
+title: "Quantitative Localization–Backward-Diffusion Barrier Verification"
+milestone: "NS-OPENAI-B1-REASSESSMENT-R1"
+parent_milestone: "NS-OPENAI-B1-REASSESSMENT"
+
+governance:
+  governance_standard: "Universal Governance Minimal v4.0.3"
+  constitutional_standard: "Mathematical Research Constitution v1.0.1"
+  risk_ceiling: "R3"
+  active_governance_version: "4.0.3"
+  adoption_mode: "MIGRATION_GOVERNED"
+
+mathematical_target:
+  problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
+  status: "UNRESOLVED"
+  release_state: "NO-GO"
+  b2_status: "BLOCKED"
+
+controlling_question: >
+  Is the tiny Fourier leakage forced by localization still large enough,
+  after backward viscous amplification, to make one autonomous pulse impossible?
+  Does the physical localization required by one OpenAI-type stress pulse force
+  enough backward-expensive spectral mass to make autonomous realization impossible?
+
+scope_boundaries:
+  multi_pulse_cascades: "FORBIDDEN"
+  residual_closure: "OUT_OF_SCOPE"
+  clay_statement_b_claim: "FORBIDDEN"
+  primary_focus: "Separation of Q1 (exact), Q2 (approximate profile), Q3 (stress); quantitative uncertainty inequalities; diffusion Gramian Q_t; OpenAI Section 7 actual two-family phase normals; analytic/Gaussian wavepacket tails"
+
+expected_deliverables:
+  - "NS_OPENAI_B1_REASSESSMENT_R1_THREE_QUESTIONS_AND_RANGE.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R1_DIFFUSION_GRAMIAN_AND_LEAKAGE.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R1_OPENAI_TWO_FAMILIES_AUDIT.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R1_ANALYTIC_PACKET_AND_STRESS_TAIL.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R1_NONLINEAR_CLAIM_REPAIR.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R1_SYNTHESIS_REPORT.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R1_INDEPENDENT_VERIFICATION.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R1_ACCEPTANCE_DECISION.md"
+  - "tests/test_ns_openai_b1_reassessment_r1_suite.py"
+
+verification_protocol:
+  independent_reviewer: "antigravity-fresh-context-verifier"
+  review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+  acceptance_coordinator: "autonomous-project-governance-coordinator"
+  deterministic_tests: "tests/test_ns_openai_b1_reassessment_r1_suite.py"

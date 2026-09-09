@@ -996,7 +996,7 @@ pathways:
   - pathway_id: "NS-OPENAI-B1-REASSESSMENT"
     title: "Single-Pulse Autonomous Entrance-State Problem"
     parent_pathways: ["NS-OPENAI-B1-R1"]
-    descendant_pathways: []
+    descendant_pathways: ["NS-OPENAI-B1-REASSESSMENT-R1"]
     starting_thesis: "Determine whether even one physically localized, two-family stress pulse can be generated autonomously from smooth unforced initial data."
     scientific_question: "Does physical spatial localization in an annular filament force transverse Fourier bandwidth that causes super-exponential backward viscous dissipation?"
     intended_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
@@ -1025,6 +1025,40 @@ pathways:
     reopen_conditions: ["New non-pulse autonomous blowup mechanisms bypassing annular filament localization."]
     similarity_tags: ["uncertainty_barrier", "transverse_bandwidth", "backward_diffusion_explosion", "heisenberg_weyl", "paley_wiener", "compressive_deficit"]
     last_re_evaluated: "2026-09-09"
+
+  - pathway_id: "NS-OPENAI-B1-REASSESSMENT-R1"
+    title: "Quantitative Localization–Backward-Diffusion Barrier Verification"
+    parent_pathways: ["NS-OPENAI-B1-REASSESSMENT"]
+    descendant_pathways: []
+    starting_thesis: "Determine whether CLM-038 is a genuine structural barrier by testing exact reachability Q1, approximate reachability Q2, stress reachability Q3, diffusion Gramian Q_t, collinear helical modes, and analytic wavepacket tails."
+    scientific_question: "Is the tiny Fourier leakage forced by localization still large enough, after backward viscous amplification, to make one autonomous pulse impossible?"
+    intended_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
+    core_objects: ["Q1 exact reachability", "Q2 approximate reachability", "Q3 stress reachability", "Diffusion Gramian K(t)", "Needle P_j", "Nazarov leakage delta_j", "Collinear helical modes b_+, b_-", "Analytic spatial width sigma_r >= sqrt(lambda_perp)"]
+    mathematical_form: "Q1 no-go by instantaneous analytic smoothing; Q2 no-go by Nazarov leakage delta_j -> 1 and I_j -> infty; Q3 no-go by Gaussian delocalization sigma_r / delta r_j ~ exp(2^(jh)) -> infty producing exterior stress error 2^(j(1+2h)) -> infty."
+    scaling: "Needle radius R_perp ~ exp(-2^(jh)) -> 0; divergence integral I_j >= exp(+c exp(2^(jh))) -> infty; delocalization ratio exp(2^(jh)) -> infty; exterior stress 2^(j(1+2h)) -> infty."
+    geometry: "Annular cylinder in R^3/T^3; prolate diffusion needle P_j; circular helical polarizations in transverse plane."
+    trajectory_dependence: "HYBRID"
+    stochastic_component: false
+    assumptions: ["Incompressible Navier-Stokes on R^3 or T^3", "nu > 0", "unforced f = 0", "OpenAI singular core filament"]
+    domain: "R^3 or T^3."
+    regularity_class: "C^omega spatial smoothing; non-compact Gaussian tails."
+    expected_outcome: "Quantitative proof of Localization Barrier for Q1, Q2, and Q3; retention of CLM-038; canonical verdict LOCALIZATION_BARRIER_PROVED."
+    actual_outcome: "LOCALIZATION_BARRIER_PROVED: Confirmed Q1 exact reachability no-go; proved Nazarov spectral leakage delta_j -> 1 into super-exponentially explosive modes (I_j -> infty); resolved two-family wavevector collinearity; proved analytic/Gaussian wavepackets must delocalize (sigma_r / delta r_j ~ exp(2^(jh)) -> infty) creating catastrophic exterior stress errors (NEG-EV-043); repaired nonlinear contraction phrasing; retained CLM-038; blocked NS-OPENAI-B2."
+    tests_attempted: ["tests/test_ns_openai_b1_reassessment_r1_suite.py"]
+    evidence_refs: ["NS_OPENAI_B1_REASSESSMENT_R1_SYNTHESIS_REPORT.md", "NS_OPENAI_B1_REASSESSMENT_R1_DIFFUSION_GRAMIAN_AND_LEAKAGE.md", "NS_OPENAI_B1_REASSESSMENT_R1_ANALYTIC_PACKET_AND_STRESS_TAIL.md", "NS_OPENAI_B1_REASSESSMENT_R1_ACCEPTANCE_DECISION.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Quantitative localization barrier proved across all reachability formulations (Q1, Q2, Q3); autonomous pulse transfer route permanently closed."
+    failure_mechanism: "Backward parabolic solvability forces spatial envelope delocalization over width sigma_r >> delta r_j, flooding the exterior matching zone with parasitic Reynolds stress."
+    what_was_falsified: ["Q1 exact compact profile reachability", "Q2 approximate profile reachability with bounded cost", "Q3 analytic-tail stress reachability without exterior core corruption (NEG-EV-043)"]
+    what_was_not_falsified: ["CLM-037-A", "CLM-037-B", "CLM-038 (Localization-Backward-Diffusion Uncertainty Barrier Theorem)"]
+    surviving_results: ["CLM-037-A", "CLM-037-B", "CLM-038", "Diffusion Gramian Diagonalization", "Nazarov Leakage Calculation", "Collinear Helical Stress Representation", "Delocalization Lower Bound sigma_r >= sqrt(lambda_perp)"]
+    negative_results: ["NEG-EV-042", "NEG-EV-043", "NS-OBS-020B"]
+    open_questions: ["Does the insurmountable failure of autonomous unforced pulse seeding definitively establish that the forced OpenAI blowup mechanism cannot transfer to Clay Statement B?"]
+    obstruction_ids: ["NS-OBS-020B", "NS-OBS-020C"]
+    reopen_conditions: ["New non-pulse autonomous blowup mechanisms bypassing annular filament localization."]
+    similarity_tags: ["quantitative_leakage", "diffusion_gramian", "nazarov_uncertainty", "analytic_delocalization", "exterior_stress_corruption", "collinear_helical"]
+    last_re_evaluated: "2026-09-09"
+
 
 
 
