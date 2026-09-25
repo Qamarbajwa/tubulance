@@ -176,9 +176,9 @@ evidence_refs:
     claim_id: "CLM-033"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
     artifact: "TP2_G6_A1_SYNTHESIS_REPORT.md"
-  - id: "EVID-TESTS-349"
+  - id: "EVID-TESTS-390"
     type: "GOV_E3_REPRODUCIBLE"
-    result: "349_PASSED"
+    result: "390_PASSED"
     suite: "pytest -k 'tp2 or math_assurance or openai'"
 
 negative_history_refs:
