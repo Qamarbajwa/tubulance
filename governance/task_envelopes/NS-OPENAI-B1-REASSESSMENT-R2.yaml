@@ -1,0 +1,78 @@
+# Task Envelope: NS-OPENAI-B1-REASSESSMENT-R2
+# Structural No-Go Theorem — Adversarial Repair
+
+task_id: "NS-OPENAI-B1-REASSESSMENT-R2"
+title: "Structural No-Go Theorem — Adversarial Repair"
+programme: "OPENAI_NAVIER_STOKES_UNFORCED_TRANSFER"
+parent: "NS-OPENAI-B1-REASSESSMENT-R1"
+governance: "UNIVERSAL_GOVERNANCE_MINIMAL_v4.0.3"
+mathematical_authority: "Mathematical Research Constitution v1.0.1"
+risk_ceiling: "R3"
+state: "IN_PROGRESS"
+created_at: "2026-09-24T06:30:00Z"
+
+target:
+  domain: "T^3, nu > 0, f = 0"
+  clay_statement_b: "UNRESOLVED"
+  release_state: "NO-GO"
+  b2_status: "BLOCKED"
+
+controlling_question: |
+  Does the project have a theorem excluding autonomous pulse realization,
+  or only an increasingly costly backward reconstruction mechanism for
+  a restricted family of pulses?
+
+mission: |
+  Re-audit the claimed LOCALIZATION_BARRIER_PROVED result.
+  Determine exactly what is proved, not to preserve the previous verdict.
+  Treat CLM-038 as the claim under examination.
+  Preserve all sealed historical records; make prospective corrections only.
+
+sections:
+  - id: S2
+    title: "Pure-heat counterexample (dense range)"
+    status: "PENDING"
+  - id: S3
+    title: "Missing resource constraint"
+    status: "PENDING"
+  - id: S4
+    title: "Spectral lower bound repair"
+    status: "PENDING"
+  - id: S5
+    title: "Diffusion Gramian reconstruction"
+    status: "PENDING"
+  - id: S6
+    title: "Torus compatibility audit"
+    status: "PENDING"
+  - id: S7
+    title: "Analyticity audit"
+    status: "PENDING"
+  - id: S8
+    title: "Gaussian delocalization amplitude repair"
+    status: "PENDING"
+  - id: S9
+    title: "Two-family pulse structure audit"
+    status: "PENDING"
+  - id: S10
+    title: "Nonlinear cross-interaction audit"
+    status: "PENDING"
+  - id: S11
+    title: "Visualization numerics repair"
+    status: "PENDING"
+  - id: S12
+    title: "Registry repair"
+    status: "PENDING"
+  - id: S13
+    title: "Final classification"
+    status: "PENDING"
+
+immutable_records:
+  - "7a949f425a5f05cc21f699bce04f3392a0026b92"
+  - "2693d866a15eaeb9cf549fe74db49893d50aa89c"
+  - "NS-OPENAI-B1-REASSESSMENT-R1 sealed artifact set"
+
+hard_gates:
+  - clay_b_unresolved: true
+  - release_no_go: true
+  - history_immutable: true
+  - writer_anti_self_acceptance: true

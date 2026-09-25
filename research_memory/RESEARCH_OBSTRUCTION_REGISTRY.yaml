@@ -203,6 +203,14 @@ obstructions:
     known_bypasses_or_relaxations: ["Internal nonlinear stress representation R = -div Q using non-axisymmetric helical modes, or exact self-similar profiles."]
     status: "OPEN_STRUCTURAL_OBSTRUCTION"
 
-
-
-
+  # ── R2 PROSPECTIVE CORRECTION ──────────────────────────────────────
+  - obstruction_id: "NS-OBS-020B-R2"
+    name: "AUTONOMOUS_PRECURSOR_COST_BARRIER_SCOPE_NARROWING"
+    corrects: "NS-OBS-020B"
+    milestone: "NS-OPENAI-B1-REASSESSMENT-R2"
+    description: "R2 adversarial repair narrows NS-OBS-020B: (1) The backward realization cost C_{eps,j} diverges super-exponentially — PROVED in EXACT_AFFINE_BENCHMARK. (2) Approximate reachability (Q2-existence) is TRIVIALLY TRUE via dense range of heat semigroup (CLM-039). (3) The 'W_j* notin Range' claim is retracted; replaced with 'cost diverges to infinity'. (4) Affine-to-periodic promotion NOT established. (5) Q3 stress reachability failure mechanism corrected: vanishing amplitude, not parasitic exterior stress. (6) CLM-037-B coupling matrix has rank 1 (not 2) for collinear opposite-polarization, strengthening the stress space limitation."
+    first_encountered_in: "NS-OPENAI-B1-REASSESSMENT-R2"
+    affected_pathways: ["NS-OPENAI-B1-REASSESSMENT-R2"]
+    mathematical_core: "Dense range: Range(e^{nu t Delta}) is dense in L^2(T^3). Cost barrier: C_{eps,j} >= exp(+c exp(2^{jh})) in affine benchmark. Amplitude collapse: energy-normalized delocalized pulse has A_peak ~ exp(-2^{jh}) -> 0."
+    known_bypasses_or_relaxations: ["Alternative non-compact pulse geometries not excluded. Affine-to-periodic promotion may reveal additional effects. Non-Gaussian wavepacket families not analyzed."]
+    status: "PROVED_AFFINE_COST_OBSTRUCTION"

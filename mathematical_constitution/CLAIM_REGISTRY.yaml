@@ -782,8 +782,72 @@ claims:
       project_status: "PROJECT_CANONICAL"
     dependencies: ["CLM-033", "CLM-037-A", "CLM-037-B"]
 
+  # ──────────────────────────────────────────────────────────────────────
+  # R2 PROSPECTIVE CORRECTIONS (NS-OPENAI-B1-REASSESSMENT-R2)
+  # Historical CLM-037-B and CLM-038 above are preserved unchanged.
+  # The following entries record corrected scope and new results.
+  # ──────────────────────────────────────────────────────────────────────
 
+  - claim_id: "CLM-037-B-R2"
+    claim_type: "PROSPECTIVE_CORRECTION"
+    name: "TWO_FAMILY_STRESS_RANK_CORRECTION"
+    milestone: "NS-OPENAI-B1-REASSESSMENT-R2"
+    corrects: "CLM-037-B"
+    statement: "Under the OpenAI Section 7 construction with collinear wavevectors k_j* e_z and opposite circular polarizations b_pm = (e_r pm i e_theta)/sqrt(2), the two families produce IDENTICAL real symmetric stress tensors tau^(pm) = (|A_pm|^2 / 2) diag(1,1,0). The coupling matrix H = [C(b_+) C(b_-)] has rank 1, not rank 2 (det H = 0). The invertibility claim in CLM-037-B is incorrect for collinear opposite-polarization families. The obstruction from dim(E_comp) = 1 is STRENGTHENED: even the stress space coverage is limited to a 1D subspace."
+    passport:
+      truth_status: "PROVED_THEOREM"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-037-B"]
 
+  - claim_id: "CLM-038-R2"
+    claim_type: "PROSPECTIVE_CORRECTION"
+    name: "LOCALIZATION_BARRIER_SCOPE_NARROWING"
+    milestone: "NS-OPENAI-B1-REASSESSMENT-R2"
+    corrects: "CLM-038"
+    statement: "R2 adversarial repair narrows CLM-038 scope: (1) Q1 exact compact no-go is PROVED on full T^3 (FULL_PERIODIC_PDE). (2) Q2-existence (approximate reachability) is TRIVIALLY TRUE via dense range of heat semigroup — the R1 claim 'Q2 NO-GO (Proved)' is RETRACTED as literally stated. (3) Q2-bounded-cost diverges super-exponentially C_{eps,j} >= exp(+c exp(2^(jh))) — this is PROVED but only in the EXACT_AFFINE_BENCHMARK, and is a COST barrier, not an existence barrier. (4) Q3 stress reachability fails because energy-normalized delocalized pulses have vanishing stress A_peak -> 0, NOT because of infinite parasitic exterior stress as claimed in R1. (5) The affine-to-periodic promotion for Q2/Q3 has NOT been established. CLM-038 is reclassified from LOCALIZATION_BARRIER_PROVED to AFFINE_COST_BARRIER_PROVED_APPROXIMATE_REACHABILITY_OPEN."
+    passport:
+      truth_status: "PROVED_THEOREM"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S1_FOUNDATIONAL"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-038", "CLM-039"]
 
+  - claim_id: "CLM-039"
+    claim_type: "MATHEMATICAL_THEOREM"
+    name: "HEAT_SEMIGROUP_DENSE_RANGE"
+    milestone: "NS-OPENAI-B1-REASSESSMENT-R2"
+    statement: "Let nu > 0, t > 0. The range of the heat semigroup e^{nu t Delta} acting on L^2(T^3) is DENSE in L^2(T^3). Proof: For any W* in L^2(T^3) and epsilon > 0, the frequency truncation W_K = P_{<=K} W* has finitely many modes, so w_0^{(K)} = sum_{|k|<=K} W_hat*(k) exp(nu t |k|^2) e^{ikx} satisfies e^{nu t Delta} w_0^{(K)} = W_K exactly, with ||W* - W_K||_{L^2} -> 0 by Parseval. The cost ||w_0^{(K)}||_{L^2} is finite for each fixed K but diverges as K -> infty for targets not in Range(e^{nu t Delta}). This establishes that approximate reachability (Q2-existence) is trivially true; the barrier is purely about cost magnitude, not existence."
+    passport:
+      truth_status: "PROVED_THEOREM"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N1_KNOWN_STANDARD_RESULT"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: []
 
 

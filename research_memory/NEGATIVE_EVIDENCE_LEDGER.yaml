@@ -388,9 +388,35 @@ negative_evidence:
     mathematical_verdict: "FALSIFIED_ANALYTIC_TAIL_RELAXATION_STRESS_REACHABILITY"
     canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_R1_ANALYTIC_PACKET_AND_STRESS_TAIL.md"
 
+  # ── R2 PROSPECTIVE CORRECTIONS ─────────────────────────────────────
 
+  - record_id: "NEG-EV-043-R2"
+    pathway_id: "NS-OPENAI-B1-REASSESSMENT-R2"
+    title: "GAUSSIAN_DELOCALIZATION_STRESS_MECHANISM_CORRECTION"
+    corrects: "NEG-EV-043"
+    falsified_hypothesis: "The R1 claim that delocalized backward-reachable pulses produce divergent parasitic exterior stress (A_j*)^2 ~ 2^{j(1+2h)} -> infty."
+    counterexample_or_proof: "R2 amplitude audit (Section 8): When the Gaussian width sigma_r is expanded to satisfy backward Plancherel integrability while fixing the L^2 energy at E_j, the peak amplitude A_peak^2 = E_j / (sigma_r^2 sigma_z) decays as exp(-2 * 2^{jh}) -> 0. The exterior stress is A_peak^2 -> 0, not (A_j*)^2 -> infty. The Q3 failure mechanism is corrected from 'infinite parasitic stress' to 'vanishing achievable stress — too weak for the construction'."
+    governing_obstruction: "NS-OBS-020B-R2"
+    mathematical_verdict: "CORRECTED_FAILURE_MECHANISM_Q3_STILL_FAILS"
+    canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_R2_TORUS_ANALYTICITY_AMPLITUDE.md"
 
+  - record_id: "NEG-EV-044"
+    pathway_id: "NS-OPENAI-B1-REASSESSMENT-R2"
+    title: "Q2_EXISTENCE_NOT_OBSTRUCTED_DENSE_RANGE"
+    falsified_hypothesis: "The R1 claim 'Q2: Approximate Profile Reachability — NO-GO (Proved)' interpreted as non-existence of any L^2 approximation to the target pulse."
+    counterexample_or_proof: "Theorem 2.1 (Dense Range): For any W* in L^2(T^3), the frequency truncation P_{<=K} W* is exactly in Range(e^{nu t Delta}) with finite (but growing) initial norm. So W* is approximable to arbitrary L^2 accuracy. The R1 Q2 verdict conflated Q2-existence (trivially true) with Q2-bounded-cost (super-exponentially divergent). Only the latter is an obstruction."
+    governing_obstruction: "NS-OBS-020B-R2"
+    mathematical_verdict: "FALSIFIED_Q2_NONEXISTENCE_CLAIM_COST_DIVERGENCE_RETAINED"
+    canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_R2_DENSE_RANGE_COUNTEREXAMPLE.md"
 
+  - record_id: "NEG-EV-045"
+    pathway_id: "NS-OPENAI-B1-REASSESSMENT-R2"
+    title: "TWO_FAMILY_COUPLING_MATRIX_RANK_DEFICIENCY"
+    falsified_hypothesis: "CLM-037-B claim that H = [C(b_+) C(b_-)] is invertible (det H != 0) for the OpenAI two-family construction."
+    counterexample_or_proof: "Direct computation: for collinear wavevectors k_j* e_z with opposite circular polarizations b_pm = (e_r pm i e_theta)/sqrt(2), both families produce identical real symmetric stress tau^(pm) = (1/2) diag(1,1,0). Therefore C(b_+) = C(b_-) and H has rank 1, not rank 2. det H = 0."
+    governing_obstruction: "NS-OBS-020B-R2"
+    mathematical_verdict: "FALSIFIED_TWO_FAMILY_INVERTIBILITY_OBSTRUCTION_STRENGTHENED"
+    canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_R2_TWO_FAMILY_AND_NONLINEAR.md"
 
 
 
