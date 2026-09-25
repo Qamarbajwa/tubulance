@@ -412,11 +412,11 @@ negative_evidence:
   - record_id: "NEG-EV-045"
     pathway_id: "NS-OPENAI-B1-REASSESSMENT-R2"
     title: "TWO_FAMILY_COUPLING_MATRIX_RANK_DEFICIENCY"
-    falsified_hypothesis: "CLM-037-B claim that H = [C(b_+) C(b_-)] is invertible (det H != 0) for the OpenAI two-family construction."
-    counterexample_or_proof: "Direct computation: for collinear wavevectors k_j* e_z with opposite circular polarizations b_pm = (e_r pm i e_theta)/sqrt(2), both families produce identical real symmetric stress tau^(pm) = (1/2) diag(1,1,0). Therefore C(b_+) = C(b_-) and H has rank 1, not rank 2. det H = 0."
+    falsified_hypothesis: "CLM-037-B claim that H = [C(b_+) C(b_-)] is invertible (det H != 0) for the OpenAI two-family construction. [RETRACTED UNDER NS-OPENAI-B1-REASSESSMENT-R3: The falsification hypothesis was itself based on an erroneous static polarization simplification Re(b (x) b*) instead of the authentic dynamic radial momentum flux C(w) = << w_r w_tan >>_theta_Y. Under Lemma 7.4 amplitude evolution with branch shear s(v) = sigma (u_*/2 + u_* v / L_s), det H = -2 h_+ h_- A_c u_* != 0 (Prop 7.5). The rank-1 claim is retracted]."
+    counterexample_or_proof: "Audit in NS_OPENAI_B1_REASSESSMENT_R3_SOURCE_FAITHFUL_PULSE_COVARIANCE.md reproduces Eq (7.28) and Prop 7.5, demonstrating rank 2 invertibility and positive stress cone representation."
     governing_obstruction: "NS-OBS-020B-R2"
-    mathematical_verdict: "FALSIFIED_TWO_FAMILY_INVERTIBILITY_OBSTRUCTION_STRENGTHENED"
-    canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_R2_TWO_FAMILY_AND_NONLINEAR.md"
+    mathematical_verdict: "RETRACTED_FALSE_SIMPLIFICATION"
+    canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_R3_SOURCE_FAITHFUL_PULSE_COVARIANCE.md"
 
 
 

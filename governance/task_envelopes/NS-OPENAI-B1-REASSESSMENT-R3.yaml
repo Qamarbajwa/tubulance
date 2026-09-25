@@ -1,0 +1,106 @@
+# Task Envelope: NS-OPENAI-B1-REASSESSMENT-R3
+# Source-Faithful Pulse Covariance, Analyticity, and Remaining Reachability Repair
+
+task_id: "NS-OPENAI-B1-REASSESSMENT-R3"
+title: "Source-Faithful Pulse Covariance, Analyticity, and Remaining Reachability Repair"
+programme: "OPENAI_NAVIER_STOKES_UNFORCED_TRANSFER"
+parent: "NS-OPENAI-B1-REASSESSMENT-R2"
+governance: "UNIVERSAL_GOVERNANCE_MINIMAL_v4.0.3"
+mathematical_authority: "Mathematical Research Constitution v1.0.1"
+risk_ceiling: "R3"
+state: "COMPLETED"
+completed_at: "2026-09-25T14:15:00Z"
+created_at: "2026-09-25T14:10:00Z"
+
+target:
+  domain: "T^3, nu > 0, f = 0"
+  clay_statement_b: "UNRESOLVED"
+  release_state: "NO-GO"
+  b2_status: "BLOCKED"
+
+controlling_question: |
+  Does the actual Section 7 pulse dynamics generate two independent covariance
+  directions, and what does that imply for the remaining autonomous reachability problem?
+
+mission: |
+  Repair the R2 rank-1 interpretation of the two OpenAI pulse families by faithfully
+  reproducing Lemma 7.4, Equation (7.28), and Proposition 7.5 from Section 7 of the
+  OpenAI monograph. Separate static polarization covariance from dynamically evolved
+  radial momentum flux. Retract CLM-037-B-R2 and NEG-EV-045. Re-audit periodic analyticity
+  and re-evaluate the affine cost barrier with authentic phase geometry.
+
+immediate_claim_holds:
+  - claim_id: "CLM-037-B-R2"
+    status: "RETRACTED"
+    reason: "Rank-1 conclusion was based on static polarization simplification"
+  - record_id: "NEG-EV-045"
+    status: "RETRACTED_FALSE_SIMPLIFICATION"
+    reason: "Rank-1 deficit based on static polarization rather than evolved flux"
+
+sections:
+  - id: S1
+    title: "Immediate claim hold & preservation of R2 history"
+    status: "COMPLETED"
+    artifact: "governance/task_envelopes/NS-OPENAI-B1-REASSESSMENT-R3.yaml"
+  - id: S2
+    title: "Source-faithful OpenAI pulse definitions & dynamic momentum flux"
+    status: "COMPLETED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_SOURCE_FAITHFUL_PULSE_COVARIANCE.md"
+  - id: S3
+    title: "Reproduction of Lemma 7.4 & amplitude evolution"
+    status: "COMPLETED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_SOURCE_FAITHFUL_PULSE_COVARIANCE.md"
+  - id: S4
+    title: "Reproduction of covariance columns (Equation 7.28)"
+    status: "COMPLETED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_SOURCE_FAITHFUL_PULSE_COVARIANCE.md"
+  - id: S5
+    title: "Static polarization vs dynamic momentum flux resolution"
+    status: "COMPLETED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_SOURCE_FAITHFUL_PULSE_COVARIANCE.md"
+  - id: S6
+    title: "Verification of Proposition 7.5 & determinant bound"
+    status: "COMPLETED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_SOURCE_FAITHFUL_PULSE_COVARIANCE.md"
+  - id: S7
+    title: "Positive stress cone inversion"
+    status: "COMPLETED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_SOURCE_FAITHFUL_PULSE_COVARIANCE.md"
+  - id: S8
+    title: "Registry repair: retract CLM-037-B-R2 and NEG-EV-045; establish CLM-037-B-R3"
+    status: "COMPLETED"
+    artifact: "mathematical_constitution/CLAIM_REGISTRY.yaml"
+  - id: S9
+    title: "Affine cost barrier with authentic phase normals"
+    status: "COMPLETED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_ANALYTICITY_AND_PHASE_COST.md"
+  - id: S10
+    title: "Analyticity theorem audit on periodic T^3"
+    status: "COMPLETED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_ANALYTICITY_AND_PHASE_COST.md"
+  - id: S11
+    title: "Pure-heat dense range baseline preservation"
+    status: "COMPLETED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_ANALYTICITY_AND_PHASE_COST.md"
+  - id: S12
+    title: "Visual research companion (Panels A-D)"
+    status: "COMPLETED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_VISUAL_RESEARCH_COMPANION.md"
+  - id: S13
+    title: "Final verdict: TWO_FAMILY_STRESS_VALID_AUTONOMOUS_REACHABILITY_OPEN"
+    status: "COMPLETED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_SYNTHESIS_REPORT.md"
+
+immutable_records:
+  - "7a949f425a5f05cc21f699bce04f3392a0026b92"
+  - "2693d866a15eaeb9cf549fe74db49893d50aa89c"
+  - "fce49a5b3a62ea2f9d89cbdd5a5fa59bcaee88bc"
+  - "6352e8c1bcf6a1da2c0ec763a6e60b1e1cbef5f7"
+  - "c066c44679decb50af3bd21f4b36ced373a5e593"
+  - "b34b46a"
+
+hard_gates:
+  - clay_b_unresolved: true
+  - release_no_go: true
+  - history_immutable: true
+  - writer_anti_self_acceptance: true

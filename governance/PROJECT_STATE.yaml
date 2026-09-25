@@ -1,6 +1,6 @@
 # Live Operational State — tubulance
 schema_version: "4.0.3"
-revision: 15
+revision: 16
 activation: "ACTIVE"
 
 project:
@@ -24,7 +24,7 @@ coordination:
   state_writer: "antigravity-primary-agent"
   serialization_method: "REVISION_COMPARE_AND_SWAP"
   last_expected_revision: 15
-  last_updated_at: "2026-09-25T13:37:00Z"
+  last_updated_at: "2026-09-25T14:15:00Z"
   active_contract: "NS-GOV-MIG-V403-001"
   frozen_candidate: "e720d512660fcc6dc8c3e6b2da7730b5668eb2d3"
 
@@ -32,18 +32,22 @@ coordination:
 epistemic_status:
   target_problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
   clay_statement_b_status: "UNRESOLVED"
-  scientific_program_status: "NS-OPENAI-B1-REASSESSMENT-R2_ADVERSARIAL_REPAIR_COMPLETED"
-  active_milestone: "NS-OPENAI-B1-REASSESSMENT-R2"
+  scientific_program_status: "NS-OPENAI-B1-REASSESSMENT-R3_ADVERSARIAL_REPAIR_COMPLETED"
+  active_milestone: "NS-OPENAI-B1-REASSESSMENT-R3"
 
 current_objective:
-  id: "NS-OPENAI-B1-REASSESSMENT-R2"
-  title: "Structural No-Go Theorem — Adversarial Repair"
+  id: "NS-OPENAI-B1-REASSESSMENT-R3"
+  title: "Source-Faithful Pulse Covariance, Analyticity, and Remaining Reachability Repair"
   target_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
   risk: "R3"
   status: "COMPLETED_ADVERSARIAL_REPAIR"
-  dependencies: ["NS-OPENAI-B1-REASSESSMENT-R1"]
+  dependencies: ["NS-OPENAI-B1-REASSESSMENT-R2"]
 
 objectives:
+  - id: "NS-OPENAI-B1-REASSESSMENT-R3"
+    title: "Source-Faithful Pulse Covariance, Analyticity, and Remaining Reachability Repair"
+    status: "ACCEPTED_AS_CANONICAL_ADVERSARIAL_REPAIR"
+    evidence_ref: "NS_OPENAI_B1_REASSESSMENT_R3_ACCEPTANCE_DECISION.md"
   - id: "NS-OPENAI-B1-REASSESSMENT-R2"
     title: "Structural No-Go Theorem — Adversarial Repair"
     status: "ACCEPTED_AS_CANONICAL_ADVERSARIAL_REPAIR"
@@ -110,13 +114,26 @@ capabilities:
 hard_gates:
   clay_statement_b_unresolved: "PASS_ENFORCED"
   dag_cycle_count: "0_CYCLES_PASS"
-  claim_passport_census: "42_OF_42_VALID_PASS"
+  claim_passport_census: "43_OF_43_VALID_PASS"
   negative_evidence_retention: "46_OF_46_PRESERVED_PASS"
   structural_obstruction_retention: "23_OF_23_PRESERVED_PASS"
   writer_anti_self_acceptance: "PASS_ENFORCED"
   unscaled_scalar_bounds_prohibited: "PASS_ENFORCED"
 
 evidence_refs:
+  - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R3-DECISION"
+    type: "GOV_E4_INDEPENDENT_VERIFIER"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_ACCEPTANCE_DECISION.md"
+  - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R3-VERIF"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_INDEPENDENT_VERIFICATION.md"
+  - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R3"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_SYNTHESIS_REPORT.md"
+  - id: "EVID-CLM-037-B-R3"
+    claim_id: "CLM-037-B-R3"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R3_SOURCE_FAITHFUL_PULSE_COVARIANCE.md"
   - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R2-DECISION"
     type: "GOV_E4_INDEPENDENT_VERIFIER"
     artifact: "NS_OPENAI_B1_REASSESSMENT_R2_ACCEPTANCE_DECISION.md"
@@ -176,9 +193,9 @@ evidence_refs:
     claim_id: "CLM-033"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
     artifact: "TP2_G6_A1_SYNTHESIS_REPORT.md"
-  - id: "EVID-TESTS-390"
+  - id: "EVID-TESTS-400"
     type: "GOV_E3_REPRODUCIBLE"
-    result: "390_PASSED"
+    result: "400_PASSED"
     suite: "pytest -k 'tp2 or math_assurance or openai'"
 
 negative_history_refs:
@@ -203,7 +220,7 @@ known_risks:
     obstruction: "NS-OBS-020A"
   - risk_id: "RISK-AUTONOMOUS-PRECURSOR-PHASE"
     bridge: "Transfer to Statement B"
-    description: "R2-corrected obstruction (CLM-038-R2, NS-OBS-020B-R2): backward realization cost C_{eps,j} diverges super-exponentially in affine benchmark. However, approximate reachability (Q2-existence) is trivially true via dense range. The barrier is a COST obstruction, not a structural impossibility. Affine-to-periodic promotion not yet established. Alternative non-compact pulse geometries not excluded."
+    description: "R3-repaired state (CLM-037-B-R3, CLM-038-R2): local two-family stress cone invertibility is restored (det H != 0), but backward realization cost C_{eps,j} diverges super-exponentially for both authentic phases Phi_+ and Phi_- in the affine benchmark. Autonomous pulse generation remains open / obstructed."
     obstruction: "NS-OBS-020B-R2"
   - risk_id: "RISK-EXACT-RESIDUAL-CLOSURE"
     bridge: "Transfer to Statement B"

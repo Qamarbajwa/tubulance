@@ -571,6 +571,24 @@ understanding_packages:
       essential_assumptions: ["Torus domain T^3", "L^2 integrability", "nu > 0, t > 0"]
       status: "U3_COMPLETE_PACKAGE"
 
+  - package_id: "UND-037-B-R3"
+    claim_id: "CLM-037-B-R3"
+    name: "TWO_FAMILY_LOCAL_COVARIANCE_CONE_INVERTIBILITY"
+    level_1_mechanism: "Dynamic phase shear and amplitude evolution in the self-similar boundary-layer frame produce distinct radial momentum flux columns with non-zero determinant, inverting the open stress cone with positive weights."
+    level_2_architecture: |
+      1. Boundary-layer coordinates: xi_g, v, with spatial cutoffs chi_g, psi.
+      2. Dynamic phase shear: s(v) = sigma (u_*/2 + u_* v / L_s) with sigma in {+1, -1}.
+      3. Amplitude Riccati ratio: y/x = c_0 sqrt(1 + s(v)^2) + O(S_*^{-1}) from Lemma 7.4.
+      4. Dynamic momentum flux: H_sigma = << w_r w_tan >>_theta_Y = h_sigma (-A_c N - sigma u_* K + e_sigma) (Eq 7.28).
+      5. Determinant and condition: det H = -2 h_+ h_- A_c u_* != 0, ||H^{-1}|| <= C sqrt(S_*) (Prop 7.5).
+      6. Positive cone: T_N < 0 and |T_K| < (u_*/A_c)(-T_N) yields strictly positive weights y_+, y_- > 0.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Background swirl breaks +/- symmetry along the shear axis K while preserving compressive normal flux along N."
+      what_can_fail: "Fails if static polarization dyad is mistakenly substituted for dynamic momentum flux (R2 error)."
+      essential_assumptions: ["Self-similar boundary-layer coordinates", "Lemma 7.4 amplitude ODE", "OpenAI Section 7 helical pulse model"]
+      status: "U3_COMPLETE_PACKAGE"
+
+
 
 
 

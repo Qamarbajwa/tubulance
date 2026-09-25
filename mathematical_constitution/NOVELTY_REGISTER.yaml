@@ -490,6 +490,19 @@ novelty_records:
     independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
     known_closest_analogues: ["Standard parabolic semigroup density theorems"]
 
+  - record_id: "NOV-CLM-037-B-R3"
+    claim_id: "CLM-037-B-R3"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Source-faithful verification that OpenAI Section 7 dynamic pulse amplitude evolution with branch shear s(v) generates rank-2 momentum flux invertibility, inverting the open stress cone with positive weights."
+    source_scope: "Navier-Stokes singular filament and oscillatory pulse literature."
+    query_scope: "Two-family dynamic pulse covariance, boundary-layer stress cone invertibility."
+    audit_date: "2026-09-25"
+    databases_searched: ["OpenAI Section 7 monograph", "arXiv:math.AP", "MathSciNet"]
+    primary_source_review: "OpenAI Navier-Stokes blowup monograph Section 7.3-7.5"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["OpenAI Section 7 Proposition 7.5"]
+
+
 
 
 

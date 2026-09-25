@@ -793,9 +793,9 @@ claims:
     name: "TWO_FAMILY_STRESS_RANK_CORRECTION"
     milestone: "NS-OPENAI-B1-REASSESSMENT-R2"
     corrects: "CLM-037-B"
-    statement: "Under the OpenAI Section 7 construction with collinear wavevectors k_j* e_z and opposite circular polarizations b_pm = (e_r pm i e_theta)/sqrt(2), the two families produce IDENTICAL real symmetric stress tensors tau^(pm) = (|A_pm|^2 / 2) diag(1,1,0). The coupling matrix H = [C(b_+) C(b_-)] has rank 1, not rank 2 (det H = 0). The invertibility claim in CLM-037-B is incorrect for collinear opposite-polarization families. The obstruction from dim(E_comp) = 1 is STRENGTHENED: even the stress space coverage is limited to a 1D subspace."
+    statement: "Under the OpenAI Section 7 construction with collinear wavevectors k_j* e_z and opposite circular polarizations b_pm = (e_r pm i e_theta)/sqrt(2), the two families produce IDENTICAL real symmetric stress tensors tau^(pm) = (|A_pm|^2 / 2) diag(1,1,0). The coupling matrix H = [C(b_+) C(b_-)] has rank 1, not rank 2 (det H = 0). [RETRACTED UNDER NS-OPENAI-B1-REASSESSMENT-R3: The static polarization covariance Re(b_pm (x) b_pm*) was incorrectly substituted for the authentic dynamic radial momentum flux C(w) = << w_r w_tan >>_theta_Y. Under authentic phase shear s(v) = sigma (u_*/2 + u_* v / L_s) and amplitude evolution (Lemma 7.4), the two columns are distinct (Eq 7.28) and det H = -2 h_+ h_- A_c u_* != 0 (Prop 7.5). Superseded by CLM-037-B-R3]."
     passport:
-      truth_status: "PROVED_THEOREM"
+      truth_status: "SUPERSEDED_AND_RETRACTED"
       gov_evidence_level: "GOV_E3_REPRODUCIBLE"
       math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
       gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
@@ -806,7 +806,7 @@ claims:
       significance: "S2_MAJOR_PROJECT_RESULT"
       external_validation: "NOT_EXTERNALLY_REVIEWED"
       community_status: "NOT_COMMUNITY_ACCEPTED"
-      project_status: "PROJECT_CANONICAL"
+      project_status: "SUPERSEDED_AND_RETRACTED"
     dependencies: ["CLM-037-B"]
 
   - claim_id: "CLM-038-R2"
@@ -849,5 +849,26 @@ claims:
       community_status: "NOT_COMMUNITY_ACCEPTED"
       project_status: "PROJECT_CANONICAL"
     dependencies: []
+
+  - claim_id: "CLM-037-B-R3"
+    claim_type: "MATHEMATICAL_THEOREM"
+    name: "TWO_FAMILY_LOCAL_COVARIANCE_CONE_INVERTIBILITY"
+    milestone: "NS-OPENAI-B1-REASSESSMENT-R3"
+    supersedes: "CLM-037-B-R2"
+    statement: "Under the authentic OpenAI Section 7 construction, the two dynamic pulse families b_sigma = chi_g psi t_sigma^h cos(k Phi_sigma) (sigma in {+1, -1}) with branch shear s(v) = sigma (u_*/2 + u_* v / L_s) produce dynamic radial momentum flux columns H_sigma = C(b_sigma) = h_sigma (-A_c N - sigma u_* K + e_sigma) with |e_sigma| <= C S_*^{-1/2} in the boundary-layer frame (Eq 7.28). The coupling matrix H = [H_+ | H_-] has determinant det H = -2 h_+ h_- A_c u_* + O(S_*^{-3/2}) != 0, satisfying |det H| >= c/S_* and ||H^{-1}|| <= C sqrt(S_*). For any target stress in the open cone K_stress = { T = T_N N + T_K K : T_N < 0, |T_K| < (u_*/A_c)(-T_N) }, the linear system H y = T possesses unique, strictly positive weights y_+, y_- > 0. Proved in the local boundary-layer frame; classification is strictly SOURCE_DERIVED_LOCAL_MODEL."
+    passport:
+      truth_status: "PROVED_THEOREM"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-037-A"]
 
 
