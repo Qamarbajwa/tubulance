@@ -46,8 +46,8 @@ current_objective:
 objectives:
   - id: "NS-OPENAI-B1-REASSESSMENT-R2"
     title: "Structural No-Go Theorem — Adversarial Repair"
-    status: "COMPLETED_ADVERSARIAL_REPAIR"
-    evidence_ref: "NS_OPENAI_B1_REASSESSMENT_R2_SYNTHESIS_REPORT.md"
+    status: "ACCEPTED_AS_CANONICAL_ADVERSARIAL_REPAIR"
+    evidence_ref: "NS_OPENAI_B1_REASSESSMENT_R2_ACCEPTANCE_DECISION.md"
   - id: "NS-OPENAI-B1-REASSESSMENT-R1"
     title: "Quantitative Localization–Backward-Diffusion Barrier Verification"
     status: "ACCEPTED_AS_CANONICAL_VERIFICATION"
@@ -117,6 +117,12 @@ hard_gates:
   unscaled_scalar_bounds_prohibited: "PASS_ENFORCED"
 
 evidence_refs:
+  - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R2-DECISION"
+    type: "GOV_E4_INDEPENDENT_VERIFIER"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_ACCEPTANCE_DECISION.md"
+  - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R2-VERIF"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_INDEPENDENT_VERIFICATION.md"
   - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R2"
     type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
     artifact: "NS_OPENAI_B1_REASSESSMENT_R2_SYNTHESIS_REPORT.md"

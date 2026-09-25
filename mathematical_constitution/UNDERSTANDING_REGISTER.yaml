@@ -475,5 +475,102 @@ understanding_packages:
       essential_assumptions: ["Incompressible Navier-Stokes on periodic T^3", "Brownian coupling specification (C-SYNC vs C-IND)"]
       status: "U3_COMPLETE_PACKAGE"
 
+  - package_id: "UND-037-A"
+    claim_id: "CLM-037-A"
+    name: "LOCAL_HOMOGENEOUS_PULSE_AMPLIFICATION"
+    level_1_mechanism: "In local affine strain background u_B = A(t)x, monochromatic Fourier-Kelvin modes aligned with the 1D compressive axis experience exponential amplification while viscous dissipation along the de-shearing characteristic ray remains bounded."
+    level_2_architecture: |
+      1. Background strain: S = diag(-2sigma, sigma, sigma) with sigma ~ tau^(-1-h).
+      2. Compressive axis alignment: k_1(t) = k_1(0) exp(2 int_0^t sigma ds).
+      3. Viscous dissipation bound: D_j <= (nu/4) 2^(-jh) -> 0 along compressive ray.
+      4. Net amplification: int (sigma - nu |k|^2) ds ~ 2^(jh) -> infty.
+      5. Subcritical energy: E(W_j*) ~ 2^(j(3h - 0.5)) -> 0.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Compressive strain stretches wavenumber forward but contracts it backward along e_1."
+      what_can_fail: "Fails once spatial envelope localization is introduced (uncertainty barrier)."
+      essential_assumptions: ["Affine strain model", "Pure monochromatic Kelvin mode", "No spatial envelope"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-037-B"
+    claim_id: "CLM-037-B"
+    name: "TWO_FAMILY_LOCAL_STRESS_CONE_REALIZATION"
+    level_1_mechanism: "Two distinct helical wave families with non-collinear wavevectors form coupling matrix in stress space, but 1D compressive subspace under axisymmetric strain allows backward de-shearing of at most one wavevector."
+    level_2_architecture: |
+      1. Two helical families b_+ and b_- with wavevectors k_+ and k_-.
+      2. Coupling matrix: H = [C(b_+) C(b_-)].
+      3. Stress cone generation: T = H y with positive weights y > 0.
+      4. Compressive deficit: dim(E_comp) = 1 under axisymmetric strain S = diag(-2sigma, sigma, sigma).
+      5. Second family inevitably has extensional component that explodes backward.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Geometric dimensional mismatch between 2D stress requirement and 1D compressive subspace."
+      what_can_fail: "Collinear opposite-polarization modes collapse H to rank 1 (repaired in CLM-037-B-R2)."
+      essential_assumptions: ["Axisymmetric singular strain", "Linearized Navier-Stokes"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-038"
+    claim_id: "CLM-038"
+    name: "LOCALIZATION_BACKWARD_DIFFUSION_UNCERTAINTY_BARRIER"
+    level_1_mechanism: "Physical spatial localization in an annular filament mandates transverse Fourier bandwidth by Heisenberg-Weyl, driving cumulative backward viscous dissipation under extensional strain to super-exponential infinity."
+    level_2_architecture: |
+      1. Spatial localization: delta r_j ~ 2^(-j/2) in annular filament.
+      2. Transverse bandwidth: Delta k_perp >= 1/delta r_j ~ 2^(j/2) by uncertainty principle.
+      3. Extensional strain: incompressibility tr(S) = 0 forces transverse amplification exp(+Sigma_j).
+      4. Backward dissipation: D_back(xi) >= (nu/4) 2^(-jh) exp(2 * 2^(jh)) -> infty.
+      5. Initial norm divergence: C(W_j*, t_j) >= exp(+c exp(2^(jh))) -> infty.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Conjugate variables in Fourier analysis prevent simultaneous physical and spectral confinement."
+      what_can_fail: "Conflating cost divergence with non-existence of L^2 approximations (repaired in CLM-038-R2)."
+      essential_assumptions: ["Singular extensional strain", "Physical localization", "Unforced Navier-Stokes"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-037-B-R2"
+    claim_id: "CLM-037-B-R2"
+    name: "TWO_FAMILY_STRESS_RANK_CORRECTION"
+    level_1_mechanism: "Opposite circular polarizations sharing the same wavevector produce identical real symmetric stress tensors, reducing the coupling matrix to rank 1 and strengthening the stress generation obstruction."
+    level_2_architecture: |
+      1. Collinear wavevectors: k_j* e_z for both helical modes.
+      2. Circular polarizations: b_pm = (e_r pm i e_theta) / sqrt(2).
+      3. Symmetric stress: tau^(pm) = (|A_pm|^2 / 2) diag(1, 1, 0).
+      4. Rank deficiency: H = [C(b_+) C(b_-)] has rank 1, det H = 0.
+      5. Full stress tensor requires non-collinear modes that encounter transverse backward explosion.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Real symmetric part of outer product of conjugate polarizations coincides."
+      what_can_fail: "Non-collinear wavevectors would have rank 2 but cannot simultaneously de-shear."
+      essential_assumptions: ["OpenAI Section 7 helical pulse specification", "Incompressible Navier-Stokes"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-038-R2"
+    claim_id: "CLM-038-R2"
+    name: "LOCALIZATION_BARRIER_SCOPE_NARROWING"
+    level_1_mechanism: "R2 adversarial repair separates exact compact non-reachability (proved on T^3) from approximate reachability (trivially true via dense range) and proves super-exponential cost divergence in the affine benchmark."
+    level_2_architecture: |
+      1. Q1 exact no-go: Foias-Temam analytic smoothing + identity theorem excludes compact profiles on T^3.
+      2. Q2 dense range: Range(e^{nu t Delta}) is dense in L^2(T^3), retracting false non-existence claim.
+      3. Q2 cost divergence: C_{eps,j} >= exp(+c exp(2^(jh))) in exact affine benchmark.
+      4. Q3 stress failure: energy-normalized delocalized Gaussian has A_peak -> 0 (amplitude collapse).
+      5. Promotion status: Q1 is FULL_PERIODIC_PDE; Q2/Q3 are EXACT_AFFINE_BENCHMARK.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Disentangles topological range properties from quantitative metric cost bounds."
+      what_can_fail: "Assuming affine benchmark results automatically transfer to full periodic PDE without local approximation."
+      essential_assumptions: ["Linearized Navier-Stokes", "Affine strain benchmark", "Energy budget constraint"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-039"
+    claim_id: "CLM-039"
+    name: "HEAT_SEMIGROUP_DENSE_RANGE"
+    level_1_mechanism: "Frequency truncation P_{<=K} W* lies in the exact range of the forward heat semigroup for every finite K, proving that Range(e^{nu t Delta}) is dense in L^2(T^3)."
+    level_2_architecture: |
+      1. Target expansion: W* = sum_k W_hat(k) e^{ik.x} in L^2(T^3).
+      2. Frequency cutoff: W_K = P_{<=K} W* has finitely many Fourier modes.
+      3. Exact preimage: w_0^{(K)} = sum_{|k|<=K} W_hat(k) exp(nu t |k|^2) e^{ik.x} in C^infty(T^3).
+      4. Semigroup action: e^{nu t Delta} w_0^{(K)} = W_K exactly.
+      5. L^2 convergence: ||W* - W_K||_{L^2} -> 0 as K -> infty by Parseval.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Trigonometric polynomials are dense in L^2 and each mode has finite exponential weight."
+      what_can_fail: "Norm of w_0^{(K)} diverges as K -> infty for targets not in the exact parabolic range."
+      essential_assumptions: ["Torus domain T^3", "L^2 integrability", "nu > 0, t > 0"]
+      status: "U3_COMPLETE_PACKAGE"
+
+
 
 

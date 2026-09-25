@@ -8,7 +8,8 @@ parent: "NS-OPENAI-B1-REASSESSMENT-R1"
 governance: "UNIVERSAL_GOVERNANCE_MINIMAL_v4.0.3"
 mathematical_authority: "Mathematical Research Constitution v1.0.1"
 risk_ceiling: "R3"
-state: "IN_PROGRESS"
+state: "COMPLETED"
+completed_at: "2026-09-25T13:35:00Z"
 created_at: "2026-09-24T06:30:00Z"
 
 target:
@@ -31,40 +32,52 @@ mission: |
 sections:
   - id: S2
     title: "Pure-heat counterexample (dense range)"
-    status: "PENDING"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_DENSE_RANGE_COUNTEREXAMPLE.md"
+    status: "COMPLETED"
   - id: S3
     title: "Missing resource constraint"
-    status: "PENDING"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_RESOURCE_CONSTRAINT_AND_SPECTRAL_REPAIR.md"
+    status: "COMPLETED"
   - id: S4
     title: "Spectral lower bound repair"
-    status: "PENDING"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_RESOURCE_CONSTRAINT_AND_SPECTRAL_REPAIR.md"
+    status: "COMPLETED"
   - id: S5
     title: "Diffusion Gramian reconstruction"
-    status: "PENDING"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_RESOURCE_CONSTRAINT_AND_SPECTRAL_REPAIR.md"
+    status: "COMPLETED"
   - id: S6
     title: "Torus compatibility audit"
-    status: "PENDING"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_TORUS_ANALYTICITY_AMPLITUDE.md"
+    status: "COMPLETED"
   - id: S7
     title: "Analyticity audit"
-    status: "PENDING"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_TORUS_ANALYTICITY_AMPLITUDE.md"
+    status: "COMPLETED"
   - id: S8
     title: "Gaussian delocalization amplitude repair"
-    status: "PENDING"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_TORUS_ANALYTICITY_AMPLITUDE.md"
+    status: "COMPLETED"
   - id: S9
     title: "Two-family pulse structure audit"
-    status: "PENDING"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_TWO_FAMILY_AND_NONLINEAR.md"
+    status: "COMPLETED"
   - id: S10
     title: "Nonlinear cross-interaction audit"
-    status: "PENDING"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_TWO_FAMILY_AND_NONLINEAR.md"
+    status: "COMPLETED"
   - id: S11
     title: "Visualization numerics repair"
-    status: "PENDING"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_VISUALIZATION_REPAIR.md"
+    status: "COMPLETED"
   - id: S12
     title: "Registry repair"
-    status: "PENDING"
+    artifact: "mathematical_constitution/CLAIM_REGISTRY.yaml"
+    status: "COMPLETED"
   - id: S13
     title: "Final classification"
-    status: "PENDING"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R2_SYNTHESIS_REPORT.md"
+    status: "COMPLETED"
 
 immutable_records:
   - "7a949f425a5f05cc21f699bce04f3392a0026b92"

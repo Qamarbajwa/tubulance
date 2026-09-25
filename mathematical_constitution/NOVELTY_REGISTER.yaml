@@ -418,5 +418,78 @@ novelty_records:
     known_closest_analogues: ["Kunita stochastic flows of diffeomorphisms", "Richardson pair dispersion", "Constantin-Iyer representations"]
     limitations: "Identifies structural obstruction NS-OBS-019; Clay Statement B remains unresolved."
 
+  - record_id: "NOV-CLM-037-A"
+    claim_id: "CLM-037-A"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Exact proof of local exponential amplification of compressive Fourier-Kelvin modes under singular strain with bounded viscous dissipation."
+    source_scope: "Kelvin wave analysis and rapid distortion theory literature."
+    query_scope: "Fourier-Kelvin modes, singular strain amplification, de-shearing ray dissipation."
+    audit_date: "2026-09-09"
+    databases_searched: ["arXiv:math.AP", "MathSciNet", "Google Scholar"]
+    primary_source_review: "NS-OPENAI-B1-REASSESSMENT synthesis report"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["Townsend (1951) rapid distortion theory", "Craik-Criminale (1986) Kelvin waves"]
+
+  - record_id: "NOV-CLM-037-B"
+    claim_id: "CLM-037-B"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Derivation of local stress cone representation and compressive subspace rank deficit under axisymmetric strain."
+    source_scope: "Reynolds stress representation and singular strain flow literature."
+    query_scope: "Two-family helical stress generation, compressive subspace deficit."
+    audit_date: "2026-09-09"
+    databases_searched: ["arXiv:math.AP", "MathSciNet", "Google Scholar"]
+    primary_source_review: "NS-OPENAI-B1-REASSESSMENT synthesis report"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["OpenAI Navier-Stokes Section 7 helical pulse model"]
+
+  - record_id: "NOV-CLM-038"
+    claim_id: "CLM-038"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Proof of localization-backward-diffusion uncertainty barrier via Heisenberg-Weyl uncertainty and super-exponential backward viscous dissipation."
+    source_scope: "Uncertainty principles, backward parabolic equations, Navier-Stokes blowup literature."
+    query_scope: "Localization-backward-diffusion uncertainty barrier, super-exponential backward cost."
+    audit_date: "2026-09-09"
+    databases_searched: ["arXiv:math.AP", "MathSciNet", "Google Scholar"]
+    primary_source_review: "NS-OPENAI-B1-REASSESSMENT uncertainty barrier proof"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["Nazarov (1993) uncertainty principle", "Foias-Temam (1989) Gevrey regularity"]
+
+  - record_id: "NOV-CLM-037-B-R2"
+    claim_id: "CLM-037-B-R2"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Proof that opposite circular polarizations with collinear wavevectors produce identical real symmetric stress (rank 1 coupling matrix, det H = 0)."
+    source_scope: "Helical wave decompositions and quadratic stress tensors."
+    query_scope: "Helical mode covariance matrix rank deficiency, collinear wavevectors."
+    audit_date: "2026-09-25"
+    databases_searched: ["arXiv:math.AP", "MathSciNet", "Google Scholar"]
+    primary_source_review: "NS-OPENAI-B1-REASSESSMENT-R2 two-family audit"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["Waleffe (1992) helical wave decomposition"]
+
+  - record_id: "NOV-CLM-038-R2"
+    claim_id: "CLM-038-R2"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "Adversarial repair establishing exact compact non-reachability on T^3, dense approximate reachability, and super-exponential cost divergence in the affine benchmark."
+    source_scope: "Navier-Stokes reachability and parabolic semigroup ranges."
+    query_scope: "Exact vs approximate reachability, affine benchmark Gramian divergence."
+    audit_date: "2026-09-25"
+    databases_searched: ["arXiv:math.AP", "MathSciNet", "Google Scholar"]
+    primary_source_review: "NS-OPENAI-B1-REASSESSMENT-R2 synthesis report"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["CLM-038 (repaired)", "Grujic-Kukavica (1998) analyticity"]
+
+  - record_id: "NOV-CLM-039"
+    claim_id: "CLM-039"
+    novelty_tier: "N0_KNOWN_FOUNDATION"
+    justification: "Classical theorem that the range of the heat semigroup e^{nu t Delta} on L^2(T^3) is dense in L^2(T^3) via trigonometric polynomial frequency truncation."
+    source_scope: "Classical linear parabolic PDE and functional analysis literature."
+    query_scope: "Heat semigroup range density, Fourier truncation in heat equation."
+    audit_date: "2026-09-25"
+    databases_searched: ["MathSciNet", "Standard PDE textbooks"]
+    primary_source_review: "Evans PDE, Brezis Functional Analysis"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["Standard parabolic semigroup density theorems"]
+
+
 
 
