@@ -502,6 +502,18 @@ novelty_records:
     independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
     known_closest_analogues: ["OpenAI Section 7 Proposition 7.5"]
 
+  - record_id: "NOV-CLM-040"
+    claim_id: "CLM-040"
+    novelty_tier: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+    justification: "First rigorous proof that periodic linearized Navier-Stokes dynamics on T^3 with local hyperbolic stagnation flow incurs super-exponential reachability cost divergence and algebraic stress amplitude collapse under any uniform initial energy budget."
+    source_scope: "Navier-Stokes reachability, dual parabolic observability, and singularity precursor mechanisms."
+    query_scope: "Periodic linearized reachability cost, observability Gramian singular values, stress amplitude collapse."
+    audit_date: "2026-09-26"
+    databases_searched: ["arXiv:math.AP", "MathSciNet", "Google Scholar"]
+    primary_source_review: "NS-OPENAI-B1-REASSESSMENT-R4 synthesis and reachability reports"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["CLM-038-R2 (affine benchmark)", "Coron (2007) Control and Nonlinearity"]
+
 
 
 

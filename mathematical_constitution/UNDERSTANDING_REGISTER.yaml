@@ -588,6 +588,24 @@ understanding_packages:
       essential_assumptions: ["Self-similar boundary-layer coordinates", "Lemma 7.4 amplitude ODE", "OpenAI Section 7 helical pulse model"]
       status: "U3_COMPLETE_PACKAGE"
 
+  - package_id: "UND-040"
+    claim_id: "CLM-040"
+    name: "PERIODIC_LINEARIZED_COST_BARRIER_AND_STRESS_COLLAPSE"
+    level_1_mechanism: "Full periodic formulation on T^3 with local hyperbolic stagnation flow proves super-exponential reachability cost divergence and algebraic stress amplitude collapse under any uniform initial energy budget."
+    level_2_architecture: |
+      1. Periodic flow model: u_B = sigma(t)[-2 sin x cos y cos z, cos x sin y cos z, cos x cos y sin z] on T^3; div(u_B) = 0.
+      2. Taylor error decay: ||u_B - S x||_{L^infty(B_{R_j})} <= C 2^{-j(1/2-h)} -> 0; affine model is exact leading asymptotics.
+      3. Parabolic analyticity repair: Sobolev background yields H^{s+2} regularity; real-analyticity requires analytic coefficients C^omega(T^3), satisfied by trigonometric polynomial u_B.
+      4. Observability Gramian: M(t_{j-1}, t_j) on solenoidal L^2(T^3) has singular values sigma_k <= exp(-nu k^2 Delta t_j).
+      5. Dual cost lower bound: C_{eps, j, sigma} >= c_V exp((nu / 16) 2^{-jh} exp(2 * 2^{jh})) -> infty.
+      6. Stress-level optimization: ||C(w)||_{L^1} / ||T_j*||_{L^1} <= C E_0 2^{-j(1.5-h)} -> 0 under ||w_0||_{L^2}^2 <= E_0.
+      7. Nonlinear breakdown: ||v||_{L^2} / ||w||_{L^2} ~ 2^{j(1/2+h)} -> infty destroys linearity for target stress amplitude.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Combines local Taylor asymptotic convergence with global dual parabolic observability and Cauchy-Schwarz stress inequalities."
+      what_can_fail: "Fails if external forcing f != 0 is added or if self-focusing nonlinear boundary-driven effects bypass backward diffusion."
+      essential_assumptions: ["Unforced Navier-Stokes f = 0", "Periodic domain T^3", "Hyperbolic strain sigma_j ~ 2^{j(1+h)}", "Finite initial energy budget E_0 < infty"]
+      status: "U3_COMPLETE_PACKAGE"
+
 
 
 

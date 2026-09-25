@@ -214,3 +214,15 @@ obstructions:
     mathematical_core: "Dense range: Range(e^{nu t Delta}) is dense in L^2(T^3). Cost barrier: C_{eps,j} >= exp(+c exp(2^{jh})) in affine benchmark. Amplitude collapse: energy-normalized delocalized pulse has A_peak ~ exp(-2^{jh}) -> 0."
     known_bypasses_or_relaxations: ["Alternative non-compact pulse geometries not excluded. Affine-to-periodic promotion may reveal additional effects. Non-Gaussian wavepacket families not analyzed."]
     status: "PROVED_AFFINE_COST_OBSTRUCTION"
+
+  # ── R4 PERIODIC REACHABILITY & STRESS COLLAPSE ──────────────────────
+  - obstruction_id: "NS-OBS-020B-R4"
+    name: "PERIODIC_LINEARIZED_REACHABILITY_AND_STRESS_COLLAPSE_BARRIER"
+    corrects: "NS-OBS-020B-R2"
+    milestone: "NS-OPENAI-B1-REASSESSMENT-R4"
+    description: "R4 resolution establishes the obstruction on periodic T^3: (1) Exact compact profile reachability is excluded for analytic periodic backgrounds by the identity theorem. (2) Approximate reachability cost explodes super-exponentially in the periodic model: C_{eps, j, sigma} >= c_V exp((nu / 16) 2^{-jh} exp(2 * 2^{jh})). (3) Stress-level reachability fails by amplitude collapse: achievable Reynolds stress decays as O(2^{-j(1.5-h)}) -> 0 relative to target stress under bounded initial energy. (4) Sizing perturbations to achieve target stress induces dominant nonlinear breakdown ||v||/||w|| ~ 2^{j(1/2+h)} -> infty."
+    first_encountered_in: "NS-OPENAI-B1-REASSESSMENT-R4"
+    affected_pathways: ["NS-OPENAI-B1-REASSESSMENT-R4"]
+    mathematical_core: "Divergence-free periodic background u_B on T^3 with local hyperbolic stagnation strain S(t); dual parabolic observability Gramian singular spectrum; stress-level Cauchy-Schwarz amplitude decay; Duhamel nonlinear correction explosion."
+    known_bypasses_or_relaxations: ["None for unforced autonomous linear precursor mechanism on T^3; external forcing f != 0 or fully non-perturbative boundary-driven mechanisms required."]
+    status: "PROVED_STRUCTURAL_OBSTRUCTION"

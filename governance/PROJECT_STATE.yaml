@@ -1,13 +1,13 @@
 # Live Operational State — tubulance
 schema_version: "4.0.3"
-revision: 16
+revision: 17
 activation: "ACTIVE"
 
 project:
   id: "tubulance"
   name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
   root: "D:/Comfy UI/tubulance"
-  head: "17714e55e8d61bb4f326ce94f045f6723be770a2"
+  head: "6fc044a"
   dirty: "DIRTY_KNOWN"
   branch: "main"
 
@@ -24,26 +24,30 @@ coordination:
   state_writer: "antigravity-primary-agent"
   serialization_method: "REVISION_COMPARE_AND_SWAP"
   last_expected_revision: 16
-  last_updated_at: "2026-09-25T14:15:00Z"
+  last_updated_at: "2026-09-26T01:35:00Z"
   active_contract: "NS-GOV-MIG-V403-001"
-  frozen_candidate: "17714e55e8d61bb4f326ce94f045f6723be770a2"
+  frozen_candidate: "6fc044a"
 
 
 epistemic_status:
   target_problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
   clay_statement_b_status: "UNRESOLVED"
-  scientific_program_status: "NS-OPENAI-B1-REASSESSMENT-R3_ADVERSARIAL_REPAIR_COMPLETED"
-  active_milestone: "NS-OPENAI-B1-REASSESSMENT-R3"
+  scientific_program_status: "NS-OPENAI-B1-REASSESSMENT-R4_PERIODIC_COST_BARRIER_PROVED"
+  active_milestone: "NS-OPENAI-B1-REASSESSMENT-R4"
 
 current_objective:
-  id: "NS-OPENAI-B1-REASSESSMENT-R3"
-  title: "Source-Faithful Pulse Covariance, Analyticity, and Remaining Reachability Repair"
+  id: "NS-OPENAI-B1-REASSESSMENT-R4"
+  title: "Periodic Linearized Reachability, Analyticity Repair, and Single-Pulse Autonomous Gate"
   target_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
   risk: "R3"
-  status: "COMPLETED_ADVERSARIAL_REPAIR"
-  dependencies: ["NS-OPENAI-B1-REASSESSMENT-R2"]
+  status: "COMPLETED_PERIODIC_COST_BARRIER_PROVED"
+  dependencies: ["NS-OPENAI-B1-REASSESSMENT-R3"]
 
 objectives:
+  - id: "NS-OPENAI-B1-REASSESSMENT-R4"
+    title: "Periodic Linearized Reachability, Analyticity Repair, and Single-Pulse Autonomous Gate"
+    status: "ACCEPTED_AS_CANONICAL_PERIODIC_COST_BARRIER"
+    evidence_ref: "NS_OPENAI_B1_REASSESSMENT_R4_ACCEPTANCE_DECISION.md"
   - id: "NS-OPENAI-B1-REASSESSMENT-R3"
     title: "Source-Faithful Pulse Covariance, Analyticity, and Remaining Reachability Repair"
     status: "ACCEPTED_AS_CANONICAL_ADVERSARIAL_REPAIR"
@@ -114,13 +118,26 @@ capabilities:
 hard_gates:
   clay_statement_b_unresolved: "PASS_ENFORCED"
   dag_cycle_count: "0_CYCLES_PASS"
-  claim_passport_census: "43_OF_43_VALID_PASS"
-  negative_evidence_retention: "46_OF_46_PRESERVED_PASS"
-  structural_obstruction_retention: "23_OF_23_PRESERVED_PASS"
+  claim_passport_census: "44_OF_44_VALID_PASS"
+  negative_evidence_retention: "47_OF_47_PRESERVED_PASS"
+  structural_obstruction_retention: "24_OF_24_PRESERVED_PASS"
   writer_anti_self_acceptance: "PASS_ENFORCED"
   unscaled_scalar_bounds_prohibited: "PASS_ENFORCED"
 
 evidence_refs:
+  - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R4-DECISION"
+    type: "GOV_E4_INDEPENDENT_VERIFIER"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R4_ACCEPTANCE_DECISION.md"
+  - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R4-VERIF"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R4_INDEPENDENT_VERIFICATION.md"
+  - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R4"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R4_SYNTHESIS_REPORT.md"
+  - id: "EVID-CLM-040"
+    claim_id: "CLM-040"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_OPENAI_B1_REASSESSMENT_R4_REACHABILITY_AND_STRESS_GATE.md"
   - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R3-DECISION"
     type: "GOV_E4_INDEPENDENT_VERIFIER"
     artifact: "NS_OPENAI_B1_REASSESSMENT_R3_ACCEPTANCE_DECISION.md"
@@ -210,6 +227,7 @@ negative_history_refs:
   - "NEG-EV-043"
   - "NEG-EV-044"
   - "NEG-EV-045"
+  - "NEG-EV-046"
 
 blockers: []
 
@@ -220,8 +238,8 @@ known_risks:
     obstruction: "NS-OBS-020A"
   - risk_id: "RISK-AUTONOMOUS-PRECURSOR-PHASE"
     bridge: "Transfer to Statement B"
-    description: "R3-repaired state (CLM-037-B-R3, CLM-038-R2): local two-family stress cone invertibility is restored (det H != 0), but backward realization cost C_{eps,j} diverges super-exponentially for both authentic phases Phi_+ and Phi_- in the affine benchmark. Autonomous pulse generation remains open / obstructed."
-    obstruction: "NS-OBS-020B-R2"
+    description: "R4-resolved state (CLM-040, NS-OBS-020B-R4): on periodic T^3 with local hyperbolic strain, exact compact profile reachability is excluded by real-analyticity, approximate reachability cost explodes super-exponentially (C_{eps,j} >= exp(+c exp(2^{jh}))), and stress-level reachability suffers amplitude collapse (||C(w)|| / ||T*|| <= C 2^{-j(1.5-h)} -> 0). Single-pulse autonomous precursor mechanism is definitively blocked under finite energy."
+    obstruction: "NS-OBS-020B-R4"
   - risk_id: "RISK-EXACT-RESIDUAL-CLOSURE"
     bridge: "Transfer to Statement B"
     description: "All-order flat residual requires non-perturbative solve or internal non-axisymmetric stress closure"

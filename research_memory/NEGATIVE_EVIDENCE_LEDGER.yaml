@@ -418,6 +418,17 @@ negative_evidence:
     mathematical_verdict: "RETRACTED_FALSE_SIMPLIFICATION"
     canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_R3_SOURCE_FAITHFUL_PULSE_COVARIANCE.md"
 
+  # ── R4 PERIODIC REACHABILITY & STRESS COLLAPSE ──────────────────────
+
+  - record_id: "NEG-EV-046"
+    pathway_id: "NS-OPENAI-B1-REASSESSMENT-R4"
+    title: "PERIODIC_LINEARIZED_AUTONOMOUS_REACHABILITY_BARRIER"
+    falsified_hypothesis: "A smooth unforced initial perturbation on T^3 can generate an OpenAI-type two-family localized stress event under periodic linearized Navier-Stokes dynamics with finite initial energy."
+    counterexample_or_proof: "1. For smooth periodic background u_B in C^omega(T^3) matching local hyperbolic strain, exact compact reachability is impossible by the identity theorem. 2. Dual observability lower bound proves approximate reachability cost explodes super-exponentially: C_{eps, j, sigma} >= c_V exp((nu / 16) 2^{-jh} exp(2 * 2^{jh})) -> infty. 3. Stress-level optimization under bounded initial energy ||w_0||_{L^2}^2 <= E_0 proves amplitude collapse: ||C(w)||_{L^1} / ||T_j*||_{L^1} <= C E_0 2^{-j(1.5-h)} -> 0. 4. Perturbations sized to deliver target stress induce dominant nonlinear correction ||v||_{L^2} / ||w||_{L^2} ~ 2^{j(1/2+h)} -> infty, destroying the linear regime."
+    governing_obstruction: "NS-OBS-020B-R4"
+    mathematical_verdict: "FALSIFIED_PERIODIC_AUTONOMOUS_PULSE_REALIZABILITY"
+    canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_R4_SYNTHESIS_REPORT.md"
+
 
 
 

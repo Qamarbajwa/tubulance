@@ -871,4 +871,25 @@ claims:
       project_status: "PROJECT_CANONICAL"
     dependencies: ["CLM-037-A"]
 
+  - claim_id: "CLM-040"
+    claim_type: "MATHEMATICAL_THEOREM"
+    name: "PERIODIC_LINEARIZED_COST_BARRIER_AND_STRESS_COLLAPSE"
+    milestone: "NS-OPENAI-B1-REASSESSMENT-R4"
+    supersedes: "CLM-038-R2"
+    statement: "Let nu > 0, and let u_B be any smooth solenoidal background on T^3 with local hyperbolic strain S(t) = sigma(t) diag(-2, 1, 1), sigma(t) ~ 2^{j(1+h)} on [t_{j-1}, t_j], Delta t_j = 2^{-j}, h in (0, 1/6). (1) For analytic backgrounds u_B in C^omega(T^3), compactly supported pulse profiles b in C_c^infty(B_{R_j}) are strictly excluded from Ran(U_{u_B}(t_j, t_{j-1})) by the identity theorem. (2) For any epsilon in (0, 1), approximate reachability cost explodes super-exponentially: C_{eps, j, sigma} >= c_V (1 - eps)^2 exp((nu / 16) 2^{-jh} exp(2 * 2^{jh})) -> infty. (3) Under any uniform finite initial energy budget ||w_0||_{L^2}^2 <= E_0 < infty, reachable states suffer stress amplitude collapse: ||C(w)||_{L^1} / ||T_j*||_{L^1} <= C E_0 2^{-j(1.5 - h)} -> 0. (4) Sizing perturbations to achieve target stress ||T_j*|| causes catastrophic breakdown of the linear regime: ||v(t_j)||_{L^2} / ||w_{lin}(t_j)||_{L^2} ~ 2^{j(1/2+h)} -> infty."
+    passport:
+      truth_status: "PROVED_THEOREM"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N2_NOT_FOUND_IN_AUDITED_SOURCES"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-037-B-R3", "CLM-039"]
+
 

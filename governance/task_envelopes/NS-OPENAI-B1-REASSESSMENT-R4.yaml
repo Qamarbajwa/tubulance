@@ -1,0 +1,99 @@
+# Task Envelope: NS-OPENAI-B1-REASSESSMENT-R4
+# Periodic Linearized Reachability, Analyticity Repair, and Single-Pulse Autonomous Gate
+
+task_id: "NS-OPENAI-B1-REASSESSMENT-R4"
+title: "Periodic Linearized Reachability, Analyticity Repair, and Single-Pulse Autonomous Gate"
+programme: "OPENAI_NAVIER_STOKES_UNFORCED_TRANSFER"
+parent: "NS-OPENAI-B1-REASSESSMENT-R3"
+governance: "UNIVERSAL_GOVERNANCE_MINIMAL_v4.0.3"
+mathematical_authority: "Mathematical Research Constitution v1.0.1"
+risk_ceiling: "R3"
+state: "COMPLETED"
+created_at: "2026-09-25T23:30:00Z"
+completed_at: "2026-09-26T01:35:00Z"
+
+target:
+  domain: "T^3, nu > 0, f = 0"
+  clay_statement_b: "UNRESOLVED"
+  release_state: "NO-GO"
+  b2_status: "BLOCKED"
+
+controlling_question: |
+  For the actual periodic linearized dynamics, can finite-energy smooth initial data
+  generate one required two-family stress event without external forcing?
+
+verdict: "PERIODIC_COST_BARRIER_PROVED"
+
+mission: |
+  Audit and repair the R3 spatial analyticity claim across Sobolev, Gevrey, and Analytic background
+  classes. Construct an authentic divergence-free periodic background model on T^3 with local
+  hyperbolic straining. Formulate the periodic linearized evolution family, its adjoint, and
+  observability Gramian. Analyze exact vs approximate reachability, singular values, two-pulse
+  pair generation, and stress-level optimization. Quantify nonlinear corrections and lock a
+  rigorous final verdict among the mandated options.
+
+sections:
+  - id: S1
+    title: "Analyticity claim audit & coefficient regularity repair"
+    status: "DONE"
+  - id: S2
+    title: "Exact linearized evolution family on periodic T^3"
+    status: "DONE"
+  - id: S3
+    title: "Periodic background flow model & local surrogate audit"
+    status: "DONE"
+  - id: S4
+    title: "Authentic pulse targets & two-family structure"
+    status: "DONE"
+  - id: S5
+    title: "Exact reachability & range restrictions"
+    status: "DONE"
+  - id: S6
+    title: "Approximate reachability cost in periodic operator"
+    status: "DONE"
+  - id: S7
+    title: "Adjoint evolution, observability Gramian, and singular values"
+    status: "DONE"
+  - id: S8
+    title: "Periodic Kelvin-like benchmark vs affine model"
+    status: "DONE"
+  - id: S9
+    title: "Two-pulse pair simultaneous reachability"
+    status: "DONE"
+  - id: S10
+    title: "Stress-level reachability & optimization formulation"
+    status: "DONE"
+  - id: S11
+    title: "Nonlinear one-pulse perturbation gate"
+    status: "DONE"
+  - id: S12
+    title: "Visual research companion (Panels A-D)"
+    status: "DONE"
+  - id: S13
+    title: "Final verdict & synthesis"
+    status: "DONE"
+
+deliverables:
+  - "NS_OPENAI_B1_REASSESSMENT_R4_ANALYTICITY_REPAIR_AND_OPERATOR.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R4_PERIODIC_MODEL_AND_OBSERVABILITY.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R4_REACHABILITY_AND_STRESS_GATE.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R4_VISUAL_RESEARCH_COMPANION.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R4_SYNTHESIS_REPORT.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R4_INDEPENDENT_VERIFICATION.md"
+  - "NS_OPENAI_B1_REASSESSMENT_R4_ACCEPTANCE_DECISION.md"
+  - "tests/test_ns_openai_b1_reassessment_r4_suite.py"
+
+immutable_records:
+  - "7a949f425a5f05cc21f699bce04f3392a0026b92"
+  - "2693d866a15eaeb9cf549fe74db49893d50aa89c"
+  - "fce49a5b3a62ea2f9d89cbdd5a5fa59bcaee88bc"
+  - "6352e8c1bcf6a1da2c0ec763a6e60b1e1cbef5f7"
+  - "c066c44679decb50af3bd21f4b36ced373a5e593"
+  - "b34b46a"
+  - "6fc044a"
+
+hard_gates:
+  - clay_b_unresolved: true
+  - release_no_go: true
+  - history_immutable: true
+  - writer_anti_self_acceptance: true
