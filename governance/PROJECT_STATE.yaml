@@ -7,7 +7,7 @@ project:
   id: "tubulance"
   name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
   root: "D:/Comfy UI/tubulance"
-  head: "aa798cf8554cde763f9797e0d8915286a9616794"
+  head: "e720d512660fcc6dc8c3e6b2da7730b5668eb2d3"
   dirty: "DIRTY_KNOWN"
   branch: "main"
 
@@ -23,10 +23,10 @@ governance_binding:
 coordination:
   state_writer: "antigravity-primary-agent"
   serialization_method: "REVISION_COMPARE_AND_SWAP"
-  last_expected_revision: 14
-  last_updated_at: "2026-09-09T00:26:00Z"
+  last_expected_revision: 15
+  last_updated_at: "2026-09-25T13:37:00Z"
   active_contract: "NS-GOV-MIG-V403-001"
-  frozen_candidate: "aa798cf8554cde763f9797e0d8915286a9616794"
+  frozen_candidate: "e720d512660fcc6dc8c3e6b2da7730b5668eb2d3"
 
 
 epistemic_status:
@@ -232,7 +232,7 @@ release:
   candidate: null
   reason: "PURE_MATHEMATICAL_RESEARCH_PROGRAM_CLAY_B_UNRESOLVED"
 
-last_verified_checkpoint: "aa798cf8554cde763f9797e0d8915286a9616794"
+last_verified_checkpoint: "e720d512660fcc6dc8c3e6b2da7730b5668eb2d3"
 
 overhead:
   routine_target_fraction: 0.10
