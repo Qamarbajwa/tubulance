@@ -1,0 +1,20 @@
+{
+  "migration_id": "NS-GOV-MIG-V404-001",
+  "migration_status": "MIGRATION_BLOCKED",
+  "pre_migration_head": "ab4fad5517903740c974ed450d0fc22b29c14306",
+  "remote_origin_main": "ab4fad5517903740c974ed450d0fc22b29c14306",
+  "active_governance_version": "UNIVERSAL_GOVERNANCE_MINIMAL_v4.0.3",
+  "mathematical_constitution_version": "v1.0.1",
+  "source_package_v4_0_4_status": "MISSING_ON_FILESYSTEM",
+  "watched_candidate_v4_0_6_r3_sha256": "1200e60450d1d2f13dc607ec82101cdfcbe6690020645fb6db0ac0c7f8140ccc",
+  "rollback_preimages_sha256": {
+    "governance/GOVERNANCE.md": "6397ac189cf00536a1988fc50e83643078d692ad5c3fc7a0bbeac11a627a9cb6",
+    "governance/PROJECT_DIRECTION.md": "c6b515f1a01f51b5f19bc53e539e0c4e19b47d68d19c2c9696daa794b30e9ead",
+    "governance/PROJECT_STATE.yaml": "fb474fa7721d7c59298304654e41b249f82894fd740bbfe4fad06eb0150bb61d",
+    "governance/packet/v4.0.3/MANIFEST.sha256.json": "1474b24bf1de6e5dfa7c27328066593a562e011d6be0dc33b56050541ffd4983",
+    "mathematical_constitution/MATHEMATICAL_RESEARCH_CONSTITUTION.md": "d8b9198b3849042591ddaf509fae1f705bf9b84792d1bcef0250bb7b8e857a1c",
+    "mathematical_constitution/CLAIM_REGISTRY.yaml": "92a5b37686041b8cf6bcd5089030b90096c76926adc00ac7213b8ca88436e041",
+    "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml": "78ef01b2e56b22c8906e30470594221c63ee829ffcebfa46cb459ba1c1affca4",
+    "research_memory/RESEARCH_OBSTRUCTION_REGISTRY.yaml": "27a46dbff9ac6e0067289d4e55a9030b1fc32ed5fd0d7ec89974b7aeaf62a2c8"
+  }
+}

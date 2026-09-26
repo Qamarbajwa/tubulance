@@ -1,0 +1,299 @@
+# Staged Candidate Operational State (NON-ACTIVE) — tubulance
+# Status: MIGRATION_BLOCKED pending canonical UNIVERSAL_GOVERNANCE_MINIMAL_v4.0.4.zip verification
+schema_version: 4.0.4
+revision: 18
+activation: STAGED_CANDIDATE_MIGRATION_BLOCKED
+project:
+  id: tubulance
+  name: 3D Navier-Stokes Stochastic Persistence & Regularity Program
+  root: D:/Comfy UI/tubulance
+  head: ab4fad5517903740c974ed450d0fc22b29c14306
+  dirty: DIRTY_KNOWN
+  branch: main
+governance_binding:
+  active_version: 4.0.3
+  staged_target_version: 4.0.4
+  migration_status: MIGRATION_BLOCKED
+  migration_blocker_reason: UNIVERSAL_GOVERNANCE_MINIMAL_v4.0.4.zip physically absent
+    from local filesystem; source digest and package integrity cannot be verified;
+    distinct third-role cutover acceptance pending
+  governance_standard: Universal Governance Minimal v4.0.4 (Staged Candidate)
+  constitutional_standard: Mathematical Research Constitution v1.0.1
+  adoption_mode: MIGRATION_GOVERNED
+  source_manifest_ref: PENDING_V404_SOURCE_PACKAGE
+  project_binding_ref: governance/GOVERNANCE.md#section-13
+  watched_candidate_package:
+    name: UNIVERSAL_GOVERNANCE_MINIMAL_v4.0.6-r3_CANDIDATE
+    sha256: 1200e60450d1d2f13dc607ec82101cdfcbe6690020645fb6db0ac0c7f8140ccc
+    status: CANDIDATE / REVIEWED WITH FINDINGS / DISTINCT ACCEPTANCE PENDING / NOT
+      CANONICAL
+coordination:
+  state_writer: antigravity-primary-agent
+  serialization_method: REVISION_COMPARE_AND_SWAP
+  last_expected_revision: 17
+  last_updated_at: '2026-09-26T02:26:00Z'
+  active_contract: NS-GOV-MIG-V404-001
+  frozen_candidate: ab4fad5517903740c974ed450d0fc22b29c14306
+epistemic_status:
+  target_problem: Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)
+  clay_statement_b_status: UNRESOLVED
+  scientific_program_status: NS-OPENAI-B1-REASSESSMENT-R4_PERIODIC_COST_BARRIER_PROVED
+  active_milestone: NS-OPENAI-B1-REASSESSMENT-R4
+  ns_openai_b2_status: BLOCKED
+current_objective:
+  id: NS-OPENAI-B1-REASSESSMENT-R4
+  title: Periodic Linearized Reachability, Analyticity Repair, and Single-Pulse Autonomous
+    Gate
+  target_bridge: Transfer to Unforced Periodic Statement B (f = 0)
+  risk: R3
+  status: COMPLETED_PERIODIC_COST_BARRIER_PROVED
+  dependencies:
+  - NS-OPENAI-B1-REASSESSMENT-R3
+hard_gates:
+  clay_statement_b_unresolved: PASS_ENFORCED
+  ns_openai_b2_blocked: PASS_ENFORCED
+  dag_cycle_count: 0_CYCLES_PASS
+  claim_passport_census: 44_OF_44_VALID_PASS
+  negative_evidence_retention: 47_OF_47_PRESERVED_PASS
+  structural_obstruction_retention: 24_OF_24_PRESERVED_PASS
+  writer_anti_self_acceptance: PASS_ENFORCED
+  unscaled_scalar_bounds_prohibited: PASS_ENFORCED
+release:
+  state: NO-GO
+  eligible: false
+  deployment_authorized: false
+  deployment_authority: NONE
+  candidate: null
+  reason: PURE_MATHEMATICAL_RESEARCH_PROGRAM_CLAY_B_UNRESOLVED
+objectives:
+- id: NS-OPENAI-B1-REASSESSMENT-R4
+  title: Periodic Linearized Reachability, Analyticity Repair, and Single-Pulse Autonomous
+    Gate
+  status: ACCEPTED_AS_CANONICAL_PERIODIC_COST_BARRIER
+  evidence_ref: NS_OPENAI_B1_REASSESSMENT_R4_ACCEPTANCE_DECISION.md
+- id: NS-OPENAI-B1-REASSESSMENT-R3
+  title: Source-Faithful Pulse Covariance, Analyticity, and Remaining Reachability
+    Repair
+  status: ACCEPTED_AS_CANONICAL_ADVERSARIAL_REPAIR
+  evidence_ref: NS_OPENAI_B1_REASSESSMENT_R3_ACCEPTANCE_DECISION.md
+- id: NS-OPENAI-B1-REASSESSMENT-R2
+  title: Structural No-Go Theorem — Adversarial Repair
+  status: ACCEPTED_AS_CANONICAL_ADVERSARIAL_REPAIR
+  evidence_ref: NS_OPENAI_B1_REASSESSMENT_R2_ACCEPTANCE_DECISION.md
+- id: NS-OPENAI-B1-REASSESSMENT-R1
+  title: Quantitative Localization–Backward-Diffusion Barrier Verification
+  status: ACCEPTED_AS_CANONICAL_VERIFICATION
+  evidence_ref: NS_OPENAI_B1_REASSESSMENT_R1_ACCEPTANCE_DECISION.md
+- id: NS-OPENAI-B1-REASSESSMENT
+  title: Single-Pulse Autonomous Entrance-State Problem
+  status: ACCEPTED_AS_CANONICAL_OBSTRUCTION_ASSESSMENT
+  evidence_ref: NS_OPENAI_B1_REASSESSMENT_ACCEPTANCE_DECISION.md
+- id: NS-OPENAI-B1-R1
+  title: Autonomous Precursor Cascade Realizability Re-Audit
+  status: ACCEPTED_AS_CANONICAL_REAUDIT
+  evidence_ref: NS_OPENAI_B1_R1_ACCEPTANCE_DECISION.md
+- id: NS-OPENAI-B1
+  title: Autonomous Multiscale Precursor Cascade Programme
+  status: ACCEPTED_AS_CANONICAL_MILESTONE
+  evidence_ref: NS_OPENAI_B1_ACCEPTANCE_DECISION.md
+- id: NS-EXT-OPENAI-001-R1
+  title: OpenAI Navier–Stokes Transfer Barrier Scientific Repair
+  status: ACCEPTED_AS_CANONICAL_SCIENTIFIC_REPAIR
+  evidence_ref: NS_EXT_OPENAI_001_R1_ACCEPTANCE_DECISION.md
+- id: NS-EXT-OPENAI-001
+  title: OpenAI Navier–Stokes Blowup Mechanism Assimilation and Unforced Periodic
+    Transfer Audit
+  status: ACCEPTED_AS_CANONICAL_ASSIMILATION_MILESTONE
+  evidence_ref: NS_EXT_OPENAI_001_ACCEPTANCE_DECISION.md
+- id: TP2-G6-C1
+  title: Two-Particle Relative Dispersion, Common-Mode Cancellation, and Stochastic
+    Jet Foundation
+  status: ACCEPTED_AS_CANONICAL_MILESTONE
+  evidence_ref: TP2_G6_C1_ACCEPTANCE_DECISION.md
+- id: TP2-G6-A2
+  title: Scale-Critical Transport, Parabolic Regularity Envelopes, and Stochastic
+    Push-Forward Measure Bounds
+  status: ACCEPTED_AS_CANONICAL_MILESTONE
+  evidence_ref: TP2_G6_A2_ACCEPTANCE_DECISION.md
+- id: TP2-G6-A1
+  title: Pressure-Strain Phase Coupling, Poisson Balance, and Calderon-Zygmund Limits
+  status: ACCEPTED_AS_CANONICAL_MILESTONE
+  evidence_ref: TP2_G6_A1_ACCEPTANCE_DECISION.md
+- id: TP2-G6-B-R2
+  title: Scientific Claim Audit and Repair
+  status: ACCEPTED_AS_CANONICAL_CORRECTIVE_INCREMENT
+  evidence_ref: TP2_G6_B_R2_ACCEPTANCE_DECISION.md
+- id: TP2-G6-B-R1
+  title: Rigid-Branch Adversarial Attack
+  status: ACCEPTED_AS_CANONICAL_BOUNDED_INCREMENT
+  evidence_ref: TP2_G6_B_R1_ACCEPTANCE_DECISION.md
+capabilities:
+  CAP-NS-ANALYTICS:
+    status: VERIFIED_ANALYTICAL
+    scope: Exact PDEs, Okubo-Weiss pressure Poisson balance, Riesz Hessian
+    evidence_refs:
+    - TP2_G6_A1_SYNTHESIS_REPORT.md
+  CAP-NS-STOCHASTIC:
+    status: VERIFIED_MARTINGALE
+    scope: Lagrangian Cauchy representation, forwardized Ito enstrophy identity
+    evidence_refs:
+    - TP2_G3_FORWARDIZED_MARTINGALE_CONTRACT.md
+  CAP-NS-ASSURANCE:
+    status: VERIFIED_AUTOMATED
+    scope: MathAssuranceEngine claim census, passport validation, DAG cycle detection
+    evidence_refs:
+    - tests/test_tp2_g6_a1_suite.py
+evidence_refs:
+- id: EVID-NS-OPENAI-B1-REASSESSMENT-R4-DECISION
+  type: GOV_E4_INDEPENDENT_VERIFIER
+  artifact: NS_OPENAI_B1_REASSESSMENT_R4_ACCEPTANCE_DECISION.md
+- id: EVID-NS-OPENAI-B1-REASSESSMENT-R4-VERIF
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_R4_INDEPENDENT_VERIFICATION.md
+- id: EVID-NS-OPENAI-B1-REASSESSMENT-R4
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_R4_SYNTHESIS_REPORT.md
+- id: EVID-CLM-040
+  claim_id: CLM-040
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_R4_REACHABILITY_AND_STRESS_GATE.md
+- id: EVID-NS-OPENAI-B1-REASSESSMENT-R3-DECISION
+  type: GOV_E4_INDEPENDENT_VERIFIER
+  artifact: NS_OPENAI_B1_REASSESSMENT_R3_ACCEPTANCE_DECISION.md
+- id: EVID-NS-OPENAI-B1-REASSESSMENT-R3-VERIF
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_R3_INDEPENDENT_VERIFICATION.md
+- id: EVID-NS-OPENAI-B1-REASSESSMENT-R3
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_R3_SYNTHESIS_REPORT.md
+- id: EVID-CLM-037-B-R3
+  claim_id: CLM-037-B-R3
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_R3_SOURCE_FAITHFUL_PULSE_COVARIANCE.md
+- id: EVID-NS-OPENAI-B1-REASSESSMENT-R2-DECISION
+  type: GOV_E4_INDEPENDENT_VERIFIER
+  artifact: NS_OPENAI_B1_REASSESSMENT_R2_ACCEPTANCE_DECISION.md
+- id: EVID-NS-OPENAI-B1-REASSESSMENT-R2-VERIF
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_R2_INDEPENDENT_VERIFICATION.md
+- id: EVID-NS-OPENAI-B1-REASSESSMENT-R2
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_R2_SYNTHESIS_REPORT.md
+- id: EVID-CLM-039
+  claim_id: CLM-039
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_R2_DENSE_RANGE_COUNTEREXAMPLE.md
+- id: EVID-CLM-038-R2
+  claim_id: CLM-038-R2
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_R2_SYNTHESIS_REPORT.md
+- id: EVID-NS-OPENAI-B1-REASSESSMENT-R1
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_R1_SYNTHESIS_REPORT.md
+- id: EVID-NS-OPENAI-B1-REASSESSMENT
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_SYNTHESIS_REPORT.md
+- id: EVID-CLM-038
+  claim_id: CLM-038
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_UNCERTAINTY_BARRIER.md
+- id: EVID-CLM-037-A
+  claim_id: CLM-037-A
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_CLM037_SCOPE.md
+- id: EVID-CLM-037-B
+  claim_id: CLM-037-B
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_REASSESSMENT_CLM037_SCOPE.md
+- id: EVID-NS-OPENAI-B1-R1
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_R1_SYNTHESIS_REPORT.md
+- id: EVID-NS-OPENAI-B1
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_SYNTHESIS_REPORT.md
+- id: EVID-CLM-036
+  claim_id: CLM-036
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_OPENAI_B1_SYNTHESIS_REPORT.md
+- id: EVID-NS-EXT-OPENAI-001-R1
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_EXT_OPENAI_001_R1_SYNTHESIS_REPORT.md
+- id: EVID-NS-EXT-OPENAI-001
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_EXT_OPENAI_001_SYNTHESIS_REPORT.md
+- id: EVID-CLM-035
+  claim_id: CLM-035
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: TP2_G6_C1_SYNTHESIS_REPORT.md
+- id: EVID-CLM-033
+  claim_id: CLM-033
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: TP2_G6_A1_SYNTHESIS_REPORT.md
+- id: EVID-TESTS-400
+  type: GOV_E3_REPRODUCIBLE
+  result: 400_PASSED
+  suite: pytest -k 'tp2 or math_assurance or openai'
+negative_history_refs:
+- NEG-EV-001
+- NEG-EV-035
+- NEG-EV-036
+- NEG-EV-038
+- NEG-EV-039
+- NEG-EV-040
+- NEG-EV-041
+- NEG-EV-042
+- NEG-EV-043
+- NEG-EV-044
+- NEG-EV-045
+- NEG-EV-046
+blockers: []
+known_risks:
+- risk_id: RISK-DIRECT-PRELOAD-DAMPING
+  bridge: Transfer to Statement B
+  description: Preloading future pulses at final frequency is destroyed by exp(-nu
+    2^j); low-frequency precursor route P1 survives
+  obstruction: NS-OBS-020A
+- risk_id: RISK-AUTONOMOUS-PRECURSOR-PHASE
+  bridge: Transfer to Statement B
+  description: 'R4-resolved state (CLM-040, NS-OBS-020B-R4): on periodic T^3 with
+    local hyperbolic strain, exact compact profile reachability is excluded by real-analyticity,
+    approximate reachability cost explodes super-exponentially (C_{eps,j} >= exp(+c
+    exp(2^{jh}))), and stress-level reachability suffers amplitude collapse (||C(w)||
+    / ||T*|| <= C 2^{-j(1.5-h)} -> 0). Single-pulse autonomous precursor mechanism
+    is definitively blocked under finite energy.'
+  obstruction: NS-OBS-020B-R4
+- risk_id: RISK-EXACT-RESIDUAL-CLOSURE
+  bridge: Transfer to Statement B
+  description: All-order flat residual requires non-perturbative solve or internal
+    non-axisymmetric stress closure
+  obstruction: NS-OBS-020C
+- risk_id: RISK-COUPLING-DUALITY
+  bridge: B2 / B3
+  description: C-SYNC preserves flow jet limit but has zero relative diffusion (rank
+    1); C-IND has rank 3 Brownian diffusion but diverges as h^-1 destroying flow derivative
+  obstruction: NS-OBS-019
+- risk_id: RISK-MEASURE-GAP
+  bridge: B2
+  description: Eulerian Lp bounds decouple from Lagrangian push-forward measure mu_s
+    unless BKM integrability assumed
+  obstruction: NS-OBS-017
+reserved_actions:
+- VCS force-push
+- Rewriting historical Git commits
+- Deleting sealed manifests or negative evidence
+- Declaring Clay Statement B resolved
+- Commercial release or external deployment
+last_verified_checkpoint: 17714e55e8d61bb4f326ce94f045f6723be770a2
+overhead:
+  routine_target_fraction: 0.1
+  measurement: TIME_OR_WORD_PROXY
+  governance_active_minutes: null
+  total_active_minutes: null
+  proxy_word_fraction: null
+  exceptions:
+  - id: EXC-MIG-V403
+    reason: One-time high-assurance governance kernel migration (R3)
+views:
+  last_validated_revision: 1
+  evidence_refs:
+  - governance/evidence/NS-GOV-MIG-V403-001-packet.json
