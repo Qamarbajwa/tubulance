@@ -892,4 +892,25 @@ claims:
       project_status: "PROJECT_CANONICAL"
     dependencies: ["CLM-037-B-R3", "CLM-039"]
 
+  - claim_id: "CLM-041"
+    claim_type: "MATHEMATICAL_PROPOSITION"
+    name: "CONDITIONAL_SCALE_SHRINKING_ENSTROPHY_AMPLIFICATION_AND_DYADIC_BOUND"
+    milestone: "NS-NONLINEAR-SELF-FOCUS-001"
+    statement: "For any smooth unforced solution u in C^infty([0,T] x T^3) of 3D incompressible Navier-Stokes with nu > 0, f = 0, and ||omega(t)||_{L^2(T^3)} > 0, let bar_ell_omega(t) = ||omega(t)||_{L^2} / ||grad omega(t)||_{L^2} in (0, 1] be the global active dissipation length scale and bar_lambda_omega(t) = P(t) / ||omega(t)||_{L^2}^2 be the enstrophy-weighted signed stretching rate. Then: (1) A(t) = P(t)/D(t) = bar_lambda_omega(t) bar_ell_omega(t)^2 / nu is an exact identity; (2) whenever instantaneous enstrophy growth occurs (A(t) > 1), the positive stretching rate lambda_1^+(t) satisfies lambda_1^+(t) bar_ell_omega(t)^2 / nu >= A(t) > 1, bracketing bar_ell_omega(t) in [sqrt(nu A(t) / lambda_1^+(t)), 1]; (3) at least half of the global palinstrophy dissipation D(t) resides in dyadic shells q >= Q_*(t) = max(0, floor((1/2) log_2(1 / (2 bar_ell_omega(t)^2)))), requiring high-shell nonlinear production sum_{q >= Q_*} (T_q^{adv} + P_q^{stretch}) >= D(t)/2 whenever high-shell enstrophy is non-decreasing; and (4) the Beltrami-subtracted Lagrangian production omega . S omega - (1/2)(u . grad)|omega|^2 = omega . (curl(u x omega)) vanishes identically on all Beltrami/ABC flows while integrating globally to P(t)."
+    passport:
+      truth_status: "PROVED_THEOREM"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N1_PROJECT_REFORMULATION"
+      significance: "S2_MAJOR_PROJECT_RESULT"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-033"]
+
+
 

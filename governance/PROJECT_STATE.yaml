@@ -1,13 +1,13 @@
 # Live Operational State — tubulance
 schema_version: "4.0.3"
-revision: 17
+revision: 18
 activation: "ACTIVE"
 
 project:
   id: "tubulance"
   name: "3D Navier-Stokes Stochastic Persistence & Regularity Program"
   root: "D:/Comfy UI/tubulance"
-  head: "6fc044a"
+  head: "2bca1bd"
   dirty: "DIRTY_KNOWN"
   branch: "main"
 
@@ -23,27 +23,34 @@ governance_binding:
 coordination:
   state_writer: "antigravity-primary-agent"
   serialization_method: "REVISION_COMPARE_AND_SWAP"
-  last_expected_revision: 16
-  last_updated_at: "2026-09-26T01:35:00Z"
+  last_expected_revision: 17
+  last_updated_at: "2026-09-27T13:15:00Z"
   active_contract: "NS-GOV-MIG-V403-001"
-  frozen_candidate: "6fc044a"
+  frozen_candidate: "2bca1bd"
 
 
 epistemic_status:
   target_problem: "Clay Millennium Prize Problem Statement B on T^3 (nu > 0, f = 0)"
   clay_statement_b_status: "UNRESOLVED"
-  scientific_program_status: "NS-OPENAI-B1-REASSESSMENT-R4_PERIODIC_COST_BARRIER_PROVED"
-  active_milestone: "NS-OPENAI-B1-REASSESSMENT-R4"
+  openai_unforced_transfer_branch_status: "COMPLETED_NEGATIVE_RESEARCH_BRANCH"
+  ns_openai_b2_status: "BLOCKED"
+  governance_migration_v404_status: "MIGRATION_BLOCKED"
+  scientific_program_status: "NS-NONLINEAR-SELF-FOCUS-001_PROMISING_SCALE_LOCAL_ROUTE"
+  active_milestone: "NS-NONLINEAR-SELF-FOCUS-001"
 
 current_objective:
-  id: "NS-OPENAI-B1-REASSESSMENT-R4"
-  title: "Periodic Linearized Reachability, Analyticity Repair, and Single-Pulse Autonomous Gate"
-  target_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
+  id: "NS-NONLINEAR-SELF-FOCUS-001"
+  title: "Forward Non-Perturbative Self-Focusing Mechanisms in Unforced Periodic 3D Navier–Stokes"
+  target_bridge: "Forward Scale-Local Dyadic Self-Focusing on T^3 (nu > 0, f = 0)"
   risk: "R3"
-  status: "COMPLETED_PERIODIC_COST_BARRIER_PROVED"
-  dependencies: ["NS-OPENAI-B1-REASSESSMENT-R3"]
+  status: "COMPLETED_PROMISING_SCALE_LOCAL_ROUTE"
+  dependencies: ["NS-OPENAI-B1-REASSESSMENT-R4"]
 
 objectives:
+  - id: "NS-NONLINEAR-SELF-FOCUS-001"
+    title: "Forward Non-Perturbative Self-Focusing Mechanisms in Unforced Periodic 3D Navier–Stokes"
+    status: "ACCEPTED_AS_CANONICAL_SCALE_LOCAL_FOUNDATION"
+    evidence_ref: "NS_NONLINEAR_SELF_FOCUS_001_INDEPENDENT_REVIEW.md"
   - id: "NS-OPENAI-B1-REASSESSMENT-R4"
     title: "Periodic Linearized Reachability, Analyticity Repair, and Single-Pulse Autonomous Gate"
     status: "ACCEPTED_AS_CANONICAL_PERIODIC_COST_BARRIER"
@@ -118,13 +125,23 @@ capabilities:
 hard_gates:
   clay_statement_b_unresolved: "PASS_ENFORCED"
   dag_cycle_count: "0_CYCLES_PASS"
-  claim_passport_census: "44_OF_44_VALID_PASS"
-  negative_evidence_retention: "47_OF_47_PRESERVED_PASS"
-  structural_obstruction_retention: "24_OF_24_PRESERVED_PASS"
+  claim_passport_census: "45_OF_45_VALID_PASS"
+  negative_evidence_retention: "48_OF_48_PRESERVED_PASS"
+  structural_obstruction_retention: "25_OF_25_PRESERVED_PASS"
   writer_anti_self_acceptance: "PASS_ENFORCED"
   unscaled_scalar_bounds_prohibited: "PASS_ENFORCED"
 
 evidence_refs:
+  - id: "EVID-NS-OPENAI-UNFORCED-BRANCH-CLOSURE"
+    type: "GOV_E4_INDEPENDENT_VERIFIER"
+    artifact: "NS_OPENAI_UNFORCED_TRANSFER_BRANCH_CLOSURE.md"
+  - id: "EVID-NS-NONLINEAR-SELF-FOCUS-001-REVIEW"
+    type: "GOV_E4_INDEPENDENT_VERIFIER"
+    artifact: "NS_NONLINEAR_SELF_FOCUS_001_INDEPENDENT_REVIEW.md"
+  - id: "EVID-CLM-041"
+    claim_id: "CLM-041"
+    type: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+    artifact: "NS_NONLINEAR_SELF_FOCUS_001_FIRST_HYPOTHESES.md"
   - id: "EVID-NS-OPENAI-B1-REASSESSMENT-R4-DECISION"
     type: "GOV_E4_INDEPENDENT_VERIFIER"
     artifact: "NS_OPENAI_B1_REASSESSMENT_R4_ACCEPTANCE_DECISION.md"
@@ -228,10 +245,15 @@ negative_history_refs:
   - "NEG-EV-044"
   - "NEG-EV-045"
   - "NEG-EV-046"
+  - "NEG-EV-047"
 
 blockers: []
 
 known_risks:
+  - risk_id: "RISK-CURVATURE-PALINSTROPHY-PENALTY"
+    bridge: "Forward Scale-Local Dyadic Self-Focusing on T^3"
+    description: "By ell_omega^{-2} = |grad ln|omega||^2 + |grad xi|^2, directional curvature |grad xi| >= c/ell_omega required to overcome Constantin-Fefferman depletion injects direct palinstrophy dissipation nu |omega|^2 |grad xi|^2, while axial strain requires negative nonlocal pressure Hessian Xi[omega] < 0."
+    obstruction: "NS-OBS-021"
   - risk_id: "RISK-DIRECT-PRELOAD-DAMPING"
     bridge: "Transfer to Statement B"
     description: "Preloading future pulses at final frequency is destroyed by exp(-nu 2^j); low-frequency precursor route P1 survives"

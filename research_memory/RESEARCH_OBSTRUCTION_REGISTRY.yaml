@@ -226,3 +226,15 @@ obstructions:
     mathematical_core: "Divergence-free periodic background u_B on T^3 with local hyperbolic stagnation strain S(t); dual parabolic observability Gramian singular spectrum; stress-level Cauchy-Schwarz amplitude decay; Duhamel nonlinear correction explosion."
     known_bypasses_or_relaxations: ["None for unforced autonomous linear precursor mechanism on T^3; external forcing f != 0 or fully non-perturbative boundary-driven mechanisms required."]
     status: "PROVED_STRUCTURAL_OBSTRUCTION"
+
+  # ── NS-NONLINEAR-SELF-FOCUS-001 SCALE-LOCAL SELF-FOCUSING GATE ───────
+  - obstruction_id: "NS-OBS-021"
+    name: "DIRECTION_CURVATURE_PALINSTROPHY_PENALTY_AND_NONLOCAL_PRESSURE_GATE"
+    milestone: "NS-NONLINEAR-SELF-FOCUS-001"
+    description: "In forward nonlinear self-focusing on T^3 (f = 0), two coupled exact structural barriers constrain sustained scale contraction ell_omega(t) -> 0 with A(t) > 1: (1) Orthogonal gradient decomposition ell_omega^{-2} = |grad ln|omega||^2 + |grad xi|^2 forces any multi-directional vorticity curvature |grad xi| >= c/ell_omega needed to evade Constantin-Fefferman geometric depletion D(y_hat, xi(x), xi(x-y)) to inject a direct viscous palinstrophy penalty nu |omega|^2 |grad xi|^2 into D(t); (2) In the Ohkitani-Vieillefosse axial strain evolution (d_t + u.grad)lambda_omega = |S xi|^2 - 2 lambda_omega^2 - xi^T (grad grad p) xi + nu-terms, the local vorticity source (1/4)(omega_i omega_j - |omega|^2 delta_{ij}) vanishes identically along xi, requiring sustained negative nonlocal pressure-Hessian projection Xi[omega] = omega_i (d_i d_j p) omega_j < 0 across shrinking dyadic scales."
+    first_encountered_in: "NS-NONLINEAR-SELF-FOCUS-001"
+    affected_pathways: ["NS-NONLINEAR-SELF-FOCUS-001"]
+    mathematical_core: "Exact identity ell_omega^{-2} = |grad ln|omega||^2 + |grad xi|^2 coupled with Constantin-Fefferman singular integral kernel |D(y_hat, xi_1, xi_2)| <= |xi_1 - xi_2| and Ohkitani-Vieillefosse local cancellation xi_i xi_j (omega_i omega_j - |omega|^2 delta_{ij}) == 0."
+    known_bypasses_or_relaxations: ["Scale-local dyadic triad interactions (q-1, q, q+1) among antiparallel or orthogonal colliding vortex tubes generating negative axial pressure curvature Xi[omega_q] < 0 while maintaining lambda_1^+(t) bar_ell_omega(t)^2 / nu >= A(t) > 1 (PROMISING_SCALE_LOCAL_ROUTE)."]
+    status: "OPEN_STRUCTURAL_OBSTRUCTION"
+

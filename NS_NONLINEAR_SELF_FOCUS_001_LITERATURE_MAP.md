@@ -1,0 +1,50 @@
+# NS_NONLINEAR_SELF_FOCUS_001_LITERATURE_MAP
+
+## Primary-Source Literature Map and Novelty Audit for Forward Self-Focusing Mechanisms (`NS-NONLINEAR-SELF-FOCUS-001`, Sections 18 & 22)
+
+| Field | Value |
+| :--- | :--- |
+| **Programme ID** | `NS-NONLINEAR-SELF-FOCUS-001` |
+| **Locked Target** | Unforced 3D Incompressible Navier–Stokes on $\mathbb{T}^3$, $\nu > 0$, $f \equiv 0$ |
+| **Clay Statement B** | `UNRESOLVED` |
+| **Release / Deployment** | `NO-GO` / `NONE` |
+| **`NS-OPENAI-B2` Status** | `BLOCKED` |
+| **Active Governance** | `UNIVERSAL_GOVERNANCE_MINIMAL_v4.0.3` (`NS-GOV-MIG-V404-001 = MIGRATION_BLOCKED`) |
+| **Mathematical Authority** | `Mathematical Research Constitution v1.0.1` |
+
+---
+
+## 1. Epistemic Classification Standard (Section 18)
+
+In compliance with `Mathematical Research Constitution v1.0.1` (Anti-Rediscovery & Novelty Discipline), every mathematical theorem, diagnostic, and regularity criterion in `NS-NONLINEAR-SELF-FOCUS-001` is audited against primary published literature and classified into one of three disjoint categories:
+- **`KNOWN_THEOREM`**: Established theorem in published peer-reviewed mathematical fluid dynamics literature. Never claimed as original project discovery.
+- **`PROJECT_REFORMULATION`**: Exact algebraic or geometric recasting of known PDE identities into the project's diagnostic notation ($\mathcal{A}(t)$, $\mathscr{S}_\varepsilon(x,t)$, $\ell_\omega(x,t)$, $\mathcal{R}_{\omega,\text{signed}}(x,t)$, $\bar{\ell}_\omega(t)$). Useful for structural unification and falsification testing, with novelty tag `N0_KNOWN_OR_EQUIVALENT` or `N1_STRUCTURAL_REFORMULATION`.
+- **`POSSIBLE_NOVEL_DIRECTION`**: Candidate conditional coupling or diagnostic synthesis (such as combining Beltrami-subtracted Lagrangian production with dyadic active-scale lower bounds and the pressure-strain operator $\Xi[\omega]$) not directly stated in standard textbooks, tagged strictly as `NOT_COMMUNITY_ACCEPTED`.
+
+---
+
+## 2. Primary-Source Literature Comparison Matrix
+
+| # | Classical Criterion / Mechanism | Primary Published References | Exact Mathematical Statement | Relation to `NS-NONLINEAR-SELF-FOCUS-001` Diagnostics | Novelty Classification |
+| :-: | :--- | :--- | :--- | :--- | :---: |
+| **1** | **Prodi–Serrin–Ladyzhenskaya & $L^3_x$ Endpoint Regularity** | Prodi (1959); Serrin (1962); Ladyzhenskaya (1967); Escauriaza, Seregin & Šverák (*Uspekhi Mat. Nauk*, 2003) | Smoothness on $[0,T]$ persists if $u \in L^p_t(0,T; L^q_x)$ with $\frac{2}{p} + \frac{3}{q} \le 1$ ($3 \le q \le \infty$). Both $L^p_t L^q_x$ ($\frac{2}{p}+\frac{3}{q}=1$) and $\sup_t \|u(t)\|_{L^3}$ are invariant ($\lambda^0$) under $u_\lambda(x,t) = \lambda u(\lambda x, \lambda^2 t)$. | Establishes the global scale-invariant benchmark. Note that global energy $\|u\|_{L^\infty_t L^2_x}$ is supercritical ($\lambda^{-1/2}$) whereas global enstrophy $\|\omega\|_{L^2_x}$ scales as $\lambda^{+1/2}$ (subcritical in 3D: bounding $\|\omega\|_{L^\infty_t L^2_x} < \infty$ immediately implies regularity!). | `KNOWN_THEOREM` |
+| **2** | **Beale–Kato–Majda (BKM) Vorticity Criterion** | Beale, Kato & Majda (*Commun. Math. Phys.* 94, 61–66, 1984) | A smooth solution $u$ on $[0,T)$ blows up at $T_*$ if and only if $\int_0^{T_*} \|\omega(t)\|_{L^\infty}\,dt = +\infty$ (refined by Kozono–Taniuchi 2000 to $\|\omega\|_{L^1_t \mathrm{BMO}_x} = \infty$). | Since $\frac{1}{2}(\partial_t + u\cdot\nabla)|\omega|^2 \le \lambda_\omega |\omega|^2$ at a spatial maximum of $|\omega|^2$, BKM requires $\int_0^{T_*} \sup_x \lambda_\omega^+(x,t)\,dt = +\infty$ and simultaneously $\mathcal{R}_{\omega,\text{signed}}(x_*(t),t) = \lambda_\omega \ell_\omega^2/\nu > 1$ along the sequence of amplifying peaks. | `KNOWN_THEOREM` |
+| **3** | **Ponce Strain Criterion & Neustupa–Penel / Miller $\lambda_2^+$ Criteria** | Ponce (*Commun. Math. Phys.* 98, 1985); Neustupa & Penel (*Math. Nachr.*, 2001); Chae (2006); Miller (*Arch. Ration. Mech. Anal.*, 2020) | Regularity holds if $\int_0^{T_*} \|S(t)\|_{L^\infty}\,dt < \infty$ (Ponce), or more sharply if the positive part of the **intermediate strain eigenvalue** satisfies $\lambda_2^+ = \max(\lambda_2, 0) \in L^p_t L^q_x$ with $\frac{2}{p} + \frac{3}{q} = 2$ ($\frac{3}{2} < q \le \infty$). | Directly governs our signed alignment rate $\lambda_\omega = \sum_{i=1}^3 \lambda_i \cos^2\theta_i$ and global production $P(t) = \int \omega \cdot S\omega\,dx$. By Betchov's identity $\int \omega \cdot S\omega\,dx = -4\int \lambda_1\lambda_2\lambda_3\,dx$, sustained global enstrophy growth ($\mathcal{A}(t) > 1$) requires positive intermediate strain $\lambda_2^+ > 0$ (sheet-to-tube biaxial extension). | `KNOWN_THEOREM` |
+| **4** | **Constantin–Fefferman Direction Coherence Criterion** | Constantin & Fefferman (*Indiana Univ. Math. J.* 42, 775–789, 1993); Beirão da Veiga & Berselli (*Diff. Int. Eq.*, 2002) | If on the high-vorticity set $\{|\omega(x,t)| > M\}$, the vorticity direction $\xi = \omega/|\omega|$ satisfies $\|\xi(x,t) - \xi(y,t)\| \le \|x-y\|^\alpha / \rho$ (with $\alpha = 1$ in Constantin–Fefferman, $\alpha = 1/2$ in Beirão da Veiga–Berselli), no blowup can occur. | Directly linked via our Exact Inverse Length-Scale Decomposition $\ell_\omega^{-2} = |\nabla \ln|\omega||^2 + |\nabla\xi|^2$ (Section 4 of Scale-Invariance Audit). Overcoming Constantin–Fefferman depletion forces $|\nabla\xi| \to \infty$, which automatically shrinks $\ell_\omega \le |\nabla\xi|^{-1} \to 0$ and amplifies viscous dissipation $\nu|\nabla\omega|^2 \ge \nu|\omega|^2|\nabla\xi|^2$! | `KNOWN_THEOREM` |
+| **5** | **Grujić–Kukavica Analyticity Radius & Vortex Filament Scale** | Grujić & Kukavica (*J. Funct. Anal.* 152, 447–466, 1998); Bradshaw, Farhat & Grujić (2019) | The uniform spatial analyticity radius (dissipative scale) of a smooth solution with $\|\omega(t)\|_{L^\infty}$ scales at least as $r_a(t) \gtrsim \sqrt{\nu / \|\omega(t)\|_{L^\infty}}$ (or in $L^p$ norms). | Shows that the natural parabolic scale $\ell_{\text{par}}(t) := \sqrt{\nu / \|\omega(t)\|_{L^\infty}}$ acts as a lower barrier to smooth oscillations unless $\|\omega(t)\|_{L^\infty}$ grows faster than $\nu \ell_\omega(t)^{-2}$, which is precisely the condition $\mathcal{R}_\omega \sim |S|\ell_\omega^2/\nu \gtrsim 1$. | `KNOWN_THEOREM` |
+| **6** | **Cheskidov–Shvydkoy Dyadic Critical Wavenumber $\Lambda(t) = 2^{q_*(t)}$** | Cheskidov & Shvydkoy (*Math. Ann.* 348, 2010; *CPAM* 67, 2014); Bradshaw & Tsai (2020) | Defines the viscous transition wavenumber $\Lambda(t) = 2^{q_*(t)}$ above which linear dissipation $\nu 2^{2q}$ dominates the Besov $B^{-1}_{\infty,\infty}$ norm: $c \nu 2^{q_*} = \sup_{q \le q_*} 2^{-q}\|\omega_q\|_{L^\infty}$. Regularity holds if $\int_0^{T_*} \|\omega_{\le q_*(t)}\|_{B^0_{\infty,\infty}}\,dt < \infty$. | Directly parallels our active dissipation scale $\bar{\ell}_\omega(t) = \|\omega\|_{L^2}/\|\nabla\omega\|_{L^2}$ and dyadic transition shell $Q_*(t) = \lceil \frac{1}{2}\log_2(2/\bar{\ell}_\omega(t)^2)\rceil$ in `CLM-041`. | `KNOWN_THEOREM` |
+| **7** | **Global Amplification-to-Competition Equivalence & Active-Scale Bracket (`CLM-041`)** | This programme (`NS-NONLINEAR-SELF-FOCUS-001`) synthesizing Foias–Temam (1989) enstrophy quotient $L_\omega = \|\omega\|_2/\|\nabla\omega\|_2$ with signed stretching $\bar{\lambda}_\omega$ | Exact identity $\mathcal{A}(t) = \frac{P(t)}{D(t)} = \frac{\bar{\lambda}_\omega(t)\bar{\ell}_\omega(t)^2}{\nu}$ and active-scale bracket $\sqrt{\nu\mathcal{A}(t)/\lambda_1^+(t)} \le \bar{\ell}_\omega(t) \le \sqrt{\lambda_1^+(t)/(\nu\mathcal{A}(t)\mathcal{Q}_\omega(t))}$, coupled with Beltrami-subtracted Lamb curl $\omega \cdot \operatorname{curl}(u \times \omega)$. | Provides an exact bridge between global enstrophy growth ($\mathcal{A}(t) > 1$), the Foias–Temam dissipation scale $\bar{\ell}_\omega(t)$, the local competition ratio $\mathcal{R}_{\omega,\text{signed}}$, and dyadic high-shell dissipation concentration ($q \ge Q_*(t)$). | `PROJECT_REFORMULATION` + `POSSIBLE_NOVEL_DIRECTION` (for Beltrami-subtracted $\Xi[\omega]$ coupling) |
+
+---
+
+## 3. Why Bounding Global Enstrophy $\|\omega(t)\|_{L^2(\mathbb{T}^3)}$ Is Sufficient for Full Regularity (`KNOWN_THEOREM`)
+
+A crucial structural distinction between the 3D Navier–Stokes energy identity and the global enstrophy identity must be emphasized:
+1. **Kinetic Energy $\frac{1}{2}\|u(t)\|_{L^2(\mathbb{T}^3)}^2$ is Supercritical ($\lambda^{-1}$)**:
+   The Leray energy inequality $\frac{1}{2}\|u(t)\|_{L^2}^2 + \nu \int_0^t \|\omega(s)\|_{L^2}^2\,ds = \frac{1}{2}\|u_0\|_{L^2}^2$ holds globally for all $t \ge 0$, yet does not prevent blowup because $\int_0^{T_*} \|\omega(s)\|_{L^2}^2\,ds < \infty$ allows $\|\omega(t)\|_{L^2}^2$ to blow up as $(T_*-t)^{-\gamma}$ for any $\gamma \in (0, 1)$ (in fact, classic Leray–Foias–Temam theory shows that if blowup occurs at $T_*$, then $\|\omega(t)\|_{L^2}^2 \ge c\,\nu^3(T_*-t)^{-1/2} \to +\infty$, so $\int_0^{T_*} \|\omega(s)\|_{L^2}^4\,ds = +\infty$).
+2. **Global Enstrophy $\|\omega(t)\|_{L^2(\mathbb{T}^3)}^2 \asymp \|u(t)\|_{\dot{H}^1(\mathbb{T}^3)}^2$ is Subcritical ($\lambda^{+1}$)**:
+   By the classic Fujita–Kato (1964) and Foias–Temam (1989) theorem (`KNOWN_THEOREM`), a smooth solution $u$ on $\mathbb{T}^3$ can blow up at $T_* < \infty$ **if and only if**
+   $$\limsup_{t \uparrow T_*} \|\omega(t)\|_{L^2(\mathbb{T}^3)}^2 = +\infty.$$
+   Consequently, if the global amplification ratio satisfies $\mathcal{A}(t) = P(t)/D(t) \le 1$ for all $t \in [t_0, T_*)$ (or more generally if $\int_{t_0}^{T_*} [P(t) - D(t)]_+\,dt < \infty$), then $\|\omega(t)\|_{L^2(\mathbb{T}^3)}^2$ remains uniformly bounded on $[0, T_*)$, which **unconditionally guarantees smooth continuation past $T_*$**!
+
+This makes $\mathcal{A}(t) = \frac{P(t)}{D(t)} = \frac{\bar{\lambda}_\omega(t)\bar{\ell}_\omega(t)^2}{\nu} > 1$ an **exact necessary gate** for any finite-time blowup on $\mathbb{T}^3$: without sustained episodes of $\mathcal{A}(t) > 1$ as $\bar{\ell}_\omega(t) \to 0$, finite-time singularity is mathematically impossible.

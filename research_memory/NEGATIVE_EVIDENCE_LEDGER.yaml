@@ -429,6 +429,18 @@ negative_evidence:
     mathematical_verdict: "FALSIFIED_PERIODIC_AUTONOMOUS_PULSE_REALIZABILITY"
     canonical_artifact: "NS_OPENAI_B1_REASSESSMENT_R4_SYNTHESIS_REPORT.md"
 
+  # ── NS-NONLINEAR-SELF-FOCUS-001 FALSIFICATION COUNTEREXAMPLES ──────
+
+  - record_id: "NEG-EV-047"
+    pathway_id: "NS-NONLINEAR-SELF-FOCUS-001"
+    title: "UNSIGNED_STRAIN_COMPETITION_AND_POINTWISE_BELTRAMI_FALSE_POSITIVES"
+    falsified_hypothesis: "1. The unsigned scale-competition ratio R_omega = |S| ell_omega^2 / nu > 1 is a sufficient indicator of vortex stretching self-focusing. 2. Pointwise positive axial strain lambda_omega(x,t) > 0 or S_eps(x,t) = |S omega| / (nu |Delta omega| + eps) > 1 guarantees material Lagrangian enstrophy amplification."
+    counterexample_or_proof: "1. On pure shear flows u = (f(y,t), 0, 0) and general 2D-in-3D flows on T^3, R_omega = |S| ell_omega^2 / nu = O(Re) >> 1 can be arbitrarily large while S omega == 0 identically (lambda_omega == 0, A(t) == 0). 2. On general non-constant-modulus ABC Beltrami flows (omega = Lambda u, A,B,C != 0), omega . S omega = (1/2)(u . grad)|omega|^2 != 0 pointwise, so lambda_omega(x,t) > 0 and S_eps(x,t) >> 1 on {u . grad|u|^2 > 0}, yet the stretching merely balances spatial wave advection (u . grad)|omega|^2/2, yielding zero material growth (omega . curl(u x omega) == 0) and zero global production P(t) == 0."
+    governing_obstruction: "NS-OBS-017"
+    mathematical_verdict: "FALSIFIED_UNSIGNED_AND_UNSUBTRACTED_POINTWISE_SUFFICIENCY"
+    canonical_artifact: "NS_NONLINEAR_SELF_FOCUS_001_COUNTEREXAMPLE_MATRIX.md"
+
+
 
 
 

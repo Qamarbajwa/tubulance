@@ -1,0 +1,109 @@
+# Task Envelope: NS-NONLINEAR-SELF-FOCUS-001
+# Forward Non-Perturbative Self-Focusing Mechanisms in Unforced Periodic 3D Navier–Stokes
+
+task_id: "NS-NONLINEAR-SELF-FOCUS-001"
+title: "Forward Non-Perturbative Self-Focusing Mechanisms in Unforced Periodic 3D Navier–Stokes"
+programme: "FORWARD_NONLINEAR_SELF_FOCUSING"
+predecessor_closed_branch: "OPENAI_NAVIER_STOKES_UNFORCED_TRANSFER"
+predecessor_final_state: "COMPLETED_NEGATIVE_RESEARCH_BRANCH"
+governance: "UNIVERSAL_GOVERNANCE_MINIMAL_v4.0.3"
+mathematical_authority: "Mathematical Research Constitution v1.0.1"
+governance_migration_status: "NS-GOV-MIG-V404-001 = MIGRATION_BLOCKED"
+risk_ceiling: "R3"
+mode: "Falsification-first mathematical research"
+state: "COMPLETED"
+created_at: "2026-09-27T12:45:00Z"
+completed_at: "2026-09-27T13:30:00Z"
+
+target:
+  domain: "T^3, nu > 0, f = 0"
+  clay_statement_b: "UNRESOLVED"
+  release_state: "NO-GO"
+  deployment_authority: "NONE"
+  b2_status: "BLOCKED"
+
+controlling_question: |
+  Can forward nonlinear Navier–Stokes dynamics on T^3 (nu > 0, f = 0) autonomously
+  generate progressively smaller scales and stronger strain/vorticity without
+  backward heat pulse reconstruction?
+
+verdict: "PROMISING_SCALE_LOCAL_ROUTE"
+
+allowed_verdicts:
+  - "FORWARD_SELF_FOCUS_MECHANISM_SURVIVES"
+  - "SCALE_COMPETITION_FAVORS_DIFFUSION"
+  - "ALIGNMENT_DEPLETION_DOMINATES"
+  - "INCONCLUSIVE_REQUIRES_DYADIC_REFINEMENT"
+  - "PROMISING_SCALE_LOCAL_ROUTE"
+
+mission: |
+  1. Formally close the OpenAI unforced linear-precursor transfer branch as
+     COMPLETED_NEGATIVE_RESEARCH_BRANCH while preserving CLM-040, NS-OBS-020B-R4,
+     and NEG-EV-046 without overclaiming global regularity.
+  2. Establish the exact local and global enstrophy balance foundation on T^3,
+     signed stretching rate lambda_omega = xi^T S xi, scale-invariant diagnostics
+     S(x,t) = |S omega| / (nu |Delta omega| + eps) and R_omega = |S| ell_omega^2 / nu,
+     dyadic Littlewood-Paley scale-local enstrophy flux, pressure-Hessian nonlocal
+     coupling, and Constantin-Fefferman direction coherence.
+  3. Execute a falsification-first counterexample matrix across 7 exact/canonical flows
+     (pure shear, 2D-in-3D, Beltrami/ABC, Taylor-Green, Lamb-Oseen, Burgers vortex,
+     periodic hyperbolic stagnation).
+  4. Map all diagnostics against primary literature (Prodi-Serrin, BKM, Ponce,
+     Constantin-Fefferman, Neustupa-Penel/Miller, Grujic-Kukavica, Cheskidov-Shvydkoy).
+  5. Formulate and prove the first conditional theorem target (CLM-041: Conditional
+     Scale-Shrinking Enstrophy Amplification & Dyadic Active-Scale Bound) and validate
+     with spectral numerical diagnostics on T^3.
+
+sections:
+  - id: S1
+    title: "Branch closure of OpenAI unforced linear-precursor route"
+    status: "DONE"
+  - id: S2
+    title: "Exact local and global enstrophy balance identities on T^3"
+    status: "DONE"
+  - id: S3
+    title: "Scale-invariant local stretching vs diffusion diagnostic audit"
+    status: "DONE"
+  - id: S4
+    title: "Signed alignment lambda_omega vs magnitude & local length scale ell_omega"
+    status: "DONE"
+  - id: S5
+    title: "Falsification-first counterexample matrix (7 canonical testbeds)"
+    status: "DONE"
+  - id: S6
+    title: "Dyadic Littlewood-Paley forward scale transfer & Bony paraproduct flux"
+    status: "DONE"
+  - id: S7
+    title: "Nonlocal pressure Hessian coupling & Constantin-Fefferman direction coherence"
+    status: "DONE"
+  - id: S8
+    title: "Primary-source literature map and novelty audit"
+    status: "DONE"
+  - id: S9
+    title: "First conditional theorem target (CLM-041) & spectral numerical exploration"
+    status: "DONE"
+  - id: S10
+    title: "Four-panel visual research companion & independent subagent verification"
+    status: "DONE"
+
+deliverables:
+  - "NS_OPENAI_UNFORCED_TRANSFER_BRANCH_CLOSURE.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_TASK_ENVELOPE.yaml"
+  - "NS_NONLINEAR_SELF_FOCUS_001_EXACT_BALANCE_FOUNDATION.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_SCALE_INVARIANCE_AUDIT.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_COUNTEREXAMPLE_MATRIX.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_LITERATURE_MAP.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_FIRST_HYPOTHESES.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_INDEPENDENT_REVIEW.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_VISUAL_COMPANION.md"
+  - "tests/test_ns_nonlinear_self_focus_001_suite.py"
+  - "governance/PROJECT_STATE.yaml"
+
+hard_gates:
+  - clay_b_unresolved: true
+  - release_no_go: true
+  - deployment_authority_none: true
+  - b2_blocked: true
+  - migration_v404_blocked_untouched: true
+  - history_immutable: true
+  - writer_anti_self_acceptance: true
