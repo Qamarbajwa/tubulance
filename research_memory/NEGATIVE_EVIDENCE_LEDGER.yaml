@@ -440,6 +440,16 @@ negative_evidence:
     mathematical_verdict: "FALSIFIED_UNSIGNED_AND_UNSUBTRACTED_POINTWISE_SUFFICIENCY"
     canonical_artifact: "NS_NONLINEAR_SELF_FOCUS_001_COUNTEREXAMPLE_MATRIX.md"
 
+  - record_id: "NEG-EV-048"
+    pathway_id: "NS-NONLINEAR-SELF-FOCUS-001-R1"
+    title: "CLM041_OVERCLASSIFICATION_AND_SMOOTH_LP_NONORTHOGONALITY_CORRECTION"
+    falsified_hypothesis: "1. CLM-041 represents a novel dynamical Navier-Stokes theorem (PROVED_THEOREM / S2_MAJOR_PROJECT_RESULT) with universal bound bar_ell_omega <= 1 and exact smooth Littlewood-Paley sum_q ||grad dot_Delta_q omega||_2^2 = ||grad omega||_2^2. 2. NS-OBS-021 establishes a proved or structural obstruction |grad xi| >= c / ell_omega from Constantin-Fefferman (1993)."
+    counterexample_or_proof: "1. A(t) = bar_lambda_omega bar_ell_omega^2 / nu is an exact algebraic cancellation of ||omega||_2^2 between definitions; bar_ell_omega <= lambda_P^{-1/2} = L/(2*pi) depends explicitly on torus size L; and for smooth overlapping Littlewood-Paley multipliers sum_q hat_psi_q(k) = 1, sum_q hat_psi_q(k)^2 in [1/2, 1) on overlap zones so sum_q nu ||grad dot_Delta_q omega||_2^2 < D(t) (exact equality requires orthogonal shell projectors P_q or linear dual pairing). 2. Constantin-Fefferman (1993) and Beirao da Veiga-Berselli (2002) prove sufficient direction-coherence regularity criteria and do not force pointwise |grad xi| >= c / ell_omega at every amplifying instant. CLM-041 is prospectively replaced by CLM-041-R1 (PROVED_LEMMA / N1_PROJECT_REFORMULATION / S1_USEFUL_LEMMA) and NS-OBS-021 is downgraded to HEURISTIC_TENSION (NS-OBS-021-R1)."
+    governing_obstruction: "NS-OBS-021-R1"
+    mathematical_verdict: "RECLASSIFIED_TO_NORMALIZED_PROJECT_REFORMULATION_LEMMA"
+    canonical_artifact: "NS_NONLINEAR_SELF_FOCUS_001_R1_CLM041_AUDIT.md"
+
+
 
 
 

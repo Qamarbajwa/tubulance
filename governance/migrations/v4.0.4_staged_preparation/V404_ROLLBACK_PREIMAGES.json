@@ -10,11 +10,11 @@
   "rollback_preimages_sha256": {
     "governance/GOVERNANCE.md": "6397ac189cf00536a1988fc50e83643078d692ad5c3fc7a0bbeac11a627a9cb6",
     "governance/PROJECT_DIRECTION.md": "c6b515f1a01f51b5f19bc53e539e0c4e19b47d68d19c2c9696daa794b30e9ead",
-    "governance/PROJECT_STATE.yaml": "9a5a0ec1d72a7a64f52a045b2e9da60176e0aec8f27a9b60c97e36fc0156416c",
+    "governance/PROJECT_STATE.yaml": "0ee71a7307114adef24eb3f5e366cbab30becea80ce51c12a4898aded52668bd",
     "governance/packet/v4.0.3/MANIFEST.sha256.json": "1474b24bf1de6e5dfa7c27328066593a562e011d6be0dc33b56050541ffd4983",
     "mathematical_constitution/MATHEMATICAL_RESEARCH_CONSTITUTION.md": "d8b9198b3849042591ddaf509fae1f705bf9b84792d1bcef0250bb7b8e857a1c",
-    "mathematical_constitution/CLAIM_REGISTRY.yaml": "24c712021e76f351fca41bb7d6f8c8a4fceae7f336c9c2967ff57e5536c6da66",
-    "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml": "34c10a16357b8cb02a494dfdb2c5dfc062cef4f092ce046664b3472d9efb2eb5",
-    "research_memory/RESEARCH_OBSTRUCTION_REGISTRY.yaml": "be7c12cae6b82c532fe4b65a0e253604a19d4968c43784b87583056d0fe674b2"
+    "mathematical_constitution/CLAIM_REGISTRY.yaml": "61c7cf62092db5596830faef6613f4d33b9e4e0dde3f827132625f381c9ca7dc",
+    "research_memory/NEGATIVE_EVIDENCE_LEDGER.yaml": "30b7b9d72e54e66114da835a21a5a8aba2b71a2e833336720fa3c52905ff3c38",
+    "research_memory/RESEARCH_OBSTRUCTION_REGISTRY.yaml": "7c3b7e4e53f7d38ef27e1eacae12a3d993eae177f5bfded65ac84f169468777d"
   }
 }

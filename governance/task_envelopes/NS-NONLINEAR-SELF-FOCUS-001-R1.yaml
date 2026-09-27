@@ -1,0 +1,53 @@
+# Task Envelope: NS-NONLINEAR-SELF-FOCUS-001-R1
+# CLM-041 Adversarial Normalization, Geometric-Depletion Repair, and Independent Verification
+
+task_id: "NS-NONLINEAR-SELF-FOCUS-001-R1"
+title: "CLM-041 Adversarial Normalization, Geometric-Depletion Repair, and Independent Verification"
+programme: "FORWARD_NONLINEAR_SELF_FOCUSING"
+parent: "NS-NONLINEAR-SELF-FOCUS-001"
+governance: "UNIVERSAL_GOVERNANCE_MINIMAL_v4.0.3"
+mathematical_authority: "Mathematical Research Constitution v1.0.1"
+governance_migration_status: "NS-GOV-MIG-V404-001 = MIGRATION_BLOCKED"
+risk_ceiling: "R3"
+mode: "Adversarial normalization and falsification repair"
+state: "COMPLETED"
+created_at: "2026-09-27T15:25:00Z"
+completed_at: "2026-09-27T15:50:00Z"
+
+target:
+  domain: "T^3_L = (R / L Z)^3, nu > 0, f = 0"
+  clay_statement_b: "UNRESOLVED"
+  release_state: "NO-GO"
+  deployment_authority: "NONE"
+  b2_status: "BLOCKED"
+
+controlling_question: |
+  Does CLM-041 contain a genuinely new dynamical restriction on forward Navier–Stokes
+  concentration, or is it principally an exact reparameterization of known enstrophy,
+  strain and length-scale relations?
+
+clm041_reclassification: "CLM041_PROJECT_REFORMULATION"
+prospective_claim_id: "CLM-041-R1"
+ns_obs_021_disposition: "HEURISTIC_TENSION"
+independence_level: "IND1"
+verdict: "KNOWN_THEORY_REFORMULATION_WITH_NEW_RESEARCH_PROGRAM"
+secondary_verdict: "FOUNDATION_VALID_THEOREM_NOT_YET_FOUND"
+
+deliverables:
+  - "NS_NONLINEAR_SELF_FOCUS_001_R1_CLM041_AUDIT.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_R1_DYADIC_TRANSFER_DERIVATION.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_R1_GEOMETRIC_DEPLETION_AUDIT.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_R1_NOVELTY_COMPARISON.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_R1_INDEPENDENCE_AUDIT.md"
+  - "NS_NONLINEAR_SELF_FOCUS_001_R1_INDEPENDENT_REVIEW.md"
+  - "tests/test_ns_nonlinear_self_focus_001_r1_suite.py"
+  - "governance/PROJECT_STATE.yaml"
+
+hard_gates:
+  - clay_b_unresolved: true
+  - release_no_go: true
+  - deployment_authority_none: true
+  - b2_blocked: true
+  - migration_v404_blocked_untouched: true
+  - history_immutable: true
+  - test_pass_not_proof: true

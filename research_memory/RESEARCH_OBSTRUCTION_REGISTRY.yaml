@@ -238,3 +238,16 @@ obstructions:
     known_bypasses_or_relaxations: ["Scale-local dyadic triad interactions (q-1, q, q+1) among antiparallel or orthogonal colliding vortex tubes generating negative axial pressure curvature Xi[omega_q] < 0 while maintaining lambda_1^+(t) bar_ell_omega(t)^2 / nu >= A(t) > 1 (PROMISING_SCALE_LOCAL_ROUTE)."]
     status: "OPEN_STRUCTURAL_OBSTRUCTION"
 
+  # ── R1 ADVERSARIAL REPAIR OF NS-OBS-021 ─────────────────────────────
+  - obstruction_id: "NS-OBS-021-R1"
+    name: "DIRECTION_CURVATURE_PALINSTROPHY_HEURISTIC_TENSION_REPAIR"
+    corrects: "NS-OBS-021"
+    milestone: "NS-NONLINEAR-SELF-FOCUS-001-R1"
+    description: "R1 adversarial repair separates NS-OBS-021 into its exact identity component and its unproved heuristic tension: (1) On Omega_+(t) = {|omega| > 0}, |grad omega|^2 = |grad|omega||^2 + |omega|^2 |grad xi|^2 is an EXACT_IDENTITY_ONLY showing directional curvature contributes non-negatively to palinstrophy D(t). (2) However, Constantin-Fefferman (1993) and Beirao da Veiga-Berselli (2002) establish sufficient C^{1,alpha} / C^{1/2} direction-coherence regularity criteria on {|omega| > M} and do NOT prove that |grad xi| >= c / ell_omega holds across an O(1) enstrophy fraction at every amplifying time t, nor that nu int |omega|^2 |grad xi|^2 dx >= P(t). Disposition is therefore downgraded to the weakest justified state: HEURISTIC_TENSION."
+    first_encountered_in: "NS-NONLINEAR-SELF-FOCUS-001-R1"
+    affected_pathways: ["NS-NONLINEAR-SELF-FOCUS-001", "NS-NONLINEAR-SELF-FOCUS-001-R1"]
+    mathematical_core: "Polar decomposition |grad omega|^2 = |grad|omega||^2 + |omega|^2 |grad xi|^2 on Omega_+(t) (EXACT_IDENTITY_ONLY); quantitative domination of P(t) by nu int |omega|^2 |grad xi|^2 dx is unproved (HEURISTIC_TENSION)."
+    known_bypasses_or_relaxations: ["Concentrated directional curvature on small measure sets or C^{1/2}-critical filament alignment."]
+    status: "HEURISTIC_TENSION"
+
+

@@ -909,8 +909,30 @@ claims:
       significance: "S2_MAJOR_PROJECT_RESULT"
       external_validation: "NOT_EXTERNALLY_REVIEWED"
       community_status: "NOT_COMMUNITY_ACCEPTED"
-      project_status: "PROJECT_CANONICAL"
+      project_status: "SUPERSEDED"
     dependencies: ["CLM-033"]
+
+  - claim_id: "CLM-041-R1"
+    claim_type: "MATHEMATICAL_PROPOSITION"
+    name: "NORMALIZED_ENSTROPHY_COMPETITION_AND_PLANCHEREL_TAIL_LEMMA"
+    milestone: "NS-NONLINEAR-SELF-FOCUS-001-R1"
+    supersedes: "CLM-041"
+    statement: "Let T^3_L = (R / L Z)^3 (L > 0) have first positive Laplacian eigenvalue lambda_P = (2*pi/L)^2, and let u in C^infty([0,T] x T^3_L) be a smooth divergence-free velocity field with vorticity omega = curl u and strain S = (1/2)(grad u + grad u^T). Whenever ||omega(t)||_{L^2(T^3_L)} > 0 (so D(t) = nu ||grad omega(t)||_{L^2}^2 > 0), define bar_ell_omega(t) = ||omega(t)||_{L^2} / ||grad omega(t)||_{L^2} and bar_lambda_omega(t) = P(t) / ||omega(t)||_{L^2}^2. Then: (1) [Algebraic Factorization of Definitions] A(t) = P(t)/D(t) = bar_lambda_omega(t) bar_ell_omega(t)^2 / nu is an exact algebraic identity of definitions; (2) [Poincare & Rayleigh-Ritz Bracket] By the mean-zero Poincare inequality and pointwise Courant-Fischer bound on Omega_+(t) = {|omega| > 0}, bar_ell_omega(t) <= lambda_P^{-1/2} = L/(2*pi) always, and under the explicit positivity condition P(t) > 0 (which guarantees lambda_{1,omega}^+(t) = sup_{Omega_+} max(omega.S.omega/|omega|^2, 0) >= bar_lambda_omega(t) > 0), sqrt(nu A(t) / lambda_{1,omega}^+(t)) <= bar_ell_omega(t) <= lambda_P^{-1/2}; (3) [Static Plancherel-Markov Tail Inequality] For sharp L^2-orthogonal dyadic shell projectors P_q on {2^q <= |k|/lambda_P^{1/2} < 2^{q+1}} and Q_*(t) = max(0, floor((1/2) log_2(1 / (2 lambda_P bar_ell_omega(t)^2)))), sum_{q >= Q_*(t)} nu ||grad P_q omega(t)||_{L^2}^2 >= (1/2) D(t) (whereas smooth overlapping Littlewood-Paley projectors dot_Delta_q require linear dual pairing nu <grad dot_Delta_q omega, grad omega> or overlap constant adjustment); and (4) [Standard Vector-Calculus Lamb Identity] omega . S omega - (1/2)(u . grad)|omega|^2 = omega . (curl(u x omega)), which vanishes identically on all Beltrami flows (omega = lambda u) and integrates to P(t) on T^3_L."
+    passport:
+      truth_status: "PROVED_LEMMA"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N1_PROJECT_REFORMULATION"
+      significance: "S1_USEFUL_LEMMA"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL"
+    dependencies: ["CLM-033", "CLM-041"]
+
 
 
 
