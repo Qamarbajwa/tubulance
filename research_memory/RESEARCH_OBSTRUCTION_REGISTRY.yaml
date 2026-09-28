@@ -250,4 +250,16 @@ obstructions:
     known_bypasses_or_relaxations: ["Concentrated directional curvature on small measure sets or C^{1/2}-critical filament alignment."]
     status: "HEURISTIC_TENSION"
 
+  # ── NS-NONLINEAR-SELF-FOCUS-002 MACROSCOPIC CASCADE CLOSURE GATE ────
+  - obstruction_id: "NS-OBS-022"
+    name: "SINGLE_STEP_DYADIC_TRANSFER_VISCOUS_DISCOUNTING_AND_TRIAD_PHASE_REVERSAL_BARRIER"
+    milestone: "NS-NONLINEAR-SELF-FOCUS-002"
+    description: "While CLM-042 rigorously proves non-tautological single-step forward enstrophy transfer across an initial-data-fixed cutoff Q -> Q+1 on [t_0, t_0 + Delta t], iterating single-step transfer into an autonomous multi-shell cascade Q -> Q+1 -> Q+2 -> ... is obstructed by two exact mechanisms: (1) Over the viscous decay horizon tau_visc(Q) = (16 nu k_0^2 2^{2Q})^{-1}, the Stokes resolvent multiplier psi_Q(Delta t)^2 is capped by (256 nu^2 k_0^4 2^{4Q})^{-1} = O(nu^{-2} 2^{-4Q}), requiring the low-band Lamb-curl projection ||P_{Q+1} curl(u_{<=Q} x omega_{<=Q})||_{L^2} to exceed nu k_0^2 2^{2Q} ||P_{<=Q}omega||_{L^2} (G_Q >= c_0) at every step; and (2) In the minimal 3-mode helical triad ODEs, the cubic correlation C_{klm}(t) obeys a Jacobi elliptic pendulum equation that autonomously reverses sign at t_0 + T_half (backscatter Pi_Q^{omega,tot} < 0) unless coupled nonlocal Riesz strain modes lock the triad phases."
+    first_encountered_in: "NS-NONLINEAR-SELF-FOCUS-002"
+    affected_pathways: ["NS-NONLINEAR-SELF-FOCUS-002"]
+    mathematical_core: "Duhamel Stokes multiplier ceiling sup_{Delta t > 0} ((1 - e^{-nu mu_{Q+1} Delta t})/(nu mu_{Q+1}))^2 = (16 nu k_0^2 2^{2Q})^{-2} combined with inviscid 3-mode triad phase oscillation d^2/dt^2 E_m = -A E_m^2 + B E_m + C."
+    known_bypasses_or_relaxations: ["Multi-triad coherent vortex sheet/tube collision geometries that replenish ||P_{Q+1} curl(u_{<=Q} x omega_{<=Q})||_{L^2} before T_half(Q)."]
+    status: "OPEN_STRUCTURAL_OBSTRUCTION"
+
+
 

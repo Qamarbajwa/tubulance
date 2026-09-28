@@ -449,6 +449,16 @@ negative_evidence:
     mathematical_verdict: "RECLASSIFIED_TO_NORMALIZED_PROJECT_REFORMULATION_LEMMA"
     canonical_artifact: "NS_NONLINEAR_SELF_FOCUS_001_R1_CLM041_AUDIT.md"
 
+  - record_id: "NEG-EV-049"
+    pathway_id: "NS-NONLINEAR-SELF-FOCUS-002"
+    title: "ISOLATED_TRIAD_PHASE_REVERSAL_BACKSCATTER_AND_UNREGULARIZED_FLUX_RATIO_EDGE_SINGULARITY"
+    falsified_hypothesis: "1. An isolated opposite-helicity divergence-free triad (s_k = +1, s_l = -1) with positive initial enstrophy flux Pi_Q^{omega,tot}(t_0) > 0 sustains monotonic forward enstrophy transfer across 2^Q indefinitely. 2. The unregularized competition ratio F_Q^{adv}(t) = [Pi_Q^{adv}(t)]_+ / (nu ||grad P_{>Q}omega(t)||_{L^2}^2) is bounded and well-defined at high-mode entrance states where ||P_{>Q}omega(t)||_{L^2} -> 0."
+    counterexample_or_proof: "1. In the exact 3-mode helical triad ODE system (Waleffe basis), E_m(t) satisfies a periodic Jacobi elliptic pendulum orbit when nu = 0, so the cubic correlation C_{klm}(t) and flux Pi_Q^{omega,tot}(t) = |m|^2(|k|+|l|)C_{klm}(t) reverse sign at t = t_0 + T_half (backscatter into low modes), while for nu > 0 the peak high-mode enstrophy is bounded by O(nu^{-2} k_0^{-4} 2^{-4Q} ||F_{Q+1}(t_0)||_{L^2}^2). 2. Because Pi_Q^{adv} is linear in omega_{>Q} while D_{>Q} is quadratic in omega_{>Q}, F_Q^{adv} diverges as ||omega_{>Q}||_{L^2}^{-1} -> +infty for arbitrarily weak flows as ||omega_{>Q}||_{L^2} -> 0^+, and becomes 0/0 at ||omega_{>Q}||_{L^2} = 0, requiring the Duhamel shell-step competition ratio G_Q(t) = ||P_{Q+1} curl(u_{<=Q} x omega_{<=Q})||_{L^2} / (nu k_0^2 2^{2(Q+1)} ||P_{<=Q}omega||_{L^2})."
+    governing_obstruction: "NS-OBS-022"
+    mathematical_verdict: "FALSIFIED_ISOLATED_TRIAD_SUSTAINED_CASCADE_AND_UNREGULARIZED_ENTRANCE_RATIO"
+    canonical_artifact: "NS_NONLINEAR_SELF_FOCUS_002_TRIAD_TRANSFER_ANALYSIS.md"
+
+
 
 
 

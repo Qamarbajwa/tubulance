@@ -931,7 +931,31 @@ claims:
       external_validation: "NOT_EXTERNALLY_REVIEWED"
       community_status: "NOT_COMMUNITY_ACCEPTED"
       project_status: "PROJECT_CANONICAL"
+      review_gate_note: "REVIEW_REQUIRED_FOR_STRONGER_DEPENDENCY (Verified at IND1; IND2 cross-model audit required before serving as a premise for stronger canonical theorems)"
     dependencies: ["CLM-033", "CLM-041"]
+
+  - claim_id: "CLM-042"
+    claim_type: "MATHEMATICAL_PROPOSITION"
+    milestone_claim_class: "CONDITIONAL_NEW_LEMMA"
+    name: "FORWARD_IN_TIME_VISCOUS_DISCOUNTED_DYADIC_ENSTROPHY_TRANSFER_AND_STATE_DISTINGUISHING_LEMMA"
+    milestone: "NS-NONLINEAR-SELF-FOCUS-002"
+    statement: "For any smooth divergence-free solution u in C^infty([t_0, t_1] x T^3_L) (L > 0, k_0 = 2*pi/L, nu > 0, f = 0) with sharp L^2-orthogonal dyadic shell projectors P_q on C_q = {k_0 2^q <= |k| < k_0 2^{q+1}} and cutoff Q in N_0 fixed solely by the initial state omega(t_0): (1) [Active Cross-Cutoff Phase-Aligned Regime] If Pi_Q^{adv}(t_0) = -<(u(t_0).grad)P_{<=Q}omega(t_0), P_{>Q}omega(t_0)> > 0 and |d/dt Pi_Q^{adv}(t)| <= M_Q^{adv} on [t_0, t_1], then int_{t_0}^{t_0+Delta t} Pi_Q^{adv}(t) dt >= Pi_Q^{adv}(t_0) Delta t - (1/2) M_Q^{adv} (Delta t)^2 > 0 for Delta t in (0, min(t_1-t_0, Pi_Q^{adv}(t_0)/M_Q^{adv})], while the high-band sign-flipped state tilde_omega(t_0) = P_{<=Q}omega(t_0) - P_{>Q}omega(t_0) has identical shellwise L^2 and H^1 norms for all q >= 0 but opposite initial flux; (2) [Band-Limited Entrance Injection & Viscous Discounting] If P_{>Q}omega(t_0) = 0, then F_{>Q}(t_0) := P_{>Q} curl(u(t_0) x omega(t_0)) = P_{Q+1} curl(u(t_0) x omega(t_0)) is supported exclusively in shell C_{Q+1} (with upper Laplacian eigenvalue bound mu_{Q+1} = 16 k_0^2 2^{2Q}), and by Duhamel's Stokes formula with L_F = sup_{[t_0,t_1]} ||d_t F_{>Q}(t)||_{L^2}, the net high-frequency enstrophy surviving viscous dissipation at t_0 + Delta t satisfies E_{>Q}(t_0 + Delta t) = (1/2)||P_{>Q}omega(t_0 + Delta t)||_{L^2}^2 >= (1/4) ((1 - exp(-nu mu_{Q+1} Delta t)) / (nu mu_{Q+1}))^2 ||P_{Q+1} curl(u(t_0) x omega(t_0))||_{L^2}^2 - (1/8) L_F^2 (Delta t)^4; and (3) [State-Distinguishing Property] On the wavenumber sphere |k| = sqrt(3) k_0 in C_0 (Q=0), an ABC eigenflow and a Taylor-Green flow with identical initial enstrophy ||omega_0||_{L^2} = Omega_0, identical palinstrophy ||grad omega_0||_{L^2} = sqrt(3) k_0 Omega_0, and identical global stretching P(t_0) = 0 (A(t_0) = 0) satisfy E_{>0}^{ABC}(t_0 + Delta t) == 0 vs E_{>0}^{TG}(t_0 + Delta t) > 0 and int_{t_0}^{t_0+Delta t} Pi_0^{adv}[TG](t) dt > 0."
+    passport:
+      truth_status: "PROVED_LEMMA"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N1_PROJECT_REFORMULATION"
+      significance: "S1_USEFUL_LEMMA"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL_WITH_LIMITATIONS"
+      review_gate_note: "REVIEW_REQUIRED (Verified at IND1 / GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE; retained as REVIEW_REQUIRED for IND2 cross-model canonical theorem acceptance per Section 27)."
+    dependencies: ["CLM-033"]
+
 
 
 
