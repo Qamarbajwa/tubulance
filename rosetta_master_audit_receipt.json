@@ -32,7 +32,9 @@
       "github_repo": "Qamarbajwa/hodge-cy4-spin8-lean4",
       "release_tag": "v1.4.0-rosetta",
       "zenodo_version_doi": "10.5281/zenodo.24380054",
-      "zenodo_concept_doi": "10.5281/zenodo.24329779"
+      "zenodo_concept_doi": "10.5281/zenodo.24329779",
+      "spin7_cayley_calibration_cycle_ext_present": true,
+      "hodge_master_spin7_bridge_ext_present": false
     },
     "yang_mills": {
       "problem": "4D Yang-Mills Mass Gap",
@@ -111,7 +113,8 @@
         "max_banachiewicz_split_err": "7.52316e-37",
         "bblr_constant": "0.0461914179322421",
         "ln210_mul_E_dir_210": "0.047484532977636"
-      }
+      },
+      "riemann_master_bblr_bridge_present": true
     },
     "navier_stokes": {
       "problem": "3D Navier-Stokes Global Regularity",
@@ -152,7 +155,8 @@
         "b2_Phi_max": 0.11567885514792861,
         "b4_delta_star": 0.6189779879339787,
         "b4_Phi_max": 0.013783551603978353
-      }
+      },
+      "navier_stokes_win_win_arch_cert_present": true
     }
   }
 }

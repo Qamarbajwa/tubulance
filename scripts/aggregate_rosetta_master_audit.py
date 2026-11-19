@@ -30,11 +30,15 @@ def read_hodge():
     p = Path(r"d:/Comfy UI/hodge conjecture/reports/millennium_ext/MILLENNIUM_EXT_RECEIPT.json")
     data = json.loads(p.read_text(encoding="utf-8"))
     ext = data["extension_lean_audit"]
+    hodge_ext_dir = Path(r"d:/Comfy UI/hodge conjecture/examples/math_gov/LeanMillenniumExt")
+    spin7_exists = (hodge_ext_dir / "Spin7CayleyCalibrationCycleExt.lean").exists()
+    hodge_master_exists = (hodge_ext_dir / "HodgeMasterSpin7BridgeExt.lean").exists()
     passed = (
         bool(data.get("EXT_CHECKS_PASSED"))
         and bool(data.get("baseline_lock", {}).get("locked_baseline_intact"))
         and bool(ext.get("lake_build_ok"))
         and len(ext.get("unexpected_axiom_lines", [])) == 0
+        and spin7_exists
     )
     return {
         "problem": "Hodge Conjecture (HODGE-MILLENNIUM-001)",
@@ -62,6 +66,8 @@ def read_hodge():
         "release_tag": "v1.4.0-rosetta",
         "zenodo_version_doi": "10.5281/zenodo.24380054",
         "zenodo_concept_doi": "10.5281/zenodo.24329779",
+        "spin7_cayley_calibration_cycle_ext_present": spin7_exists,
+        "hodge_master_spin7_bridge_ext_present": hodge_master_exists,
     }
 
 
@@ -219,11 +225,22 @@ def read_riemann():
     prim = json.loads(p_prim.read_text(encoding="utf-8"))
     row_210 = [r for r in prim.get("primorial_ladder", []) if r.get("N") == 210][0]
 
+    rh_lean_dir = Path(
+        r"d:/Comfy UI/rheihman hypothesis/research/interactive_lab/monograph_additive_multiplicative/RiemannBlueprint/RiemannBlueprint"
+    )
+    bblr_bridge_path = rh_lean_dir / "RiemannMasterBBLRBridge.lean"
+    bblr_bridge_ok = (
+        bblr_bridge_path.exists()
+        and "master_vasyunin_schur_to_bblr_criterion_conditional"
+        in bblr_bridge_path.read_text(encoding="utf-8")
+    )
+
     passed = (
         bool(data.get("VASYUNIN_SCHUR_CHIRAL_ROSETTA_OK"))
         and bool(data.get("NO_RH_PROOF"))
         and bool(prim.get("PRIMORIAL_SCHUR_DECAY_OK"))
         and bool(prim.get("NO_RH_PROOF"))
+        and bblr_bridge_ok
     )
     return {
         "problem": "Riemann Hypothesis",
@@ -251,6 +268,7 @@ def read_riemann():
             "bblr_constant": prim.get("bblr_constant"),
             "ln210_mul_E_dir_210": row_210.get("lnN_mul_E_dir"),
         },
+        "riemann_master_bblr_bridge_present": bblr_bridge_ok,
     }
 
 
@@ -268,8 +286,20 @@ def read_navier_stokes():
     s2 = arch["scale_summaries"]["2"]
     s4 = arch["scale_summaries"]["4"]
 
+    ns_lean_path = Path(r"d:/Comfy UI/tubulance/formal/NavierStokesWinWinArchCert.lean")
+    ns_lean_ok = (
+        ns_lean_path.exists()
+        and "master_navier_stokes_enstrophy_dissipation_bridge_conditional"
+        in ns_lean_path.read_text(encoding="utf-8")
+    )
+
     all_checks = all(data["checks"].values())
-    passed = (data.get("status") == "CL30_HELICAL_SCHUR_COCYCLE_OK") and all_checks and arch_ok
+    passed = (
+        (data.get("status") == "CL30_HELICAL_SCHUR_COCYCLE_OK")
+        and all_checks
+        and arch_ok
+        and ns_lean_ok
+    )
     return {
         "problem": "3D Navier-Stokes Global Regularity",
         "status_open": bool(data.get("NS_GLOBAL_REGULARITY_OPEN", True)),
@@ -304,6 +334,7 @@ def read_navier_stokes():
             "b4_delta_star": s4.get("delta_star"),
             "b4_Phi_max": s4.get("Phi_max"),
         },
+        "navier_stokes_win_win_arch_cert_present": ns_lean_ok,
     }
 
 

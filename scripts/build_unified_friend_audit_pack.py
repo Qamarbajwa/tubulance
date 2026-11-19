@@ -11,6 +11,7 @@ import zipfile
 from pathlib import Path
 
 TUB = Path(r"d:/Comfy UI/tubulance")
+HODGE = Path(r"d:/Comfy UI/hodge conjecture")
 YM = Path(r"d:/Comfy UI/yang mills and the mass gap")
 RH = Path(r"d:/Comfy UI/rheihman hypothesis/research/interactive_lab/monograph_additive_multiplicative")
 PACK = Path(r"d:/Comfy UI/ROSETTA_4WORKSPACE_FRIEND_AUDIT_PACK")
@@ -75,7 +76,23 @@ def main() -> int:
     copy_file(TUB / "SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.md", PACK / "SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.md")
     copy_file(TUB / "SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.pdf", PACK / "SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.pdf")
 
-    # 2. Riemann Final-Hurdle Primorial Schur files
+    # 1b. Hodge Spin7CayleyCalibrationCycleExt (+ HodgeMasterSpin7BridgeExt if present)
+    hodge_ext = HODGE / "examples" / "math_gov" / "LeanMillenniumExt"
+    copy_file(
+        hodge_ext / "Spin7CayleyCalibrationCycleExt.lean",
+        PACK / "01_hodge_conjecture" / "lean4_certificates" / "Spin7CayleyCalibrationCycleExt.lean",
+    )
+    if (hodge_ext / "HodgeMasterSpin7BridgeExt.lean").exists():
+        copy_file(
+            hodge_ext / "HodgeMasterSpin7BridgeExt.lean",
+            PACK / "01_hodge_conjecture" / "lean4_certificates" / "HodgeMasterSpin7BridgeExt.lean",
+        )
+
+    # 2. Riemann Final-Hurdle Primorial Schur & RiemannMasterBBLRBridge files
+    copy_file(
+        RH / "RiemannBlueprint" / "RiemannBlueprint" / "RiemannMasterBBLRBridge.lean",
+        PACK / "03_riemann_hypothesis" / "lean4_certificates" / "RiemannMasterBBLRBridge.lean",
+    )
     copy_file(
         RH / "RiemannBlueprint" / "RiemannBlueprint" / "PrimorialSchurDistanceDecay.lean",
         PACK / "03_riemann_hypothesis" / "lean4_certificates" / "PrimorialSchurDistanceDecay.lean",
@@ -118,7 +135,11 @@ def main() -> int:
         PACK / "02_yang_mills_4d" / "probes" / "probe_two_step_inductive_rg_remainder.receipt.json",
     )
 
-    # 3. Navier-Stokes Final-Hurdle Win-Win Cocycle Arch files
+    # 3. Navier-Stokes Final-Hurdle Win-Win Cocycle Arch & Lean 4 Cert files
+    copy_file(
+        TUB / "formal" / "NavierStokesWinWinArchCert.lean",
+        PACK / "04_navier_stokes_3d" / "lean4_certificates" / "NavierStokesWinWinArchCert.lean",
+    )
     copy_file(
         TUB / "scripts" / "probe_win_win_cocycle_dichotomy_arch.py",
         PACK / "04_navier_stokes_3d" / "probes" / "probe_win_win_cocycle_dichotomy_arch.py",
