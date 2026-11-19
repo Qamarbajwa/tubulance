@@ -1,0 +1,88 @@
+{
+  "scientific_honesty_all_four_millennium_problems_open": true,
+  "overall_pass_count": "4/4",
+  "all_four_passed": true,
+  "workspaces": {
+    "hodge": {
+      "problem": "Hodge Conjecture (HODGE-MILLENNIUM-001)",
+      "status_open": true,
+      "audit_status": "PASS",
+      "receipt_path": "d:\\Comfy UI\\hodge conjecture\\reports\\millennium_ext\\MILLENNIUM_EXT_RECEIPT.json",
+      "ext_checks_passed": true,
+      "locked_baseline_intact": true,
+      "lake_build_ok": true,
+      "extension_theorems": 100,
+      "unexpected_axiom_lines": 0,
+      "verbatim_axiom_receipts_count": 83,
+      "schur_certs_present": false
+    },
+    "yang_mills": {
+      "problem": "4D Yang-Mills Mass Gap",
+      "status_open": true,
+      "audit_status": "PASS",
+      "git_head": "0f3f012",
+      "git_status_short_clean": true,
+      "chrysalis_manifest_total_artifacts": 75,
+      "ym175_stage2a_cocycle_schur_verified_in_log": true,
+      "scratch_probe_dir": "C:\\Users\\arqam\\.gemini\\antigravity\\brain\\e6cd4726-22aa-425e-a8f7-aab472c30784\\scratch",
+      "probe_abelian_subtracted_2to4_fiber_schur": {
+        "exists": true,
+        "ok": true
+      },
+      "probe_paramagnetic_trace_sandwich_and_cocycle_floor": {
+        "exists": true,
+        "ok": true,
+        "max_diag_K": 0.0,
+        "max_abs_Tr_K": 1.8e-15,
+        "max_K_op": 0.4346,
+        "C_dom": 13.47,
+        "c_cocycle": 1.3407,
+        "non_abelian_blocks_total": 720,
+        "non_abelian_ensembles_120_of_120": 6
+      }
+    },
+    "riemann": {
+      "problem": "Riemann Hypothesis",
+      "status_open": true,
+      "audit_status": "PASS",
+      "NO_RH_PROOF": true,
+      "receipt_path": "d:\\Comfy UI\\rheihman hypothesis\\research\\interactive_lab\\monograph_additive_multiplicative\\vasyunin_schur_chiral_rosetta_results.json",
+      "VASYUNIN_SCHUR_CHIRAL_ROSETTA_OK": true,
+      "max_numerical_residual": "1.63133e-55",
+      "n6_delta_PC": "0.157647933508191",
+      "n6_Schur_inertia": [
+        2,
+        0,
+        0
+      ]
+    },
+    "navier_stokes": {
+      "problem": "3D Navier-Stokes Global Regularity",
+      "status_open": true,
+      "audit_status": "PASS",
+      "receipt_path": "d:\\Comfy UI\\tubulance\\probe_cl30_helical_schur_results.json",
+      "status": "CL30_HELICAL_SCHUR_COCYCLE_OK",
+      "all_checks_passed": true,
+      "gram_normalized_offdiag_max": 1.1845126262379578e-15,
+      "pi_o3_even_t_hel_norm": 0.0,
+      "schur_complement": 2660.0,
+      "t_sq_id_err": 0.0,
+      "k_half_recon_err": 0.0,
+      "abelian_delta_ns_b1_2_4": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tangle_delta_ns_b1_2_4": [
+        0.4199685489020807,
+        0.6411147095589602,
+        0.6452281325387605
+      ],
+      "tangle_rho_stretch_blk_b1_2_4": [
+        0.2713044700679407,
+        0.14408813544212123,
+        0.013952109170062982
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "release_id": "tubulance-cl30-rosetta-v1.0.0",
+  "NS_GLOBAL_REGULARITY_OPEN": true,
+  "rosetta_master_audit_status": "4/4",
+  "files": {
+    "scripts/probe_cl30_helical_schur_and_vorticity_cocycle.py": {
+      "sha256": "b668295e83a2de85f7893fa0ade405cd8b10c071a397d5f9de405470ee3d566a",
+      "size_bytes": 20442
+    },
+    "probe_cl30_helical_schur_results.json": {
+      "sha256": "23fc795b11c89b75cccae6274b9b8d41b506b594bee15a6a99057c5af1031fc2",
+      "size_bytes": 2722
+    },
+    "scripts/aggregate_rosetta_master_audit.py": {
+      "sha256": "f22a131c463071f70d61cced97fa65bf432c8e4b4c3074cd112d86b3089c590d",
+      "size_bytes": 9240
+    },
+    "rosetta_master_audit_receipt.json": {
+      "sha256": "cf931eb0596d6c3bb3d975cbfa63d66d231937ef9b678b36d192c9c9caffb4fa",
+      "size_bytes": 2960
+    },
+    "BRIDGE1_CURRENT_SCIENTIFIC_STATE.md": {
+      "sha256": "98b8f3f6049081848945f3f63747a7dc6cbc7b9fec06b74150243f58eefc70fa",
+      "size_bytes": 3523
+    },
+    "paper/cl30_helical_schur_superfluid_monograph.tex": {
+      "sha256": "633b43d2f9fde9722e1f44304a5f239f38be42ffb2941dab02e8ae8df21ca030",
+      "size_bytes": 10986
+    },
+    "paper/cl30_helical_schur_superfluid_monograph.pdf": {
+      "sha256": "a624891c85afa1007db0f714b1afa7de70cd8f5527c9c519099129fe5da34da2",
+      "size_bytes": 521413
+    }
+  }
+}

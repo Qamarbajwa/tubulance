@@ -1,0 +1,88 @@
+{
+  "status": "CL30_HELICAL_SCHUR_COCYCLE_OK",
+  "NS_GLOBAL_REGULARITY_OPEN": true,
+  "checks": {
+    "cl30_involution_ok": true,
+    "beltrami_eigen_ok": true,
+    "helical_orthogonality_ok": true,
+    "o3_even_projection_zero_ok": true,
+    "gram_diagonal_ok": true,
+    "schur_complement_pos_ok": true,
+    "t_hel_sq_parity_blind_ok": true,
+    "k_half_reconstruction_ok": true,
+    "abelian_delta_ns_zero_ok": true,
+    "tangle_delta_ns_grows_and_depletes_stretch_ok": true
+  },
+  "part1_cl30_helical_basis": {
+    "grid_L": 12,
+    "active_wavevectors": 1330,
+    "helical_dim": 2660,
+    "max_cl_involution_err": 6.292413224013841e-16,
+    "max_cl_ortho_err": 1.3749998523937012e-16,
+    "max_curl_eig_err": 1.4936523181711914e-15,
+    "max_div_err": 8.005932084973442e-16,
+    "max_helical_ortho_err": 2.2887833992611187e-16,
+    "field_recon_err": 5.703126212727367e-16,
+    "helical_orthogonality_err": 8.688014113593673e-18,
+    "parseval_err": 8.087751320290837e-16,
+    "beltrami_plus_err": 1.7454613833435129e-16,
+    "beltrami_minus_err": 1.7806890878756398e-16
+  },
+  "part2_parity_gram_schur_half_op": {
+    "num_k_pairs": 665,
+    "real_helical_dim": 2660,
+    "gram_matrix_diag": [
+      2660.0,
+      621106.6466165418,
+      2660.0
+    ],
+    "gram_offdiag_max": 4.814637577510439e-11,
+    "gram_normalized_offdiag_max": 1.1845126262379578e-15,
+    "pi_o3_even_t_hel_norm": 0.0,
+    "schur_complement": 2660.0,
+    "p_intertwine_err": 0.0,
+    "p_t_hel_odd_err": 0.0,
+    "t_sq_id_err": 0.0,
+    "t_sq_parity_blind_err": 0.0,
+    "t_sq_cross_chirality_err": 0.0,
+    "k_half_recon_err": 0.0,
+    "k_half_asym_norm": 8.0,
+    "realspace_parity_hel_flip_err": 6.462607569792328e-16
+  },
+  "part3_vorticity_cocycle_and_stretching": {
+    "abelian_parallel_vortex_tube": {
+      "1": {
+        "delta_NS": 0.0,
+        "mean_align_sq": 1.0,
+        "rho_stretch_BLK": 0.0
+      },
+      "2": {
+        "delta_NS": 0.0,
+        "mean_align_sq": 1.0,
+        "rho_stretch_BLK": 0.0
+      },
+      "4": {
+        "delta_NS": 0.0,
+        "mean_align_sq": 1.0,
+        "rho_stretch_BLK": 0.0
+      }
+    },
+    "heterochiral_tg_kida_pelz_tangle": {
+      "1": {
+        "delta_NS": 0.4199685489020807,
+        "mean_align_sq": 0.5800314510979193,
+        "rho_stretch_BLK": 0.2713044700679407
+      },
+      "2": {
+        "delta_NS": 0.6411147095589602,
+        "mean_align_sq": 0.35888529044103984,
+        "rho_stretch_BLK": 0.14408813544212123
+      },
+      "4": {
+        "delta_NS": 0.6452281325387605,
+        "mean_align_sq": 0.35477186746123945,
+        "rho_stretch_BLK": 0.013952109170062982
+      }
+    }
+  }
+}

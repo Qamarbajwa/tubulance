@@ -1,0 +1,111 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array,booktabs}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+\title{\textbf{Superfluid Empty Cores, \texorpdfstring{$\mathrm{Cl}(3,0)$}{Cl(3,0)} Helical Schur Isolation, and Multiscale \texorpdfstring{$SO(3)$}{SO(3)} Vorticity Cocycle Depletion}}
+\author{Qamar Bajwa \quad (Program \texttt{NS-BRIDGE1} / \texttt{tubulance})}
+\date{November 19, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present the mathematical formulation and machine-verified spectral/numerical receipts for the $\mathrm{Cl}(3,0) \cong M_2(\mathbb{C})$ Beltrami helical Schur-complement decomposition and multiscale Constantin--Fefferman $SO(3)$ vorticity cocycle depletion on a 3D periodic torus $\mathbb{T}^3$ ($L = 12$). Starting from the physical contrast between an irrotational Bose--Einstein superfluid---an exact $U(1)$ phase gradient with zero bulk vorticity whose rotation lives exclusively in empty-core defects ($\rho = 0$)---and 3D rotational turbulence, we reformulate divergence-free velocity fields in the chiral Beltrami basis $u = u_+ \oplus u_-$. Under spatial parity $P: u(x) \mapsto -u(-x)$, the parity-even $O(3)$ baseline $\{Q_E, Q_Z\}$ and the parity-odd helicity operator $T_{\mathrm{hel}} = P_+ - P_-$ exhibit an exact diagonal Hilbert--Schmidt Gram matrix (normalized off-diagonal maximum $1.18 \times 10^{-15}$), zero $O(3)$-even projection ($\Pi_{O(3)\text{-even}}(T_{\mathrm{hel}}) = 0.0$), positive Schur complement $S_{\mathrm{Schur}} = 2660.0 > 0$, parity-blind squared density $T_{\mathrm{hel}}^2 = I$, and exact half-operator reconstruction $K_{\mathrm{half}} + K_{\mathrm{half}}^T = 4 T_{\mathrm{hel}}$. Across block scales $b \in \{1, 2, 4\}$, the Constantin--Fefferman vorticity alignment cocycle $\delta_{\mathrm{NS}}(b)$ vanishes identically in a 1D/Abelian parallel vortex tube while growing from $0.4200$ ($b=1$) to $0.6452$ ($b=4$) in a 3D heterochiral Taylor--Green + Kida--Pelz tangle, driving a $19.4\times$ monotone depletion of the coarse-grained block vortex-stretching transfer kernel $\rho_{\mathrm{stretch}}^{\mathrm{BLK}}(b)$ ($0.2713 \to 0.0140$).
+
+\medskip
+\noindent\textbf{Scientific Honesty Notice.} The Clay 3D Navier--Stokes Global Regularity problem (\texttt{NS\_GLOBAL\_REGULARITY\_OPEN = true}) remains strictly \textbf{OPEN}, as do the Hodge Conjecture (\texttt{HODGE-MILLENNIUM-001}), 4D Yang--Mills Mass Gap, and the Riemann Hypothesis (\texttt{NO\_RH\_PROOF = true}). All results reported here are finite-dimensional operator identities and multiscale numerical diagnostics.
+\end{abstract}
+
+\section{Origin of the Idea: Superfluid Empty Cores and ``Seeing Negatively''}
+
+In an irrotational Bose--Einstein superfluid described by a complex order parameter $\psi(x) = \sqrt{\rho(x)}\,e^{i\theta(x)}$, the superfluid velocity is an exact 1D Abelian $U(1)$ phase gradient,
+\begin{equation}
+  u_s(x) = \frac{\hbar}{m}\,\nabla\theta(x), \qquad \rho(x) > 0,
+\end{equation}
+which satisfies $\nabla \times u_s \equiv 0$ identically throughout the bulk fluid ($\Omega \equiv 0$). Rotation cannot enter smoothly into the $U(1)$ phase gradient; instead, all rotational circulation lives in the \emph{negative defect}---the quantized, empty vortex cores where $\rho(x) = 0$ and the phase $\theta$ winds by $2\pi n$.
+
+``Seeing negatively'' in 3D Navier--Stokes turbulence translates this principle from $U(1)$ phase singularities to non-Abelian $SO(3)$ frame holonomy. When a 3D turbulent flow forms a heterochiral vortex tangle, the vorticity direction $\hat{\omega}(x) = \omega(x)/|\omega(x)|$ fails to remain parallel across scales. Just as superfluid circulation is concentrated in the complementary void $\rho = 0$, the nonlinear depletion of vortex stretching is governed by the \emph{frame misalignment defect} $\delta_{\mathrm{NS}}(b)$ rather than by symmetric bulk $L^2$ energy or enstrophy densities.
+
+\section{Converting Navier--Stokes into Matrices and \texorpdfstring{$O(3)$}{O(3)}-Even Parity Blindness}
+
+Decomposing the velocity gradient tensor $A_{ij} = \partial_j u_i = S_{ij} + \Omega_{ij}$ into the symmetric strain $S = \frac{1}{2}(A + A^T)$ and antisymmetric vorticity $\Omega = \frac{1}{2}(A - A^T) \in \mathfrak{so}(3)$, the vorticity transport equation takes the matrix commutator form
+\begin{equation}
+  \frac{D\Omega}{Dt} = [S, \Omega] + \nu\Delta\Omega \quad (\text{up to vortex-stretching coupling}).
+\end{equation}
+On the periodic torus $\mathbb{T}^3$ discretized on an $L = 12$ grid with symmetric active Fourier shell $K = \{-5,\dots,5\}^3 \setminus \{0\}$ ($|K| = 1330$ wavevectors, $2660$ divergence-free modes), we realize the Clifford algebra $\mathrm{Cl}(3,0) \cong M_2(\mathbb{C})$ via the Pauli symbol $\Sigma(k) = \sum_{a=1}^3 \hat{k}_a \sigma_a$ ($\Sigma(k)^2 = I_2$, $\mathrm{Tr}\,\Sigma(k) = 0$). On divergence-free 3D vector fields, the corresponding Beltrami helical projectors
+\begin{equation}
+  P_\pm(k) = \frac{1}{2}\!\left(I_3 - \hat{k}\hat{k}^T \pm \frac{i}{|k|}[k]_\times\right) = h_\pm(k)\,h_\pm(k)^\dagger
+\end{equation}
+split any divergence-free field orthogonally into $u = u_+ \oplus u_-$ with $\nabla \times u_\pm = \pm(-\Delta)^{1/2} u_\pm$.
+
+\begin{proposition}[Verified $\mathrm{Cl}(3,0)$ Helical Schur \& Parity-Blindness Receipt]
+On the $L=12$ periodic grid ($2660$ real helical dimensions across $665$ $\{k,-k\}$ pairs), the diagnostic script \texttt{probe\_cl30\_helical\_schur\_and\_vorticity\_cocycle.py} (executed in \texttt{scripts/}) certifies to machine precision:
+\begin{enumerate}
+  \item \textbf{Beltrami Eigenbasis:} $\mathrm{Cl}(3,0)$ involution error $6.29\times 10^{-16}$, curl eigenvalue error $1.49\times 10^{-15}$, real-space Beltrami curl errors $1.75\times 10^{-16}$ ($+$) and $1.78\times 10^{-16}$ ($-$), and helical orthogonality $\langle u_+, u_- \rangle / \|u\|^2 = 8.69\times 10^{-18}$.
+  \item \textbf{Diagonal Gram Matrix & Positive Schur Complement:} Under spatial parity reflection $P: u(x) \mapsto -u(-x)$, $P P_\pm P = P_\mp$. Choosing the parity-even $O(3)$ baseline $\{Q_E = P_+ + P_-, Q_Z = (-\Delta - \overline{|k|^2})Q_E\}$ and the parity-odd helicity operator $T_{\mathrm{hel}} = P_+ - P_-$, the Hilbert--Schmidt Gram matrix is
+  \begin{equation}
+    G = \mathrm{diag}(2660.0,\; 621106.65,\; 2660.0),
+  \end{equation}
+  with normalized off-diagonal maximum $1.18\times 10^{-15}$, $\Pi_{O(3)\text{-even}}(T_{\mathrm{hel}}) = 0.0$, and strictly positive Schur complement $S_{\mathrm{Schur}} = 2660.0 > 0$.
+  \item \textbf{Parity Blindness of $T_{\mathrm{hel}}^2$ and Half-Operator Reconstruction:} Squaring $T_{\mathrm{hel}}$ yields $T_{\mathrm{hel}}^2 = I$ (\texttt{t\_sq\_id\_err = 0.0}, $P_+ T_{\mathrm{hel}}^2 P_- = 0.0$), rendering quadratic energy/enstrophy densities blind to chiral imbalance. Meanwhile, the non-symmetric observable half-operator $K_{\mathrm{half}} = 2T_{\mathrm{hel}} + 2(P_+ P - P_- P)$ reconstructs $K_{\mathrm{half}} + K_{\mathrm{half}}^T = 4T_{\mathrm{hel}}$ with zero residual (\texttt{k\_half\_recon\_err = 0.0}).
+\end{enumerate}
+\end{proposition}
+
+\section{Multiscale (\texorpdfstring{$b = 1 \to 2 \to 4$}{b = 1 -> 2 -> 4}) Constantin--Fefferman \texorpdfstring{$SO(3)$}{SO(3)} Cocycle Depletion}
+
+In direct isomorphism with the Yang--Mills \texttt{YM142} adjoint Bianchi cocycle $\delta_U(X) = 1 - \hat{n}\cdot R(U)\hat{n}$, we measure the Constantin--Fefferman $SO(3)$ vorticity frame alignment cocycle defect across block scales $b \in \{1, 2, 4\}$ on $L=12$:
+\begin{equation}
+  \delta_{\mathrm{NS}}(b) = 1 - \left\langle \left(\hat{\omega}(x)\cdot\hat{\omega}(x+b)\right)^2 \right\rangle, \qquad
+  \rho_{\mathrm{stretch}}^{\mathrm{BLK}}(b) = \frac{\langle |\overline{\omega}_b^T \overline{S}_b \overline{\omega}_b| \rangle}{\langle |\omega|^2 \|S\|_F \rangle}.
+\end{equation}
+
+\begin{table}[htbp]
+\centering
+\caption{Multiscale $SO(3)$ vorticity cocycle $\delta_{\mathrm{NS}}(b)$ and block stretching transfer $\rho_{\mathrm{stretch}}^{\mathrm{BLK}}(b)$ on $L=12$.}
+\label{tab:cocycle}
+\begin{tabular}{lccc}
+\toprule
+Flow Configuration & $b = 1$ & $b = 2$ & $b = 4$ \\
+\midrule
+1D/Abelian Parallel Vortex Tube: $\delta_{\mathrm{NS}}(b)$ & $0.0000$ & $0.0000$ & $0.0000$ \\
+3D Heterochiral TG + Kida--Pelz Tangle: $\delta_{\mathrm{NS}}(b)$ & $0.4200$ & $0.6411$ & $0.6452$ \\
+3D Heterochiral TG + Kida--Pelz Tangle: $\rho_{\mathrm{stretch}}^{\mathrm{BLK}}(b)$ & $0.2713$ & $0.1441$ & $0.0140$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+As shown in Table~\ref{tab:cocycle}, the 1D/Abelian parallel vortex tube maintains exact frame coherence ($\delta_{\mathrm{NS}}(b) \equiv 0$), whereas in the 3D heterochiral Taylor--Green + Kida--Pelz tangle $\delta_{\mathrm{NS}}(b)$ approaches the 3D isotropic limit $2/3$ and drives a $19.4\times$ monotone contraction of $\rho_{\mathrm{stretch}}^{\mathrm{BLK}}(b)$ from $0.2713$ ($b=1$) down to $0.0140$ ($b=4$).
+
+\section{Unified 4-Workspace Rosetta Master Audit Table}
+
+The read-only aggregator \texttt{aggregate\_rosetta\_master\_audit.py} verifies all four Millennium workspaces simultaneously (`rosetta\_master\_audit\_receipt.json`, \textbf{4/4 PASS}) without modifying any locked baseline files.
+
+\begin{table}[htbp]
+\centering
+\caption{Unified 4-workspace Rosetta master audit (\texttt{rosetta\_master\_audit\_receipt.json}, 4/4 PASS). All four Millennium problems remain strictly OPEN.}
+\label{tab:rosetta}
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{5.8cm}l@{}}
+\toprule
+Problem & Status & Baseline / Receipt & Verified Schur \& Cocycle Metrics & Audit \\
+\midrule
+Hodge\\(\texttt{HODGE-MIL-001}) & OPEN & \texttt{MILLENNIUM\_EXT\_\-RECEIPT.json} & \texttt{EXT\_CHECKS\_\-PASSED = true}, \texttt{lake\_build\_ok = true}, $100$ ext.\ theorems, $0$ unexpected axioms & PASS \\
+4D Yang--Mills Mass Gap & OPEN & Commit \texttt{0f3f012} + scratch probes & \texttt{2TO4\_FIBER\_SCHUR\_OK}, \texttt{TRACE\_SANDWICH\_OK}, $C_{\mathrm{dom}} = 13.47$, $c_{\mathrm{cocycle}} = 1.3407$, $720/720$ blocks & PASS \\
+Riemann Hypothesis & OPEN & \texttt{vasyunin\_schur\_\-chiral\_rosetta\_\-results.json} & \texttt{VASYUNIN\_SCHUR\_\-CHIRAL\_ROSETTA\_OK}, residual $1.631\times 10^{-55}$, $N=6$ $\delta_{\mathrm{PC}}(6) = 0.157648$ & PASS \\
+3D Navier--Stokes & OPEN & \texttt{probe\_cl30\_helical\_\-schur\_results.json} & \texttt{CL30\_HELICAL\_SCHUR\_\-COCYCLE\_OK}, $S_{\mathrm{Schur}} = 2660.0$, $K_{\mathrm{half}} + K_{\mathrm{half}}^T = 4T_{\mathrm{hel}}$, $\rho_{\mathrm{stretch}}^{\mathrm{BLK}}(4) = 0.0140$ & PASS \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
