@@ -2,6 +2,7 @@
 
 **Author:** Qamar Munawer  
 **Affiliation:** Brandenburg University of Technology (BTU) Cottbus–Senftenberg  
+**Date:** November 19, 2026  
 
 ---
 
@@ -59,7 +60,7 @@
 
 ---
 
-## Part 2: The Complete Essay
+## Part 2: The Essay
 
 ### 1. How I Look at the World: An Architect's Eye on Mathematics
 
@@ -70,8 +71,10 @@ An architect looks at something else entirely. You look at the **empty space bet
 That architectural habit shapes everything about how I look at the world, at mathematics, and at human knowledge:
 
 1. **First-Principles Geometric Honesty:** Nature does not calculate with pages of unreadable academic jargon. Nature computes with geometry—with lines, planes, rotations, and balances. If a mathematical idea is true, you should be able to feel it in the way an arch holds weight, the way water swirls down a drain, or the way a guitar string vibrates.
-2. **Zero-Trust Verification Over Human Authority:** In structural engineering, a building does not stay up because a famous professor signed a letter saying it looks sturdy. It stays up because the load paths close mathematically. In modern mathematics and software engineering, human intuition creates the blueprint, and `ai is being used as a tool`—like a high-speed drafting instrument or a laser Theodolite—to test thousands of structural joints. Crucially, neither human pride nor an AI tool is ever trusted on its word. Every claim must pass through an unforgiving mechanical compiler (Lean 4 with zero axioms) and cryptographic SHA-256 hash locks. If a bridge holds only in a finite valley, we certify the valley and explicitly mark the infinite ocean as an open frontier.
+2. **Zero-Trust Verification Over Human Authority:** In structural engineering, a building does not stay up because a famous professor signed a letter saying it looks sturdy. It stays up because the load paths close mathematically. In modern mathematics and software engineering, human intuition creates the blueprint, and `ai is being used as a tool`—like a high-speed drafting instrument or a laser theodolite—to test thousands of structural joints. Crucially, neither human pride nor an AI tool is ever trusted on its word. Every claim must pass through an unforgiving mechanical compiler (Lean 4 with zero axioms) and cryptographic SHA-256 hash locks. If a bridge holds only in a finite valley, we certify the valley and explicitly mark the infinite ocean as an open frontier.
 3. **Seeing Negatively:** Across the hardest problems in mathematics and physics, generations of researchers have tried to measure the "bricks"—the positive bulk energy, the direct wave intensity, the visible symmetric shapes. And time after time, they have run into mirages. The breakthrough across our four connected research projects came from flipping the camera: **subtracting the noisy positive bulk so that only the silent, invisible negative defect remains.**
+
+---
 
 ### 2. The Parable of the Spinning Cup and the Empty Core
 
@@ -92,6 +95,8 @@ Once you see this trick in a cup of superfluid, you start recognizing the exact 
 * **In Pure Geometry (The Hodge Conjecture):** How do we detect invisible, twisted geometric cycles inside high-dimensional crystals when every standard ruler only sees flat, mirror-symmetric shadows?
 * **In Prime Numbers (The Riemann Hypothesis):** How do prime numbers ($2, 3, 5, 7\dots$) interfere with composite numbers ($4, 6, 8, 9, 10\dots$) when we only observe their combined harmonic echo?
 
+---
+
 ### 3. Why One Dimension Cannot Twist: Lines vs. Locked Planes
 
 Before we talk about how our measuring machine works, we need to understand a simple geometric truth about dimensions.
@@ -106,6 +111,8 @@ Across all four of our projects, reality flips a switch at the exact boundary wh
 2. **In Nuclear Forces (Yang–Mills):** Electromagnetism ($U(1)$) moves along a single 1D phase circle (`0` transverse directions), so its loop twist defect is identically **`0.0000`**, and light remains massless. The nuclear force ($SU(2)$) rotates on a 3D sphere with `2` transverse root directions; when two spacetime planes cross, the twist defect jumps to **`0.9860`**, locking the field into a self-interacting knot.
 3. **In Prime Numbers (Riemann/Vasyunin):** If you count up to $N = 4$ or $N = 5$, the only composite number in your list is $4 = 2 \times 2$. The number $4$ lives along a **single prime line** (powers of $2$). When our probe measures the Prime–Composite interference defect $\delta_{PC}(N)$ at $N = 4$ and $N = 5$, the gauge reads identically **`0.000000`**. The very next step is **$N = 6 = 2 \times 3$**. For the first time in arithmetic, **two different prime lines ($2$ and $3$) intersect inside a single number**. Instantly, the gauge jumps from `0.000000` to **`0.157647933508`** (and climbs to **`0.304008082755`** at $N = 30 = 2 \times 3 \times 5$, where three prime lines intersect).
 4. **In Fluid Whirlpools (Navier–Stokes):** If all vortex tubes line up parallel like uncooked spaghetti in a box (a 1D Abelian flow), their directional twist defect across distance is **`0.0000`**. The moment left-handed and right-handed corkscrew waves cross in 3D, the directional twist jumps to **`0.6452`**.
+
+---
 
 ### 4. What Is a Measurement, and Why Do Standard Rulers Lie?
 
@@ -127,13 +134,13 @@ In our four systems, we found the exact three-channel diagonal overlap table acr
 
 If the overlap table is so clean, why did traditional approaches get stuck for decades? Because of two classic traps:
 
-* **Trap A — The Clamped Drumhead Mirage (The Dirichlet Boundary Trap):**  
-  Suppose you want to know whether air inside an open concert hall has natural stiffness, so you clamp a tiny $2$-inch iron ring over a pocket of air and tap it. Because you clamped the rim so tightly, the tiny pocket vibrates at a high pitch (in our 4D Yang–Mills probe, clamping a $2^4$ box created a huge baseline energy reading of **`65.4505`** and a minimum stiffness of **`4.0000`**). If you look positively at that `65.4505` number, you might declare: *"Eureka! I proved the force field has a mass gap!"*  
+* **Trap A — The Clamped Drumhead Mirage (The Dirichlet Boundary Trap):**
+  Suppose you want to know whether air inside an open concert hall has natural stiffness, so you clamp a tiny $2$-inch iron ring over a pocket of air and tap it. Because you clamped the rim so tightly, the tiny pocket vibrates at a high pitch (in our 4D Yang–Mills probe, clamping a $2^4$ box created a huge baseline energy reading of **`65.4505`** and a minimum stiffness of **`4.0000`**). If you look positively at that `65.4505` number, you might declare: *"Eureka! I proved the force field has a mass gap!"*
   Wait—when we ran the exact same clamped-box test on **massless light ($U(1)$)**, it produced the **exact same `65.4505` stiffness!** The stiffness was not coming from the nuclear force; it was coming from the iron clamp on the wall.
-* **Trap B — The Squared-Photograph Blur (Parity Blindness):**  
+* **Trap B — The Squared-Photograph Blur (Parity Blindness):**
   To make numbers positive, physicists and geometers almost always **square** their operators (computing energy $E \propto T^2$ or action $F^2$). What happens when you square $-1$ and $+1$? Both become $+1$:
 
-$$(-1)^2 = +1, \qquad (+1)^2 = +1.$$
+  $$(-1)^2 = +1, \qquad (+1)^2 = +1.$$
 
   Squaring an operator is like taking a long-exposure photograph of a ceiling fan spinning clockwise vs. counterclockwise: both photographs show the exact same gray circle. In all four of our workspaces, we proved mathematically that squaring the chiral operator ($T_{\mathrm{ch}}^2$, $T_{\mathrm{pal}}^2$, $T_{\mathrm{hel}}^2$) creates a block-diagonal matrix whose left-to-right cross-channel is identically **`0.0`**. Standard positive energy formulas are mathematically blind to handedness.
 
@@ -153,21 +160,25 @@ $$\Sigma_{\mathrm{Schur}} = Q_{\mathrm{target}} - Q_{\mathrm{cross}}\, Q_{\mathr
 
 It measures **what is left of the target after every trace of the positive baseline bowl—and every indirect bounce off the bowl—has been subtracted out.**
 
+---
+
 ### 5. What the Tared Scale Revealed Across All Four Universes
 
 When we pressed the mathematical "Tare" button across all four workspaces and verified the readings with computer-checked proofs, the fog vanished:
 
-1. **In 4D Nuclear Forces (Yang–Mills `v1.1.0-rosetta`, Zenodo `10.5281/zenodo.24378644`):**  
+1. **In 4D Nuclear Forces (Yang–Mills `v1.1.0-rosetta`, Zenodo `10.5281/zenodo.24378644`):**
    Once we subtracted the calibrated $U(1)$ light baseline (at the exact neutral stencil weight $\alpha^* = 0.188$), the fake `65.4505` wall mirage dropped to **`0.000000000000000`**. What remained on the tared scale was a tug-of-war between two genuine forces inside every $2^4$ spacetime box:
    * **Diamagnetic orbital motion ($\Delta F_{\mathrm{diam}}/d$):** A tiny positive push (`+0.0073` to `+0.0232`) that tries to weaken the force (just like ordinary electricity).
-   * **Paramagnetic spin-1 commutator ($F_{\mathrm{para}}/d = F_{\mathrm{Schur}}/d$):** A massive **negative pull (`-0.2011` to `-0.3774`)** caused by spinning gluons grabbing onto each other's magnetic fields.  
+   * **Paramagnetic spin-1 commutator ($F_{\mathrm{para}}/d = F_{\mathrm{Schur}}/d$):** A massive **negative pull (`-0.2011` to `-0.3774`)** caused by spinning gluons grabbing onto each other's magnetic fields.
    Across every single one of the **`720` tested non-Abelian spacetime blocks**, the negative magnetic pull crushed the positive orbital push by **$13.47\times$ to $28.9\times$**, driving the running coupling at the exact rate predicted by 1-loop asymptotic freedom (`-0.269` measured vs. `-0.2575` theoretical) and locking directly to the 2D loop twist defect (`ratio >= 1.3407`).
-2. **In 4-Dimensional Crystal Geometry (Hodge Conjecture `184` Zero-Axiom Theorems):**  
+2. **In 4-Dimensional Crystal Geometry (Hodge Conjecture `184` Zero-Axiom Theorems):**
    When we tared out the entire universal symplectic baseline ($\mathrm{Sp}(8)$, weights `16` and `432`), every ordinary diagonal cycle vanished to **`0`**. What sat on the tared scale was an immovable integer weight of **`1152`**, generated by a 7-dimensional Clifford spinor switch ($\mathrm{Cl}(0,7)$). Furthermore, in the 70-dimensional middle space $H^4(A)$, a simple four-variable polynomial filter $F_{\mathrm{ch}}(s) = e_1(s) + e_3(s)$ canceled all **`68`** background dimensions to exact **`0`** in one step, leaving only the **`2`** Weil dimensions standing at **`-8` and `+8`**.
-3. **In Prime Number Harmonics (Riemann Hypothesis `v3.1.0-rosetta`, Zenodo `10.5281/zenodo.24378371`–`24378373`):**  
+3. **In Prime Number Harmonics (Riemann Hypothesis `v3.1.0-rosetta`, Zenodo `10.5281/zenodo.24378371`–`24378373`):**
    When we tared out the Dirichlet chamber wall and the prime-number block $Q_{PP}$ from the Vasyunin matrix $Q_N$, the composite numbers sat at **`0.000000`** depletion for $N = 4, 5$, then dropped by **`15.76%` (`0.157648`)** at $N = 6 = 2 \times 3$ as the geometry crossed into a Lorentzian light cone, with every matrix identity locked to **55 decimal places (`1.631e-55`)**.
-4. **In 3D Whirlpools (Navier–Stokes `v1.0.0-rosetta`, Zenodo `10.5281/zenodo.24378625`):**  
+4. **In 3D Whirlpools (Navier–Stokes `v1.0.0-rosetta`, Zenodo `10.5281/zenodo.24378625`):**
    When we tared out all mirror-symmetric energy and strain across `2,660` helical modes, the chiral helicity switch stood isolated with a Schur complement of **`2660.0`**. And as 3D vortex tubes tangled across doubling box sizes ($b = 1 \to 2 \to 4$), their directional scrambling $\delta_{\mathrm{NS}}(b)$ rose from `0.4200` to **`0.6452`**, choking off the coarse-grained vortex-stretching engine by nearly **twenty-fold (`0.2713` down to `0.0140`)**.
+
+---
 
 ### 6. Honest Boundaries: The Valley We Mapped vs. The Infinite Ocean
 
@@ -177,18 +188,19 @@ A true builder never confuses a certified foundation with an infinite tower. In 
 * The infinite-volume continuum **4D Yang–Mills Mass Gap** ($L \to \infty, a \to 0$),
 * The asymptotic **Riemann Hypothesis** ($N \to \infty$, `NO_RH_PROOF = TRUE`), and
 * Global **3D Navier–Stokes Regularity** (`NS_GLOBAL_REGULARITY_OPEN = TRUE`)
-
 all remain **strictly OPEN** problems.
 
 Why? Because proving an infinite continuum limit requires bridging from finite lattices and modular operator algebras all the way to infinity. What we *have* built, proven with zero unverified axioms, and locked with cryptographic hashes is the **tared measuring instrument itself**: the demonstration that across geometry, nuclear physics, prime numbers, and fluid turbulence, positive bulk measurements are mirages—and the true engine of reality appears the moment you subtract the bowl and measure what is missing.
 
 ---
 
-## Part 3: Live GitHub Releases & Permanent Zenodo DOIs
+## Part 3: Live Repositories & Permanent Zenodo DOIs
 
-| Workspace / Problem | Status | GitHub Release | Permanent Zenodo DOI |
-| --- | --- | --- | --- |
-| **3D Navier–Stokes (`tubulance`)** | **OPEN** (`NS_GLOBAL_REGULARITY_OPEN = true`) | https://github.com/Qamarbajwa/tubulance/releases/tag/v1.0.0-rosetta | `10.5281/zenodo.24378625` (https://zenodo.org/record/24378625) |
-| **4D Yang–Mills Mass Gap** | **OPEN** | `v1.1.0-rosetta` | `10.5281/zenodo.24378644` (https://zenodo.org/record/24378644) |
-| **Riemann Hypothesis** | **OPEN** (`NO_RH_PROOF = true`) | `v3.1.0-rosetta` | `10.5281/zenodo.24378371`, `10.5281/zenodo.24378372`, `10.5281/zenodo.24378373` |
-| **Hodge Conjecture (`HODGE-MILLENNIUM-001`)** | **OPEN** | `MILLENNIUM_EXT_RECEIPT.json` (`4/4 PASS`) | Verified in `rosetta_master_audit_receipt.json` |
+* **Riemann Hypothesis (`Qamarbajwa/RiemannBlueprint`, `Qamarbajwa/riemann-lean4-papers`, Release `v3.1.0-rosetta`):**
+  * Zenodo Hub 07 (`RiemannBlueprint`): `10.5281/zenodo.24378371`
+  * Zenodo Hub 13 (`Paper K`): `10.5281/zenodo.24378372`
+  * Zenodo Hub 14 (`Paper L`): `10.5281/zenodo.24378373`
+* **3D Navier–Stokes (`Qamarbajwa/tubulance`, Release `v1.0.0-rosetta`):**
+  * Zenodo DOIs: `10.5281/zenodo.24378625`
+* **4D Yang–Mills (`Qamarbajwa/yang-mills-lean4`, `Qamarbajwa/yang-mills-lean4-papers`, Release `v1.1.0-rosetta`):**
+  * Zenodo DOI: `10.5281/zenodo.24378644`
