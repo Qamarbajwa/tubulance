@@ -23,6 +23,11 @@ from .contracts import (
     TournamentContract,
     IndependentVerificationContract,
 )
+from .autonomy import (
+    AutonomousResearchRunner,
+    AutonomyLevel,
+    AutonomyReceipt,
+)
 
 __all__ = [
     "Denied",
@@ -39,4 +44,7 @@ __all__ = [
     "EvolutionContract",
     "TournamentContract",
     "IndependentVerificationContract",
+    "AutonomousResearchRunner",
+    "AutonomyLevel",
+    "AutonomyReceipt",
 ]

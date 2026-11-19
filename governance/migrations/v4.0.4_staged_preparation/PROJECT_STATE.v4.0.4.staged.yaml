@@ -1,5 +1,5 @@
 schema_version: 4.0.4
-revision: 22
+revision: 23
 activation: STAGED_CANDIDATE_MIGRATION_BLOCKED
 project:
   id: tubulance
@@ -28,7 +28,7 @@ governance_binding:
 coordination:
   state_writer: antigravity-primary-agent
   serialization_method: REVISION_COMPARE_AND_SWAP
-  last_expected_revision: 21
+  last_expected_revision: 22
   last_updated_at: '2026-11-12T18:30:00Z'
   active_contract: NS-GOV-MIG-V404-001
   frozen_candidate: ab4fad5517903740c974ed450d0fc22b29c14306
@@ -38,25 +38,27 @@ epistemic_status:
   openai_unforced_transfer_branch_status: COMPLETED_NEGATIVE_RESEARCH_BRANCH
   ns_openai_b2_status: BLOCKED
   governance_migration_v404_status: MIGRATION_BLOCKED
-  scientific_program_status: NS-NONLINEAR-SELF-FOCUS-002_CONDITIONAL_FORWARD_CASCADE_MECHANISM_FOUND_NO_MACROSCOPIC_CLOSURE
-  active_milestone: NS-NONLINEAR-SELF-FOCUS-002
+  scientific_program_status: NS-NONLINEAR-SELF-FOCUS-003_NONLOCAL_TRIAD_DECOHERENCE_AND_HELICAL_PARITY_SUPPRESSION_PROVED
+  active_milestone: NS-NONLINEAR-SELF-FOCUS-003
 current_objective:
-  id: NS-NONLINEAR-SELF-FOCUS-002
-  title: Forward Dyadic Enstrophy Transfer, Nonlinear Flux, and Commutator Closure
-  target_bridge: Forward Scale-Local Dyadic Self-Focusing on T^3_L (nu > 0, f = 0)
+  id: NS-NONLINEAR-SELF-FOCUS-003
+  title: Non-Local Triad Phase Decoherence, Helical Parity Suppression, and Scale-Coupling
+    Bounds
+  target_bridge: Non-Local Scale-Separated Enstrophy Injection on T^3_L (nu > 0, f
+    = 0)
   risk: R3
-  status: COMPLETED_CONDITIONAL_FORWARD_CASCADE_MECHANISM_FOUND_REVIEW_REQUIRED_FOR_IND2
+  status: COMPLETED_NONLOCAL_BYPASS_EXCLUDED_REVIEW_REQUIRED_FOR_IND2
   dependencies:
-  - NS-NONLINEAR-SELF-FOCUS-001-R1
+  - NS-NONLINEAR-SELF-FOCUS-002
 hard_gates:
   clay_statement_b_unresolved: PASS_ENFORCED
   ns_openai_b2_blocked: PASS_ENFORCED
   dag_cycle_count: 0_CYCLES_PASS
-  claim_passport_census: 47_OF_47_VALID_PASS
-  canonical_claims_with_complete_packages: 42_OF_42_VALID_PASS
+  claim_passport_census: 48_OF_48_VALID_PASS
+  canonical_claims_with_complete_packages: 43_OF_43_VALID_PASS
   coscientist_invariants_12_of_12: PASS_ENFORCED
-  negative_evidence_retention: 49_OF_49_PRESERVED_PASS
-  structural_obstruction_retention: 26_OF_26_PRESERVED_PASS
+  negative_evidence_retention: 50_OF_50_PRESERVED_PASS
+  structural_obstruction_retention: 27_OF_27_PRESERVED_PASS
   writer_anti_self_acceptance: PASS_ENFORCED
   unscaled_scalar_bounds_prohibited: PASS_ENFORCED
 release:
@@ -67,6 +69,11 @@ release:
   candidate: null
   reason: PURE_MATHEMATICAL_RESEARCH_PROGRAM_CLAY_B_UNRESOLVED
 objectives:
+- id: NS-NONLINEAR-SELF-FOCUS-003
+  title: Non-Local Triad Phase Decoherence, Helical Parity Suppression, and Scale-Coupling
+    Bounds
+  status: ACCEPTED_BOUNDED_AT_IND1_REVIEW_REQUIRED_FOR_IND2
+  evidence_ref: NS_NONLINEAR_SELF_FOCUS_003_NONLOCAL_TRIAD_DECOHERENCE.md
 - id: NS-COSCIENTIST-INTEGRATION-001
   title: Co-Scientist Dark Factory Subsystem and Google Drive Governance OS Integration
   status: ACCEPTED_BOUNDED_AT_IND1
@@ -149,7 +156,8 @@ objectives:
 capabilities:
   CAP-NS-COSCIENTIST:
     status: VERIFIED_KERNEL
-    scope: ResearchGateKernel SR0-SR8, 12 no-bypass invariants I-01 to I-12, multi-agent contracts, Elo ranking separation from proof
+    scope: ResearchGateKernel SR0-SR8, 12 no-bypass invariants I-01 to I-12, multi-agent
+      contracts, Elo ranking separation from proof
     evidence_refs:
     - tests/test_coscientist_math_governance.py
   CAP-NS-ANALYTICS:
@@ -168,6 +176,13 @@ capabilities:
     evidence_refs:
     - tests/test_tp2_g6_a1_suite.py
 evidence_refs:
+- id: EVID-NS-NONLINEAR-SELF-FOCUS-003
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_NONLINEAR_SELF_FOCUS_003_NONLOCAL_TRIAD_DECOHERENCE.md
+- id: EVID-CLM-043
+  claim_id: CLM-043
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_NONLINEAR_SELF_FOCUS_003_NONLOCAL_TRIAD_DECOHERENCE.md
 - id: EVID-NS-NONLINEAR-SELF-FOCUS-001-R1-REVIEW
   type: GOV_E3_REPRODUCIBLE
   artifact: NS_NONLINEAR_SELF_FOCUS_001_R1_INDEPENDENT_REVIEW.md
@@ -289,8 +304,16 @@ negative_history_refs:
 - NEG-EV-046
 - NEG-EV-047
 - NEG-EV-048
+- NEG-EV-049
+- NEG-EV-050
 blockers: []
 known_risks:
+- risk_id: RISK-NONLOCAL-TRIAD-DECOHERENCE
+  bridge: Non-Local Scale-Separated Enstrophy Injection on T^3_L
+  description: Incompressibility forces uniform background advection to cancel (<u_{<=Q-3}.grad
+    w_Q, w_Q> = 0), while differential stretching is crushed by 2^{2Q} Laplacian dissipation.
+    Helical Beltrami decomposition imposes an additional O(2^{-Q}) parity suppression.
+  obstruction: NS-OBS-023
 - risk_id: RISK-CURVATURE-PALINSTROPHY-PENALTY
   bridge: Forward Scale-Local Dyadic Self-Focusing on T^3_L
   description: 'R1-repaired state (NS-OBS-021-R1 = HEURISTIC_TENSION): |grad omega|^2

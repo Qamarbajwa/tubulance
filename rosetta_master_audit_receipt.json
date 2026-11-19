@@ -8,14 +8,15 @@
       "10.5281/zenodo.24378372",
       "10.5281/zenodo.24378373"
     ],
-    "navier_stokes_tubulance": "10.5281/zenodo.24381620",
+    "navier_stokes_tubulance": "10.5281/zenodo.24381824",
     "yang_mills_4d": "10.5281/zenodo.24378644",
     "yang_mills_4d_concept": "10.5281/zenodo.24327876",
     "hodge_version": "10.5281/zenodo.24380054",
     "hodge_concept": "10.5281/zenodo.24329779",
     "navier_stokes_tubulance_concept": "10.5281/zenodo.24378624",
     "navier_stokes_tubulance_v1_0_0": "10.5281/zenodo.24378625",
-    "navier_stokes_tubulance_v1_1_0": "10.5281/zenodo.24381620"
+    "navier_stokes_tubulance_v1_1_0": "10.5281/zenodo.24381620",
+    "navier_stokes_tubulance_v1_2_0": "10.5281/zenodo.24381824"
   },
   "workspaces": {
     "hodge": {
@@ -124,9 +125,9 @@
       "status_open": true,
       "audit_status": "PASS",
       "github_repo": "Qamarbajwa/tubulance",
-      "release_tag": "v1.1.0-rosetta",
+      "release_tag": "v1.2.0-rosetta",
       "release_commit": "bc085f2",
-      "zenodo_version_doi": "10.5281/zenodo.24381620",
+      "zenodo_version_doi": "10.5281/zenodo.24381824",
       "receipt_path": "d:\\Comfy UI\\tubulance\\probe_cl30_helical_schur_results.json",
       "status": "CL30_HELICAL_SCHUR_COCYCLE_OK",
       "all_checks_passed": true,
@@ -162,7 +163,9 @@
       "navier_stokes_win_win_arch_cert_present": true,
       "zenodo_concept_doi": "10.5281/zenodo.24378624",
       "plain_language_explainer_present": true,
-      "coscientist_kernel_present": true
+      "coscientist_kernel_present": true,
+      "coscientist_autonomy_level_2_present": true,
+      "clm043_nonlocal_triad_present": true
     }
   }
 }

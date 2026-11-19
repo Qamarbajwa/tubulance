@@ -636,6 +636,22 @@ understanding_packages:
       essential_assumptions: ["Smooth divergence-free Navier-Stokes on T^3_L", "Sharp L^2-orthogonal dyadic shell projectors", "Initial cutoff Q in N_0 fixed by initial data at t_0", "Lipchitz continuity of nonlinear force F_{>Q}(t)"]
       status: "U3_COMPLETE_PACKAGE"
 
+  - package_id: "UND-043"
+    claim_id: "CLM-043"
+    name: "NONLOCAL_TRIAD_DECOHERENCE_AND_HELICAL_PARITY_SUPPRESSION_LEMMA"
+    level_1_mechanism: "Incompressibility-driven skew-symmetry cancellation of uniform background advection combined with Calderon-Zygmund commutator estimates, Bernstein scale-separation bounds, and Beltrami helical mode parity suppression."
+    level_2_architecture: |
+      1. Uniform advection vanishing: <(u_{<=Q-3}.grad)omega_Q, omega_Q> = 0 identically by incompressibility div u = 0.
+      2. Commutator bound: |T_{Q,non-local}| <= C_{CZ} ||grad u_{<=Q-3}||_{L^inf} ||omega_Q||_{L^2}^2 <= C k_0^{3/2} 2^{Q/2} ||omega||_{L^2} ||omega_Q||_{L^2}^2.
+      3. Viscous domination ratio: |T_{Q,non-local}| / D_Q <= C (||omega||_{L^2} / (nu k_0^{1/2})) 2^{-3Q/2} -> 0 as Q -> infty.
+      4. Helical parity suppression: Chiral triad coupling M(k, p, q) decays as O(|p|/|k|) ~ 2^{-Q} due to Beltrami eigenmode parity cancellation.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Incompressibility forces large-scale velocity to act purely as a spatial translator for high-frequency packets, while differential stretching is dynamically suffocated by the 2^{2Q} viscous Laplacian multiplier."
+      what_can_fail: "Fails if infinite energy initial data are considered or if non-periodic boundary conditions allow boundary layer vorticity injection."
+      essential_assumptions: ["Smooth divergence-free Navier-Stokes on T^3_L", "Finite initial enstrophy budget ||omega||_{L^2} < infty", "Positive viscosity nu > 0", "Sharp dyadic projectors P_q"]
+      status: "U3_COMPLETE_PACKAGE"
+
+
 
 
 

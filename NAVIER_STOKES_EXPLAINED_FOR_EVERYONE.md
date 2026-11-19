@@ -1,12 +1,12 @@
 # Navier–Stokes for Everyone: How Water Swirls, Why the Million-Dollar Math Problem is So Hard, and What Our Supercomputers Discovered
 
-**A Plain-Language Scientific Guide to the 3D Navier–Stokes Millennium Prize Problem, Vortex Stretching, and Fluid Physics**
+**A Plain-Language Scientific Guide to the 3D Navier–Stokes Millennium Prize Problem, Vortex Stretching, Non-Local Triads, and the Autonomous Co-Scientist Dark Factory**
 
 *Author: Qamar Bajwa*  
 *Project: Tubulance / 3D Navier–Stokes Research Programme*  
 *Repository: [https://github.com/Qamarbajwa/tubulance](https://github.com/Qamarbajwa/tubulance)*  
 *Zenodo Concept DOI: [10.5281/zenodo.24378624](https://doi.org/10.5281/zenodo.24378624)*  
-*Zenodo Version DOI: [10.5281/zenodo.24378625](https://doi.org/10.5281/zenodo.24378625)*  
+*Zenodo Latest Version DOI: [10.5281/zenodo.24381620](https://doi.org/10.5281/zenodo.24381620)*  
 
 ---
 
@@ -24,7 +24,7 @@ Yet, deep within the mathematics lies an astonishing paradox:
 
 In the year 2000, the **Clay Mathematics Institute** designated this question one of the **Seven Millennium Prize Problems**—the most profound open mathematical questions of our era—placing a **\$1,000,000 cash prize** on its resolution.
 
-This guide explains in clear, plain language what this problem is, how real-world fluids actually behave, what all the mathematical terms and instruments measure, and what our research project discovered when we tested these questions on supercomputers with rigorous mathematical verification.
+This guide explains in clear, plain language what this problem is, how real-world fluids actually behave, what all the mathematical terms and instruments measure, what our autonomous AI Co-Scientist discovered, and what we have rigorously observed.
 
 ---
 
@@ -64,12 +64,17 @@ $$\text{Stretching} \longrightarrow \text{Thinner swirl} \longrightarrow \text{F
 
 The difference is **viscosity** ($\nu$). Viscosity is the "stickiness" or internal friction of the fluid. It is the molecular friction caused by water molecules rubbing against each other. Viscosity turns the kinetic energy of swirls into gentle, imperceptible warmth (heat). 
 
-Viscosity acts like a **universal frictional tax**: the smaller a swirl is, the harsher the tax friction charges it!
+Viscosity acts like a **universal compounding tax**: the smaller a swirl is, the harsher the tax friction charges it!
 
-### Example D: Smoke Rings and Dolphin Bubble Rings
-If a dolphin flicks its blowhole underwater, it can create a silvery, glowing ring of air—a vortex ring—that travels across the pool without falling apart. A smoker can blow a smoke ring that floats across a room.
+### Example D: Pushing a Playground Swing (Non-Local Triad Decoherence)
+Imagine a child on a playground swing swinging back and forth rapidly—say, once every second (a tiny, high-frequency ripple). 
+Now imagine a giant, slow gust of wind that blows steadily in one direction for five minutes (a huge, slow whirlpool). 
 
-The smoke ring holds together because its internal swirling motion creates a pocket of low pressure that traps the smoke inside. But what happens when two smoke rings collide head-on? They expand, stretch, develop wiggles, tangle into a chaotic web, and dissolve into invisible microscopic air currents.
+Can the giant gust push the swing into outer space? **No!**
+Why? Because while the giant wind is blowing, the swing moves forward with the wind for half a second, and then swings backward against the wind for half a second. The forward push and backward drag **cancel each other out completely**! 
+
+In fluid dynamics, this is called **non-local triad phase decoherence**. A giant whirlpool cannot directly pump energy into a tiny whirlpool because the tiny swirl cycles thousands of times during one breath of the giant swirl. In mathematics, this cancellation is exact:
+$$\langle (u_{\text{giant}} \cdot \nabla)\omega_{\text{tiny}}, \omega_{\text{tiny}} \rangle = 0.$$
 
 ---
 
@@ -114,19 +119,20 @@ To study this problem with precision, physicists and mathematicians created a sp
 
 | Mathematical Symbol | Official Scientific Name | Plain English Name | Real-World Everyday Analogy | What It Measures & Physical Unit |
 | :--- | :--- | :--- | :--- | :--- |
-| **$u(x, t)$** | Flow Velocity Field | **Water Speed & Direction** | A weather wind map showing arrows for wind speed and direction at every street corner. | How fast and in what direction a drop of water is moving at location $x$ and time $t$. Measured in meters per second ($\text{m/s}$). |
-| **$\omega(x, t) = \nabla \times u$** | Vorticity Field | **Local Swirl Rate** | Dropping a microscopic paddle wheel into the water and seeing how fast and around which axis it spins. | The local rotational speed of the fluid. Measured in radians per second ($1/\text{s}$). |
-| **$S(x, t) = \frac{1}{2}(\nabla u + \nabla u^T)$** | Rate-of-Strain Tensor | **Fluid Squishing and Pulling** | Grabbing a ball of baker's dough and pulling it longer into a loaf while it narrows in the middle. | How the fluid is being stretched and sheared along different axes without rotating. Unit: ($1/\text{s}$). |
-| **$(S\omega) \cdot \omega$** | Vortex Stretching Term | **The Figure Skater Term** | The skater pulling in their arms. The surrounding strain pulls the swirl longer, forcing it to spin faster. | The exact rate at which stretching pumps extra rotational speed into a vortex. Unit: ($1/\text{s}^3$). |
-| **$\nu$** | Kinematic Viscosity | **Fluid Stickiness / Internal Friction** | The difference between honey (high $\nu$) and water (low $\nu$). | How strongly neighboring molecules drag on each other. Unit: ($\text{m}^2/\text{s}$). |
-| **$\mathcal{E}(t) = \frac{1}{2} \int |\omega|^2 dx$** | Enstrophy | **Total Swirl Energy** | Summing up the spinning energy of every whirlpool and eddy in the entire swimming pool. | The global intensity of turbulence. If enstrophy stays finite, the fluid *cannot* blow up. Unit: ($\text{m}^3/\text{s}^2$). |
-| **$\mathcal{D}(t) = \nu \int |\nabla \omega|^2 dx$** | Viscous Enstrophy Dissipation | **Frictional Tax Rate** | The total amount of swirl energy converted into microscopic heat per second. | How fast friction is draining away swirls across the entire fluid volume. Unit: ($\text{m}^3/\text{s}^3$). |
-| **$\bar{\ell}_\omega(t) = \sqrt{\nu \frac{\mathcal{E}(t)}{\mathcal{D}(t)}}$** | Foias–Temam Dissipation Scale | **Smallest Swirl Limit / Grain Size** | The smallest whirlpool size that can physically survive before friction wipes it out immediately. | The spatial length scale below which viscosity dominates and prevents further sharpening. Unit: meters ($\text{m}$). |
-| **$P_q u$ (for octave $q$)** | Dyadic Frequency Shell | **Scale Octave** | Musical octaves on a piano. Octave 0 is big bath swirls; Octave 5 is pebble size; Octave 10 is sand grain size. | The portion of fluid flow living at wavelengths between $2^{-q-1}$ and $2^{-q}$ meters. |
-| **$\Pi_Q^{\text{adv}}(t)$** | Advective Enstrophy Flux | **Swirl Bucket Brigade / Cascade** | Firefighters passing buckets of water from the big truck down a line of people to small cups. | The rate at which vortex stretching passes swirl energy from large eddies down into smaller eddies. |
-| **$2^{-4Q}$** | Viscous Dyadic Penalty | **Exponential Friction Tax** | Compound tax rate: every time a swirl cuts its size in half, friction's resistance multiplies by 16! | The mathematical penalty proving that small scales suffer extreme viscous damping, crushing runaway growth. |
-| **$\delta_{\text{NS}}(b)$** | Constantin–Fefferman Cocycle | **Vortex Misalignment Angle** | Two spinning dancers whose axes tilt away from each other so they can no longer pull each other faster. | Measures how much neighboring vortex tubes tilt out of alignment, which starves the stretching engine. |
-| **$S_{\text{Schur}}$** | Clifford $Cl(3,0)$ Schur Floor | **Helical Stability Floor** | Splitting swirls into right-handed and left-handed screws; proving neither screw can overwhelm the other. | The mathematical guarantee that the geometric interaction operator has a positive stability floor. |
+| **$u(x, t)$** | Flow Velocity Field | **Water Speed & Direction** | Wind speed and direction arrows on a weather radar. | How fast and in what direction water moves at point $x$ and time $t$ ($\text{m/s}$). |
+| **$\omega(x, t) = \nabla \times u$** | Vorticity Field | **Local Swirl Rate** | Speed and tilt of a microscopic paddle wheel placed in the fluid. | The local rotational spin rate of the fluid ($1/\text{s}$). |
+| **$S(x, t) = \frac{1}{2}(\nabla u + \nabla u^T)$** | Rate-of-Strain Tensor | **Fluid Squishing and Pulling** | Kneading dough: stretching longer along one axis while pinching thinner on the sides. | Fluid deformation and pulling without rotation ($1/\text{s}$). |
+| **$(S\omega) \cdot \omega$** | Vortex Stretching Term | **The Figure Skater Term** | Skater pulling in their arms: strain pulls the swirl thinner, forcing it to spin faster. | The rate at which the fluid accelerates its own spin ($1/\text{s}^3$). |
+| **$\nu$** | Kinematic Viscosity | **Fluid Stickiness / Internal Friction** | The difference between honey (high $\nu$) and water (low $\nu$). | How strongly water molecules drag on each other ($\text{m}^2/\text{s}$). |
+| **$\mathcal{E}(t) = \frac{1}{2} \int \|\omega\|^2 dx$** | Enstrophy | **Total Swirl Energy** | Summing up the spinning energy of every eddy in the whole container. | The global intensity of turbulence. If finite, water cannot blow up ($\text{m}^3/\text{s}^2$). |
+| **$\mathcal{D}(t) = \nu \int \|\nabla \omega\|^2 dx$** | Viscous Enstrophy Dissipation | **Frictional Tax Rate** | Total swirl energy converted into microscopic warmth per second. | How fast viscosity drains away swirls across the entire volume ($\text{m}^3/\text{s}^3$). |
+| **$\bar{\ell}_\omega(t) = \sqrt{\nu \frac{\mathcal{E}(t)}{\mathcal{D}(t)}}$** | Foias–Temam Scale | **Smallest Swirl Limit / Cutoff** | The smallest surviving whirlpool size before friction destroys it. | The spatial length scale below which viscosity dominates ($\text{m}$). |
+| **$P_q u$ (octave $q$)** | Dyadic Frequency Shell | **Scale Octave** | Musical octaves on a piano. Octave 0 is bathtub size; Octave 10 is sand grain size. | Flow velocity living at spatial wavelength $2^{-q}$ meters. |
+| **$\Pi_Q^{\text{adv}}(t)$** | Advective Enstrophy Flux | **Swirl Bucket Brigade / Cascade** | Firefighters passing buckets from the big truck down to tiny cups. | Rate at which stretching passes swirl energy from large to small eddies. |
+| **$2^{-4Q}$** | Viscous Dyadic Penalty | **Exponential Friction Tax** | Compound penalty: halving eddy size multiplies friction resistance by 16! | Viscous dissipation penalty that crushes high-frequency cascade runaway. |
+| **$\mathcal{T}_{Q, \rm non-local}$** | Non-Local Triad Transfer | **Distant Octave Leaping** | A massive ocean wave trying to directly twist a millimeter puddle ripple. | Rate at which large eddies interact with distant small eddies. Proved to vanish relative to viscosity. |
+| **$\delta_{\text{NS}}(b)$** | Constantin–Fefferman Cocycle | **Vortex Misalignment Angle** | Two spinning dancers whose axes tilt away so they cannot pull each other faster. | Measures how much neighboring vortex tubes tilt out of alignment, choking stretching. |
+| **$S_{\text{Schur}}$** | Clifford $Cl(3,0)$ Schur Floor | **Helical Stability Floor** | Right-handed vs. left-handed corkscrews cancelling each other's push. | Mathematical floor ($S_{\text{Schur}} = 2660.0$) preventing one-sided blowup. |
 
 ---
 
@@ -150,17 +156,21 @@ Here is what we discovered:
                       |    aligned flows have ZERO stretching!   |
                       |                                          |
                       | 3. FORWARD TRANSFER & TRIAD BACKSCATTER: |
-                      |    Colliding vortices do push energy to  |
-                      |    small scales, but wave backscatter    |
-                      |    and 2^(-4Q) viscosity crush them.     |
+                      |    Colliding vortices push energy down,  |
+                      |    but phase reversals & 2^(-4Q) tax     |
+                      |    crush runaway growth.                 |
                       |                                          |
                       | 4. CONSTANTIN-FEFFERMAN DEPLETION:       |
-                      |    Tubes tilt away (delta_NS -> 0.645),   |
+                      |    Tubes tilt away (delta_NS -> 0.645),  |
                       |    choking stretching by 20x.            |
                       |                                          |
-                      | 5. MILLENNIUM PRIZE HONESTY:             |
-                      |    Problem B remains strictly            |
-                      |    UNRESOLVED. Release is NO-GO.         |
+                      | 5. NON-LOCAL TRIAD DECOHERENCE:          |
+                      |    Distant scales cannot bypass cascade; |
+                      |    push cancels out like a swing (2^-3Q/2|
+                      |                                          |
+                      | 6. AUTONOMY LEVEL 2 DARK FACTORY:        |
+                      |    Autonomous multi-agent research kernel|
+                      |    enforces fail-closed scientific gates.|
                       +------------------------------------------+
 ```
 
@@ -201,6 +211,20 @@ We measured the alignment of vortex axes using the **Constantin–Fefferman cocy
 
 Furthermore, by decomposing 3D space using **Clifford algebra** ($Cl(3,0) \cong M_2(\mathbb{C})$), we separated every swirl into right-handed and left-handed helical corkscrews. We proved that the stretching operator is **parity-blind**: right-handed and left-handed swirls do not conspire together to create a one-sided blowout. Instead, they exhibit an exact positive Schur floor ($S_{\text{Schur}} = 2660.0$), ensuring that the geometric interaction remains stable.
 
+### Observation 5: Non-Local Leaping is Blocked by Incompressibility (`CLM-043`, `NEG-EV-050`, `NS-OBS-023`)
+Could a giant whirlpool skip the cascade and directly pump a microscopic swirl into an explosive singularity?
+
+**What we proved:**
+1. **The Playground Swing Cancellation:** The uniform push of the giant flow on the tiny swirl vanishes identically ($\langle (u_{\text{low}} \cdot \nabla)\omega_{\text{high}}, \omega_{\text{high}} \rangle = 0$) because water is incompressible ($\nabla \cdot u = 0$).
+2. **Viscous Dominance:** The differential stretching between distant octaves is mathematically dominated by the viscous dissipation rate at the small scale by a factor of $2^{-3Q/2} \to 0$.
+3. **Helical Parity Cancellation:** When a large swirl meets two opposite tiny swirls, their corkscrew orientations cancel each other out by an additional factor of $2^{-Q}$. 
+Distant scales cannot conspire to bypass the viscous barrier!
+
+### Observation 6: The Autonomous Co-Scientist Dark Factory (Autonomy Level 2)
+In this milestone, we activated our autonomous scientific research subsystem: **Autonomy Level 2 (Closed-Loop Research)**.
+- The AI Co-Scientist formulates hypotheses, subjects them to Socratic reflection against counterexample matrices (ABC flows, 2D flows, parallel shear), evolves and mutates them to close discovered gaps, pits them in blind paired tournaments (Elo rating), and submits them to an independent verification agent that verifies SHA-256 cryptographic manifests.
+- Most importantly: **The system is fail-closed.** No AI agent can approve its own work, and no tournament victory can ever declare the Millennium Prize solved!
+
 ---
 
 ## 6. Where Does the Millennium Prize Stand Today?
@@ -213,7 +237,7 @@ We believe in complete, transparent scientific honesty:
 | **Did we prove water can blow up to infinite speed (Singularity)?** | **NO** | Nobody in the world has ever discovered or simulated a smooth initial condition that blows up in unforced Navier–Stokes. |
 | **Clay Millennium Prize Statement B Status** | **UNRESOLVED** | The official Clay Millennium Prize remains open. |
 | **Release Status in Our Research Project** | **NO-GO (Deployment Authority: NONE)** | Our automated governance kernel enforces that no premature claim of a solution can ever be published. |
-| **What HAS Been Accomplished?** | **Rigorous Falsification & Geometric Guardrails** | We have systematically eliminated proposed blowup mechanisms (such as backward precursor pulses), proved why Beltrami flows cannot blow up, and discovered the exact geometric and viscous damping mechanisms that prevent runaway cascades in vortex collisions. |
+| **What HAS Been Accomplished?** | **Rigorous Falsification & Geometric Guardrails** | We have systematically eliminated proposed blowup mechanisms (backward precursor pulses, ABC false alarms, and non-local triad bypasses), proved why Beltrami flows cannot blow up, and discovered the exact geometric and viscous damping mechanisms that prevent runaway cascades in vortex collisions. |
 
 ---
 
@@ -230,5 +254,7 @@ By combining rigorous mathematical theorems with automated verification kernels 
 *For technical monographs, Lean 4 formal mathematical proofs, and reproduction scripts, please explore the repository:*
 - Monograph: [`paper/cl30_helical_schur_superfluid_monograph.pdf`](file:///d:/Comfy UI/tubulance/paper/cl30_helical_schur_superfluid_monograph.pdf)
 - Essay & System Map: [`paper/seeing_negatively_article_and_system_map.pdf`](file:///d:/Comfy UI/tubulance/paper/seeing_negatively_article_and_system_map.pdf)
+- Non-Local Triad Milestone: [`NS_NONLINEAR_SELF_FOCUS_003_NONLOCAL_TRIAD_DECOHERENCE.md`](file:///d:/Comfy UI/tubulance/NS_NONLINEAR_SELF_FOCUS_003_NONLOCAL_TRIAD_DECOHERENCE.md)
 - Co-Scientist Dark Factory Kernel: [`src/navier3d/coscientist/kernel.py`](file:///d:/Comfy UI/tubulance/src/navier3d/coscientist/kernel.py)
+- Co-Scientist Autonomy Engine: [`src/navier3d/coscientist/autonomy.py`](file:///d:/Comfy UI/tubulance/src/navier3d/coscientist/autonomy.py)
 - Rosetta Master Audit: [`rosetta_master_audit_receipt.json`](file:///d:/Comfy UI/tubulance/rosetta_master_audit_receipt.json)

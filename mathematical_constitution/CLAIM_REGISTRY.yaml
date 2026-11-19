@@ -956,6 +956,29 @@ claims:
       review_gate_note: "REVIEW_REQUIRED (Verified at IND1 / GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE; retained as REVIEW_REQUIRED for IND2 cross-model canonical theorem acceptance per Section 27)."
     dependencies: ["CLM-033"]
 
+  - claim_id: "CLM-043"
+    claim_type: "MATHEMATICAL_PROPOSITION"
+    milestone_claim_class: "CONDITIONAL_NEW_LEMMA"
+    name: "NONLOCAL_TRIAD_DECOHERENCE_AND_HELICAL_PARITY_SUPPRESSION_LEMMA"
+    milestone: "NS-NONLINEAR-SELF-FOCUS-003"
+    statement: "For any smooth divergence-free solution u in C([0,T]; H^s(T^3_L)) (s > 5/2, nu > 0, f = 0) with sharp dyadic shell projectors P_q: (1) The uniform non-local advection term <(u_{<=Q-3}.grad)omega_Q, omega_Q> vanishes identically on T^3_L by incompressibility; (2) The non-local triad transfer into shell Q is bounded by |T_{Q,non-local}(t)| <= C_{CZ} ||grad u_{<=Q-3}||_{L^inf} ||omega_Q||_{L^2}^2 <= C k_0^{3/2} 2^{Q/2} ||omega||_{L^2} ||omega_Q||_{L^2}^2; (3) The ratio of non-local transfer to viscous dissipation satisfies |T_{Q,non-local}(t)| / D_Q(t) <= C (||omega||_{L^2} / (nu k_0^{1/2})) 2^{-3Q/2} -> 0 as Q -> infty; and (4) Helical decomposition into Beltrami eigenmodes h^pm(k) enforces an additional O(2^{-Q}) parity cancellation on non-local triad coupling coefficients, preventing non-local phase locking from bypassing the scale-local 2^{-4Q} viscous damping penalty."
+    passport:
+      truth_status: "PROVED_LEMMA"
+      gov_evidence_level: "GOV_E3_REPRODUCIBLE"
+      math_evidence_level: "MATH_E4_ANALYTIC_PROOF_AUDITED"
+      gov_review_independence: "GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE"
+      math_review_independence: "MATH_I2_INDEPENDENT_VERIFIER_AGENT"
+      formalization_state: "NOT_FORMALIZED"
+      understanding_level: "U3_COMPLETE_PACKAGE"
+      novelty: "N1_PROJECT_REFORMULATION"
+      significance: "S1_USEFUL_LEMMA"
+      external_validation: "NOT_EXTERNALLY_REVIEWED"
+      community_status: "NOT_COMMUNITY_ACCEPTED"
+      project_status: "PROJECT_CANONICAL_WITH_LIMITATIONS"
+      review_gate_note: "REVIEW_REQUIRED (Verified at IND1 / GOV_I2_SAME_FAMILY_DIFFERENT_INSTANCE; retained as REVIEW_REQUIRED for IND2 cross-model canonical theorem acceptance per Section 27)."
+    dependencies: ["CLM-042"]
+
+
 
 
 

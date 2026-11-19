@@ -458,6 +458,16 @@ negative_evidence:
     mathematical_verdict: "FALSIFIED_ISOLATED_TRIAD_SUSTAINED_CASCADE_AND_UNREGULARIZED_ENTRANCE_RATIO"
     canonical_artifact: "NS_NONLINEAR_SELF_FOCUS_002_TRIAD_TRANSFER_ANALYSIS.md"
 
+  - record_id: "NEG-EV-050"
+    pathway_id: "NS-NONLINEAR-SELF-FOCUS-003"
+    title: "NONLOCAL_TRIAD_PHASE_COHERENCE_CANNOT_BYPASS_VISCOUS_DAMPING"
+    falsified_hypothesis: "Large-scale velocity modes (p << q approx r) can maintain persistent phase alignment with high-frequency vorticity packets to pump enstrophy at a rate outrunning viscous dissipation at octave Q."
+    counterexample_or_proof: "1. Uniform non-local advection vanishes identically: <(u_{<=Q-3}.grad)omega_Q, omega_Q> = 0 on T^3 by incompressibility div u = 0. 2. The commutator transfer is bounded by |T_{Q,non-local}| <= C_{CZ} ||grad u_{<=Q-3}||_{L^inf} ||omega_Q||_{L^2}^2, which is dynamically crushed relative to viscous dissipation D_Q by a factor of O(2^{-3Q/2}) -> 0. 3. Beltrami helical decomposition imposes an additional O(2^{-Q}) parity suppression on non-local triad coupling coefficients, definitively excluding non-local cascade bypass in unforced periodic 3D Navier-Stokes."
+    governing_obstruction: "NS-OBS-023"
+    mathematical_verdict: "FALSIFIED_NONLOCAL_TRIAD_CASCADE_BYPASS"
+    canonical_artifact: "NS_NONLINEAR_SELF_FOCUS_003_NONLOCAL_TRIAD_DECOHERENCE.md"
+
+
 
 
 

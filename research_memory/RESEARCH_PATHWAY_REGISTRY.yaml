@@ -1194,7 +1194,7 @@ pathways:
   - pathway_id: "NS-NONLINEAR-SELF-FOCUS-002"
     title: "Forward Dyadic Enstrophy Transfer, Nonlinear Flux, and Commutator Closure"
     parent_pathways: ["NS-NONLINEAR-SELF-FOCUS-001-R1"]
-    descendant_pathways: []
+    descendant_pathways: ["NS-NONLINEAR-SELF-FOCUS-003"]
     starting_thesis: "Investigate whether forward nonlinear transfer can inject controlled enstrophy into high dyadic shells faster than viscous dissipation removes it."
     scientific_question: "Can forward dyadic enstrophy transfer distinguish identical-norm states and establish forward-in-time scale concentration?"
     intended_bridge: "Forward Scale-Local Dyadic Self-Focusing on T^3_L"
@@ -1223,6 +1223,40 @@ pathways:
     reopen_conditions: ["Multi-triad coherent interaction geometries with phase locking."]
     similarity_tags: ["stokes_duhamel", "adjacent_shell_confinement", "state_distinguishing_flux", "triad_phase_reversal"]
     last_re_evaluated: "2026-09-28"
+
+  - pathway_id: "NS-NONLINEAR-SELF-FOCUS-003"
+    title: "Non-Local Triad Phase Decoherence, Helical Parity Suppression, and Scale-Coupling Bounds"
+    parent_pathways: ["NS-NONLINEAR-SELF-FOCUS-002"]
+    descendant_pathways: []
+    starting_thesis: "Investigate whether non-local triads (p << q approx r) can maintain persistent phase coherence to bypass scale-local viscous discounting and directly pump high-frequency enstrophy."
+    scientific_question: "Can large-scale eddies drive small-scale enstrophy blowup faster than viscous dissipation removes it at octave Q?"
+    intended_bridge: "Non-Local Scale-Separated Enstrophy Injection on T^3_L"
+    core_objects: ["CLM-043", "Non-local Advective Commutator", "Helical Beltrami Triad Coupling", "Calderon-Zygmund Bound", "Bernstein Scale Separation"]
+    mathematical_form: "|T_{Q,non-local}| <= C_{CZ} ||grad u_{<=Q-3}||_{L^inf} ||omega_Q||_{L^2}^2; |T_{Q,non-local}| / D_Q <= C 2^{-3Q/2} -> 0; helical coupling M(k,p,q) ~ O(2^{-Q})."
+    scaling: "Transfer-to-dissipation ratio ~ O(2^{-3Q/2}); helical parity suppression ~ O(2^{-Q})."
+    geometry: "Periodic torus T^3_L with Beltrami chiral eigenbasis."
+    trajectory_dependence: "EULERIAN"
+    stochastic_component: false
+    assumptions: ["Incompressible 3D Navier-Stokes on T^3_L", "nu > 0", "unforced f = 0", "Finite initial enstrophy ||omega||_{L^2} < infty"]
+    domain: "T^3_L"
+    regularity_class: "Smooth solenoidal vector fields."
+    expected_outcome: "Determine whether non-local triad phase locking can bypass scale-by-scale viscous discounting."
+    actual_outcome: "CLM-043 proved as CONDITIONAL_NEW_LEMMA; non-local bypass definitively excluded by incompressibility skew-symmetry, 2^{-3Q/2} dissipation domination, and 2^{-Q} helical parity suppression (NEG-EV-050, NS-OBS-023)."
+    tests_attempted: ["tests/test_ns_nonlinear_self_focus_003_suite.py"]
+    evidence_refs: ["NS_NONLINEAR_SELF_FOCUS_003_NONLOCAL_TRIAD_DECOHERENCE.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Non-local triad bypass mechanism proved structurally impossible."
+    failure_mechanism: "Incompressibility forces uniform advection to vanish; differential stretching is crushed by 2^{2Q} Laplacian dissipation."
+    what_was_falsified: ["Persistent non-local triad phase coherence driving blowup (NEG-EV-050)"]
+    what_was_not_falsified: ["CLM-043"]
+    surviving_results: ["CLM-043"]
+    negative_results: ["NEG-EV-050"]
+    open_questions: ["Can multi-scale Constantin-Fefferman cocycle depletion close the global regularity gap across all scales?"]
+    obstruction_ids: ["NS-OBS-023"]
+    reopen_conditions: ["Infinite energy initial data or non-periodic boundary conditions."]
+    similarity_tags: ["nonlocal_triad", "helical_parity", "calderon_zygmund", "scale_separation", "viscous_domination"]
+    last_re_evaluated: "2026-11-19"
+
 
 
 

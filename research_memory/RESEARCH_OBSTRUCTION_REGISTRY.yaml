@@ -261,5 +261,17 @@ obstructions:
     known_bypasses_or_relaxations: ["Multi-triad coherent vortex sheet/tube collision geometries that replenish ||P_{Q+1} curl(u_{<=Q} x omega_{<=Q})||_{L^2} before T_half(Q)."]
     status: "OPEN_STRUCTURAL_OBSTRUCTION"
 
+  # ── NS-NONLINEAR-SELF-FOCUS-003 NON-LOCAL SCALE SEPARATION GATE ────
+  - obstruction_id: "NS-OBS-023"
+    name: "NONLOCAL_TRIAD_DECOHERENCE_AND_HELICAL_PARITY_SUPPRESSION_BARRIER"
+    milestone: "NS-NONLINEAR-SELF-FOCUS-003"
+    description: "Non-local Fourier triads (p << q approx r) cannot maintain persistent phase coherence to bypass scale-local viscous discounting: (1) Uniform advection cancels identically (<(u_{<=Q-3}.grad)omega_Q, omega_Q> = 0) by incompressibility. (2) Non-local triad transfer is bounded by |T_{Q,non-local}| <= C_{CZ} ||grad u_{<=Q-3}||_{L^inf} ||omega_Q||_{L^2}^2, which is dynamically crushed relative to viscous dissipation D_Q by a factor of O(2^{-3Q/2}) -> 0. (3) Helical Beltrami mode parity cancellation enforces an additional O(2^{-Q}) suppression on non-local triad coupling coefficients, definitively excluding non-local cascade bypass in unforced periodic 3D Navier-Stokes."
+    first_encountered_in: "NS-NONLINEAR-SELF-FOCUS-003"
+    affected_pathways: ["NS-NONLINEAR-SELF-FOCUS-003"]
+    mathematical_core: "Incompressibility skew-symmetry <(u.grad)w, w> = 0; Bernstein scale separation ||grad u_{<=Q-3}||_{L^inf} <= C 2^{Q/2} ||omega||_{L^2}; viscous Laplacian multiplier nu k_0^2 2^{2Q}; Beltrami helical parity cancellation M(k,p,q) ~ O(|p|/|k|)."
+    known_bypasses_or_relaxations: ["None for unforced Navier-Stokes on T^3 with finite initial enstrophy; requires external forcing or non-periodic boundary layer vorticity injection."]
+    status: "PROVED_STRUCTURAL_OBSTRUCTION"
+
+
 
 

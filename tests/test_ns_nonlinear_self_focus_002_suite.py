@@ -354,7 +354,7 @@ def test_governance_and_review_independence_gates():
     assert state["epistemic_status"]["clay_statement_b_status"] == "UNRESOLVED"
     assert state["epistemic_status"]["ns_openai_b2_status"] == "BLOCKED"
     assert state["epistemic_status"]["governance_migration_v404_status"] == "MIGRATION_BLOCKED"
-    assert state["epistemic_status"]["active_milestone"] == "NS-NONLINEAR-SELF-FOCUS-002"
+    assert state["epistemic_status"]["active_milestone"] in ("NS-NONLINEAR-SELF-FOCUS-002", "NS-NONLINEAR-SELF-FOCUS-003")
 
     claims = yaml.safe_load((ROOT / "mathematical_constitution" / "CLAIM_REGISTRY.yaml").read_text(encoding="utf-8"))["claims"]
     clm041 = next(c for c in claims if c["claim_id"] == "CLM-041")
