@@ -1,0 +1,21 @@
+{
+  "title": "Cl(3,0) Helical Schur-Complement Isolation, O(3)-Even Parity Blindness, and Multiscale Constantin-Fefferman SO(3) Vorticity Cocycle Depletion in 3D Navier-Stokes and Superfluid Vortex Tangles",
+  "description": "Machine-verified Cl(3,0) ~= M_2(C) Beltrami helical Schur-complement probe (probe_cl30_helical_schur_and_vorticity_cocycle.py, CL30_HELICAL_SCHUR_COCYCLE_OK), multiscale Constantin-Fefferman SO(3) vorticity cocycle depletion on L=12 periodic grids, and unified 4-workspace Rosetta master audit (rosetta_master_audit_receipt.json, 4/4 PASS). Scientific honesty: all four Clay Millennium problems (Hodge Conjecture, 4D Yang-Mills Mass Gap, Riemann Hypothesis, and 3D Navier-Stokes Global Regularity) remain strictly OPEN.",
+  "creators": [
+    {
+      "name": "Bajwa, Qamar"
+    }
+  ],
+  "upload_type": "software",
+  "license": "Apache-2.0",
+  "version": "v1.0.0-rosetta",
+  "keywords": [
+    "Navier-Stokes",
+    "Clifford algebra Cl(3,0)",
+    "Beltrami helical basis",
+    "Schur complement",
+    "Constantin-Fefferman cocycle",
+    "Superfluid vortex tangles",
+    "Millennium Problems Rosetta"
+  ]
+}
