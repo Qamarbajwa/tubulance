@@ -1,3 +1,13 @@
+# `tubulance` — 3D Navier–Stokes Regularity, $\mathrm{Cl}(3,0)$ Helical Schur & Rosetta Audit (`v1.0.0-rosetta`)
+
+- **General-Reader Essay & Rosetta Measurement Atlas:** [SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.md](SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.md) | [PDF](SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.pdf)
+- **Technical Monograph:** [paper/cl30_helical_schur_superfluid_monograph.pdf](paper/cl30_helical_schur_superfluid_monograph.pdf)
+- **GitHub Release:** https://github.com/Qamarbajwa/tubulance/releases/tag/v1.0.0-rosetta
+- **Zenodo DOI:** [`10.5281/zenodo.24378625`](https://zenodo.org/record/24378625)
+- **Master Audit Receipt:** [rosetta_master_audit_receipt.json](rosetta_master_audit_receipt.json) (`4/4 PASS`; `NS_GLOBAL_REGULARITY_OPEN = true`)
+
+---
+
 # JHTDB terminal-layer benchmark
 
 This folder contains the first real-data benchmark harness for the finite-scale
