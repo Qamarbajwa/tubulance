@@ -606,6 +606,37 @@ understanding_packages:
       essential_assumptions: ["Unforced Navier-Stokes f = 0", "Periodic domain T^3", "Hyperbolic strain sigma_j ~ 2^{j(1+h)}", "Finite initial energy budget E_0 < infty"]
       status: "U3_COMPLETE_PACKAGE"
 
+  - package_id: "UND-041-R1"
+    claim_id: "CLM-041-R1"
+    name: "NORMALIZED_ENSTROPHY_COMPETITION_AND_PLANCHEREL_TAIL_LEMMA"
+    level_1_mechanism: "Algebraic factorization of the enstrophy amplification ratio combined with Courant-Fischer strain bounding, mean-zero Poincare scaling, and static Plancherel-Markov dyadic tail inequality on the periodic torus T^3_L."
+    level_2_architecture: |
+      1. Algebraic identity: A(t) = P(t)/D(t) = bar_lambda_omega(t) bar_ell_omega(t)^2 / nu holds identically by definition.
+      2. Poincare & Courant-Fischer bracket: bar_ell_omega(t) <= lambda_P^{-1/2} = L/(2*pi) by mean-zero Poincare, and under P(t) > 0, bar_ell_omega(t) >= sqrt(nu A(t) / lambda_{1,omega}^+(t)).
+      3. Plancherel-Markov dyadic tail: For sharp L^2-orthogonal dyadic shell projectors P_q and Q_*(t) = max(0, floor((1/2) log_2(1 / (2 lambda_P bar_ell_omega(t)^2)))), at least half the palinstrophy dissipation sum_{q >= Q_*(t)} nu ||grad P_q omega(t)||_{L^2}^2 >= (1/2) D(t).
+      4. Lamb curl identity: omega . S omega - (1/2)(u . grad)|omega|^2 = omega . (curl(u x omega)) vanishes identically on all Beltrami/ABC flows.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Combines exact algebraic definition factorization with Rayleigh-Ritz variational bounds, Poincare spectral gap on the torus, and orthogonal Chebyshev-Markov tail bounds."
+      what_can_fail: "Fails if non-orthogonal smooth Littlewood-Paley partitions are used without dual pairing corrections, or if P(t) <= 0 where the lower bracket is undefined."
+      essential_assumptions: ["Smooth divergence-free Navier-Stokes on T^3_L", "Nonzero enstrophy ||omega(t)||_{L^2} > 0", "Positive stretching P(t) > 0 for lower scale bracket", "Sharp L^2-orthogonal dyadic projectors"]
+      status: "U3_COMPLETE_PACKAGE"
+
+  - package_id: "UND-042"
+    claim_id: "CLM-042"
+    name: "FORWARD_IN_TIME_VISCOUS_DISCOUNTED_DYADIC_ENSTROPHY_TRANSFER_AND_STATE_DISTINGUISHING_LEMMA"
+    level_1_mechanism: "Forward-in-time Stokes-Duhamel propagation of high-frequency dyadic shells with exact adjacent-shell support confinement, bounding surviving high-band enstrophy from below and distinguishing ABC and Taylor-Green flows of identical instantaneous norms."
+    level_2_architecture: |
+      1. Active cross-cutoff regime: If Pi_Q^{adv}(t_0) > 0 with bounded derivative |d_t Pi_Q^{adv}| <= M_Q^{adv}, int_{t_0}^{t_0+Delta t} Pi_Q^{adv}(t) dt >= Pi_Q^{adv}(t_0) Delta t - (1/2) M_Q^{adv} (Delta t)^2 > 0 for small Delta t.
+      2. Exact support confinement: For initial cutoff P_{>Q} omega(t_0) = 0, the nonlinear force F_{>Q}(t_0) = P_{Q+1} curl(u(t_0) x omega(t_0)) lies entirely in adjacent shell C_{Q+1}.
+      3. Viscous discounting lower bound: Duhamel integration under Stokes semigroup e^{nu t Delta} yields net surviving high-band enstrophy E_{>Q}(t_0 + Delta t) >= (1/4) ((1 - exp(-nu mu_{Q+1} Delta t)) / (nu mu_{Q+1}))^2 ||P_{Q+1} curl(u_0 x omega_0)||_{L^2}^2 - (1/8) L_F^2 (Delta t)^4.
+      4. State-distinguishing property: On sphere |k| = sqrt(3) k_0, ABC and Taylor-Green flows with matched ||omega_0||_{L^2}, ||grad omega_0||_{L^2}, and P(t_0) = 0 yield E_{>0}^{ABC}(t_0 + Delta t) == 0 vs E_{>0}^{TG}(t_0 + Delta t) > 0.
+    level_3_rigorous_q_and_a:
+      why_it_works: "Uses exact locality of triad interactions in Fourier space combined with Stokes semigroup spectral multipliers on isolated dyadic shells."
+      what_can_fail: "Fails to establish global cascade because single-triad phase reversal (Jacobi pendulum) and viscous 2^{-4Q} damping prevent uniform multi-shell closure."
+      essential_assumptions: ["Smooth divergence-free Navier-Stokes on T^3_L", "Sharp L^2-orthogonal dyadic shell projectors", "Initial cutoff Q in N_0 fixed by initial data at t_0", "Lipchitz continuity of nonlinear force F_{>Q}(t)"]
+      status: "U3_COMPLETE_PACKAGE"
+
+
 
 
 

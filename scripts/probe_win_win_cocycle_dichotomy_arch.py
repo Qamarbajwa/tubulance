@@ -202,52 +202,55 @@ def main():
     out_path = base_dir / "probe_win_win_cocycle_dichotomy_arch_results.json"
     out_path.write_text(json.dumps(receipt, indent=2), encoding="utf-8")
 
-    # Generate publication plot paper/win_win_cocycle_dichotomy_arch.png
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
+    # Generate publication plot paper/win_win_cocycle_dichotomy_arch.png when matplotlib is available
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
 
-    fig, axes = plt.subplots(1, 2, figsize=(11.5, 4.6), dpi=160)
-    colors = {"1": "#64748b", "2": "#2563eb", "4": "#dc2626"}
-    labels = {"1": "b = 1 (fine grid)", "2": "b = 2 (block)", "4": "b = 4 (coarse block)"}
+        fig, axes = plt.subplots(1, 2, figsize=(11.5, 4.6), dpi=160)
+        colors = {"1": "#64748b", "2": "#2563eb", "4": "#dc2626"}
+        labels = {"1": "b = 1 (fine grid)", "2": "b = 2 (block)", "4": "b = 4 (coarse block)"}
 
-    for b in ("1", "2", "4"):
-        ds = [r["scales"][b]["delta_NS"] for r in sweep_records]
-        phis = [r["scales"][b]["Phi"] for r in sweep_records]
-        s = scale_summaries[b]
-        axes[0].plot(ds, phis, "-o", markersize=3, linewidth=1.8, color=colors[b], label=labels[b])
-        if s["strict_interior_peak"]:
-            axes[0].scatter([s["delta_star"]], [s["Phi_max"]], color=colors[b], s=60, zorder=5, edgecolor="black")
-        if b in ("2", "4"):
-            norm_phis = [p / s["Phi_max"] for p in phis]
-            axes[1].plot(ds, norm_phis, "-o", markersize=3, linewidth=1.8, color=colors[b], label=f"{labels[b]} (peak at $\\delta_*$={s['delta_star']:.3f})")
-            axes[1].scatter([s["delta_star"]], [1.0], color=colors[b], s=60, zorder=5, edgecolor="black")
+        for b in ("1", "2", "4"):
+            ds = [r["scales"][b]["delta_NS"] for r in sweep_records]
+            phis = [r["scales"][b]["Phi"] for r in sweep_records]
+            s = scale_summaries[b]
+            axes[0].plot(ds, phis, "-o", markersize=3, linewidth=1.8, color=colors[b], label=labels[b])
+            if s["strict_interior_peak"]:
+                axes[0].scatter([s["delta_star"]], [s["Phi_max"]], color=colors[b], s=60, zorder=5, edgecolor="black")
+            if b in ("2", "4"):
+                norm_phis = [p / s["Phi_max"] for p in phis]
+                axes[1].plot(ds, norm_phis, "-o", markersize=3, linewidth=1.8, color=colors[b], label=f"{labels[b]} (peak at $\\delta_*$={s['delta_star']:.3f})")
+                axes[1].scatter([s["delta_star"]], [1.0], color=colors[b], s=60, zorder=5, edgecolor="black")
 
-    axes[0].set_title(r"Combined Stretching Arch $\Phi_b(\delta_{\mathrm{NS}}) = \sqrt{\delta_{\mathrm{NS}}(b)}\,\rho_{\mathrm{stretch}}^{\mathrm{BLK}}(b)$")
-    axes[0].set_xlabel(r"$SO(3)$ Vorticity Cocycle Defect $\delta_{\mathrm{NS}}(b)$")
-    axes[0].set_ylabel(r"$\Phi_b(\delta_{\mathrm{NS}})$")
-    axes[0].set_xlim(-0.02, 0.68)
-    axes[0].grid(True, alpha=0.3)
-    axes[0].legend(fontsize=8)
+        axes[0].set_title(r"Combined Stretching Arch $\Phi_b(\delta_{\mathrm{NS}}) = \sqrt{\delta_{\mathrm{NS}}(b)}\,\rho_{\mathrm{stretch}}^{\mathrm{BLK}}(b)$")
+        axes[0].set_xlabel(r"$SO(3)$ Vorticity Cocycle Defect $\delta_{\mathrm{NS}}(b)$")
+        axes[0].set_ylabel(r"$\Phi_b(\delta_{\mathrm{NS}})$")
+        axes[0].set_xlim(-0.02, 0.68)
+        axes[0].grid(True, alpha=0.3)
+        axes[0].legend(fontsize=8)
 
-    axes[1].set_title(r"Normalized Block Arch $\Phi_b / \Phi_{b,\max}$ ($b \in \{2, 4\}$)")
-    axes[1].set_xlabel(r"$SO(3)$ Vorticity Cocycle Defect $\delta_{\mathrm{NS}}(b)$")
-    axes[1].set_ylabel(r"Normalized $\Phi_b / \Phi_{b,\max}$")
-    axes[1].set_xlim(-0.02, 0.68)
-    axes[1].set_ylim(-0.05, 1.12)
-    axes[1].grid(True, alpha=0.3)
-    axes[1].legend(fontsize=8)
+        axes[1].set_title(r"Normalized Block Arch $\Phi_b / \Phi_{b,\max}$ ($b \in \{2, 4\}$)")
+        axes[1].set_xlabel(r"$SO(3)$ Vorticity Cocycle Defect $\delta_{\mathrm{NS}}(b)$")
+        axes[1].set_ylabel(r"Normalized $\Phi_b / \Phi_{b,\max}$")
+        axes[1].set_xlim(-0.02, 0.68)
+        axes[1].set_ylim(-0.05, 1.12)
+        axes[1].grid(True, alpha=0.3)
+        axes[1].legend(fontsize=8)
 
-    fig.suptitle(
-        "3D Navier-Stokes Win-Win Cocycle Dichotomy Arch (L=12 T^3; NS_GLOBAL_REGULARITY_OPEN = true)",
-        fontsize=11,
-        fontweight="bold",
-    )
-    fig.tight_layout()
-    plot_path = (base_dir / "paper" / "win_win_cocycle_dichotomy_arch.png") if here.name == "scripts" else (base_dir / "win_win_cocycle_dichotomy_arch.png")
-    plot_path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(plot_path, bbox_inches="tight")
-    plt.close(fig)
+        fig.suptitle(
+            "3D Navier-Stokes Win-Win Cocycle Dichotomy Arch (L=12 T^3; NS_GLOBAL_REGULARITY_OPEN = true)",
+            fontsize=11,
+            fontweight="bold",
+        )
+        fig.tight_layout()
+        plot_path = (base_dir / "paper" / "win_win_cocycle_dichotomy_arch.png") if here.name == "scripts" else (base_dir / "win_win_cocycle_dichotomy_arch.png")
+        plot_path.parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(plot_path, bbox_inches="tight")
+        plt.close(fig)
+    except ImportError:
+        pass
 
     print("=== WIN-WIN COCYCLE DICHOTOMY ARCH SUMMARY (L=12, lam in [0, 1]) ===")
     for b in ("1", "2", "4"):

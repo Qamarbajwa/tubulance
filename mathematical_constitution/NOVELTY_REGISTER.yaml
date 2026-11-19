@@ -514,6 +514,31 @@ novelty_records:
     independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
     known_closest_analogues: ["CLM-038-R2 (affine benchmark)", "Coron (2007) Control and Nonlinearity"]
 
+  - record_id: "NOV-CLM-041-R1"
+    claim_id: "CLM-041-R1"
+    novelty_tier: "N1_PROJECT_REFORMULATION"
+    justification: "Adversarially normalized reformulation of enstrophy-to-dissipation ratio as an algebraic identity of definitions, combined with Courant-Fischer Rayleigh-Ritz bounds and Plancherel-Markov dyadic tail inequalities. Audited in NS_NONLINEAR_SELF_FOCUS_001_R1_NOVELTY_COMPARISON.md."
+    source_scope: "Classical Navier-Stokes enstrophy balance and Littlewood-Paley harmonic analysis literature."
+    query_scope: "Foias-Temam length scale, enstrophy amplification ratio, dyadic dissipation threshold."
+    audit_date: "2026-09-27"
+    databases_searched: ["MathSciNet", "arXiv:math.AP", "Google Scholar"]
+    primary_source_review: "Foias & Temam (1989), Doering & Gibbon (1995), Cheskidov & Shvydkoy (2010)"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["Foias-Temam dissipation wavenumber kappa_{2,1}", "Cheskidov-Shvydkoy dissipation wavenumber Lambda(t)"]
+
+  - record_id: "NOV-CLM-042"
+    claim_id: "CLM-042"
+    novelty_tier: "N1_PROJECT_REFORMULATION"
+    justification: "Combines classical short-time Duhamel Stokes expansion with sharp dyadic shell support confinement to obtain a forward-in-time lower bound on surviving high-frequency enstrophy distinguishing matched-norm Beltrami and Taylor-Green states. Audited in NS_NONLINEAR_SELF_FOCUS_002_NOVELTY_AUDIT.md."
+    source_scope: "Navier-Stokes dyadic energy/enstrophy flux, Littlewood-Paley commutators, and triad dynamics literature."
+    query_scope: "Forward dyadic enstrophy transfer lower bound, viscous-discounted Duhamel shell step, state-distinguishing flux."
+    audit_date: "2026-09-28"
+    databases_searched: ["MathSciNet", "arXiv:math.AP", "Google Scholar"]
+    primary_source_review: "Constantin, E & Titi (1994), Cheskidov & Shvydkoy (2014), Kraichnan (1967)"
+    independent_novelty_reviewer: "Antigravity fresh-context verifier; IND1"
+    known_closest_analogues: ["Constantin-E-Titi commutator bounds", "Cheskidov-Shvydkoy dyadic energy flux"]
+
+
 
 
 

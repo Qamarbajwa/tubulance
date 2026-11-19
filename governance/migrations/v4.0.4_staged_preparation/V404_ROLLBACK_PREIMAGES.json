@@ -8,9 +8,9 @@
   "source_package_v4_0_4_status": "MISSING_ON_FILESYSTEM",
   "watched_candidate_v4_0_6_r3_sha256": "1200e60450d1d2f13dc607ec82101cdfcbe6690020645fb6db0ac0c7f8140ccc",
   "rollback_preimages_sha256": {
-    "governance/GOVERNANCE.md": "6397ac189cf00536a1988fc50e83643078d692ad5c3fc7a0bbeac11a627a9cb6",
+    "governance/GOVERNANCE.md": "8eeb6ffa159fee97c0989b96f608ed79c49abbce8ec7821a5ec46804b4dafcec",
     "governance/PROJECT_DIRECTION.md": "c6b515f1a01f51b5f19bc53e539e0c4e19b47d68d19c2c9696daa794b30e9ead",
-    "governance/PROJECT_STATE.yaml": "2a63a81c401027c03f2a132f151a6f56739f1055c3176ab00ac6f60ae1035da3",
+    "governance/PROJECT_STATE.yaml": "365581ec8721d36560b33df95c8986b39a0e4787c6895ea1974419add81ee57f",
     "governance/packet/v4.0.3/MANIFEST.sha256.json": "1474b24bf1de6e5dfa7c27328066593a562e011d6be0dc33b56050541ffd4983",
     "mathematical_constitution/MATHEMATICAL_RESEARCH_CONSTITUTION.md": "d8b9198b3849042591ddaf509fae1f705bf9b84792d1bcef0250bb7b8e857a1c",
     "mathematical_constitution/CLAIM_REGISTRY.yaml": "6cd2077015d71b33599e0ad19525b363cebd5848a15784a37aa1ce981921b6b6",

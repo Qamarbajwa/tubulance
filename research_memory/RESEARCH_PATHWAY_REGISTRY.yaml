@@ -1029,7 +1029,7 @@ pathways:
   - pathway_id: "NS-OPENAI-B1-REASSESSMENT-R1"
     title: "Quantitative Localization–Backward-Diffusion Barrier Verification"
     parent_pathways: ["NS-OPENAI-B1-REASSESSMENT"]
-    descendant_pathways: []
+    descendant_pathways: ["NS-OPENAI-B1-REASSESSMENT-R2"]
     starting_thesis: "Determine whether CLM-038 is a genuine structural barrier by testing exact reachability Q1, approximate reachability Q2, stress reachability Q3, diffusion Gramian Q_t, collinear helical modes, and analytic wavepacket tails."
     scientific_question: "Is the tiny Fourier leakage forced by localization still large enough, after backward viscous amplification, to make one autonomous pulse impossible?"
     intended_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
@@ -1058,6 +1058,172 @@ pathways:
     reopen_conditions: ["New non-pulse autonomous blowup mechanisms bypassing annular filament localization."]
     similarity_tags: ["quantitative_leakage", "diffusion_gramian", "nazarov_uncertainty", "analytic_delocalization", "exterior_stress_corruption", "collinear_helical"]
     last_re_evaluated: "2026-09-09"
+
+  - pathway_id: "NS-OPENAI-B1-REASSESSMENT-R2"
+    title: "Structural No-Go Theorem Adversarial Repair"
+    parent_pathways: ["NS-OPENAI-B1-REASSESSMENT-R1"]
+    descendant_pathways: ["NS-OPENAI-B1-REASSESSMENT-R4"]
+    starting_thesis: "Repair R1 overclaiming by separating exact non-reachability on T^3 from approximate reachability and proving dense range of heat semigroup."
+    scientific_question: "Is approximate reachability non-existent or merely super-exponentially costly in the affine strain benchmark?"
+    intended_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
+    core_objects: ["CLM-038-R2", "CLM-039", "Dense Range of Heat Semigroup", "Affine Strain Benchmark", "Collinear Helical Polarizations"]
+    mathematical_form: "Foias-Temam analytic smoothing excludes compact profiles on T^3; Range(e^{nu t Delta}) is dense in L^2(T^3); cost diverges as C_{eps,j} >= exp(+c exp(2^{jh}))."
+    scaling: "C_{eps,j} >= exp(+c exp(2^{jh})) -> infty; peak amplitude A_peak ~ exp(-2^{jh}) -> 0."
+    geometry: "Periodic torus T^3 and affine hyperbolic stagnation frame."
+    trajectory_dependence: "HYBRID"
+    stochastic_component: false
+    assumptions: ["Incompressible Navier-Stokes on T^3", "nu > 0", "unforced f = 0"]
+    domain: "T^3"
+    regularity_class: "Real analytic C^omega(T^3) and L^2 Sobolev spaces."
+    expected_outcome: "Disentangle topological range properties from metric cost bounds."
+    actual_outcome: "Dense range proved (CLM-039); exact no-go preserved on T^3; super-exponential cost proved in affine benchmark (CLM-038-R2)."
+    tests_attempted: ["tests/test_ns_openai_b1_reassessment_r2_suite.py"]
+    evidence_refs: ["NS_OPENAI_B1_REASSESSMENT_R2_SYNTHESIS_REPORT.md", "NS_OPENAI_B1_REASSESSMENT_R2_DENSE_RANGE_COUNTEREXAMPLE.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Separation of topological range from metric cost divergence achieved."
+    failure_mechanism: "Unbounded backward parabolic dissipation cost."
+    what_was_falsified: ["False claim that Range(e^{nu t Delta}) is non-dense (NEG-EV-044)"]
+    what_was_not_falsified: ["CLM-039", "CLM-038-R2"]
+    surviving_results: ["CLM-039", "CLM-038-R2"]
+    negative_results: ["NEG-EV-043-R2", "NEG-EV-044", "NEG-EV-045"]
+    open_questions: ["Does periodic linearized dynamics on T^3 enforce super-exponential cost explosion?"]
+    obstruction_ids: ["NS-OBS-020B-R2"]
+    reopen_conditions: ["Novel non-affine periodic boundary layer mechanisms."]
+    similarity_tags: ["dense_range", "heat_semigroup", "affine_benchmark", "super_exponential_cost"]
+    last_re_evaluated: "2026-09-25"
+
+  - pathway_id: "NS-OPENAI-B1-REASSESSMENT-R4"
+    title: "Periodic Linearized Reachability and Stress Collapse Barrier"
+    parent_pathways: ["NS-OPENAI-B1-REASSESSMENT-R2"]
+    descendant_pathways: ["NS-NONLINEAR-SELF-FOCUS-001"]
+    starting_thesis: "Resolve reachability and stress transfer on full periodic torus T^3 under smooth solenoidal background u_B matching local hyperbolic strain."
+    scientific_question: "Can periodic linearized Navier-Stokes dynamics deliver localized OpenAI target stress without unbounded energy?"
+    intended_bridge: "Transfer to Unforced Periodic Statement B (f = 0)"
+    core_objects: ["CLM-040", "Periodic Observability Gramian", "Stress Amplitude Collapse", "Nonlinear Regime Breakdown"]
+    mathematical_form: "Gramian singular values sigma_k <= exp(-nu k^2 Delta t_j); cost C_{eps,j} >= c_V exp((nu/16) 2^{-jh} exp(2*2^{jh})); stress ratio ||C(w)||_{L^1}/||T_j*||_{L^1} <= C E_0 2^{-j(1.5-h)} -> 0."
+    scaling: "C_{eps,j} >= exp(+c exp(2^{jh})) -> infty; stress ratio ~ 2^{-j(1.5-h)} -> 0; nonlinear breakdown ||v||/||w|| ~ 2^{j(1/2+h)} -> infty."
+    geometry: "Periodic torus T^3 with local hyperbolic stagnation flow."
+    trajectory_dependence: "HYBRID"
+    stochastic_component: false
+    assumptions: ["Incompressible Navier-Stokes on T^3", "nu > 0", "unforced f = 0", "Finite initial energy E_0 < infty"]
+    domain: "T^3"
+    regularity_class: "C^omega periodic backgrounds and H^s perturbations."
+    expected_outcome: "Determine whether linear precursor mechanism transfers to Statement B."
+    actual_outcome: "Definitive closure of linear precursor transfer route: super-exponential reachability cost divergence, stress amplitude collapse, and nonlinear breakdown proved (CLM-040)."
+    tests_attempted: ["tests/test_ns_openai_b1_reassessment_r4_suite.py"]
+    evidence_refs: ["NS_OPENAI_B1_REASSESSMENT_R4_SYNTHESIS_REPORT.md", "NS_OPENAI_B1_REASSESSMENT_R4_REACHABILITY_AND_STRESS_GATE.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Linear precursor transfer route conclusively blocked under finite initial energy."
+    failure_mechanism: "Stress amplitude collapse and super-exponential cost explosion."
+    what_was_falsified: ["Autonomous unforced linear precursor realizability (NEG-EV-046)"]
+    what_was_not_falsified: ["CLM-040"]
+    surviving_results: ["CLM-040"]
+    negative_results: ["NEG-EV-046"]
+    open_questions: ["Can autonomous forward nonlinear self-focusing bypass linear precursor reconstruction?"]
+    obstruction_ids: ["NS-OBS-020B-R4"]
+    reopen_conditions: ["Non-perturbative boundary-driven mechanisms bypassing backward diffusion."]
+    similarity_tags: ["periodic_reachability", "observability_gramian", "stress_amplitude_collapse", "nonlinear_breakdown"]
+    last_re_evaluated: "2026-09-26"
+
+  - pathway_id: "NS-NONLINEAR-SELF-FOCUS-001"
+    title: "Forward Non-Perturbative Self-Focusing Mechanisms in Unforced Periodic Navier-Stokes"
+    parent_pathways: ["NS-OPENAI-B1-REASSESSMENT-R4"]
+    descendant_pathways: ["NS-NONLINEAR-SELF-FOCUS-001-R1"]
+    starting_thesis: "Investigate whether autonomous forward nonlinear dynamics can generate self-focusing structures on T^3 without backward linear reconstruction."
+    scientific_question: "Can vortex stretching dominate dissipation at shrinking active scales ell_omega(t) -> 0?"
+    intended_bridge: "Forward Scale-Local Dyadic Self-Focusing on T^3_L"
+    core_objects: ["CLM-041", "Foias-Temam Length Scale", "Enstrophy Amplification Ratio A(t)", "Dyadic Shells", "Lamb Curl Identity"]
+    mathematical_form: "A(t) = bar_lambda_omega bar_ell_omega^2 / nu; bar_ell_omega in [sqrt(nu A / lambda_1^+), 1]; half dissipation resides in q >= Q_*(t)."
+    scaling: "bar_ell_omega(t) ~ sqrt(nu / lambda_1^+(t)); dyadic cutoff Q_*(t) ~ (1/2) log_2(1 / bar_ell_omega^2)."
+    geometry: "Periodic torus T^3."
+    trajectory_dependence: "EULERIAN"
+    stochastic_component: false
+    assumptions: ["Incompressible Navier-Stokes on T^3", "nu > 0", "unforced f = 0", "Nonzero enstrophy"]
+    domain: "T^3"
+    regularity_class: "Smooth divergence-free velocity fields."
+    expected_outcome: "Establish scale-local self-focusing criteria."
+    actual_outcome: "Formulated CLM-041; identified directional curvature palinstrophy penalty and pressure-Hessian gate (NS-OBS-021); falsified naive unsigned ratios (NEG-EV-047)."
+    tests_attempted: ["tests/test_ns_nonlinear_self_focus_001_suite.py"]
+    evidence_refs: ["NS_NONLINEAR_SELF_FOCUS_001_FIRST_HYPOTHESES.md", "NS_NONLINEAR_SELF_FOCUS_001_COUNTEREXAMPLE_MATRIX.md"]
+    status: "SUPERSEDED_AS_PRIMARY_OBJECT"
+    termination_reason: "Superseded by R1 adversarial normalization."
+    failure_mechanism: "Conflation of definition identities with dynamical theorems."
+    what_was_falsified: ["Unsigned strain ratio and unsubtracted pointwise stretching as sufficient self-focusing indicators (NEG-EV-047)"]
+    what_was_not_falsified: ["CLM-041 (algebraic identities)"]
+    surviving_results: ["CLM-041 definitions", "Lamb curl falsification filter"]
+    negative_results: ["NEG-EV-047"]
+    open_questions: ["Which parts of CLM-041 are genuinely dynamical content?"]
+    obstruction_ids: ["NS-OBS-017", "NS-OBS-021"]
+    reopen_conditions: ["Adversarial normalization and zero/sign case repair."]
+    similarity_tags: ["enstrophy_amplification", "foias_temam_scale", "beltrami_filter", "dyadic_dissipation"]
+    last_re_evaluated: "2026-09-27"
+
+  - pathway_id: "NS-NONLINEAR-SELF-FOCUS-001-R1"
+    title: "CLM-041 Adversarial Normalization and Geometric-Depletion Repair"
+    parent_pathways: ["NS-NONLINEAR-SELF-FOCUS-001"]
+    descendant_pathways: ["NS-NONLINEAR-SELF-FOCUS-002"]
+    starting_thesis: "Adversarially audit CLM-041, separate definition identities from PDE dynamics, normalize domain size, and downgrade NS-OBS-021 to heuristic tension."
+    scientific_question: "Does CLM-041 contain a genuinely new dynamical restriction on Navier-Stokes concentration?"
+    intended_bridge: "Forward Scale-Local Dyadic Self-Focusing on T^3_L"
+    core_objects: ["CLM-041-R1", "Poincare Eigenvalue lambda_P", "Orthogonal Shell Projector P_q", "Plancherel-Markov Tail"]
+    mathematical_form: "Exact definition factorization A(t) = bar_lambda_omega bar_ell_omega^2 / nu; Poincare bracket bar_ell_omega <= lambda_P^{-1/2} = L/(2*pi); orthogonal Plancherel-Markov tail inequality."
+    scaling: "bar_ell_omega <= lambda_P^{-1/2} = L/(2*pi); dyadic wavenumber k_Q ~ lambda_P^{1/2} 2^Q."
+    geometry: "Periodic torus T^3_L = (R / L Z)^3."
+    trajectory_dependence: "EULERIAN"
+    stochastic_component: false
+    assumptions: ["Incompressible Navier-Stokes on T^3_L", "nu > 0", "unforced f = 0", "Nonzero enstrophy", "Orthogonal dyadic projectors"]
+    domain: "T^3_L"
+    regularity_class: "Smooth solenoidal vector fields."
+    expected_outcome: "Normalized lemma formulation and downgrade of heuristic barriers."
+    actual_outcome: "CLM-041 normalized to CLM-041-R1 (PROVED_LEMMA / N1_PROJECT_REFORMULATION / S1_USEFUL_LEMMA); NS-OBS-021 repaired to HEURISTIC_TENSION (NS-OBS-021-R1); smooth LP non-orthogonality falsified (NEG-EV-048)."
+    tests_attempted: ["tests/test_ns_nonlinear_self_focus_001_r1_suite.py"]
+    evidence_refs: ["NS_NONLINEAR_SELF_FOCUS_001_R1_CLM041_AUDIT.md", "NS_NONLINEAR_SELF_FOCUS_001_R1_NOVELTY_COMPARISON.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Adversarial normalization completed; foundation cleared for dynamical transfer investigation."
+    failure_mechanism: "Overclassification of algebraic identities as dynamical PDE theorems."
+    what_was_falsified: ["Claim that CLM-041 is a novel dynamical theorem (NEG-EV-048)"]
+    what_was_not_falsified: ["CLM-041-R1"]
+    surviving_results: ["CLM-041-R1"]
+    negative_results: ["NEG-EV-048"]
+    open_questions: ["Can nonlinear dynamics transfer quantitatively controlled enstrophy toward smaller scales before viscosity removes it?"]
+    obstruction_ids: ["NS-OBS-021-R1"]
+    reopen_conditions: ["Proved dynamical scale transfer theorems."]
+    similarity_tags: ["adversarial_normalization", "poincare_constant", "plancherel_markov", "heuristic_tension"]
+    last_re_evaluated: "2026-09-27"
+
+  - pathway_id: "NS-NONLINEAR-SELF-FOCUS-002"
+    title: "Forward Dyadic Enstrophy Transfer, Nonlinear Flux, and Commutator Closure"
+    parent_pathways: ["NS-NONLINEAR-SELF-FOCUS-001-R1"]
+    descendant_pathways: []
+    starting_thesis: "Investigate whether forward nonlinear transfer can inject controlled enstrophy into high dyadic shells faster than viscous dissipation removes it."
+    scientific_question: "Can forward dyadic enstrophy transfer distinguish identical-norm states and establish forward-in-time scale concentration?"
+    intended_bridge: "Forward Scale-Local Dyadic Self-Focusing on T^3_L"
+    core_objects: ["CLM-042", "Stokes-Duhamel Resolvent", "Adjacent Shell Support Confinement", "Triad Phase Reversal", "Duhamel Competition Ratio G_Q"]
+    mathematical_form: "Surviving high-band enstrophy E_{>Q}(t_0 + Delta t) >= (1/4) ((1 - exp(-nu mu_{Q+1} Delta t))/(nu mu_{Q+1}))^2 ||P_{Q+1} curl(u_0 x omega_0)||_{L^2}^2 - (1/8) L_F^2 (Delta t)^4; separates ABC and Taylor-Green flows."
+    scaling: "Viscous decay time tau_visc(Q) ~ (nu k_0^2 2^{2Q})^{-1}; peak enstrophy transfer cap ~ O(nu^{-2} k_0^{-4} 2^{-4Q})."
+    geometry: "Periodic torus T^3_L."
+    trajectory_dependence: "EULERIAN"
+    stochastic_component: false
+    assumptions: ["Incompressible Navier-Stokes on T^3_L", "nu > 0", "unforced f = 0", "Sharp L^2-orthogonal dyadic shell projectors", "Initial cutoff Q in N_0 fixed by initial data"]
+    domain: "T^3_L"
+    regularity_class: "Smooth solenoidal vector fields."
+    expected_outcome: "Prove forward-in-time dyadic enstrophy transfer lower bound and evaluate multi-shell cascade closure."
+    actual_outcome: "CLM-042 proved as CONDITIONAL_NEW_LEMMA distinguishing Beltrami and Taylor-Green states; isolated triad phase reversal and viscous 2^{-4Q} barrier proved (NEG-EV-049, NS-OBS-022)."
+    tests_attempted: ["tests/test_ns_nonlinear_self_focus_002_suite.py"]
+    evidence_refs: ["NS_NONLINEAR_SELF_FOCUS_002_FIRST_DYNAMICAL_CLAIM.md", "NS_NONLINEAR_SELF_FOCUS_002_NOVELTY_AUDIT.md", "NS_NONLINEAR_SELF_FOCUS_002_TRIAD_TRANSFER_ANALYSIS.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Conditional forward transfer lemma proved; macroscopic multi-shell cascade obstructed by triad phase reversal and viscous discounting."
+    failure_mechanism: "Isolated triad backscatter and viscous dissipation cap O(nu^{-2} 2^{-4Q})."
+    what_was_falsified: ["Unconditional multi-shell cascade persistence from isolated triad interactions (NEG-EV-049)"]
+    what_was_not_falsified: ["CLM-042"]
+    surviving_results: ["CLM-042"]
+    negative_results: ["NEG-EV-049"]
+    open_questions: ["Can multi-triad phase-locking geometries sustain high-frequency Lamb-curl injection against viscous discounting?"]
+    obstruction_ids: ["NS-OBS-022"]
+    reopen_conditions: ["Multi-triad coherent interaction geometries with phase locking."]
+    similarity_tags: ["stokes_duhamel", "adjacent_shell_confinement", "state_distinguishing_flux", "triad_phase_reversal"]
+    last_re_evaluated: "2026-09-28"
+
 
 
 

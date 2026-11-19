@@ -11,7 +11,15 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+.coverage
+.venv/
+venv/
+env/
+dist/
+build/
+*.egg-info/
 
 # Run outputs -- never committed; each real run gets its own --output dir
 runs/
 jhtdb_terminal_benchmark/
+

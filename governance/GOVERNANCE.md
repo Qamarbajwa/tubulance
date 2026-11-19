@@ -173,3 +173,85 @@ The project maps its historical risk ceiling T4 to **`R3` (High Assurance)**:
 ### 13.9 Lean Writing Budget Target
 - Routine R0–R2 governance writing target: $\le 10\%$ of measured engineering effort.
 - Consequential governance migrations (R3) report safety overhead separately.
+
+---
+
+## 14. Canonical Google Drive Master Project Record Binding
+
+This project formally binds to the canonical living memory and governance log maintained in Google Drive under account `ar.qamarmbajwa@gmail.com`.
+
+### 14.1 Canonical Record Rule
+- **Canonical Document:** `NAVIER–STOKES — MASTER PROJECT RECORD & GOVERNANCE LOG` (Google Doc ID: `1KzdxjR0-IEgIn_BnGMVxslLRCRFnLxs3uV8of8Ep5ms`).
+- **Precedence:** This Google Doc is the single canonical narrative record for the Navier–Stokes project. Repository files, test receipts, and task logs provide evidence, but the Master Record represents the authoritative project-level map of accepted, provisional, falsified, frozen, and planned work.
+- **Consultation & Synchronization Protocol:**
+  - Before substantial new scientific or administrative work, consult the Master Project Record when available.
+  - After a substantive accepted result, falsification, external-review verdict, governance decision, or change in research direction, update the Master Record in the same work cycle.
+  - If the Google Doc cannot be updated due to technical or network blocks, explicitly report that block in the governance record rather than silently omitting it.
+
+---
+
+## 15. Idea-to-Product OS AI-Guided Engineering & Scope Control
+
+This repository inherits the operational doctrine of the Idea-to-Product OS Addendum v1.0 (`I2P-CAP-AI-GUIDED-ENGINEERING-001`).
+
+### 15.1 Core Operating Principles
+1. **Intent Before Implementation:** Begin with user/scientific intent, observable behavior, mathematical constraints, and non-goals.
+2. **Socratic Inversion:** The agent explains credible mathematical approaches, assumptions, trade-offs, and falsification tests before generating code or formal proofs. Ask at most three essential unanswered questions.
+3. **Black-Box Behavior Contracts:** Formalize input/output spaces, boundary cases, tolerances, failure dispositions, and invariants before implementing algorithms.
+4. **Knowledge Gap & Assumption Mapping:** Maintain explicit knowledge gap records (`KnowledgeGap`) prioritizing unknowns that can invalidate mathematical closure, safety, or architecture.
+5. **One Vertical Slice at a Time:** Prove one thin, end-to-end mathematical journey or numerical pipeline across domain, persistence, and test seams before expanding breadth.
+6. **Visible Uncertainty:** Unproven assumptions, missing oracles, counterexamples, and negative evidence remain permanently recorded; they are never converted to "verified" through narrative.
+
+---
+
+## 16. Strict Reviewer Separation & External Review Authority
+
+Inherited from Governance Amendment v1.0 (`GOVERNANCE AMENDMENT — External Review Authority & Packaging — v1.0`).
+
+### 16.1 Producer-Reviewer Boundary
+- Producer-side checks (`CANDIDATE_COMPLETE`, `SELF_CHECKED`, automated regression runs) are preparation evidence only. They may not be labeled as independent PASS, external acceptance, or final certification.
+- The producing agent must never review its own work as the authoritative acceptance reviewer (`SELF_VERIFICATION_FORBIDDEN`).
+- Canonical review lifecycle:
+  - **Stage 01 (External Review Ready):** Candidate manuscript and reviewer-facing packet assembled.
+  - **Stage 02 (External Review):** Reviewed content and external review reports returned by an independent verifier (`IND1` / `IND2`).
+  - **Stage 03 (External Review Repaired):** Repaired content with an explicit finding-correction register.
+  - **Stage 04 (Publication / Release):** Authorized only by explicit human sign-off; Clay Statement B remains `UNRESOLVED` and release remains `NO-GO`.
+- Producer self-review reports are excluded by default from the external reviewer packet to prevent reviewer anchoring and bias.
+
+---
+
+## 17. Dual Control Plane & Co-Scientist Dark Factory Subgates
+
+Bound to the Research Co-Scientist Dark Factory Specification (`COSCIENTIST_DF_v0_1`).
+
+### 17.1 Dual Control Plane Architecture
+1. **Science Control Plane:** Governs scientific goals (`ResearchGoal`), hypothesis evolution, literature citations, claim verification (`SR0`–`SR8`), and epistemic classifications.
+2. **Dark Factory Engineering Plane:** Governs frozen requirements, repository branches, coding tasks, CI test execution, and deployment authority (`G0`–`G11`).
+- The Engineering Plane may propose upgrades to the Science Plane but cannot certify scientific truth.
+- The Science Plane may define research requirements but cannot grant code merge or deployment authority.
+
+### 17.2 Scientific Subgates (SR0–SR8)
+- `SR0 GOAL_ADMITTED`: Authorized, safe research goal.
+- `SR1 EVIDENCE_INDEXED`: Auditable source corpus with provenance.
+- `SR2 CANDIDATE_RECORDED`: Well-formed candidate hypothesis with assumptions, falsifiers, and predictions.
+- `SR3 REFLECTION_COMPLETE`: Source-grounded critique and contradiction audit against known obstructions.
+- `SR4 TOURNAMENT_ELIGIBLE`: Candidate screened and cleared for comparative ranking.
+- `SR5 RANKED_WITH_UNCERTAINTY`: Blinded A/B tournament comparison with Elo tracking.
+- `SR6 PROPOSAL_COMPILED`: Research proposal draft disclosing all known flaws, gaps, and limitations.
+- `SR7 EXTERNALLY_VERIFIED`: Individual mathematical claim verified by independent Lean proof, audited analytic proof, or reproducible empirical computation.
+- `SR8 SCIENTIST_ACCEPTED`: Authorized human scientist sign-off for further application.
+
+### 17.3 The 12 No-Bypass Invariants
+- **I-01:** Generation/evolution cannot jump to Ranking; candidates must traverse SR2 $\to$ SR3 $\to$ SR4.
+- **I-02:** SR4 cannot pass without verified safety screening.
+- **I-03:** Meta-review output is strictly draft; it cannot set SR7 or SR8.
+- **I-04:** Elo rank is never evidence for mathematical truth (`Rank != Proof`).
+- **I-05:** Verification is exact-target bound; any statement or digest change invalidates downstream attestations.
+- **I-06:** Builder/author cannot be independent verifier (`SELF_VERIFICATION_FORBIDDEN`).
+- **I-07:** `NO_GO` and quarantine are sticky until an authorized, evidenced reconsideration.
+- **I-08:** Only the authoritative `policy_service` caller can execute stage transitions or quarantine.
+- **I-09:** Missing policy, verifier, or protected test suite fails closed to `BLOCKED`.
+- **I-10:** Proposal compilation (SR6) or human sign-off (SR8) does not manufacture proof.
+- **I-11:** Evolving a hypothesis creates a fresh child resetting stage to `DRAFT`, Elo to 1200.0, and proof status to `UNTESTED`.
+- **I-12:** Autonomous run completion does not imply target discovery (`Clay Statement B = UNRESOLVED`).
+
