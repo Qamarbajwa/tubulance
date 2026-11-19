@@ -84,5 +84,11 @@
         0.013952109170062982
       ]
     }
+  },
+  "zenodo_deposition": {
+    "deposition_id": 24378625,
+    "doi": "10.5281/zenodo.24378625",
+    "record_url": "https://zenodo.org/record/24378625",
+    "github_release": "https://github.com/Qamarbajwa/tubulance/releases/tag/v1.0.0-rosetta"
   }
 }
