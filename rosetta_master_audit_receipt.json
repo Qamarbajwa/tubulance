@@ -2,6 +2,18 @@
   "scientific_honesty_all_four_millennium_problems_open": true,
   "overall_pass_count": "4/4",
   "all_four_passed": true,
+  "zenodo_dois": {
+    "riemann_hubs": [
+      "10.5281/zenodo.24378371",
+      "10.5281/zenodo.24378372",
+      "10.5281/zenodo.24378373"
+    ],
+    "navier_stokes_tubulance": "10.5281/zenodo.24378625",
+    "yang_mills_4d": "10.5281/zenodo.24378644",
+    "yang_mills_4d_concept": "10.5281/zenodo.24327876",
+    "hodge_version": "10.5281/zenodo.24380054",
+    "hodge_concept": "10.5281/zenodo.24329779"
+  },
   "workspaces": {
     "hodge": {
       "problem": "Hodge Conjecture (HODGE-MILLENNIUM-001)",
@@ -11,18 +23,30 @@
       "ext_checks_passed": true,
       "locked_baseline_intact": true,
       "lake_build_ok": true,
-      "extension_theorems": 100,
+      "baseline_theorems": 84,
+      "extension_theorems": 104,
+      "total_zero_axiom_declarations": 188,
       "unexpected_axiom_lines": 0,
-      "verbatim_axiom_receipts_count": 83,
-      "schur_certs_present": false
+      "verbatim_axiom_receipts_count": 87,
+      "schur_certs_present": true,
+      "github_repo": "Qamarbajwa/hodge-cy4-spin8-lean4",
+      "release_tag": "v1.4.0-rosetta",
+      "zenodo_version_doi": "10.5281/zenodo.24380054",
+      "zenodo_concept_doi": "10.5281/zenodo.24329779"
     },
     "yang_mills": {
       "problem": "4D Yang-Mills Mass Gap",
       "status_open": true,
       "audit_status": "PASS",
-      "git_head": "0f3f012",
-      "git_status_short_clean": true,
-      "chrysalis_manifest_total_artifacts": 75,
+      "github_repo": "Qamarbajwa/yang-mills-lean4",
+      "release_tag": "v1.1.0-rosetta",
+      "release_commit": "77d52d8",
+      "zenodo_version_doi": "10.5281/zenodo.24378644",
+      "zenodo_concept_doi": "10.5281/zenodo.24327876",
+      "git_head": "b044f0c",
+      "baseline_0f3f012_in_history": true,
+      "git_status_short_clean": false,
+      "chrysalis_manifest_total_artifacts": 93,
       "ym175_stage2a_cocycle_schur_verified_in_log": true,
       "scratch_probe_dir": "C:\\Users\\arqam\\.gemini\\antigravity\\brain\\e6cd4726-22aa-425e-a8f7-aab472c30784\\scratch",
       "probe_abelian_subtracted_2to4_fiber_schur": {
@@ -45,6 +69,14 @@
       "problem": "Riemann Hypothesis",
       "status_open": true,
       "audit_status": "PASS",
+      "github_repos": [
+        "Qamarbajwa/RiemannBlueprint@c0358b0",
+        "Qamarbajwa/riemann-lean4-papers@c3f2c47"
+      ],
+      "release_tag": "v3.1.0-rosetta",
+      "zenodo_hub_07_doi": "10.5281/zenodo.24378371",
+      "zenodo_hub_13_doi": "10.5281/zenodo.24378372",
+      "zenodo_hub_14_doi": "10.5281/zenodo.24378373",
       "NO_RH_PROOF": true,
       "receipt_path": "d:\\Comfy UI\\rheihman hypothesis\\research\\interactive_lab\\monograph_additive_multiplicative\\vasyunin_schur_chiral_rosetta_results.json",
       "VASYUNIN_SCHUR_CHIRAL_ROSETTA_OK": true,
@@ -54,12 +86,24 @@
         2,
         0,
         0
-      ]
+      ],
+      "primorial_schur": {
+        "receipt_path": "d:\\Comfy UI\\rheihman hypothesis\\research\\interactive_lab\\monograph_additive_multiplicative\\primorial_schur_distance_decay_results.json",
+        "lean_module": "PrimorialSchurDistanceDecay.lean",
+        "PRIMORIAL_SCHUR_DECAY_OK": true,
+        "max_banachiewicz_split_err": "7.52316e-37",
+        "bblr_constant": "0.0461914179322421",
+        "ln210_mul_E_dir_210": "0.047484532977636"
+      }
     },
     "navier_stokes": {
       "problem": "3D Navier-Stokes Global Regularity",
       "status_open": true,
       "audit_status": "PASS",
+      "github_repo": "Qamarbajwa/tubulance",
+      "release_tag": "v1.0.0-rosetta",
+      "release_commit": "bc085f2",
+      "zenodo_version_doi": "10.5281/zenodo.24378625",
       "receipt_path": "d:\\Comfy UI\\tubulance\\probe_cl30_helical_schur_results.json",
       "status": "CL30_HELICAL_SCHUR_COCYCLE_OK",
       "all_checks_passed": true,
@@ -82,13 +126,16 @@
         0.2713044700679407,
         0.14408813544212123,
         0.013952109170062982
-      ]
+      ],
+      "win_win_cocycle_dichotomy_arch": {
+        "receipt_path": "d:\\Comfy UI\\tubulance\\probe_win_win_cocycle_dichotomy_arch_results.json",
+        "status": "WIN_WIN_COCYCLE_DICHOTOMY_ARCH_OK",
+        "WIN_WIN_COCYCLE_DICHOTOMY_ARCH_OK": true,
+        "b2_delta_star": 0.622595688590651,
+        "b2_Phi_max": 0.11567885514792861,
+        "b4_delta_star": 0.6189779879339787,
+        "b4_Phi_max": 0.013783551603978353
+      }
     }
-  },
-  "zenodo_deposition": {
-    "deposition_id": 24378625,
-    "doi": "10.5281/zenodo.24378625",
-    "record_url": "https://zenodo.org/record/24378625",
-    "github_release": "https://github.com/Qamarbajwa/tubulance/releases/tag/v1.0.0-rosetta"
   }
 }
