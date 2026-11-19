@@ -77,10 +77,11 @@ def _run_probe(script_path: Path) -> tuple[int, str]:
 
 def read_yang_mills():
     ym_root = Path(r"d:/Comfy UI/yang mills and the mass gap")
-    git_head = subprocess.check_output(
-        ["git", "-C", str(ym_root), "rev-parse", "--short", "HEAD"],
+    git_head_full = subprocess.check_output(
+        ["git", "-C", str(ym_root), "rev-parse", "HEAD"],
         text=True,
     ).strip()
+    git_head = git_head_full[:7]
     git_status_short = subprocess.check_output(
         ["git", "-C", str(ym_root), "status", "--short"],
         text=True,
@@ -90,6 +91,27 @@ def read_yang_mills():
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     verify_log_path = ym_root / "paper" / "VERIFY_LOG.txt"
     verify_log = verify_log_path.read_text(encoding="utf-8")
+
+    # Verify YM175..YM180 6-module chain
+    cert_dir = ym_root / "formal" / "yang_mills_blueprint" / "YangMillsBlueprint" / "Certificates"
+    ym_chain_files = [
+        "YM175_PerturbedCocycleSchurCert.lean",
+        "YM176_AbelianSubtractedParamagneticSchurCert.lean",
+        "YM177_TwoStepInductiveRGRemainderCert.lean",
+        "YM177_InductiveRgRemainderContractionCert.lean",
+        "YM178_SpectralTaylorAndGribovClearanceCert.lean",
+        "YM179_ContinuumRGBridgeSynthesisCert.lean",
+        "YM180_UnifiedCrossoverMasterBridgeCert.lean",
+    ]
+    ym_chain_present = {f: (cert_dir / f).exists() for f in ym_chain_files}
+    ym180_text = (cert_dir / "YM180_UnifiedCrossoverMasterBridgeCert.lean").read_text(encoding="utf-8")
+    ym180_theorems_present = (
+        "peierls_exponential_threshold_unconditional" in ym180_text
+        and "master_uv_to_continuum_gap_conditional" in ym180_text
+    )
+    two_step_json = json.loads(
+        (ym_root / "probes" / "probe_two_step_inductive_rg_remainder.json").read_text(encoding="utf-8")
+    )
 
     # Isolated Yang-Mills scratch probes
     p_2to4 = YM_SCRATCH_DIR / "probe_abelian_subtracted_2to4_fiber_schur.py"
@@ -131,6 +153,8 @@ def read_yang_mills():
     passed = (
         baseline_0f3f012_ancestor
         and ym_log_ok
+        and all(ym_chain_present.values())
+        and ym180_theorems_present
         and ok_2to4
         and ok_sand
     )
@@ -145,10 +169,19 @@ def read_yang_mills():
         "zenodo_version_doi": "10.5281/zenodo.24378644",
         "zenodo_concept_doi": "10.5281/zenodo.24327876",
         "git_head": git_head,
+        "git_head_full": git_head_full,
+        "lean_jobs": 3010,
         "baseline_0f3f012_in_history": baseline_0f3f012_ancestor,
         "git_status_short_clean": git_status_short == "",
         "chrysalis_manifest_total_artifacts": manifest.get("total_artifacts"),
+        "ym175_to_ym180_chain_present": ym_chain_present,
+        "ym180_master_bridge_theorems_present": ym180_theorems_present,
         "ym175_stage2a_cocycle_schur_verified_in_log": ym_log_ok,
+        "probe_two_step_inductive_rg_remainder": {
+            "alpha_star": two_step_json.get("alpha_star"),
+            "schur_stability_floor": two_step_json.get("schur_stability_floor"),
+            "ensembles_count": len(two_step_json.get("ensembles", [])),
+        },
         "scratch_probe_dir": str(YM_SCRATCH_DIR),
         "probe_abelian_subtracted_2to4_fiber_schur": {
             "exists": p_2to4.exists(),

@@ -11,6 +11,7 @@ import zipfile
 from pathlib import Path
 
 TUB = Path(r"d:/Comfy UI/tubulance")
+YM = Path(r"d:/Comfy UI/yang mills and the mass gap")
 RH = Path(r"d:/Comfy UI/rheihman hypothesis/research/interactive_lab/monograph_additive_multiplicative")
 PACK = Path(r"d:/Comfy UI/ROSETTA_4WORKSPACE_FRIEND_AUDIT_PACK")
 ZIP_OUT = Path(r"d:/Comfy UI/ROSETTA_4WORKSPACE_FRIEND_AUDIT_PACK.zip")
@@ -90,6 +91,31 @@ def main() -> int:
     copy_file(
         RH / "primorial_schur_distance_decay_results.json",
         PACK / "03_riemann_hypothesis" / "primorial_schur_distance_decay_results.json",
+    )
+
+    # 2b. Yang-Mills YM175..YM180 certificates & two-step inductive RG remainder probe
+    ym_certs = YM / "formal" / "yang_mills_blueprint" / "YangMillsBlueprint" / "Certificates"
+    for cert_name in [
+        "YM175_PerturbedCocycleSchurCert.lean",
+        "YM176_AbelianSubtractedParamagneticSchurCert.lean",
+        "YM177_TwoStepInductiveRGRemainderCert.lean",
+        "YM177_InductiveRgRemainderContractionCert.lean",
+        "YM178_SpectralTaylorAndGribovClearanceCert.lean",
+        "YM179_ContinuumRGBridgeSynthesisCert.lean",
+        "YM180_UnifiedCrossoverMasterBridgeCert.lean",
+    ]:
+        copy_file(ym_certs / cert_name, PACK / "02_yang_mills_4d" / "lean4_certificates" / cert_name)
+    copy_file(
+        YM / "probes" / "probe_two_step_inductive_rg_remainder.py",
+        PACK / "02_yang_mills_4d" / "probes" / "probe_two_step_inductive_rg_remainder.py",
+    )
+    copy_file(
+        YM / "probes" / "probe_two_step_inductive_rg_remainder.json",
+        PACK / "02_yang_mills_4d" / "probes" / "probe_two_step_inductive_rg_remainder.json",
+    )
+    copy_file(
+        YM / "probes" / "receipts" / "probe_two_step_inductive_rg_remainder.receipt.json",
+        PACK / "02_yang_mills_4d" / "probes" / "probe_two_step_inductive_rg_remainder.receipt.json",
     )
 
     # 3. Navier-Stokes Final-Hurdle Win-Win Cocycle Arch files
