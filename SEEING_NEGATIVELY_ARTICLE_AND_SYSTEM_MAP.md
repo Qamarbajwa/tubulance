@@ -201,8 +201,9 @@ Why? Because proving an infinite continuum limit requires bridging from finite l
   * Zenodo Hub 07 (`RiemannBlueprint`): `10.5281/zenodo.24378371`
   * Zenodo Hub 13 (`Paper K`): `10.5281/zenodo.24378372`
   * Zenodo Hub 14 (`Paper L`): `10.5281/zenodo.24378373`
-* **3D Navier–Stokes (`Qamarbajwa/tubulance`, Release `v1.0.0-rosetta`):**
-  * Zenodo DOIs: `10.5281/zenodo.24378625`
+* **3D Navier–Stokes (`Qamarbajwa/tubulance`, Releases `v1.0.0-rosetta` & `v1.2.0-rosetta`):**
+  * Zenodo DOIs: `10.5281/zenodo.24399167` (`v1.2.0`), `10.5281/zenodo.24378625` (`v1.0.0`), `10.5281/zenodo.24403360` (`Cl(3,0)` Monograph), `10.5281/zenodo.24403362` (Seeing Negatively Atlas), `10.5281/zenodo.24403353` (Proof Bridges)
+  * Unified Monograph: `paper/ROSETTA_UNIFIED_FOUR_WORKSPACES_AND_SEVEN_DOMAINS_MONOGRAPH.pdf`
 * **4D Yang–Mills (`Qamarbajwa/yang-mills-lean4`, `Qamarbajwa/yang-mills-lean4-papers`, Release `v1.1.0-rosetta`):**
   * Zenodo DOI: `10.5281/zenodo.24378644` (Concept DOI: `10.5281/zenodo.24327876`)
 * **Hodge Conjecture (`Qamarbajwa/hodge-cy4-spin8-lean4`, Release `v1.4.0-rosetta`):**

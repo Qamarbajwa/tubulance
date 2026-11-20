@@ -1,9 +1,10 @@
 {
-  "title": "Cl(3,0) Helical Schur-Complement Isolation, O(3)-Even Parity Blindness, and Multiscale Constantin-Fefferman SO(3) Vorticity Cocycle Depletion in 3D Navier-Stokes and Superfluid Vortex Tangles",
-  "description": "Machine-verified Cl(3,0) ~= M_2(C) Beltrami helical Schur-complement probe (probe_cl30_helical_schur_and_vorticity_cocycle.py, CL30_HELICAL_SCHUR_COCYCLE_OK), multiscale Constantin-Fefferman SO(3) vorticity cocycle depletion on L=12 periodic grids, and unified 4-workspace Rosetta master audit (rosetta_master_audit_receipt.json, 4/4 PASS). Scientific honesty: all four Clay Millennium problems (Hodge Conjecture, 4D Yang-Mills Mass Gap, Riemann Hypothesis, and 3D Navier-Stokes Global Regularity) remain strictly OPEN.",
+  "title": "Unified Rosetta System: Cl(3,0) Helical Schur Isolation, Win-Win SO(3) Cocycle Arch, 7 Worldwide Domains, and 4-Workspace Proof Bridges",
+  "description": "Complete verified finite Lean 4 certificates (RosettaUniversalMetaTheorems, NavierStokesWinWinArchCert, RosettaGrandPlanStage4Cert, NavierStokesNS1NS2BridgeCert, RosettaFourWorkspaceProofBridgesCert, RosettaMongeAmpereSeesawCrossProofsCert, RosettaWorldwideSevenDomainsCert), Python probes, and the unified PDF monograph ROSETTA_UNIFIED_FOUR_WORKSPACES_AND_SEVEN_DOMAINS_MONOGRAPH.pdf. Scientific honesty: all four Clay Millennium problems (HODGE-MILLENNIUM-001, 4D Yang-Mills Mass Gap, NO_RH_PROOF = TRUE, NS_GLOBAL_REGULARITY_OPEN = true) plus BSD and P vs NP remain strictly OPEN.",
   "creators": [
     {
-      "name": "Bajwa, Qamar"
+      "name": "Munawer, Qamar",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
     }
   ],
   "upload_type": "software",
@@ -12,10 +13,10 @@
   "keywords": [
     "Navier-Stokes",
     "Clifford algebra Cl(3,0)",
-    "Beltrami helical basis",
     "Schur complement",
     "Constantin-Fefferman cocycle",
-    "Superfluid vortex tangles",
-    "Millennium Problems Rosetta"
+    "Monge-Ampere",
+    "Millennium Problems Rosetta",
+    "Lean 4"
   ]
 }

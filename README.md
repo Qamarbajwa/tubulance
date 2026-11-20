@@ -1,9 +1,13 @@
-# `tubulance` — 3D Navier–Stokes Regularity, $\mathrm{Cl}(3,0)$ Helical Schur & Rosetta Audit (`v1.0.0-rosetta`)
+# `tubulance` — 3D Navier–Stokes Regularity, $\mathrm{Cl}(3,0)$ Helical Schur & Unified Rosetta Audit (`v1.2.0-rosetta`)
 
-- **General-Reader Essay & Rosetta Measurement Atlas:** [SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.md](SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.md) | [PDF](SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.pdf)
-- **Technical Monograph:** [paper/cl30_helical_schur_superfluid_monograph.pdf](paper/cl30_helical_schur_superfluid_monograph.pdf)
-- **GitHub Release:** https://github.com/Qamarbajwa/tubulance/releases/tag/v1.0.0-rosetta
-- **Zenodo DOI:** [`10.5281/zenodo.24378625`](https://zenodo.org/record/24378625)
+- **Unified 4-Workspace & 7-Domain Monograph:** [paper/ROSETTA_UNIFIED_FOUR_WORKSPACES_AND_SEVEN_DOMAINS_MONOGRAPH.pdf](paper/ROSETTA_UNIFIED_FOUR_WORKSPACES_AND_SEVEN_DOMAINS_MONOGRAPH.pdf) | [TeX](paper/ROSETTA_UNIFIED_FOUR_WORKSPACES_AND_SEVEN_DOMAINS_MONOGRAPH.tex)
+- **General-Reader Essay & Rosetta Measurement Atlas:** [SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.md](SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.md) | [PDF](SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.pdf) (Zenodo DOI [`10.5281/zenodo.24403362`](https://zenodo.org/record/24403362))
+- **$\mathrm{Cl}(3,0)$ Superfluid Monograph:** [paper/cl30_helical_schur_superfluid_monograph.pdf](paper/cl30_helical_schur_superfluid_monograph.pdf) (Zenodo DOI [`10.5281/zenodo.24403360`](https://zenodo.org/record/24403360))
+- **Lean 4 Certificates (`formal/`):**
+  - [RosettaUniversalMetaTheorems.lean](formal/RosettaUniversalMetaTheorems.lean), [NavierStokesWinWinArchCert.lean](formal/NavierStokesWinWinArchCert.lean), [RosettaGrandPlanStage4Cert.lean](formal/RosettaGrandPlanStage4Cert.lean), [NavierStokesNS1NS2BridgeCert.lean](formal/NavierStokesNS1NS2BridgeCert.lean), [RosettaFourWorkspaceProofBridgesCert.lean](formal/RosettaFourWorkspaceProofBridgesCert.lean), [RosettaMongeAmpereSeesawCrossProofsCert.lean](formal/RosettaMongeAmpereSeesawCrossProofsCert.lean), [RosettaWorldwideSevenDomainsCert.lean](formal/RosettaWorldwideSevenDomainsCert.lean)
+- **Key Probes (`scripts/`):**
+  - [probe_cl30_helical_schur_and_vorticity_cocycle.py](scripts/probe_cl30_helical_schur_and_vorticity_cocycle.py), [probe_win_win_cocycle_dichotomy_arch.py](scripts/probe_win_win_cocycle_dichotomy_arch.py), [probe_win_win_arch_resolution_scaling.py](scripts/probe_win_win_arch_resolution_scaling.py), [probe_ns_time_evolution_win_win_arch.py](scripts/probe_ns_time_evolution_win_win_arch.py), [probe_adversarial_nogo_barriers.py](scripts/probe_adversarial_nogo_barriers.py), [probe_four_workspace_proof_bridges.py](scripts/probe_four_workspace_proof_bridges.py), [probe_monge_ampere_seesaw_cross_proofs.py](scripts/probe_monge_ampere_seesaw_cross_proofs.py), [probe_worldwide_7domains_rosetta.py](scripts/probe_worldwide_7domains_rosetta.py)
+- **GitHub Release & Zenodo DOIs:** https://github.com/Qamarbajwa/tubulance/releases/tag/v1.2.0-rosetta | [`10.5281/zenodo.24399167`](https://zenodo.org/record/24399167) | [`10.5281/zenodo.24403353`](https://zenodo.org/record/24403353)
 - **Master Audit Receipt:** [rosetta_master_audit_receipt.json](rosetta_master_audit_receipt.json) (`4/4 PASS`; `NS_GLOBAL_REGULARITY_OPEN = true`)
 
 ---

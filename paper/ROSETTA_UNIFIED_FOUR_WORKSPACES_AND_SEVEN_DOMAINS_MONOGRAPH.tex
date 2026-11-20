@@ -1,0 +1,125 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array,booktabs,longtable}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{\textbf{The Unified Rosetta Monograph: Four Clay Workspaces, Seven Worldwide Domains, and Every Verified Finite Theorem in \texttt{tubulance}}}
+\author{Arqam (Qamar Munawer)\\Brandenburg University of Technology (BTU) Cottbus--Senftenberg\\[0.3em]\small\textit{Note: AI is used as a formal verification and numerical sweep tool under human geometric direction.}}
+\date{November 20, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This monograph provides a complete, theorem-by-theorem mathematical exposition of every formal Lean~4 module in \texttt{tubulance} and synthesizes the unified \textbf{Positive vs.\ Negative Rosetta Architecture} across four Clay Millennium workspaces (Hodge Conjecture, 4D Yang--Mills, Riemann Hypothesis, and 3D Navier--Stokes) and seven worldwide domains (Beltrami MHD, $d=4$ General Relativity, Random Matrix Theory, P vs.\ NP, Birch--Swinnerton-Dyer, Topological Insulators, and Chern--Simons Anyons). Every finite-dimensional, algebraic, and multiscale numerical theorem is machine-certified with zero custom axioms in Lean~4 and verified in Python probes, while all open infinite/continuum Clay horizons (\texttt{HODGE-MILLENNIUM-001}, 4D Yang--Mills Mass Gap, \texttt{NO\_RH\_PROOF = TRUE}, \texttt{NS\_GLOBAL\_REGULARITY\_OPEN = true}, \texttt{BSD\_CONJECTURE\_OPEN = true}, and \texttt{P\_VS\_NP\_OPEN = true}) remain strictly \textbf{OPEN}.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{The 5-Pillar Rosetta Architecture (Positive vs.\ Negative Rosetta)}
+
+Across all four Clay workspaces and seven external domains, a single dual architecture emerges:
+\begin{enumerate}
+  \item \textbf{Identity of One as Two Halves:} Every chiral/oriented system splits via orthogonal projectors $P_\pm = \frac{1}{2}(I \pm T_{\mathrm{ch}})$ ($P_+ + P_- = I$, $P_+ P_- = 0$). Squaring $T_{\mathrm{ch}}^2 = I$ erases chirality ($P_+ T_{\mathrm{ch}}^2 P_- = 0$), whereas observing half the domain ($K_{\mathrm{half}}$) restores it:
+  \[
+    K_{\mathrm{half}} + K_{\mathrm{half}}^T = 4\,T_{\mathrm{ch}}.
+  \]
+  \item \textbf{Orthogonal Diagonal Triple Gram:} Under an involutive symmetry $P$ ($P^2=I$), two orthogonal $P$-even observables $\{Q_E, Q_Z\}$ and a $P$-odd chiral observable $T_{\mathrm{ch}}$ form an exact diagonal Hilbert--Schmidt Gram matrix $G = \operatorname{diag}(\|Q_E\|^2, \|Q_Z\|^2, \|T_{\mathrm{ch}}\|^2)$ with $\Pi_{\mathrm{even}}(T_{\mathrm{ch}}) = 0$.
+  \item \textbf{Higher-Dimensional Schur--Cholesky Trigonometry:} For a block-symmetric matrix $M = \begin{pmatrix} A & B \\ B^T & D \end{pmatrix}$ with $A \succ 0$, taring out the positive baseline $A$ yields the Schur complement $S = D - B^T A^{-1} B$. Normalizing by $D$ defines the canonical subspace angle $\Theta$:
+  \[
+    \cos^2\Theta + \sin^2\Theta = 1, \qquad \sin^2\Theta = D^{-1/2} S D^{-1/2}.
+  \]
+  \item \textbf{Weierstrass--Euclid Half-Dimension Pinch:} Deviation from the critical half-axis $\beta = \frac{1}{2}$ is governed by the half-angle tangent identity
+  \[
+    \beta_{\min} - \frac{1}{2} = \frac{1}{2}\tan^2\!\left(\frac{\Theta}{2}\right) \ge 0.
+  \]
+  \item \textbf{Half-Dimension Pfaffian Square Law:} Every skew-symmetric $2n\times 2n$ pairing matrix $M = -M^T$ satisfies $\det(M) = \mathrm{Pf}(M)^2$, explaining both planar Kasteleyn dimer counting ($P$) and Cassels--Tate $\Sha(E)$ square orders.
+\end{enumerate}
+
+\section{Complete Theorem-by-Theorem Exposition of 3D Navier--Stokes (\texttt{tubulance})}
+
+\subsection{Universal Rosetta Meta-Theorems (\texttt{RosettaUniversalMetaTheorems.lean})}
+All five universal mechanisms are certified in \texttt{RosettaUniversalMetaTheorems.lean} with zero custom axioms:
+\begin{itemize}
+  \item \texttt{rosetta\_thm1\_parity\_diagonal\_triple\_gram}: If $g_{ez} = g_{et} = g_{zt} = 0$ and $g_{ee}, g_{zz}, g_{tt} > 0$, then the $3\times 3$ Gram matrix is strictly diagonal with positive Schur complement $g_{tt} > 0$.
+  \item \texttt{rosetta\_thm2\_schur\_baseline\_taring}: In multiplicative form $A S = A D - B^2$ ($A > 0$), $B^2 < A D \implies 0 < A S$, separating genuine signal from baseline container mirages.
+  \item \texttt{rosetta\_thm3\_parity\_blindness\_and\_half\_domain\_reconstruction}: For $T = \operatorname{diag}(1, -1)$ and skew perturbation $a_{12} + a_{21} = 0$, $t_+^2 = t_-^2 = 1$ (parity-blind) while $K_{\mathrm{half}} + K_{\mathrm{half}}^T = 4T$.
+  \item \texttt{rosetta\_thm4\_cocycle\_line\_vs\_plane\_dichotomy}: Collinear 1D states ($\mathrm{dot} = \pm 1$) give $\delta = 1 - \mathrm{dot}^2 = 0$, whereas 3D coarse-grained blocks ($b=1\to 2\to 4$) compress the Win--Win peak $1758 \to 1157 \to 138 < 141$ ($\times 10^{-4}$).
+  \item \texttt{rosetta\_thm5\_active\_core\_and\_tail\_equipartition}: If $E_{\mathrm{tot}} = E_{\mathrm{active}} + E_{\mathrm{tail}}$ with $10 E_{\mathrm{tail}} \le E_{\mathrm{tot}}$, then $9 E_{\mathrm{tot}} \le 10 E_{\mathrm{active}}$ ($\ge 90\%$ active core) and $9 E_{\mathrm{tail}} \le E_{\mathrm{active}}$.
+\end{itemize}
+
+\subsection{Win--Win Arch \& Continuum Bridge (\texttt{NavierStokesWinWinArchCert.lean}, \texttt{RosettaGrandPlanStage4Cert.lean})}
+\begin{itemize}
+  \item \texttt{cl30\_helical\_schur\_and\_half\_op\_unconditional} and \texttt{l12\_win\_win\_arch\_compression\_witness}: Certify the $L=12$ $\mathrm{Cl}(3,0)$ helical Schur complement $S_{\mathrm{Schur}} = 2660 > 0$ ($\Pi_{O(3)\text{-even}} = 0$, normalized off-diagonal $1.18\times 10^{-15}$) and the $b=1\to 2\to 4$ Win--Win arch compression $0.1758 \to 0.1157 \to 0.0138$.
+  \item \texttt{master\_navier\_stokes\_enstrophy\_dissipation\_bridge\_conditional}: Parameterized by \texttt{WinWinEnstrophyDissipationHypothesis}, proves $\mathrm{stretch} - \nu\,\mathrm{diss} \le 0$ whenever $\Phi_{\max} \le \nu$.
+  \item \texttt{grand\_plan\_two\_sided\_arch\_enclosure\_unconditional} (Stage~4): Eliminates $\delta$ between the Positive Rosetta tube bound $\Phi \le C_1 \delta$ and the Negative Rosetta tangle bound $\Phi \le C_2 (2 - 3\delta)$ using weights $3 C_2$ and $C_1$:
+  \[
+    (C_1 + 3 C_2)\,\Phi \le 2\,C_1 C_2.
+  \]
+  Supported numerically by Stage~2 ($L=12 \to 24$ UV contraction across matched physical scales), Stage~3 ($L=16$ RK4 evolution $t\in[0,1.0]$ with $\Phi_4 \le 0.0216$), and Stage~5 ($846.9\times$ UV-shell adversarial depletion down to $0.000294$).
+\end{itemize}
+
+\subsection{Monge--Amp\`ere Seesaw \& NS1--NS2 Closure (\texttt{RosettaMongeAmpereSeesawCrossProofsCert.lean}, \texttt{NavierStokesNS1NS2BridgeCert.lean})}
+\begin{itemize}
+  \item \texttt{monge\_ampere\_incompressible\_two\_thirds\_half\_split\_equality}: Under incompressibility $\lambda_1 + \lambda_2 + \lambda_3 = 0$, the strain eigenvalues satisfy the exact polynomial identity
+  \[
+    2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2) - 3\lambda_3^2 = (\lambda_1 - \lambda_2)^2 \ge 0,
+  \]
+  forcing the $2/3$ stretching ceiling ($1.998698 \le 2.000000$ across $4{,}096$ grid cells on $L=16$, Poisson error $3.553\times 10^{-15}$), with equality at the two negative halves $(-\frac{1}{2}, -\frac{1}{2}, +1)$ (measured $[-0.5221, -0.4779, +1.0000]$).
+  \item \texttt{stepanov\_theta\_lift\_two\_thirds\_to\_one\_half\_seesaw\_bridge}, \texttt{o24\_spin24\_cm\_poincare\_theta\_multiplicity\_two\_cert}, and \texttt{balaban\_seesaw\_multiscale\_covolume\_tare\_contraction}: Certify the cross-workspace seesaw dualities in Hodge ($O(2,4)/\mathrm{Spin}(2,4)$) and Yang--Mills (Balaban covolume contraction).
+  \item \texttt{ns\_NS1\_riesz\_pressure\_hessian\_tube\_commutator\_bound} (\textbf{Lemma NS1}): Under $-\Delta p = \operatorname{Tr}(S^2) - \frac{1}{2}|\omega|^2$ and Calder\'on--Zygmund $\|S\|_2^2 \le C_{\mathrm{CZ}}\|\omega\|_2^2$, certifies $2(-\Delta p) \le (2 C_{\mathrm{CZ}} - 1)|\omega|^2$ and $\Phi_b \le C_1 \delta_{\mathrm{NS}}(b)$ with $C_1 = C_{\mathrm{comm}} C_{\mathrm{CZ}}^{1/2}$.
+  \item \texttt{ns\_NS2\_helical\_dyadic\_depletion\_viscous\_enstrophy\_closure} (\textbf{Lemma NS2}) \& \texttt{l16\_l24\_viscous\_stability\_basin\_witness}: Under $\frac{2 C_1 C_2}{C_1 + 3 C_2} \le \nu$, proves $(\Phi_b - \nu)\,\mathcal{E} \le 0$ for all $\delta_{\mathrm{NS}}$ and $\mathcal{E} \ge 0$, witnessed at $b=4$ by $\Phi_{\max}(4) \in [0.0110, 0.0138] < \nu = 0.0200$ (margin $-0.0062 < 0$).
+\end{itemize}
+
+\section{Complete Exposition of the 7 Worldwide Domains (\texttt{RosettaWorldwideSevenDomainsCert.lean})}
+
+All seven worldwide domains share the exact same Rosetta operators (\texttt{probe\_worldwide\_7domains\_rosetta.py}):
+\begin{enumerate}
+  \item \textbf{Beltrami MHD Force-Free Fields:} Minimizing $P$-even magnetic energy at fixed $P$-odd helicity $T_{\mathrm{hel}}$ relaxes to Beltrami eigenstates ($\nabla\times\mathbf{B} = \alpha\mathbf{B}$), with $S_{\mathrm{Schur}} = 2660.0$ and $\Pi_{\mathrm{even}}(T_{\mathrm{hel}}) = 0.0$.
+  \item \textbf{$d=4$ General Relativity Weyl Unlocking (\texttt{weyl\_curvature\_dimension\_unlocks\_at\_d4}):} Subtracting matter-coupled Ricci curvature leaves $D_{\mathrm{Weyl}}(d) = \frac{d(d+1)(d+2)(d-3)}{12}$ components: $D_{\mathrm{Weyl}}(2) = D_{\mathrm{Weyl}}(3) = 0$, unlocking to $D_{\mathrm{Weyl}}(4) = 10$ free gravitational-wave components.
+  \item \textbf{Random Matrix Theory (GUE vs.\ GOE):} Rank-1 spike Schur taring exposes the 2D imaginary bivector twist ($\|\operatorname{Im}(S_{\mathrm{GUE}})\|_F = 3.5289$, spectral gap $1.0939 \to 1.2778$).
+  \item \textbf{P vs.\ NP Kasteleyn Planar Pfaffian vs.\ $K_{3,3}$ Frustration (\texttt{kasteleyn\_planar\_pfaffian\_vs\_frustrated\_permanent}):} On a $4\times 4$ planar grid, $|\mathrm{Pf}(A)| = 36 = \mathrm{perm}$ in $O(n^3)$ time; on non-planar $K_{3,3}$, all $512$ $\pm 1$ orientations satisfy $\max|\mathrm{Pf}| = 4 < 6$.
+  \item \textbf{Birch \& Swinnerton-Dyer ($\Sha(E)$) (\texttt{bsd\_cassels\_tate\_sha\_pfaffian\_square\_cert}):} Frobenius trace $a_p = (p+1) - \#E(\mathbb{F}_p)$ tared over $46$ primes ($p \le 211$), while Cassels--Tate skew pairing satisfies $\det(M_{\mathrm{CT}}) = \mathrm{Pf}(M_{\mathrm{CT}})^2 = k^2 \in \{1, 4, 9, 16\}$.
+  \item \textbf{Topological Insulators \& Kitaev Majorana Half-Modes (\texttt{kitaev\_majorana\_half\_mode\_schur\_edge\_cert}):} On $N=8$ sites ($16$ half-modes), the boundary Schur gap drops from $1.0$ (trivial) to $0.0$ (topological) and $K_{\mathrm{half}} + K_{\mathrm{half}}^T = 4 T_{\mathrm{ch}}$.
+  \item \textbf{Chern--Simons Non-Abelian Anyons on $S^3$ (\texttt{non\_abelian\_anyon\_braid\_cocycle\_pos\_cert}):} $U(1)$ braiding has $\delta = 0.0$, whereas Ising $\mathrm{SU}(2)_2$ gives $\delta = 2.0$ (purity $1/2 = 0.5$) and Fibonacci $\mathrm{SU}(2)_3$ gives $\delta = 2\phi = 3.2361$ (purity $1/\phi = 0.6180$).
+\end{enumerate}
+
+\section{Complete Exposition of the 8 Cross-Workspace Proof Bridge Lemmas (\texttt{RosettaFourWorkspaceProofBridgesCert.lean})}
+
+\begin{table}[htbp]
+\centering
+\caption{The 8 Cross-Workspace Proof Bridge Lemmas (\texttt{probe\_four\_workspace\_proof\_bridges\_results.json}, \texttt{passed = true}).}
+\label{tab:bridges}
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{4.8cm}>{\raggedright\arraybackslash}p{6.5cm}@{}}
+\toprule
+Lemma & Lean 4 Theorem & Verified Statement \& Numerical Receipt \\
+\midrule
+\textbf{H1} (Hodge) & \texttt{hodge\_H1\_gauss\_manin\_horizontal\_schur\_invariance} & Isomonodromic Gauss--Manin transport preserves $\mathrm{Cl}(0,7)$ Schur target: $1152.0$, max drift $0.0$ ($t\in[0,1]$). \\
+\textbf{H2} (Hodge) & \texttt{hodge\_H2\_bost\_slope\_divisibility\_algebraicity\_criterion} & Bost slope surplus above $m_{\mathrm{crit}} = 4.0$: $\mu_{\mathrm{div}} = 1.25$, $h_{\mathrm{arch}} = 0.75$, surplus at $m=5$ is $0.5 > 0$. \\
+\textbf{YM1} (YM) & \texttt{ym\_YM1\_s3\_character\_cocycle\_schur\_pull\_floor} & $S^3 \cong \mathrm{SU}(2)$ Haar mean $\langle\chi_1\rangle = 0.0$, second moment $1.0$, $c_0/\beta_{\mathrm{norm}} = 1.0$. \\
+\textbf{YM2} (YM) & \texttt{ym\_YM2\_balaban\_polymer\_tree\_geometric\_convergence} & Balaban blocking $b\in\{1,2,4\}$ keeps $r_{\mathrm{poly}}/\mathrm{gap} \in [0.0163, 0.0328] < 0.5$ ($15.24\times$ safety margin). \\
+\textbf{R1} (Riemann) & \texttt{riemann\_R1\_bblr\_schur\_angle\_pinch\_to\_half} & $L^2$ Schur energy bounds $t_{\mathrm{sq}} \le E_{\mathrm{dir}}(N)$ under BBLR envelope ($C_{\mathrm{BBLR}} = 0.2127$). \\
+\textbf{R2} (Riemann) & \texttt{riemann\_R2\_positivity\_reciprocity\_sqrt\_multiplicity\_pinch} & $\sqrt{N}$-step pinch contracts monotonically across $N \in \{2,\dots,1000\}$ ($0.0323 \to 2.602\times 10^{-5}$). \\
+\textbf{NS1} (NS) & \texttt{ns\_NS1\_riesz\_pressure\_hessian\_tube\_commutator\_bound} & Riesz pressure-Hessian commutator bound $\Phi_b \le C_1\delta_{\mathrm{NS}}(b)$ ($C_1 = 0.0294$ on $L=16$, $0.0235$ on $L=24$). \\
+\textbf{NS2} (NS) & \texttt{ns\_NS2\_helical\_dyadic\_depletion\_viscous\_enstrophy\_closure} & $\frac{2 C_1 C_2}{C_1 + 3 C_2} \le \nu = 0.02 \implies \frac{d\mathcal{E}}{dt} \le 0$ ($\Phi_{\mathrm{arch}} = 0.010707, 0.008545$; max rate $-0.0102, -0.0122$). \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Honest Epistemic Horizon.}
+All finite-dimensional theorems and Lean~4 certificates above are unconditionally verified (\texttt{status: verified-finite}). The global/continuum Clay Millennium problems—\texttt{HODGE-MILLENNIUM-001 = OPEN}, 4D Yang--Mills Continuum Mass Gap \texttt{OPEN}, \texttt{NO\_RH\_PROOF = TRUE}, \texttt{NS\_GLOBAL\_REGULARITY\_OPEN = true}, \texttt{BSD\_MILLENNIUM\_OPEN = true}, and \texttt{P\_VS\_NP\_OPEN = true}—remain strictly \textbf{OPEN}.
+
+\end{document}
