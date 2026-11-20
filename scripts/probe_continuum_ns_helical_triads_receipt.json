@@ -1,0 +1,14 @@
+{
+  "grid_resolution": "16^3",
+  "t_homochiral_plus": 1.753130419894979e-19,
+  "t_homochiral_minus": -6.141914768527737e-20,
+  "t_heterochiral_cross": 4.604666220376673e-19,
+  "t_total": 3.5120041141572583e-19,
+  "enstrophy_dissipation_D": 2.0290914348373823,
+  "dimensionless_production_Phi": 1.730825951881622e-19,
+  "viscosity_nu": 0.02,
+  "subcritical_Phi_le_nu": true,
+  "homochiral_vanished": true,
+  "monge_ampere_fraction_straining_tubes": 0.39599609375,
+  "delta_p_mean_in_tubes": 0.47425776779945555
+}
