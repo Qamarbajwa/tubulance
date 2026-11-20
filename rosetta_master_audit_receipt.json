@@ -11,7 +11,7 @@
     "navier_stokes_tubulance": "10.5281/zenodo.24381824",
     "yang_mills_4d": "10.5281/zenodo.24378644",
     "yang_mills_4d_concept": "10.5281/zenodo.24327876",
-    "hodge_version": "10.5281/zenodo.24380054",
+    "hodge_version": "10.5281/zenodo.24398323",
     "hodge_concept": "10.5281/zenodo.24329779",
     "navier_stokes_tubulance_concept": "10.5281/zenodo.24378624",
     "navier_stokes_tubulance_v1_0_0": "10.5281/zenodo.24378625",
@@ -28,14 +28,14 @@
       "locked_baseline_intact": true,
       "lake_build_ok": true,
       "baseline_theorems": 84,
-      "extension_theorems": 108,
-      "total_zero_axiom_declarations": 192,
+      "extension_theorems": 124,
+      "total_zero_axiom_declarations": 208,
       "unexpected_axiom_lines": 0,
-      "verbatim_axiom_receipts_count": 91,
+      "verbatim_axiom_receipts_count": 107,
       "schur_certs_present": true,
       "github_repo": "Qamarbajwa/hodge-cy4-spin8-lean4",
-      "release_tag": "v1.4.0-rosetta",
-      "zenodo_version_doi": "10.5281/zenodo.24380054",
+      "release_tag": "v1.5.0-rosetta",
+      "zenodo_version_doi": "10.5281/zenodo.24398323",
       "zenodo_concept_doi": "10.5281/zenodo.24329779",
       "spin7_cayley_calibration_cycle_ext_present": true,
       "hodge_master_spin7_bridge_ext_present": false
@@ -167,5 +167,13 @@
       "coscientist_autonomy_level_2_present": true,
       "clm043_nonlocal_triad_present": true
     }
+  },
+  "zenodo_deposition": {
+    "deposition_id": 24399167,
+    "doi": "10.5281/zenodo.24399167",
+    "concept_doi": "10.5281/zenodo.24378624",
+    "record_url": "https://zenodo.org/record/24399167",
+    "version": "v1.2.0-rosetta",
+    "github_release": "https://github.com/Qamarbajwa/tubulance/releases/tag/v1.2.0-rosetta"
   }
 }
