@@ -175,5 +175,21 @@
     "record_url": "https://zenodo.org/record/24399167",
     "version": "v1.2.0-rosetta",
     "github_release": "https://github.com/Qamarbajwa/tubulance/releases/tag/v1.2.0-rosetta"
+  },
+  "individual_paper_zenodo_dois": {
+    "cl30_helical_schur_superfluid_monograph": {
+      "deposition_id": 24403360,
+      "doi": "10.5281/zenodo.24403360",
+      "concept_doi": "10.5281/zenodo.24403359",
+      "record_url": "https://zenodo.org/record/24403360",
+      "pdf": "cl30_helical_schur_superfluid_monograph.pdf"
+    },
+    "seeing_negatively_article_and_system_map": {
+      "deposition_id": 24403362,
+      "doi": "10.5281/zenodo.24403362",
+      "concept_doi": "10.5281/zenodo.24403361",
+      "record_url": "https://zenodo.org/record/24403362",
+      "pdf": "seeing_negatively_article_and_system_map.pdf"
+    }
   }
 }
