@@ -1,0 +1,122 @@
+{
+  "probe": "RosettaMongeAmpereSeesawCrossProofs",
+  "epistemic_status": "verified-finite",
+  "all_four_clay_millennium_problems_open": true,
+  "passed": true,
+  "navier_stokes_monge_ampere": {
+    "grid_L": 16,
+    "total_cells": 4096,
+    "t_final": 1.0,
+    "max_div_u": 1.887379141862766e-15,
+    "max_poisson_identity_error": 3.552713678800501e-15,
+    "poisson_identity_ok": true,
+    "max_3_lambda_max_sq_over_S_frob_sq": 1.9986977960305028,
+    "ceiling_2_0_satisfied_all_cells": true,
+    "cells_within_two_thirds_ceiling": 4096,
+    "peak_lam3_normalized_eigs": [
+      -0.833104,
+      -0.166896,
+      1.0
+    ],
+    "peak_lam3_ratio_3lam2_over_norm": 1.7422446388001986,
+    "closest_half_split_normalized_eigs": [
+      -0.522105,
+      -0.477895,
+      1.0
+    ],
+    "closest_half_split_ratio_3lam2_over_norm": 1.9986977960305028
+  },
+  "riemann_seesaw_pinch": {
+    "seesaw_2_3_minus_1_6": 0.5,
+    "seesaw_lands_on_half": true,
+    "scale_rows": [
+      {
+        "N": 2,
+        "t_N": 0.5,
+        "weierstrass_pinch_tN2_over_2": 0.125,
+        "theta_lift_m_sqrtN": 1.4142135623730951,
+        "amplified_pinch_tN2_over_2sqrtN": 0.08838834764831843
+      },
+      {
+        "N": 6,
+        "t_N": 0.16666666666666666,
+        "weierstrass_pinch_tN2_over_2": 0.013888888888888888,
+        "theta_lift_m_sqrtN": 2.449489742783178,
+        "amplified_pinch_tN2_over_2sqrtN": 0.005670115145331431
+      },
+      {
+        "N": 30,
+        "t_N": 0.03333333333333333,
+        "weierstrass_pinch_tN2_over_2": 0.0005555555555555556,
+        "theta_lift_m_sqrtN": 5.477225575051661,
+        "amplified_pinch_tN2_over_2sqrtN": 0.00010143010324169743
+      },
+      {
+        "N": 211,
+        "t_N": 0.004739336492890996,
+        "weierstrass_pinch_tN2_over_2": 1.1230655196424161e-05,
+        "theta_lift_m_sqrtN": 14.52583904633395,
+        "amplified_pinch_tN2_over_2sqrtN": 7.731501884745562e-07
+      },
+      {
+        "N": 500,
+        "t_N": 0.002,
+        "weierstrass_pinch_tN2_over_2": 2e-06,
+        "theta_lift_m_sqrtN": 22.360679774997898,
+        "amplified_pinch_tN2_over_2sqrtN": 8.944271909999158e-08
+      },
+      {
+        "N": 1000,
+        "t_N": 0.001,
+        "weierstrass_pinch_tN2_over_2": 5e-07,
+        "theta_lift_m_sqrtN": 31.622776601683793,
+        "amplified_pinch_tN2_over_2sqrtN": 1.5811388300841896e-08
+      }
+    ]
+  },
+  "hodge_o24_cm_poincare_theta": {
+    "spin24_split_20": {
+      "total": 20,
+      "sp8_pos": 6,
+      "eta12_div": 4,
+      "weil_prim": 10
+    },
+    "h4_a_70_minus_28_equals_42": true,
+    "cm_2Z_eq_T_ch": true,
+    "schur_complement_T_ch": 1152,
+    "inert_symmetric_overlap_D_sym": 0,
+    "verified_from_hodge_receipts": true
+  },
+  "yang_mills_balaban_tare": {
+    "u1_covolume_tare": 65.4505,
+    "paramagnetic_dominance_ratio": 13.47,
+    "eta_net": 12.32,
+    "net_contraction_positive": true,
+    "blocking_steps": [
+      {
+        "blocking_scale_b": 1,
+        "beta_in": 2.4,
+        "raw_before_with_covolume": 67.8505,
+        "raw_after_with_covolume": 55.5305,
+        "tared_beta_out": -9.92,
+        "eta_net": 12.32
+      },
+      {
+        "blocking_scale_b": 2,
+        "beta_in": -9.92,
+        "raw_before_with_covolume": 55.5305,
+        "raw_after_with_covolume": 43.2105,
+        "tared_beta_out": -22.24,
+        "eta_net": 12.32
+      },
+      {
+        "blocking_scale_b": 4,
+        "beta_in": -22.24,
+        "raw_before_with_covolume": 43.2105,
+        "raw_after_with_covolume": 30.8905,
+        "tared_beta_out": -34.56,
+        "eta_net": 12.32
+      }
+    ]
+  }
+}

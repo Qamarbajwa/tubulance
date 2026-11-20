@@ -1,0 +1,27 @@
+{
+  "title": "Calderon-Zygmund Riesz Transform Commutators and the Viscous Stability Basin for Incompressible Flows",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We establish two foundational bridge lemmas connecting Calderon-Zygmund singular integral theory with viscous enstrophy decay in 3D incompressible Navier-Stokes flows: Lemma NS1 (\\texttt{riesz\\_pressure\\_hessian\\_tube\\_commutator\\_bound}) and Lemma NS2 (\\texttt{helical\\_dyadic\\_depletion\\_viscous\\_enstrophy\\_closure}). Under the Poisson-Monge-Ampere pressure-Hessian identity -\\Delta p = \\operatorname{Tr}(S^2) - \\frac{1}{2} |\\omega|^2 and Riesz transform energy control \\|S\\|_2^2 \\le C_{\\mathrm{CZ}} \\|\\omega\\|_2^2, the non-local commutator [R_i R_j, u] on dyadic block Q_b is bounded by C_{\\mathrm{comm}} C_{\\mathrm{CZ}}^{1/2} \\delta_{\\mathrm{NS}}(b). When combined with helical depletion, if kinematic viscosity satisfies 2 C_1 C_2 / (C_1 + 3 C_2) \\le \\nu, the net enstrophy growth rate satisfies d\\mathcal{E}/dt = (\\Phi_b - \\nu) \\mathcal{E} \\le 0 for all twists \\delta_{\\mathrm{NS}} \\in \\mathbb{R}. On L=16, 24 grids at block b=4, measured arch ceiling \\Phi_{\\max}(4) \\in [0.0110, 0.0138] lies strictly below viscosity \\nu = 0.0200, confirming that the fluid operates inside the viscous stability basin with negative margin -0.0062 < 0. Certified in Lean 4 with zero custom axioms. In this research, ai is being used as a tool for interactive theorem verification.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "orcid": "0009-0004-9467-3363"
+    }
+  ],
+  "keywords": [
+    "Calderon-Zygmund Theory",
+    "Riesz Transforms",
+    "Pressure-Hessian Commutator",
+    "Viscous Stability Basin",
+    "Enstrophy Closure",
+    "Lean 4",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems",
+    "BTU Cottbus-Senftenberg"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}

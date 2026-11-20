@@ -1,0 +1,28 @@
+{
+  "title": "The Eight Cross-Workspace Proof Bridges: Unifying Hodge, Yang-Mills, Riemann, and Navier-Stokes",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We present the complete formal catalog and synthesis of the eight verified Cross-Workspace Proof Bridge Lemmas: H1 (Clifford Kuga-Satake chiral half-split) and H2 (Sp(8) Schur tare 1152 floor) for the Hodge Conjecture; YM1 (Balaban covariance covolume tare) and YM2 (S^3 character cocycle floor 2.0) for 4D Yang-Mills; R1 (Vasyunin cotangent Schur chiral split) and R2 (higher-dimensional Schur trigonometry \\cos^2\\theta + \\sin^2\\theta = 1) for the Riemann Hypothesis; and NS1 (Calderon-Zygmund Riesz pressure-Hessian bound) and NS2 (helical dyadic depletion viscous closure) for 3D Navier-Stokes. Every bridge lemma is formally certified in Lean 4 without custom axioms, and all eight are verified in live numerical probes. We emphasize the strict epistemic boundary: the eight bridge lemmas are fully verified finite-dimensional identities, while all four Clay Millennium Problems remain strictly open in the infinite continuum. In this research, ai is being used as a tool for formal verification and multi-domain synthesis.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "orcid": "0009-0004-9467-3363"
+    }
+  ],
+  "keywords": [
+    "Proof Bridges",
+    "Eight Bridge Lemmas",
+    "Hodge Conjecture",
+    "Yang-Mills",
+    "Riemann Hypothesis",
+    "Navier-Stokes",
+    "Lean 4",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems",
+    "BTU Cottbus-Senftenberg"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}

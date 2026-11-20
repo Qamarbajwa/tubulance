@@ -1,0 +1,206 @@
+{
+  "probe": "RosettaFourWorkspaceProofBridges",
+  "epistemic_status": "verified-finite",
+  "all_four_clay_millennium_problems_open": true,
+  "passed": true,
+  "workspace_01_hodge_H1_H2": {
+    "H1_schur_target": 1152.0,
+    "H1_max_transport_drift": 0.0,
+    "H1_invariance_holds": true,
+    "H1_transport_family": [
+      {
+        "t": 0.0,
+        "theta_rad": 0.0,
+        "trace_schur_preserved": 1152.0,
+        "drift_from_1152": 0.0
+      },
+      {
+        "t": 0.25,
+        "theta_rad": 0.175,
+        "trace_schur_preserved": 1152.0,
+        "drift_from_1152": 0.0
+      },
+      {
+        "t": 0.5,
+        "theta_rad": 0.35,
+        "trace_schur_preserved": 1152.0,
+        "drift_from_1152": 0.0
+      },
+      {
+        "t": 0.75,
+        "theta_rad": 0.525,
+        "trace_schur_preserved": 1152.0,
+        "drift_from_1152": 0.0
+      },
+      {
+        "t": 1.0,
+        "theta_rad": 0.7,
+        "trace_schur_preserved": 1152.0,
+        "drift_from_1152": 0.0
+      }
+    ],
+    "H2_mu_div": 1.25,
+    "H2_h_arch": 0.75,
+    "H2_C_0": 2.0,
+    "H2_m_crit": 4.0,
+    "H2_surplus_at_m5": 0.5,
+    "H2_algebraicity_criterion_holds": true
+  },
+  "workspace_02_ym_YM1_YM2": {
+    "YM1_su2_haar_mean_chi1": 0.0,
+    "YM1_su2_haar_second_moment": 1.0,
+    "YM1_c0_over_beta_norm": 1.0,
+    "YM2_blocking_steps": [
+      {
+        "b": 1,
+        "f_para": 13.47,
+        "f_diam": 1.0,
+        "gap": 12.47,
+        "r_poly": 0.409,
+        "r_poly_over_gap": 0.0328,
+        "eta_net": 12.061,
+        "below_half_threshold": true
+      },
+      {
+        "b": 2,
+        "f_para": 13.47,
+        "f_diam": 1.0,
+        "gap": 12.47,
+        "r_poly": 0.285,
+        "r_poly_over_gap": 0.0229,
+        "eta_net": 12.185,
+        "below_half_threshold": true
+      },
+      {
+        "b": 4,
+        "f_para": 13.47,
+        "f_diam": 1.0,
+        "gap": 12.47,
+        "r_poly": 0.2033,
+        "r_poly_over_gap": 0.0163,
+        "eta_net": 12.2667,
+        "below_half_threshold": true
+      }
+    ],
+    "YM2_min_ratio": 0.0163,
+    "YM2_max_ratio": 0.0328,
+    "YM2_safety_margin_vs_half": 15.24,
+    "YM2_all_below_half": true
+  },
+  "workspace_03_riemann_R1_R2": {
+    "R1_C_BBLR_envelope": 0.21269416664174381,
+    "R1_R2_all_hold": true,
+    "R1_R2_cutoffs": [
+      {
+        "N": 2,
+        "t_sq": 0.09137265968653469,
+        "E_dir": 0.3068528194400546,
+        "t_sq_le_E_dir": true,
+        "pinch_exact": 0.04568632984326734,
+        "E_dir_over_2": 0.1534264097200273,
+        "BBLR_over_2lnN": 0.1534264097200273,
+        "m_sqrt_N": 1.4142135623730951,
+        "pinch_m_step": 0.03230511363969967,
+        "holds": true
+      },
+      {
+        "N": 6,
+        "t_sq": 0.009219691560192258,
+        "E_dir": 0.036208034636905806,
+        "t_sq_le_E_dir": true,
+        "pinch_exact": 0.004609845780096129,
+        "E_dir_over_2": 0.018104017318452903,
+        "BBLR_over_2lnN": 0.05935343730410952,
+        "m_sqrt_N": 2.449489742783178,
+        "pinch_m_step": 0.0018819616590262976,
+        "holds": true
+      },
+      {
+        "N": 30,
+        "t_sq": 0.003665914168904761,
+        "E_dir": 0.014556733576997827,
+        "t_sq_le_E_dir": true,
+        "pinch_exact": 0.0018329570844523805,
+        "E_dir_over_2": 0.007278366788498913,
+        "BBLR_over_2lnN": 0.031267542393820257,
+        "m_sqrt_N": 5.477225575051661,
+        "pinch_m_step": 0.00033465064736449017,
+        "holds": true
+      },
+      {
+        "N": 100,
+        "t_sq": 0.0025635732664076294,
+        "E_dir": 0.01020191928446923,
+        "t_sq_le_E_dir": true,
+        "pinch_exact": 0.0012817866332038147,
+        "E_dir_over_2": 0.005100959642234615,
+        "BBLR_over_2lnN": 0.023092975726380006,
+        "m_sqrt_N": 10.0,
+        "pinch_m_step": 0.00012817866332038148,
+        "holds": true
+      },
+      {
+        "N": 211,
+        "t_sq": 0.0021666105488162674,
+        "E_dir": 0.00862901027955898,
+        "t_sq_le_E_dir": true,
+        "pinch_exact": 0.0010833052744081337,
+        "E_dir_over_2": 0.00431450513977949,
+        "BBLR_over_2lnN": 0.01987105798931161,
+        "m_sqrt_N": 14.52583904633395,
+        "pinch_m_step": 7.457781068292505e-05,
+        "holds": true
+      },
+      {
+        "N": 500,
+        "t_sq": 0.0018636238360807968,
+        "E_dir": 0.007426788071839163,
+        "t_sq_le_E_dir": true,
+        "pinch_exact": 0.0009318119180403984,
+        "E_dir_over_2": 0.0037133940359195816,
+        "BBLR_over_2lnN": 0.01711243599542054,
+        "m_sqrt_N": 22.360679774997898,
+        "pinch_m_step": 4.167189581965587e-05,
+        "holds": true
+      },
+      {
+        "N": 1000,
+        "t_sq": 0.0016457471990717714,
+        "E_dir": 0.00656137429816428,
+        "t_sq_le_E_dir": true,
+        "pinch_exact": 0.0008228735995358857,
+        "E_dir_over_2": 0.00328068714908214,
+        "BBLR_over_2lnN": 0.015395317150920006,
+        "m_sqrt_N": 31.622776601683793,
+        "pinch_m_step": 2.6021548009546725e-05,
+        "holds": true
+      }
+    ]
+  },
+  "workspace_04_ns_NS1_NS2": {
+    "NS1_NS2_nu": 0.02,
+    "NS1_NS2_all_subcritical": true,
+    "NS1_NS2_cases": [
+      {
+        "grid": "L16_b4",
+        "C_1": 0.0294,
+        "C_2": 0.0118,
+        "Phi_arch": 0.010707,
+        "nu": 0.02,
+        "subcritical_Phi_arch_le_nu": true,
+        "max_enstrophy_rate_t0_to_1": -0.010188,
+        "all_t_dissipative": true
+      },
+      {
+        "grid": "L24_b8_one_third",
+        "C_1": 0.0235,
+        "C_2": 0.0094,
+        "Phi_arch": 0.008545,
+        "nu": 0.02,
+        "subcritical_Phi_arch_le_nu": true,
+        "max_enstrophy_rate_t0_to_1": -0.012157,
+        "all_t_dissipative": true
+      }
+    ]
+  }
+}

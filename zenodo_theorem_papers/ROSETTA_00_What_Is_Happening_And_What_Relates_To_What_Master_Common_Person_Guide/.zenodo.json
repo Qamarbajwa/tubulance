@@ -1,0 +1,29 @@
+{
+  "title": "A Common-Person Guide to the Rosetta Architecture: How Four Millennium Problems and Seven Physical Domains Connect Through Five Elementary Mechanisms",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>This guide is written for anyone who has ever wondered what modern mathematical research is actually doing beneath all the heavy symbols and intimidating Greek letters. We explain how four famous problems from the Clay Mathematics Institute (the Hodge Conjecture, 4D Yang-Mills quantum gauge theory, the Riemann Hypothesis, and 3D Navier-Stokes fluid turbulence) and seven worldwide physical domains (Einstein gravity waves, P vs NP planar matching, Birch and Swinnerton-Dyer elliptic curves, Majorana quantum wires, Chern-Simons topological anyons, Random Matrix Theory, and Beltrami magnetic plasma) all share five completely elementary geometric mechanisms: (1) the {0,1} repeated shadow collapse, (2) the splitting of unity into two equal halves (1/2 + 1/2 = 1), (3) the Schur kitchen-scale Tare button, (4) higher-dimensional trigonometry (\\cos^2\\theta + \\sin^2\\theta = 1), and (5) the two-wall keystone arch. Most importantly, we explain in plain everyday language the strict difference between the Bridge (our verified finite-dimensional theorems, which are completely solid and proven in Lean 4) and the Train (the infinite continuum limit, which remains strictly open as an unsolved Millennium mystery). In this collaborative work, ai is being used as a tool for symbolic calculations and formal verification.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "orcid": "0009-0004-9467-3363"
+    }
+  ],
+  "keywords": [
+    "Rosetta Architecture",
+    "Common Person Guide",
+    "Bridge vs Train",
+    "Five Elementary Mechanisms",
+    "Clay Millennium Problems",
+    "Seven Physical Domains",
+    "Formal Verification",
+    "Lean 4",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems",
+    "BTU Cottbus-Senftenberg"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}

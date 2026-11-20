@@ -123,49 +123,21 @@ def clean_lean_code_listing(sec_text: str) -> str:
     """Clean multi-byte unicode inside lstlisting blocks for robust LaTeX compilation."""
     def replacer(match):
         code = match.group(1)
-        code = code.replace("·", ".")
-        code = code.replace("⟨", "<")
-        code = code.replace("⟩", ">")
-        code = code.replace("•", "*")
-        code = code.replace("∧", "/\\")
-        code = code.replace("∨", "\\/")
-        code = code.replace("→", "->")
-        code = code.replace("∀", "forall ")
-        code = code.replace("≤", "<=")
-        code = code.replace("≥", ">=")
-        code = code.replace("≠", "!=")
-        code = code.replace("←", "<-")
-        code = code.replace("₀", "0")
-        code = code.replace("₁", "1")
-        code = code.replace("₂", "2")
-        code = code.replace("₃", "3")
-        code = code.replace("₄", "4")
-        code = code.replace("₅", "5")
-        code = code.replace("₆", "6")
-        code = code.replace("₇", "7")
-        code = code.replace("₈", "8")
-        code = code.replace("₉", "9")
-        code = code.replace("λ", "lam")
-        code = code.replace("ι", "iota")
-        code = code.replace("π", "pi")
-        code = code.replace("β", "beta")
-        code = code.replace("μ", "mu")
-        code = code.replace("η", "eta")
-        code = code.replace("ρ", "rho")
-        code = code.replace("ζ", "zeta")
-        code = code.replace("φ", "phi")
-        code = code.replace("Δ", "Delta")
-        code = code.replace("Ω", "Omega")
-        code = code.replace("Θ", "Theta")
-        code = code.replace("λ", "lam")
-        code = code.replace("ι", "iota")
-        code = code.replace("π", "pi")
-        code = code.replace("β", "beta")
-        code = code.replace("μ", "mu")
-        code = code.replace("η", "eta")
-        code = code.replace("ρ", "rho")
-        code = code.replace("ζ", "zeta")
-        code = code.replace("φ", "phi")
+        replacements = [
+            ("·", "."), ("⟨", "<"), ("⟩", ">"), ("•", "*"),
+            ("∧", "/\\"), ("∨", "\\/"), ("→", "->"), ("↔", "<->"),
+            ("∀", "forall "), ("∃", "exists "),
+            ("≤", "<="), ("≥", ">="), ("≠", "!="), ("←", "<-"),
+            ("₀", "0"), ("₁", "1"), ("₂", "2"), ("₃", "3"), ("₄", "4"),
+            ("₅", "5"), ("₆", "6"), ("₇", "7"), ("₈", "8"), ("₉", "9"),
+            ("λ", "lam"), ("ι", "iota"), ("π", "pi"), ("β", "beta"),
+            ("μ", "mu"), ("η", "eta"), ("ρ", "rho"), ("ζ", "zeta"),
+            ("φ", "phi"), ("Δ", "Delta"), ("Ω", "Omega"), ("Θ", "Theta"),
+            ("ℝ", "Real"), ("ℕ", "Nat"), ("ℤ", "Int"), ("ℚ", "Rat"), ("ℂ", "Complex"),
+            ("⁻¹", "^-1"), ("†", "*")
+        ]
+        for src, dst in replacements:
+            code = code.replace(src, dst)
         return f"\\begin{{lstlisting}}[language=Lean4]{code}\\end{{lstlisting}}"
     
     return re.sub(r"\\begin\{lstlisting\}\[language=Lean4\](.*?)(\\end\{lstlisting\})", replacer, sec_text, flags=re.DOTALL)
@@ -174,12 +146,18 @@ def sanitize_text(text: str) -> str:
     """Ensure no hashes, raw em-dashes, unescaped percent, unescaped underscores, or raw subscripts in text."""
     t = text.replace("---", " - ")
     t = t.replace("--", " - ")
+    t = t.replace("—", " - ")
+    t = t.replace(r"\#", "")
     t = t.replace("#", "")
     # Subscript digits
     for sub, dig in zip("₀₁₂₃₄₅₆₇₈₉", "0123456789"):
         t = t.replace(sub, dig)
-    # Escape underscores inside \texttt{...}
-    t = re.sub(r"\\texttt\{([^}]+)\}", lambda m: r"\texttt{" + m.group(1).replace("_", r"\_") + "}", t)
+    
+    def fix_texttt(m):
+        inner = m.group(1).replace(r"\_", "_").replace("_", r"\_")
+        return r"\texttt{" + inner + "}"
+
+    t = re.sub(r"\\texttt\{([^}]+)\}", fix_texttt, t)
     # Escape % in text (e.g. 94.6% -> 94.6\%)
     t = re.sub(r'(?<!\\)%', r'\%', t)
     return t
@@ -311,5 +289,9 @@ def build_paper_bundle(paper_dict: dict, root_dir: Path) -> dict:
         "id": paper_id,
         "pdf": str(pdf_path),
         "zip": str(zip_path),
-        "dir": str(paper_dir)
+        "dir": str(paper_dir),
+        "pdf_path": str(pdf_path),
+        "zip_path": str(zip_path),
+        "pdf_bytes": pdf_path.stat().st_size,
+        "zip_bytes": zip_path.stat().st_size
     }

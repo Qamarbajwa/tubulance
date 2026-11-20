@@ -1,0 +1,234 @@
+{
+  "probe": "probe_continuum_bsd_sha_pfaffian_finiteness",
+  "timestamp": "2026-11-20 21:53:59",
+  "verdict": "4/4 PASS",
+  "elapsed_seconds": 0.0222,
+  "tests": [
+    {
+      "test": "Test 1 (Cassels-Tate 4x4 Skew Pfaffian Square Identity)",
+      "integer_samples": 1000,
+      "integer_max_error": 0,
+      "float_samples": 1000,
+      "float_max_rel_error": 1.3189825067155693e-14,
+      "passed": true
+    },
+    {
+      "test": "Test 2 (Selmer Schur Tare & Even Sha Dimension)",
+      "curve_count": 7,
+      "curves": [
+        {
+          "label": "11a1 (X_0(11))",
+          "rank": 0,
+          "prime": 2,
+          "dim_sel": 0,
+          "dim_sha": 0,
+          "is_even": true,
+          "sha_order": 1,
+          "pf_ct": 1,
+          "is_square": true
+        },
+        {
+          "label": "37a1",
+          "rank": 1,
+          "prime": 2,
+          "dim_sel": 1,
+          "dim_sha": 0,
+          "is_even": true,
+          "sha_order": 1,
+          "pf_ct": 1,
+          "is_square": true
+        },
+        {
+          "label": "389a1",
+          "rank": 2,
+          "prime": 2,
+          "dim_sel": 2,
+          "dim_sha": 0,
+          "is_even": true,
+          "sha_order": 1,
+          "pf_ct": 1,
+          "is_square": true
+        },
+        {
+          "label": "5077a1",
+          "rank": 3,
+          "prime": 2,
+          "dim_sel": 3,
+          "dim_sha": 0,
+          "is_even": true,
+          "sha_order": 1,
+          "pf_ct": 1,
+          "is_square": true
+        },
+        {
+          "label": "571a1",
+          "rank": 0,
+          "prime": 2,
+          "dim_sel": 2,
+          "dim_sha": 2,
+          "is_even": true,
+          "sha_order": 4,
+          "pf_ct": 2,
+          "is_square": true
+        },
+        {
+          "label": "681b1",
+          "rank": 0,
+          "prime": 3,
+          "dim_sel": 2,
+          "dim_sha": 2,
+          "is_even": true,
+          "sha_order": 9,
+          "pf_ct": 3,
+          "is_square": true
+        },
+        {
+          "label": "1058d1",
+          "rank": 0,
+          "prime": 2,
+          "dim_sel": 4,
+          "dim_sha": 4,
+          "is_even": true,
+          "sha_order": 16,
+          "pf_ct": 4,
+          "is_square": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "Test 3 (Kato-Kolyvagin Sqrt-Capacity Annihilation)",
+      "capacities_tested": 7,
+      "summary": [
+        {
+          "C_bsd": 1,
+          "sqrt_C": 1,
+          "active_primes": [],
+          "annihilated_prime_count": 15,
+          "first_annihilated_prime": 2
+        },
+        {
+          "C_bsd": 4,
+          "sqrt_C": 2,
+          "active_primes": [
+            2
+          ],
+          "annihilated_prime_count": 14,
+          "first_annihilated_prime": 3
+        },
+        {
+          "C_bsd": 9,
+          "sqrt_C": 3,
+          "active_primes": [
+            2,
+            3
+          ],
+          "annihilated_prime_count": 13,
+          "first_annihilated_prime": 5
+        },
+        {
+          "C_bsd": 16,
+          "sqrt_C": 4,
+          "active_primes": [
+            2,
+            3
+          ],
+          "annihilated_prime_count": 13,
+          "first_annihilated_prime": 5
+        },
+        {
+          "C_bsd": 25,
+          "sqrt_C": 5,
+          "active_primes": [
+            2,
+            3,
+            5
+          ],
+          "annihilated_prime_count": 12,
+          "first_annihilated_prime": 7
+        },
+        {
+          "C_bsd": 49,
+          "sqrt_C": 7,
+          "active_primes": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "annihilated_prime_count": 11,
+          "first_annihilated_prime": 11
+        },
+        {
+          "C_bsd": 100,
+          "sqrt_C": 10,
+          "active_primes": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "annihilated_prime_count": 11,
+          "first_annihilated_prime": 11
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "Test 4 (Continuum Premise A Finiteness & Total Pfaffian Square)",
+      "cases_tested": 5,
+      "cases": [
+        {
+          "C_bsd": 1,
+          "prime_powers": {},
+          "sha_order": 1,
+          "pf_ct": 1,
+          "is_square": true,
+          "passed": true
+        },
+        {
+          "C_bsd": 4,
+          "prime_powers": {
+            "2": 1
+          },
+          "sha_order": 4,
+          "pf_ct": 2,
+          "is_square": true,
+          "passed": true
+        },
+        {
+          "C_bsd": 9,
+          "prime_powers": {
+            "3": 1
+          },
+          "sha_order": 9,
+          "pf_ct": 3,
+          "is_square": true,
+          "passed": true
+        },
+        {
+          "C_bsd": 16,
+          "prime_powers": {
+            "2": 2
+          },
+          "sha_order": 16,
+          "pf_ct": 4,
+          "is_square": true,
+          "passed": true
+        },
+        {
+          "C_bsd": 36,
+          "prime_powers": {
+            "2": 1,
+            "3": 1
+          },
+          "sha_order": 36,
+          "pf_ct": 6,
+          "is_square": true,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ]
+}
