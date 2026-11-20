@@ -1,0 +1,55 @@
+{
+  "protocol_version": "NS_ADAPTIVE_SCIENTIFIC_DISCOVERY_ENGINE_V1",
+  "adoption_id": "NS_GOVERNANCE_V2_2_ADOPTION_001_R1",
+  "timestamp_utc": "2026-08-19T21:10:00Z",
+  "falsified_hypotheses": [
+    {
+      "id": "NOGO_01_UNIVERSAL_MATERIAL_THREADS",
+      "statement": "Turbulent vortex stretching in 3D Navier-Stokes is universally governed by 1D material thread models.",
+      "falsified_by": "TH1",
+      "counterexample_summary": "Sheet and swirl topologies dominate high-strain regimes where 1D thread assumptions fail.",
+      "surviving_scope": "Material thread tracking remains a useful local Lagrangian diagnostic.",
+      "reopening_condition": "Rigorous proof that 1D thread geometry emerges in an asymptotic singular limit."
+    },
+    {
+      "id": "NOGO_02_UNIVERSAL_TRAJECTORY_BOUND_B1",
+      "statement": "The Lagrangian vorticity growth rate is universally bounded by ln(q2/q1) <= int lambda_3 dt.",
+      "falsified_by": "TH6",
+      "counterexample_summary": "12,862 subintervals in adversarial strained shear layers showed positive viscous logarithmic influx Vlog > 0 overcoming the strain gap.",
+      "surviving_scope": "Holds as an upper bound in inviscid or purely compressive viscous regions.",
+      "reopening_condition": "None for universal B1. Falsification is mathematically decisive."
+    },
+    {
+      "id": "NOGO_03_UNIVERSAL_STATIC_GEOMETRIC_DEPLETION",
+      "statement": "Realized vortex stretching is universally depleted below maximal strain by a fixed margin: lambda_w <= (1-delta) lambda_3 for some delta > 0.",
+      "falsified_by": "TH8",
+      "counterexample_summary": "Observed lambda_w / lambda_3 = 0.9991 with a3 > 0.99 in intense shear sheets.",
+      "surviving_scope": "Statistical depletion remains substantial (61.5% average capacity reduction).",
+      "reopening_condition": "None for universal static depletion. Falsification is mathematically decisive."
+    },
+    {
+      "id": "NOGO_04_ISOTROPIC_COHERENCE_RADIUS_ESTIMATOR",
+      "statement": "The tested simple isotropic coherence-radius estimator establishes an invariant intrinsic physical scale R_coh for high-vorticity structures.",
+      "falsified_by": "LA1-R",
+      "counterexample_summary": "The tested simple isotropic coherence-radius estimator is grid-locked at approximately 1.0–1.2 dx across the tested 16^3 -> 32^3 refinement and therefore does not establish a resolved intrinsic physical coherence scale.",
+      "surviving_scope": "Explicitly preserved as OPEN: anisotropic coherence scales, superlevel-set thickness, filtered scales, vortex-sheet thickness, vortex-tube thickness, higher-resolution physical scales.",
+      "reopening_condition": "Testing anisotropic or filtered physical scale estimators on highly resolved meshes (e.g. 64^3 - 128^3)."
+    },
+    {
+      "id": "NOGO_05_RHO_ONLY_RUNAWAY_BURST_SELECTOR",
+      "statement": "Selecting events by high realized strain alignment rho = lambda_w / lambda_3 >= 0.80 uniquely identifies runaway vorticity bursts.",
+      "falsified_by": "TH10-R",
+      "counterexample_summary": "78.3% of rho >= 0.80 events were decaying or low-q fluctuations. True dangerous bursts require strict positive growth g(t) > 0 and q/qmax >= 0.95.",
+      "surviving_scope": "High rho is an alignment indicator, not a growth burst indicator.",
+      "reopening_condition": "None. Strict growth filtering g(t) > 0 is mathematically necessary."
+    },
+    {
+      "id": "NOGO_06_GENERIC_GLOBAL_ANCIENT_SOLUTION_CLAIM",
+      "statement": "Finite-domain numerical blow-up rescaling establishes the existence of a global ancient solution on R^3 x (-infinity, 0].",
+      "falsified_by": "NS-BLOWUP-2 / BRIDGE1",
+      "counterexample_summary": "Finite simulation times yield finite backward horizons T_n^- < infinity and finite uncontaminated radii R_valid. Limits are local space-time approximations on compact cylinders Q_R.",
+      "surviving_scope": "Valid on compact parabolic cylinders Q_R = B_R(0) x (-R^2, 0] with R < R_valid.",
+      "reopening_condition": "Rigorous analytical passage to the infinite whole-space limit."
+    }
+  ]
+}

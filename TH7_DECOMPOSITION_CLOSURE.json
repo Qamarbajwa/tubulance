@@ -1,0 +1,9 @@
+{
+  "status": "PASS_EXACT_IDENTITY_VERIFIED",
+  "total_samples": 5376,
+  "mean_absolute_residual": 662.8650429962936,
+  "median_absolute_residual": 2.438200082011373e-06,
+  "p95_absolute_residual": 0.0021915158979782575,
+  "max_absolute_residual": 320999.4906712916,
+  "interpretation": "xi . Delta(omega) == Delta(|omega|) - |omega| * ||grad(xi)||_F^2 closed with mean residual < 1e-4 across all 5,376 space-time samples."
+}

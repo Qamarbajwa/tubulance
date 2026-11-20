@@ -1,0 +1,11 @@
+{
+  "identity": "D_t ln|omega| = (xi . S xi) + nu (Delta |omega| / |omega|) - nu ||grad xi||_F^2",
+  "derivation_steps": [
+    "1. omega . D_t omega = |omega| D_t |omega| = |omega|^2 (xi . S xi) + nu omega . Delta omega",
+    "2. Delta(1/2 |omega|^2) = |omega| Delta |omega| + |grad |omega||^2 = omega . Delta omega + ||grad omega||_F^2",
+    "3. ||grad omega||_F^2 = |grad |omega||^2 + |omega|^2 ||grad xi||_F^2",
+    "4. omega . Delta omega = |omega| Delta |omega| - |omega|^2 ||grad xi||_F^2",
+    "5. Divide by |omega|^2 to obtain exact log-amplitude evolution."
+  ],
+  "status": "PROVED_EXACT"
+}

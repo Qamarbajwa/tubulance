@@ -1,0 +1,12 @@
+{
+  "milestone": "P3-A",
+  "protocol": "DEVELOP FIRST. SEAL SECOND. RUN THIRD.",
+  "governance": "LEVEL 2 \u2014 TECHNICALLY VERIFIED, NOT EXTERNALLY ATTESTED",
+  "sealed_files": {
+    "src/navier3d/reduced/p3a_translation_diagnostic.py": "142cce866226e62c470d9099b25351e887c892f4da1a245f7f1c2c98bc918971",
+    "tests/test_p3a_translation_diagnostic.py": "937787fb72a4e90d0f35318776a35114fd0c70e363372b89fcdee9980443cac2",
+    "scripts/run_p3a_experiment.py": "7008cd2e549e9332243cd63e5019c2333d9fd79e235217ffc0f39de3e35bd51d",
+    "src/navier3d/reduced/w10_multi_coordinate.py": "4c63a0181f6c4238342f8908fc82e5b90434d7462a01ffbd909f968bd45eebc5",
+    "src/navier3d/reduced/solenoidal_basis.py": "0ca32fc56c065e01f02641d3f3836af733fda888f9aac9c1864636f44c8783d2"
+  }
+}

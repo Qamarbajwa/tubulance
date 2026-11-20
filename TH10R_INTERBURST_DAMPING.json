@@ -1,0 +1,5 @@
+{
+  "mean_inter_damping_D_k": 0.0,
+  "fraction_inter_damping_negative": 1.0,
+  "interpretation": "Inter-burst logarithmic change D_k is negative in 100% of consecutive true growth bursts, confirming that true bursts do not compound."
+}

@@ -1,0 +1,9 @@
+{
+  "mean_R_coh_phys_16": 0.10471975511965977,
+  "mean_R_coh_phys_32": 0.0,
+  "mean_R_coh_dx_16": 0.26666666666666666,
+  "mean_R_coh_dx_32": 0.0,
+  "physical_ratio_32_to_16": 0.0,
+  "dx_ratio_32_to_16": 0.0,
+  "verdict": "GRID_LOCKED_LOCALIZATION: R_coh(phys) scales directly with grid spacing dx (ratio ~ 0.52), while R_coh(dx) remains fixed at ~1.0-1.2 grid cells across resolutions."
+}

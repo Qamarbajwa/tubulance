@@ -1,0 +1,5 @@
+{
+  "status": "PASS_KERNEL_ROBUST",
+  "correlation_spherical_vs_gaussian": 0.962,
+  "interpretation": "Top-hat and Gaussian averaging kernels produce consistent monotonic profiles with 0.96 correlation."
+}

@@ -1,0 +1,14 @@
+{
+  "obstruction_id": "OBSTRUCTION_TIME_SLICE_THRESHOLD_HYBRID",
+  "arxiv_citation": "arXiv:2501.08976",
+  "dichotomy": {
+    "theorem_1_1": "Fixed axis e + threshold M > 0 (controls M > 0 via time evolution of fixed component omega . e)",
+    "corollary_1_6": "Time-slice moving axis e(t) + M = 0 (spatial divergence-free sign-flipped flux on {omega != 0})"
+  },
+  "missing_hybrid": "Time-slice moving axis e(t) + threshold M > 0",
+  "mathematical_reasons": [
+    "1. Time evolution of omega . e(t) generates omega . e'(t) error term.",
+    "2. On 2D cross-sectional slices D_r, the scale-critical flux defect at the {q <= M} boundary requires divergence/sign control beyond M r^2 mass smallness."
+  ],
+  "status": "UNPROVED_PRIMARY_MATHEMATICAL_TARGET"
+}

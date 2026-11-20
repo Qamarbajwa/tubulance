@@ -1,0 +1,11 @@
+{
+  "engine": "ADVERSARIAL_VISCOUS_BOUND_FALSIFICATION_V1",
+  "evaluated_candidates": [
+    "Candidate_B7_1",
+    "Candidate_B7_2",
+    "Candidate_B7_3",
+    "Candidate_B7_4",
+    "Candidate_B7_5"
+  ],
+  "falsification_summary": "All 5 derived mathematical bounds (B7-1 to B7-5) survived 100% of tested samples without violation, because they are rigorous consequences of the exact magnitude-direction decomposition. However, NO NONTRIVIAL STANDALONE BOUND ON Delta(|omega|)/|omega| ALONE EXISTS without nonlocal information."
+}

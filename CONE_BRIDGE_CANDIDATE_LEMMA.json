@@ -1,0 +1,6 @@
+{
+  "lemma_name": "High-Vorticity Time-Slice Absolute Flux Lemma (Candidate)",
+  "statement": "Let u be a suitable weak solution in Q_1. Suppose there exists M > 0 and delta > 0 such that for almost every t in (-1, 0], the direction set Xi(t; M) = {xi(x,t) : |omega(x,t)| > M} satisfies sup_{x,y in B_1, q(x),q(y)>M} |xi(x,t) x xi(y,t)| <= 1 - delta. Candidate conclusion: The local absolute vorticity flux satisfies int_{D_r} |omega| dx_1 dx_2 <= C(delta) int_{D_r} |omega . e(t)| dx_1 dx_2 + O(M r^2), yielding uniform Type-I scale bounds.",
+  "epistemic_status": "UNPROVED_ANALYTICAL_CANDIDATE",
+  "central_mathematical_obstruction": "Theorem 1.1 uses the time-evolution equation for a fixed axis e to control the M > 0 transition set. For a moving axis e(t), the time evolution of omega . e(t) produces an omega . e'(t) term. In addition, the 2D cross-sectional slice flux defect at the {q <= M} interface requires rigorous divergence control beyond elementary mass smallness M r^2."
+}

@@ -1,0 +1,32 @@
+{
+  "governance": "LEVEL 2 \u2014 TECHNICALLY VERIFIED, NOT EXTERNALLY ATTESTED",
+  "milestone": "P3-A",
+  "timestamp_utc": "2026-08-13T20:04:55Z",
+  "gates": {
+    "gate_A_subspace_ratio_le_0_30": {
+      "passed": false,
+      "mean_R_subspace": 0.9861549793075225
+    },
+    "gate_B_field_ratio_le_0_50": {
+      "passed": false,
+      "mean_R_field": 0.7653521362048364
+    },
+    "gate_C_phase_decreases_more_than_amp": {
+      "passed": false,
+      "mean_phase_ratio": 0.8612778765661776,
+      "mean_amp_ratio": 1.0015661067760069
+    },
+    "gate_D_optimal_beats_random": {
+      "passed": true
+    },
+    "gate_E_synthetic_recovery": {
+      "passed": true
+    }
+  },
+  "all_gates_passed": false,
+  "mean_R_subspace": 0.9861549793075225,
+  "mean_R_field": 0.7653521362048364,
+  "classification": "LITTLE SUPPORT FOR SIMPLE TRANSLATION",
+  "verdict": "DISCARDED FOR THIS PROBLEM",
+  "scientific_summary": "Periodic x/z translation alignment reduced raw cross-seed field distance by an average factor of 0.7654 and reduced Grassmannian POD subspace distance by an average factor of 0.9862. Classification: LITTLE SUPPORT FOR SIMPLE TRANSLATION. Final Verdict: DISCARDED FOR THIS PROBLEM."
+}

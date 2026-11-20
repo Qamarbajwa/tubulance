@@ -73,13 +73,7 @@ LATEX_TEMPLATE = r"""\documentclass[11pt,a4paper]{article}
 
 \title{\textbf{__TITLE__}}
 
-\author{
-  \textbf{Arqam} \\
-  Brandenburg University of Technology (BTU) Cottbus-Senftenberg \\
-  Department of Mathematics and Computer Science \\
-  Cottbus, Germany \\
-  \texttt{arqam@b-tu.de}
-}
+\author{Qamar Munawer \\ Brandenburg University of Technology Cottbus-Senftenberg}
 
 \date{\today}
 
@@ -221,12 +215,12 @@ def generate_zenodo_json(paper_dict: dict, out_path: Path):
         ),
         "creators": [
             {
-                "name": "Arqam",
-                "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+                "name": "Qamar Munawer",
+                "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
                 "orcid": "0009-0004-9467-3363"
             }
         ],
-        "keywords": paper_dict.get("keywords", []) + ["Lean 4", "Formal Verification", "Clay Millennium Problems", "BTU Cottbus-Senftenberg"],
+        "keywords": paper_dict.get("keywords", []) + ["Lean 4", "Formal Verification", "Clay Millennium Problems", "Brandenburg University of Technology Cottbus-Senftenberg"],
         "license": "CC-BY-4.0",
         "access_right": "open"
     }

@@ -14,11 +14,12 @@
 \newtheorem{remark}{Remark}
 
 \title{\textbf{Superfluid Empty Cores, \texorpdfstring{$\mathrm{Cl}(3,0)$}{Cl(3,0)} Helical Schur Isolation, and Multiscale \texorpdfstring{$SO(3)$}{SO(3)} Vorticity Cocycle Depletion}}
-\author{Qamar Bajwa \quad (Program \texttt{NS-BRIDGE1} / \texttt{tubulance})}
+\author{Qamar Munawer \\ Brandenburg University of Technology Cottbus-Senftenberg}
 \date{November 19, 2026}
 
 \begin{document}
 \maketitle
+\vspace{0.5em}\noindent\textit{Methodology note: ai is being used as a tool for formal verification and computation under human geometric direction.}
 
 \begin{abstract}
 We present the mathematical formulation and machine-verified spectral/numerical receipts for the $\mathrm{Cl}(3,0) \cong M_2(\mathbb{C})$ Beltrami helical Schur-complement decomposition and multiscale Constantin--Fefferman $SO(3)$ vorticity cocycle depletion on a 3D periodic torus $\mathbb{T}^3$ ($L = 12$). Starting from the physical contrast between an irrotational Bose--Einstein superfluid---an exact $U(1)$ phase gradient with zero bulk vorticity whose rotation lives exclusively in empty-core defects ($\rho = 0$)---and 3D rotational turbulence, we reformulate divergence-free velocity fields in the chiral Beltrami basis $u = u_+ \oplus u_-$. Under spatial parity $P: u(x) \mapsto -u(-x)$, the parity-even $O(3)$ baseline $\{Q_E, Q_Z\}$ and the parity-odd helicity operator $T_{\mathrm{hel}} = P_+ - P_-$ exhibit an exact diagonal Hilbert--Schmidt Gram matrix (normalized off-diagonal maximum $1.18 \times 10^{-15}$), zero $O(3)$-even projection ($\Pi_{O(3)\text{-even}}(T_{\mathrm{hel}}) = 0.0$), positive Schur complement $S_{\mathrm{Schur}} = 2660.0 > 0$, parity-blind squared density $T_{\mathrm{hel}}^2 = I$, and exact half-operator reconstruction $K_{\mathrm{half}} + K_{\mathrm{half}}^T = 4 T_{\mathrm{hel}}$. Across block scales $b \in \{1, 2, 4\}$, the Constantin--Fefferman vorticity alignment cocycle $\delta_{\mathrm{NS}}(b)$ vanishes identically in a 1D/Abelian parallel vortex tube while growing from $0.4200$ ($b=1$) to $0.6452$ ($b=4$) in a 3D heterochiral Taylor--Green + Kida--Pelz tangle, driving a $19.4\times$ monotone depletion of the coarse-grained block vortex-stretching transfer kernel $\rho_{\mathrm{stretch}}^{\mathrm{BLK}}(b)$ ($0.2713 \to 0.0140$).
@@ -53,7 +54,7 @@ split any divergence-free field orthogonally into $u = u_+ \oplus u_-$ with $\na
 On the $L=12$ periodic grid ($2660$ real helical dimensions across $665$ $\{k,-k\}$ pairs), the diagnostic script \texttt{probe\_cl30\_helical\_schur\_and\_vorticity\_cocycle.py} (executed in \texttt{scripts/}) certifies to machine precision:
 \begin{enumerate}
   \item \textbf{Beltrami Eigenbasis:} $\mathrm{Cl}(3,0)$ involution error $6.29\times 10^{-16}$, curl eigenvalue error $1.49\times 10^{-15}$, real-space Beltrami curl errors $1.75\times 10^{-16}$ ($+$) and $1.78\times 10^{-16}$ ($-$), and helical orthogonality $\langle u_+, u_- \rangle / \|u\|^2 = 8.69\times 10^{-18}$.
-  \item \textbf{Diagonal Gram Matrix & Positive Schur Complement:} Under spatial parity reflection $P: u(x) \mapsto -u(-x)$, $P P_\pm P = P_\mp$. Choosing the parity-even $O(3)$ baseline $\{Q_E = P_+ + P_-, Q_Z = (-\Delta - \overline{|k|^2})Q_E\}$ and the parity-odd helicity operator $T_{\mathrm{hel}} = P_+ - P_-$, the Hilbert--Schmidt Gram matrix is
+  \item \textbf{Diagonal Gram Matrix \& Positive Schur Complement:} Under spatial parity reflection $P: u(x) \mapsto -u(-x)$, $P P_\pm P = P_\mp$. Choosing the parity-even $O(3)$ baseline $\{Q_E = P_+ + P_-, Q_Z = (-\Delta - \overline{|k|^2})Q_E\}$ and the parity-odd helicity operator $T_{\mathrm{hel}} = P_+ - P_-$, the Hilbert--Schmidt Gram matrix is
   \begin{equation}
     G = \mathrm{diag}(2660.0,\; 621106.65,\; 2660.0),
   \end{equation}

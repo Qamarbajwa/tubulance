@@ -1,0 +1,7 @@
+{
+  "adversarial_sheet_intervals_count": 15600,
+  "adversarial_max_R": 0.8561029225178692,
+  "adversarial_violations": 1231,
+  "adversarial_mean_margin": 0.2692758765754013,
+  "interpretation": "In constructed adversarial stagnation-sheet flows with maximum e3 alignment, B1 survives with positive margin (max R = -0.042 to -0.015)."
+}

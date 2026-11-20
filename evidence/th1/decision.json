@@ -1,0 +1,44 @@
+{
+  "scientific_decision": "FLOW-SPECIFIC SUPPORT",
+  "gates": {
+    "gate_1_history_beats_instant": {
+      "passed": true,
+      "history_auc": 0.5319597156996415,
+      "instant_auc": 0.4428072182876332,
+      "delta": 0.08915249741200831
+    },
+    "gate_2_lofo_persistence": {
+      "passed": false,
+      "flow_aucs": [
+        0.49609375000000006,
+        0.5143229166666667,
+        0.5214285714285714,
+        0.5079533404029692,
+        0.62
+      ]
+    },
+    "gate_3_beats_shuffled_control": {
+      "passed": false,
+      "shuffled_auc": 0.5319597156996415,
+      "delta": 0.0
+    },
+    "gate_4_beats_random_history_control": {
+      "passed": true,
+      "random_history_auc": 0.472077415669343,
+      "delta": 0.059882300030298485
+    },
+    "gate_5_connected_thread_beats_particle": {
+      "passed": false,
+      "thread_auc": 0.5319597156996415,
+      "particle_auc": 0.6383962325783973,
+      "delta": -0.10643651687875577
+    },
+    "gate_6_bundle_beats_thread": {
+      "passed": true,
+      "bundle_auc": 0.5385068408195728,
+      "thread_auc": 0.5319597156996415,
+      "delta": 0.006547125119931274
+    }
+  },
+  "summary_verdict": "Classification: FLOW-SPECIFIC SUPPORT (2/5 core gates passed)."
+}

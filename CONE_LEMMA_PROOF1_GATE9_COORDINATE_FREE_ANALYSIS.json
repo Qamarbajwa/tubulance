@@ -1,0 +1,5 @@
+{
+  "gate": "PROOF_GATE_9_COORDINATE_FREE_FUNCTIONAL",
+  "finding": "A purely spatial coordinate-free functional Phi_pair(t) = int_{B_r} int_{B_r} |omega(x) x omega(y)| dx dy bounds the spatial direction dispersion. However, controlling the pressure-strain interaction for M > 0 unavoidably requires time integration of the parabolic system. Thus, time evolution cannot be bypassed when M > 0.",
+  "status": "TIME_EVOLUTION_REQUIRED"
+}

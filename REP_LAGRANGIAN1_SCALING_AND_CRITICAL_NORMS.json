@@ -1,0 +1,32 @@
+{
+  "parabolic_dilation": "x -> lambda x, t -> lambda^2 t, u -> lambda u, nu -> nu",
+  "scaling_classification": [
+    {
+      "name": "J",
+      "scaling": "Dimensionless",
+      "critical_norm": "L^infty_t L^infty_x"
+    },
+    {
+      "name": "M",
+      "scaling": "Dimensionless",
+      "critical_norm": "L^infty_t L^infty_x"
+    },
+    {
+      "name": "N",
+      "scaling": "Velocity [L/T]",
+      "critical_norm": "L^infty_t L^3_x"
+    },
+    {
+      "name": "Q",
+      "scaling": "Dimensionless",
+      "critical_norm": "L^infty_t L^infty_x (Scale-Critical)"
+    },
+    {
+      "name": "R",
+      "scaling": "Velocity [L/T]",
+      "critical_norm": "L^infty_t L^3_x (Scale-Critical)"
+    }
+  ],
+  "fundamental_scaling_identity": "||R(., t)||_{L^3(R^3)} and ||Q(., t)||_{L^infty(R^3)} are EXACTLY SCALE-INVARIANT under Navier-Stokes scaling.",
+  "status": "VERIFIED_EXACT"
+}

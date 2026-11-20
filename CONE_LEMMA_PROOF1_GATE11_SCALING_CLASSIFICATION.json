@@ -1,0 +1,5 @@
+{
+  "gate": "PROOF_GATE_11_SCALING_CLASSIFICATION",
+  "scaling_invariance_proof": "Under Navier-Stokes scaling u_lambda(x,t) = lambda u(lambda x, lambda^2 t), the time coordinate scales as t -> lambda^2 t. For a dimensionless unit vector e(t) in S^2, e_lambda(t) = e(lambda^2 t), which yields e_lambda'(t) = lambda^2 e'(lambda^2 t). Therefore: int_{-r^2}^0 ||e_lambda'(t)|| dt = int_{-r^2}^0 lambda^2 ||e'(lambda^2 t)|| dt = int_{-(lambda r)^2}^0 ||e'(tau)|| dtau. The total angular variation is EXACTLY SCALE-INVARIANT (SCALE-CRITICAL)! Zero supercritical terms exist.",
+  "status": "SCALE_CRITICAL_INVARIANCE_CONFIRMED"
+}

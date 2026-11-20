@@ -1,0 +1,3 @@
+Executable: C:\Users\arqam\AppData\Local\Programs\Python\Python312\python.exe
+Script: scripts/run_v0_audited_benchmark.py
+Exit Code: 0

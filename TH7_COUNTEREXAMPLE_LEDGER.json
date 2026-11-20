@@ -1,0 +1,9 @@
+{
+  "ledger_version": "1.0",
+  "program": "AUTONOMOUS_TH7_PROGRAM",
+  "total_counterexamples_to_derived_bounds": 0,
+  "falsified_naive_hypotheses": [
+    "Naive Hypothesis: V_log <= 0 universally (FALSIFIED by TH6 counterexamples).",
+    "Naive Hypothesis: V_log^+ is bounded by local strain ||S||_F (FALSIFIED: Delta(q)/q is a second-derivative quantity independent of ||S||)."
+  ]
+}

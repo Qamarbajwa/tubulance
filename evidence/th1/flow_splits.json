@@ -1,0 +1,40 @@
+{
+  "flows": [
+    {
+      "flow_id": "flow_iso_seed101",
+      "family": "isotropic",
+      "reynolds_number": 100.0,
+      "grid_size": "16^3",
+      "seed": 101
+    },
+    {
+      "flow_id": "flow_iso_seed102",
+      "family": "isotropic",
+      "reynolds_number": 100.0,
+      "grid_size": "16^3",
+      "seed": 102
+    },
+    {
+      "flow_id": "flow_iso_seed103",
+      "family": "isotropic",
+      "reynolds_number": 100.0,
+      "grid_size": "16^3",
+      "seed": 103
+    },
+    {
+      "flow_id": "flow_tg_benchmark",
+      "family": "taylor_green",
+      "reynolds_number": 100.0,
+      "grid_size": "16^3",
+      "seed": 201
+    },
+    {
+      "flow_id": "flow_shear_layer",
+      "family": "shear_layer",
+      "reynolds_number": 100.0,
+      "grid_size": "16^3",
+      "seed": 301
+    }
+  ],
+  "validation_strategy": "LeaveOneFlowOut_LOFO"
+}

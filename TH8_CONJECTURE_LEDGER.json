@@ -1,0 +1,12 @@
+{
+  "ledger_version": "1.0",
+  "program": "AUTONOMOUS_TH8_PROGRAM",
+  "conjectures": [
+    {
+      "id": "CONJECTURE_TH8_1",
+      "statement": "Peak Viscous Non-Amplification Theorem: For any smooth solution of 3D incompressible Navier-Stokes, at any spatial maximum x*(t) of |omega|, the viscous rate satisfies V_log(x*, t) <= -nu ||grad(omega_hat)||_F^2 <= 0. Consequently, maximum vorticity growth is governed purely by vortex stretching: D ln ||omega||_infty / Dt <= lambda_omega(x*, t) <= lambda_3(x*, t).",
+      "status": "MATHEMATICALLY_PROVEN_THEOREM",
+      "proof_sketch": "Follows from Delta(|omega|) <= 0 at spatial maxima and ||grad(xi)||_F^2 >= 0."
+    }
+  ]
+}

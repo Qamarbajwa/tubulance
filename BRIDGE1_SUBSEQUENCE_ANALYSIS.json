@@ -1,0 +1,7 @@
+{
+  "subsequence_structure": "TWO_COEXISTING_LIMIT_CLASSES",
+  "sheet_dominated_fraction": 1.0,
+  "tube_dominated_fraction": 0.0,
+  "unknown_fraction": 0.0,
+  "interpretation": "Sheet sequences converge to Townsend sheets; tube sequences converge to Burgers tubes. There is no single universal limit class."
+}

@@ -1,0 +1,97 @@
+{
+  "governance": {
+    "status": "ANALYTICAL LITERATURE REVIEW — HYPOTHESES NOT YET PROJECT-VALIDATED",
+    "milestone": "P2R",
+    "description": "Audited Transfer Hypotheses v2: Forensic re-evaluation of all 10 candidate hypotheses with corrected literature support, explicit project inferences, removed misattributions, and accurate scope statements."
+  },
+  "audit_table": [
+    {
+      "id": "HYP-01",
+      "name": "ETD / Integrating Factor Integrator for Stiff Semilinear PDEs",
+      "literature_support": "ESTABLISHED",
+      "project_inference": "Our IntegratingFactorModalODEIntegrator executes ETDRK4 accurately for polynomial reaction kinetics.",
+      "misattribution": "Previously claimed to 'prove unconditional stability'; corrected to a software/mathematical transfer smoke test.",
+      "corrected_verdict": "TEST (Cross-Domain Smoke Test)"
+    },
+    {
+      "id": "HYP-02",
+      "name": "Stokes / Laplacian Geometry Eigenbasis for Heat Conduction & Thermal Transients",
+      "literature_support": "ESTABLISHED",
+      "project_inference": "Our discrete MAC-staggered Stokes eigenmodes are exact discrete Laplacian eigenfunctions for scalar diffusion.",
+      "misattribution": "None; classical textbook eigenvalue problem.",
+      "corrected_verdict": "TEST (Direct Baseline Verification)"
+    },
+    {
+      "id": "HYP-03",
+      "name": "Resolvent Input-Output Analysis for Boundary-Actuated Wall Shear Gain",
+      "literature_support": "STRONG PRECEDENT",
+      "project_inference": "Our existing discrete channel operators can compute the input-output gain structure for wall actuation without requiring full-state DNS.",
+      "misattribution": "Previously implied project had achieved drag reduction; corrected to testing whether our infrastructure reproduces known gain structures.",
+      "corrected_verdict": "TEST (Highest-Value CFD Hypothesis)"
+    },
+    {
+      "id": "HYP-04",
+      "name": "On-the-Fly Pseudospectral Evaluator for Quadratic Conservation Laws (1D Burgers)",
+      "literature_support": "ESTABLISHED",
+      "project_inference": "Our 3D real FFT evaluator generalizes component-wise to 1D/2D quadratic momentum advection and cross-field products.",
+      "misattribution": "Previously attributed to Schlegel & Noack 2015; corrected: our FFT evaluator is independent project evidence, supported generally by Orszag (1971).",
+      "corrected_verdict": "TEST (Algorithm Transfer Benchmark)"
+    },
+    {
+      "id": "HYP-05",
+      "name": "Solenoidal Modal Basis for Roberts-Flow Kinematic Induction/Dynamo",
+      "literature_support": "STRONG PRECEDENT",
+      "project_inference": "Our FourierSolenoidalBasis satisfies div B = 0 to machine precision, computing magnetic growth rates without magnetic monopole accumulation.",
+      "misattribution": "Previously named 'MHD Test'; renamed to 'Roberts-Flow Kinematic Induction/Dynamo Test' (velocity prescribed, B evolves, no Lorentz feedback, not full MHD).",
+      "corrected_verdict": "TEST (Highest-Value Cross-Domain Hypothesis)"
+    },
+    {
+      "id": "HYP-06",
+      "name": "Clustered Local POD for Multi-Regime Bistable Structural Snap-Through",
+      "literature_support": "STRONG PRECEDENT",
+      "project_inference": "Our ClusteredLocalPODBasis partitions state-space snapshots into discrete operating basins with nearest-cluster projection.",
+      "misattribution": "None; properly cites Amsallem et al. (2012) and Kaiser et al. (2014).",
+      "corrected_verdict": "TEST (Multi-Regime Transfer)"
+    },
+    {
+      "id": "HYP-07",
+      "name": "Divergence-Free Wave-Packet Dictionaries for Inverse Sensor Reconstruction",
+      "literature_support": "STRONG PRECEDENT",
+      "project_inference": "Our multiresolution solenoidal dictionary (W13-G) and NonorthogonalProjectionSolver can extract localized coherent vortex cores from sparse point sensors.",
+      "misattribution": "Decoupled from the failed W13-G full-state forward ROM claim; restricted to static coherent vortex extraction and sensor reconstruction.",
+      "corrected_verdict": "TEST (Inverse Problem Hypothesis)"
+    },
+    {
+      "id": "HYP-08",
+      "name": "Separable Channel Eigenbasis for Acoustic Duct Resonators",
+      "literature_support": "ESTABLISHED",
+      "project_inference": "Our tensor-product Fourier-sine basis spans exact rectangular acoustic duct cut-on and cut-off waveguide modes.",
+      "misattribution": "None; classical duct acoustics.",
+      "corrected_verdict": "TEST (Direct Baseline Verification)"
+    },
+    {
+      "id": "HYP-09",
+      "name": "Grassmannian Subspace Tracking for Neural Network Layer Stability",
+      "literature_support": "STRONG PRECEDENT",
+      "project_inference": "Our subspace_distance_metric computes exact principal angles between weight/activation subspaces across training checkpoints.",
+      "misattribution": "Previously claimed novel interpretability utility; held because standard ML packages (SVCCA, CKA) already exist in PyTorch.",
+      "corrected_verdict": "HOLD"
+    },
+    {
+      "id": "HYP-10",
+      "name": "Domain-Agnostic Scientific Audit Infrastructure Package (`sciaudit`)",
+      "literature_support": "STRONG PRECEDENT",
+      "project_inference": "Our write-once SHA256 evidence directory, Python AST metric hashing, and automated recomputation pipeline operate on general files/arrays with zero CFD dependency.",
+      "misattribution": "Separated from scientific CFD scores into an independent Engineering/Infrastructure portfolio.",
+      "corrected_verdict": "TEST (Engineering Packaging)"
+    },
+    {
+      "id": "HYP-PRE01",
+      "name": "Spatial Phase Alignment / Shifted POD Pretest (R_align Ratio)",
+      "literature_support": "STRONG PRECEDENT",
+      "project_inference": "Before implementing sPOD, measuring R_align = d_aligned / d_raw on existing cross-seed datasets will decisively determine whether translation/phase drift is the primary driver of POD failure.",
+      "misattribution": "Replaces the premature claim that sPOD 'will solve' cross-seed POD failure with a cheap falsification gate.",
+      "corrected_verdict": "TEST (Fundamental Representation Gate)"
+    }
+  ]
+}

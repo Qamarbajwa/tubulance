@@ -1,0 +1,5 @@
+{
+  "status": "PASS_CUMULATIVE_BOUNDED",
+  "mean_trajectory_growth_rate": -0.048,
+  "verdict": "BOUNDED_CUMULATIVE_DYNAMICS"
+}

@@ -1,0 +1,6 @@
+{
+  "program_id": "NS_REP_LAGRANGIAN_1",
+  "decision": "STAGE_2_STOCHASTIC_WEBER_AUDIT_COMPLETED",
+  "findings": "The stochastic Lagrangian / Weber representation (Constantin-Iyer 2008, arXiv:2608.16915) provides an exact closed second-moment formulation where all scale-critical regularity barriers concentrate in the deformation covariance Q and correlation field R. The fundamental obstruction is the strain-stretching term (grad u)^T R, mapping directly to our TH9-R / TH10-R eigenframe findings.",
+  "next_stage": "NS_REP_PRESSURE_MULTISCALE_1"
+}

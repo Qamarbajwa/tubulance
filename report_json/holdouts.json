@@ -1,0 +1,21 @@
+{
+  "H-Re": {
+    "Re": 500,
+    "nu": 0.004,
+    "E_M1": 0.0485,
+    "TransferStability": "PASS",
+    "Strong5Percent": "PASS"
+  },
+  "H-IC": {
+    "seed": 999,
+    "E_M1": 0.052,
+    "TransferStability": "PASS",
+    "Strong5Percent": "FAIL (5.2% > 5%)"
+  },
+  "H-F": {
+    "forcing": "Kolmogorov",
+    "E_M1": 0.054,
+    "TransferStability": "PASS",
+    "Strong5Percent": "FAIL (5.4% > 5%)"
+  }
+}

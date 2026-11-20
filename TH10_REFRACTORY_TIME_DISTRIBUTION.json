@@ -1,0 +1,8 @@
+{
+  "status": "PASS_EVALUATED",
+  "mean_refractory_time_s": 0.07600000000000004,
+  "min_refractory_time_s": 0.03999999999999998,
+  "refractory_to_burst_duration_ratio": 0.5683028737353114,
+  "hazard_rate_type": "MONOTONICALLY_INCREASING_QUENCH",
+  "interpretation": "Trajectories require a substantial refractory cooling interval (mean 0.076s) before another near-maximal burst can be triggered."
+}

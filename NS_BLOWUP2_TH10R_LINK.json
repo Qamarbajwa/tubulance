@@ -1,0 +1,5 @@
+{
+  "growth_burst_geometry": "STRAINED_SHEET_PRECURSOR",
+  "post_burst_geometry": "BURGERS_SHEET_RELAXATION",
+  "interpretation": "Parabolically rescaled Gaussian sheets represent the post-burst dissipative relaxation state, where viscous diffusion balances compressive strain."
+}

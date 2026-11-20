@@ -1,0 +1,13 @@
+[
+  {
+    "claim_id": "V0-C1",
+    "text": "Stokes ROM under matched channel BCs achieves accurate wall shear",
+    "supporting_run_ids": [
+      "20260813T014758Z__v0__channel12_audited__9b182e"
+    ],
+    "supporting_metrics": [
+      "wall_shear_relative_error"
+    ],
+    "status": "VERIFIED"
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "P0_Particle": {
+    "instantaneous": [
+      "x",
+      "y",
+      "z",
+      "speed",
+      "acceleration",
+      "trajectory_curvature"
+    ],
+    "history": [
+      "path_length",
+      "displacement",
+      "tortuosity",
+      "mean_speed",
+      "max_speed",
+      "std_speed",
+      "mean_acc",
+      "max_acc",
+      "mean_curv",
+      "max_curv",
+      "d_speed_dt"
+    ]
+  },
+  "P1_Thread": {
+    "instantaneous": [
+      "xc",
+      "yc",
+      "zc",
+      "length_L",
+      "end_to_end",
+      "tortuosity",
+      "mean_curv",
+      "max_curv",
+      "var_curv",
+      "turning_sum",
+      "radius_of_gyration",
+      "eig1",
+      "eig2",
+      "eig3",
+      "elongation",
+      "flatness"
+    ],
+    "history": [
+      "dL_dt",
+      "d2L_dt2",
+      "dkappa_dt",
+      "dRg_dt",
+      "max_L",
+      "min_L",
+      "mean_L",
+      "std_L",
+      "max_kappa",
+      "mean_kappa",
+      "integrated_elongation",
+      "shape_autocorrelation"
+    ]
+  },
+  "P2_Bundle": {
+    "instantaneous": [
+      "xc",
+      "yc",
+      "zc",
+      "sigma_1",
+      "sigma_2",
+      "sigma_3",
+      "ratio_13",
+      "ratio_12",
+      "det_F",
+      "sphericity",
+      "planarity",
+      "triaxiality",
+      "log_sigma1"
+    ],
+    "history": [
+      "ds1_dt",
+      "ds3_dt",
+      "d_aniso_dt",
+      "max_s1",
+      "mean_s1",
+      "std_s1",
+      "max_ratio",
+      "mean_sphericity",
+      "mean_planarity",
+      "integrated_stretch",
+      "det_F_drift",
+      "stretch_growth"
+    ]
+  }
+}

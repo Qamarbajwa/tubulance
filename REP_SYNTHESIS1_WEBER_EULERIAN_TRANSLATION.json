@@ -1,0 +1,4 @@
+{
+  "Q_to_L3": "Bounded Q(t) in L^infty does NOT unconditionally imply u in L^3 (OPEN_BRIDGE_HYPOTHESIS; counterexamples exist in arXiv:2608.16915 to naive bounds).",
+  "R_to_L3": "||u||_{L^3} <= ||M||_{L^infty} ||u_0||_{L^3} + C ||R||_{L^3} (PROVED_IMPLICATION)."
+}

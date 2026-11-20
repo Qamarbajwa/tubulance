@@ -1,0 +1,6 @@
+{
+  "adversarial_sheet_limit": "TOWNSEND_SHEET (d = 0.031)",
+  "adversarial_tube_limit": "BURGERS_TUBE (d = 0.034)",
+  "singular_class_found": false,
+  "status": "PASS_NO_SINGULAR_CLASS_DETECTED"
+}

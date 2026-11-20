@@ -1,0 +1,201 @@
+{
+  "governance": {
+    "status": "LEVEL 2 — TECHNICALLY VERIFIED, NOT EXTERNALLY ATTESTED",
+    "milestone": "P1",
+    "description": "Negative-Knowledge Database: every historical failure classified by method, problem, regime, observable, what failed, and what capability survived."
+  },
+  "entries": [
+    {
+      "id": "N01",
+      "milestone": "W1",
+      "method": "FourierSolenoidalBasis (cell-centered projection)",
+      "problem": "Taylor-Green vortex representation",
+      "regime": "Re=100, 16^3 periodic",
+      "observable": "E_proj (projection error)",
+      "failure": "22.65% error floor on exact analytical field",
+      "root_cause": "Cell-centered spatial sampling introduces half-cell MAC phase shift sqrt(2(1-cos(dx/2)))",
+      "capability_demonstrated": "Fourier solenoidal basis construction is exact; the error was in the sampling, not the basis",
+      "resolution": "W2 resolved by switching to MAC face-staggered projection (error -> <1e-12)"
+    },
+    {
+      "id": "N02",
+      "milestone": "W3",
+      "method": "PODSolenoidalBasis (fixed single-seed)",
+      "problem": "Cross-seed generalization of turbulent ROM",
+      "regime": "Re=50-200, 16^3 periodic, unseen random seeds",
+      "observable": "E_u (velocity trajectory error)",
+      "failure": "E_u approx 99.9% on unseen seeds — total failure",
+      "root_cause": "POD subspaces trained on different seeds occupy orthogonal Grassmannian subspaces (d_subspace > 1.5, mean principal angle > 45 deg). Random Fourier phases make each trajectory live in a different subspace.",
+      "capability_demonstrated": "POD is excellent for same-trajectory compression (E_u < 1e-12 on training data). Statistical observables (mean energy, spectral slope) are sometimes OK even when fields diverge.",
+      "resolution": "Never resolved for POD. Fourier/Stokes geometry-dependent bases bypass this entirely."
+    },
+    {
+      "id": "N03",
+      "milestone": "W4",
+      "method": "PODSolenoidalBasis (cross-seed)",
+      "problem": "Representation breakdown diagnosis",
+      "regime": "Re=50-200, 16^3-32^3 periodic",
+      "observable": "E_proj vs E_evolution",
+      "failure": "100% representation breakdown (E_proj approx 99.9%), NOT evolution breakdown",
+      "root_cause": "Fourier amplitude spectra match across seeds (rho_amp approx 1.0), but physical field correlations drop to zero (rho_phys approx 0.0) due to random spatial phase shifts",
+      "capability_demonstrated": "Phase-amplitude decomposition diagnostic. Grassmannian subspace distance metric. Optimal translation alignment.",
+      "resolution": "Adaptive Fourier and Hybrid Fourier+POD bases eliminated representation breakdown (E_u < 0.5%)."
+    },
+    {
+      "id": "N04",
+      "milestone": "W5",
+      "method": "Explicit sparse triad tensor",
+      "problem": "Computational cost of nonlinear ROM evaluation",
+      "regime": "r > 248 modes",
+      "observable": "Runtime and memory",
+      "failure": "Triad tensor storage grows as O(r^2)-O(r^3), becoming the dominant bottleneck",
+      "root_cause": "Quadratic nonlinearity couples O(r^2) mode pairs; storing all triads explicitly is infeasible for large r",
+      "capability_demonstrated": "Triad counting and sparsity analysis methodology. Pareto frontier construction.",
+      "resolution": "W7 OntheFlyFFTEvaluator bypassed storage entirely via on-the-fly 3D FFT (memory: 131 MB -> 0.45 MB)."
+    },
+    {
+      "id": "N05",
+      "milestone": "W7",
+      "method": "EulerianLagrangianWaveHybridSolver",
+      "problem": "Hybrid particle-wave turbulence representation",
+      "regime": "Re=100-200, 16^3-24^3",
+      "observable": "E_u, speedup",
+      "failure": "DISCARD — high particle interpolation overhead without accuracy gain",
+      "root_cause": "Particle advection + grid interpolation cost exceeded any accuracy benefit from Lagrangian tracking",
+      "capability_demonstrated": "Lagrangian particle advection infrastructure exists and works. Hybrid Euler-Lagrange methodology is valid.",
+      "resolution": "Not pursued further."
+    },
+    {
+      "id": "N06",
+      "milestone": "W7",
+      "method": "Explicit triad truncation",
+      "problem": "Memory reduction via sparse triad pruning",
+      "regime": "r > 248 modes",
+      "observable": "E_u",
+      "failure": "DISCARD — severe error blowup at r > 248",
+      "root_cause": "Removing small triads breaks energy conservation and introduces catastrophic aliasing",
+      "capability_demonstrated": "Proved that triadic energy conservation is non-negotiable.",
+      "resolution": "On-the-fly FFT evaluator maintains all interactions implicitly."
+    },
+    {
+      "id": "N07",
+      "milestone": "W8",
+      "method": "POD Residual Enrichment (Candidate G2)",
+      "problem": "Improving Stokes ROM with POD correction modes",
+      "regime": "Wall-bounded channel, Re=100-200",
+      "observable": "Transferability",
+      "failure": "DISCARD — loses transferability (reverts to seed-dependent behavior)",
+      "root_cause": "Adding POD modes re-introduces data dependence that Stokes eigenmodes were designed to avoid",
+      "capability_demonstrated": "Confirmed that geometry-based + data-based hybridization destroys the transferability advantage.",
+      "resolution": "Pure Stokes/separable bases pursued instead."
+    },
+    {
+      "id": "N08",
+      "milestone": "W8",
+      "method": "Local Eulerian Residual Correction (Candidate G4)",
+      "problem": "Local grid-based correction of Stokes ROM",
+      "regime": "Wall-bounded channel",
+      "observable": "Memory, speedup",
+      "failure": "DISCARD — high memory and computational overhead",
+      "root_cause": "Local correction requires storing full-grid residual fields, negating ROM memory advantage",
+      "capability_demonstrated": "Local residual computation infrastructure works correctly.",
+      "resolution": "Not pursued."
+    },
+    {
+      "id": "N09",
+      "milestone": "W9",
+      "method": "ResolventResponseBasis (Candidate W9-G/J)",
+      "problem": "Optimal wall-shear-targeted basis via resolvent analysis",
+      "regime": "Channel flow, Re=100-200",
+      "observable": "Speedup, memory",
+      "failure": "DISCARD — expensive offline SVD, speedup dropped to 0.95x",
+      "root_cause": "Resolvent requires solving large dense SVD per wavenumber pair",
+      "capability_demonstrated": "Resolvent response mode computation gives theoretically optimal forcing-response characterization.",
+      "resolution": "SeparableChannelEigenbasis achieved similar improvement without resolvent cost."
+    },
+    {
+      "id": "N10",
+      "milestone": "W9/W11",
+      "method": "DerivativeWeightedStokesBasis (W9-A/B)",
+      "problem": "Improving global velocity accuracy via wall-gradient weighting",
+      "regime": "Channel flow with matched BCs",
+      "observable": "E_u (global velocity error)",
+      "failure": "DOWNGRADED — degraded global velocity accuracy (E_u > 1.0) under matched channel BCs",
+      "root_cause": "Over-prioritizing wall-gradient modes displaces bulk kinetic energy modes",
+      "capability_demonstrated": "Gradient-weighted mode selection correctly improves wall-shear (E_tau_w drops). Works for wall-shear observable, hurts global velocity.",
+      "resolution": "Separable channel eigenbasis (W9-D) achieved both."
+    },
+    {
+      "id": "N11",
+      "milestone": "W10-W11",
+      "method": "Legacy W10 vs W11 contradiction",
+      "problem": "Inconsistent error reports between milestones",
+      "regime": "Channel flow",
+      "observable": "E_u",
+      "failure": "W10 reported E_u=0.25 while W11 reported E_u=0.878 for same basis",
+      "root_cause": "W10 evaluated projection at t=0 (IC). W11 evaluated time-advanced ROM at t=T. NOT COMPARABLE.",
+      "capability_demonstrated": "Reconciliation methodology. V0 audit-governed evidence fingerprinting.",
+      "resolution": "W12 formally reconciled."
+    },
+    {
+      "id": "N12",
+      "milestone": "W12",
+      "method": "Global structured anisotropic allocation (G1)",
+      "problem": "Achieving <20% projection error",
+      "regime": "12^3 channel, Re=200",
+      "observable": "E_proj",
+      "failure": "Best: E_proj=0.245 at r=200. Targets 10/5/2/1% NOT ACHIEVED at r=1152",
+      "root_cause": "Global separable basis has intrinsic high dimensionality for turbulent states",
+      "capability_demonstrated": "Anisotropic allocation methodology. Capacity curve measurement. Pareto frontier.",
+      "resolution": "W13 explored greedy oracle and multiscale alternatives."
+    },
+    {
+      "id": "N13",
+      "milestone": "W13",
+      "method": "Structured ordering variants (W13-A/B/C)",
+      "problem": "Breaking the ~25% structured error floor",
+      "regime": "12^3 channel",
+      "observable": "E_proj at fixed rank",
+      "failure": "Did not significantly beat G1 baseline",
+      "root_cause": "All share the same dictionary; only selection order differs. Dictionary itself lacks multiscale content.",
+      "capability_demonstrated": "Multiple ordering heuristics are implementable and testable.",
+      "resolution": "W13-G multiresolution dictionary added new elements, not just orderings."
+    },
+    {
+      "id": "N14",
+      "milestone": "W13R/W13R-V/W13R-V2",
+      "method": "W13-G Multiresolution Solenoidal Dictionary (M1)",
+      "problem": "Achieving <5% projection error at r=210",
+      "regime": "12^3 channel, canonical W12 config",
+      "observable": "E_proj (sealed reproduction)",
+      "failure": "Sealed reproduction: E_M1(210) = 0.6348, NOT the claimed 0.0485",
+      "root_cause": "Multiple governance failures in pre-V2 reports. The claimed breakthrough did NOT survive sealed reproduction.",
+      "capability_demonstrated": "Multiresolution solenoidal dictionary construction works. Nonorthogonal projection solver works. The mathematical framework is sound.",
+      "resolution": "W13-G status = PROVISIONAL. W14 BLOCKED."
+    },
+    {
+      "id": "N15",
+      "milestone": "W13R-V2",
+      "method": "Global Oracle (G2) at r=1152",
+      "problem": "Global greedy oracle reaching 5% error",
+      "regime": "12^3 channel, ranks up to 1152",
+      "observable": "E_proj",
+      "failure": "E_oracle(1152) = 0.065 > 0.05. r5 NOT ACHIEVED",
+      "root_cause": "Global dictionary has intrinsic dimensionality preventing 5% within 1152 modes",
+      "capability_demonstrated": "Greedy oracle gives theoretical lower bound. Proves dictionary is the bottleneck.",
+      "resolution": "Richer dictionary or different paradigm needed."
+    },
+    {
+      "id": "N16",
+      "milestone": "W13R-V2",
+      "method": "Holdout transfer (H-IC, H-F)",
+      "problem": "Transfer to unseen initial conditions and forcing",
+      "regime": "seed=999, Kolmogorov forcing",
+      "observable": "E_M1 at r=210",
+      "failure": "H-IC: 5.2% (>5%). H-F: 5.4% (>5%). Strong 5% gate FAILED for 2/3 holdouts.",
+      "root_cause": "Basis designed for one IC/forcing regime does not transfer below 5%",
+      "capability_demonstrated": "Holdout evaluation framework works. H-Re (Re=500): 4.85% PASSED.",
+      "resolution": "Transfer requires larger dictionary or regime-specific adaptation."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "taylor_green": {
+    "held_out_family": "taylor_green",
+    "n_test_samples": 256,
+    "P0_particle_roc": 0.4378659726740403,
+    "P1_thread_roc": 0.5621340273259596,
+    "Eulerian_physics_roc": 0.9940514917743285,
+    "A1_adaptive_roc": 0.7403104377730273,
+    "A2_phys_plus_adaptive_roc": 0.774049632865508,
+    "gain_over_p0": 0.302444465098987,
+    "gain_over_p1": 0.17817641044706767
+  },
+  "isotropic": {
+    "held_out_family": "isotropic",
+    "n_test_samples": 512,
+    "P0_particle_roc": 0.676776766540546,
+    "P1_thread_roc": 0.4990285305245935,
+    "Eulerian_physics_roc": 0.9010328254422744,
+    "A1_adaptive_roc": 0.5557827998772881,
+    "A2_phys_plus_adaptive_roc": 0.8818488598016158,
+    "gain_over_p0": -0.1209939666632579,
+    "gain_over_p1": 0.056754269352694564
+  },
+  "shear_layer": {
+    "held_out_family": "shear_layer",
+    "n_test_samples": 256,
+    "P0_particle_roc": 0.6030608135320178,
+    "P1_thread_roc": 0.5793797825211439,
+    "Eulerian_physics_roc": 0.8853000402738622,
+    "A1_adaptive_roc": 0.6377768828030609,
+    "A2_phys_plus_adaptive_roc": 0.8756343133306483,
+    "gain_over_p0": 0.03471606927104309,
+    "gain_over_p1": 0.058397100281917025
+  }
+}

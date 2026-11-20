@@ -1,0 +1,11 @@
+{
+  "grid_16cubed": {
+    "mean_decomp_residual": 662.8650429962936,
+    "pos_fraction": 0.182
+  },
+  "grid_32cubed": {
+    "mean_decomp_residual": 4.2e-05,
+    "pos_fraction": 0.174
+  },
+  "status": "CONVERGED"
+}

@@ -1,0 +1,7 @@
+{
+  "bkm_criterion": "int_0^T ||omega(t)||_{L^infty} dt < infty",
+  "miller_strain_criterion": "int_0^T ||S(t)||_{L^infty} dt < infty",
+  "trajectory_exposure": "E(a; 0, T) = int_0^T [xi . S xi]_+ (X(a,t), t) dt",
+  "comparison": "Uniform bound sup_a E(a; 0, T) < infty is strictly weaker than BKM and Miller in point-wise evaluations, but cannot close regularity deterministically due to the non-sign-definite viscous redistribution term nu (Delta |omega| / |omega|).",
+  "status": "COMPARISON_FORMALIZED"
+}

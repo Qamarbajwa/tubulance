@@ -1,7 +1,7 @@
 # Seeing Negatively: Why the Deepest Laws of Reality Hide in What Is Missing
 
 **Author:** Qamar Munawer  
-**Affiliation:** Brandenburg University of Technology (BTU) Cottbus–Senftenberg  
+**Affiliation:** Brandenburg University of Technology Cottbus–Senftenberg  
 **Date:** November 19, 2026  
 
 ---
@@ -216,4 +216,4 @@ Why? Because proving an infinite continuum limit requires bridging from finite l
 
 - **Contravariant Dual & Cubic Sign Split (`formal/RosettaContravariantDualCert.lean` & `RosettaContravariantDualAndCubicSignCert.lean`):** Certifies $1 / (G_{DD}(G^{-1})_{DD}) = \sin^2\Theta$, $4\lambda_1\lambda_2\lambda_3 = \lambda_3^3 - \lambda_3(\lambda_1-\lambda_2)^2$ (splitting $4{,}096$ cells of $L=16$ 3D Navier–Stokes into $1{,}640$ positive-determinant axial tubes and $1{,}640$ negative-determinant biaxial sheets), Legendre–Fenchel zero duality gap, and two-level external Schur tare $S_\infty \le S_{\mathrm{full}} \le S_{\mathrm{act}}$.
 - **Continuity, Quaternary Diamond & Phase 4 Bridges (`RosettaContinuityAndSqueezeCert.lean`, `RosettaFourfoldQuaternaryDiamondCert.lean`, `RosettaPhase4CrossWorkspaceLimitsCert.lean`):** Zero-axiom Lean 4 certificates for Lipschitz pinch, nested interval squeeze onto $1/2$, four-quarter identity split, and uniform-in-$L$ Hodge/Yang–Mills/Navier–Stokes bridges.
-- **Methodology & Attribution:** Zero-Axiom Finite-Dimensional & Parameterized Bridge Certification in Lean 4; in this work, ai is being used as a tool by Arqam (Brandenburg University of Technology Cottbus-Senftenberg).
+- **Methodology & Attribution:** Zero-Axiom Finite-Dimensional & Parameterized Bridge Certification in Lean 4; in this work, ai is being used as a tool by Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg).

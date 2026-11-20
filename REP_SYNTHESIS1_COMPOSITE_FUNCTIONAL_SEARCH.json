@@ -1,0 +1,5 @@
+{
+  "candidate_functional": "C[u] = sup_{t, r} [ r^{-3} int_{Q_r} (|u|^3 + |R|^3) dx dt + int_{-r^2}^0 E_Q(t) dt ]",
+  "audit_result": "Admissible scale-invariant candidate functional identified, but proving its a priori boundedness without assuming regularity remains equivalent to the full Navier-Stokes problem.",
+  "classification": "OPEN_BRIDGE_HYPOTHESIS"
+}

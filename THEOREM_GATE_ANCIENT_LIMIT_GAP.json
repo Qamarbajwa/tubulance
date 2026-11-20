@@ -1,0 +1,6 @@
+{
+  "mean_T_minus": 28.4,
+  "mean_R_valid": 3.4,
+  "gap_statement": "A true ancient solution requires T^- = infinity and R_valid = infinity. Numerical simulation provides T^- ~ 28 and R_valid ~ 3.4, confirming compatibility with local space-time approximations but leaving the infinite domain limit mathematically open.",
+  "status": "COMPATIBILITY_CONFIRMED_ANALYTICAL_LIMIT_REQUIRED"
+}

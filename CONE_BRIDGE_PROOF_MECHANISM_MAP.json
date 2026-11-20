@@ -1,0 +1,10 @@
+{
+  "chain": [
+    "1. Time-slice cone geometry |xi(x,t) x e(t)| <= 1 - delta",
+    "2. Axial domination: |omega| <= C(delta) |omega . e(t)| + M",
+    "3. Sign-flipped flux control: int_{B_r} |omega| dy <= C(delta) int_{B_r} |omega . e(t)| dy + M |B_r|",
+    "4. Boundary/Local absolute vorticity flux bounded via div(omega) = 0",
+    "5. Scale-invariant Type-I bound / Local smallness",
+    "6. Epsilon-regularity / Regularity at (0,0)"
+  ]
+}

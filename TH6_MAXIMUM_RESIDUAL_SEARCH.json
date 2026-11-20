@@ -1,0 +1,26 @@
+{
+  "search_status": "COUNTEREXAMPLES_FOUND",
+  "sup_R_observed": 1.20778,
+  "total_violations": 12862,
+  "worst_case_interval": {
+    "flow_id": "flow_iso_re500",
+    "family": "isotropic",
+    "re": 500.0,
+    "grid": 16,
+    "trajectory_obj_idx": 41,
+    "t1": 0.18,
+    "t2": 0.28,
+    "dt": 0.1,
+    "w1": 0.47485,
+    "w2": 1.72672,
+    "log_growth": 1.29097,
+    "int_lambda_3": 0.08319,
+    "int_lambda_omega": 0.02978,
+    "int_V_log": 1.26119,
+    "int_G": 0.05341,
+    "R_direct": 1.20778,
+    "R_integrated": 1.20778,
+    "closure_error": 0.0,
+    "mechanism": "Local viscous Laplacian diffusion (V_log > 0) in intense vortex layer injected enstrophy at a rate exceeding the strain eigenvalue capacity lambda_3 over Delta t = 0.10s."
+  }
+}

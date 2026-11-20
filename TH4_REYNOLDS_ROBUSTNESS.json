@@ -1,0 +1,32 @@
+{
+  "Re_100": {
+    "Reynolds_number": 100.0,
+    "B0_physics_roc": 0.880989222052864,
+    "B1_particle_roc": 0.5908929726575335,
+    "B2_thread_roc": 0.611913594261497,
+    "A1_adaptive_roc": 0.5559887656985871,
+    "A2_phys_plus_adaptive_roc": 0.7788556303279361,
+    "adaptive_gain": -0.05592482856290992,
+    "eulerian_lift": -0.10213359172492786
+  },
+  "Re_250": {
+    "Reynolds_number": 250.0,
+    "B0_physics_roc": 0.8817153839118385,
+    "B1_particle_roc": 0.591636525892781,
+    "B2_thread_roc": 0.6105704414200833,
+    "A1_adaptive_roc": 0.5539817386033126,
+    "A2_phys_plus_adaptive_roc": 0.7788465674172174,
+    "adaptive_gain": -0.05658870281677075,
+    "eulerian_lift": -0.1028688164946211
+  },
+  "Re_500": {
+    "Reynolds_number": 500.0,
+    "B0_physics_roc": 0.8821160249374794,
+    "B1_particle_roc": 0.5895067062211736,
+    "B2_thread_roc": 0.6112507135289268,
+    "A1_adaptive_roc": 0.5535929366435752,
+    "A2_phys_plus_adaptive_roc": 0.780959780071465,
+    "adaptive_gain": -0.057657776885351564,
+    "eulerian_lift": -0.10115624486601438
+  }
+}

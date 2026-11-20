@@ -1,0 +1,5 @@
+{
+  "branch_id": "LA1R_PHYSICAL_SCALE_LOCALIZATION_SEAL_V1",
+  "decision": "C. LOCALIZATION IS GRID-LOCKED \u2014 CLOSE LA1",
+  "rationale": "Multigrid refinement across 16^3 and 32^3 demonstrates that the ~1.0-1.2 dx coherence radius shrinks with grid spacing and does not represent an independent physical length scale."
+}

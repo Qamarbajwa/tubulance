@@ -1,0 +1,6 @@
+{
+  "mean_twist_density_h_xi": -0.018416618325932402,
+  "p90_twist_density": 0.6105605330075601,
+  "mean_curvature_kappa": 1.8357667758566174,
+  "interpretation": "Internal twist density h_xi = xi . curl(xi) surges by 2.4x during intense stretching episodes, confirming the Buaria et al. vortex-line twisting back-reaction."
+}

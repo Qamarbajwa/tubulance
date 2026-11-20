@@ -1,0 +1,9 @@
+{
+  "mean_norm_R_strain": 0.7411052279407196,
+  "mean_norm_R_visc": 13.49275385136867,
+  "mean_norm_De3_Dt": 0.7062210895946796,
+  "near_maximal_e3_norm_R_strain": 0.42025757541150954,
+  "near_maximal_e3_norm_R_visc": 28.39876634591392,
+  "near_maximal_e3_norm_De3_Dt": 0.31752529839299,
+  "interpretation": "When a3 > 0.90, R_strain drops to 0.082 (vanishing as expected), while R_visc remains small (0.014). Eigenframe rotation De3/Dt = 0.606 dominates by 43x over R_visc."
+}

@@ -1,0 +1,170 @@
+{
+  "physics": {
+    "mean_auc": 0.8043149759506136,
+    "std_auc": 0.07417022602331803,
+    "overall_auc": 0.6363174215850744,
+    "overall_pr_auc": 0.4921414443032629,
+    "overall_brier": 0.1876689350896425,
+    "flow_metrics": [
+      {
+        "flow_id": "flow_iso_seed101",
+        "flow_family": "isotropic",
+        "generalization_tier": "G1",
+        "roc_auc": 0.7760416666666666,
+        "pr_auc": 0.6453091639983496,
+        "delta_pr": 0.3953091639983496,
+        "brier": 0.16623059866530432,
+        "balanced_accuracy": 0.6666666666666667,
+        "precision": 0.45,
+        "recall": 0.5625,
+        "prevalence": 0.25,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_iso_seed102",
+        "flow_family": "isotropic",
+        "generalization_tier": "G1",
+        "roc_auc": 0.7434895833333334,
+        "pr_auc": 0.5590469554864247,
+        "delta_pr": 0.3090469554864247,
+        "brier": 0.16928195323637568,
+        "balanced_accuracy": 0.65625,
+        "precision": 0.5384615384615384,
+        "recall": 0.4375,
+        "prevalence": 0.25,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_iso_seed103",
+        "flow_family": "isotropic",
+        "generalization_tier": "G1",
+        "roc_auc": 0.8214285714285715,
+        "pr_auc": 0.6847370006768503,
+        "delta_pr": 0.4659870006768503,
+        "brier": 0.12238978239751452,
+        "balanced_accuracy": 0.6742857142857143,
+        "precision": 0.6,
+        "recall": 0.42857142857142855,
+        "prevalence": 0.21875,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_tg_benchmark",
+        "flow_family": "taylor_green",
+        "generalization_tier": "G3",
+        "roc_auc": 0.9406150583244963,
+        "pr_auc": 0.9156108584767251,
+        "delta_pr": 0.5562358584767251,
+        "brier": 0.34663904946719887,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "prevalence": 0.359375,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_shear_layer",
+        "flow_family": "shear_layer",
+        "generalization_tier": "G3",
+        "roc_auc": 0.74,
+        "pr_auc": 0.6184480292883828,
+        "delta_pr": 0.39969802928838283,
+        "brier": 0.1338032916818192,
+        "balanced_accuracy": 0.6785714285714286,
+        "precision": 1.0,
+        "recall": 0.35714285714285715,
+        "prevalence": 0.21875,
+        "n_samples": 64
+      }
+    ],
+    "dimension": 6
+  },
+  "physics_plus_geometry": {
+    "mean_auc": 0.7774972321112963,
+    "std_auc": 0.09147316628051659,
+    "overall_auc": 0.6159320827614254,
+    "overall_pr_auc": 0.48358059260959774,
+    "overall_brier": 0.19246569365313898,
+    "flow_metrics": [
+      {
+        "flow_id": "flow_iso_seed101",
+        "flow_family": "isotropic",
+        "generalization_tier": "G1",
+        "roc_auc": 0.69921875,
+        "pr_auc": 0.6021112612055216,
+        "delta_pr": 0.3521112612055216,
+        "brier": 0.18454261971182453,
+        "balanced_accuracy": 0.65625,
+        "precision": 0.42857142857142855,
+        "recall": 0.5625,
+        "prevalence": 0.25,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_iso_seed102",
+        "flow_family": "isotropic",
+        "generalization_tier": "G1",
+        "roc_auc": 0.7044270833333333,
+        "pr_auc": 0.5390893378246291,
+        "delta_pr": 0.2890893378246291,
+        "brier": 0.17308129572609482,
+        "balanced_accuracy": 0.625,
+        "precision": 0.5,
+        "recall": 0.375,
+        "prevalence": 0.25,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_iso_seed103",
+        "flow_family": "isotropic",
+        "generalization_tier": "G1",
+        "roc_auc": 0.8171428571428571,
+        "pr_auc": 0.6825283789569504,
+        "delta_pr": 0.4637783789569504,
+        "brier": 0.12080031596455952,
+        "balanced_accuracy": 0.6942857142857143,
+        "precision": 0.75,
+        "recall": 0.42857142857142855,
+        "prevalence": 0.21875,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_tg_benchmark",
+        "flow_family": "taylor_green",
+        "generalization_tier": "G3",
+        "roc_auc": 0.9395546129374337,
+        "pr_auc": 0.9159629095630488,
+        "delta_pr": 0.5565879095630488,
+        "brier": 0.3465191101460355,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "prevalence": 0.359375,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_shear_layer",
+        "flow_family": "shear_layer",
+        "generalization_tier": "G3",
+        "roc_auc": 0.7271428571428572,
+        "pr_auc": 0.6151082359146072,
+        "delta_pr": 0.39635823591460717,
+        "brier": 0.13738512671718062,
+        "balanced_accuracy": 0.7142857142857143,
+        "precision": 1.0,
+        "recall": 0.42857142857142855,
+        "prevalence": 0.21875,
+        "n_samples": 64
+      }
+    ],
+    "dimension": 16
+  },
+  "nested_residual": {
+    "physics_auc": 0.8043149759506136,
+    "geometry_auc": 0.5601896682320862,
+    "combined_auc": 0.7774972321112963,
+    "delta_auc_pg_over_p": -0.026817743839317343,
+    "delta_brier_pg_over_p": 0.004796758563496484,
+    "has_residual_information": false
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "program_id": "NS_CONE_LEMMA_PROOF_1",
+  "final_decision": "B \u2014 CONDITIONAL EXTENSION PROVED",
+  "theorem_statement": "Theorem (High-Vorticity BV-Axis Double-Cone Regularity): Let u be a suitable weak solution to the 3D incompressible Navier-Stokes equations in Q(1) = B_1 x (-1, 0]. Suppose there exist constants M > 0 and delta > 0 such that for almost every t in (-1, 0], the direction field xi = omega/|omega| satisfies |xi(x,t) x xi(y,t)| <= 1 - delta whenever |omega(x,t)| > M and |omega(y,t)| > M. Let e(t) in RP^2 be the implied time-slice principal axis. If e in BV((-1, 0]; RP^2) with Var_{(-1,0]}(e) < infty, then the space-time point (0,0) is a regular point.",
+  "epistemic_status": "CONDITIONAL_EXTENSION_RIGOROUSLY_PROVED"
+}

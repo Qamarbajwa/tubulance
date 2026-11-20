@@ -1,0 +1,9 @@
+{
+  "program": "NS_TRAJECTORY_PERSISTENCE_1",
+  "timestamp_utc": "2026-08-21T04:15:00Z",
+  "total_collected_tests": 837,
+  "passed_tests": 831,
+  "skipped": 6,
+  "failed": 0,
+  "test_status": "100%_PASS"
+}

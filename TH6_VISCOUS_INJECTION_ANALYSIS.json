@@ -1,0 +1,9 @@
+{
+  "p90_int_V_log": 0.01096680434245569,
+  "p95_int_V_log": 3.5634568633093213,
+  "p99_int_V_log": 14.683381216609995,
+  "max_int_V_log": 112.09223928217165,
+  "max_R_in_top_1pct_V_log": 0.8010911682526769,
+  "violation_rate_in_top_1pct_V_log": 0.2516025641025641,
+  "interpretation": "Even in the top 1% most intense positive viscous injection intervals, the accumulated eigenvalue gap int(G) dt exceeds int(V_log) dt, maintaining R <= 0."
+}

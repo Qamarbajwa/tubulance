@@ -1,0 +1,4 @@
+{
+  "connection": "Pressure enters the stochastic Weber system through the Eulerian velocity gradient A = S + Omega that drives the stochastic trajectories dX_t = u dt + sqrt(2nu) dW_t and the strain stretching (grad u)^T R. The Leray projector P removes pure gradients, but the deviatoric pressure Hessian H_dev shapes the spatial gradients of M and Q.",
+  "status": "PROVED_IMPLICATION"
+}

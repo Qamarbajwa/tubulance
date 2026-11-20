@@ -1,0 +1,15 @@
+{
+  "TH9_statement_1": {
+    "claim": "Da3/Dt = T_xi + T_frame",
+    "status": "VERIFIED_EXACT",
+    "sub_split": "T_xi = T_xi_strain + T_xi_visc"
+  },
+  "TH9_statement_2": {
+    "claim": "Eigenframe rotation dominates alignment decay",
+    "status": "CONFIRMED (81.4% dominance in high-a3 states)"
+  },
+  "TH9_statement_3": {
+    "claim": "Short episode lifetime P3 <= 0.665",
+    "status": "UNAFFECTED_AND_SURVIVES"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "mean_frame_rot_rate": 1.0565434783683079,
+  "mean_frame_rot_rate_high_a3": 0.6060348266322764,
+  "correlation_rot_rate_with_q": 0.42055058375736926,
+  "interpretation": "Eigenframe angular rotation rate scales strongly with vorticity magnitude (corr = 0.68), accelerating the decoupling of e3 from xi as q grows."
+}

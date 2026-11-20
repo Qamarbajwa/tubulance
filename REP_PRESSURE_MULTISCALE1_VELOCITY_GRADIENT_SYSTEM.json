@@ -1,0 +1,10 @@
+{
+  "system_equations": {
+    "velocity_gradient": "D_t A = -A^2 - grad^2 p + nu Delta A",
+    "strain_rate": "D_t S = -S^2 - Omega^2 - grad^2 p + nu Delta S",
+    "vorticity": "D_t omega = S omega + nu Delta omega",
+    "eigenvalues": "D_t lambda_i = -lambda_i^2 + (1/4) omega_{perp i}^2 - (e_i . grad^2 p . e_i) + nu (e_i . Delta S . e_i)",
+    "eigenframe": "D_t e_i = sum_{j != i} [ (lambda_i + lambda_j)(e_j . Omega e_i) - (e_j . H_dev e_i) + nu (e_j . Delta S e_i) ] / (lambda_i - lambda_j) e_j"
+  },
+  "status": "EXACT_SYSTEM_DERIVED_WITHOUT_TURBULENCE_CLOSURES"
+}

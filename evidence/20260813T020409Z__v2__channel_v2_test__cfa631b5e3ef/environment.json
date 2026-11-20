@@ -1,0 +1,17 @@
+{
+  "timestamp_utc": "2026-08-13T02:04:10.430807+00:00",
+  "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "numpy_version": "2.2.6",
+  "scipy_version": "1.17.0",
+  "os": "Windows-11-10.0.26200-SP0",
+  "system": "Windows",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "machine": "AMD64",
+  "git_commit": "HEAD_LOCAL",
+  "dirty": true,
+  "environment_variables": {
+    "OMP_NUM_THREADS": "default",
+    "MKL_NUM_THREADS": "default",
+    "OPENBLAS_NUM_THREADS": "default"
+  }
+}

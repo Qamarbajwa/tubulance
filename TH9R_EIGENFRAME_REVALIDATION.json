@@ -1,0 +1,6 @@
+{
+  "status": "PASS_EIGENFRAME_PERTURBATION_VALIDATED",
+  "mean_gap_31": 2.589107720305843,
+  "mean_gap_32": 1.1601237288381496,
+  "fraction_near_degenerate_gap_lt_0_01": 0.0
+}

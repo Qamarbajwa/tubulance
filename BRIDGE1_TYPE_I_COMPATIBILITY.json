@@ -1,0 +1,5 @@
+{
+  "verdict": "TYPE-I-COMPATIBLE",
+  "fraction_compatible": 1.0,
+  "interpretation": "Scale-invariant quantities A(R), E(R), F(R), D(R) remain uniformly bounded on compact parabolic cylinders Q_R."
+}

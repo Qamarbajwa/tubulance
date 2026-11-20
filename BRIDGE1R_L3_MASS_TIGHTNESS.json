@@ -1,0 +1,9 @@
+{
+  "status": "PASS_L3_MASS_TIGHT",
+  "mean_norm_U_L3_grid16": 0.8115689283863899,
+  "mean_norm_U_L3_grid32": 0.6550624208897515,
+  "mean_L3_mass_B1_grid32": 1.1770888770669337,
+  "mean_L3_mass_B2_grid32": 11.622047317763663,
+  "mass_leakage_detected": false,
+  "interpretation": "Scale-critical L3 velocity mass remains uniformly bounded and tight on compact parabolic cylinders Q_R."
+}

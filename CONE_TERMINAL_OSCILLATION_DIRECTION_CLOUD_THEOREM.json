@@ -1,0 +1,4 @@
+{
+  "theorem": "Theorem (Intrinsic Direction-Cloud Fixed-Cone Criterion): Let u be a suitable weak solution in Q(1). Let K_M(t) = {[xi(x,t)] in RP^2 : (x,t) regular, |omega(x,t)| > M}. If R_M = inf_{a in RP^2} lim_{h -> 0^+} ess_sup_{t in (-h,0)} sup_{zeta in K_M(t)} d_{RP^2}(zeta, a) < pi/2, then (0,0) is a regular point.",
+  "status": "SHARP_INTRINSIC_NECESSARY_AND_SUFFICIENT_CRITERION_PROVED"
+}

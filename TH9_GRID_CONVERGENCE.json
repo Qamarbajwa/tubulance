@@ -1,0 +1,11 @@
+{
+  "grid_16cubed": {
+    "mean_P3": 0.482,
+    "max_P3": 1.481
+  },
+  "grid_32cubed": {
+    "mean_P3": 0.465,
+    "max_P3": 1.422
+  },
+  "status": "CONVERGED_FINITE_LIFETIME"
+}

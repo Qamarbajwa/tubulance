@@ -1,0 +1,6 @@
+{
+  "stretching_exposure": "E(a; t0, t1) = int_{t0}^{t1} [xi . S xi]_+ dt",
+  "stochastic_deformation_exposure": "E_Q(x; t0, t1) = int_{t0}^{t1} ||Q(x,t)||_F dt",
+  "pressure_rotation_exposure": "E_H(x; t0, t1) = int_{t0}^{t1} |e_2 . H_dev e_3| / (lambda_3 - lambda_2) dt",
+  "finding": "Integrated persistence over finite trajectory lifetimes, rather than instantaneous rates, governs actual vorticity amplification."
+}

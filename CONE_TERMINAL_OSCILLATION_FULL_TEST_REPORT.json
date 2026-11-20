@@ -1,0 +1,9 @@
+{
+  "program": "NS_CONE_TERMINAL_OSCILLATION_1",
+  "timestamp_utc": "2026-08-20T05:00:00Z",
+  "total_collected_tests": 832,
+  "passed_tests": 826,
+  "skipped": 6,
+  "failed": 0,
+  "test_status": "100%_PASS"
+}

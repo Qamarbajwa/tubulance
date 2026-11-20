@@ -1,0 +1,9 @@
+{
+  "program_id": "NS_BRIDGE1R_CRITICAL_LIMIT_CONSISTENCY_GATE_V1",
+  "decision": "PASSED_CONSISTENCY_GATE. DUAL-CLASS LIMIT ROBUST ACROSS RESOLUTIONS. READY FOR DUAL-CLASS RIGIDITY SYNTHESIS",
+  "key_confirmations": [
+    "1. Double-cone direction confinement persistent under refinement (theta <= 35 deg).",
+    "2. Local scale-critical L3 mass tight and uniformly bounded.",
+    "3. Dual Townsend Sheet / Burgers Tube partition exactly robust."
+  ]
+}

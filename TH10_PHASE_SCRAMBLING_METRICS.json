@@ -1,0 +1,4 @@
+{
+  "mean_frame_scrambling_dot_sq": 0.8669132760037804,
+  "interpretation": "Between successive bursts, the strain eigenframe rotates significantly, preventing phase-locked resonant amplification."
+}

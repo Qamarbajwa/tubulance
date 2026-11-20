@@ -1,0 +1,38 @@
+{
+  "Length (L, e2e, dL/dt)": {
+    "ablated_feature": "Length (L, e2e, dL/dt)",
+    "ablated_auc": 0.4646810868302782,
+    "delta_auc": -0.06727862886936331,
+    "relative_importance": 0.06727862886936331
+  },
+  "Curvature (kappa, dkappa/dt)": {
+    "ablated_feature": "Curvature (kappa, dkappa/dt)",
+    "ablated_auc": 0.5643962988562339,
+    "delta_auc": 0.03243658315659237,
+    "relative_importance": -0.03243658315659237
+  },
+  "Tortuosity / Turning": {
+    "ablated_feature": "Tortuosity / Turning",
+    "ablated_auc": 0.522485224776549,
+    "delta_auc": -0.009474490923092493,
+    "relative_importance": 0.009474490923092493
+  },
+  "Gyration / Geometric Axes": {
+    "ablated_feature": "Gyration / Geometric Axes",
+    "ablated_auc": 0.5503720679947482,
+    "delta_auc": 0.018412352295106738,
+    "relative_importance": -0.018412352295106738
+  },
+  "Temporal Derivatives": {
+    "ablated_feature": "Temporal Derivatives",
+    "ablated_auc": 0.5117272193607029,
+    "delta_auc": -0.020232496338938644,
+    "relative_importance": 0.020232496338938644
+  },
+  "Integrated History": {
+    "ablated_feature": "Integrated History",
+    "ablated_auc": 0.5174480934075645,
+    "delta_auc": -0.014511622292077031,
+    "relative_importance": 0.014511622292077031
+  }
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "dimension": "1. Temporal Memory & Coherence",
+    "status_in_representations": "Eulerian/Pressure are instantaneous; Stochastic Lagrangian carries Brownian memory; Multiscale is quasi-static.",
+    "missing_ingredient": "Non-Markovian memory of coherent vortex sheet/tube lifecycle and self-frustration duration."
+  },
+  {
+    "dimension": "2. Trajectory History & Exposure",
+    "status_in_representations": "Captured partially by Lagrangian exposure E(a; t0, t1), but Eulerian pressure does not track trajectory history.",
+    "missing_ingredient": "Uniform global bound on trajectory-accumulated stretching exposure."
+  },
+  {
+    "dimension": "3. Nonlocal Spatial Organization",
+    "status_in_representations": "Captured by pressure Hessian H_dev and Biot-Savart, but unclosed without structural assumptions.",
+    "missing_ingredient": "Rigorous topological or geometric packing constraints on multi-structure configurations."
+  },
+  {
+    "dimension": "4. Multiscale Coupling & Depletion",
+    "status_in_representations": "Dascaliuc-Grujic flux tracks scale-to-scale transfers without closing concentration.",
+    "missing_ingredient": "Scale-critical cross-scale cancellation identities preventing simultaneous concentration at all scales."
+  },
+  {
+    "dimension": "5. Vortex Topology & Reconnection",
+    "status_in_representations": "Helicity is conserved for Euler; Navier-Stokes permits topological reconnection.",
+    "missing_ingredient": "Finite-energy reconnection invariants constraining maximum energy transfer during topology changes."
+  },
+  {
+    "dimension": "6. Intermittency & Spatial Sparseness",
+    "status_in_representations": "Observed empirically in all simulations (bursts, sheets, tubes).",
+    "missing_ingredient": "Mathematical proof that high-vorticity level set measure |{x: |omega| > M}| vanishes sufficiently fast as M -> infty."
+  },
+  {
+    "dimension": "7. Pressure-Mediated Communication",
+    "status_in_representations": "Deviatoric Hessian H_dev communicates instantaneously via Laplace Green's function.",
+    "missing_ingredient": "Averaged sign-definite cancellation of H_dev along high-vorticity streamtubes."
+  },
+  {
+    "dimension": "8. Stochastic Path Correlations",
+    "status_in_representations": "Captured by covariance Q and correlation R in closed 2026 Weber system.",
+    "missing_ingredient": "A priori L^infty bound on deformation covariance Q under viscous smoothing."
+  },
+  {
+    "dimension": "9. Spacetime Singular-Set Geometry",
+    "status_in_representations": "CKN (1982) 1D parabolic Hausdorff measure vanishes.",
+    "missing_ingredient": "Promotion from Hausdorff measure zero to empty singular set."
+  }
+]

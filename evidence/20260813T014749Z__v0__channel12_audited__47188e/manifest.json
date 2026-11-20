@@ -1,0 +1,46 @@
+{
+  "run_id": "20260813T014749Z__v0__channel12_audited__47188e",
+  "finalized_at_utc": "2026-08-13T01:47:51.893013+00:00",
+  "files": [
+    {
+      "filename": "config.json",
+      "size_bytes": 269,
+      "sha256": "9d2ab9283a50ddd90f6f0a97d3b7e060766c5c0e4d6a05d43cb46947b82b378c"
+    },
+    {
+      "filename": "config.sha256",
+      "size_bytes": 64,
+      "sha256": "e8aaae31576c3a94e4244544efae181ec23024c5765fd8caeb24215145f59f6c"
+    },
+    {
+      "filename": "environment.json",
+      "size_bytes": 575,
+      "sha256": "cf68f811cc87c5c5d1dc2d291f5a59c54c350ae7c6c8452a3424a8aed5a73a8e"
+    },
+    {
+      "filename": "metrics.json",
+      "size_bytes": 1020,
+      "sha256": "94c9e58704be2f14c12aa5772aa409bcba262cb9004a07cb026d39e7f39e50a8"
+    },
+    {
+      "filename": "preregistered_experiment.json",
+      "size_bytes": 621,
+      "sha256": "c52286097c72d1d31e69bc12ff04b49d9c6fcdcf170c11392910df4f0b5700e6"
+    },
+    {
+      "filename": "preregistered_experiment.sha256",
+      "size_bytes": 64,
+      "sha256": "20411c14a1816bd7b483a34b0804fc7689f7de7519ab1b07b9bf10e58a27f3d2"
+    },
+    {
+      "filename": "raw/u_candidate.npy",
+      "size_bytes": 23648,
+      "sha256": "939b3bdc093f79c91e64a0db4ccae02555550ff7fc66174a47e192876acd9195"
+    },
+    {
+      "filename": "raw/u_reference.npy",
+      "size_bytes": 23648,
+      "sha256": "203984e6eee8311f8f346e6ee7165efe82d808ce7608cf7b43389b37a63730f8"
+    }
+  ]
+}

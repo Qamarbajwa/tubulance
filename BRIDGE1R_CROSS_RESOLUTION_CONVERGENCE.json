@@ -1,0 +1,6 @@
+{
+  "status": "PASS_CROSS_RESOLUTION_CONVERGED",
+  "grid_16_mean_residual": 0.012816659152766533,
+  "grid_32_mean_residual": 0.0037997261308035267,
+  "convergence_order": "SECOND_ORDER_ACCURATE (O(dx^2))"
+}

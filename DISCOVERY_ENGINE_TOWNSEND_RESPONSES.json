@@ -1,0 +1,71 @@
+{
+  "protocol": "NS_ADAPTIVE_SCIENTIFIC_DISCOVERY_ENGINE_V1",
+  "timestamp_utc": "2026-08-19T09:10:00Z",
+  "responses": [
+    {
+      "perturbation_id": "BASE_TOWNSEND_SHEET",
+      "parameters": {
+        "id": "BASE_TOWNSEND_SHEET",
+        "shear": 2.5,
+        "nu": 0.01,
+        "tilt": 0.0
+      },
+      "q_initial": 5.224171810591432,
+      "q_peak": 5.224171810591432,
+      "q_final": 5.18546483230611,
+      "net_log_gain": -0.007436793042190774,
+      "mean_a3_alignment": 0.6184186649203819,
+      "response_type": "SELF_LIMITING_DISSIPATIVE",
+      "interpretation": "Under all interventions, the structure relaxes into the stable Townsend sheet attractor without runaway amplification."
+    },
+    {
+      "perturbation_id": "PERTURB_STRAIN_TILT",
+      "parameters": {
+        "id": "PERTURB_STRAIN_TILT",
+        "shear": 2.5,
+        "nu": 0.01,
+        "tilt": 0.5
+      },
+      "q_initial": 5.224171810591432,
+      "q_peak": 5.224171810591432,
+      "q_final": 5.18546483230611,
+      "net_log_gain": -0.007436793042190774,
+      "mean_a3_alignment": 0.6184186649203819,
+      "response_type": "SELF_LIMITING_DISSIPATIVE",
+      "interpretation": "Under all interventions, the structure relaxes into the stable Townsend sheet attractor without runaway amplification."
+    },
+    {
+      "perturbation_id": "PERTURB_ENHANCED_NU",
+      "parameters": {
+        "id": "PERTURB_ENHANCED_NU",
+        "shear": 2.5,
+        "nu": 0.02,
+        "tilt": 0.0
+      },
+      "q_initial": 5.2213927086174,
+      "q_peak": 5.2213927086174,
+      "q_final": 5.144466822691724,
+      "net_log_gain": -0.014842434996457994,
+      "mean_a3_alignment": 0.6275099861214738,
+      "response_type": "SELF_LIMITING_DISSIPATIVE",
+      "interpretation": "Under all interventions, the structure relaxes into the stable Townsend sheet attractor without runaway amplification."
+    },
+    {
+      "perturbation_id": "PERTURB_CROSS_SHEAR",
+      "parameters": {
+        "id": "PERTURB_CROSS_SHEAR",
+        "shear": 3.75,
+        "nu": 0.01,
+        "tilt": 0.0
+      },
+      "q_initial": 7.327091856699665,
+      "q_peak": 7.327091856699665,
+      "q_final": 7.279637370982032,
+      "net_log_gain": -0.006497642550359058,
+      "mean_a3_alignment": 0.6404696511576141,
+      "response_type": "SELF_LIMITING_DISSIPATIVE",
+      "interpretation": "Under all interventions, the structure relaxes into the stable Townsend sheet attractor without runaway amplification."
+    }
+  ],
+  "learned_behavioral_rule": "The 3D Townsend shear sheet acts as a stable, globally dissipative attractor under kinematic and dynamical perturbations."
+}

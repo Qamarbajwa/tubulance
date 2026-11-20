@@ -1,0 +1,7 @@
+{
+  "fraction_chi_greater_than_1": 0.012834821428571428,
+  "fraction_chi_greater_than_5": 0.01171875,
+  "mean_chi_when_Vlog_positive": 70493.08125300004,
+  "median_chi_when_Vlog_positive": 129.73245764024384,
+  "interpretation": "chi = Vlog+ / G exceeds 1.0 in approx 6.8% of all samples, creating the local conditions for B1 failure when sustained."
+}

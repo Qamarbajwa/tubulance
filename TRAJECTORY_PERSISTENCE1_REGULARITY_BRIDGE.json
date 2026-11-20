@@ -1,0 +1,5 @@
+{
+  "route_1_deterministic_maximizer": "int_0^T lambda_3(x^*(t), t) dt < infty ==> ||omega(T)||_{L^infty} < infty (BKM satisfied, PROVED_IMPLICATION).",
+  "route_2_stochastic_deformation": "sup_t E[ ||J_t^{-1}||_{L^infty} ] < infty ==> ||omega(T)||_{L^infty} < infty (PROVED_IMPLICATION).",
+  "status": "BRIDGES_TO_BKM_PROVED"
+}

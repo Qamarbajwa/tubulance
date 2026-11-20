@@ -1,0 +1,155 @@
+{
+  "ledger_version": "1.0",
+  "program_id": "AUTONOMOUS_NAVIER_STOKES_LAGRANGIAN_REPLICATION_PROGRAM",
+  "timestamp_utc": "2026-08-16T04:35:00Z",
+  "governance_status": "LEVEL_2_TECHNICALLY_VERIFIED",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "statement": "Material-line stretching is locally governed by the rate-of-strain tensor projected onto the tangent vector (d ln(dl)/dt = t^T S t).",
+      "verdict": "SUPPORTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "correlation_measured_vs_analytical": 1.0,
+        "mean_absolute_error": 6.55e-17,
+        "max_strain_alignment_stretch": 1.784,
+        "random_alignment_stretch": 1.307
+      },
+      "conditions": "Valid everywhere within Navier-Stokes continuum and staggered grid interpolation."
+    },
+    {
+      "id": "H2",
+      "statement": "Material-thread stretching is a universal proxy for local vortex intensification.",
+      "verdict": "FALSIFIED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "vortex_thread_vorticity_ratio": 0.462,
+        "transverse_thread_max_stretch": 1.324,
+        "vortex_thread_stretch": 0.859
+      },
+      "conditions": "Thread stretching and vortex stretching decouple due to misalignment with the eigen-directions of the strain tensor."
+    },
+    {
+      "id": "H3",
+      "statement": "1D material threads retain sufficient geometric information to outperform point-particle histories universally.",
+      "verdict": "FALSIFIED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "overall_connectivity_effect_5flow": -0.067,
+        "overall_connectivity_effect_8flow": -0.0889,
+        "isotropic_g1_connectivity_effect": -0.2339,
+        "isotropic_p0_roc": 0.7231,
+        "isotropic_p1_roc": 0.4892
+      },
+      "conditions": "In isotropic turbulence, 1D thread geometry collapses in predictive capability compared to single point tracers."
+    },
+    {
+      "id": "H4",
+      "statement": "Multi-directional 3D material bundles (P2) improve predictive power over 1D material lines (P1).",
+      "verdict": "FALSIFIED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "multidirection_effect_B_roc": -0.1163,
+        "ci_95_low": -0.2631,
+        "ci_95_high": 0.0197
+      },
+      "conditions": "3D bundles increase feature dimensionality without providing additional predictive signal across held-out flows."
+    },
+    {
+      "id": "H5",
+      "statement": "Temporal ordering of Lagrangian history carries causal signal beyond time-shuffled trajectories.",
+      "verdict": "SUPPORTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "memory_effect_M_roc_5flow": 0.0445,
+        "memory_effect_M_roc_8flow": 0.0295,
+        "structured_g3_memory_effect": 0.0676
+      },
+      "conditions": "Modest positive causal effect preserved, most prominent in structured anisotropic flows."
+    },
+    {
+      "id": "H6",
+      "statement": "Lagrangian thread geometric features provide complementary predictive lift when added to instantaneous Eulerian physics.",
+      "verdict": "FALSIFIED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "eulerian_physics_alone_roc": 0.8399,
+        "physics_plus_thread_roc": 0.8284,
+        "geometry_complement_delta": -0.0116
+      },
+      "conditions": "Instantaneous Eulerian strain, vorticity, and velocity gradients dominate future state prediction."
+    },
+    {
+      "id": "H7",
+      "statement": "Point-particle trajectory history provides complementary lift when added to Eulerian physics.",
+      "verdict": "FLOW_CONDITIONAL",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "isotropic_g1_physics_roc": 0.7854,
+        "isotropic_g1_physics_plus_p0_roc": 0.8033,
+        "isotropic_g1_lift": 0.0179,
+        "overall_8flow_lift": -0.0063
+      },
+      "conditions": "Point particle trajectories provide modest lift in homogeneous isotropic turbulence, but not in structured laminar shear flows."
+    },
+    {
+      "id": "H8",
+      "statement": "The predictive utility of material connectivity is topologically conditioned on flow structure (TH2).",
+      "verdict": "SUPPORTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "g1_isotropic_connectivity_C": -0.2339,
+        "g3_structured_connectivity_C": 0.0561,
+        "cross_family_divergence": 0.29
+      },
+      "conditions": "Material connectivity is positive in coherent shear/vortex flows and negative in fully developed isotropic turbulence."
+    },
+    {
+      "id": "H9",
+      "statement": "Absolute spatial coordinates outperform intrinsic coordinate deformation metrics due to genuine physical transport.",
+      "verdict": "REJECTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "location_effect_L_roc": -0.0169,
+        "ci_95_low": -0.039,
+        "ci_95_high": 0.0017
+      },
+      "conditions": "Absolute position coordinates do not improve generalization across independent flows and introduce risk of spatial phase leakage."
+    },
+    {
+      "id": "H10",
+      "statement": "Grid resolutions of 16^3 at Re >= 100 represent marginal or under-resolved DNS requiring resolution tracking.",
+      "verdict": "SUPPORTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "kmax_eta_grid16_re100": 0.436,
+        "kmax_eta_grid32_re100": 0.852,
+        "kmax_eta_grid32_re500": 0.38
+      },
+      "conditions": "DNS resolution criterion (k_max * eta >= 1.0) requires finer grids as Re increases."
+    },
+    {
+      "id": "H11",
+      "statement": "Decaying 3D Navier-Stokes turbulence preserves material line stretching dynamics without continuing forcing.",
+      "verdict": "SUPPORTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "ke_retained_decay_ratio": 0.928,
+        "stretching_sustained": true
+      },
+      "conditions": "Unforced decaying turbulence dissipates kinetic energy gradually over integral eddy turnover times."
+    },
+    {
+      "id": "H12",
+      "statement": "The exploratory ~0.96 AUC reported in earlier experiments was an artifact of same-flow random data splitting.",
+      "verdict": "CONFIRMED_SOLVED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "exploratory_within_flow_auc": 0.958,
+        "strict_lofo_auc": 0.5602,
+        "diagnostic_delta": -0.3978
+      },
+      "conditions": "Random sample splitting within the same flow causes catastrophic spatial and target leakage, creating an illusion of high predictive accuracy."
+    }
+  ]
+}

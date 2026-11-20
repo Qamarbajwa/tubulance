@@ -1,0 +1,6 @@
+{
+  "identity": "R_term(e) = rad(C_ess(e))",
+  "proof_of_identity": "C_ess(e) is the non-empty compact intersection of closed essential ranges. By compactness and continuity of the distance function on RP^2, the infimum over a in RP^2 of the limit superior of essential distances equals the Chebyshev radius of the cluster set.",
+  "comparison_to_diameter": "rad(C_ess) <= diam(C_ess) <= 2 rad(C_ess). The radius condition rad(C_ess) < beta is strictly weaker and sharper than the diameter condition diam(C_ess) < beta.",
+  "status": "PROVED_EXACT"
+}

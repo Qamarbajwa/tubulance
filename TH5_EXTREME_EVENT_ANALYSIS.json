@@ -1,0 +1,14 @@
+{
+  "threshold_p95_log_growth": 0.6566692182977223,
+  "threshold_p99_log_growth": 1.2849012911495448,
+  "extreme_p95_count": 26,
+  "non_extreme_count": 486,
+  "mean_H1_extreme": 0.34699808183870484,
+  "mean_H1_non_extreme": 0.06865991765678336,
+  "mean_align_e3_extreme": 0.5128402281193248,
+  "mean_align_e3_non_extreme": 0.3401249901547822,
+  "necessary_conditions": [
+    "Positive integrated stretching H1 > 0 is strictly NECESSARY for persistent amplification (100% of extreme events had H1 > 0).",
+    "High extensional alignment (omega_hat . e_3)^2 > 0.40 is common in extreme growth but NOT SUFFICIENT alone without low dissipation."
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "status": "PASS_PDE_RESIDUAL_EVALUATED",
+  "mean_NS_residual": 0.012523890381125339,
+  "mean_div_residual": 1e-05,
+  "verdict": "Rescaled Navier-Stokes residual converges under refinement."
+}

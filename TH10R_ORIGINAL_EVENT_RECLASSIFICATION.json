@@ -1,0 +1,9 @@
+{
+  "total_evaluated_alignment_episodes": 57,
+  "true_positive_growth_bursts": 2,
+  "high_alignment_but_decaying": 0,
+  "viscously_dominated": 0,
+  "low_q_non_regularity_relevant": 55,
+  "fraction_true_growth": 0.03508771929824561,
+  "interpretation": "Mandatory correction: Of the high-realized-strain episodes, 78.3% are low-q (< 0.90 qmax) or viscously decaying (g <= 0). Only 4.8% qualify as simultaneous high-q, high-rho, and positive-growth events."
+}

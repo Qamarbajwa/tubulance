@@ -1,0 +1,5 @@
+{
+  "theorem": "Theorem (Parabolic Direction-Cloud Fixed-Cone Equivalence): Let u be a suitable weak solution in Q(1). Let K_M(r) = {[xi(x,t)] in RP^2 : (x,t) in Q(r) regular, |omega(x,t)| > M}. There exists a static axis a in RP^2 and positive margin delta_* > 0 such that |xi(x,t) x a| <= 1 - delta_* at regular points in Q(r) with |omega| > M IF AND ONLY IF R_M(r) = inf_{a in RP^2} sup_{zeta in K_M(r)} d_{RP^2}(zeta, a) < pi/2. In this case, delta_* = 1 - sin(R_M(r)) > 0, and (0,0) is a regular point by Lei-Ren-Tian (2025) Theorem 1.1.",
+  "proof_summary": "If R_M(r) < pi/2, choose optimal center a in RP^2. For all regular points in Q(r) with |omega| > M, d_{RP^2}(xi, a) <= R_M(r) < pi/2, so |xi x a| = sin(d_{RP^2}(xi, a)) <= sin(R_M(r)) = 1 - delta_* where delta_* = 1 - sin(R_M(r)) > 0. Parabolic rescaling on Q(r) with threshold M_r = r^2 M maps to Lei-Ren-Tian Theorem 1.1 on Q(1). Conversely, if |xi x a| <= 1 - delta_* on Q(r), then d(xi, a) <= arcsin(1 - delta_*) < pi/2, hence R_M(r) <= arcsin(1 - delta_*) < pi/2.",
+  "status": "EXACT_EQUIVALENCE_PROVED"
+}

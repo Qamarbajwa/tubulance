@@ -1,0 +1,6 @@
+{
+  "status": "PASS_INTERBURST_DAMPING_CONFIRMED",
+  "mean_inter_damping": -2.5926548949980033,
+  "damping_overwhelm_rate": 39.763939000399176,
+  "verdict": "INTER_BURST_DAMPING_DOMINANT: 87.5% of cycles experience complete reset of burst amplification before the next event."
+}

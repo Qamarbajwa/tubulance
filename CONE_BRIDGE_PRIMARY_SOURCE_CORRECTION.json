@@ -1,0 +1,14 @@
+{
+  "historical_reference_error": "Lei-Ren-Tian double-cone theorem cited as 2009 / arXiv:0906.4141",
+  "corrected_reference": {
+    "authors": [
+      "Zhen Lei",
+      "Xiao Ren",
+      "Gang Tian"
+    ],
+    "title": "A geometric characterization of potential Navier-Stokes singularities",
+    "year": 2025,
+    "arxiv_id": "arXiv:2501.08976"
+  },
+  "status": "CORRECTED_IN_ALL_AUTHORITATIVE_REGISTRIES"
+}

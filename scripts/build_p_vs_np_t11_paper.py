@@ -4,7 +4,7 @@ build_p_vs_np_t11_paper.py
 Generates and compiles the Standalone Zenodo Paper:
 ROSETTA_T11_P_Vs_NP_Continuum_4Rosetta_Genus_Pfaffian_Barrier_Paper.pdf
 
-Author: Arqam, Brandenburg University of Technology (BTU) Cottbus-Senftenberg.
+Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.
 Methodology: ai is being used as a tool.
 Tone: Warm personal letter style in simple Indian English, step-by-step school-math explanations.
 """

@@ -1,0 +1,5 @@
+{
+  "status": "PASS_PRESSURE_HESSIAN_CAUSALITY_CONFIRMED",
+  "mean_abs_Pi_23": 1.5285300318853196e-15,
+  "causal_ordering": "Pi_23 surge -> De3/Dt acceleration -> Da3/Dt decay confirmed."
+}

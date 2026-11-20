@@ -1,0 +1,21 @@
+{
+  "worst_case_event": {
+    "flow_id": "flow_tube_501",
+    "threshold_tau": 0.5,
+    "theta_max_deg": 89.89745190884251,
+    "delta_margin": 1.6016948719554946e-06,
+    "worst_case_x": [
+      4.319373893306436,
+      4.633659560817227,
+      0.9431730079119033
+    ],
+    "worst_case_q_ratio": 0.5840333034283693,
+    "worst_case_xi": [
+      0.34528395618226965,
+      0.6973467438098704,
+      0.6280816097458128
+    ],
+    "structure_type": "TUBE_SWIRL_CROSS_INTERACTION",
+    "failure_mode": "Competing orthogonal vortex tube interacting with primary shear layer"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS_CYLINDER_CONVERGED",
+  "tested_cylinders": [
+    "Q_1",
+    "Q_2",
+    "Q_3"
+  ],
+  "mean_L2_velocity_difference": 0.016,
+  "mean_L2_vorticity_difference": 0.022
+}

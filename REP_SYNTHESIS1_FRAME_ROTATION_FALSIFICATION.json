@@ -1,0 +1,9 @@
+{
+  "hypothesis": "Regularity <===> Gamma_frame > Gamma_stretch",
+  "dimensional_consistency": true,
+  "scale_invariance": true,
+  "smooth_solutions_violate": true,
+  "singular_candidates_satisfy_transiently": true,
+  "classification": "FALSIFIED_AS_UNIVERSAL_EQUIVALENCE",
+  "verdict": "The inequality Gamma_frame > Gamma_stretch is a physically valid burst-depletion mechanism, but cannot serve as a necessary-and-sufficient global regularity theorem."
+}

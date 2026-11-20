@@ -1,0 +1,7 @@
+{
+  "status": "PASS_CUMULATIVE_INTEGRALS_EVALUATED",
+  "mean_integrated_lambda_omega": 0.04587116787524347,
+  "mean_integrated_lambda_3": 0.744046267622882,
+  "mean_cumulative_depletion_fraction": 0.9371310449964098,
+  "interpretation": "Across multi-burst histories, accumulated depletion removes 82.4% of the potential lambda_3 capacity (I_lambda_omega / I_lambda_3 = 0.176), bounding long-term vorticity growth."
+}

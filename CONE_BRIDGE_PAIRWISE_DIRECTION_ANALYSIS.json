@@ -1,0 +1,47 @@
+{
+  "status": "EVALUATED",
+  "sweep_summary": [
+    {
+      "tau": 0.1,
+      "mean_pairwise_angle": 32.704575773756666,
+      "max_pairwise_angle": 82.43918971359098,
+      "delta_pair": 0.04104058390875702
+    },
+    {
+      "tau": 0.25,
+      "mean_pairwise_angle": 31.33050477033523,
+      "max_pairwise_angle": 82.43031424494082,
+      "delta_pair": 0.04035273551210872
+    },
+    {
+      "tau": 0.5,
+      "mean_pairwise_angle": 27.352229200476565,
+      "max_pairwise_angle": 79.60485534078721,
+      "delta_pair": 0.046776284866571816
+    },
+    {
+      "tau": 0.75,
+      "mean_pairwise_angle": 20.83901625213996,
+      "max_pairwise_angle": 59.18935338185825,
+      "delta_pair": 0.2118626140622454
+    },
+    {
+      "tau": 0.9,
+      "mean_pairwise_angle": 14.792336638783741,
+      "max_pairwise_angle": 46.03635203263307,
+      "delta_pair": 0.34110431607032526
+    },
+    {
+      "tau": 0.95,
+      "mean_pairwise_angle": 13.61177765543238,
+      "max_pairwise_angle": 38.50853974404293,
+      "delta_pair": 0.4054347859231056
+    },
+    {
+      "tau": 0.99,
+      "mean_pairwise_angle": 12.361203248158102,
+      "max_pairwise_angle": 33.12934754373152,
+      "delta_pair": 0.47627320952023194
+    }
+  ]
+}

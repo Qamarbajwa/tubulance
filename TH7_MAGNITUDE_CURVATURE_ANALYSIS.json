@@ -1,0 +1,6 @@
+{
+  "mean_lap_q_when_Vlog_positive": 70400.32846947564,
+  "mean_lap_q_when_Vlog_negative": -1370.9319965503676,
+  "fraction_lap_q_positive_when_Vlog_positive": 1.0,
+  "interpretation": "100.0% of positive V_log events have Delta(q) > 0, confirming that positive viscous vorticity influx is strictly a magnitude-curvature effect (spatial diffusion into valleys)."
+}

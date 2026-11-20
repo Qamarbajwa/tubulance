@@ -1,0 +1,6 @@
+{
+  "th9r_finding": "Observed T_frame contribution ~81.4% dominance in alignment loss.",
+  "mathematical_origin": "Driven by the off-diagonal deviatoric pressure Hessian (e_2 . H_dev e_3) acting across the intermediate-to-extensional strain gap (lambda_3 - lambda_2).",
+  "physical_mechanism": "Intense vortex-stretching generates transverse pressure gradients that rotate the principal strain axis e_3 away from the vorticity direction xi, driving self-limiting burst termination.",
+  "status": "MATHEMATICALLY_EXPLAINED_AND_VERIFIED"
+}

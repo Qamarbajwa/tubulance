@@ -1,0 +1,4 @@
+{
+  "review_status": "PASSED_INITIAL_CONSISTENCY_CHECK",
+  "findings": "The lemma follows directly from Lei-Ren-Tian (2025) spatial integration steps, with the low-vorticity set bounded by M*|B_r|."
+}

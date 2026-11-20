@@ -1,0 +1,20 @@
+{
+  "Re_100": {
+    "subintervals_count": 78000,
+    "max_R": 1.1857308018406658,
+    "mean_R": -0.21129949820600244,
+    "violations": 7796
+  },
+  "Re_250": {
+    "subintervals_count": 31200,
+    "max_R": 0.8995988873502478,
+    "mean_R": -0.2387206452192842,
+    "violations": 2637
+  },
+  "Re_500": {
+    "subintervals_count": 15600,
+    "max_R": 1.20778292118609,
+    "mean_R": -0.2483326747821617,
+    "violations": 2429
+  }
+}

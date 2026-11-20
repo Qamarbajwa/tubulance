@@ -12,7 +12,7 @@ Numerical continuum simulation and verification of Phase 4 of the Hodge Frontier
 5. Cycle degree compactness: D(t) <= D_max = 5.3333 < infinity (no degree divergence).
 
 Methodology note: ai is being used as a tool.
-Author: Arqam, Brandenburg University of Technology Cottbus-Senftenberg.
+Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.
 """
 
 from __future__ import annotations
@@ -105,7 +105,7 @@ def main() -> int:
     print("=" * 80)
     print("PROBE: CONTINUUM HODGE SCHMID NILPOTENT ORBIT & BOST DEGREE COMPACTNESS")
     print("Methodology note: ai is being used as a tool.")
-    print("Author: Arqam, Brandenburg University of Technology Cottbus-Senftenberg.")
+    print("Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.")
     print("=" * 80)
 
     res = run_hodge_nilpotent_and_bost_probe()

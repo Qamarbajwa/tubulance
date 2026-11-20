@@ -17,7 +17,7 @@ Numerical simulation and spectral verification of:
    - Straining saddle barriers: -Delta p > 0 (strain dominates vorticity, repulsive barrier).
 
 Methodology note: ai is being used as a tool.
-Author: Arqam, Brandenburg University of Technology Cottbus-Senftenberg.
+Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.
 """
 
 from __future__ import annotations
@@ -236,7 +236,7 @@ def main() -> int:
     print("=" * 80)
     print("PROBE: CONTINUUM NAVIER-STOKES HELICAL TRIADS & PRESSURE BARRIER")
     print("Methodology note: ai is being used as a tool.")
-    print("Author: Arqam, Brandenburg University of Technology Cottbus-Senftenberg.")
+    print("Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.")
     print("=" * 80)
 
     tg_res = run_taylor_green_analysis()
@@ -277,7 +277,7 @@ def main() -> int:
     receipt = {
         "status": "PASS" if passed else "FAIL",
         "methodology": "ai is being used as a tool",
-        "author": "Arqam, Brandenburg University of Technology Cottbus-Senftenberg",
+        "author": "Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg",
         "taylor_green": tg_res,
         "multishell_heterochiral": multi_res,
     }

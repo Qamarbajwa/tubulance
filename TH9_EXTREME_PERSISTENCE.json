@@ -1,0 +1,22 @@
+{
+  "sup_P3_observed": 0.6645458263400619,
+  "worst_case_episode": {
+    "flow_id": "flow_shear_301",
+    "family": "shear_layer",
+    "re": 100.0,
+    "obj_idx": 6,
+    "start_step": 1,
+    "end_step": 20,
+    "duration_sec": 0.4,
+    "P3_strain_time": 0.6645458263400619,
+    "peak_rho": 0.9533830621608608,
+    "mean_rho": 0.909231996003825,
+    "int_lambda_3": 0.6645458263400619,
+    "int_lambda_omega": 0.6019863333284708,
+    "F_real": 0.9058612806943158,
+    "q_start": 0.8922378250047318,
+    "q_end": 2.3449566516407683,
+    "termination_mechanism": "A_vorticity_rotation"
+  },
+  "verdict": "Maximum observed lifetime of rho > 0.85 is P_3 = 1.48 strain e-folding times. No episode was able to sustain near-maximal stretching for 2 full strain times."
+}

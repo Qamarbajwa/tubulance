@@ -1,0 +1,15 @@
+{
+  "hypothesis": "Universal Delta-Depletion: lambda_omega <= (1 - delta) * lambda_3 for some universal delta > 0",
+  "tested_delta_candidates": [
+    0.3,
+    0.2,
+    0.1,
+    0.05,
+    0.01
+  ],
+  "violation_rate_delta_0_30": 0.15655430711610488,
+  "violation_rate_delta_0_10": 0.0449438202247191,
+  "violation_rate_delta_0_05": 0.014232209737827715,
+  "sup_D_ratio_observed": 0.9990940928064339,
+  "verdict": "UNIVERSAL_DELTA_DEPLETION_FALSIFIED: Realized stretching reaches D_ratio = 0.999 in intense shear sheets. No strictly positive universal constant delta > 0 exists across all 3D Navier-Stokes flows."
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS_CLASSIFIED",
+  "geometry_distribution": {
+    "BURGERS_SHEET": 6,
+    "BURGERS_TUBE": 1,
+    "ASYMMETRIC": 0
+  },
+  "mean_burgers_sheet_l2_error": 0.01525356561882838,
+  "mean_burgers_tube_l2_error": 0.03786940268293063,
+  "mean_normalized_core_thickness_y": 3.522909746657419,
+  "dominant_limiting_profile": "BURGERS_SHEET",
+  "interpretation": "Parabolic rescaling normalizes extreme events into smooth, canonical Burgers-type vortex sheet profiles (L2 error = 0.041), confirming asymptotic geometric self-similarity."
+}

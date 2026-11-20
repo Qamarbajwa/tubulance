@@ -1,0 +1,32 @@
+{
+  "Candidate_B7_1": {
+    "statement": "V_log^+ <= nu * max(0, Delta(|omega|)) / |omega|",
+    "status": "MATHEMATICALLY_PROVEN_IDENTITY_UPPER_BOUND",
+    "violation_rate": 0.0,
+    "interpretation": "Since -nu * ||grad(xi)||_F^2 <= 0 identically, V_log <= nu * Delta(q)/q always. Survives with 0 violations."
+  },
+  "Candidate_B7_2": {
+    "statement": "V_log^+ <= nu * |Delta(|omega|)| / |omega|",
+    "status": "MATHEMATICALLY_PROVEN_UPPER_BOUND",
+    "violation_rate": 0.0,
+    "interpretation": "Trivial consequence of B7-1."
+  },
+  "Candidate_B7_3": {
+    "statement": "V_log^+ <= nu * ||Delta(omega)|| / |omega|",
+    "status": "MATHEMATICALLY_PROVEN_CAUCHY_SCHWARZ_BOUND",
+    "violation_rate": 0.0,
+    "interpretation": "Follows from |xi . Delta(omega)| <= ||xi|| * ||Delta(omega)|| = ||Delta(omega)||."
+  },
+  "Candidate_B7_4": {
+    "statement": "Conditional Bound: If ||grad(omega_hat)||_F^2 >= Delta(|omega|)/|omega|, then V_log^+ = 0",
+    "status": "MATHEMATICALLY_PROVEN_CONDITIONAL_CRITERION",
+    "violation_rate": 0.0,
+    "interpretation": "Directional decoherence strictly suppresses positive viscous growth. Survives with 0 violations."
+  },
+  "Candidate_B7_5": {
+    "statement": "Peak Dissipation Property: At any local spatial maximum of |omega|, V_log <= 0",
+    "status": "MATHEMATICALLY_PROVEN_MAXIMUM_PRINCIPLE_PROPERTY",
+    "violation_rate": 0.0,
+    "interpretation": "At local maxima, Delta(|omega|) <= 0, guaranteeing V_log <= -nu * ||grad(xi)||_F^2 <= 0. Survives with 0 violations."
+  }
+}

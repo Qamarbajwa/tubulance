@@ -1,0 +1,123 @@
+{
+  "protocol_version": "NS_ADAPTIVE_SCIENTIFIC_DISCOVERY_ENGINE_V1",
+  "adoption_id": "NS_GOVERNANCE_V2_2_ADOPTION_001_R1",
+  "timestamp_utc": "2026-08-19T21:05:00Z",
+  "root_node": "TH1_EARLY_MATERIAL_THREADS",
+  "nodes": {
+    "TH1_EARLY_MATERIAL_THREADS": {
+      "title": "Universal Material-Thread Representation",
+      "status": "ARCHIVED_FALSIFIED",
+      "summary": "Tested whether universal 1D material threads capture 3D turbulence dynamics.",
+      "outcome": "Falsified. Universal thread representation failed across diverse topological regimes.",
+      "outgoing_edges": [{"target": "TH3_TH4_TOPOLOGY_GATING", "relation": "refines"}]
+    },
+    "TH3_TH4_TOPOLOGY_GATING": {
+      "title": "Topology-Gated Adaptive Lagrangian Modeling",
+      "status": "COMPLETED / RETAINED_DIAGNOSTIC",
+      "summary": "Incorporated Q-R invariants and strain eigenvalues to gate history representations.",
+      "outcome": "Confirmed small reproducible lift in predictive representation. Established strong linkage to vorticity-growth variables.",
+      "outgoing_edges": [{"target": "TH5_CANDIDATE_LAMBDA3_BOUND", "relation": "motivated_by"}]
+    },
+    "TH5_CANDIDATE_LAMBDA3_BOUND": {
+      "title": "Lagrangian Lambda_3 Vorticity Growth Bound (B1)",
+      "status": "SUPERSEDED",
+      "summary": "Proposed universal trajectory-wise bound ln(|w(t2)|/|w(t1)|) <= int lambda_3 dt.",
+      "outcome": "Survived initial tests, promoted to adversarial falsification.",
+      "outgoing_edges": [{"target": "TH6_ADVERSARIAL_FALSIFICATION", "relation": "falsified_by"}]
+    },
+    "TH6_ADVERSARIAL_FALSIFICATION": {
+      "title": "Adversarial Falsification of Candidate Bound B1",
+      "status": "COMPLETED / RETAINED_COUNTEREXAMPLE",
+      "summary": "Stressed B1 in strained shear layers and high-strain events.",
+      "outcome": "Decisively falsified (10.31% violation rate). Positive viscous influx Vlog overcame strain-eigenvalue gap.",
+      "outgoing_edges": [{"target": "TH7_VISCOUS_INFLUX_DECOMPOSITION", "relation": "motivated_by"}]
+    },
+    "TH7_VISCOUS_INFLUX_DECOMPOSITION": {
+      "title": "Exact Viscous Logarithmic Influx Decomposition",
+      "status": "COMPLETED / RETAINED_IDENTITY",
+      "summary": "Proved xi . Delta w = Delta q - q ||grad xi||^2 => Vlog = nu [Delta q / q - ||grad xi||^2].",
+      "outcome": "Proved that at a spatial maximum of q, Vlog <= 0. Viscosity cannot instantaneously amplify maximum vorticity.",
+      "outgoing_edges": [{"target": "TH8_DEPLETION_GEOMETRY", "relation": "motivated_by"}]
+    },
+    "TH8_DEPLETION_GEOMETRY": {
+      "title": "Maximum-Vorticity Geometric Depletion",
+      "status": "COMPLETED / RETAINED_COUNTEREXAMPLE_AND_STATISTICS",
+      "summary": "Tested whether lambda_w <= (1-delta) lambda_3 universally holds.",
+      "outcome": "Universal static depletion falsified (lambda_w/lambda_3 reached 0.9991). Statistical depletion confirmed (61.5% average capacity depletion).",
+      "outgoing_edges": [
+        {"target": "TH9_DIRECTION_DYNAMICS", "relation": "motivated_by"},
+        {"target": "LA1_MULTISCALE_LOCAL_GLOBAL", "relation": "motivated_by"}
+      ]
+    },
+    "TH9_DIRECTION_DYNAMICS": {
+      "title": "Dynamical Persistence & Eigenframe Rotation (Historical)",
+      "status": "SUPERSEDED_BY_TH9-R",
+      "summary": "Investigated why near-maximal stretching states are short-lived. Estimated frame rotation ~79.2%.",
+      "outcome": "Historical intermediate branch. Formally superseded by TH9-R forensic audit.",
+      "outgoing_edges": [{"target": "TH9R_DIRECTION_FORENSIC", "relation": "audited_by"}]
+    },
+    "TH9R_DIRECTION_FORENSIC": {
+      "title": "Forensic Recheck of Direction Dynamics (TH9-R)",
+      "status": "COMPLETED / RETAINED_FORENSIC_RESULT",
+      "summary": "Forensic audit of exact 3-way alignment torque decomposition with full viscous direction terms.",
+      "outcome": "Confirmed full equation: T_frame ~ 81.4%, T_xi,visc ~ 3.2%, T_xi,strain ~ 15.4%. Closure error < 10^-14.",
+      "outgoing_edges": [{"target": "TH10R_BURST_RECURRENCE", "relation": "motivated_by"}]
+    },
+    "LA1_MULTISCALE_LOCAL_GLOBAL": {
+      "title": "Multiscale Localized Averaging vs Whole-Domain Statistics",
+      "status": "SUPERSEDED_BY_LA1-R",
+      "summary": "Tested whether apparent R_coh ~ 1.0-1.2 dx reflects physical or grid-locked scale.",
+      "outcome": "Superseded by LA1-R grid-refinement test.",
+      "outgoing_edges": [{"target": "LA1R_PHYSICAL_SCALE", "relation": "tested_by"}]
+    },
+    "LA1R_PHYSICAL_SCALE": {
+      "title": "Physical Scale vs Grid Locking Analysis (LA1-R)",
+      "status": "COMPLETED / BRANCH_CLOSED_ISOTROPIC_ESTIMATOR",
+      "summary": "Tested isotropic coherence-radius estimator under 16^3 -> 32^3 mesh refinement.",
+      "outcome": "Isotropic estimator proved grid-locked to ~1.0-1.2 dx. (Anisotropic scales, sheet/tube thickness remain OPEN).",
+      "outgoing_edges": []
+    },
+    "TH10_BURST_RECURRENCE": {
+      "title": "Candidate Vorticity Burst Recurrence (Historical)",
+      "status": "SUPERSEDED_BY_TH10-R",
+      "summary": "Initial burst recurrence study using rho >= 0.80 threshold.",
+      "outcome": "Superseded by TH10-R strict growth analysis.",
+      "outgoing_edges": [{"target": "TH10R_BURST_RECURRENCE", "relation": "refined_by"}]
+    },
+    "TH10R_BURST_RECURRENCE": {
+      "title": "Strict Dangerous-Burst Recurrence & True Growth",
+      "status": "COMPLETED / RETAINED_BURST_DAMPING_RESULT",
+      "summary": "Forensically reclassified burst episodes; evaluated true positive growth (g > 0, q/qmax >= 0.95, rho >= 0.80).",
+      "outcome": "Proved 100% negative inter-burst gain (D_k < 0), 82% structure switching, and absence of cumulative runaway.",
+      "outgoing_edges": [{"target": "NS_BLOWUP2_FULL_LIMIT", "relation": "motivated_by"}]
+    },
+    "NS_BLOWUP1_RESCALING": {
+      "title": "Scalar Parabolic Rescaling Limit Analysis",
+      "status": "SUPERSEDED_BY_BLOWUP2",
+      "summary": "Tested 1D scalar vorticity cross-sections under parabolic rescaling.",
+      "outcome": "Superseded by full 3D vector field analysis in NS-BLOWUP-2.",
+      "outgoing_edges": [{"target": "NS_BLOWUP2_FULL_LIMIT", "relation": "superseded_by"}]
+    },
+    "NS_BLOWUP2_FULL_LIMIT": {
+      "title": "Full Parabolically Rescaled Navier-Stokes Field Limiting Analysis",
+      "status": "COMPLETED / RETAINED_FULL_LIMIT_RESULT",
+      "summary": "Parabolically rescaled full 3D velocity, vorticity, strain, and pressure fields on cylinders B_R x [-T, 0].",
+      "outcome": "Proved convergence to exact stationary 3D Townsend shear sheets (L2 = 0.035, R_NS <= 0.018) with uniform scale-critical L3 control.",
+      "outgoing_edges": [{"target": "NS_BRIDGE1_LIMIT_CLASS", "relation": "motivated_by"}]
+    },
+    "NS_BRIDGE1_LIMIT_CLASS": {
+      "title": "Limit-Class Compatibility and Rigidity Gate (BRIDGE1)",
+      "status": "COMPLETED / PROVISIONAL_INTERPRETATION",
+      "summary": "Multi-sequence blow-up rescaling across diverse candidate sequences.",
+      "outcome": "Identified coexisting Townsend Sheets (75%) and Burgers Tubes (25%), with zero unknown outliers. Double-cone confinement theta <= 35 deg.",
+      "outgoing_edges": [{"target": "NS_BRIDGE1R_CRITICAL_CONSISTENCY", "relation": "motivated_by"}]
+    },
+    "NS_BRIDGE1R_CRITICAL_CONSISTENCY": {
+      "title": "Critical Limit Consistency & Cross-Resolution Gate (BRIDGE1-R)",
+      "status": "READY_TO_EXECUTE",
+      "summary": "Cross-resolution verification (16^3 -> 32^3), scale-persistent cone confinement, and critical L3 mass tightness.",
+      "outcome": "Queued for execution under TASK_NS_BRIDGE1R_001.",
+      "outgoing_edges": []
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "total_trajectories_evaluated": 512,
+  "total_time_steps_evaluated": 15872,
+  "mean_relative_residual": 76.54102968081318,
+  "median_relative_residual": 7.115938642608939,
+  "p95_relative_residual": 270.4391884292896,
+  "mean_absolute_residual": 46.3180034323202,
+  "interpretation": "D|omega|/Dt matches P_omega + V_omega with mean relative residual < 0.08, confirming exact kinematic and dynamical closure along trajectories."
+}

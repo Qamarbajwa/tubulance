@@ -1,0 +1,7 @@
+{
+  "flow_case_name": "Lamb-Oseen Diffusing Vortex Axis",
+  "stretching_rate": 0.0,
+  "viscous_redistribution_rate": -1.0,
+  "actual_log_rate": -1.0,
+  "is_stretching_zero_but_vorticity_changing": true
+}

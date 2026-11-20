@@ -1,0 +1,122 @@
+[
+  {
+    "representation": "Eulerian",
+    "symbol": "u",
+    "name": "Velocity Field",
+    "definition": "u(x,t)",
+    "scaling": "lambda (L/T)",
+    "critical_norm": "L^infty_t L^3_x"
+  },
+  {
+    "representation": "Eulerian",
+    "symbol": "A",
+    "name": "Velocity Gradient",
+    "definition": "nabla u = S + Omega",
+    "scaling": "lambda^2 (1/T)",
+    "critical_norm": "L^1_t L^infty_x"
+  },
+  {
+    "representation": "Eulerian",
+    "symbol": "S",
+    "name": "Rate-of-Strain Tensor",
+    "definition": "(nabla u + (nabla u)^T)/2",
+    "scaling": "lambda^2 (1/T)",
+    "critical_norm": "L^1_t L^infty_x"
+  },
+  {
+    "representation": "Eulerian",
+    "symbol": "omega",
+    "name": "Vorticity Vector",
+    "definition": "curl u",
+    "scaling": "lambda^2 (1/T)",
+    "critical_norm": "L^1_t L^infty_x (BKM)"
+  },
+  {
+    "representation": "Eulerian",
+    "symbol": "P_omega",
+    "name": "Enstrophy Production",
+    "definition": "omega . S omega",
+    "scaling": "lambda^5 (1/T^3)",
+    "critical_norm": "L^1_t L^1_x"
+  },
+  {
+    "representation": "Pressure",
+    "symbol": "grad^2 p",
+    "name": "Pressure Hessian",
+    "definition": "nabla^2 p = (1/3)(Delta p)I + H_dev",
+    "scaling": "lambda^4 (1/T^2)",
+    "critical_norm": "L^1_t L^(3/2)_x"
+  },
+  {
+    "representation": "Pressure",
+    "symbol": "H_dev",
+    "name": "Deviatoric Pressure Hessian",
+    "definition": "Riesz-type CZ singular integral of tr(S^2) - (1/2)|omega|^2",
+    "scaling": "lambda^4 (1/T^2)",
+    "critical_norm": "L^1_t L^(3/2)_x"
+  },
+  {
+    "representation": "Pressure",
+    "symbol": "Gamma_frame",
+    "name": "Strain Eigenframe Rotation Rate",
+    "definition": "sum_{j!=i} [e_j . (-H_dev) e_i] / (lambda_i - lambda_j)",
+    "scaling": "lambda^2 (1/T)",
+    "critical_norm": "Scale-Critical (1/T)"
+  },
+  {
+    "representation": "Stochastic Lagrangian",
+    "symbol": "M",
+    "name": "Mean Deformation Gradient",
+    "definition": "E[grad A_t(x)]",
+    "scaling": "1 (Dimensionless)",
+    "critical_norm": "L^infty_t L^infty_x"
+  },
+  {
+    "representation": "Stochastic Lagrangian",
+    "symbol": "N",
+    "name": "Transported Initial Velocity Mean",
+    "definition": "E[u_0(A_t(x))]",
+    "scaling": "lambda (L/T)",
+    "critical_norm": "L^infty_t L^3_x"
+  },
+  {
+    "representation": "Stochastic Lagrangian",
+    "symbol": "Q",
+    "name": "Deformation Covariance Tensor",
+    "definition": "E[J^T J] - M^T M",
+    "scaling": "1 (Dimensionless)",
+    "critical_norm": "L^infty_t L^infty_x (Scale-Critical)"
+  },
+  {
+    "representation": "Stochastic Lagrangian",
+    "symbol": "R",
+    "name": "Deformation-Velocity Correlation",
+    "definition": "E[(J - M)^T (V - N)]",
+    "scaling": "lambda (L/T)",
+    "critical_norm": "L^infty_t L^3_x (Scale-Critical)"
+  },
+  {
+    "representation": "Multiscale",
+    "symbol": "E_r",
+    "name": "Localized Scale Energy",
+    "definition": "int_{B_r} (1/2)|u|^2 dx",
+    "scaling": "lambda^2 * lambda^(-3) = lambda^(-1)",
+    "critical_norm": "Local Parabolic Energy"
+  },
+  {
+    "representation": "Multiscale",
+    "symbol": "eps_r",
+    "name": "Localized Scale Dissipation",
+    "definition": "nu int_{B_r} |grad u|^2 dx",
+    "scaling": "lambda^4 * lambda^(-3) = lambda",
+    "critical_norm": "Scale-Critical Dissipation"
+  },
+  {
+    "representation": "Multiscale",
+    "symbol": "Phi_r",
+    "name": "Scale Energy+Pressure Flux",
+    "definition": "int_{partial B_r} ((1/2)|u|^2 + p)(u . n) dS",
+    "scaling": "lambda^3 * lambda^(-2) = lambda",
+    "critical_norm": "Scale-Critical Flux (Dascaliuc-Grujic)"
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "protocol_version": "NS_ADAPTIVE_SCIENTIFIC_DISCOVERY_ENGINE_V1",
+  "adoption_id": "NS_GOVERNANCE_V2_2_ADOPTION_001_R1",
+  "timestamp_utc": "2026-08-19T21:15:00Z",
+  "claims": [
+    {
+      "claim_id": "CLM_01_VISCOUS_LOG_IDENTITY",
+      "statement": "V_log = nu [Delta q / q - ||grad xi||_F^2]",
+      "classification": "IDENTITY",
+      "proof_basis": "Exact vector calculus identity from definition of q and xi in src/navier3d/experimental/th7_viscous_influx_math.py."
+    },
+    {
+      "claim_id": "CLM_02_MAXIMUM_VISCOUS_SIGN",
+      "statement": "At a smooth spatial maximum x* of q(x), V_log(x*) <= 0.",
+      "classification": "IDENTITY",
+      "proof_basis": "At spatial maximum, grad q = 0 and Delta q <= 0, while ||grad xi||^2 >= 0."
+    },
+    {
+      "claim_id": "CLM_03_FULL_VISCOUS_DIRECTION_EQUATION",
+      "statement": "Dxi/Dt = S xi - lambda_w xi + (nu/q)[Delta w - xi(xi . Delta w)]",
+      "classification": "IDENTITY",
+      "proof_basis": "Exact time derivative of xi = w/q using full viscous vorticity equation in src/navier3d/experimental/th9r_direction_forensic.py."
+    },
+    {
+      "claim_id": "CLM_04_3WAY_ALIGNMENT_TORQUE",
+      "statement": "Da3/Dt = 2(xi . e3)[(Dxi/Dt) . e3 + xi . (De3/Dt)] = T_{xi, strain} + T_{xi, visc} + T_{frame}",
+      "classification": "IDENTITY",
+      "proof_basis": "Exact product rule expansion of a3 = (xi . e3)^2 with closure error < 10^-14."
+    },
+    {
+      "claim_id": "CLM_05_FALSIFICATION_OF_B1",
+      "statement": "The candidate trajectory bound ln(q2/q1) <= int lambda_3 dt is violated in 10.31% of subintervals.",
+      "classification": "COUNTEREXAMPLE",
+      "proof_basis": "12,862 verified counterexamples in TH6 (src/navier3d/experimental/th6_falsification_engine.py)."
+    },
+    {
+      "claim_id": "CLM_06_FALSIFICATION_OF_STATIC_DEPLETION",
+      "statement": "Near-maximal stretching states lambda_w / lambda_3 > 0.999 exist in 3D Navier-Stokes.",
+      "classification": "COUNTEREXAMPLE",
+      "proof_basis": "Verified in TH8 (src/navier3d/experimental/th8_depletion_math.py)."
+    },
+    {
+      "claim_id": "CLM_07_TH9_HISTORICAL_TORQUE",
+      "statement": "Historical preliminary estimate that eigenframe rotation De3/Dt accounts for ~79.2% of unalignment torque.",
+      "classification": "STATISTICAL_REGULARITY",
+      "proof_basis": "Historical TH9 analysis. Formally SUPERSEDED_BY_TH9-R."
+    },
+    {
+      "claim_id": "CLM_08_TH9R_FORENSIC_TORQUE",
+      "statement": "Forensic audit confirms eigenframe rotation De3/Dt accounts for 81.4% of torque, viscous direction torque for 3.2%, and strain direction torque for 15.4%.",
+      "classification": "STATISTICAL_REGULARITY",
+      "proof_basis": "Forensically audited in TH9-R (src/navier3d/experimental/th9r_direction_forensic.py, BRIDGE1_TH9R_EVIDENCE_AUDIT.json)."
+    },
+    {
+      "claim_id": "CLM_09_ISOTROPIC_COHERENCE_ESTIMATOR_GRID_LOCK",
+      "statement": "The tested simple isotropic coherence-radius estimator is grid-locked at approximately 1.0–1.2 dx across the tested 16^3 -> 32^3 refinement.",
+      "classification": "COUNTEREXAMPLE",
+      "proof_basis": "Verified in LA1-R (src/navier3d/experimental/la1r_physical_scale_math.py, tests/test_la1r_physical_suite.py). Note: Anisotropic scales remain OPEN."
+    },
+    {
+      "claim_id": "CLM_10_BURST_INTER_DAMPING",
+      "statement": "True dangerous growth bursts (g > 0, q/qmax >= 0.95) have strictly negative inter-burst gain D_k < 0 in 100% of consecutive events.",
+      "classification": "STATISTICAL_REGULARITY",
+      "proof_basis": "Evaluated in TH10-R (TH10R_TRUE_GROWTH_BURST_RECURRENCE_SEAL_V1, RAW_TH10R_TRUE_BURSTS.parquet, TH10R_FINAL_SCIENTIFIC_REPORT.md)."
+    },
+    {
+      "claim_id": "CLM_11_FULL_FIELD_TOWNSEND_CONVERGENCE",
+      "statement": "Full 3D rescaled velocity, vorticity, strain, and pressure fields converge to stationary Townsend shear sheets on compact parabolic cylinders Q_R.",
+      "classification": "NUMERICAL_VERIFICATION",
+      "proof_basis": "Verified in NS-BLOWUP-2 (NS_BLOWUP2_FULL_FIELD_LIMIT_SEAL_V1, RAW_NS_BLOWUP2_FULL_FIELDS.parquet, NS_BLOWUP2_FINAL_SCIENTIFIC_REPORT.md)."
+    },
+    {
+      "claim_id": "CLM_12_COEXISTING_LIMIT_CLASSES",
+      "statement": "Parabolically rescaled extreme sequences approach two coexisting classical limiting classes: Townsend Strained Sheets (75%) and Burgers Strained Tubes (25%).",
+      "classification": "NUMERICAL_VERIFICATION",
+      "proof_basis": "Verified in BRIDGE1 across multi-sequence ensemble (BRIDGE1_CLEAN_MANIFEST.json, RAW_BRIDGE1_RESCALED_FIELDS.parquet, BRIDGE1_LIMIT_CLASS_DECISION.json)."
+    },
+    {
+      "claim_id": "CLM_13_TOWNSEND_PERTURBATIVE_STABILITY",
+      "statement": "The 3D Townsend shear sheet exhibits local finite-time dissipative damping under tested kinematic interventions.",
+      "classification": "EMPIRICAL_OBSERVATION",
+      "proof_basis": "Audited in Discovery Engine and BRIDGE1. Note: Does NOT establish universal global attraction."
+    },
+    {
+      "claim_id": "CLM_14_SCALE_CRITICAL_L3_BOUND",
+      "statement": "The scale-critical norm ||U^(k)||_{L3(B_R)} remains uniformly bounded across all extreme events on compact cylinders Q_R.",
+      "classification": "NUMERICAL_VERIFICATION",
+      "proof_basis": "Verified in NS-BLOWUP-2 and BRIDGE1 (BRIDGE1_L3_CRITICAL_DIAGNOSTICS.json)."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "program_id": "NS_REP_PRESSURE_MULTISCALE_1",
+  "decision": "B \u2014 PRESSURE/MULTISCALE MECHANISM IDENTIFIED BUT NO CLOSED UNCONDITIONAL REGULARITY BOUND",
+  "justification": "The nonlocal pressure Hessian H_dev provides the exact physical mechanism for the TH9-R eigenframe rotation (~81.4%) and suppresses restricted-Euler finite-time blow-up. However, because H_dev is a Calderon-Zygmund singular integral of tr(S^2) - (1/2)|omega|^2, its scale-critical L^infty_t L^3_x bound cannot be closed unconditionally without geometric/structural assumptions on the flow.",
+  "next_stage": "STAGE_4_CROSS_REPRESENTATION_SYNTHESIS"
+}

@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "total_flows": 8,
+  "total_trajectories": 384,
+  "total_subintervals_evaluated": 124800,
+  "total_violations": 12862,
+  "violation_rate": 0.10306089743589744,
+  "max_R_overall": 1.20778292118609,
+  "min_R_overall": -2.548211497341066,
+  "mean_R_overall": -0.22278393203134284,
+  "p95_R_overall": 0.10214621254054208,
+  "p99_R_overall": 0.45605227683023297,
+  "per_flow_results": {
+    "flow_iso_101": {
+      "family": "isotropic",
+      "re": 100.0,
+      "total_subintervals": 15600,
+      "violation_count": 1767,
+      "max_R": 1.1857308018406658,
+      "min_R": -1.8379389509970059,
+      "mean_R": -0.26105384975832135,
+      "p95_R": 0.1973367304396638,
+      "mean_closure_error": 4.406448320876441
+    },
+    "flow_iso_102": {
+      "family": "isotropic",
+      "re": 100.0,
+      "total_subintervals": 15600,
+      "violation_count": 1611,
+      "max_R": 1.0143225261762576,
+      "min_R": -2.548211497341066,
+      "mean_R": -0.31317000759783614,
+      "p95_R": 0.11571974542767094,
+      "mean_closure_error": 4.412449940964642
+    },
+    "flow_iso_re250": {
+      "family": "isotropic",
+      "re": 250.0,
+      "total_subintervals": 15600,
+      "violation_count": 1142,
+      "max_R": 0.7431653185235846,
+      "min_R": -2.4493549905447303,
+      "mean_R": -0.2826606543443689,
+      "p95_R": 0.06645758504691661,
+      "mean_closure_error": 0.8478089892627271
+    },
+    "flow_iso_re500": {
+      "family": "isotropic",
+      "re": 500.0,
+      "total_subintervals": 15600,
+      "violation_count": 2429,
+      "max_R": 1.20778292118609,
+      "min_R": -2.065216510226474,
+      "mean_R": -0.2483326747821617,
+      "p95_R": 0.3479847204808536,
+      "mean_closure_error": 0.7431703225005821
+    },
+    "flow_tg_201": {
+      "family": "taylor_green",
+      "re": 100.0,
+      "total_subintervals": 15600,
+      "violation_count": 850,
+      "max_R": 0.5358274689365856,
+      "min_R": -1.3663034317638934,
+      "mean_R": -0.06834511174796862,
+      "p95_R": 0.0047437944255438865,
+      "mean_closure_error": 3.9931954400229857
+    },
+    "flow_shear_301": {
+      "family": "shear_layer",
+      "re": 100.0,
+      "total_subintervals": 15600,
+      "violation_count": 2337,
+      "max_R": 0.9902349532380911,
+      "min_R": -1.9703866539312669,
+      "mean_R": -0.14465264535048503,
+      "p95_R": 0.10911059498188226,
+      "mean_closure_error": 2.2839335823641296
+    },
+    "flow_shear_re250": {
+      "family": "shear_layer",
+      "re": 250.0,
+      "total_subintervals": 15600,
+      "violation_count": 1495,
+      "max_R": 0.8995988873502478,
+      "min_R": -1.4924966725251374,
+      "mean_R": -0.19478063609419952,
+      "p95_R": 0.05125810411289036,
+      "mean_closure_error": 0.726849350467118
+    },
+    "flow_adversarial_401": {
+      "family": "adversarial_sheet",
+      "re": 100.0,
+      "total_subintervals": 15600,
+      "violation_count": 1231,
+      "max_R": 0.8561029225178692,
+      "min_R": -1.9837028672911174,
+      "mean_R": -0.2692758765754013,
+      "p95_R": 0.05111021734805365,
+      "mean_closure_error": 1.978786779524788
+    }
+  }
+}

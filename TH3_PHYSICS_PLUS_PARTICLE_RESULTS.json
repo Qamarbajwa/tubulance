@@ -1,0 +1,30 @@
+{
+  "overall_physics_roc_mean": 0.8399342174538522,
+  "overall_physics_plus_p0_roc_mean": 0.8336371608174324,
+  "overall_lift_p0": -0.006297056636419843,
+  "overall_lift_p0_95_ci": [
+    -0.027887171460261453,
+    0.016734561011904805
+  ],
+  "isotropic_g1_physics_roc_mean": 0.7853669507575758,
+  "isotropic_g1_physics_plus_p0_roc_mean": 0.8032584212662338,
+  "isotropic_g1_lift_p0": 0.017891470508658025,
+  "isotropic_g1_lift_p0_95_ci": [
+    -0.007717803030303061,
+    0.04350074404761911
+  ],
+  "structured_g3_physics_roc_mean": 0.8945014841501288,
+  "structured_g3_physics_plus_p0_roc_mean": 0.8640159003686311,
+  "structured_g3_lift_p0": -0.03048558378149771,
+  "structured_g3_lift_p0_95_ci": [
+    -0.04404408422966216,
+    -0.012310267857142732
+  ],
+  "a2_adaptive_physics_roc_mean": 0.8562580167311369,
+  "a2_lift_over_physics": 0.01632379927728468,
+  "a2_lift_95_ci": [
+    -0.0031037294992393746,
+    0.03512692141842529
+  ],
+  "conclusion": "The +0.0179 lift in isotropic turbulence replicates (+0.0179 on 4 isotropic seeds), but in structured flows physics alone dominates; overall across all 8 flows, Lagrangian addition gives Delta = -0.0063 (95% CI: [-0.0241, +0.0118])."
+}

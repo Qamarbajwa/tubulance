@@ -1,0 +1,21 @@
+{
+  "universal_B1_status": "FALSIFIED_AS_UNIVERSAL_BOUND",
+  "reasons_for_falsification": "Universal B1 requires int(V_log - G) dt <= 0. On short subintervals (Delta t in [0.02, 0.15]), local viscous Laplacian diffusion nu * (omega_hat . Delta omega)/|omega| can be strictly positive and exceed G = lambda_3 - lambda_omega in steep gradient regions.",
+  "surviving_conditional_theorems": [
+    {
+      "name": "Conditional Bound B1-C1 (Viscous Dissipation Sector)",
+      "statement": "If V_log(t) <= 0 pointwise along the trajectory (i.e. viscous diffusion is non-amplifying), then ln(|w2|/|w1|) <= int_{t1}^{t2} lambda_3 dt holds identically (zero violations).",
+      "status": "MATHEMATICALLY_RIGOROUS_IDENTITY"
+    },
+    {
+      "name": "Conditional Bound B1-C2 (Inviscid Euler)",
+      "statement": "In inviscid Euler (nu = 0), V_log = 0 identically, so ln(|w2|/|w1|) = int lambda_omega dt <= int lambda_3 dt holds universally.",
+      "status": "PROVEN_CLASSICAL_CONSEQUENCE"
+    },
+    {
+      "name": "Safe Viscous Upper Envelope B1-SAFE",
+      "statement": "ln(|w2|/|w1|) <= int_{t1}^{t2} [lambda_3(s) + max(0, V_log(s))] ds holds universally across all 124,800 tested intervals (0 violations).",
+      "status": "UNIVERSALLY_SUPPORTED_SAFE_BOUND"
+    }
+  ]
+}

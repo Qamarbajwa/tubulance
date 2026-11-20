@@ -1,0 +1,78 @@
+{
+  "protocol_version": "NS_ADAPTIVE_SCIENTIFIC_DISCOVERY_ENGINE_V1",
+  "timestamp_utc": "2026-08-19T09:05:00Z",
+  "hypotheses": [
+    {
+      "hypothesis_id": "H1_UNIVERSAL_MATERIAL_THREADS",
+      "origin": "Early turbulence modeling",
+      "mathematical_form": "All extreme vorticity structures evolve as isolated 1D material lines.",
+      "scope": "Universal 3D Navier-Stokes",
+      "assumptions": "Quasi-1D kinematic coherence",
+      "falsification_criterion": "Failure to predict 3D topological sheet transitions",
+      "current_status": "FALSIFIED"
+    },
+    {
+      "hypothesis_id": "H2_TRAJECTORY_BOUND_B1",
+      "origin": "TH5 eigenvalue comparison",
+      "mathematical_form": "ln(q(t2)/q(t1)) <= int_{t1}^{t2} lambda_3 dt",
+      "scope": "All Lagrangian trajectories in 3D Navier-Stokes",
+      "assumptions": "V_log <= lambda_3 - lambda_w",
+      "falsification_criterion": "Any valid subinterval with ln(q(t2)/q(t1)) > int lambda_3 dt",
+      "current_status": "FALSIFIED"
+    },
+    {
+      "hypothesis_id": "H3_UNIVERSAL_STATIC_DEPLETION",
+      "origin": "TH8 geometric depletion search",
+      "mathematical_form": "lambda_w(x*, t) <= (1 - delta) lambda_3(x*, t) for some universal delta > 0",
+      "scope": "All spatial maximizers x* of vorticity",
+      "assumptions": "Vortex alignment cannot reach e3",
+      "falsification_criterion": "lambda_w / lambda_3 -> 1 in numerical simulation",
+      "current_status": "FALSIFIED"
+    },
+    {
+      "hypothesis_id": "H4_DYNAMICAL_SELF_LIMITATION",
+      "origin": "TH9 eigenframe rotation analysis",
+      "mathematical_form": "States with a3 ~ 1 experience large negative Da3/Dt dominated by strain-eigenframe rotation De3/Dt",
+      "scope": "High-stretching trajectories",
+      "assumptions": "Pressure-Hessian and convective rotation unalign e3 faster than stretching can amplify",
+      "falsification_criterion": "Long-lived near-maximal stretching state (duration >> 1/lambda_3)",
+      "current_status": "SURVIVED"
+    },
+    {
+      "hypothesis_id": "H5_PHYSICAL_LOCALIZATION_SCALE",
+      "origin": "LA1 multiscale search",
+      "mathematical_form": "Dangerous near-maximal stretching is confined to an intrinsic physical radius R_coh independent of grid spacing dx",
+      "scope": "Intense vorticity cores",
+      "assumptions": "Physical boundary layer thickness",
+      "falsification_criterion": "R_coh proportional to dx under grid refinement",
+      "current_status": "FALSIFIED"
+    },
+    {
+      "hypothesis_id": "H6_BURST_CUMULATIVE_RUNAWAY",
+      "origin": "TH10 recurrence investigation",
+      "mathematical_form": "Sum of burst stretching integrals exceeds inter-burst damping: sum A_k > sum |D_k|",
+      "scope": "Extended Lagrangian trajectories",
+      "assumptions": "Recurrent amplification compounds monotonically",
+      "falsification_criterion": "Inter-burst damping D_k consistently dominates burst gain G_k",
+      "current_status": "FALSIFIED"
+    },
+    {
+      "hypothesis_id": "H7_FULL_FIELD_TOWNSEND_LIMIT",
+      "origin": "NS-BLOWUP-1 / NS-BLOWUP-2 parabolic rescaling",
+      "mathematical_form": "(U_n, Omega_n) -> (U_Townsend, Omega_Townsend) in L2(B_R x [-T, 0]) as q_n -> infinity",
+      "scope": "Parabolically rescaled extreme vorticity events",
+      "assumptions": "Viscous diffusion balances linear compressive strain in the asymptotic core",
+      "falsification_criterion": "Rescaled vector field diverges or converges to singular non-Townsend geometry",
+      "current_status": "SURVIVED"
+    },
+    {
+      "hypothesis_id": "H8_SCALE_CRITICAL_L3_BOUNDEDNESS",
+      "origin": "NS-BLOWUP-2 critical norm analysis",
+      "mathematical_form": "sup_n ||U_n||_{L3(B_R)} < infinity for all rescaled sequences",
+      "scope": "Local cylinders around extreme events",
+      "assumptions": "Finite local energy dissipation rate",
+      "falsification_criterion": "L3 norm diverges with q_max",
+      "current_status": "SURVIVED"
+    }
+  ]
+}

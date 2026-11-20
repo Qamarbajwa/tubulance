@@ -1,0 +1,44 @@
+[
+  {
+    "quantity": "Deformation Covariance Q",
+    "scaling": "Dimensionless [1]",
+    "available_estimate": "Closed D_u Q equation driven by S",
+    "target_critical_norm": "L^infty_t L^infty_x",
+    "proven_implication": "OPEN_BRIDGE_HYPOTHESIS (Bounded Q does not unconditionally prove u in L^3)"
+  },
+  {
+    "quantity": "Correlation Field R",
+    "scaling": "Velocity [L/T]",
+    "available_estimate": "||u||_{L^3} <= ||M||_{L^infty} ||u_0||_{L^3} + C ||R||_{L^3}",
+    "target_critical_norm": "L^infty_t L^3_x",
+    "proven_implication": "PROVED_IMPLICATION (||R||_{L^3} < infty and ||M||_{L^infty} < infty implies u in L^3)"
+  },
+  {
+    "quantity": "Deviatoric Pressure Hessian H_dev",
+    "scaling": "Acceleration/Length [1/T^2]",
+    "available_estimate": "Calderon-Zygmund singular integral ||H_dev||_{L^p} <= C_p ||nabla u||_{L^{2p}}^2",
+    "target_critical_norm": "L^1_t L^(3/2)_x",
+    "proven_implication": "ONE_WAY_ESTIMATE (Nonlocal CZ bound requires prior gradient integrability)"
+  },
+  {
+    "quantity": "Strain Eigenframe Rotation Gamma_frame",
+    "scaling": "Frequency [1/T]",
+    "available_estimate": "Rotates strain axis e_3 away from vorticity xi",
+    "target_critical_norm": "Integrated alignment angle theta(t)",
+    "proven_implication": "PHYSICAL_INTERPRETATION / CONDITIONAL (Explains burst depletion; does not provide critical norm bound)"
+  },
+  {
+    "quantity": "Stretching Exposure E(a; t0, t1)",
+    "scaling": "Dimensionless [1]",
+    "available_estimate": "int_{t0}^{t1} [xi . S xi]_+ dt",
+    "target_critical_norm": "Boundedness prevents pointwise vorticity blow-up along trajectory",
+    "proven_implication": "PROVED_IMPLICATION (Bounded exposure along all trajectories prevents vorticity explosion)"
+  },
+  {
+    "quantity": "Scale Energy+Pressure Flux Phi_r",
+    "scaling": "Power/Area [L/T^3]",
+    "available_estimate": "Dascaliuc-Grujic rigorous physical-scale flux bounds",
+    "target_critical_norm": "L^1_t L^1_x energy cascade bound",
+    "proven_implication": "ONE_WAY_ESTIMATE (Controls inter-scale transfer; does not exclude point concentration)"
+  }
+]

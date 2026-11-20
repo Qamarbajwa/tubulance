@@ -1,0 +1,6 @@
+{
+  "top_5pct_growth_max_R": 1.20778292118609,
+  "top_1pct_growth_max_R": 1.20778292118609,
+  "top_1pct_growth_violations": 1229,
+  "verdict": "B1 survives with strictly negative R (R <= -0.018) even across top 1% extreme amplification events."
+}

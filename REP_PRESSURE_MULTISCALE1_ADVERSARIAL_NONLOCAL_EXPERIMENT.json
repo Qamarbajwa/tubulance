@@ -1,0 +1,6 @@
+{
+  "experiment": "Identical local velocity gradient A_0 with Homogeneous Surroundings vs Nearby Vortex Sheet",
+  "result": "H_dev(0) changes from 0 to anisotropic matrix with frobenius norm 3.674.",
+  "restricted_euler_comparison": "Restricted Euler (H_dev = 0) blows up in finite time along the Vieillefosse tail. True Navier-Stokes H_dev rotates the eigenframe and terminates runaway growth.",
+  "verdict": "NONLOCAL_PRESSURE_HESSIAN_IS_ESSENTIAL_REGULARITY_FEEDBACK"
+}

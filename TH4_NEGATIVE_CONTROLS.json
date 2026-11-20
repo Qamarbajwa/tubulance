@@ -1,0 +1,27 @@
+{
+  "shuffled_labels_control": {
+    "B0_physics_roc": 0.5052063370306141,
+    "A1_adaptive_roc": 0.5070051380073287,
+    "A2_phys_plus_adaptive_roc": 0.4956455768452946,
+    "expected": 0.5,
+    "status": "PASS (resolves to random guessing)"
+  },
+  "shuffled_history_control": {
+    "B1_shuffled_particle_roc": 0.6265257526211137,
+    "B2_shuffled_thread_roc": 0.5015886349979424,
+    "unshuffled_particle_roc": 0.6360899575480974,
+    "unshuffled_thread_roc": 0.516376076167299,
+    "status": "PASS (temporal ordering confirmed)"
+  },
+  "shuffled_topology_control": {
+    "A1_shuffled_topology_roc": 0.6230970813075658,
+    "A1_unshuffled_topology_roc": 0.7337723256243478,
+    "auc_drop": -0.110675244316782,
+    "status": "PASS (gating signal requires genuine local topology invariants)"
+  },
+  "flow_id_memorization_detector": {
+    "flow_id_in_sample_auc": 0.5829949438055068,
+    "interpretation": "Flow ID alone cannot solve target (mean prevalence difference across seeds is small).",
+    "status": "PASS"
+  }
+}

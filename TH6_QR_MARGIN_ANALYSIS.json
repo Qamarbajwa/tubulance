@@ -1,0 +1,6 @@
+{
+  "closest_sector_to_violation": "Sector 2 (Q > 0, R < 0, Vortex Stretching)",
+  "safest_sector": "Sector 3 (Q > 0, R > 0, Vortex Compression)",
+  "mean_margin_sector_2": 0.452,
+  "mean_margin_sector_3": 1.285
+}

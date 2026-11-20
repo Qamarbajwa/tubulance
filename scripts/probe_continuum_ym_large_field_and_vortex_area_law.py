@@ -12,7 +12,7 @@ Numerical verification of Phase 3 of the 4D Yang-Mills Continuum Frontier:
    proving Delta(a -> 0) >= Delta_floor > 0.
 
 Methodology note: ai is being used as a tool.
-Author: Arqam, Brandenburg University of Technology Cottbus-Senftenberg.
+Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.
 """
 
 from __future__ import annotations
@@ -126,7 +126,7 @@ def main() -> int:
     print("=" * 80)
     print("PROBE: CONTINUUM 4D YANG-MILLS LARGE-FIELD SUPPRESSION & CENTER-VORTEX AREA LAW")
     print("Methodology note: ai is being used as a tool.")
-    print("Author: Arqam, Brandenburg University of Technology Cottbus-Senftenberg.")
+    print("Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.")
     print("=" * 80)
 
     res = run_ym_large_field_and_vortex_probe()

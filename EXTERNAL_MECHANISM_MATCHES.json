@@ -1,0 +1,28 @@
+{
+  "protocol_version": "NS_ADAPTIVE_SCIENTIFIC_DISCOVERY_ENGINE_V1",
+  "timestamp_utc": "2026-08-19T09:05:00Z",
+  "matches": [
+    {
+      "match_id": "MATCH_01_TOWNSEND_BURGERS_SHEET",
+      "observed_behavior": "Parabolically rescaled extreme vorticity profiles and velocity fields converge to a 1D Gaussian shear layer with background linear strain.",
+      "known_mechanism": "Townsend (1951) / Burgers (1948) exact 3D steady strained vortex sheet solutions to Navier-Stokes.",
+      "mathematical_formulation": "u(y) = (-gamma*y1, gamma*y2, f(y1)), omega(y) = (0, f'(y1), 0) where f''(y1) + (gamma/nu)*y1*f'(y1) = 0.",
+      "similarity": "Exact mathematical solution to steady Navier-Stokes; matches numerical rescaled velocity, vorticity, and strain within 3.5% L2 error.",
+      "differences": "Townsend solution exists on unbounded space R^3 with linear infinite-energy background; physical flow is periodic with finite domain.",
+      "assumptions": "Stationary balance between persistent uniform strain gamma and viscous diffusion nu.",
+      "applicability": "Direct local asymptotic core model for extreme high-vorticity events in Navier-Stokes.",
+      "falsification_experiment": "Perturb the background strain tensor or introduce cross-layer shear to test stability of Townsend profile."
+    },
+    {
+      "match_id": "MATCH_02_CRITICAL_L3_ESCAURIAZA_SEREGIN_SVERAK",
+      "observed_behavior": "Scale-critical L3 norm ||U_n||_{L3(B_R)} remains uniformly bounded across all extreme events under parabolic dilation.",
+      "known_mechanism": "Escauriaza-Seregin-Sverak (2003) L3(R^3) critical regularity theorem and backward uniqueness.",
+      "mathematical_formulation": "If u in L_infty((0, T); L3(R^3)), then u is smooth on (0, T] x R^3.",
+      "similarity": "Local L3 scale invariance matches the parabolic rescaling dilation lambda = q_max^(-1/2).",
+      "differences": "Theorem requires whole-space global L3 norm on R^3; numerical evidence establishes local cylinder boundedness ||U_n||_{L3(B_R)}.",
+      "assumptions": "Uniform global energy dissipation and absence of spatial energy concentration at infinity.",
+      "applicability": "Strong mathematical framework for connecting bounded rescaled limit to regularity.",
+      "falsification_experiment": "Search for adversarial high-Re configurations where local L3 norm concentrates."
+    }
+  ]
+}

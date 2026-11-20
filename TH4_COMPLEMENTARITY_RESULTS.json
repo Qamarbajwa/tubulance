@@ -1,0 +1,56 @@
+{
+  "overall_16_flows": {
+    "Delta_E_mean": 0.007959324531681106,
+    "Delta_E_95_ci": [
+      0.002953337249059225,
+      0.0139093449616215
+    ],
+    "Delta_E_positive_flows_count": 12,
+    "Delta_L_mean": 0.07127252616429061,
+    "Delta_L_95_ci": [
+      0.008348796459546759,
+      0.14080339192545552
+    ],
+    "Delta_L_positive_flows_count": 11,
+    "Delta_P_mean": -0.001466659404710982,
+    "Delta_P_95_ci": [
+      -0.00848833077105014,
+      0.005539269857497365
+    ],
+    "Delta_T_mean": -0.000857903778128187,
+    "Delta_T_95_ci": [
+      -0.010614292625221329,
+      0.009514910978972016
+    ]
+  },
+  "isotropic_g1_8_flows": {
+    "Delta_E_mean": 0.012697391180766918,
+    "Delta_E_95_ci": [
+      0.006824875157394742,
+      0.019931158783379938
+    ],
+    "Delta_L_mean": -0.00336320066198334,
+    "Delta_P_mean": 0.0030729004825117007,
+    "Delta_P_95_ci": [
+      -0.0060262628866712105,
+      0.01292919002630126
+    ],
+    "Delta_P_positive_count": 4
+  },
+  "structured_g3_8_flows": {
+    "Delta_E_mean": 0.0032212578825952937,
+    "Delta_E_95_ci": [
+      -0.003423302142937053,
+      0.011697926119235945
+    ],
+    "Delta_L_mean": 0.14590825299056456,
+    "Delta_T_mean": -0.00842911015119055
+  },
+  "local_topology_stratification": {
+    "strain_dominated_count": 530,
+    "rotation_dominated_count": 494,
+    "strain_dominated_thread_advantage_mean": -0.0038226202653147837,
+    "rotation_dominated_thread_advantage_mean": -0.012756696487477293,
+    "interpretation": "In strain-dominated zones (Q < 0), thread history achieves lower prediction loss; in rotation-dominated vortex cores (Q > 0), particle tracking dominates."
+  }
+}

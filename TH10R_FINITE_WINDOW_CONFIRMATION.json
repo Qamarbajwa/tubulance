@@ -1,0 +1,5 @@
+{
+  "status": "PASS_FINITE_WINDOW_CONFIRMED",
+  "forward_window_dt": 0.02,
+  "confirmation_rate": 1.0
+}

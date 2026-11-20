@@ -1,0 +1,6 @@
+{
+  "low_q_volume_term": "SUBCRITICAL",
+  "high_q_flux_term": "SCALE-INVARIANT / CRITICAL",
+  "interface_area_term": "SCALE-CRITICAL",
+  "overall_assessment": "NO SUPERCRITICAL OBSTRUCTIONS FOUND"
+}

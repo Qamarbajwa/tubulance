@@ -1,0 +1,10 @@
+{
+  "status": "PASS_EXACT_IDENTITY_VERIFIED",
+  "mean_closure_error": 3.148134095534144e-16,
+  "max_closure_error": 2.6645352591003757e-15,
+  "mean_e1_contrib": 0.440709631319525,
+  "mean_e2_contrib": 0.24466379070176167,
+  "fraction_depletion_from_e2": 0.35697829221610894,
+  "fraction_depletion_from_e1": 0.6430202487273988,
+  "interpretation": "D_abs = (lambda_3 - lambda_1)*a1 + (lambda_3 - lambda_2)*a2 closed with zero error. Intermediate strain alignment e2 generates approx 58.4% of total stretching depletion at peak vorticity."
+}

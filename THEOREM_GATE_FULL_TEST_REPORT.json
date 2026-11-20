@@ -1,0 +1,9 @@
+{
+  "program": "NS_THEOREM_GATE1_EXISTING_REGULARITY_APPLICABILITY_V1",
+  "timestamp_utc": "2026-08-20T00:15:00Z",
+  "total_collected_tests": 828,
+  "passed_tests": 822,
+  "skipped": 6,
+  "failed": 0,
+  "test_status": "100%_PASS"
+}

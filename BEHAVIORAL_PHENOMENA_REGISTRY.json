@@ -1,0 +1,51 @@
+{
+  "protocol_version": "NS_ADAPTIVE_SCIENTIFIC_DISCOVERY_ENGINE_V1",
+  "timestamp_utc": "2026-08-19T09:05:00Z",
+  "phenomena": [
+    {
+      "phenomenon_id": "P1_NEAR_MAXIMAL_STRETCHING",
+      "description": "Realized stretching lambda_w approaches maximal strain eigenvalue lambda_3 (rho -> 1).",
+      "mathematical_signature": "lambda_w / lambda_3 >= 0.95, a3 >= 0.90",
+      "flow_families": ["shear_layer", "isotropic", "taylor_green", "adversarial_sheet"],
+      "spatial_scale": "Intense vortex sheets / layers",
+      "temporal_scale": "Short-lived (~0.05-0.10s)",
+      "trigger": "Strong shear layer compression along e1 aligning vorticity with e3",
+      "termination": "Strain-eigenframe rotation De3/Dt + directional torque",
+      "recurrence": "Sporadic along trajectories, non-compounding (D_k < 0)",
+      "confidence": "VERY_HIGH"
+    },
+    {
+      "phenomenon_id": "P2_EIGENFRAME_ROTATION_UNALIGNMENT",
+      "description": "Alignment loss da3/dt is dominated by eigenframe rotation De3/Dt rather than vorticity rotation Dxi/Dt.",
+      "mathematical_signature": "|T_frame| / (|T_frame| + |T_xi|) ~ 0.792",
+      "flow_families": ["isotropic", "shear_layer", "taylor_green"],
+      "spatial_scale": "Vortex sheet cores",
+      "temporal_scale": "Instantaneous & burst duration",
+      "trigger": "Nonlocal pressure Hessian and convective tilting",
+      "termination": "Transition of vorticity alignment from e3 toward intermediate eigenvalue e2",
+      "confidence": "VERY_HIGH"
+    },
+    {
+      "phenomenon_id": "P3_MAXIMIZER_STRUCTURE_SWITCHING",
+      "description": "Spatial location of global maximum ||w||_infty jumps discontinously between competing coherent structures.",
+      "mathematical_signature": "x_max(t) switching rate = 82%, mean residence time = 0.064s",
+      "flow_families": ["isotropic", "decaying_turbulence"],
+      "spatial_scale": "Domain scale / multi-structure separation",
+      "temporal_scale": "Turnover time scale",
+      "trigger": "Dissipation of local peak while a neighboring shear layer enters stretching phase",
+      "termination": "Persistent multi-structure turbulent equilibrium",
+      "confidence": "HIGH"
+    },
+    {
+      "phenomenon_id": "P4_PARABOLIC_TOWNSEND_RELAXATION",
+      "description": "Parabolically rescaled extreme states converge to exact stationary 3D Townsend shear-sheet solution class.",
+      "mathematical_signature": "||(U_n, Omega_n) - (U_Townsend, Omega_Townsend)||_{L2} <= 0.035, ||U_n||_{L3} <= C",
+      "flow_families": ["all_tested_families"],
+      "spatial_scale": "Rescaled core radius y ~ 2-4",
+      "temporal_scale": "Post-burst dissipative regime",
+      "trigger": "Balance between linear compressive background strain and 1D viscous diffusion",
+      "termination": "Stable viscous dissipation without singular collapse",
+      "confidence": "VERY_HIGH"
+    }
+  ]
+}

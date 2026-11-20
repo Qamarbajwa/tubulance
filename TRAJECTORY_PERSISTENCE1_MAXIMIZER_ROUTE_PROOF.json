@@ -1,0 +1,5 @@
+{
+  "spatial_maximizer_theorem": "Let x^*(t) in argmax |omega(.,t)|. By the scalar maximum principle, Delta |omega|(x^*(t), t) <= 0. Therefore, d/dt ln ||omega(t)||_{L^infty} <= (xi . S xi)(x^*(t), t) - nu ||grad xi||^2(x^*(t), t) <= lambda_3(x^*(t), t). Integrating yields ||omega(t)||_{L^infty} <= ||omega(0)||_{L^infty} exp( int_0^t lambda_3(x^*(s), s) ds ).",
+  "significance": "Eliminates the positive scalar Laplacian obstruction along the peak vorticity trajectory.",
+  "status": "PROVED_EXACT"
+}

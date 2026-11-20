@@ -1,0 +1,41 @@
+{
+  "audit_scope": "TP2-G1R Adversarial and Convention Reconciliation Test Suite",
+  "governance_risk_tier": "T4",
+  "test_suite_file": "tests/test_tp2_g1r_adversarial_suite.py",
+  "tests": [
+    {
+      "test_id": "T1",
+      "name": "test_t1_non_symmetric_linear_flow",
+      "status": "PASSED",
+      "verification": "Non-symmetric linear flow matrix exponential L != L^T with tr(L)=0 confirms F_M w_0 vs B_M^{-1} w_0"
+    },
+    {
+      "test_id": "T2",
+      "name": "test_t2_non_symmetric_shear_four_matrix_distinction",
+      "status": "PASSED",
+      "verification": "Non-symmetric shear flow establishes mutual distinctness of F, F^T, F^{-1}, F^{-T} and isolates B_M^{-1}"
+    },
+    {
+      "test_id": "T3",
+      "name": "test_t3_source_convention_translation",
+      "status": "PASSED",
+      "verification": "Rigorous numerical equivalence between Convention M (Jacobian) and Convention F (JFM formulas)"
+    },
+    {
+      "test_id": "T4",
+      "name": "test_t4_componentwise_curl_pullback_general_det",
+      "status": "PASSED",
+      "verification": "Exact componentwise curl pullback identity on non-volume-preserving 3D quadratic mapping with general det B"
+    },
+    {
+      "test_id": "T5",
+      "name": "test_t5_mutation_testing_all_choices_killed",
+      "status": "PASSED",
+      "verification": "100% kill rate on all 3 project-convention operator mutations (D^T, D^{-1}, D^{-T})"
+    }
+  ],
+  "total_tests": 5,
+  "passed": 5,
+  "failed": 0,
+  "result_verdict": "RESULT_A_CONFIRMED"
+}

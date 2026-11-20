@@ -1,0 +1,46 @@
+{
+  "horizon_step_5": {
+    "horizon_steps": 5,
+    "physical_time_horizon": 0.1,
+    "B0_physics_roc": 0.9428049660800861,
+    "B1_particle_roc": 0.6184500505509304,
+    "B2_thread_roc": 0.5149759648689141,
+    "A1_adaptive_roc": 0.7314329322716736,
+    "A2_phys_plus_adaptive_roc": 0.9479859403072757,
+    "adaptive_gain_over_best_fixed": 0.11298288172074322,
+    "eulerian_lift": 0.00518097422718955
+  },
+  "horizon_step_10": {
+    "horizon_steps": 10,
+    "physical_time_horizon": 0.2,
+    "B0_physics_roc": 0.9258363421296031,
+    "B1_particle_roc": 0.6360899575480974,
+    "B2_thread_roc": 0.516376076167299,
+    "A1_adaptive_roc": 0.7337723256243478,
+    "A2_phys_plus_adaptive_roc": 0.9337956666612842,
+    "adaptive_gain_over_best_fixed": 0.09768236807625041,
+    "eulerian_lift": 0.007959324531681133
+  },
+  "horizon_step_15": {
+    "horizon_steps": 15,
+    "physical_time_horizon": 0.3,
+    "B0_physics_roc": 0.8949581747198331,
+    "B1_particle_roc": 0.659350172648404,
+    "B2_thread_roc": 0.5290195443281893,
+    "A1_adaptive_roc": 0.7252840016054556,
+    "A2_phys_plus_adaptive_roc": 0.903851166574027,
+    "adaptive_gain_over_best_fixed": 0.06593382895705158,
+    "eulerian_lift": 0.008892991854193899
+  },
+  "horizon_step_20": {
+    "horizon_steps": 20,
+    "physical_time_horizon": 0.4,
+    "B0_physics_roc": 0.854238104494417,
+    "B1_particle_roc": 0.6534669774101451,
+    "B2_thread_roc": 0.4931260285506017,
+    "A1_adaptive_roc": 0.695869943832357,
+    "A2_phys_plus_adaptive_roc": 0.8562197568250107,
+    "adaptive_gain_over_best_fixed": 0.04240296642221186,
+    "eulerian_lift": 0.001981652330593775
+  }
+}

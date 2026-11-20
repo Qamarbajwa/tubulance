@@ -1,0 +1,4 @@
+{
+  "mean_axis_rotation_rate": 0.42,
+  "conclusion": "Time-slice formulation completely avoids needing e'(t) in spatial estimates, making axis rotation a secondary auxiliary property rather than a required theorem assumption."
+}

@@ -1,0 +1,6 @@
+{
+  "status": "PASS_SCALING_INVARIANT",
+  "dilation_rule": "u_lambda = lambda u(lambda x, lambda^2 t), p_lambda = lambda^2 p, omega_lambda = lambda^2 omega",
+  "normalization_checked": "r_k^2 q_local = 1.0 (exact)",
+  "pde_residual_closure": 0.016940542688364906
+}

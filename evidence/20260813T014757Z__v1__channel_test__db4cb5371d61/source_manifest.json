@@ -1,0 +1,305 @@
+{
+  "overall_source_hash": "f60e27f7656c02b3d518c298ccb1be8a33550e532a14051fd0575e029ebda168",
+  "files": [
+    {
+      "path": "__init__.py",
+      "size_bytes": 7593,
+      "sha256": "8d47e64ab1803c51168de4cec18b54b7248ae571f8818d04c5e39e4a885ceaba"
+    },
+    {
+      "path": "_indexing.py",
+      "size_bytes": 896,
+      "sha256": "feb4358861a558abbec58356773d075329e1227b88cabe0cde233a7dabc6ebca"
+    },
+    {
+      "path": "adaptive.py",
+      "size_bytes": 11187,
+      "sha256": "6d74e25a622c54a3cf0bbbead01773c72cbc47e705f2563f92fa8df7d2aa0983"
+    },
+    {
+      "path": "audit/__init__.py",
+      "size_bytes": 1506,
+      "sha256": "aa3ff64116e57784f2a5cf6a6c31a4388d3761128cd6a2fc8390fddea5e3355d"
+    },
+    {
+      "path": "audit/claim_checker.py",
+      "size_bytes": 3738,
+      "sha256": "81723e05c60baec800e56b2c8ae49ce036d0e06217e8d8bff5e4b1fbb8511499"
+    },
+    {
+      "path": "audit/evidence_bundle.py",
+      "size_bytes": 4923,
+      "sha256": "3d1cb491d5be588cf549346dd89cce74922b740cc31cf469efee9a19533706bf"
+    },
+    {
+      "path": "audit/metrics.py",
+      "size_bytes": 1716,
+      "sha256": "abbf60c8d10ac43128901ad09338d2522c23e68995cc8e2a1f75e881e53885b7"
+    },
+    {
+      "path": "audit/preregistration.py",
+      "size_bytes": 2475,
+      "sha256": "749b0bc50d7cc5992943b90969b5b2751cff52c02d04ce7b743a3778624c2eef"
+    },
+    {
+      "path": "audit/recompute.py",
+      "size_bytes": 3588,
+      "sha256": "40f452d4f509568e3865b1c7fee4fd58107bda56d8beef5266aa012a15e72b1c"
+    },
+    {
+      "path": "audit/run_identity.py",
+      "size_bytes": 5378,
+      "sha256": "c93f6a1635898f55b6fc6e87bd4d501ca6288ed53a8eb3ef6d365d0f216d0745"
+    },
+    {
+      "path": "audit/static_scanner.py",
+      "size_bytes": 2012,
+      "sha256": "4759d4042df5bdb1d628620f7b082c0ace21f9a142a9ee523bc689be89c90c0c"
+    },
+    {
+      "path": "boundary_conditions.py",
+      "size_bytes": 19382,
+      "sha256": "d7385843f6a4c07024deb798a13778f0d095541ccb82f1d32306906a3faba297"
+    },
+    {
+      "path": "config.py",
+      "size_bytes": 11244,
+      "sha256": "551877301a714f19120cb07b3b9b6af07d59bfb7989f869df002c1d0fdeb1860"
+    },
+    {
+      "path": "convection.py",
+      "size_bytes": 14028,
+      "sha256": "3ea83060de0655f689af1ee7576b184fb0f0be1ec34a18be96557a74e04b5cdc"
+    },
+    {
+      "path": "corrections.py",
+      "size_bytes": 352,
+      "sha256": "cfcebaf83d97c0a81b70f85334cae6885d0e4b89631586b0bef36a04ca358fb4"
+    },
+    {
+      "path": "decaying_turbulence.py",
+      "size_bytes": 4456,
+      "sha256": "0b7351f1b5ddca9762eb29650c56d6a4d9e96daad07114e8c2147cd718588528"
+    },
+    {
+      "path": "diffusion.py",
+      "size_bytes": 29835,
+      "sha256": "7cd022650c8f237fe1d24230f55db352ac0b898fe97ef51017321fc61a978803"
+    },
+    {
+      "path": "experimental/__init__.py",
+      "size_bytes": 362,
+      "sha256": "c9fe6c403674e9996e9d08995b4a25bccb4d6f365cd950b9316b043fd924b6c1"
+    },
+    {
+      "path": "experimental/ramanujan_correction.py",
+      "size_bytes": 9590,
+      "sha256": "40335e5f470f2522ed2b8b448ae47a34ed69809f79330a4b90e38ceb262df57f"
+    },
+    {
+      "path": "fields.py",
+      "size_bytes": 9573,
+      "sha256": "10c2618935dac5ff8c91b637e68547a78382271ed933011e351c5107cc93f09a"
+    },
+    {
+      "path": "filtering.py",
+      "size_bytes": 12070,
+      "sha256": "869422de9f431688d66b64ad31dd76767fb2f92c2e1f031c746467dd492ab8b1"
+    },
+    {
+      "path": "linear_solvers.py",
+      "size_bytes": 11893,
+      "sha256": "20efcbbecb71d61ae1ad4c041d2266b72cd83a84c865a62292faf94e96818ccb"
+    },
+    {
+      "path": "memory.py",
+      "size_bytes": 7845,
+      "sha256": "a2a1d55db11310a621448131f3f93f17e85b6b44e33ee611ccfd3001a983909d"
+    },
+    {
+      "path": "mesh.py",
+      "size_bytes": 4817,
+      "sha256": "4e4e8208e9611cc468d2cc3d69764feef4f8d83a22a895f6924f6d3463f03322"
+    },
+    {
+      "path": "operators.py",
+      "size_bytes": 10925,
+      "sha256": "b209c9667292563ad5980e0f74a1354da4bf4c702ab78e1ac0d3002562aa845c"
+    },
+    {
+      "path": "pressure.py",
+      "size_bytes": 29536,
+      "sha256": "f7aeaa2fa359346cdb940e0d0f8248fd050fafbd4b798643c79e7768b51c82de"
+    },
+    {
+      "path": "profiling.py",
+      "size_bytes": 3127,
+      "sha256": "f0a3cb904e02b9e78cde98e62ef796938e6bc28e1d6a75f77ecc464d60758c92"
+    },
+    {
+      "path": "projection.py",
+      "size_bytes": 28574,
+      "sha256": "c3a417fd4897a690989618dad3f9d35a5468ac5d3e66c24e21592916c81e5353"
+    },
+    {
+      "path": "ramanujan_diagnostics.py",
+      "size_bytes": 9624,
+      "sha256": "4cb165c76938e1a6e94dc468049ae8d3563de677f8d06ddb236782127dc7065f"
+    },
+    {
+      "path": "reduced/__init__.py",
+      "size_bytes": 5518,
+      "sha256": "4d47d9d59e87984947709e6336d720e5baaf19b08eb8881f45356264149d23ff"
+    },
+    {
+      "path": "reduced/adaptive_fourier_basis.py",
+      "size_bytes": 2992,
+      "sha256": "3b45e4298fc56a17d8f8144c05172f81996da714b5efb516ec0edac881f2212e"
+    },
+    {
+      "path": "reduced/adaptive_rom.py",
+      "size_bytes": 6593,
+      "sha256": "5ba6b424d094ffdfe81537209ce490908c94ebc47789290cf1cb6549659c93d3"
+    },
+    {
+      "path": "reduced/clustered_pod_basis.py",
+      "size_bytes": 2906,
+      "sha256": "2d93de1958e3db7fc6300d1721eb1179990bfe547eb482a2540793f9abf2ff4b"
+    },
+    {
+      "path": "reduced/discrete_galerkin.py",
+      "size_bytes": 3408,
+      "sha256": "b1bff2776872c7a5d59c85e4d58fcdb7ca212c48c789a647f5233f22d494ef43"
+    },
+    {
+      "path": "reduced/integrating_factor_integrator.py",
+      "size_bytes": 3168,
+      "sha256": "1cb1ce6f5c199d3f40c8fb981ecbd145536b4d3a590033dc821ed015c45c4cf9"
+    },
+    {
+      "path": "reduced/modal_closure.py",
+      "size_bytes": 2709,
+      "sha256": "d5aaa3a40c18d7f89c17140bfc2e7532edbbcec6242e96d2b92e6c1787f5ed2d"
+    },
+    {
+      "path": "reduced/modal_integrator.py",
+      "size_bytes": 5725,
+      "sha256": "f2e280e897806398c239c5349d18ccf4b49958deabdf3fdacefebeb0ed237177"
+    },
+    {
+      "path": "reduced/modal_tensor.py",
+      "size_bytes": 7092,
+      "sha256": "886356bd9b9ba7e93355031f1a109cb10a0172efd918d4a96e1ce34a6fd0860e"
+    },
+    {
+      "path": "reduced/pod_ensemble.py",
+      "size_bytes": 5513,
+      "sha256": "94952deddd034dd6820288da1d79603d69f96be2250d26d84f93265c0c6be153"
+    },
+    {
+      "path": "reduced/solenoidal_basis.py",
+      "size_bytes": 18016,
+      "sha256": "0ca32fc56c065e01f02641d3f3836af733fda888f9aac9c1864636f44c8783d2"
+    },
+    {
+      "path": "reduced/sparse_triad_engine.py",
+      "size_bytes": 6887,
+      "sha256": "df63fab86c27d6d3685516f9f95a917d39813753137c77ccf976e24c6740037b"
+    },
+    {
+      "path": "reduced/spectral_analysis.py",
+      "size_bytes": 2894,
+      "sha256": "f62099408b13c71184b231e6fca4db455d07e1523836d67fe14d16c095764bb9"
+    },
+    {
+      "path": "reduced/stokes_eigenbasis.py",
+      "size_bytes": 8662,
+      "sha256": "193aae30625e0c071eb24c42bfa6a71a19f59a8fb3c0f0f57896bcc0dbccf00a"
+    },
+    {
+      "path": "reduced/w10_multi_coordinate.py",
+      "size_bytes": 26442,
+      "sha256": "4c63a0181f6c4238342f8908fc82e5b90434d7462a01ffbd909f968bd45eebc5"
+    },
+    {
+      "path": "reduced/w11_multi_basis.py",
+      "size_bytes": 23481,
+      "sha256": "27ea8b937918725f3e4d32729d5c7b33582b5cd6333b1a626b35f23d59d8b7a4"
+    },
+    {
+      "path": "reduced/w12_anisotropic_study.py",
+      "size_bytes": 25146,
+      "sha256": "6e8d7f6c103992105c665127d5844995daccc83688b44a71631e2872a18894d1"
+    },
+    {
+      "path": "reduced/w2_diagnostics.py",
+      "size_bytes": 11942,
+      "sha256": "aee6d49fea0add339ca14a57da65abf77d413985ff3183883575568e5e457e0d"
+    },
+    {
+      "path": "reduced/w3_generalization.py",
+      "size_bytes": 8293,
+      "sha256": "c633fc968010507405113f65e00e7f76f2155376bce49d157fcdcb4b33a282ea"
+    },
+    {
+      "path": "reduced/w4_diagnostics.py",
+      "size_bytes": 5994,
+      "sha256": "2ab1e017e3f2b32c2430ba3cf13f384e6da251090ddf3860abcb334a03df9950"
+    },
+    {
+      "path": "reduced/w5_optimization.py",
+      "size_bytes": 5609,
+      "sha256": "01b62c1a84f9480a3a8a5fa006374a3e46526834488d5019b39b049da2c6d4a3"
+    },
+    {
+      "path": "reduced/w6_validation.py",
+      "size_bytes": 8936,
+      "sha256": "72f7f5d06be59ae6ab471bc828ce1acb04c05996da7a9bb3e8bc088cde2173a6"
+    },
+    {
+      "path": "reduced/w7_hybrid_ablation.py",
+      "size_bytes": 10141,
+      "sha256": "a40fb6e8b8a8f2c0324996603a189dc592a84fd1e0b6c2996986500323b3f866"
+    },
+    {
+      "path": "reduced/w8_stokes_rom.py",
+      "size_bytes": 8081,
+      "sha256": "b1455dad70f00a9fe2c62e8a6cda78699ab1471f8c2b6260dff0893c518399dd"
+    },
+    {
+      "path": "reduced/w9_wall_eigenmodes.py",
+      "size_bytes": 8295,
+      "sha256": "22f7cc4c831b1839b32466460f447c7563852a1ef08eae751dc6e4b732865a87"
+    },
+    {
+      "path": "sgs_apriori.py",
+      "size_bytes": 13973,
+      "sha256": "6053f078d74af6342d6718bef4a1a40b27923d2123dd7848f3714af98b5ff598"
+    },
+    {
+      "path": "spectrum.py",
+      "size_bytes": 3572,
+      "sha256": "87325f3ab8d889b050970654dd71967ee760589ac16e422908119d14ea25968a"
+    },
+    {
+      "path": "strain.py",
+      "size_bytes": 5306,
+      "sha256": "2bcae849c6de432e232d567f7001ceaea3cf45649a44bb866067d6fe9a65c266"
+    },
+    {
+      "path": "time_integrators.py",
+      "size_bytes": 45774,
+      "sha256": "3815feebaf6b7c33358ae720e89e38829afe3281561d771d2f2bcc84ff3ec014"
+    },
+    {
+      "path": "turbulence.py",
+      "size_bytes": 26389,
+      "sha256": "db4a932e001e841be6f8f7c877f640bb56024e7329f91df76b5127c0a6966d4e"
+    },
+    {
+      "path": "variable_diffusion.py",
+      "size_bytes": 11777,
+      "sha256": "809d7904b7dac631b3e79da59b7937dcb41a850e665790e3f809b11053d673a2"
+    }
+  ]
+}

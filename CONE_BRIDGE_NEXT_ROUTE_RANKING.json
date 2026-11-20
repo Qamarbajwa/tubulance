@@ -1,0 +1,28 @@
+{
+  "rankings": [
+    {
+      "rank": 1,
+      "route": "Branch B (High-Vorticity Time-Slice Pairwise Extension)",
+      "score": 9.6,
+      "status": "HIGHEST_INFORMATION_GAIN"
+    },
+    {
+      "rank": 2,
+      "route": "Branch C (Multi-Structure Localized Flux Theorem)",
+      "score": 9.1,
+      "status": "SECONDARY_BACKUP"
+    },
+    {
+      "rank": 3,
+      "route": "Branch A (Existing Exact Corollary)",
+      "score": 7.5,
+      "status": "RESTRICTED_TO_HIGH_THRESHOLD"
+    },
+    {
+      "rank": 4,
+      "route": "Branch D (Bounded Rotation Axis)",
+      "score": 6.8,
+      "status": "AUXILIARY_ONLY"
+    }
+  ]
+}

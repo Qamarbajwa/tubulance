@@ -1,0 +1,8 @@
+{
+  "ledger_version": "1.0",
+  "program": "AUTONOMOUS_TH9_PROGRAM",
+  "falsified_hypotheses": [
+    "Universal Static Depletion: lambda_omega <= (1-delta) lambda_3 (FALSIFIED in TH8).",
+    "Sustained Near-Maximal Stretching: lambda_omega/lambda_3 > 0.90 can persist indefinitely (FALSIFIED: Max lifetime bounded below 1.5 strain times)."
+  ]
+}

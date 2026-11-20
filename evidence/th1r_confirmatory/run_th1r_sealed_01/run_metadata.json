@@ -1,0 +1,9 @@
+{
+  "run_id": "RUN_TH1R_CONFIRMATORY_01",
+  "timestamp_utc": "2026-08-15T20:02:07.868372+00:00",
+  "duration_sec": 58.83533573150635,
+  "n_independent_flows": 5,
+  "n_flow_families": 3,
+  "n_objects_total": 320,
+  "governance": "SEALED_CONFIRMATORY_EXECUTION"
+}

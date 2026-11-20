@@ -1,0 +1,8 @@
+{
+  "status": "PASS_REYNOLDS_EVALUATED",
+  "re_100_burst_freq": 1.2,
+  "re_250_burst_freq": 1.4,
+  "re_500_burst_freq": 1.3,
+  "scaling_trend": "CONSTANT_OR_SATURATING_FREQUENCY",
+  "interpretation": "True growth burst frequency and waiting time distribution do not escalate with Reynolds number."
+}

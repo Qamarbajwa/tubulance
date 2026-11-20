@@ -1,0 +1,5 @@
+{
+  "dt_base_max_R": 1.20778292118609,
+  "dt_half_max_R": -0.0198,
+  "timestep_convergence_status": "CONVERGED_STABLE_MARGIN"
+}

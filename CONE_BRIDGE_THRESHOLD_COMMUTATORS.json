@@ -1,0 +1,4 @@
+{
+  "commutator_term": "div(chi_M(q) omega) = chi_M'(q) (grad q . omega) = chi_M'(q) q (grad q . xi)",
+  "property": "Because omega . grad q = 0 along vortex lines in 2D sheets and along tube axes, the commutator grad q . omega is geometrically depleted in coherent vortex structures!"
+}

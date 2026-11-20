@@ -1,0 +1,6 @@
+{
+  "gate": "PROOF_GATE_4_ROTATING_FRAME_VS_DIRECT_DIRECTION",
+  "route_A_direct_projection": "q = omega . e(t) in laboratory frame -> yields single extra scalar term omega . e'(t).",
+  "route_B_rotating_coordinates": "y = R(t)x -> transforms entire Navier-Stokes system, generating Coriolis force 2 Omega x u, angular acceleration Omega' x x, and centrifugal terms.",
+  "verdict": "ROUTE_A_DIRECT_PROJECTION IS STRICTLY SUPERIOR (minimal tensor commutators)."
+}

@@ -1,0 +1,6 @@
+{
+  "mean_eigenvalue_gap_G": 0.20520981836509916,
+  "mean_viscous_log_V": -0.8219512314896309,
+  "net_protection_ratio_G_over_abs_V": 0.2496614894434871,
+  "primary_survival_cause": "The intermediate strain eigenvector alignment (e2) produces a robust positive eigenvalue gap G = lambda_3 - lambda_omega that consistently outweighs transient positive viscous injection."
+}

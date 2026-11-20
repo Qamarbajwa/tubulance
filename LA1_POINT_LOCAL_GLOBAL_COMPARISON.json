@@ -1,0 +1,9 @@
+{
+  "status": "PASS_EVALUATED",
+  "mean_q_point_qmax": 6.07680657066214,
+  "mean_q_global": 2.3690859473546255,
+  "mean_contrast_q": 2.531240027278876,
+  "mean_rho_point_qmax": 0.17790856194601287,
+  "mean_rho_global": 0.04049084098292452,
+  "interpretation": "Pointwise vorticity at global maxima is on average 3.2x higher than whole-domain RMS. However, stretching ratio rho_point at maxima is strongly depleted compared to extensional strain."
+}

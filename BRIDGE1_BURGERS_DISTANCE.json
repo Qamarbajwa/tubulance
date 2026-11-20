@@ -1,0 +1,5 @@
+{
+  "mean_d_Burgers_all": 0.19651621569669875,
+  "mean_d_Burgers_tube_subsequence": 0.0,
+  "convergence_status": "CONVERGES_ON_TUBE_SUBSEQUENCES"
+}

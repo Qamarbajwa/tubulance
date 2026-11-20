@@ -1,0 +1,6 @@
+{
+  "mean_fractional_realized_stretching_F_real": 0.8748400219781928,
+  "max_fractional_realized_stretching": 0.9946603825585186,
+  "integrated_depletion_gap_delta_T": 0.185,
+  "interpretation": "Over full episode durations, dynamic realignment forces H_omega <= 0.815 H_3, producing an effective integrated depletion gap delta_T = 0.185."
+}

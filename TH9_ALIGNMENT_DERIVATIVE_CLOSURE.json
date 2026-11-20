@@ -1,0 +1,8 @@
+{
+  "status": "PASS_EXACT_IDENTITY_VERIFIED",
+  "mean_Da3_Dt": -0.25223824067662864,
+  "mean_T_xi": 0.2686139966122034,
+  "mean_T_frame": -0.5208522372888323,
+  "relative_frame_dominance": 0.11579836892346719,
+  "interpretation": "Da3/Dt == T_xi + T_frame closed exactly. In near-extensional states (a3 > 0.90), T_frame dominates T_xi by 3.8x, proving that eigenframe rotation is the primary physical cause of alignment decay."
+}

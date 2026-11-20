@@ -1,0 +1,36 @@
+{
+  "timestamp_utc": "2026-08-15T04:28:00Z",
+  "files": [
+    {
+      "path": "src/navier3d/experimental/lagrangian_tracking.py",
+      "sha256": "629ce085412f88d94c6ea4aaf855d7405ad6092c2305e3c7e67b50b872874fb8",
+      "size_bytes": 11956
+    },
+    {
+      "path": "src/navier3d/experimental/geometry_features.py",
+      "sha256": "09e23402f2baee711f92c21681c1c0e78940951f077656023075c691f52a00a0",
+      "size_bytes": 12630
+    },
+    {
+      "path": "src/navier3d/experimental/th1_targets_and_models.py",
+      "sha256": "5dbbdcfa2f4391bb79d769943708ee3b02cc658f31a96c4b308f4dc1914573b7",
+      "size_bytes": 10866
+    },
+    {
+      "path": "src/navier3d/experimental/th1_suite.py",
+      "sha256": "f3651e384f73f55bdbd839404dec70bb2c0a08a3ec97676f4b0e1e34b0cf5ca1",
+      "size_bytes": 16942
+    },
+    {
+      "path": "scripts/run_th1_falsification_suite.py",
+      "sha256": "a97ae9d023547fa1207c7387dbba2293d7cd4b3363e3b5585335996b32678972",
+      "size_bytes": 1150
+    },
+    {
+      "path": "tests/test_th1_falsification.py",
+      "sha256": "c819fb35d4666aa31673593c1c340d61e12f1fcbac74fc40d9be6fcdfefe1f3b",
+      "size_bytes": 6919
+    }
+  ],
+  "overall_hash": "068ae69db61f60f87f2b7406d20e7802a09f042704710fee4a3a85195b79e7d5"
+}

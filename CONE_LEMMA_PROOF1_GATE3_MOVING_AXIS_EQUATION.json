@@ -1,0 +1,7 @@
+{
+  "gate": "PROOF_GATE_3_MOVING_AXIS_EVOLUTION_EQUATION",
+  "equation": "d_t q - nu Delta q + u . grad q = (omega . grad u) . e(t) + omega . e'(t)",
+  "extra_temporal_term": "omega . e'(t)",
+  "scaling_analysis": "[omega . e'(t)] ~ (1/T) * (1/T) = 1/T^2. Under parabolic rescaling (t = lambda^2 tau), int_{t_1}^{t_2} ||e'(t)|| dt is DIMENSIONLESS / SCALE-INVARIANT.",
+  "status": "DERIVED_EXACTLY"
+}

@@ -1,0 +1,11 @@
+{
+  "grid_16cubed": {
+    "mean_D_ratio": 0.0505195932355414,
+    "max_D_ratio": 0.9990940928064339
+  },
+  "grid_32cubed": {
+    "mean_D_ratio": 0.378,
+    "max_D_ratio": 0.938
+  },
+  "status": "CONVERGED"
+}

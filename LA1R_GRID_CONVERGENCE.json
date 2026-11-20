@@ -1,0 +1,4 @@
+{
+  "grid_scaling": "R_coh ~ 1.1 dx across 16^3 and 32^3 grids",
+  "verdict": "GRID_LOCKED"
+}

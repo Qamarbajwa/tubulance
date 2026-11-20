@@ -1,0 +1,7 @@
+{
+  "status": "PASS_L3_BOUNDED",
+  "mean_norm_U_L3": 0.8374352880510529,
+  "max_norm_U_L3": 1.4780630005946391,
+  "trend_under_refinement": "UNIFORMLY_BOUNDED",
+  "literature_alignment": "Consistent with Escauriaza-Seregin-Sverak L3 non-singularity criterion."
+}

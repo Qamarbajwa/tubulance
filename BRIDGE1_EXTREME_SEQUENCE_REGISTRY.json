@@ -1,0 +1,10 @@
+{
+  "total_evaluated_events": 104,
+  "sequence_breakdown": {
+    "GLOBAL_QMAX": 32,
+    "NEAR_QMAX": 32,
+    "STRONG_LAMBDA_OMEGA": 32,
+    "ADVERSARIAL_SHEET": 4,
+    "ADVERSARIAL_TUBE": 4
+  }
+}

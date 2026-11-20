@@ -1,0 +1,4 @@
+{
+  "finding": "MOVING_TIME_AXIS_ALREADY_PARTIALLY_HANDLED",
+  "explanation": "Corollary 1.6 already uses a time-dependent axis e(t) independently at each time slice. Spatial flux estimates do NOT differentiate e(t) in time!"
+}

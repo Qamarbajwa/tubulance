@@ -1,0 +1,12 @@
+{
+  "classification": "ORDERED-HISTORY SUPPORT",
+  "decision_effects": {
+    "memory_effect_M": 0.04454691050598403,
+    "memory_effect_p2": -0.032622530361561375,
+    "connectivity_effect_C": -0.06696710725647614,
+    "multidirection_effect_B": -0.11627263230318652,
+    "geometry_over_physics_G": -0.026817743839317343,
+    "location_effect_L": -0.01694975982174418
+  },
+  "verdict": "SUPPORTED"
+}

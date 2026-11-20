@@ -1,0 +1,5 @@
+{
+  "qmax_acceleration_episodes": 12,
+  "stretching_status_during_acceleration": "TERMINATES_BEFORE_PEAK",
+  "interpretation": "In 100% of cases where q_max was accelerating, eigenframe rotation terminated the rho > 0.90 stretching episode BEFORE maximum vorticity reached its peak."
+}

@@ -1,0 +1,5 @@
+{
+  "mean_T_ancient_horizon": 0.9634944272538336,
+  "is_diverging_to_infinity": false,
+  "ruling": "FINITE_ANCIENT_HORIZON: Sequence is bounded in physical time; limit is formally local space-time, not unconstrained ancient solution."
+}

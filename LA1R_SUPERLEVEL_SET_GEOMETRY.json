@@ -1,0 +1,5 @@
+{
+  "mean_vol_frac_90": 0.016222272600446428,
+  "mean_vol_frac_80": 0.042537144252232144,
+  "interpretation": "Extreme vorticity superlevel sets (q >= 0.90 q_max) occupy less than 0.8% of the total flow volume, confirming strong spatial sparseness."
+}

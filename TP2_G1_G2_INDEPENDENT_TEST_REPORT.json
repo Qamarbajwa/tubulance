@@ -1,0 +1,66 @@
+{
+  "audit_scope": "TP2-G1 and TP2-G2 Independent Verification Test Suite",
+  "governance_risk_tier": "T4",
+  "base_commit_sha": "2e9a4fb5dd6ddc5ec377328f9387c16acab1fe5f",
+  "test_suites": [
+    {
+      "file": "tests/test_tp2_g1_g2_suite.py",
+      "tests": [
+        {
+          "name": "test_tp2_g1_curl_pullback_identity",
+          "status": "PASSED",
+          "type": "symbolic_calculus_rational"
+        },
+        {
+          "name": "test_tp2_g1_matrix_inverse_transpose_relations",
+          "status": "PASSED",
+          "type": "sl3_matrix_algebra"
+        },
+        {
+          "name": "test_tp2_g2_exact_variance_identity_and_bounds",
+          "status": "PASSED",
+          "type": "statistical_monte_carlo"
+        },
+        {
+          "name": "test_tp2_adversarial_cases",
+          "status": "PASSED",
+          "type": "adversarial_stress_cases_A_B_D_E_F"
+        },
+        {
+          "name": "test_tp2_g2_symbolic_scaling_audit",
+          "status": "PASSED",
+          "type": "parabolic_scaling_exponents"
+        }
+      ]
+    },
+    {
+      "file": "tests/test_tp2_independent_verification.py",
+      "tests": [
+        {
+          "name": "test_independent_curl_cofactor_identity_general",
+          "status": "PASSED",
+          "type": "general_anisotropic_diff_3d"
+        },
+        {
+          "name": "test_independent_matrix_order_and_inverses",
+          "status": "PASSED",
+          "type": "non_commuting_matrix_algebra"
+        },
+        {
+          "name": "test_independent_adversarial_cases_A_through_F",
+          "status": "PASSED",
+          "type": "explicit_adversarial_isolation"
+        },
+        {
+          "name": "test_independent_scaling_exponents_complete",
+          "status": "PASSED",
+          "type": "scratch_scaling_exponents_audit"
+        }
+      ]
+    }
+  ],
+  "total_tests": 9,
+  "passed": 9,
+  "failed": 0,
+  "overall_verdict": "ALL_TESTS_PASSED"
+}

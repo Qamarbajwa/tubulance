@@ -1,0 +1,49 @@
+{
+  "flows": [
+    {
+      "flow_id": "flow_iso_seed101",
+      "family": "isotropic",
+      "tier": "G1",
+      "re": 100.0,
+      "grid": 16,
+      "n_samples": 64,
+      "prevalence": 0.25
+    },
+    {
+      "flow_id": "flow_iso_seed102",
+      "family": "isotropic",
+      "tier": "G1",
+      "re": 100.0,
+      "grid": 16,
+      "n_samples": 64,
+      "prevalence": 0.25
+    },
+    {
+      "flow_id": "flow_iso_seed103",
+      "family": "isotropic",
+      "tier": "G1",
+      "re": 100.0,
+      "grid": 16,
+      "n_samples": 64,
+      "prevalence": 0.21875
+    },
+    {
+      "flow_id": "flow_tg_benchmark",
+      "family": "taylor_green",
+      "tier": "G3",
+      "re": 100.0,
+      "grid": 16,
+      "n_samples": 64,
+      "prevalence": 0.359375
+    },
+    {
+      "flow_id": "flow_shear_layer",
+      "family": "shear_layer",
+      "tier": "G3",
+      "re": 100.0,
+      "grid": 16,
+      "n_samples": 64,
+      "prevalence": 0.21875
+    }
+  ]
+}

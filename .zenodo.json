@@ -1,10 +1,10 @@
 {
   "title": "Unified Rosetta System: Cl(3,0) Helical Schur Isolation, Win-Win SO(3) Cocycle Arch, 7 Worldwide Domains, and 4-Workspace Proof Bridges",
-  "description": "Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean 4 for 3D Navier-Stokes (Cl(3,0) helical Schur isolation, Monge-Ampere 2/3 strain wall, Two-Rosetta Win-Win Arch, NS1-NS2 enstrophy closure) and the 7 worldwide domains (Beltrami MHD, d=4 Weyl curvature, RMT GUE vs. GOE, Kasteleyn 2D vs. 3D, BSD Sha(E) Pfaffian square, Kitaev Majorana, and Chern-Simons anyons). In this work, ai is being used as a tool by Arqam (Brandenburg University of Technology Cottbus-Senftenberg).",
+  "description": "Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean 4 for 3D Navier-Stokes (Cl(3,0) helical Schur isolation, Monge-Ampere 2/3 strain wall, Two-Rosetta Win-Win Arch, NS1-NS2 enstrophy closure) and the 7 worldwide domains (Beltrami MHD, d=4 Weyl curvature, RMT GUE vs. GOE, Kasteleyn 2D vs. 3D, BSD Sha(E) Pfaffian square, Kitaev Majorana, and Chern-Simons anyons). In this work, ai is being used as a tool by Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg).",
   "creators": [
     {
-      "name": "Munawer, Qamar",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
     }
   ],
   "upload_type": "software",

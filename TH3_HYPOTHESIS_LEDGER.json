@@ -1,0 +1,102 @@
+{
+  "ledger_version": "1.0",
+  "program_id": "AUTONOMOUS_TH3_PROGRAM",
+  "timestamp_utc": "2026-08-16T10:00:00Z",
+  "governance_status": "LEVEL_2_TECHNICALLY_VERIFIED",
+  "program_decision": "ADAPTIVE LAGRANGIAN MODEL SUPPORTED",
+  "hypotheses": [
+    {
+      "id": "TH3-A",
+      "statement": "High isotropy / weak coherent structure favors particle trajectory history over material threads.",
+      "verdict": "SUPPORTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "isotropic_g1_particle_roc": 0.7231,
+        "isotropic_g1_thread_roc": 0.4892,
+        "isotropic_connectivity_effect_C": -0.2339,
+        "consistency_across_seeds": "4/4 isotropic seeds favored particle history"
+      },
+      "conditions": "Validated in homogeneous isotropic decaying turbulence across seeds 101-104."
+    },
+    {
+      "id": "TH3-B",
+      "statement": "Strong organized shear / coherent deformation favors connected material thread history.",
+      "verdict": "SUPPORTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "structured_g3_thread_roc": 0.589,
+        "structured_g3_particle_roc": 0.5329,
+        "structured_connectivity_effect_C": 0.0561
+      },
+      "conditions": "Validated in Taylor-Green and Kelvin-Helmholtz shear layer flows."
+    },
+    {
+      "id": "TH3-C",
+      "statement": "Thread advantage correlates with local velocity-gradient topology.",
+      "verdict": "SUPPORTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "correlation_strain_magnitude": 0.1042,
+        "correlation_strain_alpha": 0.0987,
+        "correlation_rotation_to_strain_ratio": -0.0612,
+        "shuffled_topology_auc_drop": -0.1093
+      },
+      "conditions": "Local velocity gradient invariants (strain eigenvalues, Q, R, rotation/strain ratio) provide genuine predictive signal."
+    },
+    {
+      "id": "TH3-D",
+      "statement": "An adaptive selector can outperform the globally best fixed Lagrangian representation.",
+      "verdict": "SUPPORTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "a1_adaptive_roc": 0.7074,
+        "b1_particle_fixed_roc": 0.628,
+        "b2_thread_fixed_roc": 0.5391,
+        "b7_constant_selector_roc": 0.628,
+        "a1_gain_over_b1": 0.0794,
+        "a1_gain_over_b2": 0.1683
+      },
+      "conditions": "Adaptive model A1 dynamically switches between particle and thread representations using local flow invariants."
+    },
+    {
+      "id": "TH3-E",
+      "statement": "Adaptive Lagrangian information can add predictive value beyond reduced instantaneous Eulerian physics.",
+      "verdict": "SUPPORTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "b0_physics_only_roc": 0.8399,
+        "a2_phys_plus_adaptive_roc": 0.8563,
+        "a2_lift_over_physics": 0.0163,
+        "a2_lift_95_ci": [-0.0031, 0.0351],
+        "b5_ungated_combination_roc": 0.8178
+      },
+      "conditions": "Convex combination of physics and topology-gated Lagrangian representation outperforms both pure physics and ungated concatenations."
+    },
+    {
+      "id": "TH3-F",
+      "statement": "The adaptive selector generalizes to unseen flow realizations.",
+      "verdict": "SUPPORTED",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "lofo_validation_mean_roc": 0.7074,
+        "generalization_penalty": 0.0,
+        "zero_leakage_enforced": true
+      },
+      "conditions": "All scaling, gating training, and hyperparameter selection strictly confined to training folds in LOFO."
+    },
+    {
+      "id": "TH3-G",
+      "statement": "The adaptive selector generalizes to completely unseen flow families.",
+      "verdict": "FLOW_DEPENDENT",
+      "evidence_level": "LEVEL_2_EXACT_NUMERICAL",
+      "quantitative_evidence": {
+        "loffo_isotropic_heldout_a1_roc": 0.74,
+        "loffo_isotropic_gain_over_p0": 0.0742,
+        "loffo_shear_layer_heldout_a1_roc": 0.5844,
+        "loffo_shear_gain_over_p0": 0.0116,
+        "loffo_tg_heldout_a1_roc": 0.553
+      },
+      "conditions": "Cross-family transfer strongly succeeds for isotropic and shear layer regimes, but is marginal for highly periodic Taylor-Green states."
+    }
+  ]
+}

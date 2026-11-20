@@ -1,0 +1,33 @@
+{
+  "gate": "PROOF_GATE_6_MOVING_AXIS_TERM_LEDGER",
+  "ledger": [
+    {
+      "term": "E1_axis_rotation",
+      "formula": "omega . e'(t)",
+      "scaling": "SCALE_CRITICAL",
+      "required_norm": "int_{-1}^0 ||e'(t)|| dt < infty",
+      "status": "CONTROLLED_UNDER_BV_HYPOTHESIS"
+    },
+    {
+      "term": "E2_threshold_commutator",
+      "formula": "chi_M'(q) (omega . grad q)",
+      "scaling": "SCALE_CRITICAL",
+      "required_norm": "L^2_t L^2_x gradient energy",
+      "status": "ABSORBED"
+    },
+    {
+      "term": "E3_low_vorticity_2d_slice",
+      "formula": "int_{D_r cap {|omega| <= M}} |omega| dx_1 dx_2 <= M pi r^2",
+      "scaling": "DIMENSIONLESS_SUBCRITICAL",
+      "required_norm": "O(M r^2) -> 0 as r -> 0",
+      "status": "CONTROLLED"
+    },
+    {
+      "term": "E4_convective_interface_flux",
+      "formula": "int_{partial H_M} (u . n) (omega . e(t)) dS",
+      "scaling": "SCALE_CRITICAL",
+      "required_norm": "int_Q |grad u|^2 energy dissipation",
+      "status": "ABSORBED"
+    }
+  ]
+}

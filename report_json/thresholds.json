@@ -1,0 +1,58 @@
+{
+  "r20": {
+    "target": 0.2,
+    "Structured_r": "1152",
+    "Oracle_r": "NOT ACHIEVED IN TESTED RANGE",
+    "FrozenGlobal_r": "1152",
+    "G4_r": "1152",
+    "W13G_r": "NOT ACHIEVED IN TESTED RANGE"
+  },
+  "r15": {
+    "target": 0.15,
+    "Structured_r": "NOT ACHIEVED",
+    "Oracle_r": "NOT ACHIEVED IN TESTED RANGE",
+    "FrozenGlobal_r": "NOT ACHIEVED",
+    "G4_r": "NOT ACHIEVED",
+    "W13G_r": "NOT ACHIEVED IN TESTED RANGE"
+  },
+  "r10": {
+    "target": 0.1,
+    "Structured_r": "NOT ACHIEVED",
+    "Oracle_r": "NOT ACHIEVED IN TESTED RANGE",
+    "FrozenGlobal_r": "NOT ACHIEVED",
+    "G4_r": "NOT ACHIEVED",
+    "W13G_r": "NOT ACHIEVED IN TESTED RANGE"
+  },
+  "r7": {
+    "target": 0.075,
+    "Structured_r": "NOT ACHIEVED",
+    "Oracle_r": "NOT ACHIEVED IN TESTED RANGE",
+    "FrozenGlobal_r": "NOT ACHIEVED",
+    "G4_r": "NOT ACHIEVED",
+    "W13G_r": "NOT ACHIEVED IN TESTED RANGE"
+  },
+  "r5": {
+    "target": 0.05,
+    "Structured_r": "NOT ACHIEVED",
+    "Oracle_r": "NOT ACHIEVED IN TESTED RANGE",
+    "FrozenGlobal_r": "NOT ACHIEVED",
+    "G4_r": "NOT ACHIEVED",
+    "W13G_r": "NOT ACHIEVED IN TESTED RANGE"
+  },
+  "r002": {
+    "target": 0.02,
+    "Structured_r": "NOT ACHIEVED",
+    "Oracle_r": "NOT ACHIEVED IN TESTED RANGE",
+    "FrozenGlobal_r": "NOT ACHIEVED",
+    "G4_r": "NOT ACHIEVED",
+    "W13G_r": "NOT ACHIEVED IN TESTED RANGE"
+  },
+  "r001": {
+    "target": 0.01,
+    "Structured_r": "NOT ACHIEVED",
+    "Oracle_r": "NOT ACHIEVED IN TESTED RANGE",
+    "FrozenGlobal_r": "NOT ACHIEVED",
+    "G4_r": "NOT ACHIEVED",
+    "W13G_r": "NOT ACHIEVED IN TESTED RANGE"
+  }
+}

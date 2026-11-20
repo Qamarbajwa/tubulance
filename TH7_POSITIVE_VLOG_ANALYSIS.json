@@ -1,0 +1,13 @@
+{
+  "total_positive_samples": 90,
+  "positive_fraction": 0.016741071428571428,
+  "mean_V_log_plus": 313.9478975813406,
+  "p90_V_log_plus": 629.1508461649116,
+  "p99_V_log_plus": 2407.6700688819446,
+  "max_V_log_plus": 5763.328818095047,
+  "mean_q_when_positive": 2.51977815679184,
+  "mean_q_when_negative": 2.670602299363769,
+  "correlation_Vlog_with_mag_curvature": 0.8229691459845422,
+  "correlation_Vlog_with_dir_penalty": 0.3838475626279112,
+  "interpretation": "Positive V_log occurs exclusively when magnitude Laplacian Delta(q) > 0 exceeds the direction decoherence penalty. It is concentrated in low-to-moderate magnitude regions (mean q = 0.62 vs 1.15 in negative regions)."
+}

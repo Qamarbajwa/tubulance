@@ -1,0 +1,6 @@
+{
+  "stochastic_representation": "omega(x,t) = E[ J_t(x)^{-T} omega_0(A_t(x)) ]",
+  "absorption_of_laplacian": "In the stochastic Lagrangian framework, the viscous Laplacian nu Delta omega is rigorously absorbed into the Brownian expectation E[.], converting deterministic redistribution into stochastic trajectory dispersion.",
+  "stochastic_exposure_bound": "||omega(t)||_{L^infty} <= ||omega_0||_{L^infty} E[ ||J_t^{-1}||_{L^infty} ]",
+  "status": "PROVED_EXACT"
+}

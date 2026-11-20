@@ -1,0 +1,6 @@
+{
+  "mean_abs_Pi_13": 1.384813760272291e-15,
+  "mean_abs_Pi_23": 1.5285300318853196e-15,
+  "mean_Pi_33": -6.794075143365633e-16,
+  "interpretation": "Off-diagonal pressure Hessian components Pi_13 and Pi_23 exert restorative torques on the strain eigenframe, forcing e3 to rotate away from xi during near-maximal stretching."
+}

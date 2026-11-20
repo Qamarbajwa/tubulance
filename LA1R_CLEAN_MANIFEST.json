@@ -1,0 +1,224 @@
+{
+  "seal_id": "LA1R_PHYSICAL_SCALE_LOCALIZATION_SEAL_V1",
+  "timestamp_utc": "2026-08-17T15:20:00Z",
+  "governance_state": "SEALED_FROZEN_FOR_LA1R_PHYSICAL_SCALE_PROGRAM",
+  "git": {
+    "commit_sha": "2e9a4fb5dd6ddc5ec377328f9387c16acab1fe5f",
+    "status_file": "git_status.txt",
+    "status_sha256": "c423e5f8711b0addb755a181e32575aae128afb3057a2db73b2eac2b4ca5ea81",
+    "diff_file": "git_diff.patch",
+    "diff_sha256": "ecba54a70a3503b4028a2431d0446beeb87deaff36c917199d4543c6c8145beb"
+  },
+  "environment": {
+    "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy_version": "2.2.6",
+    "scipy_version": "1.17.0",
+    "sklearn_version": "1.9.0",
+    "os": "Windows-11-10.0.26200-SP0",
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel"
+  },
+  "scientific_config_sha256": "6f1e4be5a1fa5c5d23cb90bc865e8c59416f1200355b4f2ba362cc43ca6b8426",
+  "dependency_closure": [
+    {
+      "path": "src/navier3d/_indexing.py",
+      "size_bytes": 896,
+      "sha256": "feb4358861a558abbec58356773d075329e1227b88cabe0cde233a7dabc6ebca"
+    },
+    {
+      "path": "src/navier3d/boundary_conditions.py",
+      "size_bytes": 19382,
+      "sha256": "d7385843f6a4c07024deb798a13778f0d095541ccb82f1d32306906a3faba297"
+    },
+    {
+      "path": "src/navier3d/convection.py",
+      "size_bytes": 14028,
+      "sha256": "3ea83060de0655f689af1ee7576b184fb0f0be1ec34a18be96557a74e04b5cdc"
+    },
+    {
+      "path": "src/navier3d/decaying_turbulence.py",
+      "size_bytes": 4456,
+      "sha256": "0b7351f1b5ddca9762eb29650c56d6a4d9e96daad07114e8c2147cd718588528"
+    },
+    {
+      "path": "src/navier3d/diffusion.py",
+      "size_bytes": 29835,
+      "sha256": "7cd022650c8f237fe1d24230f55db352ac0b898fe97ef51017321fc61a978803"
+    },
+    {
+      "path": "src/navier3d/experimental/__init__.py",
+      "size_bytes": 362,
+      "sha256": "c9fe6c403674e9996e9d08995b4a25bccb4d6f365cd950b9316b043fd924b6c1"
+    },
+    {
+      "path": "src/navier3d/experimental/geometry_features.py",
+      "size_bytes": 13039,
+      "sha256": "a12746f76d4dd58885686decbd1ba0342f15814546a253f34d542b384e556f0d"
+    },
+    {
+      "path": "src/navier3d/experimental/la1_multiscale_math.py",
+      "size_bytes": 8326,
+      "sha256": "9dc2e793d80d610a3bff9829e082e03266739cfc6e1f44463eb28647646a54e4"
+    },
+    {
+      "path": "src/navier3d/experimental/la1r_physical_scale_math.py",
+      "size_bytes": 6013,
+      "sha256": "e9b8e20392ef6ea6230facdbb7c1d39ea9a55d23002c49e0bde8fae972c1b025"
+    },
+    {
+      "path": "src/navier3d/experimental/lagrangian_tracking.py",
+      "size_bytes": 12006,
+      "sha256": "2ab16df1ec33b22fa66112d5498a84e0874a0dedd1c3b623cc69bac5660d4972"
+    },
+    {
+      "path": "src/navier3d/experimental/th1_suite.py",
+      "size_bytes": 22077,
+      "sha256": "046ccf7df5601bbb73054f04e8249304447c3a9a77c8ca28d29a83f48ed9f481"
+    },
+    {
+      "path": "src/navier3d/experimental/th1_targets_and_models.py",
+      "size_bytes": 12940,
+      "sha256": "e3cc03d696c99937154f7773ae9f1a44133223a7eb3d7df7c77d8de838a3463c"
+    },
+    {
+      "path": "src/navier3d/experimental/th3_adaptive_models.py",
+      "size_bytes": 12812,
+      "sha256": "8609fd8f794c21507b5278b750d69ee78a11b2e657405564b4b30cbbf4d237bb"
+    },
+    {
+      "path": "src/navier3d/experimental/th3_topology_features.py",
+      "size_bytes": 6121,
+      "sha256": "563257eb9b93c6aaa1303dcb7ffd2f99f5507e7dfd879e6dae7302d823bba709"
+    },
+    {
+      "path": "src/navier3d/experimental/th4_stress_models.py",
+      "size_bytes": 15890,
+      "sha256": "be0a8bf9ec4a729637a7b4a2e7da62407bb7c291f9ab9b501743a9c759a54ad7"
+    },
+    {
+      "path": "src/navier3d/experimental/th5_vorticity_math.py",
+      "size_bytes": 10845,
+      "sha256": "9f8bab703882303b7d8d0f5688d3e8a33350a25f9f8d4f4da3c5439b56af1f81"
+    },
+    {
+      "path": "src/navier3d/experimental/th6_falsification_engine.py",
+      "size_bytes": 7481,
+      "sha256": "e7192a5c04f60986e7d7a28ab83981015e0df57ae23f318eb8a38ec172af8b0b"
+    },
+    {
+      "path": "src/navier3d/experimental/th7_viscous_influx_math.py",
+      "size_bytes": 5237,
+      "sha256": "b4784b5c03fe271adc859b08c20edb0a76a3fbb38f0fb50955b1d295a58661d7"
+    },
+    {
+      "path": "src/navier3d/experimental/th8_depletion_math.py",
+      "size_bytes": 5973,
+      "sha256": "4565a6fa7a34465050e0c2f18f6f740ec1c4778061ed53d259bc89f50fa0b5e4"
+    },
+    {
+      "path": "src/navier3d/experimental/th9_persistence_math.py",
+      "size_bytes": 8442,
+      "sha256": "4032d61ced2ed6a1f44cd6072dd8be0e3e2171300be3a7c2201172247bc52c69"
+    },
+    {
+      "path": "src/navier3d/experimental/th9r_direction_forensic.py",
+      "size_bytes": 7206,
+      "sha256": "e7966427cb209deda326a1a8fd5ea47bd991edec01fca35c39046c5cebc203cf"
+    },
+    {
+      "path": "src/navier3d/fields.py",
+      "size_bytes": 9573,
+      "sha256": "10c2618935dac5ff8c91b637e68547a78382271ed933011e351c5107cc93f09a"
+    },
+    {
+      "path": "src/navier3d/linear_solvers.py",
+      "size_bytes": 11893,
+      "sha256": "20efcbbecb71d61ae1ad4c041d2266b72cd83a84c865a62292faf94e96818ccb"
+    },
+    {
+      "path": "src/navier3d/mesh.py",
+      "size_bytes": 4817,
+      "sha256": "4e4e8208e9611cc468d2cc3d69764feef4f8d83a22a895f6924f6d3463f03322"
+    },
+    {
+      "path": "src/navier3d/operators.py",
+      "size_bytes": 10925,
+      "sha256": "b209c9667292563ad5980e0f74a1354da4bf4c702ab78e1ac0d3002562aa845c"
+    },
+    {
+      "path": "src/navier3d/pressure.py",
+      "size_bytes": 29536,
+      "sha256": "f7aeaa2fa359346cdb940e0d0f8248fd050fafbd4b798643c79e7768b51c82de"
+    },
+    {
+      "path": "src/navier3d/projection.py",
+      "size_bytes": 28574,
+      "sha256": "c3a417fd4897a690989618dad3f9d35a5468ac5d3e66c24e21592916c81e5353"
+    },
+    {
+      "path": "src/navier3d/strain.py",
+      "size_bytes": 5306,
+      "sha256": "2bcae849c6de432e232d567f7001ceaea3cf45649a44bb866067d6fe9a65c266"
+    },
+    {
+      "path": "src/navier3d/time_integrators.py",
+      "size_bytes": 45774,
+      "sha256": "3815feebaf6b7c33358ae720e89e38829afe3281561d771d2f2bcc84ff3ec014"
+    },
+    {
+      "path": "tests/test_la1_multiscale_suite.py",
+      "size_bytes": 1929,
+      "sha256": "d7f1b1e8aa1c5af2233ddeea05515c643e24310935b26aa82c0583b16171bfc0"
+    },
+    {
+      "path": "tests/test_la1r_physical_suite.py",
+      "size_bytes": 1125,
+      "sha256": "8a188477d160b771f2ff14eeed56e9292b339909c8793348d2eee78e4a9ca69e"
+    },
+    {
+      "path": "tests/test_th3_adaptive_suite.py",
+      "size_bytes": 3391,
+      "sha256": "573183367490346ba27ce18d5587f79c9eeaa6b17ff452ce7ad70f7b57d41710"
+    },
+    {
+      "path": "tests/test_th4_stress_suite.py",
+      "size_bytes": 2166,
+      "sha256": "84c0589dced0c126029b2e4e09a21543cda0a58d721705566ef21ffc9058913e"
+    },
+    {
+      "path": "tests/test_th5_vorticity_suite.py",
+      "size_bytes": 2558,
+      "sha256": "651e575cc7daaeabf52fac6d6f367ffb0b4d7bf75a63938c28b2b1254ae5b615"
+    },
+    {
+      "path": "tests/test_th6_falsification_suite.py",
+      "size_bytes": 1905,
+      "sha256": "0be21956e3367f7f9863ec2b7a8ffd124eae0ba687b994c36888c7ee54e9b94d"
+    },
+    {
+      "path": "tests/test_th7_viscous_suite.py",
+      "size_bytes": 2262,
+      "sha256": "6ec3a46543b70c26dccb2bf46736e7fd29b82f8ee14b8f8d39555e4c21369bd2"
+    },
+    {
+      "path": "tests/test_th8_depletion_suite.py",
+      "size_bytes": 1685,
+      "sha256": "f780744da54cb8daf0fdf7e853b709a1fc374632879f918d8b4123b2879b71b7"
+    },
+    {
+      "path": "tests/test_th9_persistence_suite.py",
+      "size_bytes": 2082,
+      "sha256": "d51bfeba7731f0bf79dd1bb0f0f3b2a7e2bc5d9130963713216f3213e1a104a0"
+    },
+    {
+      "path": "tests/test_th9r_forensic_suite.py",
+      "size_bytes": 2156,
+      "sha256": "0a15d4af320b3dbc630f7508a2bbc91295798804c7008aadcbb53a07a2948890"
+    },
+    {
+      "path": "th1r_scientific_config.json",
+      "size_bytes": 5265,
+      "sha256": "6f1e4be5a1fa5c5d23cb90bc865e8c59416f1200355b4f2ba362cc43ca6b8426"
+    }
+  ],
+  "overall_closure_merkle_hash": "20f2f1052b6c55ad9397b6c2f7c163a5bc22e82571aa6f9955d84348ebf2dfcf"
+}

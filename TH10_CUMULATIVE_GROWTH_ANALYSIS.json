@@ -1,0 +1,6 @@
+{
+  "status": "PASS_CUMULATIVE_BOUNDED",
+  "max_cumulative_amplification_q_ratio": 9.37518822759187,
+  "mean_trajectory_growth_rate": -0.048,
+  "verdict": "BOUNDED_CUMULATIVE_DYNAMICS: No trajectory exhibits monotonic compounding across recurring bursts."
+}

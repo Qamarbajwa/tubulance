@@ -1,0 +1,10 @@
+{
+  "open_set_partition": {
+    "TOWNSEND_LIKE": 0.8,
+    "BURGERS_LIKE": 0.2,
+    "MIXED": 0.0,
+    "UNKNOWN": 0.0,
+    "UNRESOLVED": 0.0
+  },
+  "audit_ruling": "The 80/20 partition is an empirical finding over tested generic initial conditions, not a mathematical exhaustion proof. The classification framework must remain OPEN-SET."
+}

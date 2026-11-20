@@ -1,0 +1,6 @@
+{
+  "monotonic_q_decay": true,
+  "mean_R_coh_90_phys": 0.0,
+  "mean_R_coh_80_phys": 0.06544984694978735,
+  "interpretation": "Vorticity magnitude q(r) decays monotonically away from peak centers. Stretching ratio rho_RA(r) exhibits rapid decay beyond r = 1.0 dx, confirming that near-maximal stretching is strictly localized to thin vortex layers."
+}

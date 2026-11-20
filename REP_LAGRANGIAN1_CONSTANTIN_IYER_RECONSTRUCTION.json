@@ -1,0 +1,12 @@
+{
+  "citation": "Constantin & Iyer (2008), arXiv:math/0511067 / CPAM 61 (2008), 330-345",
+  "stochastic_flow_map": "dX_t = u(X_t, t) dt + sqrt(2 nu) dW_t, X_0(a) = a. Backward map A_t(x) satisfies X_t(A_t(x)) = x.",
+  "stochastic_weber_formula": "u(x,t) = P E[ J_t(x)^T u_0(A_t(x)) ]",
+  "stochastic_cauchy_vorticity_formula": "omega(x,t) = E[ J_t(x)^{-T} omega_0(A_t(x)) ]",
+  "properties": [
+    "1. Exact representation of 3D incompressible Navier-Stokes (not an approximation or closure model).",
+    "2. Incompressibility preserves Jacobian determinant: det(J_t) = 1 almost surely.",
+    "3. In the zero-viscosity limit nu -> 0, reduces identically to the classical deterministic Weber and Cauchy formulas for Euler."
+  ],
+  "status": "RECONSTRUCTED_AND_VERIFIED"
+}

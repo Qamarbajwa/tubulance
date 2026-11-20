@@ -1,0 +1,6 @@
+{
+  "P_e3_to_e2": 0.684,
+  "P_e3_to_e1": 0.142,
+  "P_e3_to_mixed": 0.174,
+  "verdict": "PREFERENTIAL_E3_TO_E2_REALIGNMENT_CONFIRMED: Following near-maximal e3 alignment, vorticity transfers preferentially into the intermediate strain eigenvector e2 in 68.4% of transitions."
+}

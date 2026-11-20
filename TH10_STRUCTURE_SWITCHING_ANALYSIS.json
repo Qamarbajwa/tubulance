@@ -1,0 +1,8 @@
+{
+  "status": "PASS_STRUCTURE_SWITCHING_VALIDATED",
+  "fraction_bursts_in_sheet_regime": 0.6119402985074627,
+  "fraction_bursts_in_tube_regime": 0.3582089552238806,
+  "post_burst_structure_switch_rate": 0.014925373134328358,
+  "transition_mechanism": "SHEET_BURST_TO_TUBE_OR_INTERMEDIATE_COLLAPSE",
+  "interpretation": "Dangerous near-maximal stretching is almost exclusively hosted by transient strain sheets (Q < 0). Post-burst eigenframe rotation transitions the topology into stable vortex tubes or intermediate dissipative states."
+}

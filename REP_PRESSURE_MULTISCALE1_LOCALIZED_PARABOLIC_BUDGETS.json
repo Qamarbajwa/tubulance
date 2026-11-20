@@ -1,0 +1,6 @@
+{
+  "parabolic_cylinder": "Q(r) = B_r x (-r^2, 0]",
+  "enstrophy_budget": "d_t int_{B_r} (1/2)|omega|^2 = int_{B_r} (omega . S omega) - nu int_{B_r} |grad omega|^2 - int_{partial B_r} [ (1/2)|omega|^2 (u . n) - nu (grad(1/2|omega|^2) . n) ]",
+  "strain_budget": "d_t int_{B_r} (1/2)|S|^2 = -int_{B_r} tr(S^3) - int_{B_r} tr(S Omega^2) - int_{B_r} tr(S H_dev) - nu int_{B_r} |grad S|^2 + boundary_fluxes",
+  "status": "ALL_BOUNDARY_TERMS_PRESERVED_EXACTLY"
+}

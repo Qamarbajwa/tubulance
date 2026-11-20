@@ -1,0 +1,56 @@
+{
+  "theorems": [
+    {
+      "name": "Escauriaza-Seregin-Sverak (2003)",
+      "citation": "Russ. Math. Surv. 58 (2003) 211-250",
+      "solution_class": "Leray-Hopf weak solutions on R^3 x (0, T)",
+      "assumptions": "u in L_infty(0, T; L3(R^3))",
+      "required_uniformity": "Global whole-space spatial L3 norm uniformly bounded in time",
+      "scale_requirement": "All scales simultaneously (scale-invariant)",
+      "time_requirement": "Time interval up to potential blow-up time T",
+      "conclusion": "No singularity can develop at time T (u remains smooth)",
+      "evidence_satisfying": "Local scale-critical L3 velocity norm uniformly bounded on cylinders Q_R (norm ~ 0.5-1.0)",
+      "missing_assumption": "Global whole-space L3(R^3) spatial control without mass loss at spatial infinity",
+      "status": "PARTIALLY_APPROXIMATED_MISSING_GLOBAL_L3_EXTENT"
+    },
+    {
+      "name": "Lei-Ren-Tian (2009)",
+      "citation": "Proc. Amer. Math. Soc. 138 (2010) 2529-2536 / arXiv:0906.4141",
+      "solution_class": "Suitable weak solutions on Q_1",
+      "assumptions": "Exists fixed unit vector e in S^2 and delta > 0 such that |omega| <= M or |xi x e| <= 1 - delta",
+      "required_uniformity": "Single common axis e across the space-time cylinder",
+      "scale_requirement": "Parabolic space-time cylinder Q_r",
+      "time_requirement": "Complete parabolic cylinder (-r^2, 0]",
+      "conclusion": "The space-time point (0,0) is a regular point",
+      "evidence_satisfying": "Local strained shear layers exhibit theta <= 35 deg (|xi x e| <= 0.57, delta = 0.43)",
+      "missing_assumption": "Isotropic multi-structure turbulence contains competing structures oriented along different axes; single global axis e fails globally",
+      "status": "LOCALLY_SATISFIED_GLOBALLY_RESTRICTED"
+    },
+    {
+      "name": "Constantin-Fefferman (1993) / Deng-Hou-Yu (2005)",
+      "citation": "Indiana Univ. Math. J. 42 (1993) 775-789 / Comm. PDE 30 (2005) 225-243",
+      "solution_class": "Smooth solutions on R^3 x [0, T)",
+      "assumptions": "Direction xi is Lip_1/2 in space along vortex lines and |u| <= C (T-t)^(-gamma)",
+      "required_uniformity": "Smooth direction continuity across high-vorticity region",
+      "scale_requirement": "Neighborhood of max vorticity",
+      "time_requirement": "Along vortex trajectories",
+      "conclusion": "No finite-time blow-up occurs at T",
+      "evidence_satisfying": "Directional coherence in localized sheets, low spherical dispersion",
+      "missing_assumption": "Uniform Lipschitz continuity along trajectories during eigenframe rotation episodes",
+      "status": "PARTIALLY_APPROXIMATED"
+    },
+    {
+      "name": "Koch-Tataru (2001) / Seregin (2012) Type-I Framework",
+      "citation": "Adv. Math. 157 (2001) 22-35 / J. Math. Sci. 187 (2012) 609-628",
+      "solution_class": "Type-I blow-up limits (ancient solutions)",
+      "assumptions": "sup_{0 < r < 1} [ A(r) + E(r) + F(r) + D(r) ] < infinity on (-infinity, 0]",
+      "required_uniformity": "Uniform supremum over all scales r in (0, 1) and backward time horizon T -> infinity",
+      "scale_requirement": "Continuum scale supremum",
+      "time_requirement": "Infinite backward horizon T^- = infinity",
+      "conclusion": "Ancient limit is trivial or rigid",
+      "evidence_satisfying": "Sampled A, E, F, D remain bounded (< 10) at discrete radii",
+      "missing_assumption": "Continuum scale supremum gap (untested r -> 0) and finite numerical horizon T^- < infinity",
+      "status": "FINITE_SCALE_COMPATIBILITY_ONLY"
+    }
+  ]
+}

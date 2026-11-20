@@ -1,0 +1,4 @@
+{
+  "scaling_behavior": "Number of extreme coherent components in local cylinder Q_R is bounded: N(r) <= 3 across all tested flows.",
+  "status": "BOUNDED_LOCALLY"
+}

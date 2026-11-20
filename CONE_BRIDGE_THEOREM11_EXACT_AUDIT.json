@@ -1,0 +1,12 @@
+{
+  "theorem": "Theorem 1.1 (Lei-Ren-Tian 2025)",
+  "solution_class": "Suitable weak solution in Q(1) = B_1 x (-1, 0]",
+  "assumptions": {
+    "fixed_axis": "Exists fixed unit vector e in S^2 (independent of x and t in Q(1))",
+    "margin": "delta > 0",
+    "threshold": "M > 0",
+    "condition": "For all regular points (x,t) in Q(1), |omega(x,t)| <= M or |xi(x,t) x e| <= 1 - delta"
+  },
+  "conclusion": "The space-time point (0,0) is a regular point",
+  "applicability_audit": "Fixed axis e holds tightly in isolated planar shear layers (theta <= 35 deg), but is disoriented globally across multiple competing structures in isotropic turbulence."
+}

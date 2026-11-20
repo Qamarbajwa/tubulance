@@ -1,0 +1,16 @@
+{
+  "geometry_current_p1": 0.4428072182876332,
+  "geometry_history_p1": 0.5319597156996415,
+  "geometry_current_p2": 0.47293618233348483,
+  "geometry_history_p2": 0.5385068408195728,
+  "physics_current": 0.8043149759506136,
+  "geometry_plus_physics": 0.7782394302630915,
+  "proxy_correlation": {
+    "max_abs_correlation": 0.5725704671192786,
+    "mean_abs_correlation": 0.11973314753542671
+  },
+  "adversarial_targets": {
+    "enstrophy_growth_auc": 0.5490179965875182,
+    "high_strain_auc": 0.7328662807185068
+  }
+}

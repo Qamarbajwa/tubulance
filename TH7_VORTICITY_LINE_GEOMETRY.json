@@ -1,0 +1,11 @@
+{
+  "mean_alignment_e3_when_pos": 0.4639672137063999,
+  "mean_alignment_e2_when_pos": 0.5361960995116546,
+  "mean_alignment_e1_when_pos": 0.44672296585080806,
+  "sector_breakdown_pos_Vlog": {
+    "sector_1_vieillefosse": 0.3,
+    "sector_2_vortex_stretching": 0.3,
+    "sector_3_vortex_compression": 0.2,
+    "sector_4_biaxial_strain": 0.2
+  }
+}

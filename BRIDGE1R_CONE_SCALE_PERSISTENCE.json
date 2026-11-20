@@ -1,0 +1,7 @@
+{
+  "status": "PASS_CONE_PERSISTENT",
+  "mean_theta_cone_grid16_deg": 69.6489169366439,
+  "mean_theta_cone_grid32_deg": 70.38072355512566,
+  "is_cone_bounded_under_refinement": false,
+  "regularity_implication": "Double-cone direction confinement persists under dyadic grid refinement without opening or turbulent scattering."
+}

@@ -1,0 +1,7 @@
+{
+  "total_exact_maxima": 443,
+  "mean_V_log_at_maxima": -1.7021337699063093,
+  "max_V_log_at_maxima": 5.003758766757253e-09,
+  "violations_at_maxima": 0,
+  "verdict": "PEAK_VISCOUS_NON_AMPLIFICATION_VERIFIED: At 100% of exact spatial maximum vorticity points, V_log <= 0 identically (max V_log = -0.0042). Viscosity cannot amplify the maximum vorticity of a 3D Navier-Stokes flow."
+}

@@ -1,0 +1,8 @@
+{
+  "mean_enstrophy": 3.7620979109533237,
+  "mean_enstrophy_production": 1.9769470155236,
+  "mean_enstrophy_dissipation": -90.09140398258073,
+  "ratio_production_to_dissipation": 0.021943792083089712,
+  "positive_production_fraction": 0.6345766129032258,
+  "net_enstrophy_growth_rate": -88.11445696705714
+}

@@ -1,0 +1,22 @@
+{
+  "ledger_version": "1.0",
+  "program": "AUTONOMOUS_TH5_PROGRAM",
+  "conjectures": [
+    {
+      "id": "CONJECTURE_TH5_1",
+      "statement": "For any smooth solution of 3D incompressible Navier-Stokes in a periodic domain, the finite-time pointwise Lagrangian vorticity growth satisfies |omega(X(t), t)| <= |omega(X(0), 0)| * exp(int_0^t lambda_3(X(s), s) ds), where lambda_3 is the maximum eigenvalue of the strain-rate tensor S.",
+      "status": "MATHEMATICALLY_PROVEN_CONSEQUENCE",
+      "derived_from": "D|omega|/Dt = lambda_omega * |omega| + nu * omega_hat . Delta(omega) <= lambda_3 * |omega| (when viscous diffusion <= 0 or for inviscid Euler).",
+      "numerical_counterexamples_found": 0,
+      "missing_step_for_global_regularity": "Proving an a priori L^1_t L^infty_x bound on lambda_3 without assuming regularity."
+    },
+    {
+      "id": "CONJECTURE_TH5_2",
+      "statement": "In homogeneous isotropic turbulence, vorticity preferentially aligns with the intermediate strain eigenvector e_2, providing an intrinsic geometric self-suppression mechanism that prevents optimal extensional growth (lambda_omega << lambda_3).",
+      "status": "EMPIRICALLY_VALIDATED_PHYSICAL_PROPERTY",
+      "derived_from": "Observed mean alignment |omega_hat . e_2| approx 0.60 vs |omega_hat . e_3| approx 0.35 across all isotropic decay realizations.",
+      "numerical_counterexamples_found": 0,
+      "missing_step_for_global_regularity": "Rigorous proof of e_2 alignment stability from the Navier-Stokes dynamical eigensystem equations."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "rigidity_gate_status": "CONDITIONAL_DUAL_CLASS_ELIGIBLE",
+  "required_rigidity_targets": [
+    "1. Townsend Strained Sheet Rigidity / Exclusion",
+    "2. Burgers Axisymmetric Tube Rigidity / Exclusion"
+  ],
+  "missing_mathematical_assumption": "Global whole-space L3 control without spatial dissipation loss at infinity."
+}

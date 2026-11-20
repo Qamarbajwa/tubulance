@@ -1,0 +1,7 @@
+{
+  "D1_lambda_3_to_strain_ratio": "lambda_3 / (||S||_F + eps) [Measures maximum potential stretching capacity]",
+  "D2_lambda_omega_to_strain_ratio": "lambda_omega / (||S||_F + eps) [Measures actual stretching efficiency]",
+  "D3_rotation_to_strain_ratio": "|omega| / (sqrt(2)*||S||_F + eps) [Measures kinematic topology regime]",
+  "D5_alignment_persistence": "int (omega_hat . e_3)^2 dt [Measures persistence in extensional manifold]",
+  "D7_accumulated_stretching_minus_viscous": "int [lambda_omega + nu*(omega_hat . Delta omega)/|omega|] dt [Exact growth exponent]"
+}

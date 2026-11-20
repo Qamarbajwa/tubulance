@@ -1,0 +1,8 @@
+{
+  "gate": "PROOF_GATE_1_GEOMETRIC_REDUCTION",
+  "delta": 0.42,
+  "theta_max_deg": 35.45054263917542,
+  "constant_C_delta": 1.2275715403505907,
+  "lemma_statement": "For any time t with H_M(t) = {x in B_1 : |omega(x,t)| > M} != empty, picking x_0 in H_M(t) and setting e(t) = xi(x_0, t) in RP^2 guarantees |omega(x,t)| <= C(delta) |omega(x,t) . e(t)| for all x in H_M(t).",
+  "status": "PROVED_EXACT"
+}

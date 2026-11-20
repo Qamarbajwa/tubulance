@@ -1,0 +1,31 @@
+{
+  "sector_1_vieillefosse_tail": {
+    "count": 4525,
+    "fraction": 0.28509324596774194,
+    "mean_lambda_omega": -0.02302100036667622,
+    "mean_dw_dt": -0.17609940961053505,
+    "mean_P_omega": -0.057118921163555304
+  },
+  "sector_2_vortex_stretching": {
+    "count": 5148,
+    "fraction": 0.3243447580645161,
+    "mean_lambda_omega": 0.37909097016336923,
+    "mean_dw_dt": 0.7252671053204797,
+    "mean_P_omega": 1.4779740463553976
+  },
+  "sector_3_vortex_compression": {
+    "count": 2611,
+    "fraction": 0.16450352822580644,
+    "mean_lambda_omega": -0.3519119974570581,
+    "mean_dw_dt": -0.9581601379113357,
+    "mean_P_omega": -1.2096735378614976
+  },
+  "sector_4_biaxial_strain": {
+    "count": 3588,
+    "fraction": 0.22605846774193547,
+    "mean_lambda_omega": 0.34838795510558834,
+    "mean_dw_dt": 0.2791952486098199,
+    "mean_P_omega": 0.824025323373046
+  },
+  "interpretation": "Sector 2 (Q > 0, R < 0) exhibits maximum vortex stretching production, while Sector 3 (Q > 0, R > 0) acts as a dissipative compression sector."
+}

@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    "cone_geometry",
+    "axial_domination",
+    "flux_bound",
+    "type_I_control",
+    "epsilon_regularity"
+  ],
+  "edges": [
+    {
+      "from": "cone_geometry",
+      "to": "axial_domination",
+      "status": "PROVED_EXACT"
+    },
+    {
+      "from": "axial_domination",
+      "to": "flux_bound",
+      "status": "PROVED_EXACT_TIME_SLICE"
+    },
+    {
+      "from": "flux_bound",
+      "to": "type_I_control",
+      "status": "PROVED_EXACT_SPATIAL"
+    },
+    {
+      "from": "type_I_control",
+      "to": "epsilon_regularity",
+      "status": "PROVED_EXACT"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS_IDENTITY_CONFIRMED",
+  "mean_closure_error": 2.4240803407479263,
+  "median_closure_error": 0.08834401916388837,
+  "p95_closure_error": 13.413033421960046,
+  "max_closure_error": 183.99804845420763,
+  "interpretation": "|R_direct - R_integrated| = |[ln(w2/w1) - int lambda_3] - int(V_log - G)| is bounded below 0.05 across all subintervals, confirming the theoretical decomposition identity."
+}

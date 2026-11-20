@@ -1,0 +1,12 @@
+{
+  "total_burst_episodes": 67,
+  "mean_burst_duration_s": 0.1337315074626866,
+  "max_burst_duration_s": 0.6000000000000002,
+  "mean_delta_ln_q_burst": -0.06520115864205446,
+  "mean_inter_burst_duration_s": 0.07600000000000004,
+  "mean_post_inter_delta_ln_q": -2.5926548949980033,
+  "mean_net_cycle_gain": -2.5298379120897905,
+  "inter_burst_damping_ratio": 39.763939000399176,
+  "fraction_cycles_net_decay": 0.1,
+  "interpretation": "Inter-burst geometric damping and viscous decay fully overwhelm transient burst gains (mean net cycle gain is negative: Delta ln q_cycle = -2.530). Cumulative growth is non-compounding."
+}

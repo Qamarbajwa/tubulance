@@ -1,0 +1,7 @@
+{
+  "mean_dir_penalty": 303.12086925387456,
+  "p90_dir_penalty": 9.030713114921213,
+  "mean_dir_penalty_when_Vlog_pos": 2609.151396571384,
+  "mean_dir_penalty_when_Vlog_neg": 263.8581474493766,
+  "interpretation": "Direction gradient ||grad(xi)||_F^2 acts as an unconditional damping penalty -nu * ||grad(xi)||_F^2 <= 0. Strong direction variation suppresses positive V_log."
+}

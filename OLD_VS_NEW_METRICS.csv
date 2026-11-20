@@ -1,0 +1,14 @@
+metric_name,old_reference_value,new_clean_replication_value,absolute_delta,relative_delta_percent,ci_95_low,ci_95_high,interpretation
+Memory_M_ROC,0.0445,0.0445,+0.000047,+0.11%,-0.0100,0.0990,Ordered history vs Shuffled history
+Connectivity_C_ROC_overall,-0.0670,-0.0670,+0.000033,+0.05%,-0.2212,0.0872,Thread history vs Particle history
+Connectivity_C_ROC_G1_isotropic,-0.2073,-0.2072,+0.000127,+0.06%,-0.3398,-0.1371,Thread vs Particle on Isotropic
+Connectivity_C_ROC_G3_structured,0.1430,0.1433,+0.000341,+0.24%,0.1043,0.1824,Thread vs Particle on Shear/TG
+Multidirection_B_ROC,-0.1163,-0.1163,+0.000027,+0.02%,-0.2631,0.0197,Bundle history vs Thread history
+Physics_Complement_G_ROC,-0.0268,-0.0268,-0.000018,-0.07%,-0.0541,-0.0054,Physics+Geometry vs Physics alone
+Location_L_ROC,-0.0169,-0.0169,-0.000050,-0.29%,-0.0390,0.0017,Absolute vs Intrinsic representation
+P0_Particle_Mean_LOFO_ROC,0.6272,0.6272,-0.000043,-0.01%,0.5154,0.7315,P0 mean within-fold ROC
+P0_Particle_G1_ROC,0.7247,0.7243,-0.000385,-0.05%,0.6886,0.7826,P0 isotropic G1 mean ROC
+P0_Particle_G3_ROC,0.4815,0.4814,-0.000081,-0.02%,0.4157,0.5471,P0 shear/TG G3 mean ROC
+P0_Particle_Pooled_ROC,0.5477,0.5477,+0.000010,+0.00%,0.0000,0.0000,P0 global pooled ROC
+P1_Thread_Mean_LOFO_ROC,0.5602,0.5602,-0.000010,-0.00%,0.4955,0.6126,P1 mean within-fold ROC
+Eulerian_Physics_Mean_LOFO_ROC,0.7869,0.8043,+0.017415,+2.21%,0.7486,0.8748,Eulerian physics ROC

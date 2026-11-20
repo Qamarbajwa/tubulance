@@ -1,0 +1,83 @@
+[
+  {
+    "claim": "Persistent stretching necessary for runaway",
+    "Eulerian": "PROVED",
+    "Lagrangian": "PROVED",
+    "Pressure": "PROVED",
+    "Multiscale": "PROVED",
+    "Critical_Space": "PROVED_IMPLICATION",
+    "status": "PROVED_IMPLICATION"
+  },
+  {
+    "claim": "Pressure reorients strain away from vorticity",
+    "Eulerian": "OBSERVED (TH9-R)",
+    "Lagrangian": "IMPLICIT",
+    "Pressure": "PROVED_EXACT",
+    "Multiscale": "N/A",
+    "Critical_Space": "PHYSICAL_INTERPRETATION",
+    "status": "PROVED_EXACT_AS_MECHANISM"
+  },
+  {
+    "claim": "Pressure reorientation unconditionally prevents singularity",
+    "Eulerian": "OPEN",
+    "Lagrangian": "OPEN",
+    "Pressure": "FALSIFIED_UNCONDITIONAL",
+    "Multiscale": "OPEN",
+    "Critical_Space": "OPEN_BRIDGE_HYPOTHESIS",
+    "status": "OPEN_BRIDGE_HYPOTHESIS"
+  },
+  {
+    "claim": "Q controls deformation covariance",
+    "Eulerian": "N/A",
+    "Lagrangian": "PROVED_EXACT",
+    "Pressure": "IMPLICIT",
+    "Multiscale": "N/A",
+    "Critical_Space": "OPEN_BRIDGE_HYPOTHESIS",
+    "status": "PROVED_EXACT_IN_WEBER"
+  },
+  {
+    "claim": "Q controls L^3 velocity",
+    "Eulerian": "N/A",
+    "Lagrangian": "OPEN_BRIDGE_HYPOTHESIS",
+    "Pressure": "N/A",
+    "Multiscale": "N/A",
+    "Critical_Space": "OPEN_BRIDGE_HYPOTHESIS",
+    "status": "OPEN_BRIDGE_HYPOTHESIS"
+  },
+  {
+    "claim": "R controls L^3 velocity",
+    "Eulerian": "PROVED",
+    "Lagrangian": "PROVED_EXACT",
+    "Pressure": "N/A",
+    "Multiscale": "N/A",
+    "Critical_Space": "PROVED_IMPLICATION",
+    "status": "PROVED_IMPLICATION"
+  },
+  {
+    "claim": "Flux locality limits concentration",
+    "Eulerian": "N/A",
+    "Lagrangian": "N/A",
+    "Pressure": "ONE_WAY_ESTIMATE",
+    "Multiscale": "PROVED_EXACT",
+    "Critical_Space": "ONE_WAY_ESTIMATE",
+    "status": "ONE_WAY_ESTIMATE"
+  },
+  {
+    "claim": "Frame rotation dominates stretching near danger",
+    "Eulerian": "OBSERVED (TH9-R)",
+    "Lagrangian": "N/A",
+    "Pressure": "CONDITIONAL",
+    "Multiscale": "N/A",
+    "Critical_Space": "FALSIFIED_AS_EQUIVALENCE",
+    "status": "CONDITIONAL_TURBULENCE_MECHANISM"
+  },
+  {
+    "claim": "All representations share one central obstruction",
+    "Eulerian": "PROVED",
+    "Lagrangian": "PROVED",
+    "Pressure": "PROVED",
+    "Multiscale": "PROVED",
+    "Critical_Space": "PROVED_COMMON_OBSTRUCTION",
+    "status": "PROVED_COMMON_OBSTRUCTION"
+  }
+]

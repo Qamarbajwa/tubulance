@@ -1,0 +1,39 @@
+{
+  "ledger_version": "1.0",
+  "program": "AUTONOMOUS_TH8_PROGRAM",
+  "falsified_theories": [
+    "Universal Delta Depletion: lambda_omega <= (1 - delta) lambda_3 (FALSIFIED: D_ratio observed up to 0.999).",
+    "Universal e2 Alignment: Vorticity is always aligned with e2 (FALSIFIED: e3 alignment weight a3 reaches 0.998 in shear sheets)."
+  ],
+  "worst_counterexample": {
+    "flow_id": "flow_shear_301",
+    "family": "shear_layer",
+    "tier": "G3",
+    "re": 100.0,
+    "grid": 16,
+    "step_idx": 20,
+    "time": 0.4000000000000001,
+    "q": 4.716637686913616,
+    "q_max": 5.168563193421073,
+    "alpha": 0.9125626427316008,
+    "lambda_1": -0.9236291753378646,
+    "lambda_2": 0.26885847856386164,
+    "lambda_3": 0.6547706967740031,
+    "lambda_omega": 0.6541775352896593,
+    "a1": 7.694678465097224e-05,
+    "a2": 0.0012223212094163117,
+    "a3": 0.9987007320059332,
+    "D_abs": 0.0005931614843438515,
+    "D_ratio": 0.9990940928064339,
+    "depletion_fraction": 0.0009059071935660912,
+    "e1_contrib": 0.000121452795052514,
+    "e2_contrib": 0.00047170868929115176,
+    "closure_error": 1.857238321467669e-16,
+    "V_log": -1.7309251103417778,
+    "V_log_plus": 0.0,
+    "lap_q": 3593.5520713681335,
+    "Q": 4.884617567211011,
+    "R": -3.4757218287069325,
+    "is_exact_max": false
+  }
+}

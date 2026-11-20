@@ -1,0 +1,6 @@
+{
+  "program_id": "NS_CONE_TERMINAL_OSCILLATION_1",
+  "decision": "A \u2014 SHARP TERMINAL GEOMETRIC BOUNDARY PROVED",
+  "canonical_theorem": "Theorem (Sharp Terminal Direction-Cloud Double-Cone Criterion): Let u be a suitable weak solution to the 3D incompressible Navier-Stokes equations in Q(1) = B_1 x (-1, 0]. Let K_M(t) = {[xi(x,t)] in RP^2 : (x,t) regular, |omega(x,t)| > M}. The exact necessary-and-sufficient geometric condition for reduction to a single fixed double cone under Lei-Ren-Tian Theorem 1.1 is R_M < pi/2 (or at selector level, R_term(e) = rad(C_ess(e)) < beta = pi/2 - arcsin(1 - delta)).",
+  "epistemic_status": "MATHEMATICALLY_RIGOROUS_AND_SEALED"
+}

@@ -1,0 +1,104 @@
+{
+  "governance": {
+    "status": "LEVEL 2 — TECHNICALLY VERIFIED, NOT EXTERNALLY ATTESTED",
+    "milestone": "P2",
+    "description": "Capability-Problem Match Graph: Explicit nodes and typed directed edges linking methods, capabilities, failure modes, mathematical structures, observables, problem classes, and literature results."
+  },
+  "nodes": [
+    {"id": "M_ETD", "type": "METHOD", "name": "Exponential Time Differencing / Integrating Factor Integrator (R13)"},
+    {"id": "M_STOKES", "type": "METHOD", "name": "Stokes Eigenbasis 3D with Exact Wall BCs (R04 / W8)"},
+    {"id": "M_FFT_ONTHEFLY", "type": "METHOD", "name": "On-the-Fly 3D Real FFT Convection Evaluator (R11 / W7)"},
+    {"id": "M_SOLENOIDAL", "type": "METHOD", "name": "Solenoidal Vector Modal Basis Class (R01 / R02)"},
+    {"id": "M_CLUSTERED_POD", "type": "METHOD", "name": "Clustered Local POD with Subspace Switching (R08)"},
+    {"id": "M_RESOLVENT", "type": "METHOD", "name": "Resolvent Response Forcing-Output Basis (W9-G)"},
+    {"id": "M_DERIV_WEIGHTED", "type": "METHOD", "name": "Derivative-Weighted Gradient Stokes Basis (W9-A/B)"},
+    {"id": "M_SEPARABLE", "type": "METHOD", "name": "Separable Channel Eigenwave Basis (M13 / W9-D)"},
+    {"id": "M_NONORTHOG_SOLVER", "type": "METHOD", "name": "Nonorthogonal Projection Gram Solver (M24 / W13R)"},
+    {"id": "M_RAMANUJAN", "type": "METHOD", "name": "Ramanujan Periodic Spectral Correction (R17)"},
+    {"id": "M_EVIDENCE_AUDIT", "type": "METHOD", "name": "Write-Once SHA256 Evidence Bundle & Metric Hashing (S12)"},
+
+    {"id": "C_DIAG_EXACT", "type": "CAPABILITY", "name": "Exact Machine-Precision Integration of Linear Dissipation"},
+    {"id": "C_BC_EXACT", "type": "CAPABILITY", "name": "Exact Boundary Condition Enforcement in Modal Basis"},
+    {"id": "C_MEM_REDUCTION", "type": "CAPABILITY", "name": "290x Working-Set Memory Reduction in Spectral Convection"},
+    {"id": "C_DIV_FREE", "type": "CAPABILITY", "name": "Exact Machine-Precision Discrete Solenoidality (div u = 0)"},
+    {"id": "C_MANIFOLD_PARTITION", "type": "CAPABILITY", "name": "State-Space Clustering and Multi-Regime Representation"},
+    {"id": "C_INPUT_OUTPUT_GAIN", "type": "CAPABILITY", "name": "Optimal Forcing-to-Response Amplification Mapping"},
+    {"id": "C_WALL_SHEAR_TARGET", "type": "CAPABILITY", "name": "Targeted Boundary-Layer Observable Recovery"},
+    {"id": "C_GRAM_REGULARIZATION", "type": "CAPABILITY", "name": "Stable Solution of Ill-Conditioned Overcomplete Dictionaries"},
+    {"id": "C_TAMPER_AUDIT", "type": "CAPABILITY", "name": "Immutable Provenance and Independent Metric Recomputation"},
+
+    {"id": "S_LAPLACIAN_DIAG", "type": "MATHEMATICAL_STRUCTURE", "name": "Diagonal / Sectorial Linear Differential Operator"},
+    {"id": "S_QUADRATIC_SKEW", "type": "MATHEMATICAL_STRUCTURE", "name": "Skew-Symmetric Quadratic Momentum Advection (u·∇)u"},
+    {"id": "S_DIVERGENCE_CONSTRAINT", "type": "MATHEMATICAL_STRUCTURE", "name": "Linear Incompressibility / Solenoidal Constraint ∇·u=0"},
+    {"id": "S_INHOMOGENEOUS_BC", "type": "MATHEMATICAL_STRUCTURE", "name": "Boundary-Value Problem with Inhomogeneous Spatial Directions"},
+    {"id": "S_NONLINEAR_MANIFOLD", "type": "MATHEMATICAL_STRUCTURE", "name": "High-Curvature Solution Manifold with Regime Transitions"},
+    {"id": "S_INPUT_OUTPUT_TRANSFER", "type": "MATHEMATICAL_STRUCTURE", "name": "Linearized Input-Output Resolvent Transfer Function"},
+
+    {"id": "O_FULL_VELOCITY", "type": "OBSERVABLE", "name": "Instantaneous 3D Full Velocity Field u(x,t)"},
+    {"id": "O_WALL_SHEAR", "type": "OBSERVABLE", "name": "Wall Shear Stress tau_w = mu * du/dy|_{wall}"},
+    {"id": "O_TOTAL_ENERGY", "type": "OBSERVABLE", "name": "Total Kinetic Energy K(t) = 0.5 * int |u|^2 dV"},
+    {"id": "O_ENSTROPHY", "type": "OBSERVABLE", "name": "Total Enstrophy Omega(t) = 0.5 * int |omega|^2 dV"},
+    {"id": "O_REGIME_STATE", "type": "OBSERVABLE", "name": "Discrete Operating Regime / Cluster ID"},
+
+    {"id": "P_TURB_FULL_STATE", "type": "PROBLEM", "name": "Universal Full-State Turbulent Compression (Model A -> Model B)"},
+    {"id": "P_DIFFUSION_REACTION", "type": "PROBLEM", "name": "Stiff Semilinear Reaction-Diffusion PDEs (Fisher-KPP, Allen-Cahn)"},
+    {"id": "P_HEAT_CONDUCTION", "type": "PROBLEM", "name": "Parametric Heat Conduction & Thermal Transients on Fixed Geometries"},
+    {"id": "P_MHD_INDUCTION", "type": "PROBLEM", "name": "Magnetohydrodynamic (MHD) Induction & Div-Free Magnetic Fields"},
+    {"id": "P_WALL_CONTROL", "type": "PROBLEM", "name": "Turbulent Drag Reduction & Wall-Shear Active Control"},
+    {"id": "P_DUCT_ACOUSTICS", "type": "PROBLEM", "name": "Acoustic Resonance & Wave Propagation in Bounded Ducts"},
+    {"id": "P_NONLINEAR_VIB", "type": "PROBLEM", "name": "Multi-Regime Structural Vibrations & Snap-Through Buckling"},
+    {"id": "P_SCI_REPRODUCIBILITY", "type": "PROBLEM", "name": "General Computational Science Benchmark Integrity & Auditability"}
+  ],
+  "edges": [
+    {"source": "M_ETD", "target": "C_DIAG_EXACT", "relation": "USES"},
+    {"source": "C_DIAG_EXACT", "target": "S_LAPLACIAN_DIAG", "relation": "SHARES_OPERATOR"},
+    {"source": "S_LAPLACIAN_DIAG", "target": "P_DIFFUSION_REACTION", "relation": "SHARES_OPERATOR"},
+    {"source": "S_LAPLACIAN_DIAG", "target": "P_HEAT_CONDUCTION", "relation": "SHARES_OPERATOR"},
+    {"source": "M_ETD", "target": "P_DIFFUSION_REACTION", "relation": "PREDICTS"},
+    {"source": "M_ETD", "target": "P_HEAT_CONDUCTION", "relation": "PREDICTS"},
+
+    {"source": "M_STOKES", "target": "C_BC_EXACT", "relation": "USES"},
+    {"source": "C_BC_EXACT", "target": "S_INHOMOGENEOUS_BC", "relation": "SHARES_SYMMETRY"},
+    {"source": "S_INHOMOGENEOUS_BC", "target": "P_DUCT_ACOUSTICS", "relation": "SHARES_SYMMETRY"},
+    {"source": "M_STOKES", "target": "P_DUCT_ACOUSTICS", "relation": "PREDICTS"},
+
+    {"source": "M_FFT_ONTHEFLY", "target": "C_MEM_REDUCTION", "relation": "USES"},
+    {"source": "C_MEM_REDUCTION", "target": "S_QUADRATIC_SKEW", "relation": "SHARES_OPERATOR"},
+    {"source": "S_QUADRATIC_SKEW", "target": "P_MHD_INDUCTION", "relation": "SHARES_OPERATOR"},
+    {"source": "M_FFT_ONTHEFLY", "target": "P_MHD_INDUCTION", "relation": "PREDICTS"},
+
+    {"source": "M_SOLENOIDAL", "target": "C_DIV_FREE", "relation": "USES"},
+    {"source": "C_DIV_FREE", "target": "S_DIVERGENCE_CONSTRAINT", "relation": "SHARES_CONSTRAINT"},
+    {"source": "S_DIVERGENCE_CONSTRAINT", "target": "P_MHD_INDUCTION", "relation": "SHARES_CONSTRAINT"},
+    {"source": "M_SOLENOIDAL", "target": "P_MHD_INDUCTION", "relation": "PREDICTS"},
+
+    {"source": "M_RESOLVENT", "target": "C_INPUT_OUTPUT_GAIN", "relation": "USES"},
+    {"source": "C_INPUT_OUTPUT_GAIN", "target": "S_INPUT_OUTPUT_TRANSFER", "relation": "SHARES_OPERATOR"},
+    {"source": "S_INPUT_OUTPUT_TRANSFER", "target": "P_WALL_CONTROL", "relation": "SHARES_OPERATOR"},
+    {"source": "M_RESOLVENT", "target": "O_WALL_SHEAR", "relation": "PREDICTS"},
+    {"source": "M_RESOLVENT", "target": "P_TURB_FULL_STATE", "relation": "FAILED_ON"},
+
+    {"source": "M_DERIV_WEIGHTED", "target": "C_WALL_SHEAR_TARGET", "relation": "USES"},
+    {"source": "M_DERIV_WEIGHTED", "target": "O_WALL_SHEAR", "relation": "PREDICTS"},
+    {"source": "M_DERIV_WEIGHTED", "target": "O_FULL_VELOCITY", "relation": "FAILED_ON"},
+
+    {"source": "M_CLUSTERED_POD", "target": "C_MANIFOLD_PARTITION", "relation": "USES"},
+    {"source": "C_MANIFOLD_PARTITION", "target": "S_NONLINEAR_MANIFOLD", "relation": "SHARES_LOCALITY"},
+    {"source": "M_CLUSTERED_POD", "target": "P_NONLINEAR_VIB", "relation": "PREDICTS"},
+    {"source": "M_CLUSTERED_POD", "target": "O_REGIME_STATE", "relation": "PREDICTS"},
+
+    {"source": "M_EVIDENCE_AUDIT", "target": "C_TAMPER_AUDIT", "relation": "USES"},
+    {"source": "M_EVIDENCE_AUDIT", "target": "P_SCI_REPRODUCIBILITY", "relation": "PREDICTS"},
+
+    {"source": "M_RESOLVENT", "target": "LIT-01", "relation": "SUPPORTED_BY"},
+    {"source": "M_RESOLVENT", "target": "LIT-02", "relation": "SUPPORTED_BY"},
+    {"source": "M_CLUSTERED_POD", "target": "LIT-03", "relation": "SUPPORTED_BY"},
+    {"source": "M_CLUSTERED_POD", "target": "LIT-04", "relation": "SUPPORTED_BY"},
+    {"source": "M_CLUSTERED_POD", "target": "LIT-05", "relation": "SUPPORTED_BY"},
+    {"source": "M_ETD", "target": "LIT-08", "relation": "SUPPORTED_BY"},
+    {"source": "M_ETD", "target": "LIT-09", "relation": "SUPPORTED_BY"},
+    {"source": "M_FFT_ONTHEFLY", "target": "LIT-12", "relation": "SUPPORTED_BY"},
+    {"source": "M_RAMANUJAN", "target": "LIT-13", "relation": "SUPPORTED_BY"},
+    {"source": "M_RAMANUJAN", "target": "P_TURB_FULL_STATE", "relation": "CONTRADICTED_BY"}
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "governance": {
+    "nx": 16,
+    "ny": 16,
+    "nz": 16,
+    "lx": 6.283185307179586,
+    "ly": 2.0,
+    "lz": 3.141592653589793,
+    "dt": 0.01,
+    "nu": 0.01,
+    "n_steps": 20,
+    "seeds": [
+      101,
+      104,
+      105
+    ],
+    "timestamp_utc": "2026-08-13T20:04:48Z"
+  },
+  "records": [
+    {
+      "pair_key": "101_104",
+      "seed_pair": [
+        101,
+        104
+      ],
+      "rank": 4,
+      "d_chordal_raw": 1.9851798735798507,
+      "d_chordal_aligned": 1.9272647720706377,
+      "R_chordal": 0.9708262700624823,
+      "d_geodesic_raw": 2.9329650390740487,
+      "d_geodesic_aligned": 2.71693710821897,
+      "R_geodesic": 0.9263448667211933,
+      "d_spectral_deg_raw": 89.48960000153743,
+      "d_spectral_deg_aligned": 89.69767563360149,
+      "mean_principal_angle_deg_raw": 83.95039086527103,
+      "mean_principal_angle_deg_aligned": 77.28538648959889,
+      "principal_angles_deg_raw": [
+        80.51492195154574,
+        81.43879014665382,
+        84.35825136134713,
+        89.48960000153743
+      ],
+      "principal_angles_deg_aligned": [
+        64.29270207685609,
+        74.60239662784241,
+        80.54877162009556,
+        89.69767563360149
+      ]
+    },
+    {
+      "pair_key": "101_104",
+      "seed_pair": [
+        101,
+        104
+      ],
+      "rank": 8,
+      "d_chordal_raw": 1.9851798735798507,
+      "d_chordal_aligned": 1.9272647720706377,
+      "R_chordal": 0.9708262700624823,
+      "d_geodesic_raw": 2.9329650390740487,
+      "d_geodesic_aligned": 2.71693710821897,
+      "R_geodesic": 0.9263448667211933,
+      "d_spectral_deg_raw": 89.48960000153743,
+      "d_spectral_deg_aligned": 89.69767563360149,
+      "mean_principal_angle_deg_raw": 83.95039086527103,
+      "mean_principal_angle_deg_aligned": 77.28538648959889,
+      "principal_angles_deg_raw": [
+        80.51492195154574,
+        81.43879014665382,
+        84.35825136134713,
+        89.48960000153743
+      ],
+      "principal_angles_deg_aligned": [
+        64.29270207685609,
+        74.60239662784241,
+        80.54877162009556,
+        89.69767563360149
+      ]
+    },
+    {
+      "pair_key": "101_104",
+      "seed_pair": [
+        101,
+        104
+      ],
+      "rank": 12,
+      "d_chordal_raw": 1.9851798735798507,
+      "d_chordal_aligned": 1.9272647720706377,
+      "R_chordal": 0.9708262700624823,
+      "d_geodesic_raw": 2.9329650390740487,
+      "d_geodesic_aligned": 2.71693710821897,
+      "R_geodesic": 0.9263448667211933,
+      "d_spectral_deg_raw": 89.48960000153743,
+      "d_spectral_deg_aligned": 89.69767563360149,
+      "mean_principal_angle_deg_raw": 83.95039086527103,
+      "mean_principal_angle_deg_aligned": 77.28538648959889,
+      "principal_angles_deg_raw": [
+        80.51492195154574,
+        81.43879014665382,
+        84.35825136134713,
+        89.48960000153743
+      ],
+      "principal_angles_deg_aligned": [
+        64.29270207685609,
+        74.60239662784241,
+        80.54877162009556,
+        89.69767563360149
+      ]
+    },
+    {
+      "pair_key": "101_104",
+      "seed_pair": [
+        101,
+        104
+      ],
+      "rank": 16,
+      "d_chordal_raw": 1.9851798735798507,
+      "d_chordal_aligned": 1.9272647720706377,
+      "R_chordal": 0.9708262700624823,
+      "d_geodesic_raw": 2.9329650390740487,
+      "d_geodesic_aligned": 2.71693710821897,
+      "R_geodesic": 0.9263448667211933,
+      "d_spectral_deg_raw": 89.48960000153743,
+      "d_spectral_deg_aligned": 89.69767563360149,
+      "mean_principal_angle_deg_raw": 83.95039086527103,
+      "mean_principal_angle_deg_aligned": 77.28538648959889,
+      "principal_angles_deg_raw": [
+        80.51492195154574,
+        81.43879014665382,
+        84.35825136134713,
+        89.48960000153743
+      ],
+      "principal_angles_deg_aligned": [
+        64.29270207685609,
+        74.60239662784241,
+        80.54877162009556,
+        89.69767563360149
+      ]
+    },
+    {
+      "pair_key": "101_105",
+      "seed_pair": [
+        101,
+        105
+      ],
+      "rank": 4,
+      "d_chordal_raw": 1.9431648811015445,
+      "d_chordal_aligned": 1.9438158284952018,
+      "R_chordal": 1.0003349933914445,
+      "d_geodesic_raw": 2.6926516036788932,
+      "d_geodesic_aligned": 2.8430221537932123,
+      "R_geodesic": 1.0558447850842905,
+      "d_spectral_deg_raw": 83.05553725766786,
+      "d_spectral_deg_aligned": 89.78703726978266,
+      "mean_principal_angle_deg_raw": 77.00893512393122,
+      "mean_principal_angle_deg_aligned": 80.78104973550987,
+      "principal_angles_deg_raw": [
+        72.05735471797048,
+        73.4294309897488,
+        79.49341753033777,
+        83.05553725766786
+      ],
+      "principal_angles_deg_aligned": [
+        64.29044494389038,
+        79.48275343223622,
+        89.56396329613023,
+        89.78703726978266
+      ]
+    },
+    {
+      "pair_key": "101_105",
+      "seed_pair": [
+        101,
+        105
+      ],
+      "rank": 8,
+      "d_chordal_raw": 1.9431648811015445,
+      "d_chordal_aligned": 1.9438158284952018,
+      "R_chordal": 1.0003349933914445,
+      "d_geodesic_raw": 2.6926516036788932,
+      "d_geodesic_aligned": 2.8430221537932123,
+      "R_geodesic": 1.0558447850842905,
+      "d_spectral_deg_raw": 83.05553725766786,
+      "d_spectral_deg_aligned": 89.78703726978266,
+      "mean_principal_angle_deg_raw": 77.00893512393122,
+      "mean_principal_angle_deg_aligned": 80.78104973550987,
+      "principal_angles_deg_raw": [
+        72.05735471797048,
+        73.4294309897488,
+        79.49341753033777,
+        83.05553725766786
+      ],
+      "principal_angles_deg_aligned": [
+        64.29044494389038,
+        79.48275343223622,
+        89.56396329613023,
+        89.78703726978266
+      ]
+    },
+    {
+      "pair_key": "101_105",
+      "seed_pair": [
+        101,
+        105
+      ],
+      "rank": 12,
+      "d_chordal_raw": 1.9431648811015445,
+      "d_chordal_aligned": 1.9438158284952018,
+      "R_chordal": 1.0003349933914445,
+      "d_geodesic_raw": 2.6926516036788932,
+      "d_geodesic_aligned": 2.8430221537932123,
+      "R_geodesic": 1.0558447850842905,
+      "d_spectral_deg_raw": 83.05553725766786,
+      "d_spectral_deg_aligned": 89.78703726978266,
+      "mean_principal_angle_deg_raw": 77.00893512393122,
+      "mean_principal_angle_deg_aligned": 80.78104973550987,
+      "principal_angles_deg_raw": [
+        72.05735471797048,
+        73.4294309897488,
+        79.49341753033777,
+        83.05553725766786
+      ],
+      "principal_angles_deg_aligned": [
+        64.29044494389038,
+        79.48275343223622,
+        89.56396329613023,
+        89.78703726978266
+      ]
+    },
+    {
+      "pair_key": "101_105",
+      "seed_pair": [
+        101,
+        105
+      ],
+      "rank": 16,
+      "d_chordal_raw": 1.9431648811015445,
+      "d_chordal_aligned": 1.9438158284952018,
+      "R_chordal": 1.0003349933914445,
+      "d_geodesic_raw": 2.6926516036788932,
+      "d_geodesic_aligned": 2.8430221537932123,
+      "R_geodesic": 1.0558447850842905,
+      "d_spectral_deg_raw": 83.05553725766786,
+      "d_spectral_deg_aligned": 89.78703726978266,
+      "mean_principal_angle_deg_raw": 77.00893512393122,
+      "mean_principal_angle_deg_aligned": 80.78104973550987,
+      "principal_angles_deg_raw": [
+        72.05735471797048,
+        73.4294309897488,
+        79.49341753033777,
+        83.05553725766786
+      ],
+      "principal_angles_deg_aligned": [
+        64.29044494389038,
+        79.48275343223622,
+        89.56396329613023,
+        89.78703726978266
+      ]
+    },
+    {
+      "pair_key": "104_105",
+      "seed_pair": [
+        104,
+        105
+      ],
+      "rank": 4,
+      "d_chordal_raw": 1.962984317728968,
+      "d_chordal_aligned": 1.938061629818129,
+      "R_chordal": 0.9873036744686408,
+      "d_geodesic_raw": 2.902013890629538,
+      "d_geodesic_aligned": 2.8802393081319546,
+      "R_geodesic": 0.9924967338826691,
+      "d_spectral_deg_raw": 89.28308096170727,
+      "d_spectral_deg_aligned": 89.7238188422185,
+      "mean_principal_angle_deg_raw": 82.69869690794329,
+      "mean_principal_angle_deg_aligned": 81.6108009842873,
+      "principal_angles_deg_raw": [
+        68.31357965928963,
+        84.3910733503959,
+        88.80705366038033,
+        89.28308096170727
+      ],
+      "principal_angles_deg_aligned": [
+        60.63428197018607,
+        86.70601543658465,
+        89.37908768815994,
+        89.7238188422185
+      ]
+    },
+    {
+      "pair_key": "104_105",
+      "seed_pair": [
+        104,
+        105
+      ],
+      "rank": 8,
+      "d_chordal_raw": 1.962984317728968,
+      "d_chordal_aligned": 1.938061629818129,
+      "R_chordal": 0.9873036744686408,
+      "d_geodesic_raw": 2.902013890629538,
+      "d_geodesic_aligned": 2.8802393081319546,
+      "R_geodesic": 0.9924967338826691,
+      "d_spectral_deg_raw": 89.28308096170727,
+      "d_spectral_deg_aligned": 89.7238188422185,
+      "mean_principal_angle_deg_raw": 82.69869690794329,
+      "mean_principal_angle_deg_aligned": 81.6108009842873,
+      "principal_angles_deg_raw": [
+        68.31357965928963,
+        84.3910733503959,
+        88.80705366038033,
+        89.28308096170727
+      ],
+      "principal_angles_deg_aligned": [
+        60.63428197018607,
+        86.70601543658465,
+        89.37908768815994,
+        89.7238188422185
+      ]
+    },
+    {
+      "pair_key": "104_105",
+      "seed_pair": [
+        104,
+        105
+      ],
+      "rank": 12,
+      "d_chordal_raw": 1.962984317728968,
+      "d_chordal_aligned": 1.938061629818129,
+      "R_chordal": 0.9873036744686408,
+      "d_geodesic_raw": 2.902013890629538,
+      "d_geodesic_aligned": 2.8802393081319546,
+      "R_geodesic": 0.9924967338826691,
+      "d_spectral_deg_raw": 89.28308096170727,
+      "d_spectral_deg_aligned": 89.7238188422185,
+      "mean_principal_angle_deg_raw": 82.69869690794329,
+      "mean_principal_angle_deg_aligned": 81.6108009842873,
+      "principal_angles_deg_raw": [
+        68.31357965928963,
+        84.3910733503959,
+        88.80705366038033,
+        89.28308096170727
+      ],
+      "principal_angles_deg_aligned": [
+        60.63428197018607,
+        86.70601543658465,
+        89.37908768815994,
+        89.7238188422185
+      ]
+    },
+    {
+      "pair_key": "104_105",
+      "seed_pair": [
+        104,
+        105
+      ],
+      "rank": 16,
+      "d_chordal_raw": 1.962984317728968,
+      "d_chordal_aligned": 1.938061629818129,
+      "R_chordal": 0.9873036744686408,
+      "d_geodesic_raw": 2.902013890629538,
+      "d_geodesic_aligned": 2.8802393081319546,
+      "R_geodesic": 0.9924967338826691,
+      "d_spectral_deg_raw": 89.28308096170727,
+      "d_spectral_deg_aligned": 89.7238188422185,
+      "mean_principal_angle_deg_raw": 82.69869690794329,
+      "mean_principal_angle_deg_aligned": 81.6108009842873,
+      "principal_angles_deg_raw": [
+        68.31357965928963,
+        84.3910733503959,
+        88.80705366038033,
+        89.28308096170727
+      ],
+      "principal_angles_deg_aligned": [
+        60.63428197018607,
+        86.70601543658465,
+        89.37908768815994,
+        89.7238188422185
+      ]
+    }
+  ]
+}

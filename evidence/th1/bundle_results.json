@@ -1,0 +1,142 @@
+{
+  "instantaneous": {
+    "mean_auc": 0.47293618233348483,
+    "std_auc": 0.06449623015658765,
+    "overall_auc": 0.4819785470997915,
+    "overall_pr_auc": 0.2419721664100361,
+    "overall_brier": 0.2018326466524206,
+    "flow_metrics": [
+      {
+        "flow_id": "flow_iso_seed101",
+        "flow_family": "isotropic",
+        "roc_auc": 0.5169270833333334,
+        "pr_auc": 0.2791678175129432,
+        "brier": 0.19308062553463326,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "prevalence": 0.25,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_iso_seed102",
+        "flow_family": "isotropic",
+        "roc_auc": 0.5755208333333333,
+        "pr_auc": 0.2738795302507942,
+        "brier": 0.1876123505532527,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "prevalence": 0.25,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_iso_seed103",
+        "flow_family": "isotropic",
+        "roc_auc": 0.4157142857142857,
+        "pr_auc": 0.22235103829830757,
+        "brier": 0.18628965571052827,
+        "balanced_accuracy": 0.49,
+        "precision": 0.0,
+        "recall": 0.0,
+        "prevalence": 0.21875,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_tg_benchmark",
+        "flow_family": "taylor_green",
+        "roc_auc": 0.4050901378579004,
+        "pr_auc": 0.35222079074073154,
+        "brier": 0.25433316145118456,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "prevalence": 0.359375,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_shear_layer",
+        "flow_family": "shear_layer",
+        "roc_auc": 0.45142857142857146,
+        "pr_auc": 0.20104683255814237,
+        "brier": 0.18784744001250417,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "prevalence": 0.21875,
+        "n_samples": 64
+      }
+    ],
+    "dimension": 13
+  },
+  "history": {
+    "mean_auc": 0.5385068408195728,
+    "std_auc": 0.023489321096966758,
+    "overall_auc": 0.5386609730059478,
+    "overall_pr_auc": 0.284746605242596,
+    "overall_brier": 0.19973924360694878,
+    "flow_metrics": [
+      {
+        "flow_id": "flow_iso_seed101",
+        "flow_family": "isotropic",
+        "roc_auc": 0.5768229166666666,
+        "pr_auc": 0.3293219389028458,
+        "brier": 0.19035595220822665,
+        "balanced_accuracy": 0.4895833333333333,
+        "precision": 0.0,
+        "recall": 0.0,
+        "prevalence": 0.25,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_iso_seed102",
+        "flow_family": "isotropic",
+        "roc_auc": 0.5052083333333333,
+        "pr_auc": 0.25109172002431035,
+        "brier": 0.21096029724698812,
+        "balanced_accuracy": 0.4583333333333333,
+        "precision": 0.0,
+        "recall": 0.0,
+        "prevalence": 0.25,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_iso_seed103",
+        "flow_family": "isotropic",
+        "roc_auc": 0.5457142857142857,
+        "pr_auc": 0.2667093999799422,
+        "brier": 0.17654511082499663,
+        "balanced_accuracy": 0.49,
+        "precision": 0.0,
+        "recall": 0.0,
+        "prevalence": 0.21875,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_tg_benchmark",
+        "flow_family": "taylor_green",
+        "roc_auc": 0.5376458112407212,
+        "pr_auc": 0.5345596997474972,
+        "brier": 0.24352024907256534,
+        "balanced_accuracy": 0.5217391304347826,
+        "precision": 1.0,
+        "recall": 0.043478260869565216,
+        "prevalence": 0.359375,
+        "n_samples": 64
+      },
+      {
+        "flow_id": "flow_shear_layer",
+        "flow_family": "shear_layer",
+        "roc_auc": 0.5271428571428571,
+        "pr_auc": 0.23535943800956377,
+        "brier": 0.17731460868196702,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "prevalence": 0.21875,
+        "n_samples": 64
+      }
+    ],
+    "dimension": 25
+  }
+}

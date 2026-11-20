@@ -1,0 +1,7 @@
+{
+  "sup_t_norm_U_L3": 0.952,
+  "mean_norm_U_L3": 0.684,
+  "temporal_variation": 0.268,
+  "status": "TIME_UNIFORMLY_BOUNDED_ON_SIMULATION_INTERVAL",
+  "missing_mathematical_step": "Proof that sup_t ||U(t)||_L3 cannot diverge as t -> T_singularity."
+}

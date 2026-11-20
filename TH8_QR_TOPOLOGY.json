@@ -1,0 +1,7 @@
+{
+  "sector_1_vieillefosse": 0.0,
+  "sector_2_vortex_stretching": 0.5670411985018726,
+  "sector_3_vortex_compression": 0.4322097378277154,
+  "sector_4_biaxial_strain": 0.000749063670411985,
+  "dominant_topology": "Sector 2 (Vortex Stretching, Q > 0, R < 0)"
+}

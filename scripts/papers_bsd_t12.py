@@ -5,7 +5,7 @@ Definition for Standalone Zenodo Paper T12:
 - ROSETTA_T12: The Cassels-Tate Schur Tare, 4x4 Skew Pfaffian Square Identity,
   and Kato-Kolyvagin Euler System Finiteness in the Birch and Swinnerton-Dyer Conjecture.
 
-Author: Arqam, Brandenburg University of Technology (BTU) Cottbus-Senftenberg.
+Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.
 Methodology: ai is being used as a tool.
 Tone: Warm personal letter style in simple Indian English, step-by-step school-math explanations.
 """

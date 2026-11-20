@@ -1,0 +1,8 @@
+{
+  "identity": "xi . Delta(omega) = Delta(q) - q * ||grad(xi)||_F^2",
+  "scalar_viscous_log_formula": "V_log = nu * [ (Delta(q) / q) - ||grad(xi)||_F^2 ]",
+  "mean_mag_curvature_term": 2.241640069664364,
+  "mean_dir_penalty_term": -2.2234576767387684,
+  "mean_V_log": -2.4483042417719525,
+  "positive_V_log_fraction": 0.016741071428571428
+}

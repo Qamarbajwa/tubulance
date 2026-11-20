@@ -1,0 +1,5 @@
+{
+  "residual_behavior": "R_NS = O((dx/r_k)^2)",
+  "interpretation": "Proves second-order consistency and truncation error convergence of the discrete scheme to the continuous Navier-Stokes operator. Does not by itself guarantee existence of a smooth continuum solution without stability bounds.",
+  "status": "CONSISTENCY_PROVED_STABILITY_REQUIRED"
+}

@@ -1,0 +1,6 @@
+{
+  "lei_ren_tian_corollary_1_5": "Singularity at (0,0) <===> Asymptotic direction set I intersects every great circle on S^2.",
+  "our_finite_parabolic_formulation": "Regularity at (0,0) <===> exists r > 0, M > 0 such that R_M(r) < pi/2.",
+  "relationship": "Lei-Ren-Tian Corollary 1.5 is the asymptotic scale-free characterization on I = bigcap_{r,M} overline{K_M(r)}. Our formulation is the finite-cylinder quantitative localization on Q(r) providing the constructive rescaling threshold M_r = r^2 M and margin delta_* = 1 - sin(R_M(r)) > 0.",
+  "novelty_classification": "QUANTITATIVE_PARABOLIC_REDUCTION_OF_LEI_REN_TIAN_2025"
+}

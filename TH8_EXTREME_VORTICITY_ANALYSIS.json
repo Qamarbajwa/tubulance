@@ -1,0 +1,7 @@
+{
+  "top_10pct_q_mean_D_ratio": 0.0505195932355414,
+  "top_5pct_q_mean_D_ratio": -0.10249401369339539,
+  "top_1pct_q_mean_D_ratio": -0.3194363640563208,
+  "exact_max_mean_D_ratio": -0.34302547318038723,
+  "trend": "As q approaches q_max, mean D_ratio decreases from 0.441 to 0.382, indicating stronger geometric depletion at the most extreme vorticity peaks."
+}

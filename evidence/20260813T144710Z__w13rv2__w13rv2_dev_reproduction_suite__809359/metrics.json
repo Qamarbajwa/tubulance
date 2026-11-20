@@ -1,0 +1,14 @@
+{
+  "w13rv2_m1_r210_E_proj": {
+    "name": "w13rv2_m1_r210_E_proj",
+    "value": 0.6347500503735799,
+    "units": null,
+    "source_files": [
+      "w13r_reconciliation.py"
+    ],
+    "metric_function": "calculate_velocity_l2_relative_error",
+    "metric_function_hash": "aeb60bb0b52ebf127307a880381a304b3e2ea3c65501ef4c2541fea39e2191d4",
+    "run_id": "20260813T144710Z__w13rv2__w13rv2_dev_reproduction_suite__809359",
+    "config_hash": "6c6efd76b51a80e43f74326a554429539f8b88d7de8ae12dc11196e69e4ffd97"
+  }
+}

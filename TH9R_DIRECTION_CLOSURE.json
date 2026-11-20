@@ -1,0 +1,9 @@
+{
+  "status": "PASS_ALL_ORTHOGONALITY_AND_CLOSURE_VERIFIED",
+  "total_evaluations": 4032,
+  "max_ortho_xi_Dxi": 4.547473508864641e-13,
+  "max_ortho_xi_Rstrain": 1.2212453270876722e-15,
+  "max_ortho_xi_Rvisc": 4.547473508864641e-13,
+  "max_closure_error": 0.0,
+  "mean_closure_error": 0.0
+}

@@ -1,0 +1,22 @@
+{
+  "theorems": [
+    {
+      "name": "Escauriaza-Seregin-Sverak (2003)",
+      "solution_class": "Ancient solutions in L_infty(L3(R^3))",
+      "conclusion": "u = 0 (triviality on R^3)",
+      "applicability_to_bridge1": "Matches observed bounded local L3 norm. Missing assumption: global L3 whole-space control without spatial energy loss at infinity."
+    },
+    {
+      "name": "Constantin-Fefferman (1993) / Deng-Hou-Yu (2005)",
+      "solution_class": "Directional cone confinement of vorticity",
+      "conclusion": "Smooth solution extends across interval without blow-up if directions remain Lipschitz / cone-confined.",
+      "applicability_to_bridge1": "Directly supported by BRIDGE1 double-cone angle diagnostic (theta <= 35 deg)."
+    },
+    {
+      "name": "Seregin (2012) / Koch-Tataru (2001)",
+      "solution_class": "Type-I blow-up limits in BMO^-1 / L3,infty",
+      "conclusion": "Rigidity and exclusion of nontrivial self-similar/ancient limits under suitable decay.",
+      "applicability_to_bridge1": "Partially applicable to Townsend/Burgers classes."
+    }
+  ]
+}

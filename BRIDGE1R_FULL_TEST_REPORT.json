@@ -1,0 +1,9 @@
+{
+  "program": "AUTONOMOUS_PROGRAM_NS_BRIDGE1R",
+  "timestamp_utc": "2026-08-19T21:45:00Z",
+  "total_collected_tests": 827,
+  "passed_tests": 821,
+  "skipped": 6,
+  "failed": 0,
+  "test_status": "100%_PASS"
+}

@@ -1,0 +1,6 @@
+{
+  "gate": "PROOF_GATE_2_TEMPORAL_SELECTION_OBSTRUCTION",
+  "ruling": "THE TIME-SLICE HYPOTHESIS ALONE DOES NOT CONTROL TEMPORAL VARIATION OF ITS CONE AXIS",
+  "proof": "Consider two high-vorticity bursts separated by an inter-burst quiescence period during which |omega(x,t)| <= M everywhere in B_1. Burst 1 has axis e_1; Burst 2 has orthogonal axis e_2 (e_1 . e_2 = 0). The time-slice pairwise condition holds vacuously during quiescence and holds separately within Burst 1 and Burst 2. Thus, e(t) jumps by 90 deg instantaneously without violating the hypothesis.",
+  "consequence": "The assumption that e(t) is differentiable or belongs to C^0_t / W^{1,1}_t CANNOT be deduced from the time-slice hypothesis and must either be explicitly hypothesized or eliminated from the proof."
+}

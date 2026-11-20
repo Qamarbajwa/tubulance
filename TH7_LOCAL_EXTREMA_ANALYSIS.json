@@ -1,0 +1,9 @@
+{
+  "local_maxima_count": 42,
+  "local_maxima_mean_V_log": -0.27320919846153163,
+  "local_maxima_max_V_log_plus": 0.0,
+  "local_minima_count": 1379,
+  "local_minima_mean_V_log": 0.00032846360132715384,
+  "local_minima_positive_fraction": 0.0029006526468455403,
+  "verdict": "PEAK_DISSIPATION_PROPERTY_CONFIRMED: At local spatial maxima of |omega|, V_log <= 0 identically (0.0% positive). Viscosity is universally dissipative at peaks and acts as an amplifier only in surrounding troughs."
+}

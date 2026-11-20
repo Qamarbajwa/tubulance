@@ -1,0 +1,13 @@
+{
+  "experiment_id": "TH1_DEV_EXPLORATORY",
+  "status": "TH1_DEV_EXPLORATORY",
+  "timestamp_utc": "2026-08-15T02:20:30.309978+00:00",
+  "zero_leakage_status": "VERIFIED_PASS",
+  "execution_duration_sec": 219.72699999809265,
+  "n_independent_flows": 5,
+  "total_lagrangian_samples": 320,
+  "model_types": [
+    "LogisticRegression_L2",
+    "RandomForest_shallow"
+  ]
+}

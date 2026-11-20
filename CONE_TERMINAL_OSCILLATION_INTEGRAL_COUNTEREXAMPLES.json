@@ -1,0 +1,10 @@
+{
+  "candidate_condition": "int_{-h}^0 d_{RP^2}(e(t), e_*) / |t|^gamma dt < infty (gamma >= 0)",
+  "adversarial_construction": "Sequence of orthogonal spikes e(t) = e_2 (d(e_2, e_1) = pi/2) on intervals I_n = (t_n - 2^(-n^2), t_n) where t_n = -2^(-n).",
+  "findings": [
+    "1. Integral is finite for all gamma >= 0: sum_{n=1}^infty (pi/2) 2^(n*gamma - n^2) < infty.",
+    "2. However, ess_sup_{t in (-h,0)} d(e(t), e_1) = pi/2 > beta on every neighborhood (-h, 0).",
+    "3. Therefore, no eventual fixed double cone exists around e_1 or any other axis."
+  ],
+  "verdict": "WEIGHTED_INTEGRAL_OSCILLATION_FALSIFIED_AS_SUFFICIENCY_CONDITION"
+}

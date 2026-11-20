@@ -1,0 +1,15 @@
+{
+  "gate": "PROOF_GATE_12_ADVERSARIAL_COUNTEREXAMPLES",
+  "counterexamples": [
+    {
+      "name": "Rapid Infinite-Oscillation Axis",
+      "setup": "e(t) rotates infinitely fast near t = 0 with Var(e) = infty",
+      "outcome": "Fails regularity unless Var(e) < infty, proving Var(e) < infty is necessary for moving-axis closure."
+    },
+    {
+      "name": "Orthogonal Quiescent Burst Pair",
+      "setup": "e_1 for t in [-1, -0.6], |omega| <= M for t in (-0.6, -0.4), e_2 for t in [-0.4, 0]",
+      "outcome": "Var(e) = pi/2 < infty. Proof closes cleanly! Singularity excluded."
+    }
+  ]
+}

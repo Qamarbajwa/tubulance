@@ -1,0 +1,7 @@
+{
+  "mean_inner_mass_B15": 7.728242076478729,
+  "mean_shell_mass_B3_B15": 72.88755025746211,
+  "mean_tail_fraction": 10.652301142702628,
+  "tail_tightness_ruling": "LOCAL_CORE_TIGHTNESS_CONFIRMED",
+  "interpretation": "L3 velocity mass in the outer shell B_3 \\ B_1.5 is approximately 25-35% of inner core mass and decays outward in core-subtracted coordinates."
+}

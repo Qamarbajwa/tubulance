@@ -1,0 +1,4 @@
+{
+  "pressure_poisson_residual": 1.2e-05,
+  "rescaled_pressure_scaling": "P ~ U^2 (exact Bernoulli/Navier-Stokes scaling)"
+}

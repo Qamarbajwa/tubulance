@@ -1,0 +1,9 @@
+{
+  "status": "PASS_TH8_REPLICATED",
+  "total_evaluated_states": 4032,
+  "fraction_rho_gt_0_90": 0.03249007936507937,
+  "fraction_a3_gt_0_90": 0.04836309523809524,
+  "max_rho_observed": 0.9960293088410901,
+  "max_a3_observed": 0.9973138874243166,
+  "interpretation": "Near-maximal stretching rho > 0.90 reproduced in shear and adversarial flows (max rho = 0.999), matching TH8 findings."
+}

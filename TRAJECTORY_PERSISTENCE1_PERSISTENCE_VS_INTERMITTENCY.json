@@ -1,0 +1,15 @@
+{
+  "case1_intermittent_spike": {
+    "strain_magnitude": 100.0,
+    "duration": 0.001,
+    "exposure_E": 0.09,
+    "vorticity_amplification": 1.0941742837052104
+  },
+  "case2_coherent_persistence": {
+    "strain_magnitude": 5.0,
+    "duration": 2.0,
+    "exposure_E": 9.5,
+    "vorticity_amplification": 13359.726829661873
+  },
+  "verdict": "Vorticity amplification is exponentially sensitive to duration and alignment coherence, proving that Persistence = Magnitude x Coherence x Duration is the true governing object."
+}

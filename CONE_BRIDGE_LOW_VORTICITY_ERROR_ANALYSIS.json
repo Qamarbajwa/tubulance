@@ -1,0 +1,4 @@
+{
+  "low_q_error_bound": "int_{q <= M} |omega| dy <= M * |B_R| = M * (4/3 pi R^3)",
+  "scaling": "Subcritical under Navier-Stokes parabolic rescaling: M * r_k^3 -> 0 as r_k -> 0 (since M is fixed threshold)."
+}

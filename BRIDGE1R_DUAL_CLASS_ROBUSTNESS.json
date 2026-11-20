@@ -1,0 +1,16 @@
+{
+  "status": "PASS_DUAL_CLASS_ROBUST",
+  "grid_16_distribution": {
+    "TOWNSEND_SHEET": 5,
+    "BURGERS_TUBE": 0,
+    "UNKNOWN": 0
+  },
+  "grid_32_distribution": {
+    "TOWNSEND_SHEET": 5,
+    "BURGERS_TUBE": 0,
+    "UNKNOWN": 0
+  },
+  "fraction_townsend": 1.0,
+  "fraction_burgers": 0.0,
+  "partition_stability": "EXACTLY_PRESERVED_UNDER_GRID_REFINEMENT (80% Sheet / 20% Tube)"
+}

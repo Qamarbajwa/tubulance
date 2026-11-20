@@ -1,0 +1,5 @@
+{
+  "status": "PASS_EVALUATED",
+  "mean_rescaled_rho_center": -0.003458111680874331,
+  "interpretation": "In the rescaled parabolic limit, the center exhibits finite strain with bounded normalized stretching ratio."
+}

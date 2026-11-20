@@ -1,0 +1,6 @@
+{
+  "optimal_selector_radius": "R_opt = inf_{admissible e} R_term(e)",
+  "intrinsic_relation": "R_M <= alpha + R_opt. If R_opt < beta, then R_M < pi/2.",
+  "selector_pathology": "A badly chosen selector can oscillate with R_term(e) >= beta even when the underlying direction cloud K_M(t) is static (R_M = 0). The intrinsic cloud quantity R_M is selector-independent and strictly superior.",
+  "status": "PROVED_EXACT"
+}

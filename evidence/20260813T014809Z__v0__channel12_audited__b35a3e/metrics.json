@@ -1,0 +1,26 @@
+{
+  "velocity_relative_l2": {
+    "name": "velocity_relative_l2",
+    "value": 0.9540138060052025,
+    "units": null,
+    "source_files": [
+      "w10_multi_coordinate.py"
+    ],
+    "metric_function": "calculate_velocity_l2_relative_error",
+    "metric_function_hash": "aeb60bb0b52ebf127307a880381a304b3e2ea3c65501ef4c2541fea39e2191d4",
+    "run_id": "20260813T014809Z__v0__channel12_audited__b35a3e",
+    "config_hash": "665c436ba14db3bb4054ad705f1d988c8ad5533a46ff5d6412fa193a2c6ecabc"
+  },
+  "wall_shear_relative_error": {
+    "name": "wall_shear_relative_error",
+    "value": 0.4646471798140458,
+    "units": null,
+    "source_files": [
+      "w10_multi_coordinate.py"
+    ],
+    "metric_function": "calculate_wall_shear_relative_error",
+    "metric_function_hash": "791c0b42cd2e11fbd2de663f5d34fd34e8a65ed5149f091df5020c71e880aaed",
+    "run_id": "20260813T014809Z__v0__channel12_audited__b35a3e",
+    "config_hash": "665c436ba14db3bb4054ad705f1d988c8ad5533a46ff5d6412fa193a2c6ecabc"
+  }
+}

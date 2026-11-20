@@ -1,7 +1,7 @@
 /-
-Copyright (c) 2026 Arqam. All rights reserved.
+Copyright (c) 2026 Qamar Munawer. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
-Authors: Arqam (Brandenburg University of Technology Cottbus-Senftenberg)
+Authors: Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg)
 
 Methodology note: ai is being used as a tool.
 -/

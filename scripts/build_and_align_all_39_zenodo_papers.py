@@ -11,7 +11,7 @@ Comprehensive Engine to:
    - RosettaUnifiedEnergyQuantumAndPfaffianCert.lean
 2. Write the 5 complete master papers (ROSETTA_00, HODGE_00, YM_00, RH_00, NS_00).
 3. Enforce author 'Qamar Munawer' and affiliation
-   'Brandenburg University of Technology Cottbus-Senftenberg' (zero department names, zero Arqam).
+   'Brandenburg University of Technology Cottbus-Senftenberg' (zero department names, zero Qamar Munawer).
 4. Remove all 'tabulance', 'tubulance', 'rheihman' typos from titles, prose, and metadata.
 5. Ingest clean titles for all 39 papers.
 6. Append the plain-language Energy, Quantum Matter, Pfaffian Squares, Metaphysics,
@@ -576,7 +576,7 @@ def sanitize_tex_content(tex: str, paper_key: str = "") -> str:
     author_str = f"{AUTHOR_NAME} \\\\\n{AFFILIATION}"
     tex = replace_braced_command(tex, "author", author_str)
 
-    # Strip any leftover Arqam references and department lines
+    # Strip any leftover Qamar Munawer references and department lines
     tex = re.sub(r"\bArqam\b", AUTHOR_NAME, tex)
     tex = re.sub(r"Brandenburg University of Technology\s*\(BTU\)\s*Cottbus[–-]Senftenberg", AFFILIATION, tex)
     tex = re.sub(r"(?i)Department of [A-Za-z &,-]+\\\\", "", tex)

@@ -1,0 +1,24 @@
+{
+  "protocol_version": "NS_ADAPTIVE_SCIENTIFIC_DISCOVERY_ENGINE_V1",
+  "timestamp_utc": "2026-08-19T09:05:00Z",
+  "open_questions": [
+    {
+      "q_id": "Q1_LIOUVILLE_RIGIDITY_CONNECTION",
+      "question": "Can the verified convergence of parabolically rescaled Navier-Stokes solutions to the Townsend shear-sheet class be rigorously connected to a Liouville-type rigidity theorem under scale-critical L3 control?",
+      "importance": "VERY_HIGH",
+      "status": "ACTIVE_INVESTIGATION"
+    },
+    {
+      "q_id": "Q2_NONLOCAL_STRAIN_ORIGIN",
+      "question": "What fraction of the extensional strain lambda_3 that drives near-maximal stretching originates from local vs nonlocal vorticity across varying spatial scales?",
+      "importance": "HIGH",
+      "status": "QUEUED"
+    },
+    {
+      "q_id": "Q3_ADVERSARIAL_DEFEAT_OF_SELF_REGULATION",
+      "question": "Can an explicit 3D initial condition be constructed where near-maximal stretching, weak eigenframe rotation, and zero viscous dissipation align simultaneously to sustain accelerating growth?",
+      "importance": "VERY_HIGH",
+      "status": "QUEUED"
+    }
+  ]
+}

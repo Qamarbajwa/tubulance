@@ -1,0 +1,10 @@
+{
+  "primary_source": "Zhen Lei, Xiao Ren, Gang Tian, arXiv:2501.08976 (2025)",
+  "known_theorems": {
+    "theorem_1_1": "Requires fixed static axis e for all t in (-1, 0]",
+    "corollary_1_6": "Requires pairwise condition on ALL nonzero vorticity (|omega| > 0)",
+    "related_moving_frame_literature": "Miller (arXiv:2002.02152) and related literature on time-varying directional planes in vorticity equations."
+  },
+  "established_result": "Theorem (Terminal-Axis Double-Cone Criterion): Replaces Theorem 1.1's global time-independence with essential terminal stabilization ess_lim_{t -> 0^-} e(t) = e_* in RP^2, while strictly preserving high-vorticity thresholding M > 0.",
+  "originality_classification": "CONDITIONAL_REGULARITY_EXTENSION_PROVED_VIA_FIXED_AXIS_REDUCTION (Local corollary/reduction of Lei-Ren-Tian 2025; novelty claim withheld pending deeper literature audit)."
+}

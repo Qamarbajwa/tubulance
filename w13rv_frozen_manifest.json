@@ -1,0 +1,17 @@
+{
+  "governance_status": "LEVEL 2 - TECHNICALLY VERIFIED",
+  "source_modified_during_reproduction": false,
+  "environment": {
+    "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy_version": "2.2.6",
+    "os": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel"
+  },
+  "file_hashes": {
+    "src/navier3d/reduced/w13_multiscale_capacity.py": "9329707b7a2c8f94c708de6e701b593029ade03f3129e3bd35084259bdb8d937",
+    "src/navier3d/reduced/w13r_reconciliation.py": "56c368e2d5d9b067f3796c3634a3f16b7a8e02da730c7420bfc906e7f70d74ac",
+    "src/navier3d/audit/evidence_bundle.py": "3d1cb491d5be588cf549346dd89cce74922b740cc31cf469efee9a19533706bf",
+    "src/navier3d/audit/metrics.py": "abbf60c8d10ac43128901ad09338d2522c23e68995cc8e2a1f75e881e53885b7",
+    "verifier/verify_receipt.py": "c074996aca9e932df4a676dbf55f28c61a6e62212c001079fb185845d04110ba"
+  }
+}

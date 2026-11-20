@@ -1,0 +1,5 @@
+{
+  "C1_Cumulative_Runaway": "FALSIFIED: Net cycle amplification across recurrent bursts is negative due to inter-burst eigenframe scrambling and compressive relaxation.",
+  "C2_Inter_Burst_Damping_Theorem": "CONFIRMED: Post-burst e3->e2 transition and pressure-Hessian rotation ensure that intervals of rho < 0.50 dominate trajectory history.",
+  "C3_Structure_Switching_Quench": "CONFIRMED: Extreme bursts occur during sheet formation (Q < 0), followed by roll-up into tubes (Q > 0) where vortex stretching is depleted."
+}

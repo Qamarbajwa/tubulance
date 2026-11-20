@@ -1,0 +1,59 @@
+{
+  "governance": {
+    "status": "ANALYTICAL LITERATURE REVIEW — HYPOTHESES NOT YET PROJECT-VALIDATED",
+    "milestone": "P2R",
+    "description": "Cross-Domain Failure Graph v2: Rigorous separation of DIRECT EVIDENCE from OUR INFERENCE across all failure archetypes."
+  },
+  "analogous_failures": [
+    {
+      "id": "FAIL-MAP-01-V2",
+      "our_failure_id": "N02_N03",
+      "our_failure_description": "Fixed snapshot POD fails across unseen turbulent seeds (E_u ≈ 99.9%) due to random spatial phase shifts in periodic directions.",
+      "analogous_field": "Transport-Dominated Systems & Hyperbolic Waves",
+      "analogous_failure_in_field": "Standard linear POD exhibits slow Kolmogorov n-width decay on advecting shocks, traveling pulses, and wave packets.",
+      "direct_literature_evidence": "Reiss et al. (2018 SISC) demonstrated that Shifted POD reduces mode count by an order of magnitude for 1D/2D traveling waves. Rowley & Marsden (2000 Physica D) proved that quotienting out continuous Lie group symmetries reduces POD dimension for traveling-wave attractors.",
+      "our_project_inference": "IF turbulent cross-seed decorrelation in periodic directions (x, z) is primarily driven by spatial translation/phase drift, THEN symmetry reduction / spatial alignment will reduce cross-seed subspace distance. (Must be validated by R_align pretest before claim).",
+      "status": "CONDITIONAL_HYPOTHESIS"
+    },
+    {
+      "id": "FAIL-MAP-02-V2",
+      "our_failure_id": "N04_N06",
+      "our_failure_description": "Heuristically pruning small triadic interactions in the modal convection tensor caused catastrophic energy blowup and numerical instability in W7.",
+      "analogous_field": "Structure-Preserving Reduced-Order Modeling",
+      "analogous_failure_in_field": "Truncating or perturbing quadratic Galerkin interaction tensors destroys skew-symmetry and breaks energy conservation, leading to unphysical amplitude growth in long-term integration.",
+      "direct_literature_evidence": "Schlegel & Noack (2015 JFM) proved that preserving skew-symmetry <phi_i, (phi_j·∇)phi_k> + <phi_k, (phi_j·∇)phi_i> = 0 is mathematically necessary and sufficient for energy boundedness of inviscid Galerkin systems.",
+      "our_project_inference": "Our OnTheFlyFFTEvaluator succeeded because it evaluates the full continuous skew-symmetric operator on a collocation grid without tensor truncation. Our FFT result is independent project evidence.",
+      "status": "DIRECT_STRUCTURAL_MATCH"
+    },
+    {
+      "id": "FAIL-MAP-03-V2",
+      "our_failure_id": "N10",
+      "our_failure_description": "Derivative-weighted mode selection (W9-A/B) improved wall-shear stress error (E_tau_w dropped to 3.9%), but degraded global velocity field error (E_u > 1.0) because wall-gradient modes displaced bulk kinetic energy modes.",
+      "analogous_field": "Goal-Oriented Reduced-Order Modeling & Aeroacoustics",
+      "analogous_failure_in_field": "Standard energy-norm POD is suboptimal for goal functionals (lift, drag, sound pressure) because energy-dominant bulk modes do not align with the observable's gradient.",
+      "direct_literature_evidence": "Schlegel et al. (2012 JFM) introduced Observable Inferred Decomposition (OID) and proved that optimizing modes for a linear goal functional achieves order-of-magnitude reduction for that functional while departing from optimal full-state L2 energy.",
+      "our_project_inference": "Our wall-shear result is an empirical instance of goal-oriented reduction: wall shear stress tau_w is low-rank even when the full 3D velocity field u(x,t) has high Kolmogorov n-width.",
+      "status": "DIRECT_STRUCTURAL_MATCH"
+    },
+    {
+      "id": "FAIL-MAP-04-V2",
+      "our_failure_id": "N12_N15",
+      "our_failure_description": "Global separable Fourier-sine eigenwaves hit an intrinsic representation floor (E_proj ≈ 24.5%) at moderate ranks, and greedy global oracle selection failed to achieve 5% error within r=1152 modes.",
+      "analogous_field": "Multiresolution Analysis & Wavelet Denoising",
+      "analogous_failure_in_field": "Global Fourier bases require high rank O(N) to resolve spatially localized, intermittent structures (Gibbs phenomenon and dense high-wavenumber tails).",
+      "direct_literature_evidence": "Farge & Schneider (2001 Phys. Fluids) and Deriaz & Perrier (2006 J. Turbul.) proved that orthogonal wavelet thresholding compresses 3D turbulent fields into sparse non-Gaussian coherent structures (compressible in wavelets) and incoherent background noise.",
+      "our_project_inference": "Multiscale solenoidal wave packets (W13-G) are mathematically justified for localized coherent structure extraction and sparse inverse sensor recovery, independent of forward time-stepping ROM capacity.",
+      "status": "PARTIAL_PRECEDENT"
+    },
+    {
+      "id": "FAIL-MAP-05-V2",
+      "our_failure_id": "N13",
+      "our_failure_description": "Ramanujan-inspired spectral correction failed to improve continuous Navier-Stokes velocity field prediction.",
+      "analogous_field": "Discrete Signal Processing & Periodicity Estimation",
+      "analogous_failure_in_field": "Arithmetic Ramanujan sums c_q(n) are orthogonal over integer divisibility metrics, not continuous differential operators.",
+      "direct_literature_evidence": "Vaidyanathan & Tenneti (2014 IEEE Trans. Signal Process.) established Ramanujan filter banks for discrete integer period identification in digital signals and genomic sequences.",
+      "our_project_inference": "Ramanujan transforms must be permanently retired from continuous spatial fluid dynamics, but our implementation is valid for discrete engine cycle periodicity and vibration monitoring.",
+      "status": "NEGATIVE_KNOWLEDGE_CONFIRMED"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "interface_error_term": "E_int = sum_j int_{partial Omega_j} |u| |omega| dS",
+  "scaling": "Scaling critical under parabolic rescaling: [u omega L^2] ~ L/T * 1/T * L^2 ~ L^3/T^2, bounded by local energy dissipation."
+}

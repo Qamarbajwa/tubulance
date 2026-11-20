@@ -1,0 +1,61 @@
+{
+  "run_id": "20260813T144710Z__w13rv2__w13rv2_dev_reproduction_suite__809359",
+  "finalized_at_utc": "2026-08-13T14:47:10.468138+00:00",
+  "files": [
+    {
+      "filename": "config.json",
+      "size_bytes": 286,
+      "sha256": "1669d35d49201ed3ccdde5fa0623b477eeb7ad0acea7fcf3a06b6fec9211d5c1"
+    },
+    {
+      "filename": "config.sha256",
+      "size_bytes": 64,
+      "sha256": "f15189ae6ea357d58c8889340c7a40651199c49001c05bda74f605e7ff527d69"
+    },
+    {
+      "filename": "environment.json",
+      "size_bytes": 575,
+      "sha256": "91f064a7ca887873a1d4500035413c46ae5fc387b1fe665c14ca1370d7a357e7"
+    },
+    {
+      "filename": "metrics.json",
+      "size_bytes": 524,
+      "sha256": "d9c4d91830e07460089579f7d3ef28d81d12b6dde929916c9ddc6c755473481b"
+    },
+    {
+      "filename": "raw/coeffs_M1_210.npy",
+      "size_bytes": 3248,
+      "sha256": "72256d178172cb931efc83fa106e68b1014abd69b0ec5a1bdba65c9c1f83faab"
+    },
+    {
+      "filename": "raw/u_recons_M1_210.npy",
+      "size_bytes": 23648,
+      "sha256": "48d3116ab1d57c9b8c375df3217683892ee87278d8fe40aac51000e4384efc68"
+    },
+    {
+      "filename": "raw/u_ref.npy",
+      "size_bytes": 23648,
+      "sha256": "158c314f099a8e5eb8d4de7848ab42fd67d891608c0d276576da4dd389178984"
+    },
+    {
+      "filename": "raw/v_recons_M1_210.npy",
+      "size_bytes": 23648,
+      "sha256": "72663d7699dae1b3e9696cef3a1598b4104818e624e4e6855af17976f89fe6de"
+    },
+    {
+      "filename": "raw/v_ref.npy",
+      "size_bytes": 23648,
+      "sha256": "b0f99fd6bec288a746d1fcade88ab44aaffe535e3089916d22782f00f42862bd"
+    },
+    {
+      "filename": "raw/w_recons_M1_210.npy",
+      "size_bytes": 23648,
+      "sha256": "a848cf0fe78d9ea85e710336916dab5ba257ad1487b29d4351e82bddc5d69827"
+    },
+    {
+      "filename": "raw/w_ref.npy",
+      "size_bytes": 23648,
+      "sha256": "0b03163551b64eb5f2c68a02233c619dd9f97ce347f0ccf3b5f49c159b0ae248"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "is_strictly_self_similar": false,
+  "is_quasi_steady_in_rescaled_variables": true,
+  "drift_rate_ds": 0.014
+}

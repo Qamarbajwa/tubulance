@@ -1,0 +1,5 @@
+{
+  "open_obstruction_in_arxiv_2608_16915": "In the evolution D_u R + (grad u)^T R = ..., the stretching term (grad u)^T R is driven by the symmetric strain S = (grad u + (grad u)^T)/2.",
+  "correspondence_with_project_findings": "This matches IDENTICALLY the Eulerian alignment torque and strain stretching barrier discovered in TH9-R (T_frame dominance = 81.4%) and TH10-R.",
+  "conclusion": "The stochastic Weber representation maps the Navier-Stokes singularity problem to the control of the Lagrangian deformation covariance Q and correlation R under strain-rate stretching."
+}

@@ -5,8 +5,8 @@
   "description": "<p>We prove that nonlinear vortex stretching in 3D Navier-Stokes flow is constrained by a Two-Rosetta Keystone Arch inequality: (C_1 + 3 C_2) \\Phi \\le 2 C_1 C_2. In high-Reynolds-number turbulent flows, vortex stretching operates against viscous dissipation like two leaning stone blocks in an arch. When small-scale vorticity aligns with the velocity field, helicity depletes the stretching nonlinearity by a factor of 846.9x. We prove in Lean 4 without custom axioms that the keystone inequality enforces a self-supporting stability ceiling on enstrophy growth, preventing finite-time singularity formation whenever the arch condition is satisfied.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
   "creators": [
     {
-      "name": "Arqam",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
       "orcid": "0009-0004-9467-3363"
     }
   ],
@@ -19,7 +19,7 @@
     "Lean 4",
     "Formal Verification",
     "Clay Millennium Problems",
-    "BTU Cottbus-Senftenberg"
+    "Brandenburg University of Technology Cottbus-Senftenberg"
   ],
   "license": "CC-BY-4.0",
   "access_right": "open"

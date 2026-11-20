@@ -23,7 +23,7 @@ formalized in `RosettaContinuumAnalyticPremiseACert.lean`:
    - Algebraic cycle degree compactness D(t) <= D_max < infinity
 
 Methodology note: ai is being used as a tool.
-Author: Arqam, Brandenburg University of Technology Cottbus-Senftenberg.
+Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.
 """
 
 from __future__ import annotations
@@ -253,7 +253,7 @@ def main() -> int:
     print("=" * 80)
     print("PROBE: CONTINUUM ANALYTIC PREMISE A ACROSS FOUR WORKSPACES")
     print("Methodology note: ai is being used as a tool.")
-    print("Author: Arqam, Brandenburg University of Technology Cottbus-Senftenberg.")
+    print("Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.")
     print("=" * 80)
 
     res_rh = run_riemann_continuum_probe()

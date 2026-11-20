@@ -1,0 +1,5 @@
+{
+  "lemma_name": "A.E.-Time to Regular-Point Promotion Lemma",
+  "proof": "Let (x_0, t_0) be a regular point of the suitable weak solution in Q(r) with |omega(x_0, t_0)| > M_r. By regularity, the velocity and vorticity fields are smooth and continuous in a parabolic neighborhood U of (x_0, t_0). Choose a sequence of times t_n -> t_0 such that each t_n belongs to the full-measure set where the time-slice cone bound holds. For n sufficiently large, |omega(x_0, t_n)| > M_r, which implies |xi(x_0, t_n) x e_*| <= 1 - delta_*. Taking the limit n -> infty, continuity of xi in U yields |xi(x_0, t_0) x e_*| <= 1 - delta_*. Thus, the hypothesis holds at every regular point in Q(r), matching Theorem 1.1 identically.",
+  "status": "PROVED_EXACT"
+}

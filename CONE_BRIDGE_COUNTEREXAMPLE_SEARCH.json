@@ -1,0 +1,16 @@
+{
+  "tested_counterexamples": [
+    {
+      "case": "Orthogonal vortex tube collision",
+      "outcome": "Pairwise fails globally, but structure-wise holds locally on each tube"
+    },
+    {
+      "case": "Counter-rotating sheet pair",
+      "outcome": "Projective direction xi ~ -xi holds cone angle 0 deg"
+    },
+    {
+      "case": "Reconnecting vortex ring",
+      "outcome": "Bridge region is low-vorticity (q < M), controlled by volume term"
+    }
+  ]
+}

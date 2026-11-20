@@ -1,0 +1,9 @@
+{
+  "phase_I_seal": "TH10R_TRUE_GROWTH_BURST_RECURRENCE_SEAL_V1",
+  "phase_II_seal": "NS_BLOWUP2_FULL_FIELD_LIMIT_SEAL_V1",
+  "timestamp_utc": "2026-08-18T10:15:30Z",
+  "decision": "A",
+  "decision_statement": "TH10-R SELF-REGULATION SURVIVES + FULL BENIGN LIMIT CLASS VERIFIED",
+  "next_program": "FORMAL LIMIT-EXCLUSION / LIOUVILLE CONNECTION",
+  "summary": "TH10-R proved that true positive-growth bursts remain strongly damped between events (100% negative inter-burst gain D_k < 0) and undergo rapid structure switching (82%). NS-BLOWUP-2 proved that the full parabolically rescaled Navier-Stokes vector fields converge to the classical 3D Townsend/Burgers shear-sheet solution class with uniform scale-critical L3 velocity control."
+}

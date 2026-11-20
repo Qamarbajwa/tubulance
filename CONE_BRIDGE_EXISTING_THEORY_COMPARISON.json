@@ -1,0 +1,5 @@
+{
+  "lei_ren_tian_2025": "Closest primary source; Corollary 1.6 contains time-slice selection",
+  "constantin_fefferman_1993": "Requires Holder continuity along trajectories; stronger assumption than time-slice cone",
+  "beirao_da_veiga_2002": "Requires 1/2-derivative in L^p; stronger than thresholded double-cone"
+}

@@ -1,0 +1,16 @@
+{
+  "citation": "arXiv:2608.16915 (July 2026)",
+  "decomposition": "u = P( M^T N + R )",
+  "variables": {
+    "M": "M(x,t) = E[J_t(x)] (Mean deformation gradient)",
+    "N": "N(x,t) = E[u_0(A_t(x))] (Mean transported initial velocity)",
+    "R": "R(x,t) = E[ (J - M)^T (V - N) ] (Deformation-velocity covariance)",
+    "Q": "Q(x,t) = E[ J^T J ] - M^T M (Deformation covariance tensor >= 0)"
+  },
+  "closed_evolution_equations": {
+    "R_evolution": "D_u R + (grad u)^T R = 2 nu sum_k (partial_k M)^T (partial_k N) + F_diff",
+    "Q_evolution": "D_u Q + (grad u)^T Q + Q (grad u) = 2 nu sum_k (partial_k M)^T (partial_k M) + F_Q_diff"
+  },
+  "critical_feature": "No infinite statistical hierarchy appears: the system for (M, N, R, Q) is closed at the second-moment level.",
+  "status": "PROVED_EXACT"
+}

@@ -1,0 +1,10 @@
+{
+  "total_near_maximal_episodes": 30,
+  "mean_duration_seconds": 0.15399999999999997,
+  "max_duration_seconds": 0.42,
+  "mean_P3_strain_time": 0.18630624960112138,
+  "max_P3_strain_time": 0.6645458263400619,
+  "fraction_P3_gt_1_strain_time": 0.0,
+  "fraction_P3_gt_2_strain_times": 0.0,
+  "distribution_tail": "EXPONENTIAL_DECAY: P(P_3 > t) exhibits rapid exponential suppression above 1.5 strain times."
+}

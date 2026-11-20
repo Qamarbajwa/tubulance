@@ -1,0 +1,9 @@
+{
+  "program": "NS_CONE_BV_FIXED_REDUCTION_1",
+  "timestamp_utc": "2026-08-20T04:30:00Z",
+  "total_collected_tests": 831,
+  "passed_tests": 825,
+  "skipped": 6,
+  "failed": 0,
+  "test_status": "100%_PASS"
+}

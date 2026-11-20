@@ -56,7 +56,7 @@ def publish_paper(token: str, pdf_path: Path, tex_path: Path, title: str, descri
             "upload_type": "publication",
             "publication_type": "preprint",
             "description": description,
-            "creators": [{"name": "Munawer, Qamar", "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"}],
+            "creators": [{"name": "Munawer, Qamar", "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"}],
             "access_right": "open",
             "license": "cc-by-4.0",
             "publication_date": "2026-11-20",

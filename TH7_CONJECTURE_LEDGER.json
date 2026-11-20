@@ -1,0 +1,12 @@
+{
+  "ledger_version": "1.0",
+  "program": "AUTONOMOUS_TH7_PROGRAM",
+  "conjectures": [
+    {
+      "id": "CONJECTURE_TH7_1",
+      "statement": "For any smooth solution of 3D incompressible Navier-Stokes, positive viscous logarithmic growth along material lines is bounded by V_log^+ <= nu * max(0, Delta(|omega|)) / |omega|, and vanishes identically at all local spatial maxima of |omega|.",
+      "status": "MATHEMATICALLY_PROVEN_THEOREM",
+      "proof_sketch": "Follows from xi . Delta(omega) = Delta(q) - q * ||grad(xi)||_F^2 and ||grad(xi)||_F^2 >= 0."
+    }
+  ]
+}

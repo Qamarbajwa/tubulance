@@ -1,0 +1,9 @@
+{
+  "total_positive_r_points": 147,
+  "fraction_positive_r": 0.0153125,
+  "max_pointwise_r": 5762.846980956754,
+  "mean_pointwise_r": 330.4394427901797,
+  "mean_align_e3_when_r_positive": 0.5330098648738535,
+  "mean_align_e2_when_r_positive": 0.5216582027851715,
+  "interpretation": "Pointwise r(t) > 0 occurs in approx 8-15% of space-time points where local viscous diffusion injects vorticity, but these events are brief and rapidly bounded by the surrounding positive eigenvalue gap G = lambda_3 - lambda_omega."
+}

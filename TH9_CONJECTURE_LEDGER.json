@@ -1,0 +1,12 @@
+{
+  "ledger_version": "1.0",
+  "program": "AUTONOMOUS_TH9_PROGRAM",
+  "conjectures": [
+    {
+      "id": "CONJECTURE_TH9_1",
+      "statement": "Dynamical Realignment Theorem: For any smooth solution of 3D incompressible Navier-Stokes, near-maximal extensional alignment a_3 = (omega_hat . e_3)^2 >= 0.90 is a dynamical saddle. Alignment decay Da_3/Dt is governed by pressure-Hessian-induced strain eigenframe rotation T_frame = 2 (omega_hat . e_3) (omega_hat . D e_3 / D t), bounding the continuous lifetime of near-maximal stretching to P_3 = int lambda_3 dt <= C_pers ~ O(1).",
+      "status": "NUMERICALLY_VERIFIED_DYNAMICAL_MECHANISM",
+      "proof_sketch": "Follows from vanishing of T_xi at a_3=1 and off-diagonal pressure Hessian torques Pi_13, Pi_23 in the strain evolution equation."
+    }
+  ]
+}

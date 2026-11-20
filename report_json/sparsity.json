@@ -1,0 +1,16 @@
+{
+  "individual_packet_sparsity": {
+    "r90": 12,
+    "r95": 16,
+    "r99": 20,
+    "r999": 24,
+    "d_eff": 8.35
+  },
+  "aggregate_m1_state_sparsity": {
+    "r90": 37,
+    "r95": 54,
+    "r99": 92,
+    "r999": 150,
+    "d_eff": 13.292229449283031
+  }
+}

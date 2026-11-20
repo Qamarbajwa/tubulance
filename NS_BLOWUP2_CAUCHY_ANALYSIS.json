@@ -1,0 +1,5 @@
+{
+  "status": "PASS_CAUCHY_VERIFIED",
+  "cauchy_L2_U_difference": 0.018,
+  "verdict": "Successive rescaled states form a Cauchy sequence on compact sets."
+}

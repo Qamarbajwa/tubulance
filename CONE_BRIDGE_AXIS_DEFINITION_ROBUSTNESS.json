@@ -1,0 +1,5 @@
+{
+  "principal_vorticity_axis": "Robust across all flows (variance < 0.05)",
+  "strain_e3_axis": "Subject to degenerate jump when |lambda3 - lambda2| < 0.1",
+  "recommendation": "Use local vorticity principal direction e_j = argmax sum (xi . e)^2, NOT strain eigenvector e3."
+}

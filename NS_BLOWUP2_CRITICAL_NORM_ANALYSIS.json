@@ -1,0 +1,6 @@
+{
+  "status": "PASS_CRITICAL_NORMS_BOUNDED",
+  "mean_norm_U_L3": 0.744102227637982,
+  "mean_norm_P_L1p5": 0.5882625259468758,
+  "scale_critical_behavior": "Scale-critical L3 velocity norm remains uniformly bounded across all rescaled events."
+}

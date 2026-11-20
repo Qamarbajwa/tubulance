@@ -1,0 +1,21 @@
+{
+  "parabolic_scaling": "x -> lambda x, t -> lambda^2 t, u -> lambda u",
+  "terms": [
+    {
+      "name": "int (xi . S xi) dt",
+      "scaling": "lambda^2 * lambda^(-2) = 1",
+      "dimensionless": true
+    },
+    {
+      "name": "int nu (Delta |omega| / |omega|) dt",
+      "scaling": "1 * lambda^2 * lambda^(-2) = 1",
+      "dimensionless": true
+    },
+    {
+      "name": "int nu ||grad xi||^2 dt",
+      "scaling": "1 * lambda^2 * lambda^(-2) = 1",
+      "dimensionless": true
+    }
+  ],
+  "status": "ALL_TERMS_EXACT_SCALE_INVARIANT"
+}

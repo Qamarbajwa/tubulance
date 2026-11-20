@@ -1,0 +1,13 @@
+{
+  "tested_radii": [
+    0.25,
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "untested_scale_interval": "(0, 0.25)",
+  "finest_resolved_scale_dx": 0.1963,
+  "continuum_supremum_gap": "Numerical evaluation at discrete r does not mathematically bound the supremum as r -> 0. An analytical epsilon-regularity lemma is required to close the gap.",
+  "status": "FINITE_SCALE_BOUND_ESTABLISHED_CONTINUUM_GAP_OPEN"
+}

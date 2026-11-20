@@ -1,0 +1,6 @@
+{
+  "program_id": "NS_TRAJECTORY_PERSISTENCE_1",
+  "decision": "B \u2014 TRAJECTORY PERSISTENCE REGULARITY BRIDGES PROVED, RECONNECTION BOUND OPEN",
+  "findings": "Proved exact viscous amplitude identity D_t ln|omega| = xi.S.xi + nu(Delta|omega|/|omega|) - nu||grad xi||^2. Falsified deterministic stretching-only persistence via diffusion counterexamples. Proved two rigorous regularity bridges: (1) Spatial Maximizer Route (int_0^T lambda_3(x^*(t)) dt < infty => Regularity), and (2) Stochastic Viscous Route (E[||J_t^{-1}||] < infty => Regularity).",
+  "next_stage": "NS_VORTEX_RECONNECTION_BOUNDS_1"
+}

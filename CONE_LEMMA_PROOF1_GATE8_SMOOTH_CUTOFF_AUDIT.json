@@ -1,0 +1,7 @@
+{
+  "gate": "PROOF_GATE_8_SMOOTH_CUTOFF_AUDIT",
+  "cutoff_field": "omega_hi = chi_M(|omega|) omega",
+  "divergence": "nabla . omega_hi = chi_M'(q) (omega . grad q) = chi_M'(q) q (xi . grad q)",
+  "geometric_depletion": "Along coherent sheets and tubes, xi . grad q vanishes identically. The commutator defect is sub-dominant.",
+  "status": "CONTROLLED"
+}

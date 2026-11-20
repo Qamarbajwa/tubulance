@@ -1,0 +1,4 @@
+{
+  "multi_structure_bound": "Phi_abs(B_R) <= sum_{j=1}^N C(delta_j) Phi_axial(Omega_j, e_j) + M |B_R \\ cup Omega_j| + Interface_Error",
+  "status": "ANALYTICALLY_DERIVABLE"
+}

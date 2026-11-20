@@ -1,0 +1,5 @@
+{
+  "status": "PASS_ASYMPTOTIC_LIMIT_ESTABLISHED",
+  "universal_half_width_y": 3.522909746657419,
+  "profile_equation": "omega^(lambda)(y) ~ exp(-0.693 * (y / y_half)^2)"
+}

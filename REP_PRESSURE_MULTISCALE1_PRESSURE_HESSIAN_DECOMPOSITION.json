@@ -1,0 +1,7 @@
+{
+  "laplacian_pressure": "Delta p = -tr(A^2) = -tr(S^2) + (1/2)|omega|^2",
+  "decomposition": "grad^2 p = (1/3)(Delta p) I + H_dev",
+  "local_part": "(1/3)[(1/2)|omega|^2 - tr(S^2)] I",
+  "nonlocal_part": "H_dev(x) = p.v. int_{R^3} T(x - y) [ tr(S^2(y)) - (1/2)|omega(y)|^2 ] dy (Calderon-Zygmund singular integral)",
+  "status": "EXACT_RIESZ_TRANSFORM_DECOMPOSITION_VERIFIED"
+}

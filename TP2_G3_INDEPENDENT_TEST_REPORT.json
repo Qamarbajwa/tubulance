@@ -1,0 +1,46 @@
+{
+  "audit_scope": "TP2-G3 Independent Verification and Mutation Test Suite under Governance v2.9.4",
+  "governance_risk_tier": "T4",
+  "candidate_id": "TP2-G3-CANDIDATE-FINAL-REPAIRED",
+  "base_commit_sha": "2e9a4fb5dd6ddc5ec377328f9387c16acab1fe5f",
+  "test_suites": [
+    {
+      "file": "tests/test_tp2_g1_g2_suite.py",
+      "tests_count": 5,
+      "status": "PASSED"
+    },
+    {
+      "file": "tests/test_tp2_independent_verification.py",
+      "tests_count": 4,
+      "status": "PASSED"
+    },
+    {
+      "file": "tests/test_tp2_g1r_adversarial_suite.py",
+      "tests_count": 5,
+      "status": "PASSED"
+    },
+    {
+      "file": "tests/test_tp2_g3_suite.py",
+      "tests_count": 9,
+      "status": "PASSED"
+    },
+    {
+      "file": "tests/test_tp2_g3_independent_verification.py",
+      "tests_count": 5,
+      "status": "PASSED"
+    },
+    {
+      "file": "tests/test_tp2_g3_verifier_suite.py",
+      "tests_count": 17,
+      "status": "PASSED"
+    }
+  ],
+  "total_test_files": 6,
+  "total_tests_collected": 45,
+  "total_tests_executed": 45,
+  "total_passed": 45,
+  "total_failed": 0,
+  "total_skipped": 0,
+  "mutation_kill_rate": "100%",
+  "overall_verdict": "ALL_TESTS_PASSED"
+}

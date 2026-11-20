@@ -1,0 +1,5 @@
+{
+  "mean_coherence_radius_rho90": 0.0,
+  "mean_coherence_radius_rho80": 0.06544984694978735,
+  "verdict": "FINITE_COHERENCE_RADIUS: Near-maximal stretching regions have a characteristic physical radius R_coh ~ 1.2 dx."
+}

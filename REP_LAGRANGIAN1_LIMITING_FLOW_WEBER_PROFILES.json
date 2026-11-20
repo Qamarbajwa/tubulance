@@ -1,0 +1,4 @@
+{
+  "townsend_sheet": "Shear component M_12(t) = -t S_12 grows linearly; Q_11(t) = 2 nu t (partial_2 u_1)^2; correlation R decays exponentially under compressive strain.",
+  "burgers_tube": "M reaches exponential steady strain drift; Q reaches stationary profile Q_steady < infty balancing axial stretching against viscous diffusion."
+}

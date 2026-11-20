@@ -1,0 +1,4 @@
+{
+  "segmentation_method": "Superlevel-set spatial partitioning Omega_j(t) = {x : q(x,t) >= 0.5 q_max}",
+  "mean_component_count": 2.0
+}

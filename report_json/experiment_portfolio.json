@@ -1,0 +1,174 @@
+{
+  "governance": {
+    "status": "LEVEL 2 — TECHNICALLY VERIFIED, NOT EXTERNALLY ATTESTED",
+    "milestone": "P2",
+    "description": "Transfer Experiment Portfolio: Quantitative rankings by Information Gain, Potential Value, Structural Support, and Cost, with detailed top-5 opportunity categories."
+  },
+  "experiment_rankings": [
+    {
+      "rank": 1,
+      "hypothesis_id": "HYP-03",
+      "name": "Resolvent Boundary Gain for Turbulent Wall-Shear Active Control",
+      "information_gain": 5,
+      "potential_value": 5,
+      "structural_support": 5,
+      "cost": 2,
+      "score": 62.5,
+      "category": "HIGH IMMEDIATE SCIENTIFIC VALUE & NOVELTY",
+      "target_system": "Turbulent channel flow (Re=200) under spanwise wall oscillation / opposition control",
+      "cheapest_test_description": "Compute resolvent gain for spanwise wall oscillation at omega=0.05. Compare predicted wall shear reduction against 5-step DNS truth run with wall actuation.",
+      "estimated_run_time": "1-2 hours",
+      "pass_criteria": "Resolvent-predicted optimal frequency matches DNS wall shear reduction within 15% relative error."
+    },
+    {
+      "rank": 2,
+      "hypothesis_id": "HYP-05",
+      "name": "Solenoidal Modal Basis for Incompressible Kinematic Dynamo & MHD",
+      "information_gain": 5,
+      "potential_value": 4,
+      "structural_support": 5,
+      "cost": 2,
+      "score": 50.0,
+      "category": "HIGH SCIENTIFIC VALUE & TRANSFER CONFIDENCE",
+      "target_system": "Roberts cellular flow kinematic dynamo at Rm=10",
+      "cheapest_test_description": "Instantiate FourierSolenoidalBasis for magnetic field B under prescribed cellular velocity field. Compute growth rate gamma and verify ||div B|| = 0 to machine precision.",
+      "estimated_run_time": "1-2 hours",
+      "pass_criteria": "Magnetic divergence norm < 1e-12; magnetic growth rate matches Roberts analytical eigenvalue within 0.5%."
+    },
+    {
+      "rank": 3,
+      "hypothesis_id": "HYP-01",
+      "name": "ETD Integrator for Stiff Semilinear Reaction-Diffusion PDEs",
+      "information_gain": 3,
+      "potential_value": 4,
+      "structural_support": 5,
+      "cost": 1,
+      "score": 60.0,
+      "category": "HIGHEST TRANSFER CONFIDENCE & CHEAPEST DECISIVE TEST",
+      "target_system": "1D Allen-Cahn and 2D Gray-Scott reaction-diffusion equations",
+      "cheapest_test_description": "Run 1D Allen-Cahn equation u_t = epsilon * u_xx + u(1 - u^2) with ETD integrator at dt=0.05. Compare stability and L2 error against 4th-order Crank-Nicolson.",
+      "estimated_run_time": "15-30 minutes",
+      "pass_criteria": "Unconditionally stable for dt=0.05; 4th-order temporal convergence on smooth initial conditions."
+    },
+    {
+      "rank": 4,
+      "hypothesis_id": "HYP-02",
+      "name": "Stokes Eigenbasis for Thermal Transients on Fixed Geometries",
+      "information_gain": 2,
+      "potential_value": 3,
+      "structural_support": 5,
+      "cost": 1,
+      "score": 30.0,
+      "category": "HIGHEST TRANSFER CONFIDENCE & CHEAPEST DECISIVE TEST",
+      "target_system": "3D unsteady heat conduction in channel domain with Dirichlet walls",
+      "cheapest_test_description": "Run 3D unsteady heat conduction with localized Gaussian thermal pulse using Stokes/Laplacian eigenbasis + ETD decay.",
+      "estimated_run_time": "15 minutes",
+      "pass_criteria": "Relative L2 error < 1e-10 vs analytical Fourier series solution at rank r=100."
+    },
+    {
+      "rank": 5,
+      "hypothesis_id": "HYP-07",
+      "name": "Divergence-Free Wave-Packet Dictionaries for Inverse Sensor Reconstruction",
+      "information_gain": 5,
+      "potential_value": 4,
+      "structural_support": 4,
+      "cost": 2,
+      "score": 40.0,
+      "category": "HIGH NOVELTY & SCIENTIFIC VALUE",
+      "target_system": "Hill's spherical vortex embedded in noisy 3D background",
+      "cheapest_test_description": "Reconstruct localized vortex core from 50 sparse point velocity sensors using NonorthogonalProjectionSolver and W13-G wave packet dictionary.",
+      "estimated_run_time": "1 hour",
+      "pass_criteria": "Identifies vortex core position within 1 grid cell; reconstructs peak vorticity with <10% relative error."
+    },
+    {
+      "rank": 6,
+      "hypothesis_id": "HYP-06",
+      "name": "Clustered Local POD for Bistable Snap-Through Structural Buckling",
+      "information_gain": 4,
+      "potential_value": 3,
+      "structural_support": 4,
+      "cost": 2,
+      "score": 24.0,
+      "category": "HIGH NOVELTY & TRANSFER CONFIDENCE",
+      "target_system": "2-well Duffing oscillator / bistable shallow arch beam",
+      "cheapest_test_description": "Generate 100 snapshots of chaotic snap-through. Train 2-cluster ClusteredLocalPODBasis. Measure local vs global projection error.",
+      "estimated_run_time": "1 hour",
+      "pass_criteria": "2-cluster local POD achieves >5x lower projection error than global 1-cluster POD at rank r=2."
+    },
+    {
+      "rank": 7,
+      "hypothesis_id": "HYP-04",
+      "name": "On-the-Fly Pseudospectral Evaluator for 1D Burgers Equation",
+      "information_gain": 2,
+      "potential_value": 3,
+      "structural_support": 5,
+      "cost": 1,
+      "score": 30.0,
+      "category": "CHEAPEST DECISIVE TEST",
+      "target_system": "1D viscous Burgers equation with shock formation",
+      "cheapest_test_description": "Implement 1D Burgers solver using OntheFlyFFTEvaluator. Measure runtime and memory vs explicit triad tensor contraction.",
+      "estimated_run_time": "30 minutes",
+      "pass_criteria": "Exact match with analytical Cole-Hopf solution; >10x memory reduction over explicit triad tensor at N=256."
+    },
+    {
+      "rank": 8,
+      "hypothesis_id": "HYP-08",
+      "name": "Separable Channel Eigenbasis for Acoustic Duct Resonators",
+      "information_gain": 3,
+      "potential_value": 3,
+      "structural_support": 5,
+      "cost": 1,
+      "score": 45.0,
+      "category": "HIGH TRANSFER CONFIDENCE & CHEAPEST DECISIVE TEST",
+      "target_system": "3D rectangular acoustic duct with rigid walls",
+      "cheapest_test_description": "Simulate broadband acoustic pulse in rectangular duct with SeparableChannelEigenbasis. Compare against acoustic cut-on dispersion relation.",
+      "estimated_run_time": "30 minutes",
+      "pass_criteria": "Dispersion relation matches analytical duct eigenvalues within 0.1% relative error."
+    },
+    {
+      "rank": 9,
+      "hypothesis_id": "HYP-10",
+      "name": "Domain-Agnostic Scientific Audit Infrastructure Package (`sciaudit`)",
+      "information_gain": 3,
+      "potential_value": 5,
+      "structural_support": 5,
+      "cost": 1,
+      "score": 75.0,
+      "category": "HIGHEST IMMEDIATE UTILITY (ENGINEERING INFRASTRUCTURE)",
+      "target_system": "General computational science / ML benchmarks",
+      "cheapest_test_description": "Extract `navier3d.audit` as standalone zero-dependency module and run verification test on a mock Scikit-learn experiment.",
+      "estimated_run_time": "30 minutes",
+      "pass_criteria": "100% test pass; detects intentional mock-result bit flip and halts execution with TamperAlert."
+    }
+  ],
+  "required_top_categories": {
+    "top_5_highest_immediate_scientific_value": [
+      "HYP-03 (Resolvent Boundary Gain for Turbulent Wall-Shear Active Control)",
+      "HYP-05 (Solenoidal Vector Basis for Incompressible Kinematic Dynamo & MHD)",
+      "HYP-07 (Divergence-Free Wave-Packet Dictionaries for Inverse Sensor Reconstruction)",
+      "HYP-01 (ETD Integrator for Stiff Semilinear Reaction-Diffusion PDEs)",
+      "HYP-06 (Clustered Local POD for Bistable Snap-Through Structural Buckling)"
+    ],
+    "top_5_highest_transfer_confidence": [
+      "HYP-02 (Stokes / Laplacian Geometry Eigenbasis for Heat Conduction & Thermal Transients)",
+      "HYP-01 (ETD / Integrating Factor Integrator for Stiff Semilinear PDEs)",
+      "HYP-08 (Separable Channel Eigenbasis for Acoustic Duct Resonators)",
+      "HYP-04 (On-the-Fly Pseudospectral Evaluator for Quadratic Conservation Laws)",
+      "HYP-10 (Scientific Evidence Bundle & Metric Hashing for General Benchmarks)"
+    ],
+    "top_5_highest_novelty": [
+      "HYP-03 (Resolvent Input-Output Analysis for Boundary-Actuated Wall Shear Control)",
+      "HYP-07 (Divergence-Free Wave-Packet Dictionaries for Inverse Sensor Reconstruction)",
+      "HYP-06 (Clustered Local POD for Bistable Snap-Through Structural Buckling)",
+      "HYP-05 (Solenoidal Vector Basis for Incompressible Kinematic Dynamo & MHD)",
+      "HYP-09 (Grassmannian Subspace Tracking for Neural Network Representation Stability)"
+    ],
+    "top_5_cheapest_decisive_tests": [
+      "HYP-02 (Heat Conduction via Stokes Eigenbasis + ETD — ~15 min test)",
+      "HYP-01 (1D Allen-Cahn Reaction-Diffusion via ETD — ~30 min test)",
+      "HYP-04 (1D Burgers Equation via On-the-Fly FFT — ~30 min test)",
+      "HYP-08 (Rectangular Acoustic Duct Resonance via Separable Basis — ~30 min test)",
+      "HYP-10 (Standalone `sciaudit` Packaging & Mock Bit-Flip Test — ~30 min test)"
+    ]
+  }
+}

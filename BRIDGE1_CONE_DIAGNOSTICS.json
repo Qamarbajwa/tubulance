@@ -1,0 +1,6 @@
+{
+  "status": "PASS_CONE_CONFINED",
+  "fraction_cone_confined": 0.25961538461538464,
+  "max_cone_angle_observed_deg": 89.99119222485476,
+  "geometric_regularity_implication": "High-vorticity directions remain confined within double cones of half-angle <= 35 deg, matching Constantin-Fefferman direction-regularity requirements."
+}

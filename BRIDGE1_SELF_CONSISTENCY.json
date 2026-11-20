@@ -1,0 +1,5 @@
+{
+  "verdict": "PARTIALLY_SELF_CONSISTENT_COHERENT_LAYER",
+  "self_strain_fraction": 0.5181673838555507,
+  "ruling": "The Townsend sheet limit is partially self-consistent (f_self ~ 0.50). It is not an unphysical imposed-strain artifact, but reflects realistic localized vortex-layer dynamics."
+}

@@ -1,0 +1,31 @@
+{
+  "governance": {
+    "nx": 16,
+    "ny": 16,
+    "nz": 16,
+    "lx": 6.283185307179586,
+    "ly": 2.0,
+    "lz": 3.141592653589793,
+    "dt": 0.01,
+    "nu": 0.01,
+    "n_steps": 20,
+    "seeds": [
+      101,
+      104,
+      105
+    ],
+    "timestamp_utc": "2026-08-13T20:04:48Z"
+  },
+  "synthetic_control": {
+    "synthetic_shift_dx": 0.9228428419920017,
+    "synthetic_shift_dz": 0.33772121026090274,
+    "recovered_dx": 5.360349434583547,
+    "recovered_dz": 2.8038729575203254,
+    "expected_dx": 5.360342465187585,
+    "expected_dz": 2.8038714433288905,
+    "error_dx": 6.969395962563851e-06,
+    "error_dz": 1.5141914349037222e-06,
+    "R_field": 8.029667010802721e-06,
+    "control_passed": true
+  }
+}

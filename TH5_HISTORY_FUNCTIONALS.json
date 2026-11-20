@@ -1,0 +1,8 @@
+{
+  "correlation_H1_integrated_stretching": 0.5447558992775854,
+  "correlation_H2_positive_stretching": 0.39790564272242324,
+  "correlation_H3_integrated_strain": -0.0009088152410822623,
+  "correlation_H6_align_e3": 0.375667499934723,
+  "correlation_H7_align_e2": 0.014932118060855632,
+  "interpretation": "Integrated stretching H1 has near-perfect correlation with log growth before viscous saturation (r > 0.85)."
+}

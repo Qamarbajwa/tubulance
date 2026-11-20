@@ -1,0 +1,7 @@
+{
+  "hypothesis": "Large stretching automatically creates an opposing stabilizing pressure response.",
+  "falsification_construction": "Adversarial configuration: isolated straining core flanked by transverse vortex pairs generates H_dev with sign matching S rather than opposing S.",
+  "is_automatic_stabilization_falsified": true,
+  "status": "FALSIFIED",
+  "conclusion": "The nonlocal pressure Hessian H_dev is governed by a singular Calderon-Zygmund kernel and is NOT sign-definite; it can locally enhance stretching depending on surrounding spatial topology."
+}

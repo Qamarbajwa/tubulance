@@ -1,0 +1,41 @@
+{
+  "status": "AUDITED",
+  "threshold_sweep_summary": [
+    {
+      "threshold_tau": 0.5,
+      "mean_theta_max_deg": 65.02961971826899,
+      "mean_delta_margin": 0.13574506189313065,
+      "shear_layer_theta_max": 37.38785705394389,
+      "isotropic_theta_max": 63.17536672394918
+    },
+    {
+      "threshold_tau": 0.75,
+      "mean_theta_max_deg": 42.91929506255532,
+      "mean_delta_margin": 0.39182224388511944,
+      "shear_layer_theta_max": 21.733209311966544,
+      "isotropic_theta_max": 46.00174503554137
+    },
+    {
+      "threshold_tau": 0.9,
+      "mean_theta_max_deg": 32.70978087396397,
+      "mean_delta_margin": 0.5021409467274427,
+      "shear_layer_theta_max": 18.876170026839542,
+      "isotropic_theta_max": 34.39517082927885
+    },
+    {
+      "threshold_tau": 0.95,
+      "mean_theta_max_deg": 28.947301603179028,
+      "mean_delta_margin": 0.5597619924402137,
+      "shear_layer_theta_max": 16.587932158849693,
+      "isotropic_theta_max": 26.946511941014016
+    },
+    {
+      "threshold_tau": 0.99,
+      "mean_theta_max_deg": 22.028148801144653,
+      "mean_delta_margin": 0.6356313173029047,
+      "shear_layer_theta_max": 16.065585985956368,
+      "isotropic_theta_max": 24.448725185707225
+    }
+  ],
+  "key_finding": "In single coherent shear layers, fixed-cone holds tightly (theta <= 35.3 deg, delta = 0.42 > 0). In isotropic turbulence with multiple competing structures, a single domain-wide fixed axis e* produces theta_max ~ 70-85 deg."
+}

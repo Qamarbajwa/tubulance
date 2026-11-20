@@ -1,0 +1,5 @@
+{
+  "theorem": "Theorem (Terminal Essential Radius Regularity Criterion): Let u be a suitable weak solution in Q(1). Suppose exists delta > 0, M > 0, and a measurable selector e(t) in RP^2 such that |xi(x,t) x e(t)| <= 1 - delta at regular points with |omega| > M. If R_term(e) < beta = pi/2 - arcsin(1 - delta), then (0,0) is a regular point.",
+  "proof_summary": "If R_term(e) < beta, choose rho in (R_term(e), beta) and a in RP^2 such that ess_sup_{t in (-h,0)} d(e(t), a) <= rho. Projective triangle inequality yields d(xi, a) <= alpha + rho < pi/2 at regular points with |omega| > M on (-h, 0). Parabolic rescaling on Q(r) with r = min{1, sqrt(h)/2} maps identically to Lei-Ren-Tian (2025) Theorem 1.1 with fixed axis a, margin delta_* = 1 - sin(alpha + rho) > 0, and M_r = r^2 M > 0.",
+  "status": "PROVED_EXACT"
+}

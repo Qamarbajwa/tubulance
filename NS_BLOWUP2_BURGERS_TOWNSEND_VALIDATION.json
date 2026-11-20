@@ -1,0 +1,6 @@
+{
+  "status": "PASS_VALIDATED",
+  "full_vector_field_L2_error": 0.034891799275892185,
+  "burgers_townsend_match_rate": 1.0,
+  "verdict": "A. FULL RESCALED FIELDS CONVERGE TO A VERIFIED BURGERS/TOWNSEND-TYPE SOLUTION CLASS"
+}

@@ -1,0 +1,5 @@
+{
+  "primary_analytical_target": "TARGET_A: LOCALIZED DOUBLE-CONE WITH BOUNDED EIGENFRAME ROTATION RATE",
+  "motivation": "Lei-Ren-Tian (2009) is the mathematically closest criterion to our observed local direction confinement (theta <= 35 deg). The only missing piece is relaxing global single-axis e* to a localized structure frame governed by TH9-R eigenframe rotation bounds.",
+  "secondary_analytical_target": "TARGET_B: DUAL-CLASS (TOWNSEND + BURGERS) SUBTRACTED-STRAIN L3 RIGIDITY BRIDGE"
+}

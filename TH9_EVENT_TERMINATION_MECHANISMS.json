@@ -1,0 +1,7 @@
+{
+  "mechanism_breakdown": {
+    "B_eigenframe_rotation": 0.5333333333333333,
+    "A_vorticity_rotation": 0.4666666666666667
+  },
+  "primary_mechanism": "Mechanism B: Strain Eigenframe Rotation (e3 rotates away from xi driven by pressure Hessian torques)."
+}

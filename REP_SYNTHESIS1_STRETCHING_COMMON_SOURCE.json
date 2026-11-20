@@ -1,0 +1,8 @@
+{
+  "eulerian_enstrophy_production": "P_omega = omega . S omega (exact contraction S_{ij} omega_i omega_j)",
+  "weber_correlation_production": "P_R = S R (from (grad u)^T R = (S - Omega) R in D_u R equation)",
+  "covariance_tensor_production": "P_Q = S Q + Q S (symmetric strain drive in D_u Q equation)",
+  "classification": "PROVED_IMPLICATION",
+  "underlying_common_tensor": "Rate-of-strain tensor S = (nabla u + (nabla u)^T)/2",
+  "verdict": "All three amplification terms originate from the exact same physical tensor S, but govern distinct algebraic vector/tensor contractions (vorticity vector omega, correlation field R, and covariance tensor Q)."
+}

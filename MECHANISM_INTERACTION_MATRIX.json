@@ -1,0 +1,42 @@
+{
+  "protocol_version": "NS_ADAPTIVE_SCIENTIFIC_DISCOVERY_ENGINE_V1",
+  "timestamp_utc": "2026-08-19T09:05:00Z",
+  "interactions": [
+    {
+      "pair": ["M1_VORTEX_STRETCHING", "M2_VISCOUS_DIFFUSION"],
+      "nature": "antagonistic",
+      "operational_regime": "At spatial maxima of q, Vlog <= 0, strictly opposing positive stretching.",
+      "evidence_status": "EXACT_IDENTITY_VERIFIED"
+    },
+    {
+      "pair": ["M1_VORTEX_STRETCHING", "M3_EIGENFRAME_ROTATION"],
+      "nature": "antagonistic_feedback",
+      "operational_regime": "Intense stretching induces rapid strain-eigenframe rotation De3/Dt, reducing alignment a3 = (xi . e3)^2.",
+      "evidence_status": "EMPIRICALLY_VERIFIED_79%_DOMINANT"
+    },
+    {
+      "pair": ["M3_EIGENFRAME_ROTATION", "M4_PRESSURE_HESSIAN"],
+      "nature": "synergistic",
+      "operational_regime": "Anisotropic pressure Hessian forces orthogonal eigenframe tilt, driving rapid unalignment.",
+      "evidence_status": "CONFIRMED_BY_POISSON_COUPLING"
+    },
+    {
+      "pair": ["M2_VISCOUS_DIFFUSION", "M5_DIRECTION_GRADIENT_DAMPING"],
+      "nature": "synergistic_damping",
+      "operational_regime": "Directional twisting ||grad xi||^2 directly depletes Vlog via -nu ||grad xi||^2.",
+      "evidence_status": "EXACT_IDENTITY_VERIFIED"
+    },
+    {
+      "pair": ["M1_VORTEX_STRETCHING", "M6_STRUCTURE_SWITCHING"],
+      "nature": "spatial_redistribution",
+      "operational_regime": "Amplification in one shear sheet triggers topological disruption, causing global maximum to jump (82% switching rate).",
+      "evidence_status": "VERIFIED_UNDER_TH10R"
+    },
+    {
+      "pair": ["M1_VORTEX_STRETCHING", "M7_TOWNSEND_LIMITING_RELAXATION"],
+      "nature": "asymptotic_attractor",
+      "operational_regime": "Parabolically rescaled extreme states relax into stable stationary Townsend shear sheets.",
+      "evidence_status": "VERIFIED_UNDER_NS_BLOWUP2"
+    }
+  ]
+}

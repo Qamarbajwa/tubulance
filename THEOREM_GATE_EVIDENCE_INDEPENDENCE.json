@@ -1,0 +1,5 @@
+{
+  "tested_sequence": "Directional cone confinement audited on raw fields BEFORE model matching",
+  "independence_ruling": "PARTIALLY_INDEPENDENT: Raw shear layer orientation inherently produces low angular dispersion, which subsequently explains the high match quality to Townsend sheets.",
+  "implication": "Cone confinement and Townsend sheet geometry are manifestations of the same underlying planar strain alignment physics."
+}

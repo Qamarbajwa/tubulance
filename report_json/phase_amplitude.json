@@ -1,0 +1,60 @@
+{
+  "governance": {
+    "nx": 16,
+    "ny": 16,
+    "nz": 16,
+    "lx": 6.283185307179586,
+    "ly": 2.0,
+    "lz": 3.141592653589793,
+    "dt": 0.01,
+    "nu": 0.01,
+    "n_steps": 20,
+    "seeds": [
+      101,
+      104,
+      105
+    ],
+    "timestamp_utc": "2026-08-13T20:04:48Z"
+  },
+  "records": [
+    {
+      "pair_key": "101_104",
+      "seed_pair": [
+        101,
+        104
+      ],
+      "raw_mean_phase_error_deg": 85.38252303298317,
+      "aligned_mean_phase_error_deg": 68.66723048735437,
+      "phase_error_ratio": 0.8042305151937043,
+      "raw_mean_amplitude_error": 0.15135905311871706,
+      "aligned_mean_amplitude_error": 0.1512147734199071,
+      "amplitude_error_ratio": 0.9990467719251799
+    },
+    {
+      "pair_key": "101_105",
+      "seed_pair": [
+        101,
+        105
+      ],
+      "raw_mean_phase_error_deg": 87.9749791455237,
+      "aligned_mean_phase_error_deg": 80.48890786484831,
+      "phase_error_ratio": 0.9149068138079088,
+      "raw_mean_amplitude_error": 0.13417583727139654,
+      "aligned_mean_amplitude_error": 0.1349376302589627,
+      "amplitude_error_ratio": 1.0056775720804654
+    },
+    {
+      "pair_key": "104_105",
+      "seed_pair": [
+        104,
+        105
+      ],
+      "raw_mean_phase_error_deg": 99.27979243496327,
+      "aligned_mean_phase_error_deg": 85.8468692524708,
+      "phase_error_ratio": 0.8646963006969199,
+      "raw_mean_amplitude_error": 0.1357509199543185,
+      "aligned_mean_amplitude_error": 0.13574738721614138,
+      "amplitude_error_ratio": 0.9999739763223754
+    }
+  ]
+}

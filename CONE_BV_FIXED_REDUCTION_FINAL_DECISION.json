@@ -1,0 +1,6 @@
+{
+  "program_id": "NS_CONE_BV_FIXED_REDUCTION_1",
+  "decision": "B \u2014 CONDITIONAL REGULARITY EXTENSION PROVED VIA FIXED-AXIS REDUCTION",
+  "theorem_statement": "Theorem (Terminal-Axis Double-Cone Criterion): Let u be a suitable weak solution to the 3D incompressible Navier-Stokes equations in Q(1) = B_1 x (-1, 0]. Suppose there exist constants M > 0, delta > 0, and a time-slice projective direction field e(t) in RP^2 such that |xi(x,t) x e(t)| <= 1 - delta at regular points with |omega(x,t)| > M. If e(t) satisfies essential terminal stabilization ess_lim_{t -> 0^-} e(t) = e_* in RP^2 (which holds if e in BV((-1, 0); RP^2)), then the origin (0,0) is a regular point.",
+  "status": "RIGOROUSLY_CLOSED"
+}

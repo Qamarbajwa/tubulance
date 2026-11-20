@@ -1,0 +1,6 @@
+{
+  "mean_consecutive_low_depletion_steps": 1.45,
+  "max_consecutive_low_depletion_steps": 4,
+  "mean_duration_seconds": 0.029,
+  "interpretation": "Episodes of near-maximal stretching (D_ratio > 0.8) are short-lived, with mean persistence duration of ~0.03 seconds."
+}

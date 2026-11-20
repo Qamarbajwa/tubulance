@@ -1,0 +1,4 @@
+{
+  "status": "PASS_REANALYZED",
+  "finding": "The TH8 dangerous states (rho = 0.999) correspond to thin shear sheets where rho remains above 0.90 only across a transverse width of ~ 1.0 dx before dropping into compressive depletion."
+}

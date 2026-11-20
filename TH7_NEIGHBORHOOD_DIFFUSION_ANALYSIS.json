@@ -1,0 +1,4 @@
+{
+  "diffusion_mechanism": "Spatial flux of enstrophy from high-|omega| peaks into lower-|omega| valleys via standard Laplacian heat kernel spreading.",
+  "global_enstrophy_conservation": "Globally, int omega . Delta(omega) dV = - int ||grad omega||_F^2 dV <= 0 is strictly dissipative. Local positive V_log represents spatial redistribution, NOT enstrophy generation."
+}

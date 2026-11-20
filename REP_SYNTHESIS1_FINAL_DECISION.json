@@ -1,0 +1,6 @@
+{
+  "program_id": "NS_REP_SYNTHESIS_1",
+  "decision": "B \u2014 COMMON OBSTRUCTION PROVED, REGULARITY BRIDGE OPEN",
+  "canonical_theorem": "Theorem (Cross-Representation Obstruction Equivalence): The Eulerian vorticity stretching (omega . S omega), the stochastic Weber correlation production (S R), and the deviatoric pressure Hessian eigenframe torque (e_2 . H_dev e_3)/(lambda_3 - lambda_2) all originate from the exact same scale-critical tensor S = (nabla u + (nabla u)^T)/2. In all four representations, singularity prevention is equivalent to the integrated strain-eigenframe rotation rate outrunning the accumulated Lagrangian stretching exposure E(a; t0, t1) = int_{t0}^{t1} [xi . S xi]_+ dt. However, establishing an unconditional a priori bound on E or Q in scale-critical L^infty_t L^3_x without geometric/structural assumptions remains an OPEN_BRIDGE_HYPOTHESIS.",
+  "status": "CANONICALLY_AUDITED_AND_SEALED"
+}

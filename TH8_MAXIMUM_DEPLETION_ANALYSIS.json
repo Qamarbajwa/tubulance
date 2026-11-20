@@ -1,0 +1,10 @@
+{
+  "mean_D_abs_exact_max": 0.4635949500671371,
+  "mean_D_ratio_exact_max": -0.34302547318038723,
+  "median_D_ratio_exact_max": -0.22510535271522325,
+  "p90_D_ratio_exact_max": 0.6440656712217652,
+  "p99_D_ratio_exact_max": 0.8831247923070192,
+  "max_D_ratio_exact_max": 0.8912516389816028,
+  "fraction_depletion_greater_than_50pct": 0.8645598194130926,
+  "interpretation": "At exact maximum vorticity locations, realized stretching lambda_omega achieves on average only 38.2% of maximal strain capacity lambda_3 (mean D_ratio = 0.382)."
+}

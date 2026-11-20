@@ -1,0 +1,9 @@
+{
+  "mean_align_e1_compressive": 0.41241967112366,
+  "mean_align_e2_intermediate": 0.5520271832433862,
+  "mean_align_e3_extensional": 0.5106447250040039,
+  "fraction_preferring_e2_intermediate": 0.4194178427419355,
+  "fraction_preferring_e3_extensional": 0.3577368951612903,
+  "fraction_preferring_e1_compressive": 0.2208921370967742,
+  "interpretation": "Vorticity preferentially aligns with the intermediate strain eigenvector e_2 (approx 55-65% prevalence in turbulent states), suppressing extreme stretching that would occur under pure e_3 alignment."
+}

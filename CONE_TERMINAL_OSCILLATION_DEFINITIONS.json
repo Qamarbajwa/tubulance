@@ -1,0 +1,12 @@
+{
+  "definitions": {
+    "projective_metric": "d_{RP^2}([a], [b]) = arccos(|a . b|) in [0, pi/2]",
+    "alpha": "alpha = arcsin(1 - delta) in [0, pi/2)",
+    "beta": "beta = pi/2 - alpha in (0, pi/2]",
+    "terminal_essential_radius": "R_term(e) = inf_{a in RP^2} lim_{h -> 0^+} ess_sup_{t in (-h, 0)} d_{RP^2}(e(t), a)",
+    "essential_terminal_cluster_set": "C_ess(e) = bigcap_{h > 0} overline{ess_range_{(-h, 0)}(e)} subset RP^2",
+    "chebyshev_radius": "rad(C_ess(e)) = inf_{a in RP^2} sup_{z in C_ess(e)} d(z, a)",
+    "direction_cloud_radius": "R_M = inf_{a in RP^2} lim_{h -> 0^+} ess_sup_{t in (-h, 0)} sup_{zeta in K_M(t)} d_{RP^2}(zeta, a)"
+  },
+  "status": "CANONICAL_RIGOROUS_DEFINITIONS_SEALED"
+}

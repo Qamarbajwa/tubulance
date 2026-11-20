@@ -1,0 +1,14 @@
+{
+  "townsend_reference": {
+    "velocity_formula": "u(y) = (-gamma y1, gamma y2, f(y1))",
+    "linear_strain_part": "(-gamma y1, gamma y2, 0) notin L3(R^3) (diverges as |y| -> infinity)",
+    "vortical_core_part": "(0, 0, f(y1)) with f'(y1) = w0 exp(-gamma y1^2 / (2 nu)) in L_loc^3",
+    "mathematical_resolution": "Convergence must be interpreted strictly as CORE PROFILE CONVERGENCE (or local L3(B_R) convergence), NOT global full-field L3(R^3) convergence."
+  },
+  "burgers_reference": {
+    "velocity_formula": "u(y) = (-alpha/2 y1, -alpha/2 y2, alpha y3) + u_theta",
+    "linear_strain_part": "notin L3(R^3)",
+    "vortical_core_part": "u_theta in L_loc^3",
+    "mathematical_resolution": "CORE PROFILE CONVERGENCE"
+  }
+}

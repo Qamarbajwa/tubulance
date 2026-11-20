@@ -1,0 +1,6 @@
+{
+  "program_id": "NS_CONE_PARABOLIC_LOCALIZATION_1",
+  "decision": "A \u2014 SHARP PARABOLIC LOCALIZED GEOMETRIC BOUNDARY PROVED",
+  "canonical_theorem": "Theorem (Sharp Parabolic Direction-Cloud Double-Cone Criterion): Let u be a suitable weak solution to the 3D incompressible Navier-Stokes equations in Q(1) = B_1 x (-1, 0]. The space-time origin (0,0) is a regular point if and only if there exist r in (0, 1] and M > 0 such that the parabolic direction-cloud Chebyshev radius satisfies R_M(r) < pi/2. Under this condition, the high-vorticity directions in Q(r) form a fixed double cone with margin delta_* = 1 - sin(R_M(r)) > 0, and regularity follows from Lei-Ren-Tian (2025) Theorem 1.1.",
+  "status": "CANONICALLY_CLOSED_AND_SEALED"
+}

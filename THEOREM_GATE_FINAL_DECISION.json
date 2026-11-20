@@ -1,0 +1,25 @@
+{
+  "program_id": "NS_THEOREM_GATE1_EXISTING_REGULARITY_APPLICABILITY_V1",
+  "decision": "A. EXISTING DOUBLE-CONE REGULARITY ROUTE IS CLOSEST; NEXT TASK = DERIVE SCALE-UNIFORM LOCALIZED CONE CONTROL",
+  "justification": "Local extreme shear layers satisfy Lei-Ren-Tian cone condition with margin delta = 0.42 > 0. Extending this requires bounding local frame rotation rather than establishing global whole-space L3(R^3) integrability of divergent linear backgrounds.",
+  "competing_route_rankings": [
+    {
+      "rank": 1,
+      "route": "A (Lei-Ren-Tian Localized Double-Cone)",
+      "gap": "Frame rotation relaxation",
+      "viability": "HIGH"
+    },
+    {
+      "rank": 2,
+      "route": "E (Dual-Class Subtracted Rigidity)",
+      "gap": "Subtracted background PDE closure",
+      "viability": "MEDIUM-HIGH"
+    },
+    {
+      "rank": 3,
+      "route": "B (Escauriaza-Seregin-Sverak L3)",
+      "gap": "Linear strain in L3(R^3) impossible",
+      "viability": "MEDIUM"
+    }
+  ]
+}

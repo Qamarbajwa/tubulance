@@ -1,0 +1,35 @@
+{
+  "scaling_table": [
+    {
+      "name": "S (Strain Rate)",
+      "scaling": "lambda^2 (T^(-1))",
+      "classification": "SCALE-CRITICAL"
+    },
+    {
+      "name": "omega (Vorticity)",
+      "scaling": "lambda^2 (T^(-1))",
+      "classification": "SCALE-CRITICAL"
+    },
+    {
+      "name": "grad^2 p (Pressure Hessian)",
+      "scaling": "lambda^4 (T^(-2))",
+      "classification": "SCALE-CRITICAL"
+    },
+    {
+      "name": "H_dev (Deviatoric Hessian)",
+      "scaling": "lambda^4 (T^(-2))",
+      "classification": "SCALE-CRITICAL"
+    },
+    {
+      "name": "S omega (Vortex Stretching)",
+      "scaling": "lambda^4 (T^(-2))",
+      "classification": "SCALE-CRITICAL"
+    },
+    {
+      "name": "Pressure-Eigenframe Torque",
+      "scaling": "lambda^4 / lambda^2 = lambda^2 (T^(-1))",
+      "classification": "SCALE-CRITICAL"
+    }
+  ],
+  "status": "ALL_QUANTITIES_SCALE_CRITICAL"
+}

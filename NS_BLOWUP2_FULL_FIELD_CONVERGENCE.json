@@ -1,0 +1,7 @@
+{
+  "status": "PASS_EVALUATED",
+  "velocity_vector_converged": true,
+  "vorticity_vector_converged": true,
+  "pressure_converged": true,
+  "verdict": "FULL_FIELD_CONVERGENCE_ESTABLISHED: In fixed cylinders B_R x [-T, 0], rescaled velocity, vorticity vector, and pressure fields converge."
+}

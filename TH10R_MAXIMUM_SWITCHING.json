@@ -1,0 +1,5 @@
+{
+  "total_maximizer_spatial_switches": 75,
+  "mean_maximizer_residence_time_s": 0.064,
+  "interpretation": "The spatial location of ||omega||_infty is not stationary; it jumps rapidly between competing shear sheets."
+}

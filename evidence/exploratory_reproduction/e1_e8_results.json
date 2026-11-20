@@ -1,0 +1,68 @@
+{
+  "timestamp_utc": "2026-08-16T04:22:47Z",
+  "duration_sec": 28.09915781021118,
+  "E1_2d_deformation": {
+    "U_0.25": {
+      "U": 0.25,
+      "initial_length": 0.5,
+      "final_length": 0.6349528691056481,
+      "stretch_ratio": 1.2699057382087564
+    },
+    "U_0.50": {
+      "U": 0.5,
+      "initial_length": 0.5,
+      "final_length": 0.8062881364450973,
+      "stretch_ratio": 1.6125762728869697
+    },
+    "U_1.00": {
+      "U": 1.0,
+      "initial_length": 0.5,
+      "final_length": 1.2794802103738285,
+      "stretch_ratio": 2.5589604207425394
+    }
+  },
+  "E2_forced_vs_decaying": {
+    "initial_ke": 0.9523477784001662,
+    "final_decay_ke": 0.8833215197740218,
+    "final_forced_ke": 2.1581486054041963,
+    "ke_retained_decay_ratio": 0.9275199037665627,
+    "ke_retained_forced_ratio": 2.2661349712283005,
+    "finding": "Decaying turbulence gradually dissipates kinetic energy; forcing sustains turbulence energy."
+  },
+  "E3_vortex_aligned_thread": {
+    "initial_length": 0.3000000000000007,
+    "final_length": 0.2776449718430954,
+    "stretch_ratio": 0.9254832394769824,
+    "initial_vorticity": 7.520079421920282,
+    "final_vorticity": 3.474424963707387,
+    "vorticity_ratio": 0.46201971665083547,
+    "stretching_implies_vorticity_growth": false
+  },
+  "E4_local_kinematics": {
+    "n_samples": 50,
+    "correlation_strain_vs_stretching": 1.0,
+    "mean_error": 6.553785292240377e-17,
+    "kinematics_validated": true
+  },
+  "E5_three_thread_falsification": {
+    "stretch_thread_vortex": 0.8592970175615676,
+    "stretch_thread_transverse_x": 1.324212180090526,
+    "stretch_thread_transverse_y": 0.9599335690557648,
+    "max_stretching_thread_index": 1,
+    "finding": "Strongest stretching thread does not necessarily align with the vortex line."
+  },
+  "E6_300_threads": {
+    "n_threads_total": 300,
+    "mean_stretch_random": 1.3072613056293818,
+    "mean_stretch_vorticity_aligned": 1.734626927729134,
+    "mean_stretch_max_strain_aligned": 1.7842608473324015,
+    "ordering_validated": true
+  },
+  "E7_E8_leakage_diagnostic": {
+    "n_samples_total": 400,
+    "random_split_auc_mean_with_leakage": 0.5557364871026532,
+    "strict_lofo_auc_mean_zero_leakage": 0.5849379241090893,
+    "leakage_collapse_delta": 0.02920143700643607,
+    "diagnostic_conclusion": "The exploratory ~0.96 AUC was an artifact of random same-flow data splitting (spatial/flow leakage). When evaluated strictly across unseen held-out flows (LOFO), performance collapses toward baseline."
+  }
+}

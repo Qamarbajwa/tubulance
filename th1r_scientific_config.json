@@ -1,0 +1,189 @@
+{
+  "experiment_id": "TH1R_SCIENTIFIC_CONFIRMATORY",
+  "version": "1.0.0",
+  "timestamp_utc": "2026-08-15T04:30:00Z",
+  "governance": {
+    "protocol": "DEVELOP -> REVIEW -> SEAL -> RUN",
+    "status": "PRE_SEAL_FROZEN",
+    "zero_leakage_enforced": true,
+    "lofo_isolation_enforced": true
+  },
+  "flows": [
+    {
+      "flow_id": "flow_iso_seed101",
+      "family": "homogeneous_isotropic_decay",
+      "seed": 101,
+      "reynolds_number": 100.0,
+      "kinematic_viscosity": 0.01,
+      "grid_nx": 16,
+      "grid_ny": 16,
+      "grid_nz": 16,
+      "domain_lx": 6.283185307179586,
+      "domain_ly": 6.283185307179586,
+      "domain_lz": 6.283185307179586,
+      "forcing": "none_decaying",
+      "boundary_conditions": "triply_periodic",
+      "generalization_tier": "G1",
+      "role": "training_and_G1_holdout"
+    },
+    {
+      "flow_id": "flow_iso_seed102",
+      "family": "homogeneous_isotropic_decay",
+      "seed": 102,
+      "reynolds_number": 100.0,
+      "kinematic_viscosity": 0.01,
+      "grid_nx": 16,
+      "grid_ny": 16,
+      "grid_nz": 16,
+      "domain_lx": 6.283185307179586,
+      "domain_ly": 6.283185307179586,
+      "domain_lz": 6.283185307179586,
+      "forcing": "none_decaying",
+      "boundary_conditions": "triply_periodic",
+      "generalization_tier": "G1",
+      "role": "training_and_G1_holdout"
+    },
+    {
+      "flow_id": "flow_iso_seed103",
+      "family": "homogeneous_isotropic_decay",
+      "seed": 103,
+      "reynolds_number": 100.0,
+      "kinematic_viscosity": 0.01,
+      "grid_nx": 16,
+      "grid_ny": 16,
+      "grid_nz": 16,
+      "domain_lx": 6.283185307179586,
+      "domain_ly": 6.283185307179586,
+      "domain_lz": 6.283185307179586,
+      "forcing": "none_decaying",
+      "boundary_conditions": "triply_periodic",
+      "generalization_tier": "G1",
+      "role": "training_and_G1_holdout"
+    },
+    {
+      "flow_id": "flow_tg_benchmark",
+      "family": "taylor_green_vortex",
+      "seed": 201,
+      "reynolds_number": 100.0,
+      "kinematic_viscosity": 0.01,
+      "grid_nx": 16,
+      "grid_ny": 16,
+      "grid_nz": 16,
+      "domain_lx": 6.283185307179586,
+      "domain_ly": 6.283185307179586,
+      "domain_lz": 6.283185307179586,
+      "forcing": "none_decaying",
+      "boundary_conditions": "triply_periodic",
+      "generalization_tier": "G3",
+      "role": "G3_flow_family_holdout"
+    },
+    {
+      "flow_id": "flow_shear_layer",
+      "family": "periodic_shear_layer",
+      "seed": 301,
+      "reynolds_number": 100.0,
+      "kinematic_viscosity": 0.01,
+      "grid_nx": 16,
+      "grid_ny": 16,
+      "grid_nz": 16,
+      "domain_lx": 6.283185307179586,
+      "domain_ly": 6.283185307179586,
+      "domain_lz": 6.283185307179586,
+      "forcing": "none_decaying",
+      "boundary_conditions": "triply_periodic",
+      "generalization_tier": "G3",
+      "role": "G3_flow_family_holdout"
+    }
+  ],
+  "time_discretization": {
+    "dt_sim": 0.02,
+    "obs_step": 15,
+    "obs_time": 0.30,
+    "tau_steps": 10,
+    "tau_duration": 0.20,
+    "forecast_horizon_step": 10,
+    "forecast_horizon_dt": 0.20,
+    "forecast_target_time": 0.50,
+    "total_sim_steps": 30
+  },
+  "lagrangian_topologies": {
+    "particles_per_flow": 64,
+    "threads_per_flow": 64,
+    "bundles_per_flow": 64,
+    "total_objects_per_flow": 64,
+    "thread_tracers": 17,
+    "thread_initial_length": 0.30,
+    "bundle_tracers": 7,
+    "bundle_radius": 0.06,
+    "integrator": "RK4",
+    "primary_interpolation": "trilinear_mac_staggered"
+  },
+  "feature_dimension_control": {
+    "declared_dimension": 10,
+    "P0_Particle_features": [
+      "inst_speed",
+      "inst_acc",
+      "inst_curv",
+      "speed_lag_1",
+      "speed_lag_2",
+      "speed_lag_3",
+      "speed_lag_4",
+      "speed_inc_1",
+      "speed_inc_2",
+      "speed_inc_3"
+    ],
+    "P1_Thread_features": [
+      "norm_length_L",
+      "tortuosity",
+      "mean_curvature",
+      "length_lag_1",
+      "length_lag_2",
+      "length_lag_3",
+      "length_lag_4",
+      "length_inc_1",
+      "length_inc_2",
+      "length_inc_3"
+    ],
+    "P2_Bundle_features": [
+      "stretch_s1",
+      "stretch_s2",
+      "stretch_s3",
+      "stretch_lag_1",
+      "stretch_lag_2",
+      "stretch_lag_3",
+      "stretch_lag_4",
+      "stretch_inc_1",
+      "stretch_inc_2",
+      "stretch_inc_3"
+    ]
+  },
+  "models": {
+    "classifier": "LogisticRegression",
+    "penalty": "l2",
+    "regularization_C": 1.0,
+    "max_iter": 500,
+    "class_weight": "balanced"
+  },
+  "targets": {
+    "primary_percentile": 0.25,
+    "sensitivity_percentiles": [0.10, 0.20, 0.25, 0.33]
+  },
+  "metrics": [
+    "roc_auc",
+    "pr_auc",
+    "delta_pr",
+    "brier_score",
+    "balanced_accuracy",
+    "precision",
+    "recall",
+    "prevalence"
+  ],
+  "decision_effects": {
+    "M": "Performance(intrinsic ordered history) - Performance(intrinsic shuffled-past history)",
+    "C": "Performance(intrinsic thread history) - Performance(intrinsic particle history)",
+    "B": "Performance(intrinsic bundle history) - Performance(intrinsic thread history)",
+    "G": "Performance(physics + geometry) - Performance(physics)",
+    "L_phase": "Performance(absolute) - Performance(phase-reduced)",
+    "L_env": "Performance(phase-reduced + env) - Performance(fully intrinsic)"
+  }
+}

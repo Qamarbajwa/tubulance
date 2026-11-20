@@ -1,0 +1,21 @@
+{
+  "protocol_version": "NS_ADAPTIVE_SCIENTIFIC_DISCOVERY_ENGINE_V1",
+  "timestamp_utc": "2026-08-19T09:05:00Z",
+  "limitations": [
+    {
+      "issue_id": "LIM_01_GRID_LOCKED_CONCENTRATION",
+      "description": "Apparent spatial coherence radius R_coh scales with grid spacing dx at low-to-moderate resolutions, precluding measurement of sub-grid core structures.",
+      "mitigation": "Perform grid-refinement convergence studies before inferring physical length scales."
+    },
+    {
+      "issue_id": "LIM_02_FINITE_SIMULATION_HORIZON",
+      "description": "Simulation time horizons are finite, yielding finite rescaled backward horizons T_n^- < infinity, precluding direct numerical proof of global ancient existence.",
+      "mitigation": "Formulate limiting results strictly on fixed local cylinders B_R x [-T, 0]."
+    },
+    {
+      "issue_id": "LIM_03_EIGENVECTOR_DEGENERACY",
+      "description": "When strain eigenvalue gaps g32 = lambda_3 - lambda_2 or g21 = lambda_2 - lambda_1 are small (< 1e-4), eigenvector orientation becomes numerically ill-conditioned.",
+      "mitigation": "Flag states with g32 < 1e-4 and filter out degenerate samples from rotation statistics."
+    }
+  ]
+}

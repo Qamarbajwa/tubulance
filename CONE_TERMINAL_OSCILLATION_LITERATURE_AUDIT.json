@@ -1,0 +1,9 @@
+{
+  "primary_sources": [
+    "Lei, Ren, Tian, arXiv:2501.08976 (2025): Fixed double-cone Theorem 1.1 and time-slice pairwise Corollary 1.6.",
+    "Miller, arXiv:2002.02152 (2020): Locally anisotropic and time-varying direction criteria.",
+    "Constantin, Fefferman (1993): Direction of vorticity and geometric depletion."
+  ],
+  "classification": "CONDITIONAL_REGULARITY_EXTENSION_PROVED_VIA_FIXED_AXIS_REDUCTION (Local reduction of Lei-Ren-Tian 2025; novelty claim withheld pending deeper literature audit).",
+  "status": "AUDITED"
+}

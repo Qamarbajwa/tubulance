@@ -1,0 +1,13 @@
+{
+  "gate": "PROOF_GATE_5_LEI_REN_TIAN_M_POSITIVE_RECONSTRUCTION",
+  "citation": "arXiv:2501.08976",
+  "proof_chain_analysis": [
+    "1. Double cone on H_M yields axial domination: |omega| <= C(delta) |omega_3| + M.",
+    "2. Modified axial component q_M = omega_3 - M sgn(omega_3) satisfies sign-definite parabolic evolution.",
+    "3. Nonlinear transport/stretching cancellations yield 2D cross-sectional slice flux bound: int_{D_r} |omega| dx_1 dx_2 <= C int_{D_r} |omega_3| dx_1 dx_2 + C M r^2.",
+    "4. Slice flux bound yields uniform Type-I scale-invariant bounds sup_{0 < r < 1} [A(r)+E(r)+F(r)+D(r)] < infty.",
+    "5. Ancient limit extraction + local flux decay lim_{r -> 0} r^(-2) int_{Q_r} |omega| = 0.",
+    "6. Epsilon-regularity excludes singularity at (0,0)."
+  ],
+  "status": "RECONSTRUCTED_LINE_BY_LINE"
+}

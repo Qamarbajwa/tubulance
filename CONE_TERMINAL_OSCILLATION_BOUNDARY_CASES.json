@@ -1,0 +1,5 @@
+{
+  "boundary_case": "R_term(e) = beta (or R_M = pi/2)",
+  "margin_collapse": "alpha + beta = pi/2 => delta_* = 1 - sin(pi/2) = 0. The double cone becomes a closed hemisphere, violating Lei-Ren-Tian Theorem 1.1's strict positivity requirement delta_* > 0.",
+  "verdict": "STRICT_INEQUALITY_IS_GENUINELY_NECESSARY_FOR_FIXED_CONE_REDUCTION"
+}

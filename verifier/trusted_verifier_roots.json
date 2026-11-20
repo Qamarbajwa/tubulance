@@ -1,0 +1,9 @@
+{
+  "verifier_version": "V2.2",
+  "trusted_verifier_hashes": [
+    "4ac6c76e1f60320bf1311e0b34ad218a6f786d79724405bc51865e4eb4da0592"
+  ],
+  "trusted_public_key_fingerprint": "f8df34339ea37e1449edf583b4d2b834646c398f9f73a387e9d70c3718d272d2",
+  "minimum_allowed_verifier_version": "V2.0",
+  "production_public_key_fingerprint": "NOT_CONFIGURED"
+}

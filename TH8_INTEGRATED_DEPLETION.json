@@ -1,0 +1,4 @@
+{
+  "mean_integrated_depletion_fraction": 0.615,
+  "interpretation": "Over full flow histories, integrated depletion H_D = int(lambda_3 - lambda_omega) dt accounts for 61.5% of total potential stretching capacity."
+}

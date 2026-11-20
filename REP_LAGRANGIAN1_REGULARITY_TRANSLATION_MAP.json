@@ -1,0 +1,5 @@
+{
+  "ess_translation": "||u||_{L^3} <= ||M||_{L^infty} ||u_0||_{L^3} + C ||R||_{L^3}. Because ||N||_{L^3} <= ||u_0||_{L^3}, singular growth REQUIRES the explosion of the deformation covariance Q or correlation R.",
+  "serrin_translation": "Serrin L^p_t L^q_x criterion translates to integrability of ||R(t)||_{L^q}^p.",
+  "status": "OPEN_BRIDGE_HYPOTHESIS (Global-regularity equivalence remains an open conjecture; counterexamples exist to naive deformation bounds in arXiv:2608.16915)"
+}

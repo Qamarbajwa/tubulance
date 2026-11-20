@@ -1,0 +1,9 @@
+{
+  "program": "NS_REP_SYNTHESIS_1",
+  "timestamp_utc": "2026-08-21T03:15:00Z",
+  "total_collected_tests": 836,
+  "passed_tests": 830,
+  "skipped": 6,
+  "failed": 0,
+  "test_status": "100%_PASS"
+}

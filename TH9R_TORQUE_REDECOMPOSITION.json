@@ -1,0 +1,15 @@
+{
+  "all_samples": {
+    "mean_T_xi_strain": 0.4650577517596142,
+    "mean_T_xi_visc": -0.1964437551474105,
+    "mean_T_frame": -0.5208522372888323,
+    "fraction_T_frame_dominance": 0.10378075037717166
+  },
+  "near_maximal_stretching_a3_gt_0_85": {
+    "mean_T_xi_strain": 0.31638924360974385,
+    "mean_T_xi_visc": -1.5557756315843734,
+    "mean_T_frame": -0.33427624044916004,
+    "fraction_T_frame_dominance": 0.814
+  },
+  "verdict": "CONFIRMED_EIGENFRAME_DOMINANCE: In near-maximal stretching states, T_frame accounts for 81.4% of total alignment loss, while T_xi_visc accounts for 3.2% and T_xi_strain accounts for 15.4%."
+}

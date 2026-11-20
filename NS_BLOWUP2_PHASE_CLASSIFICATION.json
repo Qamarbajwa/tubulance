@@ -1,0 +1,5 @@
+{
+  "growth_onset_class": "STRAINED_SHEET",
+  "peak_class": "BURGERS_TOWNSEND_SHEET",
+  "post_burst_class": "DISSIPATIVE_ROLLUP_TUBE"
+}

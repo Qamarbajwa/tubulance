@@ -1,0 +1,6 @@
+{
+  "mean_T_ancient_horizon": 1.132837396887576,
+  "mean_R_valid": 3.8570343949405914,
+  "eligibility_verdict": "LOCAL_SPACE_TIME_APPROXIMATION_ONLY",
+  "ruling": "Finite simulation horizon precludes exact ancient solution domain (-infinity, 0]; results valid on compact cylinders Q_R with R < R_valid."
+}

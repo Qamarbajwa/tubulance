@@ -1,0 +1,6 @@
+{
+  "mean_consecutive_positive_steps": 2.14,
+  "max_consecutive_positive_steps": 6,
+  "mean_duration_seconds": 0.0428,
+  "interpretation": "Positive V_log episodes are transient (mean duration ~ 0.04s = 2 steps), but in steep shear layers can persist up to 6 steps (0.12s), producing cumulative interval violations."
+}

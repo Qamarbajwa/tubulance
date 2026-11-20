@@ -1,0 +1,25 @@
+{
+  "graph_nodes": [
+    {
+      "route": "ROUTE_1_LEI_REN_TIAN_DOUBLE_CONE",
+      "observed_numerical_fact": "Local strained shear layers exhibit theta_cone <= 35.3 deg (delta = 0.42 > 0)",
+      "required_theorem_hypothesis": "Exists single globally fixed axis e* in S^2 with |xi x e*| <= 1 - delta across all high-vorticity points in domain",
+      "exact_gap": "In isotropic turbulence, different structures have different orientations, violating domain-wide single-axis cone",
+      "possible_analytical_target": "Localize Lei-Ren-Tian to moving/localized coherent structures with bounded eigenframe rotation rate ||De3/Dt||."
+    },
+    {
+      "route": "ROUTE_2_ESCAURIAZA_SEREGIN_SVERAK_L3",
+      "observed_numerical_fact": "Local scale-critical L3 norm ||U||_L3(B_R) remains bounded (~ 0.5-1.0)",
+      "required_theorem_hypothesis": "Global whole-space L_infty_t(L3(R^3)) bound without mass escape to infinity",
+      "exact_gap": "Full Townsend/Burgers reference fields have linear background notin L3(R^3); background must be subtracted",
+      "possible_analytical_target": "Formulate critical L3 regularity for perturbed shear-flow equations with subtracted background strain."
+    },
+    {
+      "route": "ROUTE_3_TYPE_I_ANCIENT_LIMIT",
+      "observed_numerical_fact": "Sampled Type-I quantities A, E, F, D remain bounded (< 10)",
+      "required_theorem_hypothesis": "sup_{0 < r < 1} [A(r)+E(r)+F(r)+D(r)] < infinity over continuum r and T^- -> infinity",
+      "exact_gap": "Finite sampled radii leave (0, r_min) unverified; finite simulation horizon T^- ~ 28 < infinity",
+      "possible_analytical_target": "Continuum epsilon-regularity bridge linking discrete scale bounds to analytical ancient compactness."
+    }
+  ]
+}

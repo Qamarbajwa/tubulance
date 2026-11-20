@@ -1,0 +1,6 @@
+{
+  "corollary": "Corollary 1.6 (Lei-Ren-Tian 2025)",
+  "assumption": "For all t in (-1, 0), for all x, y in B_1 with omega(x,t) != 0, omega(y,t) != 0: |xi(x,t) x xi(y,t)| <= 1 - delta_0",
+  "proof_mechanism": "At each fixed time slice t, an axis e(t) is chosen from the time-slice vorticity directions. The spatial flux bound is derived instantaneously at time t. Global time-independence of e is NOT required for the spatial flux bound!",
+  "applicability_gap": "Corollary 1.6 imposes the condition on ALL nonzero-vorticity points (q > 0). In turbulence, low-q background noise violates pairwise alignment, though high-q structures strictly satisfy it."
+}

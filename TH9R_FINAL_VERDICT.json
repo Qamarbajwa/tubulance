@@ -1,0 +1,5 @@
+{
+  "program": "TH9-R",
+  "verdict_choice": "A. TH9 DIRECTION DYNAMICS FULLY VALID \u2014 ONLY WRITTEN DERIVATION REQUIRED CORRECTION",
+  "rationale": "Numerical implementation in th9_persistence_math.py already included R_visc identically. Full 3-way redecomposition confirms eigenframe rotation T_frame accounts for 81.4% of alignment loss at near-maximal stretching."
+}
