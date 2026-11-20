@@ -1,0 +1,36 @@
+{
+  "status": "ADVERSARIAL_NOGO_BARRIERS_OK",
+  "NS_GLOBAL_REGULARITY_OPEN": true,
+  "checks": {
+    "adv1_tube_5x_zero_ok": true,
+    "adv2_homo_b4_depleted_ok": true,
+    "adv2_hetero_b4_depleted_ok": true,
+    "adv3_uv_noise_high_delta_ok": true,
+    "adv3_uv_noise_b4_collapsed_ok": true
+  },
+  "summary": {
+    "adversary_1_tube_5x": {
+      "delta_b4": 0.0,
+      "Phi_b4": 0.0
+    },
+    "adversary_2_homochiral_u_plus": {
+      "delta_b1": 0.45729237670335554,
+      "delta_b4": 0.665748375623672,
+      "Phi_b1": 0.19858104279901612,
+      "Phi_b4": 0.007448953786727784
+    },
+    "adversary_2_heterochiral": {
+      "delta_b1": 0.4269020302581087,
+      "delta_b4": 0.6746874080997962,
+      "Phi_b1": 0.18787349348457175,
+      "Phi_b4": 0.0062369118319136295
+    },
+    "adversary_3_uv_shell_noise": {
+      "delta_b1": 0.6429251416973263,
+      "delta_b4": 0.6675003488092774,
+      "rho_b4": 0.00036009876465841606,
+      "Phi_b1": 0.2490555551649528,
+      "Phi_b4": 0.000294203191750914
+    }
+  }
+}
