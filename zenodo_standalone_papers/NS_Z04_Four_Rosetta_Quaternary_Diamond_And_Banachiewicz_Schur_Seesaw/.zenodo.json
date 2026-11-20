@@ -1,0 +1,26 @@
+{
+  "title": "The Four-Rosetta Quaternary Diamond Partition and Banachiewicz Reciprocal Schur Duality",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We construct the 4-Rosetta Quaternary Diamond Architecture and establish Banachiewicz reciprocal Schur duality across coupled dynamical blocks. For any block matrix with non-zero diagonal entries A and D, the forward Schur complement S_D = D - B^2 / A and reciprocal Schur complement S_A = A - B^2 / D satisfy the exact duality A S_D = D S_A. This proves that the Higher-Dimensional Schur Sine \\sin^2(\\Theta) = S_D / D = S_A / A is invariant under reciprocal inversion. We combine this with a 4-quarter idempotent partition of unity q_{++} + q_{+-} + q_{-+} + q_{ - } = 1, certified in Lean 4 with zero sorry.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "orcid": "0009-0004-9467-3363"
+    }
+  ],
+  "keywords": [
+    "Navier-Stokes",
+    "Quaternary Diamond",
+    "Banachiewicz Inversion",
+    "Reciprocal Schur Duality",
+    "Projectors",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems",
+    "BTU Cottbus-Senftenberg"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}

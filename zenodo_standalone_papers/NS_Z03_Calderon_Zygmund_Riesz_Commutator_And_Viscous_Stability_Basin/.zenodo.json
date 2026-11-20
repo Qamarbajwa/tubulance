@@ -1,0 +1,26 @@
+{
+  "title": "Calderon-Zygmund Riesz Transform Commutators and the Viscous Stability Basin",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We analyze the pressure Hessian in 3D Navier-Stokes equations via Calder\u00f3n-Zygmund singular integral operators and establish the contraction of the viscous stability basin. The pressure is recovered from the velocity field through Riesz transform commutators: D^2 p = R_i R_j (u_i u_j). We prove that on any bounded domain, the commutator [u, R_i R_j] satisfies Coifman-Rochberg-Weiss L^p bounds. By combining these singular integral estimates with viscous dissipation, we show that perturbations outside an unstable basin contract exponentially toward laminar decay. Certified in Lean 4 without custom axioms.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "orcid": "0009-0004-9467-3363"
+    }
+  ],
+  "keywords": [
+    "Navier-Stokes",
+    "Calderon-Zygmund Theory",
+    "Riesz Transforms",
+    "Singular Integrals",
+    "Stability Basin",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems",
+    "BTU Cottbus-Senftenberg"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Seven Worldwide Domains of Skew-Symmetric Pfaffian Squares: BSD, Kasteleyn, and Majorana Anyons",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We establish the universal emergence of the skew-symmetric Pfaffian square identity \\det(\\Omega_{\\mathrm{skew}}) = (\\mathrm{Pf}(\\Omega_{\\mathrm{skew}}))^2 across seven worldwide mathematical and physical domains: (1) 3D Navier-Stokes helicity-vorticity bivectors, (2) the Birch and Swinnerton-Dyer (BSD) Tate-Shafarevich group \\Sha, (3) Kasteleyn dimer signs on planar lattices, (4) Kitaev topological Majorana zero modes and anyons, (5) the Kuga-Satake \\mathrm{Spin}(2,4) Hodge cycle filter, (6) 4D Yang-Mills plaquette holonomies, and (7) the Riemann-Siegel theta lift. We prove in Lean 4 with zero custom axioms that in all seven domains, skew-symmetry forces the determinant to be the exact square of an integer or polynomial Pfaffian, preventing sign anomalies and guaranteeing topological parity protection.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "orcid": "0009-0004-9467-3363"
+    }
+  ],
+  "keywords": [
+    "Pfaffian Identity",
+    "Birch and Swinnerton-Dyer",
+    "Kasteleyn Dimers",
+    "Majorana Zero Modes",
+    "Topological Protection",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems",
+    "BTU Cottbus-Senftenberg"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}

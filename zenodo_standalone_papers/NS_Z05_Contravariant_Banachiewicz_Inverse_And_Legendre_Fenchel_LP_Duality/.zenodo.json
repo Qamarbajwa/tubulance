@@ -1,0 +1,26 @@
+{
+  "title": "Contravariant Banachiewicz Block Inversion and Legendre-Fenchel Linear Programming Duality",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We formulate the contravariant block inversion of coupled fluid-strain operators using the Banachiewicz block inverse formula and establish exact Legendre-Fenchel linear programming (LP) duality. The inverse of a partitioned block operator M = [[A, B], [C, D]] is expressed in terms of contravariant Schur complements S_D^{-1} and S_A^{-1}. We prove that the duality gap between the primal kinetic dissipation minimization and the dual stress maximization vanishes identically at the saddle point: \\text{primal} - \\text{dual} = 0. We verify in Lean 4 without sorry that the contravariant block matrix product yields the exact identity matrix.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "orcid": "0009-0004-9467-3363"
+    }
+  ],
+  "keywords": [
+    "Navier-Stokes",
+    "Banachiewicz Inverse",
+    "Legendre-Fenchel Duality",
+    "Convex Optimization",
+    "Duality Gap",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems",
+    "BTU Cottbus-Senftenberg"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}
