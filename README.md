@@ -8,7 +8,7 @@
 - **Key Probes (`scripts/`):**
   - [probe_cl30_helical_schur_and_vorticity_cocycle.py](scripts/probe_cl30_helical_schur_and_vorticity_cocycle.py), [probe_win_win_cocycle_dichotomy_arch.py](scripts/probe_win_win_cocycle_dichotomy_arch.py), [probe_win_win_arch_resolution_scaling.py](scripts/probe_win_win_arch_resolution_scaling.py), [probe_ns_time_evolution_win_win_arch.py](scripts/probe_ns_time_evolution_win_win_arch.py), [probe_adversarial_nogo_barriers.py](scripts/probe_adversarial_nogo_barriers.py), [probe_four_workspace_proof_bridges.py](scripts/probe_four_workspace_proof_bridges.py), [probe_monge_ampere_seesaw_cross_proofs.py](scripts/probe_monge_ampere_seesaw_cross_proofs.py), [probe_worldwide_7domains_rosetta.py](scripts/probe_worldwide_7domains_rosetta.py)
 - **GitHub Release & Zenodo DOIs:** https://github.com/Qamarbajwa/tubulance/releases/tag/v1.2.0-rosetta | [`10.5281/zenodo.24399167`](https://zenodo.org/record/24399167) | [`10.5281/zenodo.24403353`](https://zenodo.org/record/24403353)
-- **Master Audit Receipt:** [rosetta_master_audit_receipt.json](rosetta_master_audit_receipt.json) (`4/4 PASS`; `NS_GLOBAL_REGULARITY_OPEN = true`)
+- **Master Audit Receipt:** [rosetta_master_audit_receipt.json](rosetta_master_audit_receipt.json) (`4/4 PASS`, Zero-Axiom Finite-Dimensional & Parameterized Bridge Certification in Lean 4; in this work, ai is being used as a tool by Arqam, Brandenburg University of Technology Cottbus-Senftenberg)
 
 ---
 
