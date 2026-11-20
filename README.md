@@ -1,4 +1,4 @@
-# `tubulance` — 3D Navier–Stokes Regularity, $\mathrm{Cl}(3,0)$ Helical Schur & Unified Rosetta Audit (`v1.2.0-rosetta`)
+# `Turbulance` — 3D Navier–Stokes Regularity, $\mathrm{Cl}(3,0)$ Helical Schur & Unified Rosetta Audit (`v1.2.0-rosetta`)
 
 - **Unified 4-Workspace & 7-Domain Monograph:** [paper/ROSETTA_UNIFIED_FOUR_WORKSPACES_AND_SEVEN_DOMAINS_MONOGRAPH.pdf](paper/ROSETTA_UNIFIED_FOUR_WORKSPACES_AND_SEVEN_DOMAINS_MONOGRAPH.pdf) | [TeX](paper/ROSETTA_UNIFIED_FOUR_WORKSPACES_AND_SEVEN_DOMAINS_MONOGRAPH.tex)
 - **General-Reader Essay & Rosetta Measurement Atlas:** [SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.md](SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.md) | [PDF](SEEING_NEGATIVELY_ARTICLE_AND_SYSTEM_MAP.pdf) (Zenodo DOI [`10.5281/zenodo.24403362`](https://zenodo.org/record/24403362))
