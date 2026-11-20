@@ -289,9 +289,7 @@ def main():
 
     receipt = {
         "probe": "probe_continuum_bsd_sha_pfaffian_finiteness",
-        "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
         "verdict": f"{passed_count}/{total_count} PASS",
-        "elapsed_seconds": round(elapsed, 4),
         "tests": all_tests
     }
 

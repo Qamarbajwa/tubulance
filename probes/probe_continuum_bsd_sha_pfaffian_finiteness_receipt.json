@@ -1,8 +1,6 @@
 {
   "probe": "probe_continuum_bsd_sha_pfaffian_finiteness",
-  "timestamp": "2026-11-20 22:08:05",
   "verdict": "4/4 PASS",
-  "elapsed_seconds": 0.022,
   "tests": [
     {
       "test": "Test 1 (Cassels-Tate 4x4 Skew Pfaffian Square Identity)",

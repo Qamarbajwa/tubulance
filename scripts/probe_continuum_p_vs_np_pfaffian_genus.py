@@ -192,7 +192,6 @@ def main():
     receipt = {
         "probe": "probe_continuum_p_vs_np_pfaffian_genus",
         "overall_passed": overall_pass,
-        "elapsed_seconds": elapsed,
         "test1_planar_grid": t1_res,
         "test2_k33_torus_reconstruction": t2_res,
         "test3_asymptotic_genus_barrier": t3_res,
