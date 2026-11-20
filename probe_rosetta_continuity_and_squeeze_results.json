@@ -1,0 +1,158 @@
+{
+  "probe": "RosettaContinuityAndSqueeze",
+  "epistemic_status": "verified-finite",
+  "passed": true,
+  "pillar_C1_C2_riemann_nested_lipschitz": {
+    "all_strictly_nested": true,
+    "max_lipschitz_identity_err": 7.35089072945172e-17,
+    "first_local_deriv_N2_to_6": 0.1991,
+    "last_local_deriv_N500_to_1000": 0.0419,
+    "transitions": [
+      {
+        "from_N": 2,
+        "to_N": 6,
+        "t_curr": 0.302279,
+        "t_next": 0.096019,
+        "local_lipschitz_deriv": 0.1991,
+        "interval_curr": [
+          0.45431367,
+          0.54568633
+        ],
+        "interval_next": [
+          0.49539015,
+          0.50460985
+        ],
+        "strictly_nested": true,
+        "lipschitz_identity_err": 0.0
+      },
+      {
+        "from_N": 6,
+        "to_N": 30,
+        "t_curr": 0.096019,
+        "t_next": 0.060547,
+        "local_lipschitz_deriv": 0.0783,
+        "interval_curr": [
+          0.49539015,
+          0.50460985
+        ],
+        "interval_next": [
+          0.49816704,
+          0.50183296
+        ],
+        "strictly_nested": true,
+        "lipschitz_identity_err": 6.071532165918825e-18
+      },
+      {
+        "from_N": 30,
+        "to_N": 100,
+        "t_curr": 0.060547,
+        "t_next": 0.050632,
+        "local_lipschitz_deriv": 0.0556,
+        "interval_curr": [
+          0.49816704,
+          0.50183296
+        ],
+        "interval_next": [
+          0.49871821,
+          0.50128179
+        ],
+        "strictly_nested": true,
+        "lipschitz_identity_err": 7.35089072945172e-17
+      },
+      {
+        "from_N": 100,
+        "to_N": 211,
+        "t_curr": 0.050632,
+        "t_next": 0.046547,
+        "local_lipschitz_deriv": 0.0486,
+        "interval_curr": [
+          0.49871821,
+          0.50128179
+        ],
+        "interval_next": [
+          0.49891669,
+          0.50108331
+        ],
+        "strictly_nested": true,
+        "lipschitz_identity_err": 4.868067754459915e-17
+      },
+      {
+        "from_N": 211,
+        "to_N": 500,
+        "t_curr": 0.046547,
+        "t_next": 0.04317,
+        "local_lipschitz_deriv": 0.0449,
+        "interval_curr": [
+          0.49891669,
+          0.50108331
+        ],
+        "interval_next": [
+          0.49906819,
+          0.50093181
+        ],
+        "strictly_nested": true,
+        "lipschitz_identity_err": 3.596840707220661e-17
+      },
+      {
+        "from_N": 500,
+        "to_N": 1000,
+        "t_curr": 0.04317,
+        "t_next": 0.040568,
+        "local_lipschitz_deriv": 0.0419,
+        "interval_curr": [
+          0.49906819,
+          0.50093181
+        ],
+        "interval_next": [
+          0.49917713,
+          0.50082287
+        ],
+        "strictly_nested": true,
+        "lipschitz_identity_err": 6.48217373874771e-17
+      }
+    ]
+  },
+  "pillar_C3_resolvent_continuity_4workspaces": {
+    "all_pole_free": true,
+    "ws01_hodge": {
+      "lambda_min_A_sp8": 16.0,
+      "max_schur_drift": 0.0
+    },
+    "ws02_yang_mills": {
+      "lambda_min_neg_D_Dir_sq": 4.0,
+      "one_minus_K_para_op": 0.5654
+    },
+    "ws03_riemann": {
+      "lambda_min_whitened_I": 1.0
+    },
+    "ws04_navier_stokes": {
+      "dt": 0.005,
+      "max_step_flux_jump": 0.000185,
+      "max_viscous_margin_Phi_minus_nu": -0.009327
+    }
+  },
+  "pillar_C4_two_rosetta_hinge_gluing": {
+    "max_hinge_jump": 1.734723475976807e-18,
+    "continuous_hinge_gluing_ok": true,
+    "cases": [
+      {
+        "grid": "L16_b4",
+        "C1": 0.0294,
+        "C2": 0.0118,
+        "delta_star": 0.36419753,
+        "Phi_left_star": 0.01070741,
+        "Phi_right_star": 0.01070741,
+        "jump_discontinuity": 0.0
+      },
+      {
+        "grid": "L24_b8_one_third",
+        "C1": 0.0235,
+        "C2": 0.0094,
+        "delta_star": 0.36363636,
+        "Phi_left_star": 0.00854545,
+        "Phi_right_star": 0.00854545,
+        "jump_discontinuity": 1.734723475976807e-18
+      }
+    ]
+  }
+}
