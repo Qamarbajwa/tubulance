@@ -1,0 +1,48 @@
+{
+  "status": "WORLDWIDE_ROSETTA_EXTENSIONS_OK",
+  "ALL_OPEN_PROBLEMS_REMAIN_OPEN": true,
+  "bsd_elliptic_curves": {
+    "BSD_CONJECTURE_OPEN": true,
+    "primes_max": 47,
+    "curves": {
+      "11a1_rank0": {
+        "final_euler_prod_p47": 5.869954424686769,
+        "log_euler_prod_p47": 1.7698468697019885
+      },
+      "37a1_rank1": {
+        "final_euler_prod_p47": 36.32202236479245,
+        "log_euler_prod_p47": 3.5924242340329284
+      },
+      "389a1_rank2": {
+        "final_euler_prod_p47": 52.25046216907318,
+        "log_euler_prod_p47": 3.956048736146914
+      }
+    },
+    "rank_ordering_ok": true,
+    "tared_rank2_over_rank0": 8.901340349309672
+  },
+  "topological_majorana_half_domain": {
+    "chain_sites_N": 12,
+    "parity_blind_sq_err": 0.0,
+    "half_domain_recon_err": 0.0,
+    "trivial_min_eig": 1.1265536574045123,
+    "topological_majorana_zero_mode_eig": 1.9799871352677246e-12,
+    "majorana_edge_mode_ok": true
+  },
+  "chern_simons_fibonacci_anyons": {
+    "delta_abelian": 0.0,
+    "fibonacci_yang_baxter_err": 3.805652793121308e-16,
+    "delta_fibonacci_braid": 0.9635254915624213,
+    "anyon_cocycle_dichotomy_ok": true
+  },
+  "pnp_det_perm_and_rmt_gue_goe": {
+    "P_VS_NP_OPEN": true,
+    "det_H4": 15.999999999999998,
+    "perm_H4": 8.0,
+    "det_J4": 0.0,
+    "perm_J4": 24.0,
+    "mean_spacing_ratio_GOE": 0.5251371892722941,
+    "mean_spacing_ratio_GUE": 0.6158049180760644,
+    "gue_exceeds_goe_ok": true
+  }
+}
