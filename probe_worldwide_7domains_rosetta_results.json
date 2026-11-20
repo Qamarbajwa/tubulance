@@ -1,0 +1,181 @@
+{
+  "probe": "probe_worldwide_7domains_rosetta",
+  "epistemic_lock": {
+    "status": "verified-finite",
+    "open_horizons": [
+      "4D Yang-Mills Mass Gap",
+      "3D Navier-Stokes Global Regularity",
+      "Riemann Hypothesis",
+      "Hodge Conjecture",
+      "P != NP",
+      "Birch and Swinnerton-Dyer Conjecture"
+    ],
+    "all_millennium_problems_open": true
+  },
+  "domains": [
+    {
+      "domain": "1_beltrami_mhd_cl30",
+      "gram_diag": [
+        2660.0000000000005,
+        621106.6500000003,
+        2660.0000000000005
+      ],
+      "max_off_diag": 1.8290206579448846e-13,
+      "S_Schur": 2660.0000000000005,
+      "Pi_even_T_hel": 0.0,
+      "status": "PASS"
+    },
+    {
+      "domain": "2_gr_weyl_vs_ricci_schur",
+      "dimensions": {
+        "d=2": {
+          "D_Riem": 1,
+          "D_Ricci": 3,
+          "D_Weyl": 0
+        },
+        "d=3": {
+          "D_Riem": 6,
+          "D_Ricci": 6,
+          "D_Weyl": 0
+        },
+        "d=4": {
+          "D_Riem": 20,
+          "D_Ricci": 10,
+          "D_Weyl": 10
+        },
+        "d=5": {
+          "D_Riem": 50,
+          "D_Ricci": 15,
+          "D_Weyl": 35
+        },
+        "d=6": {
+          "D_Riem": 105,
+          "D_Ricci": 21,
+          "D_Weyl": 84
+        }
+      },
+      "d4_weyl_unlocked": 10,
+      "status": "PASS"
+    },
+    {
+      "domain": "3_rmt_gue_vs_goe_spiked_schur",
+      "spike_lambda1": 25.0,
+      "bivector_im_frob": 3.5289147859464483,
+      "det_S_GOE_real": 9695243.129245143,
+      "det_S_GUE_complex": 9074662.142180832,
+      "det_ratio_GUE_over_GOE": 0.9359911887931552,
+      "spectral_gap_GOE": 1.0938940052877175,
+      "spectral_gap_GUE": 1.2777837650878565,
+      "status": "PASS"
+    },
+    {
+      "domain": "4_p_vs_np_kasteleyn_planar_vs_3d",
+      "planar_2x3_perm": 3,
+      "planar_2x3_pfaffian": 3.0,
+      "planar_2x3_error": 4.440892098500626e-16,
+      "planar_4x4_perm": 36,
+      "planar_4x4_pfaffian": 36.0,
+      "planar_4x4_error": 0.0,
+      "nonplanar_K33_perm": 6,
+      "nonplanar_K33_max_pfaffian": 4.0,
+      "nonplanar_frustration_gap": 2.0000000000000004,
+      "status": "PASS"
+    },
+    {
+      "domain": "5_bsd_frobenius_tare_and_sha_pfaffian_square",
+      "primes_count": 46,
+      "max_prime": 211,
+      "frobenius_tare": {
+        "E0_rank0_y2_x3_mx": {
+          "expected_rank": 0,
+          "raw_baseline_product": 3.922340465824818,
+          "bsd_tared_euler_product": 0.38940270119750653,
+          "sample_a_p": {
+            "p=5": {
+              "N_p": 8,
+              "a_p": -2
+            },
+            "p=7": {
+              "N_p": 8,
+              "a_p": 0
+            },
+            "p=13": {
+              "N_p": 8,
+              "a_p": 6
+            },
+            "p=211": {
+              "N_p": 212,
+              "a_p": 0
+            }
+          }
+        },
+        "E1_rank1_y2_x3_m2x": {
+          "expected_rank": 1,
+          "raw_baseline_product": 3.922340465824818,
+          "bsd_tared_euler_product": 0.08957757638207253,
+          "sample_a_p": {
+            "p=5": {
+              "N_p": 10,
+              "a_p": -4
+            },
+            "p=7": {
+              "N_p": 8,
+              "a_p": 0
+            },
+            "p=13": {
+              "N_p": 18,
+              "a_p": -4
+            },
+            "p=211": {
+              "N_p": 212,
+              "a_p": 0
+            }
+          }
+        }
+      },
+      "cassels_tate_sha_squares": [
+        {
+          "pfaffian": 1,
+          "det_M_CT": 1.0,
+          "is_perfect_square": true
+        },
+        {
+          "pfaffian": 2,
+          "det_M_CT": 4.0,
+          "is_perfect_square": true
+        },
+        {
+          "pfaffian": 3,
+          "det_M_CT": 9.0,
+          "is_perfect_square": true
+        },
+        {
+          "pfaffian": 4,
+          "det_M_CT": 16.0,
+          "is_perfect_square": true
+        }
+      ],
+      "BSD_MILLENNIUM_OPEN": true,
+      "status": "PASS"
+    },
+    {
+      "domain": "6_kitaev_majorana_half_mode_schur",
+      "N_sites": 8,
+      "total_majorana_modes": 16,
+      "S_edge_trivial_gap": 1.0,
+      "S_edge_topological_gap": 0.0,
+      "half_domain_recovery_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "domain": "7_chern_simons_anyons_braiding_cocycle",
+      "delta_braid_U1": 1.540743955509789e-31,
+      "delta_braid_Ising_SU2_2": 1.9999999999999996,
+      "delta_braid_Fibonacci_SU2_3": 3.2360679774997907,
+      "schur_purity_U1": 1.0,
+      "schur_purity_Ising": 0.5000000000000001,
+      "schur_purity_Fibonacci": 0.6180339887498949,
+      "status": "PASS"
+    }
+  ]
+}
