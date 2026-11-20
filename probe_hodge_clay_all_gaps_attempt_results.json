@@ -1,0 +1,71 @@
+{
+  "probe": "HodgeClayAllGapsAttempt",
+  "epistemic_status": "verified-finite-conditional",
+  "hodge_millennium_001_open": true,
+  "passed": true,
+  "wall5_quarter_linearity_ok": true,
+  "wall2_prime_power_exclusions": [
+    {
+      "p": 7,
+      "k": 1,
+      "m": 7,
+      "ap_6_excluded": true
+    },
+    {
+      "p": 7,
+      "k": 2,
+      "m": 49,
+      "ap_6_excluded": true
+    },
+    {
+      "p": 11,
+      "k": 1,
+      "m": 11,
+      "ap_6_excluded": true
+    },
+    {
+      "p": 11,
+      "k": 2,
+      "m": 121,
+      "ap_6_excluded": true
+    },
+    {
+      "p": 13,
+      "k": 1,
+      "m": 13,
+      "ap_6_excluded": true
+    },
+    {
+      "p": 13,
+      "k": 2,
+      "m": 169,
+      "ap_6_excluded": true
+    }
+  ],
+  "wall3_bost_surplus_m10": 1.8,
+  "wall3_open_obstruction": "Uniform degree bound D_max < inf along CM -> generic non-CM limit remains OPEN",
+  "wall1_liaison_witnesses": [
+    {
+      "d": [
+        2,
+        2,
+        3
+      ],
+      "deg_Z_prime": 5,
+      "deg_Z": 7,
+      "pos": true
+    }
+  ],
+  "wall4_cayley_ambient_dims": [
+    {
+      "N": 6,
+      "c": 2,
+      "cayley_ambient_P": 7
+    },
+    {
+      "N": 7,
+      "c": 3,
+      "cayley_ambient_P": 9
+    }
+  ]
+}
