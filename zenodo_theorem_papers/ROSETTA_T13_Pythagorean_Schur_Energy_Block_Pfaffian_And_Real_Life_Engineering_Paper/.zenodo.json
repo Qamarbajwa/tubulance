@@ -1,0 +1,21 @@
+{
+  "title": "Pythagorean Schur Energy Partition, Block-Pfaffian Factorization, Quantum Matter States, and Six Real-Life Engineering Applications",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>Standalone paper ROSETTA_T13 unifying Pythagorean Schur energy partitioning, chiral quantum states, block-Pfaffian factorization, six real-life engineering stability applications, and the latest signed Weil Schur Lean 4 certificates.</p><p><strong>Methodology:</strong> In this work, ai is being used as a tool for formal verification and computational checks.</p><p><strong>Epistemic Status:</strong> Verified finite mathematics; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Schur Complement",
+    "Pfaffian",
+    "Quantum Matter",
+    "Fluid Turbulence",
+    "Lean 4"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}
