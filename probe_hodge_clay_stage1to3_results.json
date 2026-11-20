@@ -1,0 +1,187 @@
+{
+  "probe": "HodgeClayConditionsStage1to3",
+  "epistemic_status": "verified-finite",
+  "hodge_millennium_001_open": true,
+  "passed": true,
+  "stage1_wall5_gysin_quarter": {
+    "max_gysin_gf_err": 0.0,
+    "max_quarter_annihilation_err": 0.0,
+    "quarter_partition_err": 0.0,
+    "passed": true
+  },
+  "stage2_wall2_fermat_ladder": {
+    "m_5d_schur_ladder": [
+      {
+        "m": 25,
+        "d": 5,
+        "phi_d": 4,
+        "schur_weight": 2880
+      },
+      {
+        "m": 35,
+        "d": 7,
+        "phi_d": 6,
+        "schur_weight": 4320
+      },
+      {
+        "m": 55,
+        "d": 11,
+        "phi_d": 10,
+        "schur_weight": 7200
+      },
+      {
+        "m": 65,
+        "d": 13,
+        "phi_d": 12,
+        "schur_weight": 8640
+      },
+      {
+        "m": 85,
+        "d": 17,
+        "phi_d": 16,
+        "schur_weight": 11520
+      },
+      {
+        "m": 95,
+        "d": 19,
+        "phi_d": 18,
+        "schur_weight": 12960
+      },
+      {
+        "m": 115,
+        "d": 23,
+        "phi_d": 22,
+        "schur_weight": 15840
+      }
+    ],
+    "prime_square_purity": [
+      {
+        "p": 7,
+        "m": 49,
+        "fits_in_6_coords": false,
+        "band4_count": 0
+      },
+      {
+        "p": 11,
+        "m": 121,
+        "fits_in_6_coords": false,
+        "band4_count": 0
+      },
+      {
+        "p": 13,
+        "m": 169,
+        "fits_in_6_coords": false,
+        "band4_count": 0
+      }
+    ],
+    "passed": true
+  },
+  "stage3_wall3_H1_H2": {
+    "H1_horizontal_invariance": [
+      {
+        "t": 0.0,
+        "Q_Schur": 1152.0,
+        "sin2_Theta_Hodge": 1.0
+      },
+      {
+        "t": 0.25,
+        "Q_Schur": 1152.0,
+        "sin2_Theta_Hodge": 1.0
+      },
+      {
+        "t": 0.5,
+        "Q_Schur": 1152.0,
+        "sin2_Theta_Hodge": 1.0
+      },
+      {
+        "t": 0.75,
+        "Q_Schur": 1152.0,
+        "sin2_Theta_Hodge": 1.0
+      },
+      {
+        "t": 1.0,
+        "Q_Schur": 1152.0,
+        "sin2_Theta_Hodge": 1.0
+      }
+    ],
+    "H2_threshold_m": 7.000000000000001,
+    "H2_bost_sweep": [
+      {
+        "m": 1,
+        "Delta_Bost": -3.6,
+        "positive": false
+      },
+      {
+        "m": 2,
+        "Delta_Bost": -3.0,
+        "positive": false
+      },
+      {
+        "m": 3,
+        "Delta_Bost": -2.4,
+        "positive": false
+      },
+      {
+        "m": 4,
+        "Delta_Bost": -1.8,
+        "positive": false
+      },
+      {
+        "m": 5,
+        "Delta_Bost": -1.2,
+        "positive": false
+      },
+      {
+        "m": 6,
+        "Delta_Bost": -0.6,
+        "positive": false
+      },
+      {
+        "m": 7,
+        "Delta_Bost": 0.0,
+        "positive": false
+      },
+      {
+        "m": 8,
+        "Delta_Bost": 0.6,
+        "positive": true
+      },
+      {
+        "m": 9,
+        "Delta_Bost": 1.2,
+        "positive": true
+      },
+      {
+        "m": 10,
+        "Delta_Bost": 1.8,
+        "positive": true
+      },
+      {
+        "m": 11,
+        "Delta_Bost": 2.4,
+        "positive": true
+      },
+      {
+        "m": 12,
+        "Delta_Bost": 3.0,
+        "positive": true
+      },
+      {
+        "m": 13,
+        "Delta_Bost": 3.6,
+        "positive": true
+      },
+      {
+        "m": 14,
+        "Delta_Bost": 4.2,
+        "positive": true
+      },
+      {
+        "m": 15,
+        "Delta_Bost": 4.8,
+        "positive": true
+      }
+    ],
+    "passed": true
+  }
+}
