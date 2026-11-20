@@ -1,0 +1,141 @@
+{
+  "probe": "RosettaFourfoldQuaternaryDiamond",
+  "epistemic_status": "verified-finite",
+  "all_four_clay_millennium_problems_open": true,
+  "passed": true,
+  "quarter_identity_partition": {
+    "N": 1000,
+    "square_free_total": 608,
+    "Q_pp": 151,
+    "Q_pm": 154,
+    "Q_mp": 150,
+    "Q_mm": 153,
+    "sum_equals_square_free": true
+  },
+  "banachiewicz_schur_duality": {
+    "all_duality_ok": true,
+    "workspaces": [
+      {
+        "name": "Riemann_Vasyunin_4x4",
+        "detA_detSD": 2185.615625,
+        "detD_detSA": 2185.615625,
+        "det_duality_rel_err": 0.0,
+        "det_duality_ok": true,
+        "scalar_sin2_SD_over_D": 0.9971590909090909,
+        "scalar_sin2_SA_over_A": 0.9971590909090909,
+        "scalar_sin2_diff": 0.0
+      },
+      {
+        "name": "Hodge_Sp8_Cl07_3x3",
+        "detA_detSD": 7962624.000000009,
+        "detD_detSA": 7962624.000000009,
+        "det_duality_rel_err": 0.0,
+        "det_duality_ok": true,
+        "scalar_sin2_SD_over_D": 1.0,
+        "scalar_sin2_SA_over_A": 1.0,
+        "scalar_sin2_diff": 0.0
+      },
+      {
+        "name": "YangMills_Covolume_2x2",
+        "detA_detSD": 806.3501599999998,
+        "detD_detSA": 806.35016,
+        "det_duality_rel_err": 1.4098941546885293e-16,
+        "det_duality_ok": true,
+        "scalar_sin2_SD_over_D": 0.9785919773605064,
+        "scalar_sin2_SA_over_A": 0.9785919773605063,
+        "scalar_sin2_diff": 1.1102230246251565e-16
+      },
+      {
+        "name": "NavierStokes_Cl30_3x3",
+        "detA_detSD": 4394702212739.9995,
+        "detD_detSA": 4394702212739.9995,
+        "det_duality_rel_err": 0.0,
+        "det_duality_ok": true,
+        "scalar_sin2_SD_over_D": 1.0,
+        "scalar_sin2_SA_over_A": 1.0,
+        "scalar_sin2_diff": 0.0
+      }
+    ]
+  },
+  "two_sided_critical_pinch": {
+    "N1000_strip": [
+      0.499177,
+      0.500823
+    ],
+    "N1000_width": 0.001646,
+    "N1000_amplified_width": 5.2e-05,
+    "rows": [
+      {
+        "N": 2,
+        "theta_deg": 38.0,
+        "t_N_sq": 0.118562,
+        "beta_max_minus": 0.440719,
+        "beta_min_plus": 0.559281,
+        "strip_width": 0.118562,
+        "theta_lift_amplified_width": 0.083836
+      },
+      {
+        "N": 6,
+        "theta_deg": 24.5,
+        "t_N_sq": 0.047142,
+        "beta_max_minus": 0.476429,
+        "beta_min_plus": 0.523571,
+        "strip_width": 0.047142,
+        "theta_lift_amplified_width": 0.019245
+      },
+      {
+        "N": 30,
+        "theta_deg": 14.2,
+        "t_N_sq": 0.015514,
+        "beta_max_minus": 0.492243,
+        "beta_min_plus": 0.507757,
+        "strip_width": 0.015514,
+        "theta_lift_amplified_width": 0.002833
+      },
+      {
+        "N": 100,
+        "theta_deg": 9.8,
+        "t_N_sq": 0.00735,
+        "beta_max_minus": 0.496325,
+        "beta_min_plus": 0.503675,
+        "strip_width": 0.00735,
+        "theta_lift_amplified_width": 0.000735
+      },
+      {
+        "N": 211,
+        "theta_deg": 7.4,
+        "t_N_sq": 0.004182,
+        "beta_max_minus": 0.497909,
+        "beta_min_plus": 0.502091,
+        "strip_width": 0.004182,
+        "theta_lift_amplified_width": 0.000288
+      },
+      {
+        "N": 500,
+        "theta_deg": 5.5,
+        "t_N_sq": 0.002307,
+        "beta_max_minus": 0.498846,
+        "beta_min_plus": 0.501154,
+        "strip_width": 0.002307,
+        "theta_lift_amplified_width": 0.000103
+      },
+      {
+        "N": 1000,
+        "theta_deg": 4.646,
+        "t_N_sq": 0.001646,
+        "beta_max_minus": 0.499177,
+        "beta_min_plus": 0.500823,
+        "strip_width": 0.001646,
+        "theta_lift_amplified_width": 5.2e-05
+      }
+    ]
+  },
+  "skew_chiral_flux_pfaffian": {
+    "sym_sum_equals_4J": true,
+    "omega_skew_frob_norm": 21.166010488516726,
+    "pfaffian": 88.0,
+    "pfaffian_sq": 7744.0,
+    "det_omega_skew": 7744.000000000006,
+    "det_equals_pf_sq_ok": true
+  }
+}
