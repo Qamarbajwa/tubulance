@@ -1,0 +1,63 @@
+{
+  "status": "WIN_WIN_ARCH_RESOLUTION_SCALING_OK",
+  "NS_GLOBAL_REGULARITY_OPEN": true,
+  "checks": {
+    "l12_physical_monotone_ok": true,
+    "l24_physical_monotone_ok": true,
+    "l24_b4_and_b8_strict_interior_ok": true,
+    "uv_refinement_contracts_all_matched_scales_ok": true
+  },
+  "L12": {
+    "1": {
+      "lambda_star": 1.0,
+      "delta_star": 0.4199685489020807,
+      "Phi_max": 0.17581880874346176,
+      "Phi_at_lam1": 0.17581880874346176,
+      "strict_interior_peak": false
+    },
+    "2": {
+      "lambda_star": 0.55,
+      "delta_star": 0.622595688590651,
+      "Phi_max": 0.11567885514792861,
+      "Phi_at_lam1": 0.11537084994431711,
+      "strict_interior_peak": true
+    },
+    "4": {
+      "lambda_star": 0.35,
+      "delta_star": 0.6089097053593384,
+      "Phi_max": 0.013742707476893469,
+      "Phi_at_lam1": 0.011207184281845967,
+      "strict_interior_peak": true
+    }
+  },
+  "L24": {
+    "1": {
+      "lambda_star": 1.0,
+      "delta_star": 0.17918149910073844,
+      "Phi_max": 0.11797851999053727,
+      "Phi_at_lam1": 0.11797851999053727,
+      "strict_interior_peak": false
+    },
+    "2": {
+      "lambda_star": 1.0,
+      "delta_star": 0.41881434117246263,
+      "Phi_max": 0.1506428288585154,
+      "Phi_at_lam1": 0.1506428288585154,
+      "strict_interior_peak": false
+    },
+    "4": {
+      "lambda_star": 0.6,
+      "delta_star": 0.6333498518255674,
+      "Phi_max": 0.10367011819566493,
+      "Phi_at_lam1": 0.10199535622102898,
+      "strict_interior_peak": true
+    },
+    "8": {
+      "lambda_star": 0.35,
+      "delta_star": 0.6148871289462403,
+      "Phi_max": 0.011046283314835986,
+      "Phi_at_lam1": 0.010062140406821943,
+      "strict_interior_peak": true
+    }
+  }
+}
