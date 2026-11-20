@@ -1,0 +1,68 @@
+{
+  "probe": "RosettaContravariantDualAndCubicSign",
+  "epistemic_status": "verified-finite",
+  "passed": true,
+  "contravariant_inverse_schur_sine": {
+    "max_contravariant_err": 2.842170943040401e-14,
+    "contravariant_ok": true,
+    "states": [
+      {
+        "name": "hodge_sp8_schur",
+        "sin_sq": 1.0,
+        "reciprocal_G_DD_Ginv_DD": 1.0,
+        "sin_sq_err": 0.0,
+        "inv_schur_vs_inv_A_err": 0.0
+      },
+      {
+        "name": "ym_su2_cavity_tare",
+        "sin_sq": 0.8595956617,
+        "reciprocal_G_DD_Ginv_DD": 0.8595956617,
+        "sin_sq_err": 0.0,
+        "inv_schur_vs_inv_A_err": 0.0
+      },
+      {
+        "name": "riemann_N211_eff",
+        "sin_sq": 0.00862901,
+        "reciprocal_G_DD_Ginv_DD": 0.00862901,
+        "sin_sq_err": 0.0,
+        "inv_schur_vs_inv_A_err": 0.0
+      },
+      {
+        "name": "riemann_N1000_eff",
+        "sin_sq": 0.00656137,
+        "reciprocal_G_DD_Ginv_DD": 0.00656137,
+        "sin_sq_err": 0.0,
+        "inv_schur_vs_inv_A_err": 2.842170943040401e-14
+      }
+    ]
+  },
+  "cubic_determinant_ns_l16": {
+    "grid_cells": 4096,
+    "max_cubic_identity_err": 1.7486012637846216e-15,
+    "cubic_identity_ok": true,
+    "positive_det_axial_tube_cells": 1640,
+    "negative_det_biaxial_sheet_cells": 1640,
+    "neutral_cells": 816,
+    "tube_fraction": 0.4004,
+    "sheet_fraction": 0.4004
+  },
+  "two_level_external_tare_N1000": {
+    "all_monotone": true,
+    "rows_up_to_N1000": [
+      {
+        "N": 500,
+        "S_act_sqf": 0.00761982,
+        "S_full": 0.00742679,
+        "dS_P0_null_kernel_tare": 0.00019303,
+        "monotonicity_holds": true
+      },
+      {
+        "N": 1000,
+        "S_act_sqf": 0.00671868,
+        "S_full": 0.00656137,
+        "dS_P0_null_kernel_tare": 0.00015731,
+        "monotonicity_holds": true
+      }
+    ]
+  }
+}
