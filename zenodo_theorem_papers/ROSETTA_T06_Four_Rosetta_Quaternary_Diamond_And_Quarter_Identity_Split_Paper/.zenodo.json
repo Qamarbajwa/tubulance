@@ -5,8 +5,8 @@
   "description": "<p>We prove the exact Fourfold Quaternary Diamond partition of unity: 1/4 + 1/4 + 1/4 + 1/4 = 1, showing that any four-workspace coupled system decomposes into four symmetric orthogonal quadrants. For symmetric positive definite block matrices, we establish the Banachiewicz-Schur reciprocal tare ratio identity S_D / D = S_A / A = \\sin^2 \\Theta, proving that the relative Schur reduction is invariant under which subsystem is eliminated first. Furthermore, cross-talk between orthogonal diagonal channels vanishes identically, G_{ij} = 0 for i \\neq j. Certified in Lean 4 with zero custom axioms. In this research, ai is being used as a tool for symbolic calculations and interactive formal verification.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
   "creators": [
     {
-      "name": "Arqam",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
       "orcid": "0009-0004-9467-3363"
     }
   ],
@@ -20,7 +20,7 @@
     "Lean 4",
     "Formal Verification",
     "Clay Millennium Problems",
-    "BTU Cottbus-Senftenberg"
+    "Brandenburg University of Technology Cottbus-Senftenberg"
   ],
   "license": "CC-BY-4.0",
   "access_right": "open"

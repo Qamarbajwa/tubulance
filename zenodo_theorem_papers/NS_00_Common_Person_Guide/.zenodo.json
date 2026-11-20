@@ -1,0 +1,20 @@
+{
+  "title": "Swirling Fluids, Two Leaning Walls, and Even-Room Dancers: A Plain-Language Guide to Three-Dimensional Fluid Turbulence, Pfaffian Squares, and Real-Life Applications",
+  "description": "A comprehensive plain-language and engineering guide to the 3D Navier-Stokes regularity problem, explaining the -1/2 Poisson strain ceiling, homochiral self-stretching cancellation, the two-wall keystone arch, even-room Pfaffian pairing, and practical applications in wind aerodynamics and structural design. In this research and manuscript preparation, ai is being used as a tool.",
+  "creators": [
+    {
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
+    }
+  ],
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Navier-Stokes Regularity",
+    "Fluid Turbulence",
+    "Strain Anisotropy",
+    "Keystone Arch",
+    "Pfaffian Squares",
+    "Lean 4"
+  ]
+}
