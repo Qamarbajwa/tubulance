@@ -1,14 +1,35 @@
 {
-  "grid_resolution": "16^3",
-  "t_homochiral_plus": 1.753130419894979e-19,
-  "t_homochiral_minus": -6.141914768527737e-20,
-  "t_heterochiral_cross": 4.604666220376673e-19,
-  "t_total": 3.5120041141572583e-19,
-  "enstrophy_dissipation_D": 2.0290914348373823,
-  "dimensionless_production_Phi": 1.730825951881622e-19,
-  "viscosity_nu": 0.02,
-  "subcritical_Phi_le_nu": true,
-  "homochiral_vanished": true,
-  "monge_ampere_fraction_straining_tubes": 0.39599609375,
-  "delta_p_mean_in_tubes": 0.47425776779945555
+  "status": "PASS",
+  "methodology": "ai is being used as a tool",
+  "author": "Arqam, Brandenburg University of Technology Cottbus-Senftenberg",
+  "taylor_green": {
+    "grid_resolution": "16^3",
+    "t_homochiral_plus": 1.753130419894979e-19,
+    "t_homochiral_minus": -6.141914768527737e-20,
+    "t_total": 2.541098841762907e-21,
+    "enstrophy_dissipation_D": 2.0290914348373805,
+    "dimensionless_production_Phi": 1.2523333340897774e-21,
+    "viscosity_nu": 0.02,
+    "subcritical_Phi_le_nu": true,
+    "homochiral_vanished": true,
+    "fraction_vortical_cores_delta_p_pos": 0.419921875,
+    "mean_delta_p_in_vortical_cores": 0.4472361042853006,
+    "fraction_straining_saddles_neg_delta_p_pos": 0.414794921875,
+    "mean_neg_delta_p_in_straining_saddles": 0.45276403729883286
+  },
+  "multishell_heterochiral": {
+    "mode_pairing": "Shell 1 (|k_+|=1) vs Shell 2 (|k_-|=2)",
+    "t_homochiral_plus": 0.0,
+    "t_homochiral_minus": 0.0,
+    "t_heterochiral_cross": 1.2399315348412677e-05,
+    "t_total": 6.720151746759728e-05,
+    "enstrophy_dissipation_D": 0.036221429192157165,
+    "dimensionless_Phi_hetero": 0.0003423198814887579,
+    "dimensionless_Phi_total": 0.0018552972360943744,
+    "viscosity_nu": 0.02,
+    "homochiral_strictly_zero": true,
+    "heterochiral_strictly_positive": true,
+    "subcritical_hetero_Phi_le_nu": true,
+    "subcritical_total_Phi_le_nu": true
+  }
 }

@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "covolume_fiber_tare": {
+    "raw": 65.4505,
+    "tare": 65.4505,
+    "tared_baseline": 0.0
+  },
+  "paramagnetic_drift": {
+    "f_para": -0.3743,
+    "f_diam": 0.023,
+    "eta_small_base": 0.3513
+  },
+  "center_vortex_screening": {
+    "c_vortex": 0.45,
+    "delta_2x2_z2": 0.986,
+    "string_tension_sigma": 0.4437,
+    "is_positive": true
+  },
+  "symanzik_continuum_extrapolation": {
+    "delta_a_to_0_intercept": 0.170372,
+    "continuum_gap_positive": true
+  },
+  "blocking_levels": [
+    {
+      "blocking_scale_b": 1,
+      "lattice_spacing_a": 0.25,
+      "g_squared": 2.6159,
+      "r_poly": 0.005726,
+      "r_large_peierls": 7.79e-14,
+      "peierls_suppressed_below_1e4": true,
+      "eta_net": 0.345574,
+      "symanzik_error_O_a2": 0.053125,
+      "delta_lat": 0.172787,
+      "delta_continuum_est": 0.119662,
+      "delta_physical_gap": 0.478648
+    },
+    {
+      "blocking_scale_b": 2,
+      "lattice_spacing_a": 0.125,
+      "g_squared": 2.8238,
+      "r_poly": 0.007658,
+      "r_large_peierls": 7.19e-13,
+      "peierls_suppressed_below_1e4": true,
+      "eta_net": 0.343642,
+      "symanzik_error_O_a2": 0.013281,
+      "delta_lat": 0.171821,
+      "delta_continuum_est": 0.15854,
+      "delta_physical_gap": 1.268317
+    },
+    {
+      "blocking_scale_b": 4,
+      "lattice_spacing_a": 0.0625,
+      "g_squared": 3.0318,
+      "r_poly": 0.011523,
+      "r_large_peierls": 4.89e-12,
+      "peierls_suppressed_below_1e4": true,
+      "eta_net": 0.339777,
+      "symanzik_error_O_a2": 0.00332,
+      "delta_lat": 0.169889,
+      "delta_continuum_est": 0.166568,
+      "delta_physical_gap": 2.665094
+    }
+  ]
+}

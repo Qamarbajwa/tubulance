@@ -1,0 +1,101 @@
+{
+  "probe": "probe_continuum_p_vs_np_pfaffian_genus",
+  "overall_passed": true,
+  "elapsed_seconds": 0.002,
+  "test1_planar_grid": {
+    "test": "Test 1 (2D Planar g=0 Kasteleyn)",
+    "grid": "4x4 square grid (16 vertices)",
+    "det_K": 1296,
+    "pfaffian_K": 36,
+    "expected_permanent": 36,
+    "error": 0,
+    "passed": true
+  },
+  "test2_k33_torus_reconstruction": {
+    "test": "Test 2 (K_{3,3} Torus Spin Reconstruction)",
+    "single_sheet_exhaustive_scan_count": 512,
+    "max_single_sheet_pfaffian": 4,
+    "permanent_k33": 6,
+    "single_sheet_frustration_gap": 2,
+    "torus_spin_pfaffians": {
+      "Pf_pp": 4,
+      "Pf_pm": 4,
+      "Pf_mp": 4,
+      "Pf_mm": 0
+    },
+    "reconstructed_permanent_formula": "(Pf_pp + Pf_pm + Pf_mp - Pf_mm) / 2",
+    "reconstructed_permanent_value": 6.0,
+    "reconstruction_error": 0.0,
+    "passed": true
+  },
+  "test3_asymptotic_genus_barrier": {
+    "test": "Test 3 (Asymptotic Genus & Mignon-Ressayre Barrier)",
+    "table": [
+      {
+        "n": 3,
+        "mignon_ressayre_min_m": 5,
+        "genus_g": 1,
+        "spin_structure_count_4g": 4,
+        "poly_n3": 27,
+        "poly_n4": 81,
+        "ratio_4g_to_n3": 0.15
+      },
+      {
+        "n": 4,
+        "mignon_ressayre_min_m": 8,
+        "genus_g": 2,
+        "spin_structure_count_4g": 16,
+        "poly_n3": 64,
+        "poly_n4": 256,
+        "ratio_4g_to_n3": 0.25
+      },
+      {
+        "n": 6,
+        "mignon_ressayre_min_m": 18,
+        "genus_g": 4,
+        "spin_structure_count_4g": 256,
+        "poly_n3": 216,
+        "poly_n4": 1296,
+        "ratio_4g_to_n3": 1.19
+      },
+      {
+        "n": 8,
+        "mignon_ressayre_min_m": 32,
+        "genus_g": 6,
+        "spin_structure_count_4g": 4096,
+        "poly_n3": 512,
+        "poly_n4": 4096,
+        "ratio_4g_to_n3": 8.0
+      },
+      {
+        "n": 12,
+        "mignon_ressayre_min_m": 72,
+        "genus_g": 10,
+        "spin_structure_count_4g": 1048576,
+        "poly_n3": 1728,
+        "poly_n4": 20736,
+        "ratio_4g_to_n3": 606.81
+      },
+      {
+        "n": 16,
+        "mignon_ressayre_min_m": 128,
+        "genus_g": 14,
+        "spin_structure_count_4g": 268435456,
+        "poly_n3": 4096,
+        "poly_n4": 65536,
+        "ratio_4g_to_n3": 65536.0
+      },
+      {
+        "n": 20,
+        "mignon_ressayre_min_m": 200,
+        "genus_g": 18,
+        "spin_structure_count_4g": 68719476736,
+        "poly_n3": 8000,
+        "poly_n4": 160000,
+        "ratio_4g_to_n3": 8589934.59
+      }
+    ],
+    "passed": true
+  },
+  "epistemic_status": "P vs NP remains strictly OPEN; verified finite-genus Pfaffian identities."
+}
