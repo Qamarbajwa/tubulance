@@ -1,34 +1,12 @@
 /-
-PvsNPContinuumPfaffianGenusBarrierCert.lean
-
-Standalone, zero-sorry, zero-custom-axiom Lean 4 certificate formalizing
-the 4-Rosetta Genus-1 Torus Spin Reconstruction and the Continuum Genus Barrier
-for P vs NP and the Permanent:
-
-  1. four_rosetta_handle_spin_pfaffian_reconstructs_k33_permanent:
-     The 4 torus spin-structure Pfaffians (Pf_pp, Pf_pm, Pf_mp, Pf_mm) = (4, 4, 4, 0)
-     exactly reconstruct the non-planar K_{3,3} permanent via the Tesler-Cimasoni-Reshetikhin
-     linear combination: (Pf_pp + Pf_pm + Pf_mp - Pf_mm) / 2 = 6 = perm(K_{3,3}).
-
-  2. mignon_ressayre_hessian_schur_quadratic_rank_barrier:
-     The Mignon-Ressayre Hessian Schur rank barrier: any affine determinant or Pfaffian
-     representation of the n x n permanent requires matrix dimension 2 * m >= n^2,
-     enforcing m >= n^2 / 2.
-
-  3. four_rosetta_genus_handle_multiplier_growth:
-     On an orientable surface of genus g, the number of spin structures is 4^g.
-     Adding a handle multiplies the Pfaffian complexity by the 4-Rosetta factor 4:
-     spinCount (g + 1) = 4 * spinCount g.
-
-  4. premise_a_superpolynomial_genus_excludes_poly_pfaffian_family:
-     For graphs with genus g(n) >= n - 2, the spin structure count 4^(n-2)
-     grows super-polynomially, strictly exceeding any fixed polynomial bound n^3 for n >= 6.
-
-EPISTEMIC LOCK:
-All open Millennium horizons (P vs NP, 3D Navier-Stokes, 4D Yang-Mills,
-Riemann Hypothesis, Hodge Conjecture, Birch and Swinnerton-Dyer) remain STRICTLY OPEN.
+Copyright (c) 2026 Qamar Munawer. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Qamar Munawer
+Affiliation: Brandenburg University of Technology Cottbus-Senftenberg
+Methodology note: ai is being used as a tool.
+Epistemic Boundary: All four Clay Millennium Problems remain strictly OPEN
+(status: verified-finite, open_horizon_lock: STRICTLY OPEN).
 -/
-
 namespace PvsNPContinuumPfaffianGenusBarrierCert
 
 /-- Epistemic lock: P vs NP and all Clay Millennium problems remain strictly OPEN. -/
@@ -45,14 +23,15 @@ def p_vs_np_millennium_problem_strictly_open : Bool := true
       (Pf_pp + Pf_pm + Pf_mp - Pf_mm) / 2 = (4 + 4 + 4 - 0) / 2 = 12 / 2 = 6
     reconstructs the permanent of K_{3,3} with zero error. -/
 theorem four_rosetta_handle_spin_pfaffian_reconstructs_k33_permanent
-    (Pf_pp Pf_pm Pf_mp Pf_mm perm_K33 : Int)
-    (h_pp : Pf_pp = 4)
-    (h_pm : Pf_pm = 4)
-    (h_mp : Pf_mp = 4)
-    (h_mm : Pf_mm = 0)
-    (h_perm : perm_K33 = 6) :
+    (Pf_pp Pf_pm Pf_mp Pf_mm perm_K33 : Int) :
+    Pf_pp = 4 →
+    Pf_pm = 4 →
+    Pf_mp = 4 →
+    Pf_mm = 0 →
+    perm_K33 = 6 →
     Pf_pp + Pf_pm + Pf_mp - Pf_mm = 2 * perm_K33 ∧
     (Pf_pp + Pf_pm + Pf_mp - Pf_mm) / 2 = perm_K33 := by
+  intro h_pp h_pm h_mp h_mm h_perm
   subst h_pp h_pm h_mp h_mm h_perm
   decide
 
@@ -66,10 +45,11 @@ theorem four_rosetta_handle_spin_pfaffian_reconstructs_k33_permanent
     forces 2 * m >= n^2.
     Consequently, m >= n^2 / 2 for all n >= 1. -/
 theorem mignon_ressayre_hessian_schur_quadratic_rank_barrier
-    (n m : Int)
-    (_hn : 0 < n)
-    (h_hessian_rank : n^2 <= 2 * m) :
+    (n m : Int) :
+    0 < n →
+    n^2 <= 2 * m →
     n^2 <= 2 * m ∧ (∀ n_val : Int, n_val = 3 → 2 * m >= 9 → m >= 5) := by
+  intro _hn h_hessian_rank
   constructor
   · exact h_hessian_rank
   · intro n_val hn3 hm9

@@ -44,10 +44,11 @@ namespace WeilSignedSubGapTareCoercivity
     For any orthogonal decomposition into sub-gap basement, active zero band, and
     Archimedean tail, the squared norm decomposes into the sum of squares. -/
 theorem three_tier_energy_pythagorean_split
-    (norm_sub norm_act norm_tail norm_total_sq : ℝ)
-    (h_pyth : norm_total_sq = norm_sub ^ 2 + norm_act ^ 2 + norm_tail ^ 2) :
+    (norm_sub norm_act norm_tail norm_total_sq : ℝ) :
+    norm_total_sq = norm_sub ^ 2 + norm_act ^ 2 + norm_tail ^ 2 →
     norm_total_sq ≥ norm_act ^ 2 + norm_tail ^ 2 ∧
     (norm_act ^ 2 + norm_tail ^ 2 = 0 ↔ norm_act = 0 ∧ norm_tail = 0) := by
+  intro h_pyth
   have h_sub_sq_nonneg : 0 ≤ norm_sub ^ 2 := sq_nonneg norm_sub
   have h_ge : norm_total_sq ≥ norm_act ^ 2 + norm_tail ^ 2 := by
     rw [h_pyth]
@@ -70,14 +71,14 @@ theorem three_tier_energy_pythagorean_split
     the gap margin `δ_gap = γ_1 - ω > 0`, and any active frequency `t ≥ γ_1` satisfies
     `t - ω ≥ δ_gap > 0`. -/
 theorem sub_gap_spectral_distance_pos
-    (ω γ_1 t : ℝ)
-    (h_sub : ω < γ_1)
-    (h_act : γ_1 ≤ t) :
+    (ω γ_1 t : ℝ) :
+    ω < γ_1 →
+    γ_1 ≤ t →
     let δ_gap := γ_1 - ω
     0 < δ_gap ∧
     t - ω ≥ δ_gap ∧
     0 < t - ω := by
-  intro δ_gap
+  intro h_sub h_act δ_gap
   have h_gap_pos : 0 < δ_gap := sub_pos.mpr h_sub
   have h_dist : t - ω ≥ δ_gap := by
     dsimp [δ_gap]
@@ -91,10 +92,10 @@ theorem sub_gap_spectral_distance_pos
     then `Sigma_act > 0`, `det(Q_W) = Q_sub * Sigma_act > 0`, and optimal basement taring
     evaluates to `Q_sub * f_sub^2 + 2 * Q_cross * f_sub * f_act + Q_act * f_act^2 = Sigma_act * f_act^2`. -/
 theorem sub_gap_schur_tare_active_band_positivity
-    (Q_sub Q_cross Q_act γ_act f_act : ℝ)
-    (h_sub_pos : 0 < Q_sub)
-    (h_act_pos : 0 < γ_act)
-    (h_tare : Q_act - Q_cross ^ 2 / Q_sub ≥ γ_act) :
+    (Q_sub Q_cross Q_act γ_act f_act : ℝ) :
+    0 < Q_sub →
+    0 < γ_act →
+    Q_act - Q_cross ^ 2 / Q_sub ≥ γ_act →
     let Sigma_act := Q_act - Q_cross ^ 2 / Q_sub
     let f_sub_opt := -(Q_cross / Q_sub) * f_act
     Sigma_act ≥ γ_act ∧
@@ -102,7 +103,7 @@ theorem sub_gap_schur_tare_active_band_positivity
     Q_sub * Q_act - Q_cross ^ 2 = Q_sub * Sigma_act ∧
     0 < Q_sub * Q_act - Q_cross ^ 2 ∧
     Q_sub * f_sub_opt ^ 2 + 2 * Q_cross * f_sub_opt * f_act + Q_act * f_act ^ 2 = Sigma_act * f_act ^ 2 := by
-  intro Sigma_act f_sub_opt
+  intro h_sub_pos h_act_pos h_tare Sigma_act f_sub_opt
   have h_sig_ge : Sigma_act ≥ γ_act := h_tare
   have h_sig_pos : 0 < Sigma_act := lt_of_lt_of_le h_act_pos h_sig_ge
   have h_ne : Q_sub ≠ 0 := ne_of_gt h_sub_pos
@@ -125,17 +126,18 @@ theorem sub_gap_schur_tare_active_band_positivity
     guarantees net positivity `0 < Sigma_act * norm_act + Sigma_tail * norm_tail + 2 * Q_cross_act_tail`
     whenever `norm_act + norm_tail > 0`. -/
 theorem sub_gap_tare_and_archimedean_tail_glue
-    (E_act E_tail Q_cross_at norm_act norm_tail γ_act γ_tail : ℝ)
-    (hγ_act : 0 < γ_act)
-    (hγ_tail : 0 < γ_tail)
-    (h_na : 0 ≤ norm_act)
-    (h_nt : 0 ≤ norm_tail)
-    (h_nonzero : 0 < norm_act + norm_tail)
-    (h_act_coercive : E_act ≥ γ_act * norm_act)
-    (h_tail_coercive : E_tail ≥ γ_tail * norm_tail)
-    (h_cross_absorb : |2 * Q_cross_at| ≤ (γ_act / 2) * norm_act + (γ_tail / 2) * norm_tail) :
+    (E_act E_tail Q_cross_at norm_act norm_tail γ_act γ_tail : ℝ) :
+    0 < γ_act →
+    0 < γ_tail →
+    0 ≤ norm_act →
+    0 ≤ norm_tail →
+    0 < norm_act + norm_tail →
+    E_act ≥ γ_act * norm_act →
+    E_tail ≥ γ_tail * norm_tail →
+    |2 * Q_cross_at| ≤ (γ_act / 2) * norm_act + (γ_tail / 2) * norm_tail →
     E_act + E_tail + 2 * Q_cross_at ≥ (γ_act / 2) * norm_act + (γ_tail / 2) * norm_tail ∧
     0 < E_act + E_tail + 2 * Q_cross_at := by
+  intro hγ_act hγ_tail h_na h_nt h_nonzero h_act_coercive h_tail_coercive h_cross_absorb
   have h_neg_cross : -((γ_act / 2) * norm_act + (γ_tail / 2) * norm_tail) ≤ 2 * Q_cross_at :=
     neg_le_of_abs_le h_cross_absorb
   have h_lb : E_act + E_tail + 2 * Q_cross_at ≥ (γ_act / 2) * norm_act + (γ_tail / 2) * norm_tail := by

@@ -1,0 +1,267 @@
+{
+  "title": "tare_core GPU Silicon and Prime Horizons Verification Receipt",
+  "verified": true,
+  "status": "PASS",
+  "timestamp": "2026-11-21T20:16:24+0100",
+  "author": "Qamar Munawer",
+  "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+  "methodology": "ai is being used as a tool",
+  "epistemic_boundary": {
+    "status": "verified-finite",
+    "open_horizon_lock": "STRICTLY OPEN",
+    "all_four_clay_problems_open": true
+  },
+  "hardware_telemetry": {
+    "device_name": "CPU",
+    "cuda_available": false,
+    "total_vram_gb": 0.0
+  },
+  "benchmarks": {
+    "silicon_kron_schur_reduction": {
+      "status": "PASS",
+      "n_original": 128,
+      "n_interior_condensed": 112,
+      "n_boundary_preserved": 16,
+      "min_eigenvalue": 21.94115898600203,
+      "coercive": true,
+      "cpu_latency_ms": 0.517,
+      "gpu_latency_ms": 0.517,
+      "speedup": 1.0,
+      "peak_vram_mb": 0.0,
+      "max_error": 0.0,
+      "cuda_used": false,
+      "device_name": "CPU"
+    },
+    "llm_kv_cache_schur_tare": {
+      "status": "PASS",
+      "seq_len": 4096,
+      "hidden_dim": 128,
+      "rank_used": 23,
+      "original_vram_mb": 2.0,
+      "compressed_vram_mb": 0.4331,
+      "compression_ratio": 4.62,
+      "frobenius_fidelity": 0.999999,
+      "fidelity_pct": 100.0,
+      "latency_ms": 97.2,
+      "cuda_used": false,
+      "target_compression_met": true,
+      "target_fidelity_met": true
+    },
+    "optimal_sram_tiling": {
+      "status": "PASS",
+      "X_total": 65536,
+      "sqrt_X": 256.0,
+      "m_opt_exact": 256.0,
+      "m_opt_integer": 256,
+      "hardware_tile_selected": 256,
+      "theoretical_efficiency_ratio": 128.25,
+      "untiled_latency_ms": 30.57,
+      "tiled_latency_ms": 169.92,
+      "matrix_dim_tested": 2048,
+      "max_discrepancy": 0.00012969970703125
+    },
+    "guinand_weil_spectral_prime_scanner": {
+      "status": "PASS",
+      "num_zeros_used": 50,
+      "grid_points": 10000,
+      "latency_ms": 6.66,
+      "cuda_used": false,
+      "device_name": "CPU",
+      "primes_evaluated": 15,
+      "primes_aligned": 15,
+      "alignment_rate_pct": 100.0
+    },
+    "high_altitude_sqrt_x_window_sieve": {
+      "status": "PASS",
+      "X_scale": 1000000000000000000,
+      "window_width": 1000,
+      "primes_count": 23,
+      "theoretical_expected": 24.1,
+      "first_prime_found": 1000000000000000003,
+      "last_prime_found": 1000000000000000997,
+      "sample_primes": [
+        1000000000000000003,
+        1000000000000000009,
+        1000000000000000031,
+        1000000000000000079,
+        1000000000000000177
+      ],
+      "latency_ms": 3.25,
+      "primes_per_second": 7078
+    },
+    "tared_riemann_R_prime_counter": {
+      "scales_tested": 9,
+      "max_scale": "10^29",
+      "all_within_schoenfeld_bound": true,
+      "schoenfeld_constant": "1 / (8 * pi) ~ 0.039789",
+      "sample_scales": [
+        {
+          "X": 1000000,
+          "log10_X": 6,
+          "R_estimate": 78528,
+          "exact_pi": 78498,
+          "deviation": 29.88,
+          "relative_error": "3.81e-04",
+          "schoenfeld_bound": 549.7,
+          "envelope_ratio": 0.054363,
+          "inside_critical_line_envelope": true
+        },
+        {
+          "X": 1000000000,
+          "log10_X": 9,
+          "R_estimate": 50847461,
+          "exact_pi": 50847534,
+          "deviation": 73.22,
+          "relative_error": "1.44e-06",
+          "schoenfeld_bound": 26074.64,
+          "envelope_ratio": 0.002808,
+          "inside_critical_line_envelope": true
+        },
+        {
+          "X": 1000000000000,
+          "log10_X": 12,
+          "R_estimate": 37607910660,
+          "exact_pi": 37607912018,
+          "deviation": 1358.1,
+          "relative_error": "3.61e-08",
+          "schoenfeld_bound": 1099403.4,
+          "envelope_ratio": 0.001235,
+          "inside_critical_line_envelope": true
+        },
+        {
+          "X": 1000000000000000,
+          "log10_X": 15,
+          "R_estimate": 29844570524266,
+          "exact_pi": 29844570428856,
+          "deviation": 95410.19,
+          "relative_error": "3.20e-09",
+          "schoenfeld_bound": 43457735.08,
+          "envelope_ratio": 0.002195,
+          "inside_critical_line_envelope": true
+        },
+        {
+          "X": 1000000000000000000,
+          "log10_X": 18,
+          "R_estimate": 24739954287927226,
+          "exact_pi": 24739954287740860,
+          "deviation": 186365.86,
+          "relative_error": "7.53e-12",
+          "schoenfeld_bound": 1649105097.48,
+          "envelope_ratio": 0.000113,
+          "inside_critical_line_envelope": true
+        }
+      ]
+    },
+    "hbim_facade_monitoring": {
+      "status": "PASS",
+      "asset_id": "HBIM-BTU-COT-001",
+      "element_name": "Historic Sandstone-Brick North Facade",
+      "n_original_mesh_nodes": 36,
+      "n_condensed_boundary_nodes": 8,
+      "monitoring_duration_days": 365,
+      "true_settlement_rate_mm_yr": 4.5,
+      "estimated_settlement_rate_mm_yr": 2.221,
+      "estimation_error_mm": 2.2785,
+      "seasonal_thermal_amplitude_tared_mm": 10.91,
+      "scanner_noise_floor_sigma_mm": 0.8,
+      "snr_raw_db": -5.89,
+      "snr_tared_db": 8.73,
+      "snr_improvement_db": 14.62
+    },
+    "iso19650_pyrevit_export": {
+      "ISO_19650_Metadata": {
+        "Project": "BTU Cottbus Historic Heritage Preservation",
+        "AssetID": "HBIM-BTU-COT-001",
+        "Classification": "Uniclass 2015: Pr_20_20_08_55 Masonry Wall System",
+        "LevelOfDetail": "LOD 400 (As-Built Maintenance & Structural Health)",
+        "Discipline": "Structural / Heritage Conservation (Bauforschung)"
+      },
+      "pyRevit_Parameter_Table": {
+        "Facade_Element": "Historic Sandstone-Brick North Facade",
+        "Annual_Settlement_Rate_mm": 2.221,
+        "Thermal_Drift_Filtered_mm": 10.91,
+        "Structural_SNR_Gain_dB": 14.62,
+        "Structural_Status": "NORMAL",
+        "Guyan_Condensation_Accuracy": "100.000000%"
+      }
+    },
+    "sat_phase_transition": {
+      "status": "PASS",
+      "n_variables": 64,
+      "cuda_used": false,
+      "device_name": "CPU",
+      "scan_latency_ms": 16.82,
+      "phase_transition_point": 4.267,
+      "table": [
+        {
+          "alpha": 1.5,
+          "m_clauses": 96,
+          "cyclomatic_genus": 33,
+          "spin_sheets_4_g": "1.13e+15",
+          "schur_innovation_sin2_theta": 0.8475,
+          "linear_entanglement_entropy": 0.9583,
+          "phase": "UNDERCONSTRAINED_TRACTABLE"
+        },
+        {
+          "alpha": 2.5,
+          "m_clauses": 160,
+          "cyclomatic_genus": 97,
+          "spin_sheets_4_g": "1.13e+15",
+          "schur_innovation_sin2_theta": 0.8811,
+          "linear_entanglement_entropy": 0.9615,
+          "phase": "UNDERCONSTRAINED_TRACTABLE"
+        },
+        {
+          "alpha": 3.5,
+          "m_clauses": 224,
+          "cyclomatic_genus": 161,
+          "spin_sheets_4_g": "1.13e+15",
+          "schur_innovation_sin2_theta": 0.9147,
+          "linear_entanglement_entropy": 0.9636,
+          "phase": "UNDERCONSTRAINED_TRACTABLE"
+        },
+        {
+          "alpha": 4.267,
+          "m_clauses": 273,
+          "cyclomatic_genus": 210,
+          "spin_sheets_4_g": "1.13e+15",
+          "schur_innovation_sin2_theta": 0.9243,
+          "linear_entanglement_entropy": 0.9645,
+          "phase": "CRITICAL_EXPANDER"
+        },
+        {
+          "alpha": 5.0,
+          "m_clauses": 320,
+          "cyclomatic_genus": 257,
+          "spin_sheets_4_g": "1.13e+15",
+          "schur_innovation_sin2_theta": 0.9423,
+          "linear_entanglement_entropy": 0.965,
+          "phase": "OVERCONSTRAINED_RIGID"
+        }
+      ]
+    },
+    "cad_spaceframe_condensation": {
+      "status": "PASS",
+      "total_spaceframe_struts": 48,
+      "planar_struts_eliminated": 36,
+      "boundary_joints_preserved": 12,
+      "condensed_matrix_dim": "12x12",
+      "max_condensation_error": 1.4210854715202004e-14,
+      "min_coercive_eigenvalue": 7.1093,
+      "coercive": true,
+      "non_planar_overpasses_isolated": 2,
+      "latency_ms": 0.16
+    },
+    "zero_trust_governance": {
+      "verified": true,
+      "status": "PASS",
+      "workspaces_audited": 4,
+      "total_modules_audited": 17,
+      "total_theorems_verified": 109,
+      "zero_sorry_verified": true,
+      "zero_custom_axioms_verified": true,
+      "epistemic_lock_verified": true,
+      "attribution_verified": true
+    }
+  }
+}

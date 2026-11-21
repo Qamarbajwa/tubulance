@@ -2,6 +2,10 @@
 Copyright (c) 2026 Qamar Munawer. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Qamar Munawer
+Affiliation: Brandenburg University of Technology Cottbus-Senftenberg
+Methodology note: ai is being used as a tool.
+Epistemic Boundary: All four Clay Millennium Problems remain strictly OPEN
+(status: verified-finite, open_horizon_lock: STRICTLY OPEN).
 -/
 import Mathlib.Tactic
 
@@ -293,9 +297,10 @@ theorem nested_four_rosetta_interval_monotonicity
     `1/2 - ε ≤ β₀ ≤ 1/2 + ε` for every positive tolerance `ε > 0`,
     then `β₀ = 1/2` identically. -/
 theorem archimedean_epsilon_squeeze_to_critical_half
-    (β₀ : ℝ)
-    (h_squeeze : ∀ ε : ℝ, 0 < ε → (1 : ℝ) / 2 - ε ≤ β₀ ∧ β₀ ≤ (1 : ℝ) / 2 + ε) :
+    (β₀ : ℝ) :
+    (∀ ε : ℝ, 0 < ε → (1 : ℝ) / 2 - ε ≤ β₀ ∧ β₀ ≤ (1 : ℝ) / 2 + ε) →
     β₀ = (1 : ℝ) / 2 := by
+  intro h_squeeze
   by_contra h_neq
   rcases lt_or_gt_of_ne h_neq with h_lt | h_gt
   · have h_eps : 0 < ((1 : ℝ) / 2 - β₀) / 2 := by linarith

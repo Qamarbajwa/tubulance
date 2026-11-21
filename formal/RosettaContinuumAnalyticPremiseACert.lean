@@ -1,9 +1,11 @@
 /-
 Copyright (c) 2026 Qamar Munawer. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
-Authors: Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg)
-
+Authors: Qamar Munawer
+Affiliation: Brandenburg University of Technology Cottbus-Senftenberg
 Methodology note: ai is being used as a tool.
+Epistemic Boundary: All four Clay Millennium Problems remain strictly OPEN
+(status: verified-finite, open_horizon_lock: STRICTLY OPEN).
 -/
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic
@@ -63,7 +65,9 @@ structure RiemannContinuumBeurlingMollifierHypothesis where
 /-- Theorem: Pointwise energy vanishing excludes any off-line zero `(β, γ)` with `1/2 < β < 1`. -/
 theorem riemann_no_offline_zero_of_mollifier_decay
     (H : RiemannContinuumBeurlingMollifierHypothesis)
-    (β γ : ℝ) (h_half : 1 / 2 < β) (h_one : β < 1) : False := by
+    (β γ : ℝ) :
+    1 / 2 < β → β < 1 → False := by
+  intro h_half h_one
   have h_num : 0 < 2 * β - 1 := by linarith
   have h_den : 0 < β ^ 2 + γ ^ 2 := by
     have : 0 < β := by linarith
@@ -123,12 +127,13 @@ structure NavierStokesTorusEnstrophyClosureHypothesis where
     monotonic enstrophy non-increase `(Φ - ν) * D ≤ 0`. -/
 theorem navier_stokes_torus_global_enstrophy_decay
     (H : NavierStokesTorusEnstrophyClosureHypothesis)
-    (δ : ℝ) (_hδ_nonneg : 0 ≤ δ) (_hδ_le : δ ≤ 2 / 3)
-    (Phi D : ℝ)
-    (hD_nonneg : 0 ≤ D)
-    (h_pos_branch : Phi ≤ H.C_1 * δ)
-    (h_neg_branch : Phi ≤ H.C_2 * (2 - 3 * δ)) :
+    (δ Phi D : ℝ) :
+    0 ≤ δ → δ ≤ 2 / 3 →
+    0 ≤ D →
+    Phi ≤ H.C_1 * δ →
+    Phi ≤ H.C_2 * (2 - 3 * δ) →
     Phi ≤ H.nu ∧ (Phi - H.nu) * D ≤ 0 := by
+  intro _hδ_nonneg _hδ_le hD_nonneg h_pos_branch h_neg_branch
   have h_mul1 : (3 * H.C_2) * Phi ≤ (3 * H.C_2) * (H.C_1 * δ) :=
     mul_le_mul_of_nonneg_left h_pos_branch (by linarith [H.hC2_pos])
   have h_mul2 : H.C_1 * Phi ≤ H.C_1 * (H.C_2 * (2 - 3 * δ)) :=
@@ -193,8 +198,10 @@ structure HodgeGenericDeformationCompactnessHypothesis where
     above by `D_max < ∞`, preventing degree divergence at generic non-CM fibers. -/
 theorem hodge_conjecture_generic_fiber_preservation
     (H : HodgeGenericDeformationCompactnessHypothesis)
-    (D : ℝ) (hD_le : D * H.C_0 ≤ H.m * H.mu_div) :
+    (D : ℝ) :
+    D * H.C_0 ≤ H.m * H.mu_div →
     D ≤ H.D_max := by
+  intro hD_le
   rw [H.hD_bound]
   exact (le_div_iff₀ H.hC0_pos).mpr hD_le
 
