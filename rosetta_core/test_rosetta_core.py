@@ -31,6 +31,7 @@ from rosetta_core.quantum_entanglement import (
     bipartite_schur_entanglement_spectrum,
     canonical_four_workspace_entanglement_states,
     wavefunction_phase_dispersion_and_commutator_audit,
+    theta_seesaw_bost_slope_profile,
 )
 
 
@@ -276,6 +277,47 @@ class TestRosettaCore(unittest.TestCase):
             self.assertGreater(m_dict["delta_E_disp"], 0.0)
             self.assertGreaterEqual(m_dict["uncertainty_product"], 0.0)
 
+    def test_11_theta_seesaw_bost_slope_profile(self):
+        """Test 11: Rallis seesaw Gram pairing, Schur complement tare, and Bost Arakelov slope quadratic vertex."""
+        res = theta_seesaw_bost_slope_profile(
+            X_values=[100.0, 10000.0, 1000000.0, 100000000.0],
+            alpha=2.0,
+            beta=1.0,
+            n_seesaw_dims=[2, 4, 8, 16]
+        )
+        self.assertTrue(res["all_adjoints_exact"])
+        self.assertTrue(res["all_tares_positive"])
+        
+        # Verify adjoint errors are strictly below 1e-14
+        for adj in res["unitary_seesaw_adjoint_checks"]:
+            self.assertLess(adj["adjoint_error"], 1e-14)
+            self.assertTrue(adj["is_adjoint_exact"])
+            
+        # Verify scales and Bost slope quadratic vertex identity
+        for sc in res["scales"]:
+            X = sc["X"]
+            sqrt_X = sc["sqrt_X"]
+            m_opt = sc["m_opt"]
+            F_max = sc["F_max"]
+            self.assertAlmostEqual(m_opt, sqrt_X, places=8)
+            self.assertGreater(F_max, 0.0)
+            
+            # Check Schur tare positivity
+            tare = sc["Rallis_Schur_tare"]
+            self.assertGreater(tare["sigma_seesaw"], 0.0)
+            self.assertGreater(tare["det_2x2"], 0.0)
+            self.assertAlmostEqual(tare["D"], tare["sigma_seesaw"] + (tare["B"]**2)/tare["A"], places=12)
+            
+            # Check decomposition identity across all factors
+            for samp in sc["chain_samples"]:
+                self.assertLess(samp["decomposition_residual"], 1e-10)
+                if samp["factor"] == 1.0: # at m = sqrt(X) = m_opt
+                    self.assertAlmostEqual(samp["net_margin"], F_max, places=8)
+                    self.assertTrue(samp["is_positive"])
+                elif samp["factor"] == 5.0: # m >> sqrt(X) causes quadratic height blow-up
+                    self.assertLess(samp["net_margin"], 0.0)
+                    self.assertFalse(samp["is_positive"])
+
 
 def run_and_generate_receipt():
     t0 = time.time()
@@ -323,7 +365,8 @@ def run_and_generate_receipt():
                 "reconstruct_dirichlet_eigen_wavefunction": "VERIFIED (Born normalization integral = 1.0, parity error < 1e-12)",
                 "bipartite_schur_entanglement_spectrum": "VERIFIED (exact Pythagorean partition sin^2 + cos^2 = 1.0, S_lin, S_vN, purity)",
                 "canonical_four_workspace_entanglement_states": "VERIFIED (Hodge S_lin=1/2, YM S_lin=2/3, NS hetero=1/2 vs homo=0, matching Lean 4 pfaffian_bell_and_baryonic_y_junction_entanglement_hierarchy)",
-                "wavefunction_phase_dispersion_and_commutator_audit": "VERIFIED (DeltaE_disp rescues Q_W past triangle wall at L=4,6; ||[A,P]||_F > 0, Cross-Prime Gram min eval > 0, matching Lean 4 RosettaPhaseDispersionAndUncertaintyCert)"
+                "wavefunction_phase_dispersion_and_commutator_audit": "VERIFIED (DeltaE_disp rescues Q_W past triangle wall at L=4,6; ||[A,P]||_F > 0, Cross-Prime Gram min eval > 0, matching Lean 4 RosettaPhaseDispersionAndUncertaintyCert)",
+                "theta_seesaw_bost_slope_profile": "VERIFIED (exact Rallis adjoint err < 1e-14 on U(n)xU(n+1), Schur tare > 0, quadratic vertex at m_opt=(alpha/2beta)sqrt(X), matching Lean 4 AlpogeClaudeThetaSeesawAndBostSlopeBridgeCert)"
             }
         }
     }

@@ -26,6 +26,7 @@ from .quantum_entanglement import (
     bipartite_schur_entanglement_spectrum,
     canonical_four_workspace_entanglement_states,
     wavefunction_phase_dispersion_and_commutator_audit,
+    theta_seesaw_bost_slope_profile,
 )
 
 __all__ = [
@@ -39,5 +40,6 @@ __all__ = [
     "bipartite_schur_entanglement_spectrum",
     "canonical_four_workspace_entanglement_states",
     "wavefunction_phase_dispersion_and_commutator_audit",
+    "theta_seesaw_bost_slope_profile",
 ]
-__version__ = "1.2.0"
+__version__ = "1.3.0"
