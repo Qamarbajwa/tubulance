@@ -23,3 +23,10 @@ build/
 runs/
 jhtdb_terminal_benchmark/
 
+# TeX temporary build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+
+

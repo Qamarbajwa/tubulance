@@ -8,6 +8,9 @@ of the Rosetta Four-Workspace Architecture:
 2. Tripotent null-wedge Grassmann compressor (4.71x speedup).
 3. 4-Spin torus Pfaffian non-planar graph routing & crossing resolution.
 4. Incompressible Navier-Stokes cubic strain vortex-tube / shear-sheet classifier.
+5. GPU-accelerated Guyan-Schur static condensation engine (CUDA / NumPy fallback).
+6. HBIM Heritage Building Archaeology (Bauforschung) masonry facade analyzer.
+7. 3D non-planar MEP / Smart DCR clash router and 5-Gate compliance generator.
 
 Author: Qamar Munawer
 Affiliation: Brandenburg University of Technology Cottbus-Senftenberg
@@ -28,6 +31,9 @@ from .quantum_entanglement import (
     wavefunction_phase_dispersion_and_commutator_audit,
     theta_seesaw_bost_slope_profile,
 )
+from .gpu_engine import gpu_guyan_schur_tare
+from .hbim_facade_analyzer import analyze_hbim_masonry_facade
+from .mep_clash_router import route_mep_duct_clash_resolution
 
 __all__ = [
     "guyan_schur_tare",
@@ -41,5 +47,8 @@ __all__ = [
     "canonical_four_workspace_entanglement_states",
     "wavefunction_phase_dispersion_and_commutator_audit",
     "theta_seesaw_bost_slope_profile",
+    "gpu_guyan_schur_tare",
+    "analyze_hbim_masonry_facade",
+    "route_mep_duct_clash_resolution",
 ]
-__version__ = "1.3.0"
+__version__ = "1.4.0"

@@ -41,6 +41,7 @@ from tare_core.silicon_vram_compressor import (
     gpu_kron_schur_condensation,
     gpu_chiral_half_domain_condensation,
     gpu_yang_mills_chiral_two_halves_orthogonality_probe,
+    gpu_hodge_spin8_chiral_two_halves_probe,
     gpu_llm_kv_cache_schur_tare,
     optimal_sram_tile_schedule,
 )
@@ -81,7 +82,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 1. Silicon Kron / Guyan-Schur Condensation
     # --------------------------------------------------------------------------
-    print("\n[1/12] Running Guyan-Schur / Kron Silicon Reduction Benchmark (FP64)...")
+    print("\n[1/13] Running Guyan-Schur / Kron Silicon Reduction Benchmark (FP64)...")
     dim_full = 128
     dim_boundary = 16
     A_rand = np.random.randn(dim_full, dim_full)
@@ -98,7 +99,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 2. LLM KV-Cache Schur-Tare Compression
     # --------------------------------------------------------------------------
-    print("\n[2/12] Running LLM Key-Value Cache Schur-Tare Compression (SeqLen=4096, Dim=128)...")
+    print("\n[2/13] Running LLM Key-Value Cache Schur-Tare Compression (SeqLen=4096, Dim=128)...")
     seq_len = 4096
     dim = 128
     K_cache = np.random.randn(seq_len, dim).astype(np.float32)
@@ -116,7 +117,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 3. Optimal SRAM / GPU Tile Schedule Benchmark
     # --------------------------------------------------------------------------
-    print("\n[3/12] Running Module 35 Optimal SRAM / GPU Tile Schedule Benchmark...")
+    print("\n[3/13] Running Module 35 Optimal SRAM / GPU Tile Schedule Benchmark...")
     res_sram = optimal_sram_tile_schedule(X_total=65536, alpha=2.0, beta=1.0, device="cuda" if CUDA_AVAILABLE else "cpu")
     print(f"  -> Total Elements X = {res_sram['X_total']}, sqrt(X) = {res_sram['sqrt_X']:.1f}")
     print(f"  -> Optimal Tile Size m_opt = {res_sram['m_opt_exact']:.1f} -> Hardware Tile = {res_sram['hardware_tile_selected']}")
@@ -127,7 +128,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 4. Engine 1: Guinand-Weil Spectral Prime Scanner
     # --------------------------------------------------------------------------
-    print("\n[4/12] Running Engine 1: Guinand-Weil Spectral Prime Scanner (50 Zeta Zeros)...")
+    print("\n[4/13] Running Engine 1: Guinand-Weil Spectral Prime Scanner (50 Zeta Zeros)...")
     res_spectral = guinand_weil_spectral_prime_scanner(x_min=2.0, x_max=50.0, num_zeros=50, device="cuda" if CUDA_AVAILABLE else "cpu")
     print(f"  -> Evaluated {res_spectral['primes_evaluated']} primes in [2, 50] against spectral zero resonance")
     print(f"  -> Primes aligned with zero-interference peaks: {res_spectral['primes_aligned']}/{res_spectral['primes_evaluated']} ({res_spectral['alignment_rate_pct']:.1f}%)")
@@ -137,7 +138,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 5. Engine 2: High-Altitude Segmented Window Sieve at X = 10^18
     # --------------------------------------------------------------------------
-    print("\n[5/12] Running Engine 2: High-Altitude Segmented Window Sieve at X = 10^18...")
+    print("\n[5/13] Running Engine 2: High-Altitude Segmented Window Sieve at X = 10^18...")
     res_sieve = high_altitude_sqrt_x_window_sieve(X_start=10**18, window_width=1000)
     print(f"  -> Window: [{10**18}, {10**18 + 1000}] (19-digit scale)")
     print(f"  -> Primes Discovered: {res_sieve['primes_count']} (theoretical expected ~ {res_sieve['theoretical_expected']:.1f})")
@@ -149,7 +150,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 6. Engine 3: Critical-Line Tared Riemann R(X) up to 10^29
     # --------------------------------------------------------------------------
-    print("\n[6/12] Running Engine 3: Critical-Line Tared Riemann R(X) up to 10^29...")
+    print("\n[6/13] Running Engine 3: Critical-Line Tared Riemann R(X) up to 10^29...")
     res_R = tared_riemann_R_prime_counter()
     print(f"  -> Scales tested: 10^6 to 10^{res_R['max_scale']}")
     print(f"  -> All deviations strictly inside Schoenfeld's (sqrt(X) ln X)/(8*pi) envelope: {res_R['all_within_schoenfeld_bound']}")
@@ -160,7 +161,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 7. Heritage BIM (Bauforschung) Facade Monitoring Tare
     # --------------------------------------------------------------------------
-    print("\n[7/12] Running Heritage BIM (Bauforschung) Facade Monitoring Tare...")
+    print("\n[7/13] Running Heritage BIM (Bauforschung) Facade Monitoring Tare...")
     res_hbim = hbim_facade_thermal_tare_analysis(n_nodes=36, num_time_steps=365)
     print(f"  -> Building Asset: {res_hbim['asset_id']} ({res_hbim['element_name']})")
     print(f"  -> True Settlement: {res_hbim['true_settlement_rate_mm_yr']} mm/yr | Estimated: {res_hbim['estimated_settlement_rate_mm_yr']:.3f} mm/yr (error: {res_hbim['estimation_error_mm']:.4f} mm)")
@@ -174,7 +175,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 8. Workspace 05: GPU 3-SAT Phase-Transition Scanner
     # --------------------------------------------------------------------------
-    print("\n[8/12] Running Workspace 05: GPU 3-SAT Phase-Transition Scanner...")
+    print("\n[8/13] Running Workspace 05: GPU 3-SAT Phase-Transition Scanner...")
     res_sat = gpu_schur_pfaffian_sat_phase_transition_scanner(n_vars=64, device="cuda" if CUDA_AVAILABLE else "cpu")
     print(f"  -> Variables: {res_sat['n_variables']} | Scanned across alpha in [1.5, 2.5, 3.5, 4.267, 5.0]")
     for r in res_sat["table"]:
@@ -186,7 +187,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 9. Workspace 05: CAD/BIM Spaceframe Constraint Condenser
     # --------------------------------------------------------------------------
-    print("\n[9/12] Running Workspace 05: CAD/BIM Spaceframe Constraint Condenser...")
+    print("\n[9/13] Running Workspace 05: CAD/BIM Spaceframe Constraint Condenser...")
     res_cad = cad_bim_spaceframe_constraint_condenser(n_struts=48, n_boundary_joints=12)
     print(f"  -> Struts: {res_cad['total_spaceframe_struts']} -> Planar Struts Eliminated: {res_cad['planar_struts_eliminated']}")
     print(f"  -> Condensed Boundary Interface: {res_cad['condensed_matrix_dim']} (Coercive: {res_cad['coercive']})")
@@ -196,7 +197,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 10. Engine #2 / Phase 5.2: Zero-Trust Epistemic & Axiom Governance Runner
     # --------------------------------------------------------------------------
-    print("\n[10/12] Running Zero-Trust Epistemic & Axiom Governance Suite...")
+    print("\n[10/13] Running Zero-Trust Epistemic & Axiom Governance Suite...")
     res_gov = verify_four_workspace_epistemic_and_axiom_governance()
     print(f"  -> Workspaces Audited: {res_gov['workspaces_audited']}")
     print(f"  -> Active Modules Scanned: {res_gov['total_modules_audited']}")
@@ -212,7 +213,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 11. Chiral Half-Domain (K = K_half + K_half^T) 50% VRAM Condensation
     # --------------------------------------------------------------------------
-    print("\n[11/12] Running Chiral Half-Domain (K = K_half + K_half^T) 50% VRAM Condensation (N=1024)...")
+    print("\n[11/13] Running Chiral Half-Domain (K = K_half + K_half^T) 50% VRAM Condensation (N=1024)...")
     res_chiral = gpu_chiral_half_domain_condensation(
         n_total=1024, n_boundary=64, use_cuda=CUDA_AVAILABLE
     )
@@ -230,7 +231,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 12. 4D Yang-Mills Chiral Two-Halves (F = F^+ + F^-) & Adversarial Demarcation Probe
     # --------------------------------------------------------------------------
-    print("\n[12/12] Running 4D Yang-Mills Chiral Two-Halves Orthogonality & Adversarial Demarcation Probe...")
+    print("\n[12/13] Running 4D Yang-Mills Chiral Two-Halves Orthogonality & Adversarial Demarcation Probe...")
     res_ym_probe = gpu_yang_mills_chiral_two_halves_orthogonality_probe(
         n_samples=10000, use_cuda=CUDA_AVAILABLE
     )
@@ -251,9 +252,39 @@ def run_all_benchmarks() -> dict:
     assert knotted["passed"], "Knotted sector action floor violated!"
     assert unknotted["passed"], "Unknotted sector margin violated!"
 
+    # --------------------------------------------------------------------------
+    # 13. 8D Hodge Spin(8) 70=35+35 Chiral Two-Halves & Moduli Coercivity Probe
+    # --------------------------------------------------------------------------
+    print("\n[13/13] Running Hodge Spin(8) 70=35+35 Chiral Two-Halves & Moduli Coercivity Probe...")
+    res_hodge_probe = gpu_hodge_spin8_chiral_two_halves_probe(
+        n_samples=10000, use_cuda=CUDA_AVAILABLE
+    )
+    s8 = res_hodge_probe["star_8_involution"]
+    ho = res_hodge_probe["chiral_orthogonality"]
+    hp = res_hodge_probe["pythagorean_cohomology_split"]
+    hc = res_hodge_probe["chiral_block_compression"]
+    hm = res_hodge_probe["moduli_arakelov_bost_coercivity"]
+    hg = res_hodge_probe["triple_gram_degree_bound"]
+    hpl = res_hodge_probe["picard_lefschetz_monodromy"]
+    print(f"  -> 10,000 Cohomology Samples: Device: {res_hodge_probe['device_name']} (Latency: {res_hodge_probe['latency_ms']} ms)")
+    print(f"  -> Hodge Star Involution: dim={s8['dim']}, star_8^2 - I = {s8['involution_error']:.1e}, Tr = {s8['trace']}, ranks: {s8['rank_plus']} + {s8['rank_minus']} = {s8['rank_sum']} (passed: {s8['passed']})")
+    print(f"  -> Chiral Orthogonality:   max |<omega^+, omega^->| = {ho['max_inner_product_error']:.2e} (passed: {ho['passed']})")
+    print(f"  -> Pythagorean Split:      max |||omega||^2 - (||omega^+||^2 + ||omega^-||^2)| = {hp['max_pythagorean_error']:.2e} (passed: {hp['passed']})")
+    print(f"  -> Chiral Block Footprint: {hc['dense_elements']} -> {hc['chiral_elements']} elements ({hc['vram_reduction_pct']:.2f}% reduction, {hc['compression_factor']}x compression)")
+    print(f"  -> 426-Param Moduli Slope: min observed = {hm['min_observed_slope']:.6f} >= {hm['coercivity_floor']:.6f} (Violations: {hm['violations']} across {hm['total_evaluations']} evals)")
+    print(f"  -> Triple Gram Bound:      G = diag(16, 432, 1152), min margin = {hg['min_margin']:.4f} (passed: {hg['passed']})")
+    print(f"  -> Picard-Lefschetz:       T^T G T - G = {hpl['monodromy_error']:.1e} (passed: {hpl['passed']})")
+    assert s8["passed"], "Hodge star involution or rank split failed!"
+    assert ho["passed"], "Hodge chiral orthogonality error exceeds 1e-14!"
+    assert hp["passed"], "Hodge Pythagorean split error exceeds 1e-13!"
+    assert hc["target_met"], "Hodge chiral block compression failed to reach 70%!"
+    assert hm["passed"], "Hodge moduli Arakelov-Bost coercivity lower bound violated!"
+    assert hg["passed"], "Triple Gram cycle degree bound violated!"
+    assert hpl["passed"], "Picard-Lefschetz monodromy invariance violated!"
+
     elapsed_total = round(time.time() - t_suite_start, 2)
     print("\n" + "=" * 80)
-    print(f"ALL 12/12 TARE_CORE BENCHMARK SUITES PASSED IN {elapsed_total}s (STATUS: PASS)")
+    print(f"ALL 13/13 TARE_CORE BENCHMARK SUITES PASSED IN {elapsed_total}s (STATUS: PASS)")
     print("=" * 80)
 
     # --------------------------------------------------------------------------
@@ -293,6 +324,7 @@ def run_all_benchmarks() -> dict:
             "silicon_kron_schur_reduction": res_kron_clean,
             "chiral_half_domain_condensation": res_chiral_clean,
             "yang_mills_chiral_two_halves_orthogonality": res_ym_probe,
+            "hodge_spin8_chiral_two_halves": res_hodge_probe,
             "llm_kv_cache_schur_tare": res_kv,
             "optimal_sram_tiling": res_sram,
             "guinand_weil_spectral_prime_scanner": {
@@ -396,6 +428,17 @@ def test_yang_mills_chiral_two_halves_orthogonality():
     assert res["test_1c_pointwise_bogomolnyi"]["passed"]
     assert res["knotted_sector"]["passed"]
     assert res["unknotted_sector"]["passed"]
+
+def test_hodge_spin8_chiral_two_halves():
+    res = gpu_hodge_spin8_chiral_two_halves_probe(n_samples=1000, use_cuda=CUDA_AVAILABLE)
+    assert res["status"] == "PASS"
+    assert res["star_8_involution"]["passed"]
+    assert res["chiral_orthogonality"]["passed"]
+    assert res["pythagorean_cohomology_split"]["passed"]
+    assert res["chiral_block_compression"]["target_met"]
+    assert res["moduli_arakelov_bost_coercivity"]["passed"]
+    assert res["triple_gram_degree_bound"]["passed"]
+    assert res["picard_lefschetz_monodromy"]["passed"]
 
 
 if __name__ == "__main__":
