@@ -16,6 +16,7 @@ Epistemic Boundary: All four Clay Millennium Problems remain strictly OPEN
 
 from .silicon_vram_compressor import (
     gpu_kron_schur_condensation,
+    gpu_chiral_half_domain_condensation,
     gpu_llm_kv_cache_schur_tare,
     optimal_sram_tile_schedule,
 )
@@ -28,6 +29,10 @@ from .hbim_bauforschung_adapter import (
     hbim_facade_thermal_tare_analysis,
     export_iso19650_pyrevit_diagnostics,
 )
+from .ifc_iso19650_exporter import (
+    generate_hbim_ifc43_iso19650_payload,
+    export_hbim_ifc43_iso19650_payload,
+)
 from .p_vs_np_sat_entanglement import (
     gpu_schur_pfaffian_sat_phase_transition_scanner,
     cad_bim_spaceframe_constraint_condenser,
@@ -39,6 +44,7 @@ from .zero_trust_governance_runner import (
 __version__ = "2.0.0-gpu"
 __all__ = [
     "gpu_kron_schur_condensation",
+    "gpu_chiral_half_domain_condensation",
     "gpu_llm_kv_cache_schur_tare",
     "optimal_sram_tile_schedule",
     "guinand_weil_spectral_prime_scanner",
@@ -46,6 +52,8 @@ __all__ = [
     "tared_riemann_R_prime_counter",
     "hbim_facade_thermal_tare_analysis",
     "export_iso19650_pyrevit_diagnostics",
+    "generate_hbim_ifc43_iso19650_payload",
+    "export_hbim_ifc43_iso19650_payload",
     "gpu_schur_pfaffian_sat_phase_transition_scanner",
     "cad_bim_spaceframe_constraint_condenser",
     "verify_four_workspace_epistemic_and_axiom_governance",

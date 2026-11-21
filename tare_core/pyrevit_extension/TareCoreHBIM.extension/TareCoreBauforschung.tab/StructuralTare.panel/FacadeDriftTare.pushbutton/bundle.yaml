@@ -1,0 +1,7 @@
+title: Facade Drift Tare
+tooltip: >
+  Heritage BIM Bauforschung: Performs 3-tier sub-gap thermal drift taring
+  and chiral half-domain (K = K_half + K_half^T) Guyan-Schur stiffness condensation
+  on historical masonry facade point-clouds, exporting ISO 19650 / IFC 4.3 Property Sets.
+author: Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg)
+highlight: new

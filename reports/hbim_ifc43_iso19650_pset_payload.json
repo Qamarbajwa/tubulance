@@ -1,0 +1,56 @@
+{
+  "Header": {
+    "Project": "BTU Cottbus Historic Heritage Preservation (Bauforschung)",
+    "Standard": "IFC 4.3 (ISO 16739-1:2024) / ISO 19650-1:2018",
+    "Author": "Qamar Munawer",
+    "Affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+    "Methodology": "ai is being used as a tool",
+    "EpistemicBoundary": "All four Clay Millennium Problems remain strictly OPEN (status: verified-finite, open_horizon_lock: STRICTLY OPEN)"
+  },
+  "PropertySets": [
+    {
+      "IfcPropertySet_Name": "Pset_BauforschungStructuralTare",
+      "ApplicableEntity": "IfcWall / IfcBuildingElementProxy",
+      "ISO_19650_Classification": "Uniclass 2015: Pr_20_20_08_55 Masonry Wall System",
+      "LevelOfDetail": "LOD 400 (As-Built Maintenance & Structural Health)",
+      "AssetID": "HBIM-BTU-COT-001",
+      "FacadeElement": "Historic Sandstone-Brick North Facade",
+      "MonitoringCycleDays": 365,
+      "AnnualSettlementRate_mm": 2.221,
+      "TargetSettlementRate_mm": 4.5,
+      "SettlementEstimationError_mm": 2.2785,
+      "SeasonalThermalDriftAmplitude_mm": 10.91,
+      "ScannerNoiseFloor_sigma_mm": 0.8,
+      "RawSignalToNoiseRatio_dB": -5.89,
+      "TaredSignalToNoiseRatio_dB": 8.73,
+      "StructuralSNRGain_dB": 14.62,
+      "StructuralIntegrityStatus": "NORMAL"
+    },
+    {
+      "IfcPropertySet_Name": "Pset_ChiralHalfDomainSchurCondensation",
+      "ApplicableEntity": "IfcStructuralMember / IfcStructuralAnalysisModel",
+      "InvolutionIdentity": "K = K_half + K_half^T",
+      "OriginalDegreesOfFreedom": 36,
+      "PreservedBoundaryDegreesOfFreedom": 8,
+      "CondensedInteriorDegreesOfFreedom": 28,
+      "DenseMatrixStorageElements": 1296,
+      "ChiralHalfDomainStorageElements": 666,
+      "VRAMStorageReductionPct": 48.61,
+      "StorageCompressionFactor": 1.95,
+      "GuyanCondensationAccuracy": "100.00000000%",
+      "MaxCondensationError": 0.0,
+      "MinCondensedEigenvalue": 5306715111.031713,
+      "CoercivityStatus": "STRICTLY_COERCIVE_POSITIVE_DEFINITE",
+      "ExecutionDevice": "CPU",
+      "CUDASpeedup": false
+    }
+  ],
+  "SummaryMetrics": {
+    "Status": "PASS",
+    "AssetID": "HBIM-BTU-COT-001",
+    "AnnualSettlementRate_mm": 2.221,
+    "VRAMStorageReductionPct": 48.61,
+    "MaxCondensationError": 0.0,
+    "SNRGain_dB": 14.62
+  }
+}

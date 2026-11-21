@@ -2,7 +2,7 @@
   "title": "tare_core GPU Silicon and Prime Horizons Verification Receipt",
   "verified": true,
   "status": "PASS",
-  "timestamp": "2026-11-21T20:16:24+0100",
+  "timestamp": "2026-11-21T23:33:08+0100",
   "author": "Qamar Munawer",
   "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
   "methodology": "ai is being used as a tool",
@@ -24,11 +24,29 @@
       "n_boundary_preserved": 16,
       "min_eigenvalue": 21.94115898600203,
       "coercive": true,
-      "cpu_latency_ms": 0.517,
-      "gpu_latency_ms": 0.517,
+      "cpu_latency_ms": 0.286,
+      "gpu_latency_ms": 0.286,
       "speedup": 1.0,
       "peak_vram_mb": 0.0,
       "max_error": 0.0,
+      "cuda_used": false,
+      "device_name": "CPU"
+    },
+    "chiral_half_domain_condensation": {
+      "status": "PASS",
+      "n_total": 128,
+      "n_boundary": 16,
+      "n_interior": 112,
+      "dense_elements": 16384,
+      "half_domain_elements": 8256,
+      "vram_reduction_pct": 49.61,
+      "compression_factor": 1.98,
+      "max_reconstruction_error": 0.0,
+      "max_condensation_error": 0.0,
+      "min_eigenvalue": 21.41526626820062,
+      "coercive": true,
+      "cpu_latency_ms": 0.286,
+      "gpu_latency_ms": 0.286,
       "cuda_used": false,
       "device_name": "CPU"
     },
@@ -42,7 +60,7 @@
       "compression_ratio": 4.62,
       "frobenius_fidelity": 0.999999,
       "fidelity_pct": 100.0,
-      "latency_ms": 97.2,
+      "latency_ms": 97.1,
       "cuda_used": false,
       "target_compression_met": true,
       "target_fidelity_met": true
@@ -55,8 +73,8 @@
       "m_opt_integer": 256,
       "hardware_tile_selected": 256,
       "theoretical_efficiency_ratio": 128.25,
-      "untiled_latency_ms": 30.57,
-      "tiled_latency_ms": 169.92,
+      "untiled_latency_ms": 27.65,
+      "tiled_latency_ms": 177.35,
       "matrix_dim_tested": 2048,
       "max_discrepancy": 0.00012969970703125
     },
@@ -64,7 +82,7 @@
       "status": "PASS",
       "num_zeros_used": 50,
       "grid_points": 10000,
-      "latency_ms": 6.66,
+      "latency_ms": 7.37,
       "cuda_used": false,
       "device_name": "CPU",
       "primes_evaluated": 15,
@@ -86,8 +104,8 @@
         1000000000000000079,
         1000000000000000177
       ],
-      "latency_ms": 3.25,
-      "primes_per_second": 7078
+      "latency_ms": 3.32,
+      "primes_per_second": 6928
     },
     "tared_riemann_R_prime_counter": {
       "scales_tested": 9,
@@ -185,12 +203,20 @@
         "Guyan_Condensation_Accuracy": "100.000000%"
       }
     },
+    "ifc43_iso19650_pset_payload": {
+      "Status": "PASS",
+      "AssetID": "HBIM-BTU-COT-001",
+      "AnnualSettlementRate_mm": 2.221,
+      "VRAMStorageReductionPct": 48.61,
+      "MaxCondensationError": 0.0,
+      "SNRGain_dB": 14.62
+    },
     "sat_phase_transition": {
       "status": "PASS",
       "n_variables": 64,
       "cuda_used": false,
       "device_name": "CPU",
-      "scan_latency_ms": 16.82,
+      "scan_latency_ms": 16.25,
       "phase_transition_point": 4.267,
       "table": [
         {
@@ -250,14 +276,14 @@
       "min_coercive_eigenvalue": 7.1093,
       "coercive": true,
       "non_planar_overpasses_isolated": 2,
-      "latency_ms": 0.16
+      "latency_ms": 0.19
     },
     "zero_trust_governance": {
       "verified": true,
       "status": "PASS",
       "workspaces_audited": 4,
-      "total_modules_audited": 17,
-      "total_theorems_verified": 109,
+      "total_modules_audited": 21,
+      "total_theorems_verified": 128,
       "zero_sorry_verified": true,
       "zero_custom_axioms_verified": true,
       "epistemic_lock_verified": true,

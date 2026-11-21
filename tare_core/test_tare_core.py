@@ -39,6 +39,7 @@ except ImportError:
 
 from tare_core.silicon_vram_compressor import (
     gpu_kron_schur_condensation,
+    gpu_chiral_half_domain_condensation,
     gpu_llm_kv_cache_schur_tare,
     optimal_sram_tile_schedule,
 )
@@ -50,6 +51,10 @@ from tare_core.prime_horizon_gpu import (
 from tare_core.hbim_bauforschung_adapter import (
     hbim_facade_thermal_tare_analysis,
     export_iso19650_pyrevit_diagnostics,
+)
+from tare_core.ifc_iso19650_exporter import (
+    generate_hbim_ifc43_iso19650_payload,
+    export_hbim_ifc43_iso19650_payload,
 )
 from tare_core.p_vs_np_sat_entanglement import (
     gpu_schur_pfaffian_sat_phase_transition_scanner,
@@ -75,7 +80,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 1. Silicon Kron / Guyan-Schur Condensation
     # --------------------------------------------------------------------------
-    print("\n[1/10] Running Guyan-Schur / Kron Silicon Reduction Benchmark (FP64)...")
+    print("\n[1/12] Running Guyan-Schur / Kron Silicon Reduction Benchmark (FP64)...")
     dim_full = 128
     dim_boundary = 16
     A_rand = np.random.randn(dim_full, dim_full)
@@ -92,7 +97,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 2. LLM KV-Cache Schur-Tare Compression
     # --------------------------------------------------------------------------
-    print("\n[2/10] Running LLM Key-Value Cache Schur-Tare Compression (SeqLen=4096, Dim=128)...")
+    print("\n[2/12] Running LLM Key-Value Cache Schur-Tare Compression (SeqLen=4096, Dim=128)...")
     seq_len = 4096
     dim = 128
     K_cache = np.random.randn(seq_len, dim).astype(np.float32)
@@ -110,7 +115,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 3. Optimal SRAM / GPU Tile Schedule Benchmark
     # --------------------------------------------------------------------------
-    print("\n[3/10] Running Module 35 Optimal SRAM / GPU Tile Schedule Benchmark...")
+    print("\n[3/12] Running Module 35 Optimal SRAM / GPU Tile Schedule Benchmark...")
     res_sram = optimal_sram_tile_schedule(X_total=65536, alpha=2.0, beta=1.0, device="cuda" if CUDA_AVAILABLE else "cpu")
     print(f"  -> Total Elements X = {res_sram['X_total']}, sqrt(X) = {res_sram['sqrt_X']:.1f}")
     print(f"  -> Optimal Tile Size m_opt = {res_sram['m_opt_exact']:.1f} -> Hardware Tile = {res_sram['hardware_tile_selected']}")
@@ -121,7 +126,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 4. Engine 1: Guinand-Weil Spectral Prime Scanner
     # --------------------------------------------------------------------------
-    print("\n[4/10] Running Engine 1: Guinand-Weil Spectral Prime Scanner (50 Zeta Zeros)...")
+    print("\n[4/12] Running Engine 1: Guinand-Weil Spectral Prime Scanner (50 Zeta Zeros)...")
     res_spectral = guinand_weil_spectral_prime_scanner(x_min=2.0, x_max=50.0, num_zeros=50, device="cuda" if CUDA_AVAILABLE else "cpu")
     print(f"  -> Evaluated {res_spectral['primes_evaluated']} primes in [2, 50] against spectral zero resonance")
     print(f"  -> Primes aligned with zero-interference peaks: {res_spectral['primes_aligned']}/{res_spectral['primes_evaluated']} ({res_spectral['alignment_rate_pct']:.1f}%)")
@@ -131,7 +136,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 5. Engine 2: High-Altitude Segmented Window Sieve at X = 10^18
     # --------------------------------------------------------------------------
-    print("\n[5/10] Running Engine 2: High-Altitude Segmented Window Sieve at X = 10^18...")
+    print("\n[5/12] Running Engine 2: High-Altitude Segmented Window Sieve at X = 10^18...")
     res_sieve = high_altitude_sqrt_x_window_sieve(X_start=10**18, window_width=1000)
     print(f"  -> Window: [{10**18}, {10**18 + 1000}] (19-digit scale)")
     print(f"  -> Primes Discovered: {res_sieve['primes_count']} (theoretical expected ~ {res_sieve['theoretical_expected']:.1f})")
@@ -143,7 +148,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 6. Engine 3: Critical-Line Tared Riemann R(X) up to 10^29
     # --------------------------------------------------------------------------
-    print("\n[6/10] Running Engine 3: Critical-Line Tared Riemann R(X) up to 10^29...")
+    print("\n[6/12] Running Engine 3: Critical-Line Tared Riemann R(X) up to 10^29...")
     res_R = tared_riemann_R_prime_counter()
     print(f"  -> Scales tested: 10^6 to 10^{res_R['max_scale']}")
     print(f"  -> All deviations strictly inside Schoenfeld's (sqrt(X) ln X)/(8*pi) envelope: {res_R['all_within_schoenfeld_bound']}")
@@ -154,7 +159,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 7. Heritage BIM (Bauforschung) Facade Monitoring Tare
     # --------------------------------------------------------------------------
-    print("\n[7/10] Running Heritage BIM (Bauforschung) Facade Monitoring Tare...")
+    print("\n[7/12] Running Heritage BIM (Bauforschung) Facade Monitoring Tare...")
     res_hbim = hbim_facade_thermal_tare_analysis(n_nodes=36, num_time_steps=365)
     print(f"  -> Building Asset: {res_hbim['asset_id']} ({res_hbim['element_name']})")
     print(f"  -> True Settlement: {res_hbim['true_settlement_rate_mm_yr']} mm/yr | Estimated: {res_hbim['estimated_settlement_rate_mm_yr']:.3f} mm/yr (error: {res_hbim['estimation_error_mm']:.4f} mm)")
@@ -168,7 +173,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 8. Workspace 05: GPU 3-SAT Phase-Transition Scanner
     # --------------------------------------------------------------------------
-    print("\n[8/10] Running Workspace 05: GPU 3-SAT Phase-Transition Scanner...")
+    print("\n[8/12] Running Workspace 05: GPU 3-SAT Phase-Transition Scanner...")
     res_sat = gpu_schur_pfaffian_sat_phase_transition_scanner(n_vars=64, device="cuda" if CUDA_AVAILABLE else "cpu")
     print(f"  -> Variables: {res_sat['n_variables']} | Scanned across alpha in [1.5, 2.5, 3.5, 4.267, 5.0]")
     for r in res_sat["table"]:
@@ -180,7 +185,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 9. Workspace 05: CAD/BIM Spaceframe Constraint Condenser
     # --------------------------------------------------------------------------
-    print("\n[9/10] Running Workspace 05: CAD/BIM Spaceframe Constraint Condenser...")
+    print("\n[9/12] Running Workspace 05: CAD/BIM Spaceframe Constraint Condenser...")
     res_cad = cad_bim_spaceframe_constraint_condenser(n_struts=48, n_boundary_joints=12)
     print(f"  -> Struts: {res_cad['total_spaceframe_struts']} -> Planar Struts Eliminated: {res_cad['planar_struts_eliminated']}")
     print(f"  -> Condensed Boundary Interface: {res_cad['condensed_matrix_dim']} (Coercive: {res_cad['coercive']})")
@@ -190,7 +195,7 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 10. Engine #2 / Phase 5.2: Zero-Trust Epistemic & Axiom Governance Runner
     # --------------------------------------------------------------------------
-    print("\n[10/10] Running Zero-Trust Epistemic & Axiom Governance Suite...")
+    print("\n[10/12] Running Zero-Trust Epistemic & Axiom Governance Suite...")
     res_gov = verify_four_workspace_epistemic_and_axiom_governance()
     print(f"  -> Workspaces Audited: {res_gov['workspaces_audited']}")
     print(f"  -> Active Modules Scanned: {res_gov['total_modules_audited']}")
@@ -203,9 +208,43 @@ def run_all_benchmarks() -> dict:
     assert res_gov["verified"], "All 4 workspaces must pass zero-trust governance!"
     assert res_gov["status"] == "PASS", "Governance status must be PASS!"
 
+    # --------------------------------------------------------------------------
+    # 11. Chiral Half-Domain (K = K_half + K_half^T) 50% VRAM Condensation
+    # --------------------------------------------------------------------------
+    print("\n[11/12] Running Chiral Half-Domain (K = K_half + K_half^T) VRAM Condensation...")
+    dim_chiral = 128
+    dim_chiral_boundary = 16
+    A_chiral = np.random.randn(dim_chiral, dim_chiral)
+    K_chiral = A_chiral.T @ A_chiral + np.eye(dim_chiral) * 10.0
+    b_chiral_indices = list(range(dim_chiral_boundary))
+    res_chiral = gpu_chiral_half_domain_condensation(
+        K_chiral, b_chiral_indices, device="cuda" if CUDA_AVAILABLE else "cpu"
+    )
+    print(f"  -> Original Dense Matrix: {res_chiral['n_total']}x{res_chiral['n_total']} ({res_chiral['dense_elements']} elements)")
+    print(f"  -> Chiral Half Domain: {res_chiral['half_domain_elements']} packed elements")
+    print(f"  -> VRAM Storage Reduction: {res_chiral['vram_reduction_pct']:.2f}% (Compression Factor: {res_chiral['compression_factor']:.2f}x)")
+    print(f"  -> Max Condensation Error (vs. Full Matrix): {res_chiral['max_condensation_error']:.2e} (target < 1e-12)")
+    print(f"  -> Coercive (min eigenvalue > 0): {res_chiral['coercive']} (min eig = {res_chiral['min_eigenvalue']:.4f})")
+    assert res_chiral["coercive"], "Chiral condensed matrix must remain strictly coercive!"
+    assert res_chiral["max_condensation_error"] < 1e-10, "Chiral condensation numerical discrepancy too high!"
+    assert res_chiral["vram_reduction_pct"] > 45.0, "VRAM reduction must be ~50%!"
+
+    # --------------------------------------------------------------------------
+    # 12. IFC 4.3 / ISO 19650 Bauforschung Property Set Exporter
+    # --------------------------------------------------------------------------
+    print("\n[12/12] Running IFC 4.3 / ISO 19650 Bauforschung Property Set Exporter...")
+    res_ifc_payload = export_hbim_ifc43_iso19650_payload()
+    res_ifc_summary = res_ifc_payload["SummaryMetrics"]
+    print(f"  -> Asset ID: {res_ifc_summary['AssetID']}")
+    print(f"  -> Settlement Rate: {res_ifc_summary['AnnualSettlementRate_mm']:.3f} mm/yr")
+    print(f"  -> VRAM Storage Reduction: {res_ifc_summary['VRAMStorageReductionPct']:.2f}%")
+    print(f"  -> Structural SNR Gain: +{res_ifc_summary['SNRGain_dB']:.2f} dB")
+    print(f"  -> Property Sets: {[ps['IfcPropertySet_Name'] for ps in res_ifc_payload['PropertySets']]}")
+    assert res_ifc_summary["Status"] == "PASS", "IFC 4.3 property set export must pass!"
+
     elapsed_total = round(time.time() - t_suite_start, 2)
     print("\n" + "=" * 80)
-    print(f"ALL 10/10 TARE_CORE BENCHMARK SUITES PASSED IN {elapsed_total}s (STATUS: PASS)")
+    print(f"ALL 12/12 TARE_CORE BENCHMARK SUITES PASSED IN {elapsed_total}s (STATUS: PASS)")
     print("=" * 80)
 
     # --------------------------------------------------------------------------
@@ -217,6 +256,7 @@ def run_all_benchmarks() -> dict:
 
     # Convert non-serializable objects (ndarray) to lists
     res_kron_clean = {k: v for k, v in res_kron.items() if k != "condensed_matrix"}
+    res_chiral_clean = {k: v for k, v in res_chiral.items() if k != "condensed_matrix"}
 
     receipt_data = {
         "title": "tare_core GPU Silicon and Prime Horizons Verification Receipt",
@@ -238,6 +278,7 @@ def run_all_benchmarks() -> dict:
         },
         "benchmarks": {
             "silicon_kron_schur_reduction": res_kron_clean,
+            "chiral_half_domain_condensation": res_chiral_clean,
             "llm_kv_cache_schur_tare": res_kv,
             "optimal_sram_tiling": res_sram,
             "guinand_weil_spectral_prime_scanner": {
@@ -253,6 +294,7 @@ def run_all_benchmarks() -> dict:
             },
             "hbim_facade_monitoring": {k: v for k, v in res_hbim.items() if k != "condensation_telemetry"},
             "iso19650_pyrevit_export": res_iso,
+            "ifc43_iso19650_pset_payload": res_ifc_summary,
             "sat_phase_transition": res_sat,
             "cad_spaceframe_condensation": res_cad,
             "zero_trust_governance": {
@@ -323,6 +365,23 @@ def test_zero_trust_governance():
     res = verify_four_workspace_epistemic_and_axiom_governance()
     assert res["verified"]
     assert res["status"] == "PASS"
+
+def test_chiral_half_domain_condensation():
+    dim_full = 64
+    dim_boundary = 8
+    A_rand = np.random.randn(dim_full, dim_full)
+    K_full = A_rand.T @ A_rand + np.eye(dim_full) * 10.0
+    res = gpu_chiral_half_domain_condensation(K_full, list(range(dim_boundary)), device="cpu")
+    assert res["status"] == "PASS"
+    assert res["vram_reduction_pct"] > 45.0
+    assert res["max_condensation_error"] < 1e-10
+    assert res["coercive"]
+
+def test_ifc43_iso19650_exporter():
+    res = generate_hbim_ifc43_iso19650_payload(n_nodes=16, num_time_steps=60)
+    assert res["SummaryMetrics"]["Status"] == "PASS"
+    assert len(res["PropertySets"]) == 2
+    assert res["SummaryMetrics"]["VRAMStorageReductionPct"] > 40.0
 
 
 if __name__ == "__main__":
