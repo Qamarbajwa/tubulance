@@ -272,6 +272,18 @@ obstructions:
     known_bypasses_or_relaxations: ["None for unforced Navier-Stokes on T^3 with finite initial enstrophy; requires external forcing or non-periodic boundary layer vorticity injection."]
     status: "PROVED_STRUCTURAL_OBSTRUCTION"
 
+  # ── NS-NONLINEAR-SELF-FOCUS-004 MULTISCALE COCYCLE DISSIPATION GATE ────
+  - obstruction_id: "NS-OBS-024"
+    name: "SCALE_DEPENDENT_COCYCLE_DISSIPATION_BARRIER"
+    milestone: "NS-NONLINEAR-SELF-FOCUS-004"
+    description: "While ultraviolet runaway (Q -> infty) is definitively excluded by the multiscale cocycle collapse Phi_Q -> 0 and 2^{2Q} viscous damping, this does NOT close the Millennium Prize problem because low-to-intermediate octaves Q <= Q* can still exchange O(1) enstrophy within the macroscopic reservoir without violating the high-frequency dissipation bound."
+    first_encountered_in: "NS-NONLINEAR-SELF-FOCUS-004"
+    affected_pathways: ["NS-NONLINEAR-SELF-FOCUS-004"]
+    mathematical_core: "High-frequency dissipation domination S_Q < (1/2) D_Q for Q > Q* leaves the finite sub-threshold reservoir Q <= Q*(nu, E_0) dynamically active."
+    known_bypasses_or_relaxations: ["None for unforced periodic Navier-Stokes; complete resolution requires bounding the finite reservoir Q <= Q*."]
+    status: "PROVED_STRUCTURAL_OBSTRUCTION"
+
+
 
 
 

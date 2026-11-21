@@ -1,5 +1,5 @@
 schema_version: 4.0.4
-revision: 23
+revision: 25
 activation: STAGED_CANDIDATE_MIGRATION_BLOCKED
 project:
   id: tubulance
@@ -28,8 +28,8 @@ governance_binding:
 coordination:
   state_writer: antigravity-primary-agent
   serialization_method: REVISION_COMPARE_AND_SWAP
-  last_expected_revision: 22
-  last_updated_at: '2026-11-12T18:30:00Z'
+  last_expected_revision: 24
+  last_updated_at: '2026-11-20T17:30:00Z'
   active_contract: NS-GOV-MIG-V404-001
   frozen_candidate: ab4fad5517903740c974ed450d0fc22b29c14306
 epistemic_status:
@@ -38,18 +38,18 @@ epistemic_status:
   openai_unforced_transfer_branch_status: COMPLETED_NEGATIVE_RESEARCH_BRANCH
   ns_openai_b2_status: BLOCKED
   governance_migration_v404_status: MIGRATION_BLOCKED
-  scientific_program_status: NS-NONLINEAR-SELF-FOCUS-003_NONLOCAL_TRIAD_DECOHERENCE_AND_HELICAL_PARITY_SUPPRESSION_PROVED
-  active_milestone: NS-NONLINEAR-SELF-FOCUS-003
+  scientific_program_status: NS-NONLINEAR-SELF-FOCUS-004_MULTISCALE_COCYCLE_BOUND_AND_UV_DISSIPATION_DOMINATION_PROVED
+  active_milestone: NS-NONLINEAR-SELF-FOCUS-004
 current_objective:
-  id: NS-NONLINEAR-SELF-FOCUS-003
-  title: Non-Local Triad Phase Decoherence, Helical Parity Suppression, and Scale-Coupling
-    Bounds
-  target_bridge: Non-Local Scale-Separated Enstrophy Injection on T^3_L (nu > 0, f
-    = 0)
+  id: NS-NONLINEAR-SELF-FOCUS-004
+  title: Multiscale Dyadic Cocycle Bound, Palinstrophy Dissipation Deficit, and the
+    Global Enstrophy Barrier
+  target_bridge: Multiscale Vortex Stretching vs. Palinstrophy Dissipation on T^3_L
+    (nu > 0, f = 0)
   risk: R3
-  status: COMPLETED_NONLOCAL_BYPASS_EXCLUDED_REVIEW_REQUIRED_FOR_IND2
+  status: COMPLETED_UV_RUNAWAY_EXCLUDED_REVIEW_REQUIRED_FOR_IND2
   dependencies:
-  - NS-NONLINEAR-SELF-FOCUS-002
+  - NS-NONLINEAR-SELF-FOCUS-003
 hard_gates:
   clay_statement_b_unresolved: PASS_ENFORCED
   ns_openai_b2_blocked: PASS_ENFORCED
@@ -69,6 +69,16 @@ release:
   candidate: null
   reason: PURE_MATHEMATICAL_RESEARCH_PROGRAM_CLAY_B_UNRESOLVED
 objectives:
+- id: NS-NONLINEAR-SELF-FOCUS-004
+  title: Multiscale Dyadic Cocycle Bound, Palinstrophy Dissipation Deficit, and the
+    Global Enstrophy Barrier
+  status: ACCEPTED_BOUNDED_AT_IND1_REVIEW_REQUIRED_FOR_IND2
+  evidence_ref: NS_NONLINEAR_SELF_FOCUS_004_MULTISCALE_COCYCLE_BOUND.md
+- id: NS-CL30-WINWIN-ROSETTA-001
+  title: Cl(3,0) Helical Schur Isolation, Win-Win SO(3) Cocycle Dichotomy Arch, and
+    4/4 Rosetta Master Audit
+  status: VERIFIED_FINITE_AND_PUBLISHED_ZENODO_24378625
+  evidence_ref: rosetta_master_audit_receipt.json
 - id: NS-NONLINEAR-SELF-FOCUS-003
   title: Non-Local Triad Phase Decoherence, Helical Parity Suppression, and Scale-Coupling
     Bounds
@@ -176,6 +186,13 @@ capabilities:
     evidence_refs:
     - tests/test_tp2_g6_a1_suite.py
 evidence_refs:
+- id: EVID-NS-NONLINEAR-SELF-FOCUS-004
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_NONLINEAR_SELF_FOCUS_004_MULTISCALE_COCYCLE_BOUND.md
+- id: EVID-CLM-044
+  claim_id: CLM-044
+  type: MATH_E4_ANALYTIC_PROOF_AUDITED
+  artifact: NS_NONLINEAR_SELF_FOCUS_004_MULTISCALE_COCYCLE_BOUND.md
 - id: EVID-NS-NONLINEAR-SELF-FOCUS-003
   type: MATH_E4_ANALYTIC_PROOF_AUDITED
   artifact: NS_NONLINEAR_SELF_FOCUS_003_NONLOCAL_TRIAD_DECOHERENCE.md
@@ -306,8 +323,16 @@ negative_history_refs:
 - NEG-EV-048
 - NEG-EV-049
 - NEG-EV-050
+- NEG-EV-051
 blockers: []
 known_risks:
+- risk_id: RISK-SCALE-DEPENDENT-COCYCLE-BARRIER
+  bridge: Multiscale Dyadic Enstrophy Cascade on T^3_L
+  description: Multiscale cocycle arch collapse (Phi_Q -> 0) and 2^{2Q} palinstrophy
+    dissipation definitively exclude ultraviolet runaway (Q -> infty), but low-to-intermediate
+    octaves Q <= Q* can still exchange O(1) enstrophy within the macroscopic reservoir
+    without violating the high-frequency dissipation bound.
+  obstruction: NS-OBS-024
 - risk_id: RISK-NONLOCAL-TRIAD-DECOHERENCE
   bridge: Non-Local Scale-Separated Enstrophy Injection on T^3_L
   description: Incompressibility forces uniform background advection to cancel (<u_{<=Q-3}.grad

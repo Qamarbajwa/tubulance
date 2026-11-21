@@ -1227,7 +1227,7 @@ pathways:
   - pathway_id: "NS-NONLINEAR-SELF-FOCUS-003"
     title: "Non-Local Triad Phase Decoherence, Helical Parity Suppression, and Scale-Coupling Bounds"
     parent_pathways: ["NS-NONLINEAR-SELF-FOCUS-002"]
-    descendant_pathways: []
+    descendant_pathways: ["NS-NONLINEAR-SELF-FOCUS-004"]
     starting_thesis: "Investigate whether non-local triads (p << q approx r) can maintain persistent phase coherence to bypass scale-local viscous discounting and directly pump high-frequency enstrophy."
     scientific_question: "Can large-scale eddies drive small-scale enstrophy blowup faster than viscous dissipation removes it at octave Q?"
     intended_bridge: "Non-Local Scale-Separated Enstrophy Injection on T^3_L"
@@ -1256,6 +1256,40 @@ pathways:
     reopen_conditions: ["Infinite energy initial data or non-periodic boundary conditions."]
     similarity_tags: ["nonlocal_triad", "helical_parity", "calderon_zygmund", "scale_separation", "viscous_domination"]
     last_re_evaluated: "2026-11-19"
+
+  - pathway_id: "NS-NONLINEAR-SELF-FOCUS-004"
+    title: "Multiscale Dyadic Cocycle Bound, Palinstrophy Dissipation Deficit, and the Global Enstrophy Barrier"
+    parent_pathways: ["NS-NONLINEAR-SELF-FOCUS-003"]
+    descendant_pathways: []
+    starting_thesis: "Investigate whether multiscale coarse-graining of the Cl(3,0) helical Beltrami cocycle can be integrated across all dyadic octaves to establish an ultraviolet dissipation ceiling excluding self-similar blowup."
+    scientific_question: "Can high-frequency modes accumulate an unbounded dissipation deficit, or does viscous dissipation universally dominate vortex stretching in the ultraviolet limit?"
+    intended_bridge: "Multiscale Vortex Stretching vs. Palinstrophy Dissipation on T^3_L"
+    core_objects: ["CLM-044", "Dyadic Cocycle Arch Bound", "Palinstrophy Dissipation Multiplier", "Ultraviolet Scale Threshold Q*", "Beltrami Helical Coarse Graining"]
+    mathematical_form: "S_Q(t) <= C_L Phi_Q D_Q(t) + R_Q(t); Phi_Q <= C_Phi 2^{-Q/2}; S_Q < (1/2) D_Q for all Q > Q*(nu, E_0)."
+    scaling: "Cocycle arch collapse ~ O(2^{-Q/2}); palinstrophy dissipation ~ nu k_0^2 2^{2Q}."
+    geometry: "Periodic torus T^3_L with multiscale dyadic Littlewood-Paley shells."
+    trajectory_dependence: "EULERIAN"
+    stochastic_component: false
+    assumptions: ["Incompressible 3D Navier-Stokes on T^3_L", "nu > 0", "unforced f = 0", "Finite initial enstrophy E_0 < infty"]
+    domain: "T^3_L"
+    regularity_class: "Smooth solenoidal vector fields."
+    expected_outcome: "Determine whether the scale-dependent cocycle arch bound forces viscous dissipation to overpower vortex stretching at high dyadic octaves."
+    actual_outcome: "CLM-044 proved as CONDITIONAL_NEW_LEMMA; ultraviolet runaway definitively excluded by multiscale cocycle collapse Phi_Q -> 0 and 2^{2Q} palinstrophy dissipation (NEG-EV-051, NS-OBS-024)."
+    tests_attempted: ["tests/test_ns_nonlinear_self_focus_004_suite.py"]
+    evidence_refs: ["NS_NONLINEAR_SELF_FOCUS_004_MULTISCALE_COCYCLE_BOUND.md"]
+    status: "COMPLETED_CANONICAL_WITH_LIMITATIONS"
+    termination_reason: "Ultraviolet self-similar blowup mechanism proved structurally impossible."
+    failure_mechanism: "Vortex stretching alignment collapses as O(2^{-Q/2}) while viscous dissipation scales as 2^{2Q}."
+    what_was_falsified: ["Ultraviolet self-similar blowup via high-frequency enstrophy cascade (NEG-EV-051)"]
+    what_was_not_falsified: ["CLM-044"]
+    surviving_results: ["CLM-044"]
+    negative_results: ["NEG-EV-051"]
+    open_questions: ["Can intermediate-scale modes Q <= Q* autonomously focus enstrophy into a finite-time singularity?"]
+    obstruction_ids: ["NS-OBS-024"]
+    reopen_conditions: ["Infinite initial enstrophy or non-periodic geometries."]
+    similarity_tags: ["multiscale_cocycle", "palinstrophy_dissipation", "uv_domination", "scale_threshold", "arch_collapse"]
+    last_re_evaluated: "2026-11-20"
+
 
 
 

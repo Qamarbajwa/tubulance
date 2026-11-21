@@ -191,5 +191,13 @@
       "record_url": "https://zenodo.org/record/24403362",
       "pdf": "seeing_negatively_article_and_system_map.pdf"
     }
+  },
+  "zenodo_deposition_v1_3_0": {
+    "deposition_id": 24409227,
+    "doi": "10.5281/zenodo.24409227",
+    "concept_doi": "10.5281/zenodo.24378624",
+    "record_url": "https://zenodo.org/record/24409227",
+    "version": "v1.3.0-rosetta",
+    "github_release": "https://github.com/Qamarbajwa/tubulance/releases/tag/v1.3.0-rosetta"
   }
 }
