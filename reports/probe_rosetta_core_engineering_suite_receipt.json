@@ -1,0 +1,30 @@
+{
+  "probe_id": "PROBE-ROSETTA-CORE-ENGINEERING-SUITE-001",
+  "author": "Qamar Munawer",
+  "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+  "methodology": "ai is being used as a tool",
+  "epistemic_status": "verified-finite",
+  "all_four_clay_millennium_problems_open": true,
+  "timestamp_utc": "2026-11-21T13:36:43Z",
+  "elapsed_seconds": 0.0028998851776123047,
+  "tests_run": 5,
+  "errors": 0,
+  "failures": 0,
+  "verified": true,
+  "status": "PASS",
+  "modules_verified": {
+    "schur_condensation": {
+      "guyan_schur_tare": "VERIFIED (exact static condensation, symmetry preserved)",
+      "three_tier_sub_gap_tare": "VERIFIED (bulk sub-gap modes zeroed, supra-gap active modes preserved)"
+    },
+    "tripotent_compressor": {
+      "squarefree_subspace_compress": "VERIFIED (P_0^2=P_0, P_active^2=P_active, 4.71x acceleration on 70->35 subspace)"
+    },
+    "pfaffian_routing": {
+      "four_spin_torus_pfaffian_count": "VERIFIED (4-spin torus Pfaffian combination on (4,4,4,0) evaluates to 6.0, matching Lean 4 constructive_four_spin_torus_pfaffian_k33)"
+    },
+    "cfd_helical_filter": {
+      "cubic_strain_tube_sheet_classifier": "VERIFIED (axisymmetric strain (-1/2,-1/2,1) trace=0, cubic identity residual < 1e-15, ratio=2/3, matching Lean 4 constructive_axisymmetric_strain_ceiling_two_thirds)"
+    }
+  }
+}
