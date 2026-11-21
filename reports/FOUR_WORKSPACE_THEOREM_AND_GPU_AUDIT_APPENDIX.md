@@ -206,7 +206,7 @@ The Schur-tare coercivity engine and mathematical matrix algorithms were execute
 | LLM KV Cache Schur Tare | Seq len: 4,096, Hidden dim: 128, Rank: 23 | VRAM: 2.0 MB -> 0.43 MB | 4.62x compression, 100.0000% Frobenius fidelity | PASS |
 | Optimal SRAM Memory Tiling | Dimension 2,048x2,048 (X = 65,536) | Square root tile size: 256 | 128.25x theoretical memory transfer efficiency | PASS |
 | Guinand-Weil Prime Scanner | 50 non-trivial zeros across 10,000 grid points | 15/15 primes aligned | 100.0% constructive interference alignment | PASS |
-| High-Altitude Prime Sieve | Scale X = 10^18 (Quintillion), Window width 1,000 | 23 primes found (Expected: 24.1) | Throughput: 7078 primes/second on edge silicon | PASS |
+| High-Altitude Prime Sieve | Scale X = 10^18 (Quintillion), Window width 1,000 | 23 primes found (Expected: 24.1) | Throughput: 7621 primes/second on edge silicon | PASS |
 | Tared Riemann R(x) Prime Counter | 9 decades tested (10^6 up to 10^29) | Schoenfeld envelope constant: 1 / (8*pi) | 100% inside Schoenfeld envelope (Relative error 7.53e-12 at 10^18) | PASS |
 | HBIM Historic Facade Monitoring | BTU Cottbus Historic Sandstone-Brick North Facade | 36 mesh nodes condensed to 8 boundary sensors | SNR improved from -5.89 dB to 8.73 dB (+14.62 dB gain) | PASS |
 | ISO 19650 pyRevit Structural Export | LOD 400 Heritage Conservation (Uniclass 2015) | Guyan condensation accuracy: 100.000000% | Status: NORMAL, Automated parameter injection ready | PASS |
