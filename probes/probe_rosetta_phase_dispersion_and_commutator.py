@@ -76,13 +76,14 @@ def run_probe():
         assert abs(gram["concrete_det_2x2"] - 25.0 / 144.0) < 1e-12
         assert gram["concrete_det_2x2"] > 0.0
         
-        # Check triangle wall rescue for L >= 4.0
+        # Check triangle wall rescue for L >= 4.0 across all active modes
         mode0 = modes[0]
         if L >= 4.0:
             assert mode0["naive_triangle_margin"] < 0.0, f"Expected naive margin < 0 at L={L}"
-            assert mode0["delta_E_disp"] > 0.0, f"Expected DeltaE_disp > 0 at L={L}"
-            assert mode0["dispersion_rescues_positivity"], f"Dispersion did not rescue positivity at L={L}"
-            assert mode0["eigenvalue"] >= -1e-11, f"Negative eigenvalue beyond tolerance at L={L}: {mode0['eigenvalue']}"
+            for m_dict in modes:
+                assert m_dict["delta_E_disp"] > 0.0, f"Expected DeltaE_disp > 0 at L={L}, mode={m_dict['mode_index']}"
+                assert m_dict["dispersion_rescues_positivity"], f"Dispersion did not rescue positivity at L={L}, mode={m_dict['mode_index']}"
+                assert m_dict["eigenvalue"] >= -1e-11, f"Negative eigenvalue beyond tolerance at L={L}: {m_dict['eigenvalue']}"
             
         print(
             f"L={L:3.1f} | M_prime={M_prime:6.2f} | Naive(m=0)={mode0['naive_triangle_margin']:7.2f} | "
@@ -100,6 +101,7 @@ def run_probe():
             "cross_prime_gram_min_eigenvalue": gram["min_eigenvalue"],
             "cross_prime_gram_max_eigenvalue": gram["max_eigenvalue"],
             "max_decomposition_residual": max_residual,
+            "all_active_modes_rescued_by_dispersion": bool(all(m["dispersion_rescues_positivity"] for m in modes)),
             "ground_mode": {
                 "eigenvalue": mode0["eigenvalue"],
                 "A_arch_expectation": round(mode0["A_arch_expectation"], 4),

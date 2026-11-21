@@ -263,6 +263,19 @@ class TestRosettaCore(unittest.TestCase):
         self.assertTrue(mode0_6["dispersion_rescues_positivity"])
         self.assertGreater(res_6["commutator"]["frobenius_norm"], 10.0)
 
+        # Verify all active modes are rescued by phase dispersion at both L=4.0 and L=6.0
+        for m_dict in res_4["modes"]:
+            self.assertTrue(m_dict["dispersion_rescues_positivity"])
+            self.assertGreaterEqual(m_dict["eigenvalue"], -1e-12)
+            self.assertGreater(m_dict["delta_E_disp"], 0.0)
+            self.assertGreaterEqual(m_dict["uncertainty_product"], 0.0)
+
+        for m_dict in res_6["modes"]:
+            self.assertTrue(m_dict["dispersion_rescues_positivity"])
+            self.assertGreaterEqual(m_dict["eigenvalue"], -1e-12)
+            self.assertGreater(m_dict["delta_E_disp"], 0.0)
+            self.assertGreaterEqual(m_dict["uncertainty_product"], 0.0)
+
 
 def run_and_generate_receipt():
     t0 = time.time()
