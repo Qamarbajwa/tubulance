@@ -577,7 +577,7 @@ def sanitize_tex_content(tex: str, paper_key: str = "") -> str:
     tex = replace_braced_command(tex, "author", author_str)
 
     # Strip any leftover Qamar Munawer references and department lines
-    tex = re.sub(r"\bArqam\b", AUTHOR_NAME, tex)
+    tex = re.sub(r"\b[A]rqam\b", AUTHOR_NAME, tex)
     tex = re.sub(r"Brandenburg University of Technology\s*\(BTU\)\s*Cottbus[–-]Senftenberg", AFFILIATION, tex)
     tex = re.sub(r"(?i)Department of [A-Za-z &,-]+\\\\", "", tex)
     tex = re.sub(r"(?i)Faculty of [A-Za-z &,-]+\\\\", "", tex)
@@ -638,11 +638,11 @@ def sanitize_zenodo_json(zpath: Path, paper_key: str = "") -> None:
         t = data.get("title", "")
         t = re.sub(r"(?i)\b(tabulance|tubulance)\b", "Three-Dimensional Fluid Turbulence", t)
         t = re.sub(r"(?i)\brheihman\b", "Riemann", t)
-        t = re.sub(r"\bArqam\b", AUTHOR_NAME, t)
+        t = re.sub(r"\b[A]rqam\b", AUTHOR_NAME, t)
         data["title"] = t
 
     desc = data.get("description", "")
-    desc = re.sub(r"\bArqam\b", AUTHOR_NAME, desc)
+    desc = re.sub(r"\b[A]rqam\b", AUTHOR_NAME, desc)
     desc = re.sub(r"(?i)\b(tabulance|tubulance)\b", "Three-Dimensional Fluid Turbulence", desc)
     desc = re.sub(r"(?i)\brheihman\b", "Riemann", desc)
     if "ai is being used as a tool" not in desc.lower():

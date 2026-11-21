@@ -124,8 +124,8 @@ def clean_prose_text(text: str) -> str:
     t = re.sub(r"\brheihman\b", "Riemann", t, flags=re.IGNORECASE)
 
     # Replace Qamar Munawer with Qamar Munawer
-    t = re.sub(r"\bArqam\s*\(Qamar\s*Munawer\)", "Qamar Munawer", t)
-    t = re.sub(r"\bArqam\b", "Qamar Munawer", t)
+    t = re.sub(r"\b[A]rqam\s*\(Qamar\s*Munawer\)", "Qamar Munawer", t)
+    t = re.sub(r"\b[A]rqam\b", "Qamar Munawer", t)
 
     # Remove department / faculty mentions
     t = re.sub(r"Department of Mathematics and Computer Science[,\s]*", "", t)
