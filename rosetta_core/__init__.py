@@ -22,8 +22,10 @@ from .pfaffian_routing import four_spin_torus_pfaffian_count
 from .cfd_helical_filter import cubic_strain_tube_sheet_classifier
 from .quantum_entanglement import (
     reconstruct_dirichlet_eigen_wavefunction,
+    reconstruct_ground_wavefunction,
     bipartite_schur_entanglement_spectrum,
     canonical_four_workspace_entanglement_states,
+    wavefunction_phase_dispersion_and_commutator_audit,
 )
 
 __all__ = [
@@ -33,7 +35,9 @@ __all__ = [
     "four_spin_torus_pfaffian_count",
     "cubic_strain_tube_sheet_classifier",
     "reconstruct_dirichlet_eigen_wavefunction",
+    "reconstruct_ground_wavefunction",
     "bipartite_schur_entanglement_spectrum",
     "canonical_four_workspace_entanglement_states",
+    "wavefunction_phase_dispersion_and_commutator_audit",
 ]
-__version__ = "1.1.0"
+__version__ = "1.2.0"

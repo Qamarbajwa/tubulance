@@ -1,0 +1,135 @@
+{
+  "probe_id": "PROBE-ROSETTA-PHASE-DISPERSION-AND-COMMUTATOR-001",
+  "author": "Qamar Munawer",
+  "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+  "methodology": "ai is being used as a tool",
+  "epistemic_status": "verified-finite",
+  "all_four_clay_millennium_problems_open": true,
+  "timestamp_utc": "2026-11-21T14:42:49Z",
+  "elapsed_seconds": 0.03824925422668457,
+  "verified": true,
+  "status": "PASS",
+  "parameters": {
+    "L_values": [
+      1.0,
+      2.0,
+      4.0,
+      6.0
+    ],
+    "K": 32,
+    "prime_count": 25,
+    "lambda_exponent": 0.5
+  },
+  "lean4_matched_theorems": [
+    "RosettaPhaseDispersionAndUncertainty.phase_dispersion_restores_positivity_beyond_triangle_wall",
+    "RosettaPhaseDispersionAndUncertainty.commutator_uncertainty_sum_floor",
+    "RosettaPhaseDispersionAndUncertainty.cross_prime_gram_matrix_strict_positivity",
+    "RosettaPhaseDispersionAndUncertainty.concrete_first_prime_pair_gram_floor"
+  ],
+  "sweep_results": [
+    {
+      "L": 1.0,
+      "K": 32,
+      "M_prime": 0.9803,
+      "commutator_frobenius_norm": 0.531,
+      "commutator_spectral_norm": 0.3623,
+      "cross_prime_gram_min_eigenvalue": 0.00548444712399758,
+      "cross_prime_gram_max_eigenvalue": 8.491164241081687,
+      "max_decomposition_residual": 4.884981308350689e-15,
+      "ground_mode": {
+        "eigenvalue": 1.0326455668341339e-06,
+        "A_arch_expectation": 0.0123,
+        "naive_triangle_margin": -0.9679,
+        "delta_E_disp": 0.9679,
+        "dispersion_rescues_positivity": true,
+        "delta_A": 0.1818,
+        "delta_P": 0.1818,
+        "uncertainty_product": 0.0331
+      },
+      "first_excited_mode": {
+        "eigenvalue": 0.01992817170138883,
+        "naive_triangle_margin": -0.5138,
+        "delta_E_disp": 0.5337,
+        "uncertainty_product": 0.0195
+      }
+    },
+    {
+      "L": 2.0,
+      "K": 32,
+      "M_prime": 5.8525,
+      "commutator_frobenius_norm": 1.3937,
+      "commutator_spectral_norm": 0.9232,
+      "cross_prime_gram_min_eigenvalue": 0.00548444712399758,
+      "cross_prime_gram_max_eigenvalue": 8.491164241081687,
+      "max_decomposition_residual": 7.549516567451064e-15,
+      "ground_mode": {
+        "eigenvalue": -1.7132408539328095e-16,
+        "A_arch_expectation": 0.2345,
+        "naive_triangle_margin": -5.6179,
+        "delta_E_disp": 5.6179,
+        "dispersion_rescues_positivity": true,
+        "delta_A": 0.6106,
+        "delta_P": 0.6106,
+        "uncertainty_product": 0.3729
+      },
+      "first_excited_mode": {
+        "eigenvalue": 4.49502406649267e-16,
+        "naive_triangle_margin": -5.6807,
+        "delta_E_disp": 5.6807,
+        "uncertainty_product": 0.3506
+      }
+    },
+    {
+      "L": 4.0,
+      "K": 32,
+      "M_prime": 24.3833,
+      "commutator_frobenius_norm": 3.8922,
+      "commutator_spectral_norm": 2.7073,
+      "cross_prime_gram_min_eigenvalue": 0.00548444712399758,
+      "cross_prime_gram_max_eigenvalue": 8.491164241081687,
+      "max_decomposition_residual": 7.993605777301127e-15,
+      "ground_mode": {
+        "eigenvalue": -7.396486825762003e-15,
+        "A_arch_expectation": 1.4619,
+        "naive_triangle_margin": -22.9214,
+        "delta_E_disp": 22.9214,
+        "dispersion_rescues_positivity": true,
+        "delta_A": 0.6461,
+        "delta_P": 0.6461,
+        "uncertainty_product": 0.4174
+      },
+      "first_excited_mode": {
+        "eigenvalue": -4.049072502840324e-15,
+        "naive_triangle_margin": -23.9813,
+        "delta_E_disp": 23.9813,
+        "uncertainty_product": 0.0963
+      }
+    },
+    {
+      "L": 6.0,
+      "K": 32,
+      "M_prime": 75.1905,
+      "commutator_frobenius_norm": 13.1324,
+      "commutator_spectral_norm": 9.2758,
+      "cross_prime_gram_min_eigenvalue": 0.00548444712399758,
+      "cross_prime_gram_max_eigenvalue": 8.491164241081687,
+      "max_decomposition_residual": 1.188198844870314e-14,
+      "ground_mode": {
+        "eigenvalue": -1.2570750748738493e-13,
+        "A_arch_expectation": 1.1695,
+        "naive_triangle_margin": -74.0209,
+        "delta_E_disp": 74.0209,
+        "dispersion_rescues_positivity": true,
+        "delta_A": 0.3062,
+        "delta_P": 0.3062,
+        "uncertainty_product": 0.0938
+      },
+      "first_excited_mode": {
+        "eigenvalue": -3.8775274374767904e-14,
+        "naive_triangle_margin": -73.9677,
+        "delta_E_disp": 73.9677,
+        "uncertainty_product": 0.7609
+      }
+    }
+  ]
+}

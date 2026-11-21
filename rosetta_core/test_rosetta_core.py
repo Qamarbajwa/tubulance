@@ -27,8 +27,10 @@ from rosetta_core.pfaffian_routing import four_spin_torus_pfaffian_count, pfaffi
 from rosetta_core.cfd_helical_filter import cubic_strain_tube_sheet_classifier
 from rosetta_core.quantum_entanglement import (
     reconstruct_dirichlet_eigen_wavefunction,
+    reconstruct_ground_wavefunction,
     bipartite_schur_entanglement_spectrum,
     canonical_four_workspace_entanglement_states,
+    wavefunction_phase_dispersion_and_commutator_audit,
 )
 
 
@@ -197,6 +199,70 @@ class TestRosettaCore(unittest.TestCase):
         self.assertAlmostEqual(ns_hetero["linear_entropy"], 0.5, places=12)
         self.assertAlmostEqual(ns_homo["linear_entropy"], 0.0, places=12)
 
+    def test_09_reconstruct_ground_wavefunction_and_schur_spectrum_aliases(self):
+        """Test reconstruct_ground_wavefunction and Q_PP/Q_PC/Q_CC bipartite Schur aliases."""
+        K = 8
+        Q = np.diag(np.linspace(1.0, 3.0, K))
+        grid = np.linspace(-1.0, 1.0, 201)
+        eigval, c_vec, psi_u, born_norm, parity_error = reconstruct_ground_wavefunction(Q, grid, L=2.0)
+        self.assertGreater(eigval, 0.0)
+        self.assertAlmostEqual(born_norm, 1.0, places=3)
+        self.assertLess(parity_error, 1e-12)
+        
+        # Test Q_PP, Q_PC, Q_CC keyword argument alias
+        Q_PP = np.array([[2.0]])
+        Q_PC = np.array([[0.5]])
+        Q_CC = np.array([[2.0]])
+        spec = bipartite_schur_entanglement_spectrum(Q_PP=Q_PP, Q_PC=Q_PC, Q_CC=Q_CC)
+        self.assertAlmostEqual(spec["sin_sq_theta"] + spec["cos_sq_theta"], 1.0, places=12)
+
+    def test_10_wavefunction_phase_dispersion_and_commutator_audit(self):
+        """Test phase dispersion rescue beyond triangle wall, commutator uncertainty, and cross-prime Gram."""
+        # 1. Audit at L = 4.0
+        res_4 = wavefunction_phase_dispersion_and_commutator_audit(L=4.0, K=16)
+        self.assertAlmostEqual(res_4["L"], 4.0, places=12)
+        self.assertEqual(res_4["K"], 16)
+        self.assertGreater(res_4["M_prime"], 20.0)
+        
+        # Check that naive margin < 0 on ground mode, but DeltaE_disp rescues it
+        mode0_4 = res_4["modes"][0]
+        self.assertLess(mode0_4["naive_triangle_margin"], 0.0)
+        self.assertGreater(mode0_4["delta_E_disp"], 0.0)
+        self.assertAlmostEqual(mode0_4["sum_identity_residual"], 0.0, places=10)
+        self.assertGreaterEqual(mode0_4["eigenvalue"], -1e-12)
+        self.assertTrue(mode0_4["dispersion_rescues_positivity"])
+        self.assertGreater(mode0_4["uncertainty_product"], 0.0)
+        
+        # Commutator non-vanishing
+        comm_4 = res_4["commutator"]
+        self.assertTrue(comm_4["is_non_commuting"])
+        self.assertGreater(comm_4["frobenius_norm"], 1.0)
+        self.assertGreater(comm_4["spectral_norm"], 1.0)
+        
+        # Cross-prime Gram matrix strictly positive definite
+        gram_4 = res_4["cross_prime_gram"]
+        self.assertTrue(gram_4["is_strictly_positive_definite"])
+        self.assertGreater(gram_4["min_eigenvalue"], 0.0)
+        self.assertEqual(gram_4["prime_count"], 25)
+        # Check exact rational evaluations matching Lean 4 concrete_first_prime_pair_gram_floor
+        self.assertAlmostEqual(gram_4["concrete_G22"], 5.0 / 8.0, places=12)
+        self.assertAlmostEqual(gram_4["concrete_G33"], 5.0 / 9.0, places=12)
+        self.assertAlmostEqual(gram_4["concrete_G23"], 5.0 / 12.0, places=12)
+        self.assertAlmostEqual(gram_4["concrete_det_2x2"], 25.0 / 144.0, places=12)
+        self.assertGreater(gram_4["concrete_det_2x2"], 0.0)
+
+        # 2. Audit at L = 6.0 (deep past triangle wall)
+        res_6 = wavefunction_phase_dispersion_and_commutator_audit(L=6.0, K=16)
+        self.assertGreater(res_6["M_prime"], 70.0)
+        mode0_6 = res_6["modes"][0]
+        # Naive margin is deeply negative past the triangle wall (< -60.0)
+        self.assertLess(mode0_6["naive_triangle_margin"], -60.0)
+        # But phase dispersion DeltaE_disp adds > 60.0 back!
+        self.assertGreater(mode0_6["delta_E_disp"], 60.0)
+        self.assertGreaterEqual(mode0_6["eigenvalue"], -1e-12)
+        self.assertTrue(mode0_6["dispersion_rescues_positivity"])
+        self.assertGreater(res_6["commutator"]["frobenius_norm"], 10.0)
+
 
 def run_and_generate_receipt():
     t0 = time.time()
@@ -243,7 +309,8 @@ def run_and_generate_receipt():
             "quantum_entanglement": {
                 "reconstruct_dirichlet_eigen_wavefunction": "VERIFIED (Born normalization integral = 1.0, parity error < 1e-12)",
                 "bipartite_schur_entanglement_spectrum": "VERIFIED (exact Pythagorean partition sin^2 + cos^2 = 1.0, S_lin, S_vN, purity)",
-                "canonical_four_workspace_entanglement_states": "VERIFIED (Hodge S_lin=1/2, YM S_lin=2/3, NS hetero=1/2 vs homo=0, matching Lean 4 pfaffian_bell_and_baryonic_y_junction_entanglement_hierarchy)"
+                "canonical_four_workspace_entanglement_states": "VERIFIED (Hodge S_lin=1/2, YM S_lin=2/3, NS hetero=1/2 vs homo=0, matching Lean 4 pfaffian_bell_and_baryonic_y_junction_entanglement_hierarchy)",
+                "wavefunction_phase_dispersion_and_commutator_audit": "VERIFIED (DeltaE_disp rescues Q_W past triangle wall at L=4,6; ||[A,P]||_F > 0, Cross-Prime Gram min eval > 0, matching Lean 4 RosettaPhaseDispersionAndUncertaintyCert)"
             }
         }
     }
