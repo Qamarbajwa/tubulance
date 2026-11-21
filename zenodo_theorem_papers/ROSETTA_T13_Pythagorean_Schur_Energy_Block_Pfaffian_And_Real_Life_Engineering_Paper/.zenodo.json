@@ -17,5 +17,8 @@
     "Lean 4"
   ],
   "license": "CC-BY-4.0",
-  "access_right": "open"
+  "access_right": "open",
+  "doi": "10.5281/zenodo.24409897",
+  "concept_doi": "10.5281/zenodo.24409896",
+  "record_url": "https://zenodo.org/records/24409897"
 }
