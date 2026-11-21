@@ -17,6 +17,7 @@ Epistemic Boundary: All four Clay Millennium Problems remain strictly OPEN
 from .silicon_vram_compressor import (
     gpu_kron_schur_condensation,
     gpu_chiral_half_domain_condensation,
+    gpu_yang_mills_chiral_two_halves_orthogonality_probe,
     gpu_llm_kv_cache_schur_tare,
     optimal_sram_tile_schedule,
 )
@@ -45,6 +46,7 @@ __version__ = "2.0.0-gpu"
 __all__ = [
     "gpu_kron_schur_condensation",
     "gpu_chiral_half_domain_condensation",
+    "gpu_yang_mills_chiral_two_halves_orthogonality_probe",
     "gpu_llm_kv_cache_schur_tare",
     "optimal_sram_tile_schedule",
     "guinand_weil_spectral_prime_scanner",

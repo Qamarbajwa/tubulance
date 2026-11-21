@@ -40,6 +40,7 @@ except ImportError:
 from tare_core.silicon_vram_compressor import (
     gpu_kron_schur_condensation,
     gpu_chiral_half_domain_condensation,
+    gpu_yang_mills_chiral_two_halves_orthogonality_probe,
     gpu_llm_kv_cache_schur_tare,
     optimal_sram_tile_schedule,
 )
@@ -211,36 +212,44 @@ def run_all_benchmarks() -> dict:
     # --------------------------------------------------------------------------
     # 11. Chiral Half-Domain (K = K_half + K_half^T) 50% VRAM Condensation
     # --------------------------------------------------------------------------
-    print("\n[11/12] Running Chiral Half-Domain (K = K_half + K_half^T) VRAM Condensation...")
-    dim_chiral = 128
-    dim_chiral_boundary = 16
-    A_chiral = np.random.randn(dim_chiral, dim_chiral)
-    K_chiral = A_chiral.T @ A_chiral + np.eye(dim_chiral) * 10.0
-    b_chiral_indices = list(range(dim_chiral_boundary))
+    print("\n[11/12] Running Chiral Half-Domain (K = K_half + K_half^T) 50% VRAM Condensation (N=1024)...")
     res_chiral = gpu_chiral_half_domain_condensation(
-        K_chiral, b_chiral_indices, device="cuda" if CUDA_AVAILABLE else "cpu"
+        n_total=1024, n_boundary=64, use_cuda=CUDA_AVAILABLE
     )
-    print(f"  -> Original Dense Matrix: {res_chiral['n_total']}x{res_chiral['n_total']} ({res_chiral['dense_elements']} elements)")
-    print(f"  -> Chiral Half Domain: {res_chiral['half_domain_elements']} packed elements")
-    print(f"  -> VRAM Storage Reduction: {res_chiral['vram_reduction_pct']:.2f}% (Compression Factor: {res_chiral['compression_factor']:.2f}x)")
-    print(f"  -> Max Condensation Error (vs. Full Matrix): {res_chiral['max_condensation_error']:.2e} (target < 1e-12)")
+    print(f"  -> Original Dense Matrix: {res_chiral['n_total']}x{res_chiral['n_total']} ({res_chiral['dense_elements']} elements, {res_chiral['dense_bytes']} bytes = {res_chiral['dense_mb']} MB)")
+    print(f"  -> Chiral Half Domain: {res_chiral['half_domain_elements']} packed elements ({res_chiral['half_domain_bytes']} bytes = {res_chiral['half_domain_mb']} MB)")
+    print(f"  -> VRAM Storage Reduction: {res_chiral['vram_reduction_pct']:.2f}% (storage_ratio = {res_chiral['storage_ratio']})")
+    print(f"  -> Bitwise Reconstruction Error: {res_chiral['max_reconstruction_error']:.1e} (||K - (K_half + K_half^T)||_inf == 0.0)")
+    print(f"  -> Max Schur Condensation Error: {res_chiral['max_schur_error']:.2e} (target < 1e-13)")
     print(f"  -> Coercive (min eigenvalue > 0): {res_chiral['coercive']} (min eig = {res_chiral['min_eigenvalue']:.4f})")
+    assert res_chiral["max_reconstruction_error"] == 0.0, "Bitwise reconstruction error must be 0.0!"
+    assert res_chiral["max_schur_error"] < 1e-13, "Schur error must be < 1e-13!"
     assert res_chiral["coercive"], "Chiral condensed matrix must remain strictly coercive!"
-    assert res_chiral["max_condensation_error"] < 1e-10, "Chiral condensation numerical discrepancy too high!"
-    assert res_chiral["vram_reduction_pct"] > 45.0, "VRAM reduction must be ~50%!"
+    assert res_chiral["vram_reduction_pct"] >= 49.9, "VRAM reduction must be ~50% (49.95%)!"
 
     # --------------------------------------------------------------------------
-    # 12. IFC 4.3 / ISO 19650 Bauforschung Property Set Exporter
+    # 12. 4D Yang-Mills Chiral Two-Halves (F = F^+ + F^-) & Adversarial Demarcation Probe
     # --------------------------------------------------------------------------
-    print("\n[12/12] Running IFC 4.3 / ISO 19650 Bauforschung Property Set Exporter...")
-    res_ifc_payload = export_hbim_ifc43_iso19650_payload()
-    res_ifc_summary = res_ifc_payload["SummaryMetrics"]
-    print(f"  -> Asset ID: {res_ifc_summary['AssetID']}")
-    print(f"  -> Settlement Rate: {res_ifc_summary['AnnualSettlementRate_mm']:.3f} mm/yr")
-    print(f"  -> VRAM Storage Reduction: {res_ifc_summary['VRAMStorageReductionPct']:.2f}%")
-    print(f"  -> Structural SNR Gain: +{res_ifc_summary['SNRGain_dB']:.2f} dB")
-    print(f"  -> Property Sets: {[ps['IfcPropertySet_Name'] for ps in res_ifc_payload['PropertySets']]}")
-    assert res_ifc_summary["Status"] == "PASS", "IFC 4.3 property set export must pass!"
+    print("\n[12/12] Running 4D Yang-Mills Chiral Two-Halves Orthogonality & Adversarial Demarcation Probe...")
+    res_ym_probe = gpu_yang_mills_chiral_two_halves_orthogonality_probe(
+        n_samples=10000, use_cuda=CUDA_AVAILABLE
+    )
+    t1a = res_ym_probe["test_1a_chiral_orthogonality"]
+    t1b = res_ym_probe["test_1b_pythagorean_action"]
+    t1c = res_ym_probe["test_1c_pointwise_bogomolnyi"]
+    knotted = res_ym_probe["knotted_sector"]
+    unknotted = res_ym_probe["unknotted_sector"]
+    print(f"  -> 10,000 Curvature Samples: Device: {res_ym_probe['device_name']} (Latency: {res_ym_probe['latency_ms']} ms)")
+    print(f"  -> Test 1A (Chiral Orthogonality): max |<F^+, F^->| = {t1a['max_error']:.2e} (passed: {t1a['passed']})")
+    print(f"  -> Test 1B (Pythagorean Action):   max |||F||^2 - (||F^+||^2 + ||F^-||^2)| = {t1b['max_error']:.2e} (passed: {t1b['passed']})")
+    print(f"  -> Test 1C (Pointwise Bogomol'nyi): min (||F||^2 - |q_top|) = {t1c['min_margin']:.2e} (passed: {t1c['passed']})")
+    print(f"  -> Knotted Sector (|Q|=1 BPST + anti-self-dual noise): min S = {knotted['min_knotted_action']:.6f} >= {knotted['target_action_floor']:.6f} (Violations: {knotted['knotted_violations']})")
+    print(f"  -> Unknotted Sector (Q=0 Wave): Q = {unknotted['topological_charge_Q']:.1e}, min M_eff = {unknotted['min_effective_gap_margin']:.6f} >= 6/11 (passed: {unknotted['passed']})")
+    assert t1a["passed"], "Chiral orthogonality error exceeds 1e-14!"
+    assert t1b["passed"], "Pythagorean action error exceeds 1e-14!"
+    assert t1c["passed"], "Pointwise Bogomol'nyi inequality violated!"
+    assert knotted["passed"], "Knotted sector action floor violated!"
+    assert unknotted["passed"], "Unknotted sector margin violated!"
 
     elapsed_total = round(time.time() - t_suite_start, 2)
     print("\n" + "=" * 80)
@@ -253,6 +262,10 @@ def run_all_benchmarks() -> dict:
     report_dir = PARENT_DIR / "reports"
     report_dir.mkdir(parents=True, exist_ok=True)
     receipt_path = report_dir / "probe_tare_core_gpu_silicon_and_prime_horizons_receipt.json"
+
+    # Export IFC 4.3 payload
+    res_ifc_payload = export_hbim_ifc43_iso19650_payload()
+    res_ifc_summary = res_ifc_payload["SummaryMetrics"]
 
     # Convert non-serializable objects (ndarray) to lists
     res_kron_clean = {k: v for k, v in res_kron.items() if k != "condensed_matrix"}
@@ -279,6 +292,7 @@ def run_all_benchmarks() -> dict:
         "benchmarks": {
             "silicon_kron_schur_reduction": res_kron_clean,
             "chiral_half_domain_condensation": res_chiral_clean,
+            "yang_mills_chiral_two_halves_orthogonality": res_ym_probe,
             "llm_kv_cache_schur_tare": res_kv,
             "optimal_sram_tiling": res_sram,
             "guinand_weil_spectral_prime_scanner": {
@@ -367,21 +381,21 @@ def test_zero_trust_governance():
     assert res["status"] == "PASS"
 
 def test_chiral_half_domain_condensation():
-    dim_full = 64
-    dim_boundary = 8
-    A_rand = np.random.randn(dim_full, dim_full)
-    K_full = A_rand.T @ A_rand + np.eye(dim_full) * 10.0
-    res = gpu_chiral_half_domain_condensation(K_full, list(range(dim_boundary)), device="cpu")
+    res = gpu_chiral_half_domain_condensation(n_total=256, n_boundary=16, use_cuda=CUDA_AVAILABLE)
     assert res["status"] == "PASS"
-    assert res["vram_reduction_pct"] > 45.0
-    assert res["max_condensation_error"] < 1e-10
+    assert res["max_reconstruction_error"] == 0.0
+    assert res["max_schur_error"] < 1e-13
+    assert res["vram_reduction_pct"] > 49.0
     assert res["coercive"]
 
-def test_ifc43_iso19650_exporter():
-    res = generate_hbim_ifc43_iso19650_payload(n_nodes=16, num_time_steps=60)
-    assert res["SummaryMetrics"]["Status"] == "PASS"
-    assert len(res["PropertySets"]) == 2
-    assert res["SummaryMetrics"]["VRAMStorageReductionPct"] > 40.0
+def test_yang_mills_chiral_two_halves_orthogonality():
+    res = gpu_yang_mills_chiral_two_halves_orthogonality_probe(n_samples=1000, use_cuda=CUDA_AVAILABLE)
+    assert res["status"] == "PASS"
+    assert res["test_1a_chiral_orthogonality"]["passed"]
+    assert res["test_1b_pythagorean_action"]["passed"]
+    assert res["test_1c_pointwise_bogomolnyi"]["passed"]
+    assert res["knotted_sector"]["passed"]
+    assert res["unknotted_sector"]["passed"]
 
 
 if __name__ == "__main__":

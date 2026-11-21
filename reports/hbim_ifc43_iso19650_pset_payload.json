@@ -41,7 +41,7 @@
       "MaxCondensationError": 0.0,
       "MinCondensedEigenvalue": 5306715111.031713,
       "CoercivityStatus": "STRICTLY_COERCIVE_POSITIVE_DEFINITE",
-      "ExecutionDevice": "CPU",
+      "ExecutionDevice": "CPU (NumPy FP64)",
       "CUDASpeedup": false
     }
   ],
