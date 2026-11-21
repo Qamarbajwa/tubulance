@@ -1,0 +1,276 @@
+{
+  "probe_id": "PROBE-ROSETTA-WAVEFUNCTION-ENTANGLEMENT-RECONSTRUCTION-001",
+  "author": "Qamar Munawer",
+  "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+  "methodology": "ai is being used as a tool",
+  "epistemic_status": "verified-finite",
+  "all_four_clay_millennium_problems_open": true,
+  "timestamp_utc": "2026-11-21T14:13:06Z",
+  "elapsed_seconds": 0.008111000061035156,
+  "verified": true,
+  "status": "PASS",
+  "summary": {
+    "wavefunction_sweeps_count": 16,
+    "born_normalization_verified": true,
+    "even_parity_verified": true,
+    "pythagorean_schur_partition_verified": true,
+    "entanglement_hierarchy_verified": "0 < 1/2 < 2/3 (Product < Hodge/NS < Yang-Mills)",
+    "lean4_matched": true
+  },
+  "results": {
+    "wavefunction_reconstruction_sweeps": [
+      {
+        "L": 1.0,
+        "K": 16,
+        "mode": 0,
+        "eigenvalue": 9.869595850360787,
+        "coeff_norm_err": 0.0,
+        "born_quadrature_norm": 1.0000000000000002,
+        "parity_error": 5.551115123125783e-16,
+        "center_amplitude": 1.4136656790244295,
+        "boundary_amplitude_left": 8.667706528791298e-17,
+        "boundary_amplitude_right": 8.667706528791298e-17
+      },
+      {
+        "L": 1.0,
+        "K": 16,
+        "mode": 1,
+        "eigenvalue": 88.82644721956697,
+        "coeff_norm_err": 0.0,
+        "born_quadrature_norm": 1.0000000000000004,
+        "parity_error": 1.2628786905111156e-15,
+        "center_amplitude": 1.4145789918662368,
+        "boundary_amplitude_left": -2.597609332842147e-16,
+        "boundary_amplitude_right": -2.597609332842147e-16
+      },
+      {
+        "L": 1.0,
+        "K": 32,
+        "mode": 0,
+        "eigenvalue": 9.86959585031882,
+        "coeff_norm_err": 1.1102230246251565e-16,
+        "born_quadrature_norm": 1.0,
+        "parity_error": 5.551115123125783e-16,
+        "center_amplitude": 1.4136654367092052,
+        "boundary_amplitude_left": 8.667706160979746e-17,
+        "boundary_amplitude_right": 8.667706160979746e-17
+      },
+      {
+        "L": 1.0,
+        "K": 32,
+        "mode": 1,
+        "eigenvalue": 88.82644721953204,
+        "coeff_norm_err": 1.1102230246251565e-16,
+        "born_quadrature_norm": 1.0000000000000002,
+        "parity_error": 1.2628786905111156e-15,
+        "center_amplitude": 1.4145787702690171,
+        "boundary_amplitude_left": -2.597609400676786e-16,
+        "boundary_amplitude_right": -2.597609400676786e-16
+      },
+      {
+        "L": 2.0,
+        "K": 16,
+        "mode": 0,
+        "eigenvalue": 2.4673669002755405,
+        "coeff_norm_err": 4.440892098500626e-16,
+        "born_quadrature_norm": 1.0000000000000004,
+        "parity_error": 4.440892098500626e-16,
+        "center_amplitude": 0.9984499682170997,
+        "boundary_amplitude_left": 6.146268179945892e-17,
+        "boundary_amplitude_right": 6.146268179945892e-17
+      },
+      {
+        "L": 2.0,
+        "K": 16,
+        "mode": 1,
+        "eigenvalue": 22.20664033748077,
+        "coeff_norm_err": 4.440892098500626e-16,
+        "born_quadrature_norm": 1.0000000000000004,
+        "parity_error": 8.881784197001252e-16,
+        "center_amplitude": 1.0010325355803258,
+        "boundary_amplitude_left": -1.836237309408043e-16,
+        "boundary_amplitude_right": -1.836237309408043e-16
+      },
+      {
+        "L": 2.0,
+        "K": 32,
+        "mode": 0,
+        "eigenvalue": 2.4673669001080194,
+        "coeff_norm_err": 0.0,
+        "born_quadrature_norm": 1.0,
+        "parity_error": 4.440892098500626e-16,
+        "center_amplitude": 0.9984492835632034,
+        "boundary_amplitude_left": 6.14626714194847e-17,
+        "boundary_amplitude_right": 6.14626714194847e-17
+      },
+      {
+        "L": 2.0,
+        "K": 32,
+        "mode": 1,
+        "eigenvalue": 22.206640337342158,
+        "coeff_norm_err": 2.220446049250313e-16,
+        "born_quadrature_norm": 1.0,
+        "parity_error": 8.881784197001252e-16,
+        "center_amplitude": 1.0010319082487773,
+        "boundary_amplitude_left": -1.8362375013231954e-16,
+        "boundary_amplitude_right": -1.8362375013231954e-16
+      },
+      {
+        "L": 4.0,
+        "K": 16,
+        "mode": 0,
+        "eigenvalue": 0.6167135242118365,
+        "coeff_norm_err": 0.0,
+        "born_quadrature_norm": 1.0000000000000004,
+        "parity_error": 2.7755575615628914e-16,
+        "center_amplitude": 0.7027184047720625,
+        "boundary_amplitude_left": 4.394860187325576e-17,
+        "boundary_amplitude_right": 4.394860187325576e-17
+      },
+      {
+        "L": 4.0,
+        "K": 16,
+        "mode": 1,
+        "eigenvalue": 5.551774148937806,
+        "coeff_norm_err": 0.0,
+        "born_quadrature_norm": 1.0000000000000002,
+        "parity_error": 6.314393452555578e-16,
+        "center_amplitude": 0.7100152004749972,
+        "boundary_amplitude_left": -1.2968522916432463e-16,
+        "boundary_amplitude_right": -1.2968522916432463e-16
+      },
+      {
+        "L": 4.0,
+        "K": 32,
+        "mode": 0,
+        "eigenvalue": 0.6167135235472545,
+        "coeff_norm_err": 2.220446049250313e-16,
+        "born_quadrature_norm": 1.0000000000000004,
+        "parity_error": 3.3306690738754696e-16,
+        "center_amplitude": 0.7027164764033491,
+        "boundary_amplitude_left": 4.394857277797715e-17,
+        "boundary_amplitude_right": 4.394857277797715e-17
+      },
+      {
+        "L": 4.0,
+        "K": 32,
+        "mode": 1,
+        "eigenvalue": 5.551774148379041,
+        "coeff_norm_err": 2.220446049250313e-16,
+        "born_quadrature_norm": 1.0000000000000002,
+        "parity_error": 6.314393452555578e-16,
+        "center_amplitude": 0.7100134198060317,
+        "boundary_amplitude_left": -1.2968528350163876e-16,
+        "boundary_amplitude_right": -1.2968528350163876e-16
+      },
+      {
+        "L": 6.0,
+        "K": 16,
+        "mode": 0,
+        "eigenvalue": 0.27384819217844447,
+        "coeff_norm_err": 2.220446049250313e-16,
+        "born_quadrature_norm": 1.0000000000000002,
+        "parity_error": 3.608224830031759e-16,
+        "center_amplitude": 0.5692761346145684,
+        "boundary_amplitude_left": 3.6545828376345995e-17,
+        "boundary_amplitude_right": 3.6545828376345995e-17
+      },
+      {
+        "L": 6.0,
+        "K": 16,
+        "mode": 1,
+        "eigenvalue": 2.4676745950347128,
+        "coeff_norm_err": 0.0,
+        "born_quadrature_norm": 0.9999999999999998,
+        "parity_error": 6.661338147750939e-16,
+        "center_amplitude": 0.582655923602331,
+        "boundary_amplitude_left": -1.0567241181140049e-16,
+        "boundary_amplitude_right": -1.0567241181140049e-16
+      },
+      {
+        "L": 6.0,
+        "K": 32,
+        "mode": 0,
+        "eigenvalue": 0.27384819070372185,
+        "coeff_norm_err": 1.1102230246251565e-16,
+        "born_quadrature_norm": 0.9999999999999999,
+        "parity_error": 3.7470027081099033e-16,
+        "center_amplitude": 0.5692726169289991,
+        "boundary_amplitude_left": 3.655290749487288e-17,
+        "boundary_amplitude_right": 3.655290749487288e-17
+      },
+      {
+        "L": 6.0,
+        "K": 32,
+        "mode": 1,
+        "eigenvalue": 2.467674593762898,
+        "coeff_norm_err": 0.0,
+        "born_quadrature_norm": 0.9999999999999998,
+        "parity_error": 6.661338147750939e-16,
+        "center_amplitude": 0.5826526331786674,
+        "boundary_amplitude_left": -1.0566592098224399e-16,
+        "boundary_amplitude_right": -1.0566592098224399e-16
+      }
+    ],
+    "prime_composite_schur_spectrum": {
+      "sin_sq_theta": 0.9390172644704708,
+      "cos_sq_theta": 0.06098273552952918,
+      "pythagorean_identity_residual": 0.0,
+      "schmidt_singular_values": [
+        0.3185121152684178,
+        0.10300817770726003
+      ],
+      "density_matrix_eigenvalues": [
+        0.9053130205671897,
+        0.0946869794328103
+      ],
+      "linear_entropy": 0.1714427107174018,
+      "von_neumann_entropy": 0.31324971331290075,
+      "purity": 0.8285572892825982
+    },
+    "canonical_four_workspace_entanglement_states": {
+      "workspace_01_hodge": {
+        "state": "Spin(8) Chiral Pfaffian Bell Singlet",
+        "probabilities": [
+          0.5,
+          0.5
+        ],
+        "linear_entropy": 0.5,
+        "von_neumann_entropy": 0.6931471805599453,
+        "purity": 0.5
+      },
+      "workspace_02_yang_mills": {
+        "state": "3-Quark Baryonic Y-Junction Color Singlet",
+        "probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "linear_entropy": 0.6666666666666667,
+        "von_neumann_entropy": 1.0986122886681096,
+        "purity": 0.3333333333333333
+      },
+      "workspace_03_riemann": {
+        "state": "Prime-Composite Fock Wedge State",
+        "linear_entropy": 0.0,
+        "von_neumann_entropy": -0.0,
+        "sin_sq_theta": 0.94746736,
+        "purity": 1.0
+      },
+      "workspace_04_navier_stokes": {
+        "heterochiral_entangled": {
+          "state": "Heterochiral Vortex Triad (|+,-> + |-,+>)/sqrt(2)",
+          "linear_entropy": 0.5,
+          "von_neumann_entropy": 0.6931471805599453,
+          "purity": 0.5
+        },
+        "homochiral_product": {
+          "state": "Homochiral Vortex Product State |+,+>",
+          "linear_entropy": 0.0,
+          "von_neumann_entropy": 0.0,
+          "purity": 1.0
+        }
+      }
+    }
+  }
+}

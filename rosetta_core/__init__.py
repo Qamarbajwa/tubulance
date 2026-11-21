@@ -20,6 +20,11 @@ from .schur_condensation import guyan_schur_tare, three_tier_sub_gap_tare
 from .tripotent_compressor import squarefree_subspace_compress
 from .pfaffian_routing import four_spin_torus_pfaffian_count
 from .cfd_helical_filter import cubic_strain_tube_sheet_classifier
+from .quantum_entanglement import (
+    reconstruct_dirichlet_eigen_wavefunction,
+    bipartite_schur_entanglement_spectrum,
+    canonical_four_workspace_entanglement_states,
+)
 
 __all__ = [
     "guyan_schur_tare",
@@ -27,5 +32,8 @@ __all__ = [
     "squarefree_subspace_compress",
     "four_spin_torus_pfaffian_count",
     "cubic_strain_tube_sheet_classifier",
+    "reconstruct_dirichlet_eigen_wavefunction",
+    "bipartite_schur_entanglement_spectrum",
+    "canonical_four_workspace_entanglement_states",
 ]
-__version__ = "1.0.0"
+__version__ = "1.1.0"
