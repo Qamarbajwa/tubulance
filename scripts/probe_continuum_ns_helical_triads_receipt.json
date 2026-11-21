@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "methodology": "ai is being used as a tool",
-  "author": "Arqam, Brandenburg University of Technology Cottbus-Senftenberg",
+  "author": "Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg",
   "taylor_green": {
     "grid_resolution": "16^3",
     "t_homochiral_plus": 1.753130419894979e-19,
