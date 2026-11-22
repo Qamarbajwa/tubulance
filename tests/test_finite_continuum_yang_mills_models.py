@@ -39,6 +39,11 @@ from scripts.probe_4d_matrix_gauge_continuum import (
 )
 from scripts.probe_infinite_volume_r4_transition import compute_crossover_spectrum
 from scripts.probe_osterwalder_schrader_os4_correlator import simulate_glueball_correlator
+from scripts.probe_nonabelian_commutator_schur_gap import (
+    construct_spherical_multiplet_basis,
+    compute_quartic_stiffness_tensor,
+    compute_schur_spectrum_at_radius
+)
 
 
 def test_fuzzy_sphere_casimir_and_commutation():
@@ -170,3 +175,32 @@ def test_4d_ornstein_zernike_drift_tare_and_correlator_scaling():
         # Check tared effective mass exactly recovers m_true = 1.2000
         assert math.isclose(m_eff_tared, m_true, rel_tol=1e-14)
         assert tare_err < 1e-14
+
+
+def test_nonabelian_commutator_stiffness_and_schur_gap():
+    """Verify non-abelian quartic commutator stiffness, B=0 selection rule, and mass plateau."""
+    for N, expected_stiff in [(3, 5.0), (4, 2.0), (5, 1.0)]:
+        T_l1, ortho_l2, j = construct_spherical_multiplet_basis(N)
+        M_stiff = compute_quartic_stiffness_tensor(T_l1, ortho_l2)
+        
+        # Exact isotropic diagonal stiffness: M_stiff == C_stiff * I_3
+        for a in range(3):
+            for b in range(3):
+                if a == b:
+                    assert math.isclose(M_stiff[a, b], expected_stiff, rel_tol=1e-12)
+                else:
+                    assert abs(M_stiff[a, b]) < 1e-12
+                    
+        # Tree-level gap vanishes as R -> infty
+        r_tree_small = compute_schur_spectrum_at_radius(1.0, N, v_cond=0.0, is_isotropic=True)
+        r_tree_large = compute_schur_spectrum_at_radius(100.0, N, v_cond=0.0, is_isotropic=True)
+        assert r_tree_small["min_eval_Seff"] == 2.0
+        assert math.isclose(r_tree_large["min_eval_Seff"], 0.0002, rel_tol=1e-6)
+        
+        # Non-abelian condensate provides exact mass plateau Delta = C_stiff * v^2
+        v = 0.5
+        expected_plateau = expected_stiff * (v ** 2)
+        r_cond_large = compute_schur_spectrum_at_radius(1000.0, N, v_cond=v, is_isotropic=True)
+        assert math.isclose(r_cond_large["min_eval_Seff"], expected_plateau, rel_tol=1e-4)
+        assert r_cond_large["norm_B"] < 1e-15
+
