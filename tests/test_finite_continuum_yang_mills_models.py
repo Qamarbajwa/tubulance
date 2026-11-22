@@ -52,6 +52,10 @@ from scripts.probe_dynamical_chamber_and_markov_seams import (
     verify_universal_trophic_sum_of_squares,
     verify_trophic_sum_of_squares_and_tridiagonal_markov
 )
+from scripts.probe_twin_prime_spectral_and_kahler_schur import (
+    compute_twin_prime_spectral_localization,
+    compute_kahler_lefschetz_sl2_and_primitive_schur
+)
 
 
 def test_fuzzy_sphere_casimir_and_commutation():
@@ -322,6 +326,26 @@ def test_trophic_four_elevenths_ratio_and_tridiagonal_markov():
     assert tm["max_off_tridiag"] <= 2e-13
     assert tm["max_corner_err"] <= 1e-13
     assert tm["max_quad_err"] <= 1e-12
+
+
+def test_phase1_phase2_twin_prime_and_kahler_schur_bridge():
+    """
+    Verify twin-prime dipole spectral localization on K_N = Q_N^-1
+    and finite 70D Kahler-Lefschetz sl(2) primitive Schur tare positivity.
+    """
+    res_tp = compute_twin_prime_spectral_localization([6, 11, 25, 35, 46])
+    expected_pairs = {6: (11, 13), 11: (29, 31), 25: (71, 73), 35: (137, 139), 46: (197, 199)}
+    for r in res_tp:
+        assert r["highest_twin_pair"] == expected_pairs[r["N"]]
+        assert r["bound_holds"] is True
+        assert r["lam_min_Q"] > 0.0
+        
+    k_res = compute_kahler_lefschetz_sl2_and_primitive_schur(eps_mix=0.5)
+    assert k_res["total_dim"] == 70
+    assert k_res["dim_prim_22"] == 20
+    assert k_res["orth_min_S_prim"] > 0.99
+    assert k_res["def_min_S_prim"] > 0.80
+
 
 
 

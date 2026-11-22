@@ -36,6 +36,10 @@ from scripts.probe_dynamical_chamber_and_markov_seams import (
     compute_pde_dressed_viscosity,
     verify_trophic_sum_of_squares_and_tridiagonal_markov
 )
+from scripts.probe_twin_prime_spectral_and_kahler_schur import (
+    compute_twin_prime_spectral_localization,
+    compute_kahler_lefschetz_sl2_and_primitive_schur
+)
 
 def test_antipodal_pair_properties():
     """Verify that antipodal points on S^2 have distance 2 (squared distance 4) and midpoint 0."""
@@ -272,6 +276,50 @@ def test_tridiagonal_markov_inverse_and_quadratic_sos():
     assert tm["max_off_tridiag"] <= 2e-13
     assert tm["max_corner_err"] <= 1e-13
     assert tm["max_quad_err"] <= 1e-12
+
+
+def test_twin_prime_tridiagonal_spectral_bounds():
+    """
+    Verify twin-prime dipole Rayleigh bounds on K_N = Q_N^-1 across
+    N in {5, 6, 10, 11, 15, 25, 35, 46}, confirming:
+    1. E_bond == p_bar / g and (p+1)/2 on twin primes to <= 1e-13.
+    2. lambda_max(K_N) >= max_j R_dipole(j) >= max_j (p_bar_j / g_j).
+    3. Localization on highest twin-prime pair/cluster below p_N.
+    """
+    res = compute_twin_prime_spectral_localization()
+    for r in res:
+        assert r["max_bond_err"] <= 1e-13
+        assert r["max_twin_err"] <= 1e-14
+        assert r["bound_holds"] is True
+        assert r["lam_min_Q"] > 0.0
+        assert r["best_bond_pair"] == r["highest_twin_pair"]
+        assert r["cluster_energy"] >= 0.90
+
+
+def test_kahler_lefschetz_sl2_and_primitive_schur():
+    """
+    Verify finite Kahler-Lefschetz sl(2) algebra on Lambda^{p,p}(C^4):
+    1. Exterior dimensions [1, 16, 36, 16, 1] summing to 70.
+    2. Exact 70x70 sl(2) commutation relations <= 1e-14.
+    3. Middle decomposition 36 = 20 + 15 + 1.
+    4. Primitive Schur complement S_prim > 0 with rank 20.
+    """
+    k_res = compute_kahler_lefschetz_sl2_and_primitive_schur(eps_mix=0.5)
+    assert k_res["sector_dims"] == [1, 16, 36, 16, 1]
+    assert k_res["total_dim"] == 70
+    assert k_res["err_L_Lam"] <= 1e-14
+    assert k_res["err_H_L"] <= 1e-14
+    assert k_res["err_H_Lam"] <= 1e-14
+    assert k_res["dim_prim_22"] == 20
+    assert k_res["dim_LP11"] == 15
+    assert k_res["dim_L200"] == 1
+    assert k_res["rank_LP11"] == 15
+    assert k_res["rank_L200"] == 1
+    assert k_res["orth_min_S_prim"] > 0.99
+    assert k_res["orth_rank_S_prim"] == 20
+    assert k_res["def_min_S_prim"] > 0.80
+    assert k_res["def_rank_S_prim"] == 20
+
 
 
 
