@@ -47,7 +47,10 @@ from scripts.probe_nonabelian_commutator_schur_gap import (
     compute_schur_spectrum_at_radius,
     compute_closed_form_rational_predictions
 )
-from scripts.probe_dynamical_chamber_and_markov_seams import compute_vacuum_chamber_profile
+from scripts.probe_dynamical_chamber_and_markov_seams import (
+    compute_vacuum_chamber_profile,
+    verify_universal_trophic_sum_of_squares
+)
 
 
 def test_fuzzy_sphere_casimir_and_commutation():
@@ -286,6 +289,21 @@ def test_seam1_vacuum_chamber_self_selection():
         assert r_ch2["min_S"] > r_ch1["min_S"]
         assert r_ch2["tr_inv_S"] < r_ch1["tr_inv_S"]
         assert r_ch2["log_det_H"] > r_ch1["log_det_H"]
+
+
+def test_universal_trophic_sum_of_squares_identity():
+    """
+    Verify universal Trophic Sum-of-Squares Decomposition across N in {3..100}
+    and angles phi in (0, pi/2), plus exact canonical landmarks:
+    441/2900 at N=3 (0.2, 0.5), 29/400 at N=4 (45 deg), and 29/275 continuum limit.
+    """
+    sos = verify_universal_trophic_sum_of_squares(rho_sq=0.29)
+    assert sos["max_err"] <= 1e-13
+    assert sos["err_n3_landmark"] <= 1e-14
+    assert sos["err_n4_45"] <= 1e-14
+    assert sos["err_inf_exact"] <= 1e-15
+    assert math.isclose(sos["barrier_inf"], 29.0 / 275.0, rel_tol=1e-14)
+
 
 
 

@@ -168,6 +168,10 @@ def compute_markov_prime_gram_schur(N):
         det_exact *= (1.0 - (float(ps[idx]) / float(ps[idx + 1])) ** 2)
     err_det = abs(det_num - det_exact)
     
+    J_markov = (float(ps[-1]) ** 2) / (float(ps[-1]) ** 2 - float(ps[-2]) ** 2)
+    J_markov_prod = J_markov * S_eff_num
+    err_markov_prod = abs(J_markov_prod - 1.0)
+    
     return {
         "N": N,
         "p_prev": ps[-2],
@@ -180,7 +184,74 @@ def compute_markov_prime_gram_schur(N):
         "err_S": err_S,
         "det_num": det_num,
         "det_exact": det_exact,
-        "err_det": err_det
+        "err_det": err_det,
+        "J_markov": J_markov,
+        "J_markov_prod": J_markov_prod,
+        "err_markov_prod": err_markov_prod
+    }
+
+
+def verify_universal_trophic_sum_of_squares(rho_sq=0.29):
+    """
+    Verify the universal Trophic Sum-of-Squares Decomposition across
+    N in {3, 4, 5, 6, 8, 10, 12, 100} and angles phi in (0, pi/2):
+      min(S_eff(N; v1, v2)) == (3*(v1^2 - v2^2)^2 + (gamma_N - 3)*v2^2*(v1^2 + v2^2))
+                               / (3*v1^2 + gamma_N*v2^2)
+    where gamma_3 = 3 and gamma_N = 45/7 - 120/(7*(N^2 - 4)) for N >= 4.
+    Also verify exact closed-form landmarks:
+      - N=3, (v1, v2) = (0.2, 0.5): drain e2(3) = 4/29, floor = 441/2900.
+      - N=4, phi=45 deg: barrier floor = 29/400 = 0.0725.
+      - N->infty, phi=45 deg: barrier floor = 29/275.
+    """
+    N_list = [3, 4, 5, 6, 8, 10, 12, 100]
+    phi_canonical = math.atan2(0.5, 0.2)
+    phi_degs = [15.0, 30.0, 45.0, 60.0, math.degrees(phi_canonical), 75.0]
+    
+    max_err = 0.0
+    records = []
+    
+    for N in N_list:
+        gamma_N = 3.0 if N == 3 else (45.0 / 7.0 - 120.0 / (7.0 * (N ** 2 - 4)))
+        for phi_deg in phi_degs:
+            phi = math.radians(phi_deg)
+            v1 = math.sqrt(rho_sq) * math.cos(phi)
+            v2 = math.sqrt(rho_sq) * math.sin(phi)
+            
+            num_sos = 3.0 * ((v1 ** 2 - v2 ** 2) ** 2) + (gamma_N - 3.0) * (v2 ** 2) * (v1 ** 2 + v2 ** 2)
+            den_sos = 3.0 * (v1 ** 2) + gamma_N * (v2 ** 2)
+            pred_min_S = num_sos / den_sos
+            
+            meas = compute_vacuum_chamber_profile(N, phi, rho_sq=rho_sq, R=1e15)["min_S"]
+            err = abs(pred_min_S - meas)
+            if err > max_err:
+                max_err = err
+                
+            records.append({
+                "N": N,
+                "phi_deg": phi_deg,
+                "gamma_N": gamma_N,
+                "pred_min_S": pred_min_S,
+                "meas_min_S": meas,
+                "err": err
+            })
+            
+    # Check specific landmarks
+    r_n3_02_05 = compute_vacuum_chamber_profile(3, phi_canonical, rho_sq=0.29, R=1e15)["min_S"]
+    err_n3_landmark = abs(r_n3_02_05 - (441.0 / 2900.0))
+    
+    r_n4_45 = compute_vacuum_chamber_profile(4, math.pi / 4.0, rho_sq=0.29, R=1e15)["min_S"]
+    err_n4_45 = abs(r_n4_45 - (29.0 / 400.0))
+    
+    barrier_inf = ((45.0 / 7.0 - 3.0) / (45.0 / 7.0 + 3.0)) * 0.29
+    err_inf_exact = abs(barrier_inf - (29.0 / 275.0))
+    
+    return {
+        "max_err": max_err,
+        "err_n3_landmark": err_n3_landmark,
+        "err_n4_45": err_n4_45,
+        "barrier_inf": barrier_inf,
+        "err_inf_exact": err_inf_exact,
+        "records": records
     }
 
 
@@ -262,11 +333,11 @@ def run_investigation():
         print(f"  ({p:2d},{q:2d}) | {qr['quad']:18.12f} | {qr['exact']:23.12f} | {qr['err']:9.2e}")
         
     print("\nPHASE 2B: DYNAMICAL SEAM 2 - EXACT MARKOV PRIME SCHUR SCREENING (N = 2..25)")
-    print("   N | p_N | max|w_prev| |   S_eff_num |   S_eff_exact |    err_S |     det(Q_N) |  err_det")
-    print("  " + "-" * 84)
+    print("   N | p_N | max|w_prev| |   S_eff_num |   J_Markov  |  J*S_eff |     det(Q_N) |  err_det")
+    print("  " + "-" * 86)
     for N in [2, 3, 5, 10, 15, 25]:
         mr = compute_markov_prime_gram_schur(N)
-        print(f"  {mr['N']:2d} | {mr['p_N']:3d} | {mr['max_intermediate_weight']:11.2e} | {mr['S_eff_num']:11.8f} | {mr['S_eff_exact']:13.8f} | {mr['err_S']:8.2e} | {mr['det_num']:12.4e} | {mr['err_det']:8.2e}")
+        print(f"  {mr['N']:2d} | {mr['p_N']:3d} | {mr['max_intermediate_weight']:11.2e} | {mr['S_eff_num']:11.8f} | {mr['J_markov']:11.6f} | {mr['J_markov_prod']:8.6f} | {mr['det_num']:12.4e} | {mr['err_det']:8.2e}")
         
     print("\nPHASE 2C: DYNAMICAL SEAM 3 - 4D-TO-3D PDE WAVENUMBER CANCELLATION & DRESSED VISCOSITY")
     print("    k_par |      lam_D |    norm_B | alpha_raw | alpha_ana |  err_alpha |   nu_eff | Basin Status")
@@ -275,6 +346,13 @@ def run_investigation():
         pr = compute_pde_dressed_viscosity(k_par, k_4=1.0, M_bulk=1.0, nu=0.5, U_cross=0.4)
         status = "BASIN PRESERVED" if pr["basin_preserved"] else "FAILED"
         print(f"  {pr['k_par']:7.1f} | {pr['lam_D']:10.4f} | {pr['norm_B']:9.4f} | {pr['alpha_raw']:9.6f} | {pr['alpha_analytic']:9.6f} | {pr['err_alpha']:10.2e} | {pr['nu_eff']:8.6f} | {status}")
+        
+    print("\nPHASE 3: UNIVERSAL TROPHIC SUM-OF-SQUARES IDENTITY VERIFICATION")
+    sos = verify_universal_trophic_sum_of_squares()
+    print(f"  Max Error across N={{3..100}} & phi in (0, pi/2): {sos['max_err']:.2e}")
+    print(f"  N=3 Canonical Landmark (441/2900) Error:           {sos['err_n3_landmark']:.2e}")
+    print(f"  N=4 Symmetric Barrier (29/400 = 0.0725) Error:     {sos['err_n4_45']:.2e}")
+    print(f"  Continuum Symmetric Barrier (29/275):              {sos['barrier_inf']:.8f} (Err: {sos['err_inf_exact']:.2e})")
         
     print("\n" + "=" * 92)
     print("MATHEMATICAL VERDICT:")

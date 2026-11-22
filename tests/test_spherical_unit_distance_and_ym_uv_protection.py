@@ -230,6 +230,8 @@ def test_seam2_cayley_poisson_markov_prime_screening():
         assert mr["max_intermediate_weight"] <= 1e-14
         assert mr["err_S"] <= 1e-14
         assert mr["err_det"] <= 1e-14
+        assert mr["err_markov_prod"] <= 1e-15
+        assert math.isclose(mr["J_markov_prod"], 1.0, abs_tol=1e-15)
         assert mr["S_eff_num"] > 0.0
         assert mr["det_num"] > 0.0
 
