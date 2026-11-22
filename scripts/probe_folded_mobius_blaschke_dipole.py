@@ -314,6 +314,80 @@ def verify_quantized_phase_slip_integral():
     }
 
 
+def verify_schrodinger_poschl_teller_scattering():
+    """
+    Verify the exact 1D Schrodinger / Poschl-Teller / Darboux S-matrix equivalence:
+    - Off-line zero u0 > 0 creates soliton well V(x) = -2 * u0^2 * sech^2(u0 * x) with
+      exact normalized bound state psi_0(x) = sqrt(u0 / 2) * sech(u0 * x) at E_0 = -u0^2.
+    - Darboux Jost wave psi_k(x) = (-i*k + u0*tanh(u0*x)) * exp(i*k*x) solves
+      (-d^2/dx^2 + V(x)) psi_k = k^2 * psi_k, k = t - t0, with transmission S-matrix
+      S(k) = (-i*k + u0)/(-i*k - u0) == (i*k - u0)/(i*k + u0) == B_{rho_+}(1/2 + i*t).
+    - Wigner time delay dPhi/dt = -2*u0 / (u0^2 + k^2) integrates to -2*pi (Levinson N = 1).
+    """
+    t0 = 14.134725141734693
+    max_bound_energy_err = 0.0
+    max_norm_err = 0.0
+    max_smatrix_err = 0.0
+    max_jost_pde_err = 0.0
+    max_wigner_err = 0.0
+
+    for u0 in (0.15, 0.25, 0.40):
+        L_box = 45.0 / u0
+        n_x = 1200
+        x = np.linspace(-L_box, L_box, n_x)
+        dx = x[1] - x[0]
+        V = -2.0 * (u0 ** 2) / (np.cosh(u0 * x) ** 2)
+
+        x_int = x[1:-1]
+        V_int = V[1:-1]
+        H_mat = (
+            (2.0 / (dx ** 2)) * np.eye(n_x - 2)
+            - (1.0 / (dx ** 2)) * (np.eye(n_x - 2, k=1) + np.eye(n_x - 2, k=-1))
+            + np.diag(V_int)
+        )
+        evals = np.linalg.eigvalsh(H_mat)
+        e0_num = float(evals[0])
+        e0_exact = -(u0 ** 2)
+        max_bound_energy_err = max(max_bound_energy_err, abs(e0_num - e0_exact))
+
+        psi0 = math.sqrt(u0 / 2.0) / np.cosh(u0 * x)
+        norm_num = float(np.trapezoid(psi0 ** 2, x))
+        max_norm_err = max(max_norm_err, abs(norm_num - 1.0))
+
+        for k in (-2.0, -0.5, 0.0, 0.5, 2.0):
+            t = t0 + k
+            B_val = half_plane_blaschke_dipole(complex(0.5, t), u0, t0)
+            s_out = ((-1j * k + u0 * np.tanh(u0 * L_box)))
+            s_in = ((-1j * k + u0 * np.tanh(-u0 * L_box)))
+            S_jost = s_out / s_in
+            max_smatrix_err = max(max_smatrix_err, abs(S_jost - B_val))
+
+            x_loc = np.array([-1.2, 0.0, 0.7])
+            h_fd = 1e-3
+            f_m2 = (-1j * k + u0 * np.tanh(u0 * (x_loc - 2.0 * h_fd))) * np.exp(1j * k * (x_loc - 2.0 * h_fd))
+            f_m1 = (-1j * k + u0 * np.tanh(u0 * (x_loc - h_fd))) * np.exp(1j * k * (x_loc - h_fd))
+            psi_c = (-1j * k + u0 * np.tanh(u0 * x_loc)) * np.exp(1j * k * x_loc)
+            f_p1 = (-1j * k + u0 * np.tanh(u0 * (x_loc + h_fd))) * np.exp(1j * k * (x_loc + h_fd))
+            f_p2 = (-1j * k + u0 * np.tanh(u0 * (x_loc + 2.0 * h_fd))) * np.exp(1j * k * (x_loc + 2.0 * h_fd))
+            d2_psi = (-f_p2 + 16.0 * f_p1 - 30.0 * psi_c + 16.0 * f_m1 - f_m2) / (12.0 * (h_fd ** 2))
+            V_loc = -2.0 * (u0 ** 2) / (np.cosh(u0 * x_loc) ** 2)
+            res_pde = -d2_psi + V_loc * psi_c - (k ** 2) * psi_c
+            max_jost_pde_err = max(max_jost_pde_err, float(np.max(np.abs(res_pde))))
+
+            tau_wigner = -2.0 * u0 / (u0 ** 2 + k ** 2)
+            dS_dk = (2.0j * u0) / ((u0 + 1j * k) ** 2)
+            tau_log = (dS_dk / S_jost).imag
+            max_wigner_err = max(max_wigner_err, abs(tau_wigner - tau_log))
+
+    return {
+        "max_bound_energy_err": float(max_bound_energy_err),
+        "max_norm_err": float(max_norm_err),
+        "max_smatrix_err": float(max_smatrix_err),
+        "max_jost_pde_err": float(max_jost_pde_err),
+        "max_wigner_err": float(max_wigner_err),
+    }
+
+
 def main():
     print("=" * 80)
     print("FOLDED MOBIUS QUOTIENT & HALF-PLANE BLASCHKE DIPOLE CAYLEY PROBE")
@@ -346,6 +420,14 @@ def main():
     print(f"   Direct t-quadrature + tail             = {r3['slip_mixed_t_quad']:.12f} (err = {r3['t_quad_err']:.3e})")
     print(f"   Half-strip contour winding W(B; M_T^+) = {r3['winding_mixed']:.12f} (err = {r3['winding_mixed_err']:.3e})")
 
+    r4 = verify_schrodinger_poschl_teller_scattering()
+    print("\n4. 1D Schrodinger Poschl-Teller S-Matrix & Wigner Time-Delay Equivalence:")
+    print(f"   Max bound-state |E_0 - (-u0^2)|        = {r4['max_bound_energy_err']:.3e}")
+    print(f"   Max bound-state L^2 norm error         = {r4['max_norm_err']:.3e}")
+    print(f"   Max |S_Jost(k) - B(1/2 + i*t)|         = {r4['max_smatrix_err']:.3e}")
+    print(f"   Max Schrodinger Jost PDE residual      = {r4['max_jost_pde_err']:.3e}")
+    print(f"   Max Wigner time-delay identity err     = {r4['max_wigner_err']:.3e}")
+
     assert r1["max_online_R_mod_err"] < 1e-14
     assert r1["max_online_B_err"] < 1e-14
     assert r1["offline_R_4pi_err"] < 1e-9
@@ -358,7 +440,12 @@ def main():
     assert r3["tan_err"] < 1e-9
     assert r3["t_quad_err"] < 1e-6
     assert r3["winding_mixed_err"] < 1e-8
-    print("\nALL BLASCHKE DIPOLE CAYLEY EQUIVALENCE CHECKS PASSED.")
+    assert r4["max_bound_energy_err"] < 1e-4
+    assert r4["max_norm_err"] < 1e-8
+    assert r4["max_smatrix_err"] < 1e-14
+    assert r4["max_jost_pde_err"] < 1e-8
+    assert r4["max_wigner_err"] < 1e-13
+    print("\nALL BLASCHKE DIPOLE CAYLEY & SCHRODINGER CHECKS PASSED.")
 
 
 if __name__ == "__main__":

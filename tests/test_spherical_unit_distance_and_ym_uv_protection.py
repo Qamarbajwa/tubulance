@@ -43,7 +43,8 @@ from scripts.probe_twin_prime_spectral_and_kahler_schur import (
 from scripts.probe_folded_mobius_blaschke_dipole import (
     verify_folded_quotient_vs_blaschke,
     verify_cayley_core_equivalence,
-    verify_quantized_phase_slip_integral
+    verify_quantized_phase_slip_integral,
+    verify_schrodinger_poschl_teller_scattering
 )
 from scripts.probe_mobius_strip_in_sphere_experiment import (
     run_holonomy_experiment,
@@ -378,6 +379,13 @@ def test_folded_mobius_blaschke_dipole_cayley_equivalence():
     assert r3["tan_err"] < 1e-9
     assert r3["t_quad_err"] < 1e-6
     assert r3["winding_mixed_err"] < 1e-8
+
+    r4 = verify_schrodinger_poschl_teller_scattering()
+    assert r4["max_bound_energy_err"] < 1e-4
+    assert r4["max_norm_err"] < 1e-8
+    assert r4["max_smatrix_err"] < 1e-14
+    assert r4["max_jost_pde_err"] < 1e-8
+    assert r4["max_wigner_err"] < 1e-13
 
 
 def test_dynamical_moving_mobius_and_afe_double_lap():
