@@ -47,6 +47,7 @@ from scripts.probe_nonabelian_commutator_schur_gap import (
     compute_schur_spectrum_at_radius,
     compute_closed_form_rational_predictions
 )
+from scripts.probe_dynamical_chamber_and_markov_seams import compute_vacuum_chamber_profile
 
 
 def test_fuzzy_sphere_casimir_and_commutation():
@@ -262,6 +263,30 @@ def test_exact_representation_theoretic_closed_form_limits():
     assert math.isclose(pred_inf["tare_e2_inf"], 28.0 / 403.0, rel_tol=1e-12)
     assert math.isclose(pred_inf["min_Seff_inf"], 8887.0 / 40300.0, rel_tol=1e-12)
     assert pred_inf["min_Seff_inf"] > 0.2205
+
+
+def test_seam1_vacuum_chamber_self_selection():
+    """
+    Verify Seam 1:
+    1. At N=3, phi=pi/4 (v1=v2) yields min_S == 0 and singular Tr(S^-1) == inf.
+    2. For all N >= 4, Chamber II (v2 > v1 > 0, phi=75 deg) strictly dominates
+       Chamber I (v1 > v2 > 0, phi=15 deg) in Tr(H), min(A), min(S_eff),
+       1-loop spectral stability (smaller Tr(S^-1)), and log det(H).
+    """
+    r_n3_wall = compute_vacuum_chamber_profile(3, math.pi / 4.0, R=1e15)
+    assert abs(r_n3_wall["min_S"]) < 1e-12
+    assert math.isinf(r_n3_wall["tr_inv_S"])
+    
+    for N in [4, 6, 8, 12, 100]:
+        r_ch1 = compute_vacuum_chamber_profile(N, math.radians(15.0), R=1e15)
+        r_ch2 = compute_vacuum_chamber_profile(N, math.radians(75.0), R=1e15)
+        
+        assert r_ch2["tr_H"] > r_ch1["tr_H"]
+        assert r_ch2["min_A"] > r_ch1["min_A"]
+        assert r_ch2["min_S"] > r_ch1["min_S"]
+        assert r_ch2["tr_inv_S"] < r_ch1["tr_inv_S"]
+        assert r_ch2["log_det_H"] > r_ch1["log_det_H"]
+
 
 
 

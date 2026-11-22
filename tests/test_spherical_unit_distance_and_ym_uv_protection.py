@@ -30,6 +30,11 @@ from scripts.probe_cross_slice_4d_3d_flux_and_jacobian import (
     compute_s3_shell_jacobian_data,
     verify_cross_slice_schur_basin_bound
 )
+from scripts.probe_dynamical_chamber_and_markov_seams import (
+    verify_cayley_poisson_quadrature,
+    compute_markov_prime_gram_schur,
+    compute_pde_dressed_viscosity
+)
 
 def test_antipodal_pair_properties():
     """Verify that antipodal points on S^2 have distance 2 (squared distance 4) and midpoint 0."""
@@ -207,5 +212,46 @@ def test_cross_slice_schur_viscous_basin_bound():
     for rec in res["records"]:
         assert rec["basin_preserved"] is True
         assert rec["lam_min_S"] >= rec["lower_bound"] - 1e-12
+
+
+def test_seam2_cayley_poisson_markov_prime_screening():
+    """
+    Verify Seam 2:
+    1. Cayley-Poisson quadrature matches min(p,q)/max(p,q).
+    2. Markov screening eliminates intermediate prime weights p_1..p_{N-2} <= 1e-14.
+    3. S_eff(p_N) == 1 - (p_{N-1} / p_N)^2 > 0 and det(Q_N) matches product formula.
+    """
+    for p, q in [(2, 3), (3, 5), (2, 11), (19, 23)]:
+        qr = verify_cayley_poisson_quadrature(p, q)
+        assert qr["err"] < 1e-9
+        
+    for N in [2, 3, 5, 10, 15, 25]:
+        mr = compute_markov_prime_gram_schur(N)
+        assert mr["max_intermediate_weight"] <= 1e-14
+        assert mr["err_S"] <= 1e-14
+        assert mr["err_det"] <= 1e-14
+        assert mr["S_eff_num"] > 0.0
+        assert mr["det_num"] > 0.0
+
+
+def test_seam3_pde_dressed_viscosity_cancellation():
+    """
+    Verify Seam 3:
+    1. Tangential wavenumber k_par^2 cancels identically in alpha across k_par in [0.1..1000].
+    2. Dressed viscosity nu_eff = (1 - alpha) * nu > 0 is scale-invariant.
+    3. Monotone viscous dissipation basin condition holds strictly.
+    """
+    expected_alpha = (0.4 ** 2) / (0.5 * (0.5 * (1.0 ** 2) + 1.0 ** 2))
+    expected_nu_eff = (1.0 - expected_alpha) * 0.5
+    
+    for k_par in [0.1, 1.0, 10.0, 100.0, 1000.0]:
+        pr = compute_pde_dressed_viscosity(k_par, k_4=1.0, M_bulk=1.0, nu=0.5, U_cross=0.4)
+        assert pr["err_alpha"] <= 1e-15
+        assert pr["err_S_eff"] <= 1e-10
+        assert math.isclose(pr["alpha_raw"], expected_alpha, rel_tol=1e-14)
+        assert math.isclose(pr["nu_eff"], expected_nu_eff, rel_tol=1e-14)
+        assert pr["nu_eff"] > 0.0
+        assert pr["basin_preserved"] is True
+
 
 
