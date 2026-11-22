@@ -40,6 +40,15 @@ from scripts.probe_twin_prime_spectral_and_kahler_schur import (
     compute_twin_prime_spectral_localization,
     compute_kahler_lefschetz_sl2_and_primitive_schur
 )
+from scripts.probe_folded_mobius_blaschke_dipole import (
+    verify_folded_quotient_vs_blaschke,
+    verify_cayley_core_equivalence,
+    verify_quantized_phase_slip_integral
+)
+from scripts.probe_mobius_strip_in_sphere_experiment import (
+    run_holonomy_experiment,
+    run_spectral_twist_experiment
+)
 
 def test_antipodal_pair_properties():
     """Verify that antipodal points on S^2 have distance 2 (squared distance 4) and midpoint 0."""
@@ -319,6 +328,52 @@ def test_kahler_lefschetz_sl2_and_primitive_schur():
     assert k_res["orth_rank_S_prim"] == 20
     assert k_res["def_min_S_prim"] > 0.80
     assert k_res["def_rank_S_prim"] == 20
+
+
+def test_mobius_strip_in_sphere_holonomy_and_gap():
+    """Verify Mobius strip containment in S^2, SU(2) 4*pi holonomy, and 1/(4*R0^2) spectral gap."""
+    h_res = run_holonomy_experiment(R0=0.65, w=0.25)
+    assert h_res["inside_unit_sphere"] is True
+    assert h_res["max_norm"] < 1.0
+    lm_map = {lm["u_pi"]: lm for lm in h_res["landmarks"]}
+    assert lm_map[2.0]["dot_n0"] == pytest.approx(-1.0, abs=1e-12)
+    assert lm_map[4.0]["dot_n0"] == pytest.approx(1.0, abs=1e-12)
+
+    s_rows = run_spectral_twist_experiment(R0=0.65)
+    for r in s_rows:
+        assert r["zero_cyl"] == 2
+        assert r["zero_mob"] == 1
+        assert r["lam1_mob"] > 0.25
+        assert r["lam1_mob_err"] < 2e-3
+    assert s_rows[-1]["lam1_mob_err"] < 1e-5
+
+
+def test_folded_mobius_blaschke_dipole_cayley_equivalence():
+    """
+    Verify Folded Mobius Quotient R(u,t), Half-Plane Blaschke Dipole B(s),
+    exact Cayley equivalence on u=0, and quantized -2*pi*N_off spine phase slip.
+    """
+    r1 = verify_folded_quotient_vs_blaschke()
+    assert r1["max_online_R_mod_err"] < 1e-14
+    assert r1["max_online_B_err"] < 1e-14
+    assert r1["offline_R_4pi_err"] < 1e-9
+    assert r1["offline_B_rect_err"] < 1e-9
+    assert abs(r1["online_B_rect_winding"]) < 1e-12
+
+    r2 = verify_cayley_core_equivalence()
+    assert r2["max_cayley_err"] < 1e-14
+    assert r2["max_unit_err"] < 1e-14
+    assert r2["max_dist_err"] < 1e-14
+    assert r2["max_jac_err"] < 1e-12
+    assert r2["max_phase_rate_err"] < 1e-13
+
+    r3 = verify_quantized_phase_slip_integral()
+    assert abs(r3["slip_online"]) < 1e-14
+    assert abs(r3["winding_online"]) < 1e-12
+    assert r3["tan_err"] < 1e-9
+    assert r3["t_quad_err"] < 1e-6
+    assert r3["winding_mixed_err"] < 1e-8
+
 
 
 
