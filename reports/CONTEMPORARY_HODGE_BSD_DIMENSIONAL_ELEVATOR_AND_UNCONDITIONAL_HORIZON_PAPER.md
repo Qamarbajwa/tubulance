@@ -3,7 +3,7 @@
 
 **Author:** Qamar Munawer  
 **Affiliation:** Brandenburg University of Technology Cottbus-Senftenberg  
-**Methodology:** ai is being used as a tool (Google Carbon / Gemini 4 Carbon)  
+**Methodology:** ai is being used as a tool  
 **Date:** November 22, 2026  
 **Status:** verified-finite  
 **Epistemic Lock:** All 4 Clay Millennium Problems plus Birch and Swinnerton-Dyer remain strictly OPEN.  
@@ -85,8 +85,7 @@ All 5 horizon escalation theorems are 100 percent machine-verified in Lean 4 (`0
 
 ---
 
-## 6. Attribution and Acknowledgments
+## 6. Attribution and Methodology
 
 - **Author:** Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg)
 - **Methodology Note:** ai is being used as a tool.
-- **AI Tool Acknowledgment:** We gratefully acknowledge Google Carbon (Gemini 4 Carbon) for technical assistance in Lean 4 formal proof verification, CUDA memory architecture, and scientific software design.

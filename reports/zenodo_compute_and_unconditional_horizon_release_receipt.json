@@ -1,0 +1,32 @@
+{
+  "title": "Contemporary Helical Beltrami Decomposition, Hodge-BSD E^4 Dimensional Elevator, Unconditional Horizon Escalation in Lean 4 (135 Theorems, 0 sorry), and Tare Core 50 to 99.8% VRAM GPU Compute Papers (v2.1.0, Continuing the Previous Rosetta Stone Operator Correspondence)",
+  "version": "2.1.0-contemporary-compute",
+  "author": "Qamar Munawer",
+  "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+  "methodology": "ai is being used as a tool",
+  "epistemic_status": "verified-finite (All four Clay Millennium Problems remain strictly OPEN)",
+  "bundle_zip": "CONTEMPORARY_CHIRAL_VRAM_AND_SCHUR_COMPUTE_ZENODO_BUNDLE.zip",
+  "bundle_size_bytes": 802028,
+  "bundle_sha256": "c6e5b9060995676deb70ec75b1977cd80fe77b391a546bc708e1717b88cf59c5",
+  "files_in_bundle": [
+    "CONTEMPORARY_CHIRAL_HALF_DOMAIN_VRAM_AND_SCHUR_COMPUTE_PAPER.pdf",
+    "CONTEMPORARY_CHIRAL_HALF_DOMAIN_VRAM_AND_SCHUR_COMPUTE_PAPER.tex",
+    "CONTEMPORARY_CHIRAL_HALF_DOMAIN_VRAM_AND_SCHUR_COMPUTE_PAPER.md",
+    "CONTEMPORARY_HODGE_BSD_DIMENSIONAL_ELEVATOR_AND_UNCONDITIONAL_HORIZON_PAPER.pdf",
+    "CONTEMPORARY_HODGE_BSD_DIMENSIONAL_ELEVATOR_AND_UNCONDITIONAL_HORIZON_PAPER.tex",
+    "CONTEMPORARY_HODGE_BSD_DIMENSIONAL_ELEVATOR_AND_UNCONDITIONAL_HORIZON_PAPER.md",
+    "FOUR_WORKSPACE_THEOREM_AND_GPU_AUDIT_APPENDIX.pdf",
+    "silicon_vram_compressor.py",
+    "hbim_bauforschung_adapter.py",
+    "prime_horizon_gpu.py",
+    "benchmark_vram_and_flops_scaling.py",
+    "test_tare_core.py",
+    "chiral_vram_and_flops_scaling_receipt.json",
+    "ZENODO_COMPUTE_PAPER_METADATA.json",
+    ".zenodo.json",
+    "GITHUB_RELEASE_NOTES.md",
+    "SHA256SUMS_COMPUTE.txt"
+  ],
+  "zenodo_draft_deposition_id": 24431866,
+  "zenodo_draft_url": "https://zenodo.org/deposit/24431866"
+}

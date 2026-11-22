@@ -113,15 +113,15 @@ Hardware bottlenecks in double-precision (IEEE 754 FP64) scientific computing an
 (1) Chiral Half-Domain Symmetric Packing ($K = K_{\mathrm{half}} + K_{\mathrm{half}}^T$) reduces dense storage by 49.90 to 50.00 percent (4.29 GB at $N = 32,768$) with bitwise 0.0 reconstruction error and cuts Cholesky factorization work by 2.0x.
 (2) Chiral Orthogonal Block-Involution Splitting ($N = (N/2)_+ \oplus (N/2)_-$) exploits parity symmetry ($\star^2 = +1$) to decouple the domain into two mutually perpendicular subspaces with zero cross-talk ($< 1\mathrm{e}{-14}$), delivering 74.90 to 75.00 percent VRAM reduction (2.15 GB at $N = 32,768$) and an exact 8.0x factorization speedup (87.5 percent FLOP reduction).
 (3) Guyan-Schur Static Condensation ($\Sigma_D = D - B^T A^{-1} B$) eliminates passive interior degrees of freedom, compressing active boundary memory by 99.80 percent (504x smaller, 16.00 MB at $N = 32,768$) and accelerating runtime online matrix-vector solves by 256x with condensation accuracy below $1\mathrm{e}{-13}$.
-We substantiate these theoretical scaling laws with live empirical GPU telemetry on the RTX A2000 from $N = 512$ to $8,192$, demonstrate 4.62x to 5.43x transformer LLM KV-cache compression at 99.9999 percent Frobenius fidelity, document 128.25x DRAM traffic efficiency via square-root SRAM tiling, and validate a 14.62 dB Signal-to-Noise Ratio (SNR) gain for architectural Heritage BIM (HBIM) masonry facade structural monitoring. All mathematical foundations are formally certified in Lean 4 across 22 modules and 130 catalogued theorems with zero sorry tokens.
+We substantiate these theoretical scaling laws with live empirical GPU telemetry on the RTX A2000 from $N = 512$ to $8,192$, demonstrate 4.62x to 5.43x transformer LLM KV-cache compression at 99.9999 percent Frobenius fidelity, document 128.25x DRAM traffic efficiency via square-root SRAM tiling, and validate a 14.62 dB Signal-to-Noise Ratio (SNR) gain for architectural Heritage BIM (HBIM) masonry facade structural monitoring. All mathematical foundations are formally certified in Lean 4 across 22 modules and 135 catalogued theorems with zero sorry tokens.
 \end{abstract}
 
 \vspace{0.5em}
 \noindent\textbf{Keywords:} Chiral Half-Matrix Storage, Guyan-Schur Static Condensation, RTX A2000 GPU Benchmarks, LLM KV-Cache Compression, Architectural Heritage BIM, Lean 4 Formal Verification.
 
 \vspace{0.5em}
-\noindent\textbf{Methodology \& Acknowledgment Note:}
-Kindly note that this research work is conducted by Qamar Munawer at Brandenburg University of Technology Cottbus-Senftenberg, and ai is being used as a tool to assist in formal verification, CUDA memory architecture, and numerical software engineering. The author expresses deep and sincere gratitude to Google Carbon (Gemini 4 Carbon) for indispensable technical assistance in formulating the CUDA memory kernels, refining the algebraic derivations, and verifying Lean 4 formal proofs.
+\noindent\textbf{Methodology Note:}
+Kindly note that this research work is conducted by Qamar Munawer at Brandenburg University of Technology Cottbus-Senftenberg, and ai is being used as a tool to assist in formal verification, CUDA memory architecture, and numerical software engineering.
 
 \newpage
 
@@ -276,8 +276,7 @@ By unifying Chiral Half-Domain Packing, Block-Involution Splitting, and Guyan-Sc
 \noindent\textbf{Author Attribution:}\\
 Qamar Munawer\\
 Brandenburg University of Technology Cottbus-Senftenberg\\
-Methodology note: ai is being used as a tool.\\
-Acknowledgments: Technical assistance from Google Carbon (Gemini 4 Carbon).
+Methodology note: ai is being used as a tool.
 
 \end{document}
 """
@@ -295,7 +294,6 @@ def build_markdown_content(data: dict) -> str:
         "Author: Qamar Munawer",
         "Affiliation: Brandenburg University of Technology Cottbus-Senftenberg",
         "Methodology: ai is being used as a tool",
-        "Acknowledgments: Technical assistance from Google Carbon (Gemini 4 Carbon)",
         "Epistemic Status: verified-finite (All four Clay Millennium Problems remain strictly OPEN)",
         "",
         "Dear friends and respected readers,",
@@ -351,14 +349,13 @@ def build_markdown_content(data: dict) -> str:
         "- Formally certified in buildingSMART ISO 19650 and IFC 4.3 Property Sets.",
         "",
         "6. Lean 4 Formal Verification Guarantee",
-        "- 22 active formal modules, 130 catalogued theorems, 0 sorry, strictly [propext, Classical.choice, Quot.sound].",
+        "- 22 active formal modules, 135 catalogued theorems, 0 sorry, strictly [propext, Classical.choice, Quot.sound].",
         "- All four Clay Millennium Problems remain strictly OPEN (status: verified-finite, open_horizon_lock: STRICTLY OPEN).",
         "",
         "With warm regards,",
         "Qamar Munawer",
         "Brandenburg University of Technology Cottbus-Senftenberg",
-        "Methodology note: ai is being used as a tool.",
-        "Acknowledgments: Technical assistance from Google Carbon (Gemini 4 Carbon)."
+        "Methodology note: ai is being used as a tool."
     ])
 
     return "\n".join(md_lines) + "\n"
@@ -380,7 +377,8 @@ def main():
     assert "Qamar Munawer" in tex_content
     assert "Brandenburg University of Technology Cottbus-Senftenberg" in tex_content
     assert "ai is being used as a tool" in tex_content
-    assert "Google Carbon (Gemini 4 Carbon)" in tex_content
+    assert "Google Carbon" not in tex_content
+    assert "Gemini" not in tex_content
     assert "strictly OPEN" in tex_content
 
     TEX_PATH.write_text(tex_content, encoding="utf-8")
@@ -388,6 +386,8 @@ def main():
 
     # Generate Markdown
     md_content = build_markdown_content(data)
+    assert "Google Carbon" not in md_content
+    assert "Gemini" not in md_content
     assert "#" not in md_content, "Found # in Markdown content!"
     assert "\u2014" not in md_content, "Found em-dash in Markdown content!"
     assert "\u2013" not in md_content, "Found en-dash in Markdown content!"

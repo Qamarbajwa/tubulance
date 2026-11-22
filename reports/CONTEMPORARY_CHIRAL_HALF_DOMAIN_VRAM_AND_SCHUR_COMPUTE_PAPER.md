@@ -3,7 +3,6 @@ Contemporary Chiral Half-Domain Matrix Packing, Block-Involution Splitting, and 
 Author: Qamar Munawer
 Affiliation: Brandenburg University of Technology Cottbus-Senftenberg
 Methodology: ai is being used as a tool
-Acknowledgments: Technical assistance from Google Carbon (Gemini 4 Carbon)
 Epistemic Status: verified-finite (All four Clay Millennium Problems remain strictly OPEN)
 
 Dear friends and respected readers,
@@ -19,11 +18,11 @@ I am pleased to present this technical report detailing the contemporary GPU mem
 
 | N | N_b | Stage 0 Dense (MB) | Stage 1 Half (MB) | Stage 2 Chiral (MB) | Stage 3 Schur (MB) | Recon Error | Schur Error | Wall Time (ms) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 512 | 32 | 2.0 | 1.0 (49.9%) | 0.5 (74.9%) | 0.0040 (496x) | 0.0e+00 | 1.1e-13 | 144.9 |
-| 1024 | 64 | 8.0 | 4.0 (50.0%) | 2.0 (75.0%) | 0.0159 (504x) | 0.0e+00 | 9.1e-13 | 56.8 |
-| 2048 | 128 | 32.0 | 16.0 (50.0%) | 8.0 (75.0%) | 0.0630 (508x) | 0.0e+00 | 9.1e-13 | 307.3 |
-| 4096 | 256 | 128.0 | 64.0 (50.0%) | 32.0 (75.0%) | 0.2510 (510x) | 0.0e+00 | 4.2e-15 | 22.7 |
-| 8192 | 512 | 512.0 | 256.0 (50.0%) | 128.0 (75.0%) | 1.0020 (511x) | 0.0e+00 | 8.8e-15 | 183.0 |
+| 512 | 32 | 2.0 | 1.0 (49.9%) | 0.5 (74.9%) | 0.0040 (496x) | 0.0e+00 | 1.1e-13 | 129.1 |
+| 1024 | 64 | 8.0 | 4.0 (50.0%) | 2.0 (75.0%) | 0.0159 (504x) | 0.0e+00 | 9.1e-13 | 56.1 |
+| 2048 | 128 | 32.0 | 16.0 (50.0%) | 8.0 (75.0%) | 0.0630 (508x) | 0.0e+00 | 9.1e-13 | 299.3 |
+| 4096 | 256 | 128.0 | 64.0 (50.0%) | 32.0 (75.0%) | 0.2510 (510x) | 0.0e+00 | 4.2e-15 | 19.5 |
+| 8192 | 512 | 512.0 | 256.0 (50.0%) | 128.0 (75.0%) | 1.0020 (511x) | 0.0e+00 | 8.8e-15 | 182.9 |
 
 3. Breaking the 8 GB VRAM Out-Of-Memory Wall at N = 32,768
 - Stage 0 (Dense Matrix): 8.59 GB (OOM Crash on 8 GB GPU)
@@ -42,11 +41,10 @@ I am pleased to present this technical report detailing the contemporary GPU mem
 - Formally certified in buildingSMART ISO 19650 and IFC 4.3 Property Sets.
 
 6. Lean 4 Formal Verification Guarantee
-- 22 active formal modules, 130 catalogued theorems, 0 sorry, strictly [propext, Classical.choice, Quot.sound].
+- 22 active formal modules, 135 catalogued theorems, 0 sorry, strictly [propext, Classical.choice, Quot.sound].
 - All four Clay Millennium Problems remain strictly OPEN (status: verified-finite, open_horizon_lock: STRICTLY OPEN).
 
 With warm regards,
 Qamar Munawer
 Brandenburg University of Technology Cottbus-Senftenberg
 Methodology note: ai is being used as a tool.
-Acknowledgments: Technical assistance from Google Carbon (Gemini 4 Carbon).

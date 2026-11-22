@@ -1011,9 +1011,13 @@ def sanitize_latex(text: str) -> str:
     t = t.replace("#P", "sharp-P").replace("#", "No. ")
     # Replace percent signs if unescaped
     t = re.sub(r"(?<!\\)%", r"\%", t)
-    # Replace math greek / symbols
-    t = t.replace("α", r"\alpha ").replace("θ", r"\theta ").replace("ν", r"\nu ").replace("π", r"\pi ")
-    t = t.replace("≥", r"\ge ").replace("≤", r"\le ").replace("≠", r"\ne ").replace("·", r"\cdot ")
+    # Replace math symbols first
+    t = t.replace("<=", r"$\le$").replace(">=", r"$\ge$")
+    t = t.replace("≥", r"$\ge$").replace("≤", r"$\le$").replace("≠", r"$\ne$").replace("·", r"$\cdot$")
+    t = t.replace("α", r"$\alpha$").replace("θ", r"$\theta$").replace("ν", r"$\nu$").replace("π", r"$\pi$")
+    t = t.replace("<", r"$<$").replace(">", r"$>$")
+    # Replace unescaped underscores
+    t = re.sub(r"(?<!\\)_", r"\_", t)
     return t
 
 
@@ -1195,7 +1199,7 @@ def build_latex_appendix(
     tex.append(r"\maketitle")
     tex.append(r"")
     tex.append(r"\begin{abstract}")
-    tex.append(r"This verification appendix provides the complete neuro-symbolic audit trail for the twenty-two Lean 4 formal certification modules and 135 theorems across four unified mathematical workspaces: Hodge Conjecture arithmetic models, Yang-Mills Balaban polymer contraction, the Riemann Hypothesis operator uncertainty framework, and Navier-Stokes dyadic dissipation with cross-domain Rosetta continuum bridges. Every theorem has been compiled with zero \texttt{sorry} and zero custom axioms, relying exclusively on standard Lean 4 kernel axioms (\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}). All 135 theorems are 100\% unconditional (\texttt{[FREE]}) with zero unproven premises, accompanied by full hardware telemetry from our NVIDIA RTX A2000 8GB GPU silicon benchmark suite spanning structural health monitoring, LLM attention compression, and high-altitude prime sieving. We gratefully acknowledge Google Carbon (Gemini 4 Carbon) for technical assistance in Lean 4 formal proof verification, CUDA memory architecture, and Heritage BIM structural software engineering.")
+    tex.append(r"This verification appendix provides the complete neuro-symbolic audit trail for the twenty-two Lean 4 formal certification modules and 135 theorems across four unified mathematical workspaces: Hodge Conjecture arithmetic models, Yang-Mills Balaban polymer contraction, the Riemann Hypothesis operator uncertainty framework, and Navier-Stokes dyadic dissipation with cross-domain Rosetta continuum bridges. Every theorem has been compiled with zero \texttt{sorry} and zero custom axioms, relying exclusively on standard Lean 4 kernel axioms (\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}). All 135 theorems are 100\% unconditional (\texttt{[FREE]}) with zero unproven premises, accompanied by full hardware telemetry from our NVIDIA RTX A2000 8GB GPU silicon benchmark suite spanning structural health monitoring, LLM attention compression, and high-altitude prime sieving.")
     tex.append(r"\end{abstract}")
     tex.append(r"")
     tex.append(r"\noindent\textbf{Methodology Note:} ai is being used as a tool.\\")
