@@ -1,0 +1,23 @@
+{
+  "title": "Master Three-Pillar Formal Lean 4, School-Math Intuition, and GPU Compute Release Bundle across All Six Mathematical Domains",
+  "author": "Qamar Munawer",
+  "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+  "methodology": "ai is being used as a tool",
+  "epistemic_status": "verified-finite (All four Clay Millennium Problems remain strictly OPEN)",
+  "bundle_zip": "CONTEMPORARY_3PILLAR_ALL_PROJECTS_ZENODO_RELEASE_BUNDLE.zip",
+  "bundle_size_bytes": 1632011,
+  "bundle_sha256": "c6be72092e4b7b1f7bce98ef494f2b3f879e8815712a21c144b2bb29ccab155b",
+  "friend_audit_pack_zip": "ROSETTA_4WORKSPACE_FRIEND_AUDIT_PACK.zip",
+  "friend_audit_pack_size_bytes": 82901476,
+  "friend_audit_pack_sha256": "43bbb9d1efbfec6c294aad3f39ea42c4c1f159bc980c0ee5923d7bc46f8dcca6",
+  "pdf_papers_included": [
+    "CONTEMPORARY_UNCONDITIONAL_CHIRAL_SCHUR_AND_HODGE_BSD_ELEVATOR_RESEARCH_PAPER.pdf",
+    "COMMON_PEOPLE_SCHOOL_MATH_GUIDE_TO_TWO_HALVES_AND_SCHUR_TARE_ACROSS_ALL_PROJECTS.pdf",
+    "CONTEMPORARY_CHIRAL_HALF_DOMAIN_VRAM_AND_SCHUR_COMPUTE_PAPER.pdf",
+    "FOUR_WORKSPACE_THEOREM_AND_GPU_AUDIT_APPENDIX.pdf"
+  ],
+  "lean4_modules_count": 22,
+  "lean4_theorems_count": 135,
+  "zenodo_draft_deposition_id": 24431866,
+  "zenodo_draft_url": "https://zenodo.org/deposit/24431866"
+}

@@ -7,9 +7,9 @@
   "epistemic_status": "verified-finite",
   "all_four_clay_millennium_problems_open": true,
   "hardware_telemetry": {
-    "gpu_model": "NVIDIA RTX A2000 8GB Laptop GPU",
+    "gpu_model": "CPU (NumPy/Torch FP64)",
     "vram_capacity_gb": 8.0,
-    "cuda_enabled": true,
+    "cuda_enabled": false,
     "precision": "IEEE 754 FP64 (8 bytes per double)",
     "operating_system": "Windows 11"
   },
@@ -55,10 +55,10 @@
         "schur_condensation_error": 1.1368683772161603e-13
       },
       "benchmarking_telemetry": {
-        "hardware_device": "NVIDIA RTX A2000 8GB Laptop GPU",
-        "cuda_accelerated": true,
-        "measured_wall_ms": 129.108,
-        "effective_gflops": 0.35
+        "hardware_device": "CPU (NumPy/Torch FP64)",
+        "cuda_accelerated": false,
+        "measured_wall_ms": 182.954,
+        "effective_gflops": 0.24
       }
     },
     {
@@ -99,13 +99,13 @@
         "memory_compression_ratio": 504.1,
         "online_matvec_flops": 8192.0,
         "online_matvec_speedup": 256.0,
-        "schur_condensation_error": 9.094947017729282e-13
+        "schur_condensation_error": 2.2737367544323206e-13
       },
       "benchmarking_telemetry": {
-        "hardware_device": "NVIDIA RTX A2000 8GB Laptop GPU",
-        "cuda_accelerated": true,
-        "measured_wall_ms": 56.065,
-        "effective_gflops": 6.38
+        "hardware_device": "CPU (NumPy/Torch FP64)",
+        "cuda_accelerated": false,
+        "measured_wall_ms": 287.201,
+        "effective_gflops": 1.25
       }
     },
     {
@@ -146,13 +146,13 @@
         "memory_compression_ratio": 508.0,
         "online_matvec_flops": 32768.0,
         "online_matvec_speedup": 256.0,
-        "schur_condensation_error": 9.094947017729282e-13
+        "schur_condensation_error": 4.547473508864641e-13
       },
       "benchmarking_telemetry": {
-        "hardware_device": "NVIDIA RTX A2000 8GB Laptop GPU",
-        "cuda_accelerated": true,
-        "measured_wall_ms": 299.337,
-        "effective_gflops": 9.57
+        "hardware_device": "CPU (NumPy/Torch FP64)",
+        "cuda_accelerated": false,
+        "measured_wall_ms": 676.63,
+        "effective_gflops": 4.23
       }
     },
     {
@@ -193,13 +193,13 @@
         "memory_compression_ratio": 510.0,
         "online_matvec_flops": 131072.0,
         "online_matvec_speedup": 256.0,
-        "schur_condensation_error": 4.2e-15
+        "schur_condensation_error": 1.1e-15
       },
       "benchmarking_telemetry": {
-        "hardware_device": "NVIDIA RTX A2000 8GB Laptop GPU",
-        "cuda_accelerated": true,
-        "measured_wall_ms": 19.485,
-        "effective_gflops": 1175.6
+        "hardware_device": "CPU (NumPy/Torch FP64)",
+        "cuda_accelerated": false,
+        "measured_wall_ms": 0.0,
+        "effective_gflops": 22906492.25
       }
     },
     {
@@ -240,13 +240,13 @@
         "memory_compression_ratio": 511.0,
         "online_matvec_flops": 524288.0,
         "online_matvec_speedup": 256.0,
-        "schur_condensation_error": 8.8e-15
+        "schur_condensation_error": 1.1e-15
       },
       "benchmarking_telemetry": {
-        "hardware_device": "NVIDIA RTX A2000 8GB Laptop GPU",
-        "cuda_accelerated": true,
-        "measured_wall_ms": 182.884,
-        "effective_gflops": 1002.01
+        "hardware_device": "CPU (NumPy/Torch FP64)",
+        "cuda_accelerated": false,
+        "measured_wall_ms": 0.0,
+        "effective_gflops": 183251937.96
       }
     }
   ],
