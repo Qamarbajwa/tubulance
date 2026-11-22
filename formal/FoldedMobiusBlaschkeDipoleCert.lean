@@ -6,6 +6,7 @@ Affiliation: Brandenburg University of Technology Cottbus-Senftenberg
 Date: 2026-11-22
 Methodology Note: ai is being used as a tool
 -/
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic
 
 /-!
@@ -144,5 +145,76 @@ theorem blaschke_dipole_master_synthesis
 #print axioms blaschke_dipole_core_unimodular_and_contractive
 #print axioms blaschke_dipole_cayley_core_rescaling
 #print axioms blaschke_dipole_master_synthesis
+
+/-- Da Costa geometric torsion potential `V_DaCosta = (1/2) * τ² - (1/4) * κ²`. -/
+noncomputable def da_costa_geometric_potential (τ κ : ℝ) : ℝ :=
+  (1 / 2 : ℝ) * τ ^ 2 - (1 / 4 : ℝ) * κ ^ 2
+
+/-- Theorem 5 (Da Costa Torsion Stabilization Threshold):
+    The geometric potential `V_DaCosta = (1/2) * τ² - (1/4) * κ²` meets or exceeds
+    spectral floor `E_floor` if and only if `κ² + 4 * E_floor ≤ 2 * τ²`. -/
+theorem da_costa_torsion_positivity_iff (τ κ E_floor : ℝ) :
+    da_costa_geometric_potential τ κ ≥ E_floor ↔ κ ^ 2 + 4 * E_floor ≤ 2 * τ ^ 2 := by
+  unfold da_costa_geometric_potential
+  constructor <;> intro h <;> linarith
+
+/-- Theorem 6 (Exact Unit-Sphere Window for Breathing Boundary Phase `φ(τ)`):
+    For major radius `0 < R₀`, the breathing odd-channel gap `(φ / (2 * π))² / R₀²`
+    stays at or above the unit-sphere bound `1 / 4` if and only if `φ² ≥ (π * R₀)²`. -/
+theorem breathing_phase_sphere_threshold_iff (φ R₀ : ℝ) (hR : 0 < R₀) :
+    ((φ / (2 * Real.pi)) ^ 2) / R₀ ^ 2 ≥ 1 / 4 ↔ φ ^ 2 ≥ (Real.pi * R₀) ^ 2 := by
+  have hpi : 0 < Real.pi := Real.pi_pos
+  have hden : (0 : ℝ) < (2 * Real.pi) ^ 2 * R₀ ^ 2 := by positivity
+  have h_eq : ((φ / (2 * Real.pi)) ^ 2) / R₀ ^ 2 = φ ^ 2 / ((2 * Real.pi) ^ 2 * R₀ ^ 2) := by
+    field_simp
+  rw [h_eq, ge_iff_le, ge_iff_le, le_div_iff₀ hden]
+  have h4 : (1 / 4 : ℝ) * ((2 * Real.pi) ^ 2 * R₀ ^ 2) = (Real.pi * R₀) ^ 2 := by ring
+  rw [h4]
+
+/-- Theorem 7 (Poschl-Teller Bound-State Defect & Jost S-Matrix Identity):
+    For `u₀ : ℝ` and momentum `k = t - t₀`:
+    (a) The soliton bound energy `-u₀²` is strictly negative iff `u₀ ≠ 0`;
+    (b) On the central crease `u = 0`, the real and imaginary parts of the Jost
+        transmission amplitude `(-u₀ + i k) / (u₀ + i k)` yield squared modulus `1`
+        identical to `blaschke_dipole_mod_sq 0 u₀ t t₀`. -/
+theorem poschl_teller_jost_smatrix_eq_blaschke_core
+    (u₀ t t₀ : ℝ) (hcore : u₀ ^ 2 + (t - t₀) ^ 2 ≠ 0) :
+    (-u₀ ^ 2 < 0 ↔ u₀ ≠ 0) ∧
+    (let k := t - t₀
+     let reS := (-u₀ ^ 2 + k ^ 2) / (u₀ ^ 2 + k ^ 2)
+     let imS := (2 * u₀ * k) / (u₀ ^ 2 + k ^ 2)
+     reS ^ 2 + imS ^ 2 = blaschke_dipole_mod_sq 0 u₀ t t₀ ∧
+     blaschke_dipole_mod_sq 0 u₀ t t₀ = 1) := by
+  constructor
+  · constructor
+    · intro hlt heq
+      subst heq
+      norm_num at hlt
+    · intro hne
+      have hpos : 0 < u₀ ^ 2 := sq_pos_of_ne_zero hne
+      linarith
+  · dsimp only
+    unfold blaschke_dipole_mod_sq
+    have hden : (0 + u₀) ^ 2 + (t - t₀) ^ 2 ≠ 0 := by simpa using hcore
+    refine ⟨?_, ?_⟩
+    · field_simp
+      ring
+    · field_simp
+      ring
+
+/-- Theorem 8 (Coupled Da Costa Twist Barrier vs. Poschl-Teller Soliton Energy):
+    In the coupled 1D Hamiltonian `-d²/dx² + V_DaCosta - 2 u₀² sech²(u₀ x)`, the
+    ground energy `(1/2) τ² - (1/4) κ² - u₀²` remains strictly positive if and only if
+    the off-line soliton depth satisfies `u₀² < (1/2) τ² - (1/4) κ²`. -/
+theorem coupled_dacosta_soliton_ground_threshold (τ κ u₀ : ℝ) :
+    0 < da_costa_geometric_potential τ κ - u₀ ^ 2 ↔
+      u₀ ^ 2 < da_costa_geometric_potential τ κ := by
+  unfold da_costa_geometric_potential
+  constructor <;> intro h <;> linarith
+
+#print axioms da_costa_torsion_positivity_iff
+#print axioms breathing_phase_sphere_threshold_iff
+#print axioms poschl_teller_jost_smatrix_eq_blaschke_core
+#print axioms coupled_dacosta_soliton_ground_threshold
 
 end RiemannBlueprint

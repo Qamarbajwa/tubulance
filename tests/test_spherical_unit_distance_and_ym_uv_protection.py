@@ -53,7 +53,10 @@ from scripts.probe_mobius_strip_in_sphere_experiment import (
 from scripts.probe_dynamical_moving_mobius_in_sphere import (
     run_case_a_sliding_strip_experiment,
     run_case_b_breathing_phase_and_open_ribbon,
-    run_approximate_functional_equation_test
+    run_approximate_functional_equation_test,
+    run_breathing_threshold_window_test,
+    run_multi_jump_riemann_siegel_seam_test,
+    run_coupled_dacosta_poschl_teller_test
 )
 
 def test_antipodal_pair_properties():
@@ -413,6 +416,22 @@ def test_dynamical_moving_mobius_and_afe_double_lap():
     for zc in res_z["zero_checks"]:
         assert zc["abs_zeta_exact"] < 1e-12
         assert zc["abs_rs1"] < 0.02
+
+    res_win = run_breathing_threshold_window_test(R0=0.65, Nu=128)
+    assert res_win["err_tau_1"] < 2e-4
+    assert res_win["err_tau_2"] < 2e-4
+    assert res_win["err_phi_thresh"] < 2e-4
+
+    res_rs = run_multi_jump_riemann_siegel_seam_test()
+    assert res_rs["max_err_raw"] > 0.5
+    assert res_rs["max_err_c0"] < 0.015
+    assert res_rs["max_err_c01"] < 0.004
+    assert len(res_rs["zero_rows"]) == 30
+
+    res_coupled = run_coupled_dacosta_poschl_teller_test(R0=0.65, tau_mat=1.40)
+    assert abs(res_coupled["u_crit"] - math.sqrt(res_coupled["V0"])) < 1e-15
+    assert res_coupled["max_coupled_err"] < 2e-4
+
 
 
 

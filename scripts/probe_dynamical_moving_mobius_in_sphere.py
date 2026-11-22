@@ -432,6 +432,235 @@ def generate_dynamical_figure(res_a, res_b, res_zeta):
     return str(out_path)
 
 
+def run_breathing_threshold_window_test(R0=0.65, Nu=128):
+    """
+    Verify exact analytic window for unit-sphere floor lambda_1(phi(tau)) >= 1/4:
+    |phi(tau)| >= pi * R0  <=>  tau in [arccos(1 - 2*R0), 2*pi - arccos(1 - 2*R0)]
+    for phi(tau) = 0.5*pi*(1 - cos(tau)).
+    """
+    from scipy.optimize import brentq
+
+    def lam1_minus_quarter(tau_val):
+        phi_val = 0.5 * math.pi * (1.0 - math.cos(tau_val))
+        evals = np.linalg.eigvalsh(build_breathing_ribbon_laplacian(Nu, R0=R0, phi=phi_val))
+        return float(evals[1]) - 0.25
+
+    tau_exact_1 = math.acos(1.0 - 2.0 * R0)
+    tau_exact_2 = 2.0 * math.pi - tau_exact_1
+    tau_num_1 = brentq(lam1_minus_quarter, 0.1, math.pi)
+    tau_num_2 = brentq(lam1_minus_quarter, math.pi, 2.0 * math.pi - 0.1)
+
+    phi_thresh = math.pi * R0
+    phi_at_num_1 = 0.5 * math.pi * (1.0 - math.cos(tau_num_1))
+    return {
+        "R0": R0,
+        "phi_threshold": phi_thresh,
+        "tau_exact_1": tau_exact_1,
+        "tau_exact_2": tau_exact_2,
+        "tau_num_1": float(tau_num_1),
+        "tau_num_2": float(tau_num_2),
+        "err_tau_1": abs(tau_num_1 - tau_exact_1),
+        "err_tau_2": abs(tau_num_2 - tau_exact_2),
+        "err_phi_thresh": abs(phi_at_num_1 - phi_thresh),
+    }
+
+
+def _riemann_siegel_psi_and_d3(p_val):
+    """
+    Compute Psi(p) = cos(2*pi*(p^2 - p - 1/16)) / cos(2*pi*p) and its third
+    derivative Psi'''(p) cleanly across removable zeros via a Cauchy circle contour.
+    """
+    r = 0.05
+    n_c = 16
+    psi_vals = []
+    d3_sum = 0.0 + 0.0j
+    for k in range(n_c):
+        dz = r * cmath.exp(1j * 2.0 * math.pi * k / n_c)
+        z = p_val + dz
+        pz = cmath.cos(2.0 * math.pi * (z * z - z - 1.0 / 16.0)) / cmath.cos(2.0 * math.pi * z)
+        psi_vals.append(pz)
+        d3_sum += pz / (dz ** 3)
+    psi0 = (sum(psi_vals) / n_c).real
+    psi3 = (6.0 * d3_sum / n_c).real
+    return psi0, psi3
+
+
+def run_multi_jump_riemann_siegel_seam_test():
+    """
+    Sweep t in [10, 120] across moving-end jumps N: 1->2 (25.13), 2->3 (56.55), 3->4 (100.53),
+    comparing raw 2-lap, 1-term seam C0(p), and 2-term Gabcke C0(p) + C1(p) across 30 zeta zeros.
+    """
+    t_grid = np.linspace(10.0, 120.0, 881)
+    err_raw = np.zeros_like(t_grid)
+    err_c0 = np.zeros_like(t_grid)
+    err_c01 = np.zeros_like(t_grid)
+
+    def eval_rs(t_val):
+        x_t = math.sqrt(float(t_val) / (2.0 * math.pi))
+        N_cut = max(1, int(math.floor(x_t)))
+        p_frac = x_t - N_cut
+        th = float(mp.siegeltheta(float(t_val)))
+        z_ex = float(mp.siegelz(float(t_val)))
+        n_arr = np.arange(1, N_cut + 1, dtype=np.float64)
+        lap1 = complex(np.sum(np.exp(-1j * float(t_val) * np.log(n_arr)) / np.sqrt(n_arr)))
+        z_raw = 2.0 * (cmath.exp(1j * th) * lap1).real
+        psi0, psi3 = _riemann_siegel_psi_and_d3(p_frac)
+        sgn = (-1) ** (N_cut - 1)
+        c0 = sgn * (x_t ** (-0.5)) * psi0
+        c1 = sgn * (x_t ** (-1.5)) * (-psi3 / (96.0 * (math.pi ** 2)))
+        z_c0 = z_raw + c0
+        z_c01 = z_raw + c0 + c1
+        return abs(z_ex - z_raw), abs(z_ex - z_c0), abs(z_ex - z_c01), N_cut
+
+    for i, tv in enumerate(t_grid):
+        er, e0, e1, _ = eval_rs(tv)
+        err_raw[i] = er
+        err_c0[i] = e0
+        err_c01[i] = e1
+
+    zero_rows = []
+    for k_z in range(1, 31):
+        tz = float(mp.im(mp.zetazero(k_z)))
+        er, e0, e1, nc = eval_rs(tz)
+        zero_rows.append({
+            "k": k_z,
+            "t_zero": tz,
+            "N_cut": nc,
+            "err_raw": er,
+            "err_c0": e0,
+            "err_c01": e1,
+        })
+
+    return {
+        "t_grid": t_grid,
+        "err_raw": err_raw,
+        "err_c0": err_c0,
+        "err_c01": err_c01,
+        "max_err_raw": float(np.max(err_raw)),
+        "max_err_c0": float(np.max(err_c0)),
+        "max_err_c01": float(np.max(err_c01)),
+        "zero_rows": zero_rows,
+        "jumps": [2.0 * math.pi * (k ** 2) for k in (2, 3, 4)],
+    }
+
+
+def run_coupled_dacosta_poschl_teller_test(R0=0.65, tau_mat=1.40):
+    """
+    Diagonalize the coupled 1D Hamiltonian:
+      H = -d^2/dx^2 + (0.5*tau_mat^2 - 0.25*kappa^2) - 2*u0^2*sech^2(u0*x)
+    with kappa = 1/R0 and baseline V0 = 0.5*tau_mat^2 - 0.25*kappa^2 > 0 across
+    soliton offsets u0 in [0.0, 0.90], verifying E_ground(u0) == V0 - u0^2 and zero
+    crossing at u_crit = sqrt(V0).
+    """
+    kappa = 1.0 / R0
+    V0 = 0.5 * (tau_mat ** 2) - 0.25 * (kappa ** 2)
+    u_crit = math.sqrt(V0)
+    u0_vals = [0.0, 0.15, 0.30, 0.45, 0.55, u_crit, 0.72, 0.85]
+    rows = []
+    L_box = 45.0
+    n_x = 1200
+    x = np.linspace(-L_box, L_box, n_x)
+    dx = x[1] - x[0]
+    T_kin = (
+        (2.0 / (dx ** 2)) * np.eye(n_x - 2)
+        - (1.0 / (dx ** 2)) * (np.eye(n_x - 2, k=1) + np.eye(n_x - 2, k=-1))
+    )
+    x_int = x[1:-1]
+    max_coupled_err = 0.0
+    for u0 in u0_vals:
+        V_pot = (
+            np.full_like(x_int, V0)
+            if u0 == 0.0
+            else V0 - 2.0 * (u0 ** 2) / (np.cosh(u0 * x_int) ** 2)
+        )
+        H_mat = T_kin + np.diag(V_pot)
+        e0_num = float(np.linalg.eigvalsh(H_mat)[0])
+        if u0 == 0.0:
+            e0_expected = V0 + (math.pi / (2.0 * L_box)) ** 2
+        else:
+            e0_expected = V0 - (u0 ** 2)
+        err = abs(e0_num - e0_expected)
+        max_coupled_err = max(max_coupled_err, err)
+        rows.append({
+            "u0": float(u0),
+            "e0_num": e0_num,
+            "e0_analytic": V0 - (u0 ** 2),
+            "err": err,
+        })
+
+    return {
+        "R0": R0,
+        "tau_mat": tau_mat,
+        "V0": V0,
+        "u_crit": u_crit,
+        "rows": rows,
+        "max_coupled_err": float(max_coupled_err),
+    }
+
+
+def generate_seam_and_schrodinger_figure(res_win, res_rs, res_coupled):
+    """Render 3-panel verification figure to reports/seam_threshold_and_schrodinger_comp.png."""
+    out_path = Path(__file__).resolve().parent.parent / "reports" / "seam_threshold_and_schrodinger_comp.png"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    fig, axes = plt.subplots(1, 3, figsize=(16, 5), dpi=150)
+
+    ax1 = axes[0]
+    taus = np.linspace(0.0, 2.0 * math.pi, 200)
+    phis = 0.5 * math.pi * (1.0 - np.cos(taus))
+    lams = ((phis / (2.0 * math.pi)) ** 2) / (res_win["R0"] ** 2)
+    ax1.plot(taus, lams, "b-", linewidth=2.0, label="Odd Gap lambda_1(phi(tau))")
+    ax1.axhline(0.25, color="darkgreen", linestyle="-.", linewidth=1.4, label="Unit-Sphere Bound 1/4 = 0.25")
+    ax1.axvline(res_win["tau_exact_1"], color="crimson", linestyle="--", label=f"Exact tau_1 = {res_win['tau_exact_1']:.4f}")
+    ax1.axvline(res_win["tau_exact_2"], color="crimson", linestyle="--", label=f"Exact tau_2 = {res_win['tau_exact_2']:.4f}")
+    ax1.fill_between(
+        taus,
+        0.25,
+        lams,
+        where=(lams >= 0.25),
+        color="mediumseagreen",
+        alpha=0.25,
+        label="|phi(tau)| >= pi*R0",
+    )
+    ax1.set_xlabel("tau (rad)")
+    ax1.set_ylabel("Spectral Gap lambda_1")
+    ax1.set_title("1. Exact Unit-Sphere Stability Window")
+    ax1.grid(True, alpha=0.3)
+    ax1.legend(loc="upper right", fontsize=7.5)
+
+    ax2 = axes[1]
+    ax2.semilogy(res_rs["t_grid"], np.maximum(res_rs["err_raw"], 1e-12), color="darkorange", alpha=0.85, linewidth=1.3, label="Raw 2-Lap Error")
+    ax2.semilogy(res_rs["t_grid"], np.maximum(res_rs["err_c0"], 1e-12), color="royalblue", linewidth=1.5, label="1-Term Seam C_0(p) Error")
+    ax2.semilogy(res_rs["t_grid"], np.maximum(res_rs["err_c01"], 1e-12), color="crimson", linewidth=1.5, label="2-Term Gabcke C_0+C_1 Error")
+    for idx_j, tj in enumerate(res_rs["jumps"]):
+        lbl = "Cutoff Jumps 2*pi*k^2" if idx_j == 0 else None
+        ax2.axvline(tj, color="black", linestyle=":", linewidth=1.2, label=lbl)
+    ax2.set_xlabel("Critical-Line Height t")
+    ax2.set_ylabel("Abs Error vs Exact Z(t) (log)")
+    ax2.set_title("2. Seam Continuity Across N: 1->2->3->4")
+    ax2.grid(True, alpha=0.3, which="both")
+    ax2.legend(loc="lower left", fontsize=7.5)
+
+    ax3 = axes[2]
+    u_dense = np.linspace(0.0, 0.90, 200)
+    ax3.plot(u_dense, res_coupled["V0"] - u_dense ** 2, "k-", linewidth=1.8, label="Analytic V_0 - u_0^2")
+    u_pts = [r["u0"] for r in res_coupled["rows"]]
+    e_pts = [r["e0_num"] for r in res_coupled["rows"]]
+    ax3.plot(u_pts, e_pts, "ro", markersize=6, label="1D Schrodinger Ground E_0(u_0)")
+    ax3.axhline(0.0, color="gray", linestyle=":")
+    ax3.axvline(res_coupled["u_crit"], color="darkgreen", linestyle="--", label=f"Threshold u_crit = sqrt(V_0) = {res_coupled['u_crit']:.4f}")
+    ax3.set_xlabel("Off-Line Zero Offset u_0")
+    ax3.set_ylabel("Coupled Ground Energy E_0")
+    ax3.set_title("3. Da Costa Barrier vs Poschl-Teller Soliton")
+    ax3.grid(True, alpha=0.3)
+    ax3.legend(loc="lower left", fontsize=7.5)
+
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=150)
+    plt.close(fig)
+    return str(out_path)
+
+
 def run_all_tests():
     print("=" * 88)
     print("DYNAMICAL MOVING & UNTIED MOBIUS RIBBON INSIDE UNIT SPHERE B^3")
@@ -480,6 +709,30 @@ def run_all_tests():
 
     fig_path = generate_dynamical_figure(res_a, res_b, res_z)
     print(f"\nSaved Dynamical Figure: {fig_path}")
+
+    res_win = run_breathing_threshold_window_test(R0=0.65, Nu=128)
+    print("\n4. EXACT UNIT-SPHERE THRESHOLD WINDOW |phi(tau)| >= pi*R0:")
+    print(f"   Exact tau crossings (arccos(-0.3))   = [{res_win['tau_exact_1']:.6f}, {res_win['tau_exact_2']:.6f}] rad")
+    print(f"   Numeric ribbon Laplacian crossings   = [{res_win['tau_num_1']:.6f}, {res_win['tau_num_2']:.6f}] rad")
+    print(f"   Crossing discrepancies               = ({res_win['err_tau_1']:.3e}, {res_win['err_tau_2']:.3e})")
+    print(f"   Boundary phase threshold discrepancy = {res_win['err_phi_thresh']:.3e} vs pi*R0 = {res_win['phi_threshold']:.6f}")
+
+    res_rs = run_multi_jump_riemann_siegel_seam_test()
+    print("\n5. MULTI-JUMP RIEMANN-SIEGEL SEAM TEST (t in [10, 120], N = 1 -> 2 -> 3 -> 4):")
+    print(f"   Max |Z_exact - Raw 2-Lap|            = {res_rs['max_err_raw']:.5f}")
+    print(f"   Max |Z_exact - (2-Lap + C0)|         = {res_rs['max_err_c0']:.5f}")
+    print(f"   Max |Z_exact - (2-Lap + C0 + C1)|    = {res_rs['max_err_c01']:.5f}")
+    print(f"   Zero 3  (t={res_rs['zero_rows'][2]['t_zero']:.4f}, N={res_rs['zero_rows'][2]['N_cut']}): raw={res_rs['zero_rows'][2]['err_raw']:.5f}, c0={res_rs['zero_rows'][2]['err_c0']:.5f}, c0+c1={res_rs['zero_rows'][2]['err_c01']:.5f}")
+    print(f"   Zero 13 (t={res_rs['zero_rows'][12]['t_zero']:.4f}, N={res_rs['zero_rows'][12]['N_cut']}): raw={res_rs['zero_rows'][12]['err_raw']:.5f}, c0={res_rs['zero_rows'][12]['err_c0']:.5f}, c0+c1={res_rs['zero_rows'][12]['err_c01']:.5f}")
+    print(f"   Zero 29 (t={res_rs['zero_rows'][28]['t_zero']:.4f}, N={res_rs['zero_rows'][28]['N_cut']}): raw={res_rs['zero_rows'][28]['err_raw']:.5f}, c0={res_rs['zero_rows'][28]['err_c0']:.5f}, c0+c1={res_rs['zero_rows'][28]['err_c01']:.5f}")
+
+    res_coupled = run_coupled_dacosta_poschl_teller_test(R0=0.65, tau_mat=1.40)
+    print("\n6. COUPLED DA COSTA TORSION BARRIER VS POSCHL-TELLER SOLITON:")
+    print(f"   Da Costa baseline V0                 = {res_coupled['V0']:.6f}, u_crit = {res_coupled['u_crit']:.6f}")
+    print(f"   Max |E0_num - E0_analytic|           = {res_coupled['max_coupled_err']:.3e}")
+
+    fig2_path = generate_seam_and_schrodinger_figure(res_win, res_rs, res_coupled)
+    print(f"\nSaved Seam & Schrodinger Figure: {fig2_path}")
     print("=" * 88)
 
     assert res_a["max_norm"] < 1.0
@@ -492,6 +745,10 @@ def run_all_tests():
     assert min_boost > 0.0
     assert res_z["max_chi_unit_err"] < 1e-13
     assert res_z["max_rs1_err"] < 0.02
+    assert res_win["err_tau_1"] < 2e-4
+    assert res_win["err_tau_2"] < 2e-4
+    assert res_rs["max_err_c01"] < 0.004
+    assert res_coupled["max_coupled_err"] < 2e-4
     return res_a, res_b, res_z, fig_path
 
 
