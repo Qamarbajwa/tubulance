@@ -49,6 +49,11 @@ from scripts.probe_mobius_strip_in_sphere_experiment import (
     run_holonomy_experiment,
     run_spectral_twist_experiment
 )
+from scripts.probe_dynamical_moving_mobius_in_sphere import (
+    run_case_a_sliding_strip_experiment,
+    run_case_b_breathing_phase_and_open_ribbon,
+    run_approximate_functional_equation_test
+)
 
 def test_antipodal_pair_properties():
     """Verify that antipodal points on S^2 have distance 2 (squared distance 4) and midpoint 0."""
@@ -373,6 +378,34 @@ def test_folded_mobius_blaschke_dipole_cayley_equivalence():
     assert r3["tan_err"] < 1e-9
     assert r3["t_quad_err"] < 1e-6
     assert r3["winding_mixed_err"] < 1e-8
+
+
+def test_dynamical_moving_mobius_and_afe_double_lap():
+    """
+    Verify dynamical moving/untied Mobius strip inside B^3 and Riemann-Siegel
+    double-lap approximate functional equation on Re(s) = 1/2.
+    """
+    res_a = run_case_a_sliding_strip_experiment(R0=0.65, w=0.25)
+    assert res_a["max_norm"] < 1.0
+    assert res_a["max_holonomy_flip_err"] < 1e-13
+    assert abs(res_a["floquet_at_omega_crit"]) < 1e-14
+    assert res_a["berry_min_at_half"] < 1e-14
+
+    res_b = run_case_b_breathing_phase_and_open_ribbon(R0=0.65, Nu=64)
+    assert res_b["max_lam0_err"] < 1e-10
+    assert res_b["max_breathing_err"] < 5e-4
+    assert res_b["max_open_radius"] < 1.0
+    assert min(r["e0_dynamic_twisted"] for r in res_b["open_records"]) > 0.25
+    assert min(r["torsion_boost"] for r in res_b["open_records"]) > 0.0
+
+    res_z = run_approximate_functional_equation_test()
+    assert res_z["max_chi_unit_err"] < 1e-13
+    assert res_z["max_rs1_err"] < 0.02
+    assert len(res_z["zero_checks"]) == 8
+    for zc in res_z["zero_checks"]:
+        assert zc["abs_zeta_exact"] < 1e-12
+        assert zc["abs_rs1"] < 0.02
+
 
 
 
