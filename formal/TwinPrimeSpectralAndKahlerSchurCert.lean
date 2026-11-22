@@ -16,18 +16,21 @@ Riemann Hypothesis, 3D Navier-Stokes Global Regularity) plus BSD remain strictly
 (status: verified-finite, open_horizon_lock: STRICTLY OPEN).
 
 This module formalizes:
-1. Twin-Prime Dipole Rayleigh Bound on K_N = Q_N^-1:
+1. Two-Square Codimension-Two Stabilization (Infinity in 2, Not 1):
+   Proves why 1 square vanishes on v1 = v2 whereas 2 paired squares stabilize:
+   0 < 3 * (v1^2 - v2^2)^2 + (gamma - 3) * v2^2 * (v1^2 + v2^2) for gamma > 3.
+2. Twin-Prime Dipole Rayleigh Bound on K_N = Q_N^-1:
    For 0 < p_j < p_next, the Markov bond energy in the antisymmetric dipole
    Rayleigh quotient simplifies identically to (p_next + p_j) / (2 * (p_next - p_j)).
    For any twin-prime pair p_next = p_j + 2, this bond energy simplifies to (p_j + 1) / 2 > 0.
-2. Finite Kahler-Lefschetz sl(2) Exterior Dimension Decomposition on C^4:
+3. Finite Kahler-Lefschetz sl(2) Exterior Dimension Decomposition on C^4:
    Certifies the exact finite dimension partition 1 + 16 + 36 + 16 + 1 = 70 across
    Lambda^{p,p}(C^4) and the middle primitive/imprimitive split 36 = 20 + 15 + 1.
-3. Hodge-Riemann Primitive Schur Positivity:
+4. Hodge-Riemann Primitive Schur Positivity:
    Taring out the imprimitive Kahler trace block a_imprim > 0 under bounded
    coupling b^2 < a_imprim * d_prim strictly preserves the primitive kernel floor
    d_prim - b^2 / a_imprim > 0.
-4. Master Synthesis: Unifies all four theorems with ZERO custom axioms.
+5. Master Synthesis: Unifies all five theorems with ZERO custom axioms.
 -/
 
 namespace TwinPrimeKahlerSchur
@@ -36,6 +39,26 @@ set_option linter.unusedVariables false
 
 /-- Epistemic Lock: All Clay Millennium Problems remain strictly OPEN. -/
 def all_clay_millennium_problems_open : Bool := true
+
+-- ===========================================================================
+-- Part 0: Paired-Duality Two-Square Strict Positivity
+-- ===========================================================================
+
+/-- Theorem 0 (Two-Square Codimension-Two Strict Positivity):
+    Proves why 1 square vanishes on v1 = v2 whereas 2 paired squares stabilize:
+    for 3 < gamma, 0 < v1^2 + v2^2, and 0 < v2^2,
+    0 < 3 * (v1^2 - v2^2)^2 + (gamma - 3) * v2^2 * (v1^2 + v2^2). -/
+theorem two_square_codimension_two_strict_positivity
+    (v1 v2 gamma : ℝ)
+    (h_gamma : 3 < gamma) (h_sum : 0 < v1 ^ 2 + v2 ^ 2) (h_v2 : 0 < v2 ^ 2) :
+    0 < 3 * (v1 ^ 2 - v2 ^ 2) ^ 2 + (gamma - 3) * v2 ^ 2 * (v1 ^ 2 + v2 ^ 2) := by
+  have h_sq1_nonneg : 0 ≤ 3 * (v1 ^ 2 - v2 ^ 2) ^ 2 := by
+    have h_sq : 0 ≤ (v1 ^ 2 - v2 ^ 2) ^ 2 := sq_nonneg (v1 ^ 2 - v2 ^ 2)
+    linarith
+  have h_g_pos : 0 < gamma - 3 := by linarith
+  have h_term2_pos : 0 < (gamma - 3) * v2 ^ 2 * (v1 ^ 2 + v2 ^ 2) := by
+    exact mul_pos (mul_pos h_g_pos h_v2) h_sum
+  linarith
 
 -- ===========================================================================
 -- Part 1: Twin-Prime Dipole Rayleigh Quotient Identities
@@ -104,22 +127,25 @@ theorem hodge_riemann_primitive_schur_positivity
 -- ===========================================================================
 
 /-- Master Synthesis Theorem:
-    Combines Twin-Prime Dipole Bond Rayleigh Identity, Twin-Prime Half-Midpoint Floor,
-    Kahler Fourfold Exterior Split (70 = 1+16+36+16+1, 36 = 20+15+1), and
-    Hodge-Riemann Primitive Schur Positivity with ZERO custom axioms! -/
+    Combines Two-Square Codimension-Two Positivity, Twin-Prime Dipole Bond Rayleigh Identity,
+    Twin-Prime Half-Midpoint Floor, Kahler Fourfold Exterior Split (70 = 1+16+36+16+1, 36 = 20+15+1),
+    and Hodge-Riemann Primitive Schur Positivity with ZERO custom axioms! -/
 theorem master_twin_prime_and_kahler_lefschetz_schur_synthesis
-    (p_j p_next p_twin_j p_twin_next d_prim a_imprim b : ℝ)
+    (v1 v2 gamma p_j p_next p_twin_j p_twin_next d_prim a_imprim b : ℝ)
+    (h_gamma : 3 < gamma) (h_sum : 0 < v1 ^ 2 + v2 ^ 2) (h_v2 : 0 < v2 ^ 2)
     (h_pj : 0 < p_j) (h_lt : p_j < p_next)
     (h_tpj : 0 < p_twin_j) (h_twin : p_twin_next = p_twin_j + 2)
     (h_d : 0 < d_prim) (h_a : 0 < a_imprim)
     (h_bound : b ^ 2 < a_imprim * d_prim) :
+    (0 < 3 * (v1 ^ 2 - v2 ^ 2) ^ 2 + (gamma - 3) * v2 ^ 2 * (v1 ^ 2 + v2 ^ 2)) ∧
     ((p_next ^ 2 / (p_next ^ 2 - p_j ^ 2)) * ((1 / 2 : ℝ) * (1 + p_j / p_next) ^ 2) =
       (p_next + p_j) / (2 * (p_next - p_j))) ∧
     (((p_twin_next + p_twin_j) / (2 * (p_twin_next - p_twin_j)) = (p_twin_j + 1) / 2) ∧
       0 < (p_twin_j + 1) / 2) ∧
     ((1 + 16 + 36 + 16 + 1 = 70) ∧ (36 = 20 + 15 + 1)) ∧
     (0 < d_prim - b ^ 2 / a_imprim) := by
-  refine ⟨prime_dipole_bond_rayleigh_identity p_j p_next h_pj h_lt,
+  refine ⟨two_square_codimension_two_strict_positivity v1 v2 gamma h_gamma h_sum h_v2,
+          prime_dipole_bond_rayleigh_identity p_j p_next h_pj h_lt,
           twin_prime_dipole_energy_half_midpoint p_twin_j p_twin_next h_tpj h_twin,
           kahler_middle_fourfold_lefschetz_dimension_split,
           hodge_riemann_primitive_schur_positivity d_prim a_imprim b h_d h_a h_bound⟩
