@@ -255,6 +255,114 @@ def verify_universal_trophic_sum_of_squares(rho_sq=0.29):
     }
 
 
+def verify_trophic_sum_of_squares_and_tridiagonal_markov(rho_sq=0.29, seed=42):
+    """
+    Part (a): Verify Universal Trophic Sum-of-Squares formula across
+      N in {3, 4, 6, 8, 12, 100} and phi in {15, 45, 75} degrees (<= 1e-15 error),
+      and exact asymptotic 4/11 symmetric-ray survival ratio giving barrier 29/275.
+    Part (b): Construct closed-form tridiagonal inverse K_N of Cayley-Poisson
+      prime Gram matrix Q_N for N = 2..25, verifying:
+        1. ||K_N - inv(Q_N)||_max and ||Q_N @ K_N - I_N||_max.
+        2. (Q_N^-1)_{j,k} == 0 for |j - k| >= 2.
+        3. (K_N)_{N,N} == J_Markov(p_{N-1}, p_N) = p_N^2 / (p_N^2 - p_{N-1}^2).
+        4. v^T K_N v == v_1^2 + sum_{j=1}^{N-1} J_Markov(p_j, p_{j+1}) * (v_{j+1} - (p_j/p_{j+1})*v_j)^2.
+    """
+    # Part (a)
+    N_vals = [3, 4, 6, 8, 12, 100]
+    phi_vals = [15.0, 45.0, 75.0]
+    trophic_max_err = 0.0
+    for N in N_vals:
+        gamma_N = 3.0 if N == 3 else (45.0 / 7.0 - 120.0 / (7.0 * (N ** 2 - 4)))
+        for phi_deg in phi_vals:
+            phi = math.radians(phi_deg)
+            v1 = math.sqrt(rho_sq) * math.cos(phi)
+            v2 = math.sqrt(rho_sq) * math.sin(phi)
+            pred = (3.0 * ((v1 ** 2 - v2 ** 2) ** 2) + (gamma_N - 3.0) * (v2 ** 2) * (v1 ** 2 + v2 ** 2)) / (3.0 * (v1 ** 2) + gamma_N * (v2 ** 2))
+            meas = compute_vacuum_chamber_profile(N, phi, rho_sq=rho_sq, R=1e15)["min_S"]
+            err = abs(pred - meas)
+            if err > trophic_max_err:
+                trophic_max_err = err
+                
+    gamma_inf = 45.0 / 7.0
+    ratio_4_11 = (gamma_inf - 3.0) / (gamma_inf + 3.0)
+    err_4_11 = abs(ratio_4_11 - (4.0 / 11.0))
+    barrier_29_275 = ratio_4_11 * rho_sq
+    err_29_275 = abs(barrier_29_275 - (29.0 / 275.0))
+    
+    # Part (b)
+    np.random.seed(seed)
+    primes = get_first_n_primes(25)
+    max_inv_err = 0.0
+    max_residual_err = 0.0
+    max_off_tridiag = 0.0
+    max_corner_err = 0.0
+    max_quad_err = 0.0
+    tridiag_records = []
+    
+    for N in range(2, 26):
+        ps = primes[:N]
+        Q = np.array([[float(min(ps[i], ps[j])) / float(max(ps[i], ps[j])) for j in range(N)] for i in range(N)])
+        K_num = np.linalg.inv(Q)
+        
+        K_exact = np.zeros((N, N))
+        for i in range(N - 1):
+            pa, pb = float(ps[i]), float(ps[i + 1])
+            J_i = (pb ** 2) / (pb ** 2 - pa ** 2)
+            ratio = pa / pb
+            K_exact[i, i] += J_i * (ratio ** 2)
+            K_exact[i + 1, i + 1] += J_i
+            K_exact[i, i + 1] = -J_i * ratio
+            K_exact[i + 1, i] = -J_i * ratio
+        K_exact[0, 0] += 1.0
+        
+        inv_err = float(np.max(np.abs(K_exact - K_num)))
+        residual_err = float(np.max(np.abs(Q @ K_exact - np.eye(N))))
+        off_tridiag = max((float(abs(K_num[i, j])) for i in range(N) for j in range(N) if abs(i - j) >= 2), default=0.0)
+        
+        J_last = (float(ps[-1]) ** 2) / (float(ps[-1]) ** 2 - float(ps[-2]) ** 2)
+        corner_err = abs(float(K_num[-1, -1]) - J_last)
+        
+        v = np.random.randn(N)
+        quad_num = float(v @ K_num @ v)
+        quad_sos = float(v[0] ** 2)
+        for j in range(N - 1):
+            pj, pnext = float(ps[j]), float(ps[j + 1])
+            Jj = (pnext ** 2) / (pnext ** 2 - pj ** 2)
+            quad_sos += Jj * ((v[j + 1] - (pj / pnext) * v[j]) ** 2)
+        quad_err = abs(quad_num - quad_sos)
+        
+        max_inv_err = max(max_inv_err, inv_err)
+        max_residual_err = max(max_residual_err, residual_err)
+        max_off_tridiag = max(max_off_tridiag, off_tridiag)
+        max_corner_err = max(max_corner_err, corner_err)
+        max_quad_err = max(max_quad_err, quad_err)
+        
+        if N in [2, 3, 5, 10, 15, 25]:
+            tridiag_records.append({
+                "N": N,
+                "p_N": ps[-1],
+                "inv_err": inv_err,
+                "residual_err": residual_err,
+                "off_tridiag": off_tridiag,
+                "corner_err": corner_err,
+                "quad_err": quad_err
+            })
+            
+    return {
+        "trophic_max_err": trophic_max_err,
+        "ratio_4_11": ratio_4_11,
+        "err_4_11": err_4_11,
+        "barrier_29_275": barrier_29_275,
+        "err_29_275": err_29_275,
+        "max_inv_err": max_inv_err,
+        "max_residual_err": max_residual_err,
+        "max_off_tridiag": max_off_tridiag,
+        "max_corner_err": max_corner_err,
+        "max_quad_err": max_quad_err,
+        "tridiag_records": tridiag_records
+    }
+
+
 def compute_pde_dressed_viscosity(k_par, k_4=1.0, M_bulk=1.0, nu=0.5, U_cross=0.4):
     """
     Seam 3 (Part C): Evaluate 4D-to-3D PDE wavenumber cancellation and dressed viscosity.
@@ -347,12 +455,20 @@ def run_investigation():
         status = "BASIN PRESERVED" if pr["basin_preserved"] else "FAILED"
         print(f"  {pr['k_par']:7.1f} | {pr['lam_D']:10.4f} | {pr['norm_B']:9.4f} | {pr['alpha_raw']:9.6f} | {pr['alpha_analytic']:9.6f} | {pr['err_alpha']:10.2e} | {pr['nu_eff']:8.6f} | {status}")
         
-    print("\nPHASE 3: UNIVERSAL TROPHIC SUM-OF-SQUARES IDENTITY VERIFICATION")
-    sos = verify_universal_trophic_sum_of_squares()
-    print(f"  Max Error across N={{3..100}} & phi in (0, pi/2): {sos['max_err']:.2e}")
-    print(f"  N=3 Canonical Landmark (441/2900) Error:           {sos['err_n3_landmark']:.2e}")
-    print(f"  N=4 Symmetric Barrier (29/400 = 0.0725) Error:     {sos['err_n4_45']:.2e}")
-    print(f"  Continuum Symmetric Barrier (29/275):              {sos['barrier_inf']:.8f} (Err: {sos['err_inf_exact']:.2e})")
+    print("\nPHASE 3: UNIVERSAL TROPHIC SUM-OF-SQUARES & TRIDIAGONAL MARKOV INVERSE")
+    tm = verify_trophic_sum_of_squares_and_tridiagonal_markov()
+    print(f"  Trophic Sum-of-Squares Max Error:        {tm['trophic_max_err']:.2e}")
+    print(f"  Asymptotic 4/11 Ratio:                   {tm['ratio_4_11']:.12f} (Err: {tm['err_4_11']:.2e})")
+    print(f"  Continuum Symmetric Barrier (29/275):    {tm['barrier_29_275']:.12f} (Err: {tm['err_29_275']:.2e})")
+    print(f"  Tridiagonal Max ||K_N - inv(Q_N)||_max:  {tm['max_inv_err']:.2e}")
+    print(f"  Tridiagonal Max ||Q_N @ K_N - I_N||_max: {tm['max_residual_err']:.2e}")
+    print(f"  Tridiagonal Max Off-Diagonal |j-k|>=2:   {tm['max_off_tridiag']:.2e}")
+    print(f"  Tridiagonal Max Corner Error (N,N):      {tm['max_corner_err']:.2e}")
+    print(f"  Tridiagonal Max Quadratic SoS Error:     {tm['max_quad_err']:.2e}")
+    print("  N  | p_N | ||K-inv(Q)|| | ||QK-I|| | Off-Tridiag |  Corner Err |  Quad SoS Err")
+    print("  " + "-" * 78)
+    for rec in tm["tridiag_records"]:
+        print(f"  {rec['N']:2d} | {rec['p_N']:3d} | {rec['inv_err']:12.2e} | {rec['residual_err']:8.2e} | {rec['off_tridiag']:11.2e} | {rec['corner_err']:11.2e} | {rec['quad_err']:13.2e}")
         
     print("\n" + "=" * 92)
     print("MATHEMATICAL VERDICT:")
@@ -360,13 +476,16 @@ def run_investigation():
     print("   inverse-propagator wall (lambda_min=0, Tr(S^-1)=inf). For all N>=4, the l=3 octupole")
     print("   channel opens (asymptotic ratio 45/7 = 6.42857 > 3), making Chamber II (v2 > v1 > 0)")
     print("   strictly dominant over Chamber I in Tr(H), min(A), min(S_eff), and 1-loop stability.")
+    print("   Asymptotic symmetric-ray survival ratio is identically 4/11, lifting floor to 29/275.")
     print("2. Seam 2 (Cayley-Poisson Markov Screening): Pulling back p_j^(-it) under d_theta/(2*pi)")
-    print("   yields Q_jk = min(p_j,p_k)/max(p_j,p_k). Exact Markov screening cancels all intermediate")
-    print("   primes p_1..p_{N-2} identically (weights <= 5e-15), giving S_eff = 1 - (p_{N-1}/p_N)^2 > 0.")
+    print("   yields Q_jk = min(p_j,p_k)/max(p_j,p_k). Exact tridiagonal inverse K_N = Q_N^-1")
+    print("   yields Markov Sum-of-Squares quadratic form and S_eff(p_N) = 1 - (p_{N-1}/p_N)^2 > 0.")
     print("3. Seam 3 (PDE Wavenumber Cancellation): k_par^2 cancels identically in the Schur coupling")
     print("   ratio alpha = U_cross^2 / (nu*(nu*k_4^2 + M_bulk^2)), yielding a scale-invariant dressed")
     print("   viscosity nu_eff = (1 - alpha)*nu > 0 across all tangential wavenumbers k_par.")
     print("=" * 92)
 
+main = run_investigation
+
 if __name__ == "__main__":
-    run_investigation()
+    main()

@@ -33,7 +33,8 @@ from scripts.probe_cross_slice_4d_3d_flux_and_jacobian import (
 from scripts.probe_dynamical_chamber_and_markov_seams import (
     verify_cayley_poisson_quadrature,
     compute_markov_prime_gram_schur,
-    compute_pde_dressed_viscosity
+    compute_pde_dressed_viscosity,
+    verify_trophic_sum_of_squares_and_tridiagonal_markov
 )
 
 def test_antipodal_pair_properties():
@@ -254,6 +255,24 @@ def test_seam3_pde_dressed_viscosity_cancellation():
         assert math.isclose(pr["nu_eff"], expected_nu_eff, rel_tol=1e-14)
         assert pr["nu_eff"] > 0.0
         assert pr["basin_preserved"] is True
+
+
+def test_tridiagonal_markov_inverse_and_quadratic_sos():
+    """
+    Verify exact tridiagonal inverse K_N = Q_N^-1 of Cayley-Poisson prime Gram matrix
+    for N = 2..25, zero |j - k| >= 2 entries, corner entry (Q_N^-1)_{N,N} == J_Markov,
+    and the Markov Sum-of-Squares quadratic form identity.
+    """
+    tm = verify_trophic_sum_of_squares_and_tridiagonal_markov(rho_sq=0.29, seed=42)
+    assert tm["trophic_max_err"] <= 1e-15
+    assert tm["err_4_11"] <= 1e-15
+    assert tm["err_29_275"] <= 1e-15
+    assert tm["max_inv_err"] <= 2e-13
+    assert tm["max_residual_err"] <= 1e-14
+    assert tm["max_off_tridiag"] <= 2e-13
+    assert tm["max_corner_err"] <= 1e-13
+    assert tm["max_quad_err"] <= 1e-12
+
 
 
 

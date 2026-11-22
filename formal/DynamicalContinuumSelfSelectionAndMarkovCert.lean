@@ -218,6 +218,32 @@ theorem markov_prime_gap_jacobian_reciprocity (p_prev p_curr : ℝ)
     exact ne_of_gt h_pos
   field_simp
 
+/-- Theorem 9 (Asymptotic Symmetric-Ray 4/11 Ratio & 29/275 Floor):
+    With asymptotic quadrupole parameter gamma_inf = 45/7 and density rho_sq = 29/100,
+    the symmetric-ray survival factor equals 4/11 and the barrier floor equals 29/275. -/
+theorem asymptotic_symmetric_ray_four_elevenths_ratio :
+    let gamma_inf : ℝ := 45 / 7
+    let rho_sq : ℝ := 29 / 100
+    ((gamma_inf - 3) / (gamma_inf + 3) = 4 / 11) ∧
+    (rho_sq * ((gamma_inf - 3) / (gamma_inf + 3)) = 29 / 275) := by
+  intro gamma_inf rho_sq
+  dsimp [gamma_inf, rho_sq]
+  constructor <;> norm_num
+
+/-- Theorem 10 (Two-Prime Tridiagonal Inverse Sum-of-Squares Identity):
+    For consecutive primes 0 < p1 < p2 and arbitrary state coordinates v1, v2 : ℝ,
+    the Markov sum-of-squares form matches the 2x2 inverse Gram quadratic form identically. -/
+theorem two_prime_tridiagonal_sum_of_squares_identity (p1 p2 v1 v2 : ℝ)
+    (h_p1 : 0 < p1) (h_lt : p1 < p2) :
+    v1 ^ 2 + (p2 ^ 2 / (p2 ^ 2 - p1 ^ 2)) * (v2 - (p1 / p2) * v1) ^ 2 =
+    (p2 ^ 2 / (p2 ^ 2 - p1 ^ 2)) * (v1 ^ 2 + v2 ^ 2 - 2 * (p1 / p2) * v1 * v2) := by
+  have h_p2 : 0 < p2 := by linarith
+  have h_p2_ne : p2 ≠ 0 := ne_of_gt h_p2
+  have h_diff_pos : 0 < p2 ^ 2 - p1 ^ 2 := by nlinarith
+  have h_diff_ne : p2 ^ 2 - p1 ^ 2 ≠ 0 := ne_of_gt h_diff_pos
+  field_simp
+  ring
+
 -- ===========================================================================
 -- Part 5: Master Three Dynamical Continuum Seams Synthesis
 -- ===========================================================================
@@ -229,11 +255,11 @@ theorem markov_prime_gap_jacobian_reciprocity (p_prev p_curr : ℝ)
     3. Exact PDE Tangential Wavenumber Cancellation in alpha.
     4. Strict Positivity of Dressed Slice Viscosity nu_eff and nu_eff * k_par^2.
     5. Trophic Schur Double-Negative Monotonicity Law.
-    6. Universal Trophic Sum-of-Squares Decomposition & Symmetric Barrier Healing.
-    7. Markov Prime-Gap Innovation Jacobian Unity Reciprocity.
+    6. Universal Trophic Sum-of-Squares Decomposition & Asymptotic 4/11 Barrier Healing.
+    7. Markov Prime-Gap Innovation Jacobian & Two-Prime Tridiagonal SoS Identity.
     Verified with ZERO custom axioms! -/
 theorem master_three_dynamical_continuum_seams_synthesis
-    (v1 v2 p_prev p_curr nu k_par A_norm U_cross d a0 k3 b tv1 tv2 rho_sq gamma : ℝ)
+    (v1 v2 p_prev p_curr nu k_par A_norm U_cross d a0 k3 b tv1 tv2 rho_sq gamma mv1 mv2 : ℝ)
     (h_v1 : 0 < v1) (h_v_lt : v1 < v2)
     (h_p_prev : 0 < p_prev) (h_p_lt : p_prev < p_curr)
     (h_nu : 0 < nu) (h_k : 0 < k_par) (h_A : 0 < A_norm)
@@ -253,7 +279,11 @@ theorem master_three_dynamical_continuum_seams_synthesis
       (3 * (tv1 ^ 2 - tv2 ^ 2) ^ 2 + (gamma - 3) * tv2 ^ 2 * (tv1 ^ 2 + tv2 ^ 2)) /
       (3 * tv1 ^ 2 + gamma * tv2 ^ 2)) ∧
     (0 < rho_sq * ((gamma - 3) / (gamma + 3))) ∧
-    ((p_curr ^ 2 / (p_curr ^ 2 - p_prev ^ 2)) * (1 - (p_prev / p_curr) ^ 2) = 1) := by
+    ((p_curr ^ 2 / (p_curr ^ 2 - p_prev ^ 2)) * (1 - (p_prev / p_curr) ^ 2) = 1) ∧
+    ((((45 / 7 : ℝ) - 3) / ((45 / 7 : ℝ) + 3) = 4 / 11) ∧
+      ((29 / 100 : ℝ) * (((45 / 7 : ℝ) - 3) / ((45 / 7 : ℝ) + 3)) = 29 / 275)) ∧
+    (mv1 ^ 2 + (p_curr ^ 2 / (p_curr ^ 2 - p_prev ^ 2)) * (mv2 - (p_prev / p_curr) * mv1) ^ 2 =
+      (p_curr ^ 2 / (p_curr ^ 2 - p_prev ^ 2)) * (mv1 ^ 2 + mv2 ^ 2 - 2 * (p_prev / p_curr) * mv1 * mv2)) := by
   refine ⟨chamber_two_octupole_stiffness_dominance v1 v2 h_v1 h_v_lt,
           cayley_poisson_markov_schur_gap_exact p_prev p_curr h_p_prev h_p_lt,
           pde_cross_slice_wavenumber_cancellation nu k_par A_norm U_cross h_nu h_k h_A,
@@ -261,7 +291,9 @@ theorem master_three_dynamical_continuum_seams_synthesis
           trophic_schur_double_negative_monotonicity d a0 k3 b h_a0 h_k3 h_b,
           universal_trophic_sum_of_squares_identity tv1 tv2 gamma h_tden,
           (trophic_barrier_healing_at_symmetric_ray tv1 tv2 rho_sq gamma h_rho h_gamma h_tv1 h_tv2).2.1,
-          markov_prime_gap_jacobian_reciprocity p_prev p_curr h_p_prev h_p_lt⟩
+          markov_prime_gap_jacobian_reciprocity p_prev p_curr h_p_prev h_p_lt,
+          asymptotic_symmetric_ray_four_elevenths_ratio,
+          two_prime_tridiagonal_sum_of_squares_identity p_prev p_curr mv1 mv2 h_p_prev h_p_lt⟩
 
 #print axioms master_three_dynamical_continuum_seams_synthesis
 

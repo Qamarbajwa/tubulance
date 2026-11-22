@@ -49,7 +49,8 @@ from scripts.probe_nonabelian_commutator_schur_gap import (
 )
 from scripts.probe_dynamical_chamber_and_markov_seams import (
     compute_vacuum_chamber_profile,
-    verify_universal_trophic_sum_of_squares
+    verify_universal_trophic_sum_of_squares,
+    verify_trophic_sum_of_squares_and_tridiagonal_markov
 )
 
 
@@ -303,6 +304,25 @@ def test_universal_trophic_sum_of_squares_identity():
     assert sos["err_n4_45"] <= 1e-14
     assert sos["err_inf_exact"] <= 1e-15
     assert math.isclose(sos["barrier_inf"], 29.0 / 275.0, rel_tol=1e-14)
+
+
+def test_trophic_four_elevenths_ratio_and_tridiagonal_markov():
+    """
+    Verify:
+    1. Asymptotic symmetric-ray 4/11 ratio and barrier 29/275.
+    2. Exact tridiagonal inverse K_N = Q_N^-1 across N=2..25, zero |j-k|>=2 entries,
+       corner entry J_Markov(p_{N-1}, p_N), and Markov Sum-of-Squares quadratic form.
+    """
+    tm = verify_trophic_sum_of_squares_and_tridiagonal_markov(rho_sq=0.29, seed=42)
+    assert tm["trophic_max_err"] <= 1e-15
+    assert tm["err_4_11"] <= 1e-15
+    assert tm["err_29_275"] <= 1e-15
+    assert tm["max_inv_err"] <= 2e-13
+    assert tm["max_residual_err"] <= 1e-14
+    assert tm["max_off_tridiag"] <= 2e-13
+    assert tm["max_corner_err"] <= 1e-13
+    assert tm["max_quad_err"] <= 1e-12
+
 
 
 
