@@ -42,6 +42,8 @@ from scripts.probe_osterwalder_schrader_os4_correlator import simulate_glueball_
 from scripts.probe_nonabelian_commutator_schur_gap import (
     construct_spherical_multiplet_basis,
     compute_quartic_stiffness_tensor,
+    compute_berezin_toeplitz_scaling,
+    compute_mixed_parity_schur_spectrum,
     compute_schur_spectrum_at_radius
 )
 
@@ -203,4 +205,40 @@ def test_nonabelian_commutator_stiffness_and_schur_gap():
         r_cond_large = compute_schur_spectrum_at_radius(1000.0, N, v_cond=v, is_isotropic=True)
         assert math.isclose(r_cond_large["min_eval_Seff"], expected_plateau, rel_tol=1e-4)
         assert r_cond_large["norm_B"] < 1e-15
+
+
+def test_berezin_toeplitz_continuum_convergence():
+    """Verify Berezin-Toeplitz grain scaling C_stiff(N) = 120/(N(N^2-1)) and invariant C_phys == 1."""
+    for N in [3, 4, 5, 6, 8, 10, 12]:
+        res = compute_berezin_toeplitz_scaling(N)
+        expected_raw = 120.0 / (N * (N ** 2 - 1))
+        assert math.isclose(res["c_raw"], expected_raw, rel_tol=1e-12)
+        assert math.isclose(res["c_phys_canonical"], 1.0, rel_tol=1e-12)
+        assert math.isclose(res["c_phys_baseline"], 5.0, rel_tol=1e-12)
+
+
+def test_mixed_parity_active_schur_tare_positivity():
+    """Verify active off-diagonal friction B != 0 and Schur complement positivity at R = 1000."""
+    prev_seff = 0.0
+    for N in [3, 4, 5, 6, 8, 10, 12]:
+        r = compute_mixed_parity_schur_spectrum(N, v1=0.2, v2=0.5, R=1000.0, use_grain_norm=True)
+        
+        # Friction is active and strictly non-zero
+        assert math.isclose(r["norm_B"], 0.5189, rel_tol=1e-3)
+        assert r["norm_B"] > 0.5
+        
+        # Quadrupole block A is strictly positive
+        assert r["min_A"] > 0.35
+        
+        # Diagonal stiffness D strictly dominates Schur tare loss
+        assert r["min_D"] > r["norm_tare"]
+        
+        # Schur complement is strictly positive
+        assert r["min_Seff"] > 0.15
+        assert r["stable"] is True
+        
+        # Monotonic convergence as N -> infty
+        assert r["min_Seff"] >= prev_seff
+        prev_seff = r["min_Seff"]
+
 
