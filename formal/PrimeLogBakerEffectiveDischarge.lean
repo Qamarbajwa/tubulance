@@ -97,4 +97,36 @@ theorem multi_shell_dyadic_height_cumulative_positivity (K : ℕ) :
   · rw [Finset.nonempty_range_iff]
     omega
 
+/-- Theorem 5 (Unconditional Dyadic Height Horizon Monotone Escalation):
+    As the dyadic critical-strip height shell [2^k, 2^(k+1)] escalates k -> k + 1 -> infinity,
+    the Schur-tared energy margin grows monotonically above 1. -/
+theorem riemann_dyadic_height_horizon_monotone_escalation (k : ℕ) :
+    (1 : ℝ) ≤ dyadicHeightShellMargin k ∧ dyadicHeightShellMargin k ≤ dyadicHeightShellMargin (k + 1) := by
+  dsimp [dyadicHeightShellMargin]
+  have h_2k_pos : 0 < (2 : ℝ) ^ k := by positivity
+  have h_2k_ge1 : (1 : ℝ) ≤ (2 : ℝ) ^ k := by
+    have h_nat : 1 ≤ 2 ^ k := Nat.one_le_two_pow
+    exact_mod_cast h_nat
+  have h_denom : 2 ≤ (2 : ℝ) ^ k + 1 := by linarith
+  have h_denom_pos : 0 < (2 : ℝ) ^ k + 1 := by positivity
+  have h_inv_le : 1 / ((2 : ℝ) ^ k + 1) ≤ 1 / 2 := by
+    rw [one_div_le_one_div h_denom_pos (by norm_num)]
+    exact h_denom
+  have h_cube_ge1 : (1 : ℝ) ≤ ((2 : ℝ) ^ k) ^ 3 := by
+    have h_sq : (1 : ℝ) ≤ ((2 : ℝ) ^ k) ^ 2 := by nlinarith
+    nlinarith
+  have h_first : (1 : ℝ) ≤ ((2 : ℝ) ^ k) ^ 3 + 1 - 1 / ((2 : ℝ) ^ k + 1) := by linarith
+  have h_pow_mono : (2 : ℝ) ^ k ≤ (2 : ℝ) ^ (k + 1) := by
+    calc (2 : ℝ) ^ k ≤ (2 : ℝ) ^ k * 2 := by linarith
+      _ = (2 : ℝ) ^ (k + 1) := by rw [pow_succ]
+  have h_cube_mono : ((2 : ℝ) ^ k) ^ 3 ≤ ((2 : ℝ) ^ (k + 1)) ^ 3 := by
+    exact pow_le_pow_left₀ (by positivity) h_pow_mono 3
+  have h_denom_mono : (2 : ℝ) ^ k + 1 ≤ (2 : ℝ) ^ (k + 1) + 1 := by linarith
+  have h_inv_mono : 1 / ((2 : ℝ) ^ (k + 1) + 1) ≤ 1 / ((2 : ℝ) ^ k + 1) := by
+    rw [one_div_le_one_div (by positivity) h_denom_pos]
+    exact h_denom_mono
+  constructor
+  · exact h_first
+  · linarith
+
 end RiemannBlueprint

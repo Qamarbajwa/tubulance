@@ -57,8 +57,8 @@
       "benchmarking_telemetry": {
         "hardware_device": "NVIDIA RTX A2000 8GB Laptop GPU",
         "cuda_accelerated": true,
-        "measured_wall_ms": 144.867,
-        "effective_gflops": 0.31
+        "measured_wall_ms": 129.108,
+        "effective_gflops": 0.35
       }
     },
     {
@@ -104,8 +104,8 @@
       "benchmarking_telemetry": {
         "hardware_device": "NVIDIA RTX A2000 8GB Laptop GPU",
         "cuda_accelerated": true,
-        "measured_wall_ms": 56.846,
-        "effective_gflops": 6.3
+        "measured_wall_ms": 56.065,
+        "effective_gflops": 6.38
       }
     },
     {
@@ -151,8 +151,8 @@
       "benchmarking_telemetry": {
         "hardware_device": "NVIDIA RTX A2000 8GB Laptop GPU",
         "cuda_accelerated": true,
-        "measured_wall_ms": 307.331,
-        "effective_gflops": 9.32
+        "measured_wall_ms": 299.337,
+        "effective_gflops": 9.57
       }
     },
     {
@@ -198,8 +198,8 @@
       "benchmarking_telemetry": {
         "hardware_device": "NVIDIA RTX A2000 8GB Laptop GPU",
         "cuda_accelerated": true,
-        "measured_wall_ms": 22.71,
-        "effective_gflops": 1008.65
+        "measured_wall_ms": 19.485,
+        "effective_gflops": 1175.6
       }
     },
     {
@@ -245,8 +245,8 @@
       "benchmarking_telemetry": {
         "hardware_device": "NVIDIA RTX A2000 8GB Laptop GPU",
         "cuda_accelerated": true,
-        "measured_wall_ms": 183.048,
-        "effective_gflops": 1001.11
+        "measured_wall_ms": 182.884,
+        "effective_gflops": 1002.01
       }
     }
   ],

@@ -97,4 +97,51 @@ theorem heterochiral_plus_homochiral_total_flux_damped (nu_0 : ℝ) (k sep : ℕ
   dsimp [heterochiralNetViscousChokingMargin] at h_pos
   linarith
 
+/-- Theorem 5 (Unconditional Ultraviolet Shell Monotone Escalation):
+    As the ultraviolet wavenumber shell k -> k + 1 -> infinity and scale separation
+    sep -> sep + 1 -> infinity escalate, the net viscous choking margin grows
+    monotonically above 7/8. -/
+theorem navier_stokes_ultraviolet_shell_monotone_escalation (nu_0 : ℝ) (k sep : ℕ) :
+    (7 : ℝ) / 8 ≤ heterochiralNetViscousChokingMargin nu_0 k sep ∧
+    heterochiralNetViscousChokingMargin nu_0 k sep ≤ heterochiralNetViscousChokingMargin nu_0 (k + 1) (sep + 1) := by
+  dsimp [heterochiralNetViscousChokingMargin, heterochiralTransferDecayFactor]
+  have h_nu : 1 ≤ nu_0 ^ 2 + 1 := by
+    have : 0 ≤ nu_0 ^ 2 := by positivity
+    linarith
+  have h_4k : (1 : ℝ) ≤ (4 : ℝ) ^ k := by
+    have h4 : (1 : ℕ) ≤ 4 ^ k := Nat.one_le_pow k 4 (by omega)
+    exact_mod_cast h4
+  have h_4k_pos : 0 < (4 : ℝ) ^ k := by positivity
+  have h_4k_mono : (4 : ℝ) ^ k ≤ (4 : ℝ) ^ (k + 1) := by
+    calc (4 : ℝ) ^ k ≤ (4 : ℝ) ^ k * 4 := by linarith
+      _ = (4 : ℝ) ^ (k + 1) := by rw [pow_succ]
+  have h_visc_mono : (nu_0 ^ 2 + 1) * ((4 : ℝ) ^ k) ≤ (nu_0 ^ 2 + 1) * ((4 : ℝ) ^ (k + 1)) := by
+    nlinarith
+  have h_pow_sep : (2 : ℝ) ^ (sep + 3) ≤ (2 : ℝ) ^ (sep + 1 + 3) := by
+    have h_exp : sep + 3 ≤ sep + 1 + 3 := by omega
+    have h_two : (1 : ℝ) ≤ 2 := by norm_num
+    exact pow_le_pow_right₀ h_two h_exp
+  have h_pos_sep : 0 < (2 : ℝ) ^ (sep + 3) := by positivity
+  have h_decay_mono : 1 / (2 : ℝ) ^ (sep + 1 + 3) ≤ 1 / (2 : ℝ) ^ (sep + 3) := by
+    rw [one_div_le_one_div (by positivity) h_pos_sep]
+    exact h_pow_sep
+  have h_2_sep : (1 : ℝ) ≤ (2 : ℝ) ^ sep := by
+    have h_nat : 1 ≤ 2 ^ sep := Nat.one_le_two_pow
+    exact_mod_cast h_nat
+  have h_split : (2 : ℝ) ^ (sep + 3) = ((2 : ℝ) ^ sep) * 8 := by
+    calc (2 : ℝ) ^ (sep + 3) = ((2 : ℝ) ^ sep) * (2 : ℝ) ^ 3 := by rw [pow_add]
+      _ = ((2 : ℝ) ^ sep) * 8 := by norm_num
+  have h_ge8 : (8 : ℝ) ≤ (2 : ℝ) ^ (sep + 3) := by
+    rw [h_split]
+    nlinarith
+  have h_le_8 : 1 / (2 : ℝ) ^ (sep + 3) ≤ 1 / 8 := by
+    rw [one_div_le_one_div h_pos_sep (by norm_num)]
+    exact h_ge8
+  have h_first : (7 : ℝ) / 8 ≤ (nu_0 ^ 2 + 1) * ((4 : ℝ) ^ k) - 1 / (2 : ℝ) ^ (sep + 3) := by
+    have : (1 : ℝ) ≤ (nu_0 ^ 2 + 1) * ((4 : ℝ) ^ k) := by nlinarith
+    linarith
+  constructor
+  · exact h_first
+  · linarith
+
 end NavierStokesBlueprint
