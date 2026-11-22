@@ -26,6 +26,10 @@ from scripts.probe_cayley_conformal_jacobian_tare import (
     compute_cayley_jacobian_data,
     verify_cauchy_poisson_circumference
 )
+from scripts.probe_cross_slice_4d_3d_flux_and_jacobian import (
+    compute_s3_shell_jacobian_data,
+    verify_cross_slice_schur_basin_bound
+)
 
 def test_antipodal_pair_properties():
     """Verify that antipodal points on S^2 have distance 2 (squared distance 4) and midpoint 0."""
@@ -172,4 +176,36 @@ def test_cauchy_poisson_circumference_integral():
     c_res = verify_cauchy_poisson_circumference()
     assert math.isclose(c_res["subst_integral"], 2.0 * math.pi, rel_tol=1e-4)
     assert math.isclose(c_res["t_integral"], 2.0 * math.pi, rel_tol=1e-4)
+
+
+def test_s3_shell_jacobian_logarithmic_tare():
+    """
+    Verify that 4D S^3(r) shell metric Jacobian Vol(S^3(r)) = 2*pi^2*r^3
+    and wave half-density r^(-3/2) produce the exact logarithmic drift 3/(2*r),
+    and taring 3/(2*r) recovers bare mass m = 1.2000 to machine precision.
+    """
+    r_list = [0.1, 0.25, 0.5, 1.0, 2.0, 5.0, 10.0, 50.0, 100.0]
+    results = compute_s3_shell_jacobian_data(r_list, m_true=1.2000, A=2.5)
+    
+    for r in results:
+        assert math.isclose(r["m_eff_tared"], 1.2000, rel_tol=1e-14)
+        assert r["err"] <= 1e-15
+        assert r["vol_s3"] > 0.0
+        assert r["J_rad"] > 0.0
+
+
+def test_cross_slice_schur_viscous_basin_bound():
+    """
+    Verify across 1,000 random coupled 3D hyperplane slice configurations that
+    ||B||^2 <= alpha * lambda_min(A) * lambda_min(D) implies
+    lambda_min(S_eff) >= (1 - alpha) * lambda_min(D) > 0 with zero violations.
+    """
+    res = verify_cross_slice_schur_basin_bound(n_trials=1000, seed=42)
+    assert res["violations"] == 0
+    assert res["min_margin"] > 0.0
+    assert len(res["records"]) > 0
+    for rec in res["records"]:
+        assert rec["basin_preserved"] is True
+        assert rec["lam_min_S"] >= rec["lower_bound"] - 1e-12
+
 

@@ -111,7 +111,7 @@ def run_investigation():
     print("  delta |          t |    Raw Defect |    Dist Sq |   Jacobian J | Delta_phys |     Error")
     print("  " + "-" * 82)
     deltas = [-0.4, -0.1, 0.0, 0.1, 0.4]
-    t_list = [0.0, 1.0, 10.0, 1000.0, 1000000.0]
+    t_list = [0.0, 1.0, 10.0, 100.0, 1000.0, 10000.0, 1000000.0]
     for delta in deltas:
         for t in t_list:
             r = compute_cayley_jacobian_data(delta, t)
