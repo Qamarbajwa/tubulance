@@ -14,9 +14,18 @@ Methodology Note: ai is being used as a tool
 Epistemic Boundary: status: verified-finite, open_horizon_lock: STRICTLY OPEN
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import math
 import numpy as np
 import pytest
+
+from scripts.probe_cayley_conformal_jacobian_tare import (
+    compute_cayley_jacobian_data,
+    verify_cauchy_poisson_circumference
+)
 
 def test_antipodal_pair_properties():
     """Verify that antipodal points on S^2 have distance 2 (squared distance 4) and midpoint 0."""
@@ -120,3 +129,47 @@ def test_ym_s3_holonomy_contraction():
     
     geom_cap = 1.0 / (1.0 - r_gauge)
     assert math.isclose(geom_cap, 11.0 / 7.0, rel_tol=1e-12)
+
+
+def test_conformal_jacobian_poisson_defect_invariance():
+    """
+    Verify that multiplying raw radial defect 1 - |w|^2 by Conformal Jacobian J
+    cancels height attenuation O(1/t^2) and exactly recovers Delta_phys == delta
+    across t = 0..10^6 and delta in {-0.4, -0.1, 0.0, 0.1, 0.4} to machine precision.
+    """
+    deltas = [-0.4, -0.1, 0.0, 0.1, 0.4]
+    t_list = [0.0, 1.0, 10.0, 1000.0, 1000000.0]
+    
+    for delta in deltas:
+        for t in t_list:
+            r = compute_cayley_jacobian_data(delta, t)
+            assert math.isclose(r["delta_phys"], delta, abs_tol=1e-15)
+            assert r["err_delta"] <= 1e-15
+            
+            # Verify distance to pole w = 1 is strictly positive
+            assert r["dist_sq"] > 0.0
+            assert r["J"] > 0.0
+
+
+def test_critical_line_arc_length_measure_reciprocity():
+    """
+    Verify on critical line delta = 0 that conformal stretch |ds/dw|
+    and angular compression dtheta/dt satisfy |ds/dw| * (dtheta/dt) == 1
+    identically across t = 0..10^6 to machine precision.
+    """
+    t_list = [0.0, 1.0, 10.0, 1000.0, 1000000.0]
+    for t in t_list:
+        r = compute_cayley_jacobian_data(0.0, t)
+        assert math.isclose(r["reciprocity"], 1.0, rel_tol=1e-14)
+        assert r["err_recip"] <= 1e-14
+
+
+def test_cauchy_poisson_circumference_integral():
+    """
+    Verify that the integral of dtheta/dt over t in (-infty, infty)
+    equals the unit circle circumference 2 * pi.
+    """
+    c_res = verify_cauchy_poisson_circumference()
+    assert math.isclose(c_res["subst_integral"], 2.0 * math.pi, rel_tol=1e-4)
+    assert math.isclose(c_res["t_integral"], 2.0 * math.pi, rel_tol=1e-4)
+
