@@ -56,7 +56,8 @@ from scripts.probe_dynamical_moving_mobius_in_sphere import (
     run_approximate_functional_equation_test,
     run_breathing_threshold_window_test,
     run_multi_jump_riemann_siegel_seam_test,
-    run_coupled_dacosta_poschl_teller_test
+    run_coupled_dacosta_poschl_teller_test,
+    run_c13cl2_half_mobius_quadruple_cover_test
 )
 
 def test_antipodal_pair_properties():
@@ -431,6 +432,12 @@ def test_dynamical_moving_mobius_and_afe_double_lap():
     res_coupled = run_coupled_dacosta_poschl_teller_test(R0=0.65, tau_mat=1.40)
     assert abs(res_coupled["u_crit"] - math.sqrt(res_coupled["V0"])) < 1e-15
     assert res_coupled["max_coupled_err"] < 2e-4
+
+    res_c13 = run_c13cl2_half_mobius_quadruple_cover_test(R0=0.65)
+    assert res_c13["max_z4_lap_err"] < 1e-14
+    assert res_c13["max_b_z4_err"] < 1e-14
+    assert res_c13["max_nu128_err"] < 4e-5
+
 
 
 

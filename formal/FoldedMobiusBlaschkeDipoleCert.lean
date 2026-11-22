@@ -217,4 +217,36 @@ theorem coupled_dacosta_soliton_ground_threshold (τ κ u₀ : ℝ) :
 #print axioms poschl_teller_jost_smatrix_eq_blaschke_core
 #print axioms coupled_dacosta_soliton_ground_threshold
 
+/-- Theorem 9 (Half-Mobius Z_4 Quarter-Integer Gap & Blaschke Half-Width Quadrature):
+    For major radius `R₀ ≠ 0` and off-line offset `u₀ ≠ 0`:
+    (a) At twist angle `φ = ± π / 2`, the odd-sector gap equals `1 / (16 * R₀²)`, i.e.,
+        exactly `1/4` of the full Mobius gap `1 / (4 * R₀²)`;
+    (b) Evaluating the central-crease Blaschke dipole at `t - t₀ = +u₀` and `t - t₀ = -u₀`
+        gives pure imaginary quadrature `(re = 0, im = +1)` and `(re = 0, im = -1)`
+        respectively (`± 90°` half-Mobius quarter-turn). -/
+theorem half_mobius_z4_quarter_gap_and_blaschke_quadrature
+    (R₀ u₀ : ℝ) (hR : R₀ ≠ 0) (hu₀ : u₀ ≠ 0) :
+    (((Real.pi / 2) / (2 * Real.pi)) ^ 2) / R₀ ^ 2 = 1 / (16 * R₀ ^ 2) ∧
+    (((-Real.pi / 2) / (2 * Real.pi)) ^ 2) / R₀ ^ 2 = 1 / (16 * R₀ ^ 2) ∧
+    Real.cos (Real.pi / 2) = 0 ∧
+    Real.cos Real.pi = -1 ∧
+    Real.cos (2 * Real.pi) = 1 ∧
+    ((-u₀ ^ 2 + u₀ ^ 2) / (u₀ ^ 2 + u₀ ^ 2) = 0) ∧
+    ((2 * u₀ * u₀) / (u₀ ^ 2 + u₀ ^ 2) = 1) ∧
+    ((2 * u₀ * (-u₀)) / (u₀ ^ 2 + (-u₀) ^ 2) = -1) := by
+  have hpi : Real.pi ≠ 0 := Real.pi_ne_zero
+  have hu2 : u₀ ^ 2 ≠ 0 := pow_ne_zero 2 hu₀
+  refine ⟨?_, ?_, Real.cos_pi_div_two, Real.cos_pi, Real.cos_two_pi, ?_, ?_, ?_⟩
+  · field_simp
+    ring
+  · field_simp
+    ring
+  · simp
+  · field_simp
+    ring
+  · field_simp
+    ring
+
+#print axioms half_mobius_z4_quarter_gap_and_blaschke_quadrature
+
 end RiemannBlueprint

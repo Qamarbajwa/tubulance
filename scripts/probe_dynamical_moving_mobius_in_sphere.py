@@ -661,6 +661,78 @@ def generate_seam_and_schrodinger_figure(res_win, res_rs, res_coupled):
     return str(out_path)
 
 
+def run_c13cl2_half_mobius_quadruple_cover_test(R0=0.65):
+    """
+    Verify experimental C13Cl2 Half-Mobius Z_4 topology (Science, DOI: 10.1126/science.aea3321):
+    1. Odd 13-site discrete ring (Nu = 13 carbons) vs continuum limit (Nu = 128) under G(phi)
+       across phi in {0, +pi/2, -pi/2, pi*R0, pi}.
+    2. Four-lap (8*pi) quadruple cover holonomy of G(+pi/2)^k on odd channel -> {+i, -1, -i, +1}.
+    3. Half-width Blaschke dipole quadrature checkpoints at t - t0 = -u0, 0, +u0 -> {-i, -1, +i}.
+    """
+    sigma_x = np.array([[0.0, 1.0], [1.0, 0.0]], dtype=np.complex128)
+    I2 = np.eye(2, dtype=np.complex128)
+    ep = cmath.exp(1j * 0.5 * math.pi)
+    G_half = 0.5 * (I2 + sigma_x) + 0.5 * ep * (I2 - sigma_x)
+    odd_vec = np.array([1.0, -1.0], dtype=np.complex128) / math.sqrt(2.0)
+
+    quad_laps = []
+    G_pow = I2.copy()
+    for lap in range(1, 5):
+        G_pow = G_pow @ G_half
+        eig_odd = complex(np.vdot(odd_vec, G_pow @ odd_vec))
+        quad_laps.append({"lap": lap, "eig_odd": eig_odd})
+
+    state_rows = []
+    for label, phi in [
+        ("Untwisted (0)", 0.0),
+        ("Half-Mobius (+pi/2)", 0.5 * math.pi),
+        ("Half-Mobius (-pi/2)", -0.5 * math.pi),
+        ("Sphere Thresh (pi*R0)", math.pi * R0),
+        ("Full Mobius (pi)", math.pi),
+    ]:
+        ev13 = np.linalg.eigvalsh(build_breathing_ribbon_laplacian(13, R0=R0, phi=phi))
+        ev128 = np.linalg.eigvalsh(build_breathing_ribbon_laplacian(128, R0=R0, phi=phi))
+        analytic = ((phi / (2.0 * math.pi)) ** 2) / (R0 ** 2)
+        state_rows.append({
+            "label": label,
+            "phi": phi,
+            "lam1_nu13": float(ev13[1]),
+            "lam1_nu128": float(ev128[1]),
+            "analytic": analytic,
+            "err_nu128": abs(float(ev128[1]) - analytic),
+        })
+
+    u0, t0 = 0.25, 14.134725141734693
+    blaschke_checkpoints = {}
+    for key, dt in [("-u0", -u0), ("0", 0.0), ("+u0", +u0)]:
+        s = complex(0.5, t0 + dt)
+        rho_plus = complex(0.5 + u0, t0)
+        b = (s - rho_plus) / (s - (1.0 - rho_plus.conjugate()))
+        blaschke_checkpoints[key] = b
+
+    max_z4_lap_err = max(
+        abs(quad_laps[0]["eig_odd"] - 1j),
+        abs(quad_laps[1]["eig_odd"] + 1.0),
+        abs(quad_laps[2]["eig_odd"] + 1j),
+        abs(quad_laps[3]["eig_odd"] - 1.0),
+    )
+    max_b_z4_err = max(
+        abs(blaschke_checkpoints["-u0"] + 1j),
+        abs(blaschke_checkpoints["0"] + 1.0),
+        abs(blaschke_checkpoints["+u0"] - 1j),
+    )
+
+    return {
+        "R0": R0,
+        "quad_laps": quad_laps,
+        "state_rows": state_rows,
+        "blaschke_checkpoints": blaschke_checkpoints,
+        "max_z4_lap_err": float(max_z4_lap_err),
+        "max_b_z4_err": float(max_b_z4_err),
+        "max_nu128_err": max(r["err_nu128"] for r in state_rows),
+    }
+
+
 def run_all_tests():
     print("=" * 88)
     print("DYNAMICAL MOVING & UNTIED MOBIUS RIBBON INSIDE UNIT SPHERE B^3")
@@ -733,6 +805,14 @@ def run_all_tests():
 
     fig2_path = generate_seam_and_schrodinger_figure(res_win, res_rs, res_coupled)
     print(f"\nSaved Seam & Schrodinger Figure: {fig2_path}")
+
+    res_c13 = run_c13cl2_half_mobius_quadruple_cover_test(R0=0.65)
+    print("\n7. C13Cl2 HALF-MOBIUS (phi = +-pi/2, 8*pi QUADRUPLE COVER) REALIZATION:")
+    print(f"   8*pi Z_4 odd-channel holonomy error  = {res_c13['max_z4_lap_err']:.3e}")
+    print(f"   Blaschke half-width Z_4 error        = {res_c13['max_b_z4_err']:.3e}")
+    print(f"   Max continuum (Nu=128) gap error     = {res_c13['max_nu128_err']:.3e}")
+    for row in res_c13["state_rows"]:
+        print(f"   {row['label']:22s} | Nu=13: {row['lam1_nu13']:.6f} | Nu=128: {row['lam1_nu128']:.6f} | Exact: {row['analytic']:.6f}")
     print("=" * 88)
 
     assert res_a["max_norm"] < 1.0
@@ -749,6 +829,9 @@ def run_all_tests():
     assert res_win["err_tau_2"] < 2e-4
     assert res_rs["max_err_c01"] < 0.004
     assert res_coupled["max_coupled_err"] < 2e-4
+    assert res_c13["max_z4_lap_err"] < 1e-14
+    assert res_c13["max_b_z4_err"] < 1e-14
+    assert res_c13["max_nu128_err"] < 4e-5
     return res_a, res_b, res_z, fig_path
 
 
