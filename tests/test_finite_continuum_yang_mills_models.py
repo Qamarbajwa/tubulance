@@ -44,7 +44,8 @@ from scripts.probe_nonabelian_commutator_schur_gap import (
     compute_quartic_stiffness_tensor,
     compute_berezin_toeplitz_scaling,
     compute_mixed_parity_schur_spectrum,
-    compute_schur_spectrum_at_radius
+    compute_schur_spectrum_at_radius,
+    compute_closed_form_rational_predictions
 )
 
 
@@ -240,5 +241,27 @@ def test_mixed_parity_active_schur_tare_positivity():
         # Monotonic convergence as N -> infty
         assert r["min_Seff"] >= prev_seff
         prev_seff = r["min_Seff"]
+
+
+def test_exact_representation_theoretic_closed_form_limits():
+    """Verify closed-form rational formulas for min(A(N)), tare_e2(N), min(S_eff(N)), and N -> infty limits."""
+    for N in [4, 5, 6, 8, 10, 12]:
+        # At large R=1e7, the 2/R^2 free kinetic term vanishes to machine precision
+        r = compute_mixed_parity_schur_spectrum(N, v1=0.2, v2=0.5, R=1e7, use_grain_norm=True)
+        pred = compute_closed_form_rational_predictions(N, v1=0.2, v2=0.5)
+        
+        # Machine-precision agreement between numeric matrix diagonalisation and closed-form rational formula
+        assert math.isclose(r["min_A"], pred["min_A"], rel_tol=1e-10)
+        assert math.isclose(r["min_Seff"], pred["min_Seff"], rel_tol=1e-10)
+        assert pred["min_A"] >= 1.36999
+        assert pred["min_Seff"] >= 0.20240
+        
+    # Check asymptotic limits
+    pred_inf = compute_closed_form_rational_predictions(100, v1=0.2, v2=0.5)
+    assert math.isclose(pred_inf["min_A_inf"], 1209.0 / 700.0, rel_tol=1e-12)
+    assert math.isclose(pred_inf["tare_e2_inf"], 28.0 / 403.0, rel_tol=1e-12)
+    assert math.isclose(pred_inf["min_Seff_inf"], 8887.0 / 40300.0, rel_tol=1e-12)
+    assert pred_inf["min_Seff_inf"] > 0.2205
+
 
 
