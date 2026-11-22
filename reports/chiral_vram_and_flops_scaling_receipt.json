@@ -3,7 +3,7 @@
   "author": "Qamar Munawer",
   "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
   "methodology": "ai is being used as a tool",
-  "acknowledgments": "Technical assistance from Google Carbon (Gemini 4 Carbon) for CUDA memory architecture, Lean 4 formal verification, and HBIM engineering.",
+  "acknowledgments": "ai is being used as a tool",
   "epistemic_status": "verified-finite",
   "all_four_clay_millennium_problems_open": true,
   "hardware_telemetry": {
