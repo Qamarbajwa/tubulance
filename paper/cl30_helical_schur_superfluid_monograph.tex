@@ -14,7 +14,7 @@
 \newtheorem{remark}{Remark}
 
 \title{\textbf{Superfluid Empty Cores, \texorpdfstring{$\mathrm{Cl}(3,0)$}{Cl(3,0)} Helical Schur Isolation, and Multiscale \texorpdfstring{$SO(3)$}{SO(3)} Vorticity Cocycle Depletion}}
-\author{Qamar Munawer \\ Brandenburg University of Technology Cottbus-Senftenberg}
+\author{\textbf{Qamar Munawer}}
 \date{November 19, 2026}
 
 \begin{document}
@@ -88,14 +88,14 @@ Flow Configuration & $b = 1$ & $b = 2$ & $b = 4$ \\
 
 As shown in Table~\ref{tab:cocycle}, the 1D/Abelian parallel vortex tube maintains exact frame coherence ($\delta_{\mathrm{NS}}(b) \equiv 0$), whereas in the 3D heterochiral Taylor--Green + Kida--Pelz tangle $\delta_{\mathrm{NS}}(b)$ approaches the 3D isotropic limit $2/3$ and drives a $19.4\times$ monotone contraction of $\rho_{\mathrm{stretch}}^{\mathrm{BLK}}(b)$ from $0.2713$ ($b=1$) down to $0.0140$ ($b=4$).
 
-\section{Unified 4-Workspace Rosetta Master Audit Table}
+\section{Unified 4-Workspace Spectral Master Audit Table}
 
-The read-only aggregator \texttt{aggregate\_rosetta\_master\_audit.py} verifies all four Millennium workspaces simultaneously (`rosetta\_master\_audit\_receipt.json`, \textbf{4/4 PASS}) without modifying any locked baseline files.
+The read-only aggregator \texttt{aggregate\_spectral\_master\_audit.py} verifies all four Millennium workspaces simultaneously (`spectral\_master\_audit\_receipt.json`, \textbf{4/4 PASS}) without modifying any locked baseline files.
 
 \begin{table}[htbp]
 \centering
-\caption{Unified 4-workspace Rosetta master audit (\texttt{rosetta\_master\_audit\_receipt.json}, 4/4 PASS). All four Millennium problems remain strictly OPEN.}
-\label{tab:rosetta}
+\caption{Unified 4-workspace Spectral master audit (\texttt{spectral\_master\_audit\_receipt.json}, 4/4 PASS). All four Millennium problems remain strictly OPEN.}
+\label{tab:spectral}
 \footnotesize
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{5.8cm}l@{}}
 \toprule
@@ -103,7 +103,7 @@ Problem & Status & Baseline / Receipt & Verified Schur \& Cocycle Metrics & Audi
 \midrule
 Hodge\\(\texttt{HODGE-MIL-001}) & OPEN & \texttt{MILLENNIUM\_EXT\_\-RECEIPT.json} & \texttt{EXT\_CHECKS\_\-PASSED = true}, \texttt{lake\_build\_ok = true}, $100$ ext.\ theorems, $0$ unexpected axioms & PASS \\
 4D Yang--Mills Mass Gap & OPEN & Commit \texttt{0f3f012} + scratch probes & \texttt{2TO4\_FIBER\_SCHUR\_OK}, \texttt{TRACE\_SANDWICH\_OK}, $C_{\mathrm{dom}} = 13.47$, $c_{\mathrm{cocycle}} = 1.3407$, $720/720$ blocks & PASS \\
-Riemann Hypothesis & OPEN & \texttt{vasyunin\_schur\_\-chiral\_rosetta\_\-results.json} & \texttt{VASYUNIN\_SCHUR\_\-CHIRAL\_ROSETTA\_OK}, residual $1.631\times 10^{-55}$, $N=6$ $\delta_{\mathrm{PC}}(6) = 0.157648$ & PASS \\
+Riemann Hypothesis & OPEN & \texttt{vasyunin\_schur\_\-chiral\_spectral\_\-results.json} & \texttt{VASYUNIN\_SCHUR\_\-CHIRAL\_SPECTRAL\_OK}, residual $1.631\times 10^{-55}$, $N=6$ $\delta_{\mathrm{PC}}(6) = 0.157648$ & PASS \\
 3D Navier--Stokes & OPEN & \texttt{probe\_cl30\_helical\_\-schur\_results.json} & \texttt{CL30\_HELICAL\_SCHUR\_\-COCYCLE\_OK}, $S_{\mathrm{Schur}} = 2660.0$, $K_{\mathrm{half}} + K_{\mathrm{half}}^T = 4T_{\mathrm{hel}}$, $\rho_{\mathrm{stretch}}^{\mathrm{BLK}}(4) = 0.0140$ & PASS \\
 \bottomrule
 \end{tabular}

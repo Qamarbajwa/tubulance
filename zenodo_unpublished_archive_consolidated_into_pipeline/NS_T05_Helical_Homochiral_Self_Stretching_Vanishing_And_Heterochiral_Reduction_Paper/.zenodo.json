@@ -1,0 +1,24 @@
+{
+  "title": "Helical Homochiral Self-Stretching Annihilation and Heterochiral Geometric Depletion in 3D Turbulence",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We prove that pure homochiral helical triads in 3D incompressible fluid flow have identically vanishing vortex stretching: for any divergence-free velocity field decomposed into helical eigenstates u = u_+ + u_-, the homochiral self-stretching integral \\langle (u_+ \\cdot \\nabla u_+), \\omega_+ \\rangle = 0 vanishes identically, and likewise for \\langle (u_- \\cdot \\nabla u_-), \\omega_- \\rangle = 0. Therefore, all non-zero vortex stretching in 3D turbulence arises exclusively from heterochiral interactions (+, +, -) or (-, -, +). By establishing the exact chiral cancellation identity, we show that heterochiral triads undergo geometric depletion via fast helical phase mixing. Verified in Lean 4 with zero axioms, and confirmed numerically to an accuracy of 1.75 \\times 10^{-19}. In this research, ai is being used as a tool for symbolic calculations and interactive formal verification.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Munawer, Qamar"
+    }
+  ],
+  "keywords": [
+    "Helical Decomposition",
+    "Homochiral Annihilation",
+    "Heterochiral Depletion",
+    "Vortex Stretching",
+    "Chiral Invariance",
+    "Lean 4",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}

@@ -1,0 +1,41 @@
+\contentsline {section}{\numberline {1}Helical $\mathrm {Cl}(3,0)$ Decomposition, Lamb Orthogonality, and Unified Pipeline}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Fourier $\mathrm {Cl}(3,0)$ Algebra and Helical Orthogonality on $L=12$}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Parity Blindness Recovery and End-to-End Flow Architecture}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Homochiral Vanishing, Strain-Rate Geometry, and the Keystone Arch}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Helical Triad Annihilation and Axisymmetric Strain Ceiling}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Two-Wall Keystone Arch Enclosure and Riesz Pressure-Hessian Commutator}{4}{subsection.2.2}%
+\contentsline {section}{\numberline {3}RTX~A2000 GPU Guyan--Schur Condensation, SRAM Tiling, and Split-Disc Scaling}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Three-Stage Memory Reduction Hierarchy ($N = 512$ to $32{,}768$)}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Split-Disc Chiplet Limits, Semiconductor Voltage, and Thermal Scaling}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Planar Kasteleyn Pfaffian Squares, Higher-Genus Spin Barriers, and Seven-Domain Bridges}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Planar Matching vs.\ Non-Planar $K_{3,3}$ Four-Spin Frustration and Hessian Ranks}{6}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Cross-Workspace Proof Bridges and Analytical Synthesis}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Banachiewicz Block Inversion and Reciprocal Schur Trigonometry}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Dyadic Bony Paraproduct Transfer, Lamb Orthogonality, and Enstrophy Choking}{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Eight Cross-Workspace Proof Bridges and Hardware Convergence Audit}{8}{subsection.5.3}%
+\contentsline {section}{\numberline {A}Formal Lean~4 Concordance Ledger for \texttt {Unified\allowbreak NavierStokes\allowbreak AndComputeBundle.lean}}{8}{appendix.A}%
+\contentsline {section}{\numberline {B}Detailed Derivations: Strain Ceiling, Cubic Determinant, and Arch Closure}{10}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}Exact Derivation of the $2/3$ Strain Eigenvalue Ceiling and Cubic Determinant Split}{10}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}Block-LDU Decomposition, Guyan Condensation, and Banachiewicz Inverse}{10}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}Beltrami Chirality Algebra, $O(3)$ Parity Blindness, and Half-Operator Reconstruction}{10}{subsection.B.3}%
+\contentsline {subsection}{\numberline {B.4}Monotone Viscous Damping Hierarchy Across Dyadic Shells}{10}{subsection.B.4}%
+\contentsline {section}{\numberline {C}Planar Kasteleyn Frustration, Quaternary Block Diagnostics, and Silicon SRAM Tiling}{11}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Non-Planar $K_{3,3}$ Orientation Frustration and Four-Spin Torus Formula}{11}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}Optimal Square-Root SRAM Tiling and Cross-Domain Energy Identities}{11}{subsection.C.2}%
+\contentsline {section}{\numberline {D}Exhaustive Dyadic Cascade \& Pfaffian Kernel Ledger and Engineering Benchmarks}{12}{appendix.D}%
+\contentsline {subsection}{\numberline {D.1}Dyadic Littlewood--Paley BKM Envelope and Engineering Validation Suite}{12}{subsection.D.1}%
+\contentsline {subsection}{\numberline {D.2}Complete Line-by-Line Theorem Registry for Dyadic Regularity and Pfaffian Complexity}{12}{subsection.D.2}%
+\contentsline {section}{\numberline {E}Detailed Operator Derivations: Keystone Cancellation, Banachiewicz Schur, and Spectral Equivalences}{14}{appendix.E}%
+\contentsline {subsection}{\numberline {E.1}Explicit Derivation of the Keystone Arch Envelope and Axisymmetric Cube}{14}{subsection.E.1}%
+\contentsline {subsection}{\numberline {E.2}Banachiewicz Block Positive-Definiteness and Spectral Mechanisms Across Domains}{14}{subsection.E.2}%
+\contentsline {section}{\numberline {F}Worked Matrix Verifications, Hardware Cost Algebra, and Continuum Bridge Ledger}{15}{appendix.F}%
+\contentsline {subsection}{\numberline {F.1}Explicit $K_{3,3}$ Four-Spin Orientation Matrices and $N=32{,}768$ Memory/FLOP Budget}{15}{subsection.F.1}%
+\contentsline {subsection}{\numberline {F.2}Complete Twelve-Module Cross-Frontier Continuum Bridge Concordance}{15}{subsection.F.2}%
+\contentsline {section}{\numberline {G}Notation Glossary, Physical Fluid Regimes, and Theorem-by-Theorem Reader Exposition}{16}{appendix.G}%
+\contentsline {subsection}{\numberline {G.1}Symbol Dictionary Linking Hydrodynamics, GPU Compression, and Complexity}{16}{subsection.G.1}%
+\contentsline {subsection}{\numberline {G.2}Hydrodynamic Regime Interpretation: Vortex Tubes, Pancake Sheets, and Chirality}{16}{subsection.G.2}%
+\contentsline {subsection}{\numberline {G.3}Executive Walkthrough of the Core Lean~4 Verification Suite}{17}{subsection.G.3}%
+\contentsline {section}{\numberline {H}Algorithmic Schur--Beltrami Pipeline and Complexity Architecture}{18}{appendix.H}%
+\contentsline {subsection}{\numberline {H.1}Six-Stage Computational Workflow for Condensed Helical and Dense Solvers}{18}{subsection.H.1}%
+\contentsline {subsection}{\numberline {H.2}Architectural Scaling Tradeoffs Across Solver Tiers and Topological Genus}{18}{subsection.H.2}%
+\contentsline {section}{\numberline {I}Open Continuum Frontier: Navier--Stokes Global Regularity and $\mathrm {P} \neq \mathrm {NP}$}{18}{appendix.I}%

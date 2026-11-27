@@ -14,8 +14,8 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{remark}[theorem]{Remark}
 
-\title{\textbf{The Unified Rosetta Monograph: Four Clay Workspaces, Seven Worldwide Domains, and Every Verified Finite Theorem in 3D Fluid Turbulence}}
-\author{Qamar Munawer \\ Brandenburg University of Technology Cottbus-Senftenberg}
+\title{\textbf{The Unified Spectral Monograph: Four Clay Workspaces, Seven Worldwide Domains, and Every Verified Finite Theorem in 3D Fluid Turbulence}}
+\author{\textbf{Qamar Munawer}}
 \date{November 21, 2026}
 
 \providecommand{\Sha}{\mathrm{Sha}}
@@ -23,13 +23,13 @@
 \maketitle
 
 \begin{abstract}
-This monograph provides a complete, step-by-step mathematical exposition of the unified Positive vs.\ Negative Rosetta Architecture across four workspaces (Hodge Conjecture, 4D Yang--Mills, Riemann Hypothesis, and 3D Navier--Stokes) and seven external domains (Beltrami MHD, $d=4$ General Relativity, Random Matrix Theory, P vs.\ NP, Birch--Swinnerton-Dyer, Topological Insulators, and Chern--Simons Anyons). In particular, we detail every formal Lean~4 module in 3D Navier--Stokes Turbulence and the systematic resolution of the key frontiers in the Hodge program: (1) Zariski-open syzygy residue span on generic non-Fermat Calabi--Yau fourfolds (Paper T14), (2) explicit algebraic realization of Mumford $\mathfrak{so}(8)$ spinor classes via Prym--Tjurin symmetric cubes (Paper T15), (3) direct quaternary diamond Chow--K\"unneth projectors on smooth projective varieties (Paper T16), (4) asymptotic Fermat fourfold induction for all composite moduli $m \to \infty$ via prime-power Galois defect bounds and AP exclusion in dimension 6 (Paper T17), (5) total immunity of rational Hodge classes to topological torsion obstructions from Atiyah--Hirzebruch and Totaro (Paper T18), (6) Subtractive Spectral Holography and Fredholm determinant divisors (Paper T19), (7) universal synthesis of higher-codimension algebraic cycles via iterated Clifford-Fredholm complete intersections (Paper T20), and (8) the Multi-Slit Hodge Compiler operationalizing the ``One More Slit'' principle via $N$-slit grating sifting, Sorkin 3-slit null cancellation ($I_3 \equiv 0$), and inductive Lefschetz hyperplane slicing (Paper T21). Every finite-dimensional, algebraic, and multiscale numerical theorem is machine-certified through Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean~4 and verified in Python probes, keeping the infinite-dimensional Clay Millennium horizons strictly isolated and open.
+This monograph provides a complete, step-by-step mathematical exposition of the unified Positive vs.\ Negative Block-Operator Architecture across four workspaces (Hodge Conjecture, 4D Yang--Mills, Riemann Hypothesis, and 3D Navier--Stokes) and seven external domains (Beltrami MHD, $d=4$ General Relativity, Random Matrix Theory, P vs.\ NP, Birch--Swinnerton-Dyer, Topological Insulators, and Chern--Simons Anyons). In particular, we detail every formal Lean~4 module in 3D Navier--Stokes Turbulence and the systematic resolution of the key frontiers in the Hodge program: (1) Zariski-open syzygy residue span on generic non-Fermat Calabi--Yau fourfolds (Paper T14), (2) explicit algebraic realization of Mumford $\mathfrak{so}(8)$ spinor classes via Prym--Tjurin symmetric cubes (Paper T15), (3) direct quaternary diamond Chow--K\"unneth projectors on smooth projective varieties (Paper T16), (4) asymptotic Fermat fourfold induction for all composite moduli $m \to \infty$ via prime-power Galois defect bounds and AP exclusion in dimension 6 (Paper T17), (5) total immunity of rational Hodge classes to topological torsion obstructions from Atiyah--Hirzebruch and Totaro (Paper T18), (6) Subtractive Spectral Holography and Fredholm determinant divisors (Paper T19), (7) universal synthesis of higher-codimension algebraic cycles via iterated Clifford-Fredholm complete intersections (Paper T20), and (8) the Multi-Slit Hodge Compiler operationalizing the ``One More Slit'' principle via $N$-slit grating sifting, Sorkin 3-slit null cancellation ($I_3 \equiv 0$), and inductive Lefschetz hyperplane slicing (Paper T21). Every finite-dimensional, algebraic, and multiscale numerical theorem is machine-certified through Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean~4 and verified in Python probes, keeping the infinite-dimensional Clay Millennium horizons strictly isolated and open.
 \end{abstract}
 
 \tableofcontents
 \newpage
 
-\section{The 5-Pillar Rosetta Architecture (Positive vs.\ Negative Rosetta)}
+\section{The 5-Pillar Block-Operator Architecture (Positive vs.\ Negative Spectral)}
 
 Across all four Clay workspaces and seven external domains, a single dual architecture emerges:
 \begin{enumerate}
@@ -51,28 +51,28 @@ Across all four Clay workspaces and seven external domains, a single dual archit
 
 \section{Complete Theorem-by-Theorem Exposition of 3D Navier--Stokes Turbulence}
 
-\subsection{Universal Rosetta Meta-Theorems (\texttt{RosettaUniversalMetaTheorems.lean})}
-All five universal mechanisms are certified in \texttt{RosettaUniversalMetaTheorems.lean} with zero custom axioms:
+\subsection{Universal Spectral Meta-Theorems (\texttt{SpectralUniversalMetaTheorems.lean})}
+All five universal mechanisms are certified in \texttt{SpectralUniversalMetaTheorems.lean} with zero custom axioms:
 \begin{itemize}
-  \item \texttt{rosetta\_thm1\_parity\_diagonal\_triple\_gram}: If $g_{ez} = g_{et} = g_{zt} = 0$ and $g_{ee}, g_{zz}, g_{tt} > 0$, then the $3\times 3$ Gram matrix is strictly diagonal with positive Schur complement $g_{tt} > 0$.
-  \item \texttt{rosetta\_thm2\_schur\_baseline\_taring}: In multiplicative form $A S = A D - B^2$ ($A > 0$), $B^2 < A D \implies 0 < A S$, separating genuine signal from baseline container mirages.
-  \item \texttt{rosetta\_thm3\_parity\_blindness\_and\_half\_domain\_reconstruction}: For $T = \operatorname{diag}(1, -1)$ and skew perturbation $a_{12} + a_{21} = 0$, $t_+^2 = t_-^2 = 1$ (parity-blind) while $K_{\mathrm{half}} + K_{\mathrm{half}}^T = 4T$.
-  \item \texttt{rosetta\_thm4\_cocycle\_line\_vs\_plane\_dichotomy}: Collinear 1D states ($\mathrm{dot} = \pm 1$) give $\delta = 1 - \mathrm{dot}^2 = 0$, whereas 3D coarse-grained blocks ($b=1\to 2\to 4$) compress the Win--Win peak $1758 \to 1157 \to 138 < 141$ ($\times 10^{-4}$).
-  \item \texttt{rosetta\_thm5\_active\_core\_and\_tail\_equipartition}: If $E_{\mathrm{tot}} = E_{\mathrm{active}} + E_{\mathrm{tail}}$ with $10 E_{\mathrm{tail}} \le E_{\mathrm{tot}}$, then $9 E_{\mathrm{tot}} \le 10 E_{\mathrm{active}}$ ($\ge 90\%$ active core) and $9 E_{\mathrm{tail}} \le E_{\mathrm{active}}$.
+  \item \texttt{spectral\_thm1\_parity\_diagonal\_triple\_gram}: If $g_{ez} = g_{et} = g_{zt} = 0$ and $g_{ee}, g_{zz}, g_{tt} > 0$, then the $3\times 3$ Gram matrix is strictly diagonal with positive Schur complement $g_{tt} > 0$.
+  \item \texttt{spectral\_thm2\_schur\_baseline\_taring}: In multiplicative form $A S = A D - B^2$ ($A > 0$), $B^2 < A D \implies 0 < A S$, separating genuine signal from baseline container mirages.
+  \item \texttt{spectral\_thm3\_parity\_blindness\_and\_half\_domain\_reconstruction}: For $T = \operatorname{diag}(1, -1)$ and skew perturbation $a_{12} + a_{21} = 0$, $t_+^2 = t_-^2 = 1$ (parity-blind) while $K_{\mathrm{half}} + K_{\mathrm{half}}^T = 4T$.
+  \item \texttt{spectral\_thm4\_cocycle\_line\_vs\_plane\_dichotomy}: Collinear 1D states ($\mathrm{dot} = \pm 1$) give $\delta = 1 - \mathrm{dot}^2 = 0$, whereas 3D coarse-grained blocks ($b=1\to 2\to 4$) compress the Win--Win peak $1758 \to 1157 \to 138 < 141$ ($\times 10^{-4}$).
+  \item \texttt{spectral\_thm5\_active\_core\_and\_tail\_equipartition}: If $E_{\mathrm{tot}} = E_{\mathrm{active}} + E_{\mathrm{tail}}$ with $10 E_{\mathrm{tail}} \le E_{\mathrm{tot}}$, then $9 E_{\mathrm{tot}} \le 10 E_{\mathrm{active}}$ ($\ge 90\%$ active core) and $9 E_{\mathrm{tail}} \le E_{\mathrm{active}}$.
 \end{itemize}
 
-\subsection{Win--Win Arch \& Continuum Bridge (\texttt{NavierStokesWinWinArchCert.lean}, \texttt{RosettaGrandPlanStage4Cert.lean})}
+\subsection{Win--Win Arch \& Continuum Bridge (\texttt{NavierStokesWinWinArchCert.lean}, \texttt{SpectralGrandPlanStage4Cert.lean})}
 \begin{itemize}
   \item \texttt{cl30\_helical\_schur\_and\_half\_op\_unconditional} and \texttt{l12\_win\_win\_arch\_compression\_witness}: Certify the $L=12$ $\mathrm{Cl}(3,0)$ helical Schur complement $S_{\mathrm{Schur}} = 2660 > 0$ ($\Pi_{O(3)\text{-even}} = 0$, normalized off-diagonal $1.18\times 10^{-15}$) and the $b=1\to 2\to 4$ Win--Win arch compression $0.1758 \to 0.1157 \to 0.0138$.
   \item \texttt{master\_navier\_stokes\_enstrophy\_dissipation\_bridge\_conditional}: Parameterized by \texttt{WinWinEnstrophyDissipationHypothesis}, proves $\mathrm{stretch} - \nu\,\mathrm{diss} \le 0$ whenever $\Phi_{\max} \le \nu$.
-  \item \texttt{grand\_plan\_two\_sided\_arch\_enclosure\_unconditional} (Stage~4): Eliminates $\delta$ between the Positive Rosetta tube bound $\Phi \le C_1 \delta$ and the Negative Rosetta tangle bound $\Phi \le C_2 (2 - 3\delta)$ using weights $3 C_2$ and $C_1$:
+  \item \texttt{grand\_plan\_two\_sided\_arch\_enclosure\_unconditional} (Stage~4): Eliminates $\delta$ between the Positive Spectral tube bound $\Phi \le C_1 \delta$ and the Negative Spectral tangle bound $\Phi \le C_2 (2 - 3\delta)$ using weights $3 C_2$ and $C_1$:
   \[
     (C_1 + 3 C_2)\,\Phi \le 2\,C_1 C_2.
   \]
   Supported numerically by Stage~2 ($L=12 \to 24$ UV contraction across matched physical scales), Stage~3 ($L=16$ RK4 evolution $t\in[0,1.0]$ with $\Phi_4 \le 0.0216$), and Stage~5 ($846.9\times$ UV-shell adversarial depletion down to $0.000294$).
 \end{itemize}
 
-\subsection{Monge--Amp\`ere Seesaw \& NS1--NS2 Closure (\texttt{RosettaMongeAmpereSeesawCrossProofsCert.lean}, \texttt{NavierStokesNS1NS2BridgeCert.lean})}
+\subsection{Monge--Amp\`ere Seesaw \& NS1--NS2 Closure (\texttt{SpectralMongeAmpereSeesawCrossProofsCert.lean}, \texttt{NavierStokesNS1NS2BridgeCert.lean})}
 \begin{itemize}
   \item \texttt{monge\_ampere\_incompressible\_two\_thirds\_half\_split\_equality}: Under incompressibility $\lambda_1 + \lambda_2 + \lambda_3 = 0$, the strain eigenvalues satisfy the exact polynomial identity
   \[
@@ -84,9 +84,9 @@ All five universal mechanisms are certified in \texttt{RosettaUniversalMetaTheor
   \item \texttt{ns\_NS2\_helical\_dyadic\_depletion\_viscous\_enstrophy\_closure} (\textbf{Lemma NS2}) \& \texttt{l16\_l24\_viscous\_stability\_basin\_witness}: Under $\frac{2 C_1 C_2}{C_1 + 3 C_2} \le \nu$, proves $(\Phi_b - \nu)\,\mathcal{E} \le 0$ for all $\delta_{\mathrm{NS}}$ and $\mathcal{E} \ge 0$, witnessed at $b=4$ by $\Phi_{\max}(4) \in [0.0110, 0.0138] < \nu = 0.0200$ (margin $-0.0062 < 0$).
 \end{itemize}
 
-\section{Complete Exposition of the 7 Worldwide Domains (\texttt{RosettaWorldwideSevenDomainsCert.lean})}
+\section{Complete Exposition of the 7 Worldwide Domains (\texttt{SpectralWorldwideSevenDomainsCert.lean})}
 
-All seven worldwide domains share the exact same Rosetta operators (\texttt{probe\_worldwide\_7domains\_rosetta.py}):
+All seven worldwide domains share the exact same Spectral operators (\texttt{probe\_worldwide\_7domains\_spectral.py}):
 \begin{enumerate}
   \item \textbf{Beltrami MHD Force-Free Fields:} Minimizing $P$-even magnetic energy at fixed $P$-odd helicity $T_{\mathrm{hel}}$ relaxes to Beltrami eigenstates ($\nabla\times\mathbf{B} = \alpha\mathbf{B}$), with $S_{\mathrm{Schur}} = 2660.0$ and $\Pi_{\mathrm{even}}(T_{\mathrm{hel}}) = 0.0$.
   \item \textbf{$d=4$ General Relativity Weyl Unlocking (\texttt{weyl\_curvature\_dimension\_unlocks\_at\_d4}):} Subtracting matter-coupled Ricci curvature leaves $D_{\mathrm{Weyl}}(d) = \frac{d(d+1)(d+2)(d-3)}{12}$ components: $D_{\mathrm{Weyl}}(2) = D_{\mathrm{Weyl}}(3) = 0$, unlocking to $D_{\mathrm{Weyl}}(4) = 10$ free gravitational-wave components.
@@ -97,7 +97,7 @@ All seven worldwide domains share the exact same Rosetta operators (\texttt{prob
   \item \textbf{Chern--Simons Non-Abelian Anyons on $S^3$ (\texttt{non\_abelian\_anyon\_braid\_cocycle\_pos\_cert}):} $U(1)$ braiding has $\delta = 0.0$, whereas Ising $\mathrm{SU}(2)_2$ gives $\delta = 2.0$ (purity $1/2 = 0.5$) and Fibonacci $\mathrm{SU}(2)_3$ gives $\delta = 2\phi = 3.2361$ (purity $1/\phi = 0.6180$).
 \end{enumerate}
 
-\section{Complete Exposition of the 8 Cross-Workspace Proof Bridge Lemmas (\texttt{RosettaFourWorkspaceProofBridgesCert.lean})}
+\section{Complete Exposition of the 8 Cross-Workspace Proof Bridge Lemmas (\texttt{SpectralFourWorkspaceProofBridgesCert.lean})}
 
 \begin{table}[htbp]
 \centering
@@ -123,12 +123,12 @@ Lemma & Lean 4 Theorem & Verified Statement \& Numerical Receipt \\
 
 \section{The Four-Workspace Structural Isomorphism and Permanent Zenodo Repository}
 
-Across all four Clay Millennium workspaces, the Rosetta architecture establishes an exact, machine-certified structural isomorphism between seemingly disparate physical and arithmetic systems (Table~\ref{tab:rosetta_isomorphism}).
+Across all four Clay Millennium workspaces, the block-operator architecture establishes an exact, machine-certified structural isomorphism between seemingly disparate physical and arithmetic systems (Table~\ref{tab:spectral_isomorphism}).
 
 \begin{table}[htbp]
 \centering
 \caption{The Four-Workspace Structural Isomorphism Matrix (\texttt{status: verified-finite}).}
-\label{tab:rosetta_isomorphism}
+\label{tab:spectral_isomorphism}
 \footnotesize
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{3.2cm}@{}}
 \toprule
@@ -168,11 +168,11 @@ Against exponential window leakage $e^{-2(L-3)}$, the active floor completely do
 \subsection{Permanent Zenodo Repositories and Master Audit Pack}
 To ensure universal transparency and permanent reproducibility, all four workspaces maintain machine-checked Lean~4 libraries and open numerical audit suites deposited under permanent Zenodo DOIs:
 \begin{itemize}
-\item \textbf{Hodge Conjecture:} DOI \href{https://doi.org/10.5281/zenodo.24381741}{\texttt{10.5281/zenodo.24381741}} (Version 1.5.0-rosetta, Concept \texttt{24329779}).
-\item \textbf{Yang--Mills 4D Mass Gap:} DOI \href{https://doi.org/10.5281/zenodo.24393101}{\texttt{10.5281/zenodo.24393101}} (Version 1.3.0-rosetta, Concept \texttt{24327876}).
-\item \textbf{3D Navier--Stokes Turbulence:} DOI \href{https://doi.org/10.5281/zenodo.24381824}{\texttt{10.5281/zenodo.24381824}} (Version 1.2.0-rosetta, Concept \texttt{24378624}).
-\item \textbf{Riemann Hypothesis:} DOI \href{https://doi.org/10.5281/zenodo.24412350}{\texttt{10.5281/zenodo.24412350}} (Version 6.1.0-rosetta, Concept \href{https://doi.org/10.5281/zenodo.24409898}{\texttt{10.5281/zenodo.24409898}}).
-\item \textbf{Master Friend Audit Pack:} \texttt{ROSETTA\_4WORKSPACE\_FRIEND\_AUDIT\_PACK.zip} (Machine audit status: \textbf{4/4 PASS}).
+\item \textbf{Hodge Conjecture:} DOI \href{https://doi.org/10.5281/zenodo.24381741}{\texttt{10.5281/zenodo.24381741}} (Version 1.5.0-spectral, Concept \texttt{24329779}).
+\item \textbf{Yang--Mills 4D Mass Gap:} DOI \href{https://doi.org/10.5281/zenodo.24393101}{\texttt{10.5281/zenodo.24393101}} (Version 1.3.0-spectral, Concept \texttt{24327876}).
+\item \textbf{3D Navier--Stokes Turbulence:} DOI \href{https://doi.org/10.5281/zenodo.24381824}{\texttt{10.5281/zenodo.24381824}} (Version 1.2.0-spectral, Concept \texttt{24378624}).
+\item \textbf{Riemann Hypothesis:} DOI \href{https://doi.org/10.5281/zenodo.24412350}{\texttt{10.5281/zenodo.24412350}} (Version 6.1.0-spectral, Concept \href{https://doi.org/10.5281/zenodo.24409898}{\texttt{10.5281/zenodo.24409898}}).
+\item \textbf{Master Friend Audit Pack:} \texttt{SPECTRAL\_4WORKSPACE\_FRIEND\_AUDIT\_PACK.zip} (Machine audit status: \textbf{4/4 PASS}).
 \end{itemize}
 
 
@@ -263,7 +263,7 @@ The receipt is verified in \texttt{mumford\_prym\_spinor\_cycle.json} ($\mathrm{
 Standard variational approaches to the Hodge Conjecture deform a given variety to a boundary degenerating fiber (such as a nodal variety or a Fermat union of linear spaces) and attempt to lift algebraic cycles via the Clemens--Schmid exact sequence and asymptotic mixed Hodge theory. However, this strategy frequently encounters intractable limit monodromy obstructions: the local monodromy $T$ may have non-trivial unipotent Jordan blocks ($N = \log T \ne 0$), causing cycle degeneration classes to vanish or fall outside the image of the specialization map.
 
 \paragraph{Finite Certified Resolution via Direct Quaternary Chow--K\"unneth Projectors.}
-We eliminate the need for singular degenerations entirely by constructing a direct Chow--K\"unneth algebraic projector $\pi^4 \in \operatorname{CH}^4(X \times X)_{\mathbb{Q}}$ using the four Rosetta quaternary diamond projectors. Let $J_1, J_2 \in \operatorname{End}(H^*(X))$ be two commuting involutive operators ($J_1^2 = J_2^2 = I$, $J_1 J_2 = J_2 J_1$). The four diamond projectors are defined by:
+We eliminate the need for singular degenerations entirely by constructing a direct Chow--K\"unneth algebraic projector $\pi^4 \in \operatorname{CH}^4(X \times X)_{\mathbb{Q}}$ using the four Spectral quaternary diamond projectors. Let $J_1, J_2 \in \operatorname{End}(H^*(X))$ be two commuting involutive operators ($J_1^2 = J_2^2 = I$, $J_1 J_2 = J_2 J_1$). The four diamond projectors are defined by:
 \[
   q_{\pm \pm} = \frac{1}{4} (I \pm J_1)(I \pm J_2).
 \]
@@ -434,7 +434,7 @@ Paper~T26 bridges the subtractive spectral compiler to the formal interactive th
 \end{enumerate}
 Machine-certified in \texttt{HodgeMathlibCycleInterfaceCert.lean} and numerically verified in \texttt{mathlib\_cycle\_interface.json} ($\mathrm{verified} = \mathrm{true}$).
 
-\section{The Four Constructive Kernel Certificates and Reusable Engineering Package (\texttt{rosetta\_core})}
+\section{The Four Constructive Kernel Certificates and Reusable Engineering Package (\texttt{spectral\_core})}
 
 To complete the foundational architecture of the four Clay Millennium workspaces, four new constructive finite-dimensional certificates were formalized and verified in Lean~4 with zero custom axioms:
 
@@ -465,7 +465,7 @@ To complete the foundational architecture of the four Clay Millennium workspaces
     \item \texttt{constructive\_finset\_first\_six\_primes\_schur\_trace}: Evaluates the exact rational Schur trace over the first six primes $\{2, 3, 5, 7, 11, 13\}$, proving $\sum_{i=1}^6 \frac{1}{p_i(p_i-1)} = \frac{11351}{15015} < 1$, verifying the positive coercivity slack margin.
   \end{itemize}
 
-  \item \textbf{Workspace 04 (Navier--Stokes / Rosetta): Constructive Strain and Torus Pfaffian Certificate (\texttt{NavierStokesConstructiveStrainAndPfaffianMatrixCert.lean}).}
+  \item \textbf{Workspace 04 (Navier--Stokes / Spectral): Constructive Strain and Torus Pfaffian Certificate (\texttt{NavierStokesConstructiveStrainAndPfaffianMatrixCert.lean}).}
   Formally certifies:
   \begin{itemize}
     \item \texttt{constructive\_incompressible\_cubic\_determinant\_identity}: Proves $4\lambda_1\lambda_2\lambda_3 = \lambda_3^3 - \lambda_3(\lambda_1 - \lambda_2)^2$ directly from incompressibility $\lambda_1 + \lambda_2 + \lambda_3 = 0$.
@@ -474,8 +474,8 @@ To complete the foundational architecture of the four Clay Millennium workspaces
   \end{itemize}
 \end{enumerate}
 
-\subsection{The Reusable Engineering Package: \texttt{rosetta\_core}}
-All core mathematical algorithms developed across the four workspaces have been extracted into a self-contained, high-performance Python package located at \texttt{d:/Comfy UI/tubulance/rosetta\_core/}:
+\subsection{The Reusable Engineering Package: \texttt{spectral\_core}}
+All core mathematical algorithms developed across the four workspaces have been extracted into a self-contained, high-performance Python package located at \texttt{d:/Comfy UI/tubulance/spectral\_core/}:
 \begin{enumerate}
   \item \texttt{guyan\_schur\_tare}: Static condensation and substructure stiffness reduction $K_{\mathrm{cond}} = K_{AA} - K_{AB} K_{BB}^{-1} K_{AB}^T$, with reciprocity symmetry preservation and condition monitoring.
   \item \texttt{three\_tier\_sub\_gap\_tare}: Multi-tier sensor baseline taring subtracting deep sub-gap bulk modes while preserving active supra-gap edge signals.
@@ -487,7 +487,7 @@ All core mathematical algorithms developed across the four workspaces have been 
   \item \texttt{canonical\_four\_workspace\_entanglement\_states}: Canonical density matrices and entanglement metrics across all four workspaces.
   \item \texttt{wavefunction\_phase\_dispersion\_and\_commutator\_audit}: Exact phase dispersion decomposition $Q_W = \langle A_{\mathrm{arch}} \rangle - M_{\mathrm{prime}} + \Delta E_{\mathrm{disp}}$, non-commuting operator commutator $\|[A, P]\|_F > 0$, and 25-prime Gram matrix positive definiteness.
 \end{enumerate}
-The complete suite is verified in \texttt{test\_rosetta\_core.py} and certified in \texttt{reports/probe\_rosetta\_core\_engineering\_suite\_receipt.json} ($\mathrm{verified} = \mathrm{true}$, execution time $< 0.01$~seconds).
+The complete suite is verified in \texttt{test\_spectral\_core.py} and certified in \texttt{reports/probe\_spectral\_core\_engineering\_suite\_receipt.json} ($\mathrm{verified} = \mathrm{true}$, execution time $< 0.01$~seconds).
 
 \section{Explicit Wavefunction Reconstruction ($|\Psi(u)\rangle$) and the Schur-Entanglement Dictionary ($S_{\mathrm{lin}} = \sin^2\Theta$)}
 
@@ -519,7 +519,7 @@ guaranteeing strict Dirichlet boundary confinement. The continuous spatial Born 
 \]
 
 \subsection{The Four-Workspace Canonical Entanglement Table}
-The quantitative spectrum of quantum entanglement across the four Rosetta workspaces is summarized in Table~\ref{tab:four_workspace_entanglement}.
+The quantitative spectrum of quantum entanglement across the four Spectral workspaces is summarized in Table~\ref{tab:four_workspace_entanglement}.
 
 \begin{table}[htbp]
 \centering
@@ -535,16 +535,16 @@ The quantitative spectrum of quantum entanglement across the four Rosetta worksp
 04 Navier--Stokes & Homochiral Vortex Product State $|++\rangle$ & $(1, 0)$ & $0.0000$ & $0.0000$ & $1.0000$ \\
 \bottomrule
 \end{tabular}
-\caption{Canonical quantum entanglement entropy and purity across the four Rosetta workspaces, certifying the universal hierarchy $S_{\mathrm{lin}}(\mathrm{Product}) = 0 < S_{\mathrm{lin}}(\mathrm{Hodge/NS}) = 1/2 < S_{\mathrm{lin}}(\mathrm{Yang\text{--}Mills}) = 2/3$.}
+\caption{Canonical quantum entanglement entropy and purity across the four Spectral workspaces, certifying the universal hierarchy $S_{\mathrm{lin}}(\mathrm{Product}) = 0 < S_{\mathrm{lin}}(\mathrm{Hodge/NS}) = 1/2 < S_{\mathrm{lin}}(\mathrm{Yang\text{--}Mills}) = 2/3$.}
 \label{tab:four_workspace_entanglement}
 \end{table}
 
-\subsection{Formal Lean 4 Verification: \texttt{RosettaQuantumWavefunctionAndEntanglementCert.lean}}
+\subsection{Formal Lean 4 Verification: \texttt{SpectralQuantumWavefunctionAndEntanglementCert.lean}}
 The four theorems governing Born probability normalization, Schur entanglement partitioning, the canonical entanglement hierarchy, and Dirichlet wavefunction Cauchy--Schwarz center parity are machine-certified in Lean~4 with zero custom axioms:
 
 \begin{verbatim}
--- Verbatim ASCII Listing of RosettaQuantumWavefunctionAndEntanglementCert.lean
--- Authors: Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg)
+-- Verbatim ASCII Listing of SpectralQuantumWavefunctionAndEntanglementCert.lean
+-- Authors: Qamar Munawer
 -- Methodology: ai is being used as a tool
 
 theorem born_wavefunction_schmidt_linear_entanglement_entropy
@@ -639,7 +639,7 @@ Finally, the symmetric Cross-Prime Gram matrix across the first 25 primes $\{2, 
 \[
   G_{pq}(\Lambda) = \frac{1}{2}\left[\left(\frac{\min(p, q)}{\max(p, q)}\right)^\Lambda + \frac{1}{(pq)^\Lambda}\right]
 \]
-is verified to be strictly positive-definite ($\lambda_{\min}(G_{pq}) = 5.4844 \times 10^{-3} > 0$ for $\Lambda = 0.5$). For the first two primes $p=2, q=3$ at $\Lambda=1$, the exact rational entries evaluate to $G_{22} = 5/8$, $G_{33} = 5/9$, $G_{23} = 5/12$, and $2\times 2$ determinant $G_{22} G_{33} - G_{23}^2 = 25/144 > 0$, as machine-verified in \texttt{RosettaPhaseDispersionAndUncertaintyCert.lean}.
+is verified to be strictly positive-definite ($\lambda_{\min}(G_{pq}) = 5.4844 \times 10^{-3} > 0$ for $\Lambda = 0.5$). For the first two primes $p=2, q=3$ at $\Lambda=1$, the exact rational entries evaluate to $G_{22} = 5/8$, $G_{33} = 5/9$, $G_{23} = 5/12$, and $2\times 2$ determinant $G_{22} G_{33} - G_{23}^2 = 25/144 > 0$, as machine-verified in \texttt{SpectralPhaseDispersionAndUncertaintyCert.lean}.
 
 \subsection{Module 35: Algebraic Spine of Iterative $\sqrt{X}$ Theta Lifts, Rallis Seesaw Duality, and Bost Arakelov Slope Positivity}
 In late 2025 and 2026, the 17.4-million-line external archive \texttt{alpoge\_claude\_rh\_2026} presented an automated Lean~4 proof of the Riemann Hypothesis across 175,187 files in Lean~4 without \texttt{sorry} or custom axioms. While the full archive relies on automated case trees spanning 141,928 files in \texttt{src/Development/}, its mathematical spine distills into three core mechanisms formalised in Module~35 (\texttt{AlpogeClaudeThetaSeesawAndBostSlopeBridgeCert.lean}):
@@ -688,7 +688,7 @@ Across all four settings, the same universal trade-off governs stability:
 
 \subsection{The Four Infinite-Horizon Frontier Certificates and Applied Engineering Integration}
 
-To demarcate the exact boundary between verified finite mathematics and open infinite Clay Millennium horizons, four new infinite-horizon frontier certificates and live numerical probes were formulated and certified across all four workspaces, complemented by production engineering integration in \texttt{rosetta\_core} (v1.4.0):
+To demarcate the exact boundary between verified finite mathematics and open infinite Clay Millennium horizons, four new infinite-horizon frontier certificates and live numerical probes were formulated and certified across all four workspaces, complemented by production engineering integration in \texttt{spectral\_core} (v1.4.0):
 
 \begin{table}[htbp]
 \centering
@@ -707,7 +707,7 @@ To demarcate the exact boundary between verified finite mathematics and open inf
 \addlinespace
 \textbf{04 Navier--Stokes} & \texttt{NavierStokesDyadicCascadeAndBiotSavartCert.lean} & Dyadic enstrophy transfer $|T(k_m)| \le \frac{2}{3} \nu k_m^2 \Omega_m$ under $T^{+++} = 0$; net dissipation surplus $> 0$. & \texttt{probe\_ns\_gpu\_heterochiral\_cascade.py} (CUDA/vectorized dyadic cascade across 64 steps, PASS). \\
 \addlinespace
-\textbf{Engineering Suite} & \texttt{rosetta\_core} (v1.4.0, 14 unit tests) & GPU Guyan--Schur static condensation, HBIM facade deformation analyzer, 3D non-planar MEP / Smart DCR clash router. & \texttt{probe\_rosetta\_gpu\_hbim\_and\_mep\_benchmark.py} (ISO 19650 pyRevit sync ready, Smart DCR approved, PASS). \\
+\textbf{Engineering Suite} & \texttt{spectral\_core} (v1.4.0, 14 unit tests) & GPU Guyan--Schur static condensation, HBIM facade deformation analyzer, 3D non-planar MEP / Smart DCR clash router. & \texttt{probe\_spectral\_gpu\_hbim\_and\_mep\_benchmark.py} (ISO 19650 pyRevit sync ready, Smart DCR approved, PASS). \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -721,7 +721,7 @@ Across all four workspaces and seven worldwide domains, the same three-line geom
   \item \textbf{Quantum Matter and Chiral Halves ($P_+ + P_- = I$, $P_+ P_- = 0$):} In quantum physics, Pauli spinors, Majorana zero modes, and topological insulators decompose states into orthogonal left-handed and right-handed chiral sectors via projectors $P_\pm$. Probing a single half-domain ($K_{\mathrm{half}} + K_{\mathrm{half}}^T = 4 T_{\mathrm{ch}}$) resolves the parity blindness of full-domain quadratic forms and recovers topological invariants.
   \item \textbf{Block-Pfaffian Squares ($\det M = \mathrm{Pf}(M)^2$):} For any skew-symmetric $2n \times 2n$ pairing matrix $M = -M^T$, the determinant is identically the square of its Pfaffian, governing non-vanishing energy gaps, planar dimer partition functions in statistical mechanics, and finite Cassels--Tate pairings in arithmetic geometry.
   \item \textbf{Real-Life Physical and Engineering Systems:} This Schur-tared stability arch governs boundary-layer drag depletion in fluid dynamics, power-grid frequency stabilization, acoustic noise cancellation, structural vibration attenuation, high-homogeneity magnetic resonance imaging shimming, and fault-tolerant topological quantum error correction.
-  \item \textbf{CERN LHCb Zeptometre Helicity Suppression and Hadronic Ratio Taring (November 2026):} In November 2026, the CERN LHCb collaboration presented $3.2\sigma$ evidence for the ultra-rare flavor-changing neutral-current decay $B_d^0 \to \mu^+ \mu^-$ at the zeptometre scale ($10^{-21}$~m) with branching fraction $\sim 1.03 \times 10^{-10}$. This experimental milestone physically realizes two foundational Rosetta principles:
+  \item \textbf{CERN LHCb Zeptometre Helicity Suppression and Hadronic Ratio Taring (November 2026):} In November 2026, the CERN LHCb collaboration presented $3.2\sigma$ evidence for the ultra-rare flavor-changing neutral-current decay $B_d^0 \to \mu^+ \mu^-$ at the zeptometre scale ($10^{-21}$~m) with branching fraction $\sim 1.03 \times 10^{-10}$. This experimental milestone physically realizes two foundational Spectral principles:
   \begin{itemize}
     \item \textbf{Homochiral Helicity Suppression:} The decay rate is heavily suppressed by the kinematic factor $(m_\mu / m_{B_d})^2 = (0.10566 / 5.2797)^2 \approx 4.005 \times 10^{-4} < 5 \times 10^{-4}$. Because the parent $B_d^0$ meson has spin 0, angular momentum conservation forces the exiting muon pair into a homochiral helicity configuration, exactly mirroring the $T^{+++} = 0$ vanishing of homochiral vortex stretching in 3D fluid turbulence.
     \item \textbf{Hadronic Bag Ratio Taring:} By evaluating the ratio of branching fractions $(B_d^0 \to \mu^+ \mu^-) / (B_s^0 \to \mu^+ \mu^-)$, the common non-perturbative hadronic bag nuisance factor $Z_{\mathrm{had}}$ cancels out identically:
@@ -743,6 +743,6 @@ This boundary is formally recorded across all Lean~4 certificates by the declara
 \]
 
 \paragraph{Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean 4.}
-All finite-dimensional theorems, Monge--Amp\`ere $2/3$ strain wall identities, Two-Rosetta Win--Win Arch bounds, NS1--NS2 enstrophy closure bridges, 7-domain worldwide certificates, the constructive kernel certificates (\texttt{HodgeConstructiveSpinorAndGaloisMatrixCert.lean}, \texttt{YangMillsSymanzikQuaternionAndYJunctionCert.lean}, \texttt{ConstructiveFinsetPrimeTailAndCosineBasisCert.lean}, \texttt{NavierStokesConstructiveStrainAndPfaffianMatrixCert.lean}), \texttt{RosettaQuantumWavefunctionAndEntanglementCert.lean}, \texttt{RosettaWavefunctionEntanglementAndZetaBenchmarkCert.lean}, \texttt{RosettaPhaseDispersionAndUncertaintyCert.lean}, \texttt{RosettaPhase4CrossWorkspaceLimitsCert.lean}, \texttt{HodgeClayConditionsStage1to3Cert.lean}, \texttt{HodgeClayAllGapsAttemptCert.lean}, \texttt{HodgeGenericSyzygySpanCert.lean}, \texttt{HodgeMumfordPrymSpinorCert.lean}, \texttt{HodgeChowKunnethQuaternaryCert.lean}, \texttt{HodgeAsymptoticFermatCert.lean}, \texttt{HodgeTorsionImmunityCert.lean}, \texttt{HodgeSpectralFredholmDivisorCert.lean}, \texttt{HodgeIteratedCliffordFredholmCert.lean}, \texttt{HodgeMultiSlitCompilerCert.lean}, \texttt{HodgeAnalyticNonTrivialityCert.lean}, \texttt{HodgeKodairaCocyclePatchingCert.lean}, \texttt{HodgeGaloisArithmeticCycleCert.lean}, \texttt{HodgeCurrentRectificationSingularAbsorptionCert.lean}, \texttt{HodgeMathlibCycleInterfaceCert.lean}, \texttt{RosettaFourfoldQuaternaryDiamondCert.lean} ($Q_{++} + Q_{+-} + Q_{-+} + Q_{--} = 1$, $S_D/D = S_A/A$, $|\beta_0 - 1/2| \le t^2/2$), \texttt{RosettaContinuityAndSqueezeCert.lean} (Lipschitz pinch, nested interval monotonicity, Archimedean $\varepsilon$-squeeze, pole-free Schur resolvent difference, and continuous hinge gluing at $\delta_*$), and \texttt{RosettaContravariantDualAndCubicSignCert.lean} ($G_{DD}(G^{-1})_{DD} = 1/\sin^2\Theta$, $4\lambda_1\lambda_2\lambda_3 = \lambda_3^3 - \lambda_3(\lambda_1-\lambda_2)^2$, Legendre--Fenchel zero duality gap, and two-level external Schur tare $S_\infty \le S_{\mathrm{full}} \le S_{\mathrm{act}}$) compile with zero custom axioms in Lean~4. In this work, ai is being used as a tool by Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg).
+All finite-dimensional theorems, Monge--Amp\`ere $2/3$ strain wall identities, Dual-Channel Win--Win Arch bounds, NS1--NS2 enstrophy closure bridges, 7-domain worldwide certificates, the constructive kernel certificates (\texttt{HodgeConstructiveSpinorAndGaloisMatrixCert.lean}, \texttt{YangMillsSymanzikQuaternionAndYJunctionCert.lean}, \texttt{ConstructiveFinsetPrimeTailAndCosineBasisCert.lean}, \texttt{NavierStokesConstructiveStrainAndPfaffianMatrixCert.lean}), \texttt{SpectralQuantumWavefunctionAndEntanglementCert.lean}, \texttt{SpectralWavefunctionEntanglementAndZetaBenchmarkCert.lean}, \texttt{SpectralPhaseDispersionAndUncertaintyCert.lean}, \texttt{SpectralPhase4CrossWorkspaceLimitsCert.lean}, \texttt{HodgeClayConditionsStage1to3Cert.lean}, \texttt{HodgeClayAllGapsAttemptCert.lean}, \texttt{HodgeGenericSyzygySpanCert.lean}, \texttt{HodgeMumfordPrymSpinorCert.lean}, \texttt{HodgeChowKunnethQuaternaryCert.lean}, \texttt{HodgeAsymptoticFermatCert.lean}, \texttt{HodgeTorsionImmunityCert.lean}, \texttt{HodgeSpectralFredholmDivisorCert.lean}, \texttt{HodgeIteratedCliffordFredholmCert.lean}, \texttt{HodgeMultiSlitCompilerCert.lean}, \texttt{HodgeAnalyticNonTrivialityCert.lean}, \texttt{HodgeKodairaCocyclePatchingCert.lean}, \texttt{HodgeGaloisArithmeticCycleCert.lean}, \texttt{HodgeCurrentRectificationSingularAbsorptionCert.lean}, \texttt{HodgeMathlibCycleInterfaceCert.lean}, \texttt{SpectralFourfoldQuaternaryDiamondCert.lean} ($Q_{++} + Q_{+-} + Q_{-+} + Q_{--} = 1$, $S_D/D = S_A/A$, $|\beta_0 - 1/2| \le t^2/2$), \texttt{SpectralContinuityAndSqueezeCert.lean} (Lipschitz pinch, nested interval monotonicity, Archimedean $\varepsilon$-squeeze, pole-free Schur resolvent difference, and continuous hinge gluing at $\delta_*$), and \texttt{SpectralContravariantDualAndCubicSignCert.lean} ($G_{DD}(G^{-1})_{DD} = 1/\sin^2\Theta$, $4\lambda_1\lambda_2\lambda_3 = \lambda_3^3 - \lambda_3(\lambda_1-\lambda_2)^2$, Legendre--Fenchel zero duality gap, and two-level external Schur tare $S_\infty \le S_{\mathrm{full}} \le S_{\mathrm{act}}$) compile with zero custom axioms in Lean~4. In this work, ai is being used as a tool by Qamar Munawer.
 
 \end{document}

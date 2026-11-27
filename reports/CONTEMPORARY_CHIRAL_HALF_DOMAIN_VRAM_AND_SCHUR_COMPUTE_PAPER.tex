@@ -13,15 +13,9 @@
     urlcolor=blue!70!black
 }
 
-\title{\textbf{Contemporary Chiral Half-Domain Matrix Packing, Block-Involution Splitting, and Guyan-Schur Static Condensation: 50 to 99.8 Percent GPU VRAM Reduction and 8x to 256x Compute Acceleration on an 8 GB NVIDIA RTX A2000 Workstation}\\
-\large (Continuing the Previous Rosetta Stone Operator Correspondence)}
+\title{\textbf{Contemporary Chiral Half-Domain Matrix Packing, Block-Involution Splitting, and Guyan-Schur Static Condensation: 50 to 99.8 Percent GPU VRAM Reduction and 8x to 256x Compute Acceleration on an 8 GB NVIDIA RTX A2000 Workstation}}
 
-\author{
-    \textbf{Qamar Munawer}\\
-    Brandenburg University of Technology Cottbus-Senftenberg\\
-    Cottbus, Germany\\
-    \texttt{qamar.munawer@b-tu.de}
-}
+\author{\textbf{Qamar Munawer}}
 
 \date{November 22, 2026}
 
@@ -30,7 +24,7 @@
 \maketitle
 
 \begin{abstract}
-Hardware bottlenecks in double-precision (IEEE 754 FP64) scientific computing and modern AI inference frequently encounter strict video memory (VRAM) ceilings on standard engineering workstations. On an NVIDIA RTX A2000 8 GB Laptop GPU, a standard dense matrix of dimension $N = 32,768$ consumes 8.59 GB of memory, causing immediate Out-Of-Memory (OOM) fatal crashes. In this paper, we show how three geometric operator transformations, originally discovered through our cross-domain operator dictionary (previously referred to as the Rosetta Stone foundation), systematically solve this hardware limit:
+Hardware bottlenecks in double-precision (IEEE 754 FP64) scientific computing and modern AI inference frequently encounter strict video memory (VRAM) ceilings on standard engineering workstations. On an NVIDIA RTX A2000 8 GB Laptop GPU, a standard dense matrix of dimension $N = 32,768$ consumes 8.59 GB of memory, causing immediate Out-Of-Memory (OOM) fatal crashes. In this paper, we show how three geometric operator transformations, derived via cross-domain block-operator spectral reduction, systematically solve this hardware limit:
 (1) Chiral Half-Domain Symmetric Packing ($K = K_{\mathrm{half}} + K_{\mathrm{half}}^T$) reduces dense storage by 49.90 to 50.00 percent (4.29 GB at $N = 32,768$) with bitwise 0.0 reconstruction error and cuts Cholesky factorization work by 2.0x.
 (2) Chiral Orthogonal Block-Involution Splitting ($N = (N/2)_+ \oplus (N/2)_-$) exploits parity symmetry ($\star^2 = +1$) to decouple the domain into two mutually perpendicular subspaces with zero cross-talk ($< 1\mathrm{e}{-14}$), delivering 74.90 to 75.00 percent VRAM reduction (2.15 GB at $N = 32,768$) and an exact 8.0x factorization speedup (87.5 percent FLOP reduction).
 (3) Guyan-Schur Static Condensation ($\Sigma_D = D - B^T A^{-1} B$) eliminates passive interior degrees of freedom, compressing active boundary memory by 99.80 percent (504x smaller, 16.00 MB at $N = 32,768$) and accelerating runtime online matrix-vector solves by 256x with condensation accuracy below $1\mathrm{e}{-13}$.
@@ -42,14 +36,14 @@ We substantiate these theoretical scaling laws with live empirical GPU telemetry
 
 \vspace{0.5em}
 \noindent\textbf{Methodology Note:}
-Kindly note that this research work is conducted by Qamar Munawer at Brandenburg University of Technology Cottbus-Senftenberg, and ai is being used as a tool to assist in formal verification, CUDA memory architecture, and numerical software engineering.
+This research is authored by Qamar Munawer; ai is being used as a tool to assist in formal verification, CUDA memory architecture, and numerical software engineering.
 
 \newpage
 
 \section*{Dear Friends and Respected Readers: Personal Letter and Context}
 I am pleased to share this engineering monograph detailing the GPU memory and compute optimizations implemented in our open-source \texttt{tare\_core} library. 
 
-In our earlier foundational research archives, we grouped our shared operator correspondence across differential geometry, gauge theory, and fluid dynamics under the working metaphor of a Rosetta Stone. That correspondence demonstrated that the exact same block-matrix Schur complement identity and reflection symmetry appear across diverse branches of mathematical physics. 
+Cross-domain spectral analysis shows that block-LDU Schur complements, chiral involutions, and skew-symmetric Pfaffians govern these coupled operator systems directly. That correspondence demonstrated that the exact same block-matrix Schur complement identity and reflection symmetry appear across diverse branches of mathematical physics. 
 
 In this monograph, we present every algorithmic technique using its standard contemporary terminology in computer science, linear algebra, and structural mechanics: Chiral Half-Domain Packing, Block-Diagonal Involution Splitting, Guyan-Schur Static Condensation, Transformer KV-Cache Spectral Taring, and Square-Root SRAM Tiling. We maintain complete continuity with our prior archives while addressing a very practical engineering reality: enabling engineers, researchers, and historic preservationists to run large double-precision scientific workloads on affordable 8 GB workstation GPUs without expensive cloud clusters.
 
@@ -175,8 +169,6 @@ m^* = \frac{\alpha}{2\beta} \sqrt{X} = \sqrt{65,536} = 256.
 \end{equation}
 Selecting an SRAM hardware tile of $256 \times 256$ yields a theoretical DRAM traffic reduction factor of \textbf{128.25x}, keeping matrix-multiplication kernels fully compute-bound rather than memory-bandwidth throttled.
 
-\section{Architectural Heritage BIM (HBIM) Bauforschung Application at BTU Cottbus}
-At the Brandenburg University of Technology Cottbus-Senftenberg, historic sandstone and brick masonry structures undergo long-term structural monitoring. Measuring millimeter-scale foundation settlements using terrestrial laser scanners is severely contaminated by seasonal thermal expansion and contraction (up to 10.91 mm peak-to-peak amplitude) and instrument sensor noise ($\sigma = 0.8$ mm).
 
 Using our Guyan-Schur static condenser (\texttt{hbim\_bauforschung\_adapter.py}):
 \begin{enumerate}
@@ -191,7 +183,7 @@ All underlying algebraic identities used in this architecture are formally verif
 \begin{itemize}
     \item \textbf{Zero Sorry Tokens:} Every theorem compiles with \texttt{0 sorry} and zero administrative axioms.
     \item \textbf{Kernel Axiom Compliance:} The entire verification tree relies strictly on the three foundational axioms of standard Lean 4 mathematics: \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
-    \item \textbf{Epistemic Demarcation:} In strict adherence to scientific integrity, our proofs certify finite-dimensional matrix identities, Schur-complement positivity floors, and discrete lattice reductions. All four Clay Millennium Problems remain strictly OPEN (\texttt{status: verified-finite}, \texttt{open\_horizon\_lock: STRICTLY OPEN}).
+    \item \textbf{Epistemic Demarcation:} In strict adherence to scientific integrity, our proofs certify finite-dimensional matrix identities, Schur-complement positivity floors, and discrete lattice reductions. All four Clay Millennium Problems remain strictly OPEN.
 \end{itemize}
 
 \section*{Conclusion and Availability}
@@ -200,7 +192,6 @@ By unifying Chiral Half-Domain Packing, Block-Involution Splitting, and Guyan-Sc
 \vspace{1.5em}
 \noindent\textbf{Author Attribution:}\\
 Qamar Munawer\\
-Brandenburg University of Technology Cottbus-Senftenberg\\
 Methodology note: ai is being used as a tool.
 
 \end{document}

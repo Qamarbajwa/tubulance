@@ -55,9 +55,9 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{remark}[theorem]{Remark}
 
-\title{\textbf{The Two-Rosetta Keystone Arch Inequality and 846-Fold High-Frequency Helical Depletion}}
+\title{\textbf{The Dual-Channel Keystone Arch Inequality and 846-Fold High-Frequency Helical Depletion}}
 
-\author{Qamar Munawer \\ Brandenburg University of Technology Cottbus-Senftenberg}
+\author{\textbf{Qamar Munawer}}
 
 \date{\today}
 
@@ -66,7 +66,7 @@
 \maketitle
 
 \begin{abstract}
-We prove that nonlinear vortex stretching in 3D Navier-Stokes flow is constrained by a Two-Rosetta Keystone Arch inequality: $(C_1 + 3 C_2) \Phi \le 2 C_1 C_2$. In high-Reynolds-number turbulent flows, vortex stretching operates against viscous dissipation like two leaning stone blocks in an arch. When small-scale vorticity aligns with the velocity field, helicity depletes the stretching nonlinearity by a factor of 846.9x. We prove in Lean 4 without custom axioms that the keystone inequality enforces a self-supporting stability ceiling on enstrophy growth, preventing finite-time singularity formation whenever the arch condition is satisfied.
+We prove that nonlinear vortex stretching in 3D Navier-Stokes flow is constrained by a Dual-Channel Keystone Arch inequality: $(C_1 + 3 C_2) \Phi \le 2 C_1 C_2$. In high-Reynolds-number turbulent flows, vortex stretching operates against viscous dissipation like two leaning stone blocks in an arch. When small-scale vorticity aligns with the velocity field, helicity depletes the stretching nonlinearity by a factor of 846.9x. We prove in Lean 4 without custom axioms that the keystone inequality enforces a self-supporting stability ceiling on enstrophy growth, preventing finite-time singularity formation whenever the arch condition is satisfied.
 \end{abstract}
 
 \vspace{1em}
@@ -111,7 +111,7 @@ This $846$-fold depletion suppresses the effective nonlinearity below the viscou
 The Lean 4 theorem proves the keystone arch stability inequality:
 
 \begin{lstlisting}[language=Lean4]
-theorem two_rosetta_keystone_arch_bound
+theorem two_spectral_keystone_arch_bound
     (C1 C2 Phi : Real)
     (hC1 : 0 < C1)
     (hC2 : 0 < C2)

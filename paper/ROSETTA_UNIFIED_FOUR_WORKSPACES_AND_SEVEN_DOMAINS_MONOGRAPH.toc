@@ -1,0 +1,61 @@
+\contentsline {section}{\numberline {1}The 5-Pillar Block-Operator Architecture (Positive vs.\ Negative Spectral)}{3}{section.1}%
+\contentsline {section}{\numberline {2}Complete Theorem-by-Theorem Exposition of 3D Navier--Stokes Turbulence}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Universal Spectral Meta-Theorems (\texttt {SpectralUniversalMetaTheorems.lean})}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Win--Win Arch \& Continuum Bridge (\texttt {NavierStokesWinWinArchCert.lean}, \texttt {SpectralGrandPlanStage4Cert.lean})}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Monge--Amp\`ere Seesaw \& NS1--NS2 Closure (\texttt {SpectralMongeAmpereSeesawCrossProofsCert.lean}, \texttt {NavierStokesNS1NS2BridgeCert.lean})}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Complete Exposition of the 7 Worldwide Domains (\texttt {SpectralWorldwideSevenDomainsCert.lean})}{4}{section.3}%
+\contentsline {section}{\numberline {4}Complete Exposition of the 8 Cross-Workspace Proof Bridge Lemmas (\texttt {SpectralFourWorkspaceProofBridgesCert.lean})}{5}{section.4}%
+\contentsline {section}{\numberline {5}The Four-Workspace Structural Isomorphism and Permanent Zenodo Repository}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Riemann Hypothesis: The Two Races Asymptotic Scaling Law}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Permanent Zenodo Repositories and Master Audit Pack}{7}{subsection.5.2}%
+\contentsline {section}{\numberline {6}The Hodge Conjecture: Resolution of the Three Key Chokepoints (Papers T14--T16)}{7}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Chokepoint 1 (Paper T14): Moduli Span on Generic Calabi--Yau Fourfolds (\texttt {HodgeGenericSyzygySpanCert.lean})}{8}{subsection.6.1}%
+\contentsline {paragraph}{Mathematical Background and the Moduli Barrier.}{8}{section*.2}%
+\contentsline {paragraph}{Finite Certified Resolution via Zariski-Open Non-Vanishing.}{8}{section*.3}%
+\contentsline {paragraph}{Lean~4 Verification.}{8}{section*.4}%
+\contentsline {subsection}{\numberline {6.2}Chokepoint 2 (Paper T15): Mumford $\mathfrak {so}(8)$ Spinor Cycles via Prym--Tjurin Varieties (\texttt {HodgeMumfordPrymSpinorCert.lean})}{9}{subsection.6.2}%
+\contentsline {paragraph}{Mathematical Background and the Spinor Barrier.}{9}{section*.5}%
+\contentsline {paragraph}{Finite Certified Resolution via Prym--Tjurin Symmetric Cubes.}{9}{section*.6}%
+\contentsline {paragraph}{Lean~4 Verification.}{9}{section*.7}%
+\contentsline {subsection}{\numberline {6.3}Chokepoint 3 (Paper T16): Quaternary Diamond Projectors to Direct Chow--K\"unneth Closure (\texttt {HodgeChowKunnethQuaternaryCert.lean})}{10}{subsection.6.3}%
+\contentsline {paragraph}{Mathematical Background and the Degeneration Dilemma.}{10}{section*.8}%
+\contentsline {paragraph}{Finite Certified Resolution via Direct Quaternary Chow--K\"unneth Projectors.}{10}{section*.9}%
+\contentsline {paragraph}{Lean~4 Verification.}{10}{section*.10}%
+\contentsline {subsection}{\numberline {6.4}Asymptotic Fermat Induction for All Moduli $m \to \infty $ (Paper T17, \texttt {HodgeAsymptoticFermatCert.lean})}{11}{subsection.6.4}%
+\contentsline {paragraph}{The Composite Moduli Challenge.}{11}{section*.11}%
+\contentsline {paragraph}{Machine-Certified Resolution via Prime-Power Defect Bounds and AP Exclusion.}{11}{section*.12}%
+\contentsline {subsection}{\numberline {6.5}Topological Torsion Immunity and the Sheaf Gate (Paper T18, \texttt {HodgeTorsionImmunityCert.lean})}{11}{subsection.6.5}%
+\contentsline {paragraph}{The Integral Failure vs.\ Rational Immunity.}{11}{section*.13}%
+\contentsline {subsection}{\numberline {6.6}Subtractive Spectral Holography: The Fredholm Determinant Divisor (Paper T19, \texttt {HodgeSpectralFredholmDivisorCert.lean})}{12}{subsection.6.6}%
+\contentsline {paragraph}{The Subtractive Paradigm.}{12}{section*.14}%
+\contentsline {paragraph}{Equivariant Fredholm Determinant and Exact Polynomial Rigidity.}{12}{section*.15}%
+\contentsline {subsection}{\numberline {6.7}Higher-Codimension Cycle Synthesis via Iterated Clifford--Fredholm Divisors (Paper T20, \texttt {HodgeIteratedCliffordFredholmCert.lean})}{12}{subsection.6.7}%
+\contentsline {paragraph}{Universal Generalization to Arbitrary Codimension $p \ge 2$.}{12}{section*.16}%
+\contentsline {paragraph}{Exact Codimension-$p$ Complete Intersection and Multivariable Poincar\'e--Lelong Identity.}{12}{section*.17}%
+\contentsline {subsection}{\numberline {6.8}The Multi-Slit Hodge Compiler (Paper T21, \texttt {HodgeMultiSlitCompilerCert.lean})}{13}{subsection.6.8}%
+\contentsline {paragraph}{Operationalizing the ``One More Slit'' Principle.}{13}{section*.18}%
+\contentsline {subsection}{\numberline {6.9}The Analytic Non-Triviality Theorem for Schur-Tared Fredholm Divisors (Paper T22, \texttt {HodgeAnalyticNonTrivialityCert.lean})}{13}{subsection.6.9}%
+\contentsline {paragraph}{Resolving the Trivial-Zero Obstruction.}{13}{section*.19}%
+\contentsline {subsection}{\numberline {6.10}The Global Kodaira--Fredholm Cocycle Patching Theorem (Paper T23, \texttt {HodgeKodairaCocyclePatchingCert.lean})}{14}{subsection.6.10}%
+\contentsline {paragraph}{Bridging Local Charts to Global Algebraic Bundles.}{14}{section*.20}%
+\contentsline {subsection}{\numberline {6.11}The Galois-Symmetrized Arithmetic Cycle Theorem (Paper T24, \texttt {HodgeGaloisArithmeticCycleCert.lean})}{14}{subsection.6.11}%
+\contentsline {paragraph}{Rational Field of Definition and Chow Class Membership.}{14}{section*.21}%
+\contentsline {subsection}{\numberline {6.12}Current Rectification and Singular Locus Absorption on K\"ahler Manifolds (Paper T25, \texttt {HodgeCurrentRectificationSingularAbsorptionCert.lean})}{15}{subsection.6.12}%
+\contentsline {paragraph}{Resolving Singular Locus and Boundary Current Leakage.}{15}{section*.22}%
+\contentsline {subsection}{\numberline {6.13}The Stratified Mathlib 4 Sheaf and Cycle Interface Gate (Paper T26, \texttt {HodgeMathlibCycleInterfaceCert.lean})}{15}{subsection.6.13}%
+\contentsline {paragraph}{The Formal Categorical Architecture.}{15}{section*.23}%
+\contentsline {section}{\numberline {7}The Four Constructive Kernel Certificates and Reusable Engineering Package (\texttt {spectral\_core})}{15}{section.7}%
+\contentsline {subsection}{\numberline {7.1}The Reusable Engineering Package: \texttt {spectral\_core}}{16}{subsection.7.1}%
+\contentsline {section}{\numberline {8}Explicit Wavefunction Reconstruction ($|\Psi (u)\rangle $) and the Schur-Entanglement Dictionary ($S_{\mathrm {lin}} = \sin ^2\Theta $)}{17}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Physical Intuition: From Kitchen-Scale Taring to Quantum Entanglement}{17}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Spatial Dirichlet Wavefunction Reconstruction}{18}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}The Four-Workspace Canonical Entanglement Table}{18}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Formal Lean 4 Verification: \texttt {SpectralQuantumWavefunctionAndEntanglementCert.lean}}{18}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Unconditional Pair-Correlation Zero Floor: The Lamzouri (2026) $>2/3$ Benchmark}{20}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}The Phase-Dispersion Identity and Non-Commuting $[A_{\mathrm {arch}}, P_{\mathrm {prime}}]$ Uncertainty Floor}{20}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Module 35: Algebraic Spine of Iterative $\sqrt {X}$ Theta Lifts, Rallis Seesaw Duality, and Bost Arakelov Slope Positivity}{21}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.8}Unified Four-Workspace Realization of Theta-Seesaws and Multiscale Slope Balance}{21}{subsection.8.8}%
+\contentsline {subsection}{\numberline {8.9}The Four Infinite-Horizon Frontier Certificates and Applied Engineering Integration}{22}{subsection.8.9}%
+\contentsline {section}{\numberline {9}How Energy, Quantum Matter, Pfaffian Squares, and Real-Life Fields Connect}{22}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Epistemic Demarcation: Finite Algebraic Realizations vs.\ the Open Clay Millennium Problem}{24}{subsection.9.1}%
+\contentsline {paragraph}{Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean 4.}{24}{section*.24}%

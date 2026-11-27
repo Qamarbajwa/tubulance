@@ -1,0 +1,26 @@
+{
+  "title": "Seven Worldwide Domains of Skew-Symmetric Pfaffian Squares: BSD, Kasteleyn, and Majorana Anyons",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We establish the universality of the skew-symmetric Pfaffian square law \\det(M) = \\operatorname{Pf}(M)^2 across seven major branches of modern physics and mathematics: (1) Einstein's gravitational wave polarization splitting h_+^2 + h_\\times^2 = \\|h\\|^2, (2) Kasteleyn's polynomial-time planar dimer matching in computational complexity (P vs NP), (3) Birch and Swinnerton-Dyer square orders for the Shafarevich-Tate group \\Sha(E), (4) Majorana Kitaev 1D quantum wires splitting complex fermions into real topological halves, (5) Chern-Simons topological anyon braiding quadratic skein relations, (6) Wigner-Dyson random matrix universality indices \\beta \\in \\{1, 2, 4\\}, and (7) Beltrami force-free magnetic plasma equilibrium. We formalize all five primary algebraic theorems in Lean 4 with zero custom axioms and report complete reproducible numerical probe verification. In this research, ai is being used as a tool for cross-domain formalization and scientific synthesis.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Munawer, Qamar"
+    }
+  ],
+  "keywords": [
+    "Pfaffian Square",
+    "Seven Worldwide Domains",
+    "Einstein Gravitational Waves",
+    "Kasteleyn Planar Matching",
+    "Birch Swinnerton-Dyer",
+    "Majorana Wires",
+    "Chern-Simons Anyons",
+    "Lean 4",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}

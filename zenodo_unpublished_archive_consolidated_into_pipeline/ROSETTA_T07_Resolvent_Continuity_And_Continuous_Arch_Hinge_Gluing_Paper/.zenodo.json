@@ -1,0 +1,24 @@
+{
+  "title": "Resolvent Lipschitz Continuity, Continuous Arch Hinge Gluing, and Archimedean Squeeze",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We prove that the two-sided keystone arch envelope \\Phi(\\delta) = \\min(C_1 \\delta, C_2 (2 - 3 \\delta)) glues continuously at the hinge point \\delta^* = 2 C_2 / (C_1 + 3 C_2), forming a globally Lipschitz continuous, piecewise linear upper bound on enstrophy growth across the entire real line \\mathbb{R}. There are no discontinuities, jumps, or open gaps at the interface. Furthermore, we establish the Archimedean interval squeeze lemma: under resolvent Lipschitz continuity \\|(A - z_1)^{-1} - (A - z_2)^{-1}\\| \\le L |z_1 - z_2|, nested bounding intervals shrink strictly to a unique invariant ceiling. Certified in Lean 4 with zero axioms. In this research, ai is being used as a tool for formal verification and rigorous symbolic computation.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Munawer, Qamar"
+    }
+  ],
+  "keywords": [
+    "Resolvent Continuity",
+    "Lipschitz Bound",
+    "Arch Hinge Gluing",
+    "Archimedean Squeeze",
+    "Continuous Envelope",
+    "Lean 4",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}

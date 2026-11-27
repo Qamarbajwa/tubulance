@@ -13,15 +13,9 @@
     urlcolor=blue!70!black
 }
 
-\title{\textbf{Contemporary Helical Triad Chiral Vanishing, Axisymmetric Strain Bounds, and Topological Pfaffian Genus Barriers: Unified Lean 4 Formal Verification and NVIDIA RTX A2000 GPU Benchmarks}\\
-\large (Continuing the Previous Rosetta Stone Operator Correspondence)}
+\title{\textbf{Contemporary Helical Triad Chiral Vanishing, Axisymmetric Strain Bounds, and Topological Pfaffian Genus Barriers: Unified Lean 4 Formal Verification and NVIDIA RTX A2000 GPU Benchmarks}}
 
-\author{
-    \textbf{Qamar Munawer}\\
-    Brandenburg University of Technology Cottbus-Senftenberg\\
-    Cottbus, Germany\\
-    \texttt{qamar.munawer@b-tu.de}
-}
+\author{\textbf{Qamar Munawer}}
 
 \date{November 22, 2026}
 
@@ -31,10 +25,14 @@
 
 \begin{abstract}
 The three-dimensional incompressible Navier-Stokes equations and the P vs NP computational complexity problem share a fundamental mathematical barrier: the non-linear interaction of vortex triads and the exponential topological genus growth of non-planar constraint graphs. In this research monograph, we formulate and machine-verify the complete finite-scale dyadic dissipation and Pfaffian circuit architecture via contemporary operator algebra:
-(1) Helical Triad Chiral Vanishing: The non-linear Lamb vector $u \times \omega$ satisfies exact energetic orthogonality $u \cdot (u \times \omega) = 0$. When decomposed into helical wave modes $(h_1, h_2, h_3)$, homochiral triad interactions vanish identically: $T_{+++} = 0$. Homochiral vortex stretching cannot transfer energy to small scales, restricting cascade energy to heterochiral interactions.
-(2) Axisymmetric Strain Ceiling: In axisymmetric swirl flows, the non-linear vortex stretching strain is bounded above by $S_{\max} \le 2/3$. Combined with viscous dissipation $\nu k^2$, inter-scale energy transfer decays as $\le 1/8$ across distant dyadic shells, enforcing cumulative $H^1$ enstrophy decay.
-(3) Topological Pfaffian Genus Barrier (P vs NP): Planar graph matching is solvable in polynomial time via Kasteleyn Pfaffians. However, for non-planar constraint graphs of 3-SAT, the cyclomatic genus $g$ grows linearly with variable count ($g = \Omega(n)$). The required Pfaffian linear combinations grow as $16 \cdot 4^n = \Omega(4^n)$, excluding polynomial-size Pfaffian or determinantal representations.
-(4) Machine Verification: We catalog and certify 40 unconditional theorems in Lean 4 with zero sorry tokens and standard kernel axioms, backed by multi-scale matrix condensation benchmarks ($N = 512$ to $32,768$) on an NVIDIA RTX A2000 8 GB Laptop GPU delivering 49.95\% to 99.80\% VRAM savings and 4.62x to 5.43x transformer LLM KV-cache compression. The infinite-dimensional Navier-Stokes regularity and classical P vs NP problems remain strictly open.
+
+\noindent\textbf{(1) Helical Triad Chiral Vanishing:} The non-linear Lamb vector $u \times \omega$ satisfies exact energetic orthogonality $u \cdot (u \times \omega) = 0$. When decomposed into helical wave modes $(h_1, h_2, h_3)$, homochiral triad interactions vanish identically: $T_{+++} = 0$. Homochiral vortex stretching cannot transfer energy to small scales, restricting cascade energy to heterochiral interactions.
+
+\noindent\textbf{(2) Axisymmetric Strain Ceiling:} In axisymmetric swirl flows, the non-linear vortex stretching strain is bounded above by $S_{\max} \le 2/3$. Combined with viscous dissipation $\nu k^2$, inter-scale energy transfer decays as $\le 1/8$ across distant dyadic shells, enforcing cumulative $H^1$ enstrophy decay.
+
+\noindent\textbf{(3) Topological Pfaffian Genus Barrier (P vs NP):} Planar graph matching is solvable in polynomial time via Kasteleyn Pfaffians. However, for non-planar constraint graphs of 3-SAT, the cyclomatic genus $g$ grows linearly with variable count ($g = \Omega(n)$). The required Pfaffian linear combinations grow as $16 \cdot 4^n = \Omega(4^n)$, excluding polynomial-size Pfaffian or determinantal representations.
+
+\noindent\textbf{(4) Machine Verification:} We catalog and certify 40 unconditional theorems in Lean 4 with zero sorry tokens and standard kernel axioms, backed by multi-scale matrix condensation benchmarks ($N = 512$ to $32,768$) on an NVIDIA RTX A2000 8 GB Laptop GPU delivering 49.95\% to 99.80\% VRAM savings and 4.62x to 5.43x transformer LLM KV-cache compression. The infinite-dimensional Navier-Stokes regularity and classical P vs NP problems remain strictly open.
 \end{abstract}
 
 \vspace{0.5em}
@@ -42,18 +40,18 @@ The three-dimensional incompressible Navier-Stokes equations and the P vs NP com
 
 \vspace{0.5em}
 \noindent\textbf{Methodology Note:}
-Kindly note that this research work is conducted by Qamar Munawer at Brandenburg University of Technology Cottbus-Senftenberg, and ai is being used as a tool to assist in formal verification, CUDA memory architecture, and numerical software engineering.
+This research is authored by Qamar Munawer; ai is being used as a tool to assist in formal verification, CUDA memory architecture, and numerical software engineering.
 
 \vspace{0.5em}
 \noindent\textbf{Epistemic Boundary Standard:}
-In strict accordance with scientific integrity, all four Clay Millennium Problems remain strictly OPEN (\texttt{status: verified-finite}, \texttt{open\_horizon\_lock: STRICTLY OPEN}). Our Lean 4 theorems certify the complete finite-dimensional, dyadic shell, and parameterized bridge architecture.
+In strict accordance with scientific integrity, all four Clay Millennium Problems remain strictly OPEN. Our Lean 4 theorems certify the complete finite-dimensional, dyadic shell, and parameterized bridge architecture.
 
 \newpage
 
 \section*{Dear Friends and Respected Readers: Personal Letter and Context}
 I am very pleased to present this research monograph detailing our unified Lean 4 formalization and physical GPU benchmarks for 3D fluid dynamics, computational complexity, and hardware matrix acceleration.
 
-In our prior research notes, we used the Rosetta Stone operator correspondence to bridge the mathematics of vortex stretching, Pfaffian handle additions, and matrix condensation. Here, we present our complete results using standard contemporary terminology: Helical Wave Decomposition, Chiral Triad Vanishing, Axisymmetric Strain Bounds, Mignon-Ressayre Determinantal Barriers, and Guyan-Schur Static Condensation.
+Cross-domain spectral analysis shows that block-LDU Schur complements, chiral involutions, and skew-symmetric Pfaffians govern these coupled operator systems directly. Here, we present our complete results using standard contemporary terminology: Helical Wave Decomposition, Chiral Triad Vanishing, Axisymmetric Strain Bounds, Mignon-Ressayre Determinantal Barriers, and Guyan-Schur Static Condensation.
 
 \section{Simple School-Math Intuition Behind the Navier-Stokes and Complexity Reductions}
 Let us review the physical and mathematical mechanisms using intuitive school-level analogies:
